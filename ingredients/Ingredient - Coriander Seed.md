@@ -12,4 +12,5 @@ generated: true
 Auto-generated link node. Expand with composition, handling, and behavior.
 
 ## Used In Recipes
+- [[2026-02-19 - Lao Herbaceous Chicken Noodle Soup]]
 - [[2026-02-19 - Tomato Bredie]]

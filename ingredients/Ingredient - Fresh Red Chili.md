@@ -12,4 +12,6 @@ generated: true
 Auto-generated link node. Expand with composition, handling, and behavior.
 
 ## Used In Recipes
+- [[2026-02-19 - Grilled Pork Al Pastor]]
 - [[2026-02-19 - Guanciale, Olive & Chili Pasta Sauce]]
+- [[2026-02-19 - Singapore Chicken Rice]]

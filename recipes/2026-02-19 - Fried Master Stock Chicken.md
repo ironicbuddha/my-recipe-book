@@ -177,7 +177,7 @@ Soy-aromatic poached chicken, air-dried and deep-fried for blistered, crisp skin
 
 ### Ingredients
 - [[Ingredient - Cassia Cinnamon]]
-- [[Ingredient - Cloves]]
+- [[Ingredient - Clove]]
 - [[Ingredient - Cornflour Or Rice Flour]]
 - [[Ingredient - Dark Soy Sauce]]
 - [[Ingredient - Dried Mandarin Peel]]
@@ -190,7 +190,7 @@ Soy-aromatic poached chicken, air-dried and deep-fried for blistered, crisp skin
 - [[Ingredient - Rice Vinegar]]
 - [[Ingredient - Rock Sugar]]
 - [[Ingredient - Shaoxing Wine]]
-- [[Ingredient - Spring Onions]]
+- [[Ingredient - Spring Onion]]
 - [[Ingredient - Star Anise]]
 - [[Ingredient - Water]]
 - [[Ingredient - White Pepper]]

@@ -13,3 +13,4 @@ Auto-generated link node. Expand with composition, handling, and behavior.
 
 ## Used In Recipes
 - [[2026-02-19 - Italian Sausages with Puy Lentils]]
+- [[2026-02-19 - Traditional Greek Lentil Soup (Fakes)]]

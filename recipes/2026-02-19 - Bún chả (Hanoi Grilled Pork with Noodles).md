@@ -133,7 +133,7 @@ Primary Ingredient Basis: `500 g pork shoulder = 100%`
 - [[Ingredient - Fish Sauce]]
 - [[Ingredient - Garlic]]
 - [[Ingredient - Honey]]
-- [[Ingredient - Lettuce & Mixed Herbs]]
+- [[Ingredient - Lettuce And Mixed Herbs]]
 - [[Ingredient - Lime Juice]]
 - [[Ingredient - Neutral Oil]]
 - [[Ingredient - Pork Mince]]
@@ -141,7 +141,7 @@ Primary Ingredient Basis: `500 g pork shoulder = 100%`
 - [[Ingredient - Red Chili]]
 - [[Ingredient - Rice Vermicelli]]
 - [[Ingredient - Rice Vinegar]]
-- [[Ingredient - Shallots]]
+- [[Ingredient - Shallot]]
 - [[Ingredient - Sugar]]
 - [[Ingredient - Water]]
 

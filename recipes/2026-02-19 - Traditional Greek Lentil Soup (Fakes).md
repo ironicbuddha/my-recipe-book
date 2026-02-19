@@ -144,7 +144,7 @@ Classic village-style Greek lentil soup. Finished with lemon or red wine vinegar
 - [[Principle - Starch Thickening]]
 
 ### Ingredients
-- [[Ingredient - Bay Leaves]]
+- [[Ingredient - Bay Leaf]]
 - [[Ingredient - Black Pepper]]
 - [[Ingredient - Brown Lentils]]
 - [[Ingredient - Carrot]]

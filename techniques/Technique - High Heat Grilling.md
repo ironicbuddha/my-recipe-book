@@ -1,16 +1,15 @@
 ---
-title: "Marination"
+title: "High Heat Grilling"
 date: 2026-02-19
 type: technique
 version: v1.0
 generated: true
 ---
 
-# Technique: Marination
+# Technique: High Heat Grilling
 
 ## Purpose
 Auto-generated link node. Expand with process controls and failure modes.
 
 ## Used In Recipes
 - [[2026-02-19 - Bún bò nướng (Grilled Beef with Rice Noodles)]]
-- [[2026-02-19 - Bún chả (Hanoi Grilled Pork with Noodles)]]

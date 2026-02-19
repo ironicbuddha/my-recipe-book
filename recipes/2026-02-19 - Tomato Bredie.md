@@ -206,7 +206,7 @@ Cape Malay cucina povera — refined. Tomato-forward, lamb-soft, warm spice pres
 
 ### Ingredients
 - [[Ingredient - Cinnamon Stick]]
-- [[Ingredient - Cloves]]
+- [[Ingredient - Clove]]
 - [[Ingredient - Coriander Seed]]
 - [[Ingredient - Flat Leaf Parsley]]
 - [[Ingredient - Fresh Ginger]]

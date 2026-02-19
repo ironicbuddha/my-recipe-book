@@ -131,6 +131,7 @@ Primary Ingredient Basis: `200 g pecans = 100%`
 
 ### Ingredients
 - [[Ingredient - All Purpose Flour]]
+- [[Ingredient - Egg]]
 - [[Ingredient - Extra Yolk]]
 - [[Ingredient - Fine Salt]]
 - [[Ingredient - Ice Cold Water]]
@@ -141,7 +142,6 @@ Primary Ingredient Basis: `200 g pecans = 100%`
 - [[Ingredient - Solid Vegetable Fat]]
 - [[Ingredient - Unsalted Butter]]
 - [[Ingredient - Verjuice]]
-- [[Ingredient - Whole Eggs]]
 
 <!-- AUTO-GENERATED:RELATED-LINKS:END -->
 

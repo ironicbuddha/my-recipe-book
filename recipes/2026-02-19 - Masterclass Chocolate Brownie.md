@@ -172,7 +172,7 @@ Dense matrix. Crackled surface. Controlled set.
 - [[Ingredient - Caster Sugar]]
 - [[Ingredient - Cocoa Powder]]
 - [[Ingredient - Dark Chocolate 70%]]
-- [[Ingredient - Eggs]]
+- [[Ingredient - Egg]]
 - [[Ingredient - Fine Salt]]
 - [[Ingredient - Plain Flour]]
 - [[Ingredient - Square Pan]]

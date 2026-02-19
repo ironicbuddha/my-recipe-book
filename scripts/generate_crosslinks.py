@@ -186,7 +186,42 @@ def normalize_ingredient(raw: str) -> str | None:
     text = cleanup_space(text.strip("-"))
     if not text:
         return None
+    text = canonicalize_ingredient(text)
     return canonical_term(text)
+
+
+def canonicalize_ingredient(text: str) -> str:
+    lower = text.lower()
+    lower = lower.replace("&", " and ")
+    lower = cleanup_space(lower)
+
+    # Normalize spelling variants.
+    lower = re.sub(r"\bchillies\b", "chili", lower)
+    lower = re.sub(r"\bchilies\b", "chili", lower)
+    lower = re.sub(r"\bchilli\b", "chili", lower)
+
+    # Collapse clear duplicates and ordering variants.
+    replace_map = {
+        "bay leaves": "bay leaf",
+        "beef sirloin or flank": "beef sirloin",
+        "cloves": "clove",
+        "coriander seeds": "coriander seed",
+        "makrut lime leaves": "makrut lime leaf",
+        "shallots": "shallot",
+        "spring onions": "spring onion",
+        "whole eggs": "egg",
+        "whole egg": "egg",
+        "eggs": "egg",
+        "coriander stems or roots": "coriander roots or stems",
+        "fresh red chilli": "fresh red chili",
+    }
+    lower = replace_map.get(lower, lower)
+
+    # Normalize a few known phrase variants.
+    if re.fullmatch(r"fresh red chili(?:es)?", lower):
+        lower = "fresh red chili"
+
+    return lower
 
 
 def extract_table_ingredients(text: str) -> list[str]:

@@ -12,6 +12,7 @@ generated: true
 Auto-generated link node. Expand with mechanism, control levers, and evidence.
 
 ## Used In Recipes
+- [[2026-02-19 - Bún bò nướng (Grilled Beef with Rice Noodles)]]
 - [[2026-02-19 - Bún chả (Hanoi Grilled Pork with Noodles)]]
 - [[2026-02-19 - Cowboy Beans]]
 - [[2026-02-19 - Flapjacks (American Pancakes)]]

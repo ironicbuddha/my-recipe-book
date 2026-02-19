@@ -169,7 +169,7 @@ Whole-sausage braise with structured lentils and warm spiced tomato. Serve with 
 - [[Ingredient - Carrot]]
 - [[Ingredient - Celery]]
 - [[Ingredient - Cinnamon]]
-- [[Ingredient - Dried Chilli]]
+- [[Ingredient - Dried Chili]]
 - [[Ingredient - Extra Virgin Olive Oil]]
 - [[Ingredient - Flat Leaf Parsley]]
 - [[Ingredient - Garlic]]

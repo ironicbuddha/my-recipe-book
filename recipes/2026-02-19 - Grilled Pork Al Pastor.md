@@ -139,7 +139,7 @@ Primary Ingredient Basis: `600 g pork fillet = 100%`
 - [[Ingredient - Cumin]]
 - [[Ingredient - Fresh Coriander]]
 - [[Ingredient - Fresh Mint]]
-- [[Ingredient - Fresh Red Chilli]]
+- [[Ingredient - Fresh Red Chili]]
 - [[Ingredient - Garlic]]
 - [[Ingredient - Grilled Pineapple Puree]]
 - [[Ingredient - Guajillo Chile]]

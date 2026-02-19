@@ -151,10 +151,10 @@ Breakfast is physics wearing maple syrup.
 - [[Ingredient - Butter Or Neutral Oil]]
 - [[Ingredient - Buttermilk]]
 - [[Ingredient - Cake Flour]]
+- [[Ingredient - Egg]]
 - [[Ingredient - Fine Salt]]
 - [[Ingredient - Sugar]]
 - [[Ingredient - Vanilla Extract]]
-- [[Ingredient - Whole Egg]]
 
 <!-- AUTO-GENERATED:RELATED-LINKS:END -->
 
