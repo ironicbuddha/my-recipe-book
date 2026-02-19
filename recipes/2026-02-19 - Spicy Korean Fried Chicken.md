@@ -162,6 +162,46 @@ Double-fried, starch-based coating for maximum crispness. Optimised for sauce ad
 
 </div>
 
+## RELATED LINKS
+<!-- AUTO-GENERATED:RELATED-LINKS:START -->
+
+### Techniques
+- [[Technique - Double Frying]]
+- [[Technique - Sauce Reduction]]
+- [[Technique - Starch Batter Coating]]
+
+### Principles
+- [[Principle - Maillard Reaction]]
+- [[Principle - Sauce Adhesion]]
+- [[Principle - Starch Dehydration]]
+- [[Principle - Textural Contrast]]
+
+### Ingredients
+- [[Ingredient - Baking Powder]]
+- [[Ingredient - Black Pepper]]
+- [[Ingredient - Chicken Wings Or Drumettes]]
+- [[Ingredient - Cornstarch]]
+- [[Ingredient - Egg]]
+- [[Ingredient - Fried Chicken]]
+- [[Ingredient - Garlic]]
+- [[Ingredient - Garlic Powder]]
+- [[Ingredient - Ginger]]
+- [[Ingredient - Gluten Free Flour Mix]]
+- [[Ingredient - Gochugaru]]
+- [[Ingredient - Gochujang]]
+- [[Ingredient - Honey Or Brown Sugar]]
+- [[Ingredient - Ice Cold Water Or Sparkling Water]]
+- [[Ingredient - Ketchup]]
+- [[Ingredient - Neutral Frying Oil]]
+- [[Ingredient - Rice Vinegar]]
+- [[Ingredient - Rice Wine Or Dry Sherry]]
+- [[Ingredient - Salt]]
+- [[Ingredient - Sesame Oil]]
+- [[Ingredient - Soy Sauce]]
+- [[Ingredient - Yangnyeom Sauce]]
+
+<!-- AUTO-GENERATED:RELATED-LINKS:END -->
+
 ## STRUCTURAL NOTES
 
 - Potato starch in the GF mix is critical for long-lasting crispness — it dehydrates more completely than wheat flour during frying.

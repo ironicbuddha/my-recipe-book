@@ -140,6 +140,38 @@ Primary Ingredient Basis: `1000 g pork = 100%`
 
 </div>
 
+## RELATED LINKS
+<!-- AUTO-GENERATED:RELATED-LINKS:START -->
+
+### Techniques
+- [[Technique - Hibachi Sear]]
+- [[Technique - High Heat Charring]]
+- [[Technique - Sous Vide]]
+- [[Technique - Surface Dehydration]]
+
+### Principles
+- [[Principle - Acid Balance]]
+- [[Principle - Carryover Cooking]]
+- [[Principle - Maillard Reaction]]
+- [[Principle - Moisture Control]]
+
+### Ingredients
+- [[Ingredient - Additional Smoked Paprika]]
+- [[Ingredient - Fine Salt]]
+- [[Ingredient - Flat Leaf Parsley]]
+- [[Ingredient - Garlic]]
+- [[Ingredient - Ground Cumin]]
+- [[Ingredient - Lemon Juice Or Sherry Vinegar]]
+- [[Ingredient - Lemon Zest]]
+- [[Ingredient - Mixed Greens]]
+- [[Ingredient - Neutral Oil]]
+- [[Ingredient - Olive Oil]]
+- [[Ingredient - Pork]]
+- [[Ingredient - Sherry Vinegar]]
+- [[Ingredient - Smoked Paprika]]
+
+<!-- AUTO-GENERATED:RELATED-LINKS:END -->
+
 ## STRUCTURAL NOTES
 
 - Sous vide ensures uniform pasteurisation and controlled protein denaturation.

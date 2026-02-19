@@ -242,6 +242,63 @@ Primary Ingredient Basis: `1500 g whole chicken = 100%`
 
 </div>
 
+## RELATED LINKS
+<!-- AUTO-GENERATED:RELATED-LINKS:START -->
+
+### Techniques
+- [[Technique - Blanching]]
+- [[Technique - Broth Fortification]]
+- [[Technique - Gentle Poaching]]
+- [[Technique - Mortar Pounding]]
+- [[Technique - Paste Frying]]
+
+### Principles
+- [[Principle - Aromatic Infusion]]
+- [[Principle - Collagen Extraction]]
+- [[Principle - Condiment Layering]]
+- [[Principle - Emulsion Clarity]]
+
+### Ingredients
+- [[Ingredient - Blanched Wing Tips]]
+- [[Ingredient - Boiling Hot Broth]]
+- [[Ingredient - Boiling Water]]
+- [[Ingredient - Chicken Wing Tips]]
+- [[Ingredient - Chilli Oil]]
+- [[Ingredient - Cold Water]]
+- [[Ingredient - Coriander Roots / Stems]]
+- [[Ingredient - Coriander Seeds]]
+- [[Ingredient - Coriander Stems / Roots]]
+- [[Ingredient - Dried Red Chillies]]
+- [[Ingredient - Fermented Fish Sauce / Padek]]
+- [[Ingredient - Fine Salt]]
+- [[Ingredient - Finished Broth]]
+- [[Ingredient - Fish Sauce]]
+- [[Ingredient - Flat Rice Noodles]]
+- [[Ingredient - Fresh Green Chillies]]
+- [[Ingredient - Fresh Herbs]]
+- [[Ingredient - Garlic Cloves]]
+- [[Ingredient - Ginger]]
+- [[Ingredient - Green Jeow]]
+- [[Ingredient - Hot Water]]
+- [[Ingredient - Lemongrass]]
+- [[Ingredient - Lime Juice]]
+- [[Ingredient - Lime Juice Or Tamarind Water]]
+- [[Ingredient - Lime Wedges]]
+- [[Ingredient - Makrut Lime Leaf]]
+- [[Ingredient - Makrut Lime Leaves]]
+- [[Ingredient - Neutral Oil]]
+- [[Ingredient - Onion]]
+- [[Ingredient - Red Jeow]]
+- [[Ingredient - Shallot]]
+- [[Ingredient - Shallots]]
+- [[Ingredient - Shredded Chicken]]
+- [[Ingredient - Spring Onion]]
+- [[Ingredient - Toasted Sticky Rice Powder]]
+- [[Ingredient - White Peppercorns]]
+- [[Ingredient - Whole Chicken]]
+
+<!-- AUTO-GENERATED:RELATED-LINKS:END -->
+
 ## STRUCTURAL NOTES
 
 - Blanching wing tips removes blood proteins and impurities, ensuring a clear broth. Skipping this step produces a cloudy, livery stock.

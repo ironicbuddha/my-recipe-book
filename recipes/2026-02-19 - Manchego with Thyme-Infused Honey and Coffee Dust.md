@@ -122,6 +122,29 @@ Sweet–bitter contrast plate. Best served at cool room temperature.
 
 </div>
 
+## RELATED LINKS
+<!-- AUTO-GENERATED:RELATED-LINKS:START -->
+
+### Techniques
+- [[Technique - Fine Grinding]]
+- [[Technique - Infusion]]
+- [[Technique - Sifting]]
+
+### Principles
+- [[Principle - Aromatic Infusion]]
+- [[Principle - Flavour Threshold Management]]
+- [[Principle - Sweet Bitter Contrast]]
+
+### Ingredients
+- [[Ingredient - Aged Manchego]]
+- [[Ingredient - Coffee Dust]]
+- [[Ingredient - Fresh Thyme Leaves]]
+- [[Ingredient - Good Quality Honey]]
+- [[Ingredient - Thyme Honey]]
+- [[Ingredient - Whole Coffee Beans]]
+
+<!-- AUTO-GENERATED:RELATED-LINKS:END -->
+
 ## STRUCTURAL NOTES
 
 - The coffee should read as a whisper of roast, not a headline. If the bitterness dominates, you've used too much.

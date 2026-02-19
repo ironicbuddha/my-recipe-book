@@ -152,6 +152,36 @@ Dense matrix. Crackled surface. Controlled set.
 
 </div>
 
+## RELATED LINKS
+<!-- AUTO-GENERATED:RELATED-LINKS:START -->
+
+### Techniques
+- [[Technique - Dry Folding]]
+- [[Technique - Emulsification]]
+- [[Technique - Low Temperature Baking]]
+- [[Technique - Melting]]
+
+### Principles
+- [[Principle - Gluten Limitation]]
+- [[Principle - Protein Coagulation]]
+- [[Principle - Starch Gelation]]
+- [[Principle - Sugar Film Formation]]
+
+### Ingredients
+- [[Ingredient - Baking Paper]]
+- [[Ingredient - Caster Sugar]]
+- [[Ingredient - Cocoa Powder]]
+- [[Ingredient - Dark Chocolate 70%]]
+- [[Ingredient - Eggs]]
+- [[Ingredient - Fine Salt]]
+- [[Ingredient - Plain Flour]]
+- [[Ingredient - Square Pan]]
+- [[Ingredient - Unsalted Butter]]
+- [[Ingredient - Vanilla Extract]]
+- [[Ingredient - Walnuts]]
+
+<!-- AUTO-GENERATED:RELATED-LINKS:END -->
+
 ## STRUCTURAL NOTES
 
 - High fat and relatively low flour limit gluten development, producing a dense fudgy crumb rather than a cakey structure.

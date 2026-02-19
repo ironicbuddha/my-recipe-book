@@ -116,6 +116,43 @@ Primary Ingredient Basis: `600 g pork fillet = 100%`
 
 </div>
 
+## RELATED LINKS
+<!-- AUTO-GENERATED:RELATED-LINKS:START -->
+
+### Techniques
+- [[Technique - Blending]]
+- [[Technique - Char Grilling]]
+- [[Technique - Hibachi Grilling]]
+
+### Principles
+- [[Principle - Enzymatic Tenderization]]
+- [[Principle - Maillard Reaction]]
+- [[Principle - Protein Denaturation]]
+- [[Principle - Salt Taste Modulation]]
+
+### Ingredients
+- [[Ingredient - Achiote Paste]]
+- [[Ingredient - Apple Cider Vinegar]]
+- [[Ingredient - Charred Pineapple]]
+- [[Ingredient - Clove]]
+- [[Ingredient - Corn Tortillas]]
+- [[Ingredient - Cumin]]
+- [[Ingredient - Fresh Coriander]]
+- [[Ingredient - Fresh Mint]]
+- [[Ingredient - Fresh Red Chilli]]
+- [[Ingredient - Garlic]]
+- [[Ingredient - Grilled Pineapple Puree]]
+- [[Ingredient - Guajillo Chile]]
+- [[Ingredient - Lime Juice]]
+- [[Ingredient - Marinated Pork Fillet]]
+- [[Ingredient - Mexican Oregano]]
+- [[Ingredient - Neutral Oil]]
+- [[Ingredient - Pork Fillet]]
+- [[Ingredient - Red Onion]]
+- [[Ingredient - Salt]]
+
+<!-- AUTO-GENERATED:RELATED-LINKS:END -->
+
 ## STRUCTURAL NOTES
 
 - Bromelain activity in pineapple can soften muscle proteins; grilling the pineapple and keeping marination time bounded reduces uncontrolled proteolysis and surface mush.

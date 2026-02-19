@@ -126,6 +126,29 @@ Primary Ingredient Basis: `1000 g waxy potatoes = 100%`
 
 </div>
 
+## RELATED LINKS
+<!-- AUTO-GENERATED:RELATED-LINKS:START -->
+
+### Techniques
+- [[Technique - Layered Assembly]]
+- [[Technique - Low Temperature Baking]]
+- [[Technique - Mandoline Slicing]]
+
+### Principles
+- [[Principle - Carryover Setting]]
+- [[Principle - Cream Emulsion Stability]]
+- [[Principle - Starch Gelatinisation]]
+
+### Ingredients
+- [[Ingredient - Fine Salt]]
+- [[Ingredient - Garlic]]
+- [[Ingredient - Heavy Cream]]
+- [[Ingredient - Unsalted Butter]]
+- [[Ingredient - Waxy Potatoes]]
+- [[Ingredient - White Pepper]]
+
+<!-- AUTO-GENERATED:RELATED-LINKS:END -->
+
 ## STRUCTURAL NOTES
 
 - Potato starch gelatinises at 65–70 C, naturally thickening the cream without flour.

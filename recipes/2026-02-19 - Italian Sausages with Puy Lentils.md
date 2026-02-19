@@ -147,6 +147,46 @@ Whole-sausage braise with structured lentils and warm spiced tomato. Serve with 
 
 </div>
 
+## RELATED LINKS
+<!-- AUTO-GENERATED:RELATED-LINKS:START -->
+
+### Techniques
+- [[Technique - Braising]]
+- [[Technique - Browning]]
+- [[Technique - Spice Infusion]]
+- [[Technique - Sweating]]
+
+### Principles
+- [[Principle - Acid Reduction]]
+- [[Principle - Fond Development]]
+- [[Principle - Maillard Reaction]]
+- [[Principle - Spice Oil Infusion]]
+
+### Ingredients
+- [[Ingredient - Bay Leaf]]
+- [[Ingredient - Black Pepper]]
+- [[Ingredient - Browned Sausages]]
+- [[Ingredient - Carrot]]
+- [[Ingredient - Celery]]
+- [[Ingredient - Cinnamon]]
+- [[Ingredient - Dried Chilli]]
+- [[Ingredient - Extra Virgin Olive Oil]]
+- [[Ingredient - Flat Leaf Parsley]]
+- [[Ingredient - Garlic]]
+- [[Ingredient - Italian Pork Sausages]]
+- [[Ingredient - Lentil Base]]
+- [[Ingredient - Olive Oil]]
+- [[Ingredient - Onion]]
+- [[Ingredient - Plum Tomatoes]]
+- [[Ingredient - Puy Lentils]]
+- [[Ingredient - Red Wine Vinegar]]
+- [[Ingredient - Salt]]
+- [[Ingredient - Spiced Tomato Sauce]]
+- [[Ingredient - Star Anise]]
+- [[Ingredient - Water Or Light Stock]]
+
+<!-- AUTO-GENERATED:RELATED-LINKS:END -->
+
 ## STRUCTURAL NOTES
 
 - Browning the sausages without piercing preserves internal fat and moisture; the casing acts as a barrier during braising.

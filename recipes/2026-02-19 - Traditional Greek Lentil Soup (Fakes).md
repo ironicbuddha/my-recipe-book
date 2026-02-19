@@ -130,6 +130,35 @@ Classic village-style Greek lentil soup. Finished with lemon or red wine vinegar
 
 </div>
 
+## RELATED LINKS
+<!-- AUTO-GENERATED:RELATED-LINKS:START -->
+
+### Techniques
+- [[Technique - Acid Finishing]]
+- [[Technique - Lentil Simmering]]
+- [[Technique - Soffritto]]
+
+### Principles
+- [[Principle - Acid Brightness Preservation]]
+- [[Principle - Aromatic Base Development]]
+- [[Principle - Starch Thickening]]
+
+### Ingredients
+- [[Ingredient - Bay Leaves]]
+- [[Ingredient - Black Pepper]]
+- [[Ingredient - Brown Lentils]]
+- [[Ingredient - Carrot]]
+- [[Ingredient - Crushed Tomatoes]]
+- [[Ingredient - Dried Oregano]]
+- [[Ingredient - Extra Virgin Olive Oil]]
+- [[Ingredient - Fresh Lemon Juice Or Red Wine Vinegar]]
+- [[Ingredient - Garlic]]
+- [[Ingredient - Onion]]
+- [[Ingredient - Salt]]
+- [[Ingredient - Water Or Light Vegetable Stock]]
+
+<!-- AUTO-GENERATED:RELATED-LINKS:END -->
+
 ## STRUCTURAL NOTES
 
 - For a slightly thicker body, blend 1–2 ladles of soup and return to the pot.

@@ -1,4 +1,7 @@
-.PHONY: install-hooks validate
+.PHONY: crosslinks install-hooks validate
+
+crosslinks:
+	./scripts/generate_crosslinks.py
 
 install-hooks:
 	git config core.hooksPath .githooks

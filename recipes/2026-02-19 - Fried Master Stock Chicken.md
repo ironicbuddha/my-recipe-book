@@ -160,6 +160,44 @@ Soy-aromatic poached chicken, air-dried and deep-fried for blistered, crisp skin
 
 </div>
 
+## RELATED LINKS
+<!-- AUTO-GENERATED:RELATED-LINKS:START -->
+
+### Techniques
+- [[Technique - Air Drying]]
+- [[Technique - Deep Frying]]
+- [[Technique - Glaze Reduction]]
+- [[Technique - Master Stock Poaching]]
+
+### Principles
+- [[Principle - Aromatic Infusion]]
+- [[Principle - Maillard Reaction]]
+- [[Principle - Protein Denaturation]]
+- [[Principle - Skin Dehydration]]
+
+### Ingredients
+- [[Ingredient - Cassia Cinnamon]]
+- [[Ingredient - Cloves]]
+- [[Ingredient - Cornflour Or Rice Flour]]
+- [[Ingredient - Dark Soy Sauce]]
+- [[Ingredient - Dried Mandarin Peel]]
+- [[Ingredient - Garlic Cloves]]
+- [[Ingredient - Ginger]]
+- [[Ingredient - Honey Or Sugar]]
+- [[Ingredient - Light Soy Sauce]]
+- [[Ingredient - Master Stock]]
+- [[Ingredient - Neutral Frying Oil]]
+- [[Ingredient - Rice Vinegar]]
+- [[Ingredient - Rock Sugar]]
+- [[Ingredient - Shaoxing Wine]]
+- [[Ingredient - Spring Onions]]
+- [[Ingredient - Star Anise]]
+- [[Ingredient - Water]]
+- [[Ingredient - White Pepper]]
+- [[Ingredient - Whole Chicken]]
+
+<!-- AUTO-GENERATED:RELATED-LINKS:END -->
+
 ## STRUCTURAL NOTES
 
 - Poaching temperature control is critical; boiling tightens muscle fibres and reduces juiciness. Hold at 85–90 C.

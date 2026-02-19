@@ -171,6 +171,42 @@ Primary Ingredient Basis: `1600 g whole chicken = 100%`
 
 </div>
 
+## RELATED LINKS
+<!-- AUTO-GENERATED:RELATED-LINKS:START -->
+
+### Techniques
+- [[Technique - Fat Toasted Rice]]
+- [[Technique - Ice Bath Shocking]]
+- [[Technique - Poaching]]
+- [[Technique - Sauce Emulsion]]
+
+### Principles
+- [[Principle - Aromatic Fat Infusion]]
+- [[Principle - Collagen Extraction]]
+- [[Principle - Starch Absorption]]
+- [[Principle - Thermal Shock For Skin Texture]]
+
+### Ingredients
+- [[Ingredient - Chicken Fat]]
+- [[Ingredient - Chicken Stock]]
+- [[Ingredient - Cucumber]]
+- [[Ingredient - Extra Broth From Stock]]
+- [[Ingredient - Fresh Coriander]]
+- [[Ingredient - Fresh Ginger]]
+- [[Ingredient - Fresh Red Chillies]]
+- [[Ingredient - Garlic]]
+- [[Ingredient - Jasmine Rice]]
+- [[Ingredient - Light Soy Sauce]]
+- [[Ingredient - Lime Juice]]
+- [[Ingredient - Neutral Oil]]
+- [[Ingredient - Salt]]
+- [[Ingredient - Spring Onions]]
+- [[Ingredient - Sugar]]
+- [[Ingredient - Water]]
+- [[Ingredient - Whole Chicken]]
+
+<!-- AUTO-GENERATED:RELATED-LINKS:END -->
+
 ## STRUCTURAL NOTES
 
 - The ice bath after poaching shocks the skin, tightening collagen into a firm gel layer that gives Hainanese chicken its characteristic silky-bouncy texture.

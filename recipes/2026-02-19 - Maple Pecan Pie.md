@@ -116,6 +116,35 @@ Primary Ingredient Basis: `200 g pecans = 100%`
 
 </div>
 
+## RELATED LINKS
+<!-- AUTO-GENERATED:RELATED-LINKS:START -->
+
+### Techniques
+- [[Technique - Custard Setting]]
+- [[Technique - Lamination]]
+- [[Technique - Staged Baking]]
+
+### Principles
+- [[Principle - Acid Lift]]
+- [[Principle - Sugar Structure Balance]]
+- [[Principle - Thermal Control]]
+
+### Ingredients
+- [[Ingredient - All Purpose Flour]]
+- [[Ingredient - Extra Yolk]]
+- [[Ingredient - Fine Salt]]
+- [[Ingredient - Ice Cold Water]]
+- [[Ingredient - Jack Daniel's]]
+- [[Ingredient - Maple Syrup]]
+- [[Ingredient - Muscovado Sugar]]
+- [[Ingredient - Pecan Halves]]
+- [[Ingredient - Solid Vegetable Fat]]
+- [[Ingredient - Unsalted Butter]]
+- [[Ingredient - Verjuice]]
+- [[Ingredient - Whole Eggs]]
+
+<!-- AUTO-GENERATED:RELATED-LINKS:END -->
+
 ## STRUCTURAL NOTES
 
 - Custard sets via egg protein coagulation at ~82–90 C.

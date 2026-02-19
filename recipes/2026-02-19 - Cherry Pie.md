@@ -116,6 +116,33 @@ Primary Ingredient Basis: `900 g sour cherries = 100%`
 
 </div>
 
+## RELATED LINKS
+<!-- AUTO-GENERATED:RELATED-LINKS:START -->
+
+### Techniques
+- [[Technique - Fruit Thickening]]
+- [[Technique - Lamination]]
+- [[Technique - Staged Baking]]
+
+### Principles
+- [[Principle - Acid Balance]]
+- [[Principle - Starch Gelation]]
+- [[Principle - Thermal Control]]
+
+### Ingredients
+- [[Ingredient - All Purpose Flour]]
+- [[Ingredient - Almond Extract]]
+- [[Ingredient - Cornstarch]]
+- [[Ingredient - Fine Salt]]
+- [[Ingredient - Granulated Sugar]]
+- [[Ingredient - Ice Cold Water]]
+- [[Ingredient - Lemon Juice]]
+- [[Ingredient - Solid Vegetable Fat]]
+- [[Ingredient - Sour Cherries]]
+- [[Ingredient - Unsalted Butter]]
+
+<!-- AUTO-GENERATED:RELATED-LINKS:END -->
+
 ## STRUCTURAL NOTES
 
 - Cornstarch gelatinises at ~95 C.

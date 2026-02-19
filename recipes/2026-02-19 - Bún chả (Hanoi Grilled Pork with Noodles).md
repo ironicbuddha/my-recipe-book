@@ -113,6 +113,40 @@ Primary Ingredient Basis: `500 g pork shoulder = 100%`
 
 </div>
 
+## RELATED LINKS
+<!-- AUTO-GENERATED:RELATED-LINKS:START -->
+
+### Techniques
+- [[Technique - Caramelization]]
+- [[Technique - Emulsified Dipping Sauce]]
+- [[Technique - Grilling]]
+- [[Technique - Marination]]
+
+### Principles
+- [[Principle - Fresh Herb Contrast]]
+- [[Principle - Maillard Reaction]]
+- [[Principle - Sweet Sour Salt Balance]]
+
+### Ingredients
+- [[Ingredient - Black Pepper]]
+- [[Ingredient - Carrot]]
+- [[Ingredient - Fish Sauce]]
+- [[Ingredient - Garlic]]
+- [[Ingredient - Honey]]
+- [[Ingredient - Lettuce & Mixed Herbs]]
+- [[Ingredient - Lime Juice]]
+- [[Ingredient - Neutral Oil]]
+- [[Ingredient - Pork Mince]]
+- [[Ingredient - Pork Shoulder]]
+- [[Ingredient - Red Chili]]
+- [[Ingredient - Rice Vermicelli]]
+- [[Ingredient - Rice Vinegar]]
+- [[Ingredient - Shallots]]
+- [[Ingredient - Sugar]]
+- [[Ingredient - Water]]
+
+<!-- AUTO-GENERATED:RELATED-LINKS:END -->
+
 ## STRUCTURAL NOTES
 
 - Caramelization and Maillard reactions during grilling create sweet-bitter complexity that balances the high-acidity dipping sauce.

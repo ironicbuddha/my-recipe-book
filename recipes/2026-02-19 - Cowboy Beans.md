@@ -159,6 +159,43 @@ High-protein campfire style. Molasses-balanced, beer-enriched, slow reduction.
 
 </div>
 
+## RELATED LINKS
+<!-- AUTO-GENERATED:RELATED-LINKS:START -->
+
+### Techniques
+- [[Technique - Bean Hydration]]
+- [[Technique - Fond Development]]
+- [[Technique - Slow Reduction]]
+- [[Technique - Spice Blooming]]
+
+### Principles
+- [[Principle - Maillard Reaction]]
+- [[Principle - Molasses Bitterness Balance]]
+- [[Principle - Spice Fat Solubility]]
+- [[Principle - Starch Gelatinisation]]
+
+### Ingredients
+- [[Ingredient - Apple Cider Vinegar]]
+- [[Ingredient - Bacon]]
+- [[Ingredient - Beef]]
+- [[Ingredient - Beer]]
+- [[Ingredient - Black Pepper]]
+- [[Ingredient - Chili Powder]]
+- [[Ingredient - Dark Brown Sugar]]
+- [[Ingredient - Dried Pinto Beans]]
+- [[Ingredient - Garlic]]
+- [[Ingredient - Ground Cumin]]
+- [[Ingredient - Jalapeno]]
+- [[Ingredient - Molasses]]
+- [[Ingredient - Onion]]
+- [[Ingredient - Smoked Paprika]]
+- [[Ingredient - Tomato Sauce / Crushed Tomato]]
+- [[Ingredient - Water]]
+- [[Ingredient - Worcestershire]]
+- [[Ingredient - Yellow Or Dijon Mustard]]
+
+<!-- AUTO-GENERATED:RELATED-LINKS:END -->
+
 ## STRUCTURAL NOTES
 
 - Pinto beans yield creamier interior; navy beans produce tighter structure.

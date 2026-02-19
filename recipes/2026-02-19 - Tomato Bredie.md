@@ -187,6 +187,45 @@ Cape Malay cucina povera — refined. Tomato-forward, lamb-soft, warm spice pres
 
 </div>
 
+## RELATED LINKS
+<!-- AUTO-GENERATED:RELATED-LINKS:START -->
+
+### Techniques
+- [[Technique - Aggressive Browning]]
+- [[Technique - Dry Toasting Spices]]
+- [[Technique - Low Braise]]
+- [[Technique - Spice Blooming]]
+- [[Technique - Starch Thickening]]
+
+### Principles
+- [[Principle - Acid Brightness]]
+- [[Principle - Collagen Breakdown]]
+- [[Principle - Maillard Reaction]]
+- [[Principle - Spice Fat Solubility]]
+- [[Principle - Starch Absorption]]
+
+### Ingredients
+- [[Ingredient - Cinnamon Stick]]
+- [[Ingredient - Cloves]]
+- [[Ingredient - Coriander Seed]]
+- [[Ingredient - Flat Leaf Parsley]]
+- [[Ingredient - Fresh Ginger]]
+- [[Ingredient - Garlic]]
+- [[Ingredient - Ground Spices]]
+- [[Ingredient - Lamb Neck]]
+- [[Ingredient - Mild Cape Malay Curry Powder]]
+- [[Ingredient - Olive Oil]]
+- [[Ingredient - Onion]]
+- [[Ingredient - Potato]]
+- [[Ingredient - Red Wine Vinegar]]
+- [[Ingredient - Remaining Ginger]]
+- [[Ingredient - Salt]]
+- [[Ingredient - Salt + Black Pepper]]
+- [[Ingredient - Tomato]]
+- [[Ingredient - Tomato Paste]]
+
+<!-- AUTO-GENERATED:RELATED-LINKS:END -->
+
 ## STRUCTURAL NOTES
 
 - The vinegar tightens the tomatoes — without it the dish reads as flat and sweet.

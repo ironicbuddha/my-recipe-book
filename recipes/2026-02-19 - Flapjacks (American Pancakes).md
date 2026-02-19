@@ -129,6 +129,35 @@ Breakfast is physics wearing maple syrup.
 
 </div>
 
+## RELATED LINKS
+<!-- AUTO-GENERATED:RELATED-LINKS:START -->
+
+### Techniques
+- [[Technique - Dry Whisking]]
+- [[Technique - Griddle Cooking]]
+- [[Technique - Minimal Fold]]
+- [[Technique - Wet Emulsification]]
+
+### Principles
+- [[Principle - Gluten Limitation]]
+- [[Principle - Hydration Ratio]]
+- [[Principle - Leavening Activation]]
+- [[Principle - Maillard Reaction]]
+
+### Ingredients
+- [[Ingredient - Baking Powder]]
+- [[Ingredient - Baking Soda]]
+- [[Ingredient - Butter]]
+- [[Ingredient - Butter Or Neutral Oil]]
+- [[Ingredient - Buttermilk]]
+- [[Ingredient - Cake Flour]]
+- [[Ingredient - Fine Salt]]
+- [[Ingredient - Sugar]]
+- [[Ingredient - Vanilla Extract]]
+- [[Ingredient - Whole Egg]]
+
+<!-- AUTO-GENERATED:RELATED-LINKS:END -->
+
 ## STRUCTURAL NOTES
 
 - Hydration (milk + egg relative to flour) is approximately 184%.
