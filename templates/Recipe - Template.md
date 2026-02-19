@@ -23,7 +23,11 @@ Target Internal Temperature:
 
 Primary Ingredient Basis: `0 g = 100%`
 
+<div class="modernist-phase">
+
 ## PHASE A — TITLE
+
+---
 
 > [!columns]
 >
@@ -39,7 +43,15 @@ Primary Ingredient Basis: `0 g = 100%`
 > > 1. Step one.
 > > 2. Step two.
 
+</div>
+
+<div class="phase-separator"></div>
+
+<div class="modernist-phase">
+
 ## PHASE B — TITLE
+
+---
 
 > [!columns]
 >
@@ -53,9 +65,17 @@ Primary Ingredient Basis: `0 g = 100%`
 > > ### Method
 > > 1. Step one.
 > > 2. Step two.
+
+</div>
+
+<div class="phase-separator"></div>
+
+<div class="modernist-phase">
 
 ## PHASE C — TITLE
 
+---
+
 > [!columns]
 >
 > > [!column]
@@ -68,6 +88,8 @@ Primary Ingredient Basis: `0 g = 100%`
 > > ### Method
 > > 1. Step one.
 > > 2. Step two.
+
+</div>
 
 ## STRUCTURAL NOTES
 

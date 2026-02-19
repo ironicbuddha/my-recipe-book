@@ -225,3 +225,22 @@
 .modernist-recipe .markdown-preview-view .markdown-preview-sizer {
   max-width: 100% !important;
 }
+
+/* Phase containers */
+.modernist-phase {
+  padding: 2rem 2.5rem;
+  background: var(--background-secondary);
+  border-radius: 6px;
+  margin-bottom: 2rem;
+}
+
+.modernist-phase > h2 {
+  margin-top: 0;
+  letter-spacing: 0.05em;
+}
+
+.phase-separator {
+  height: 1px;
+  background: var(--background-modifier-border);
+  margin: 3rem 0;
+}

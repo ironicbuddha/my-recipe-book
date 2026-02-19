@@ -23,7 +23,11 @@ Target Internal Temperature: 60-62 C, rest carryover to 65 C
 
 Primary Ingredient Basis: `600 g pork fillet = 100%`
 
+<div class="modernist-phase">
+
 ## PHASE A — MARINADE PREPARATION AND PORK MARINATION
+
+---
 
 > [!columns]
 >
@@ -50,7 +54,15 @@ Primary Ingredient Basis: `600 g pork fillet = 100%`
 > > 3. Marinate refrigerated for 45 minutes to 2 hours.
 > > 4. If using pork shoulder (800 g basis), extend marination up to 6 hours.
 
+</div>
+
+<div class="phase-separator"></div>
+
+<div class="modernist-phase">
+
 ## PHASE B — HIBACHI GRILLING, REST, AND FINAL CHAR
+
+---
 
 > [!columns]
 >
@@ -69,7 +81,15 @@ Primary Ingredient Basis: `600 g pork fillet = 100%`
 > > 5. Slice thinly against the grain.
 > > 6. Return slices briefly to high heat for fast edge caramelization without overcooking the interior.
 
+</div>
+
+<div class="phase-separator"></div>
+
+<div class="modernist-phase">
+
 ## PHASE C — CHARRED PINEAPPLE-CHILLI SALSA AND ASSEMBLY
+
+---
 
 > [!columns]
 >
@@ -92,6 +112,8 @@ Primary Ingredient Basis: `600 g pork fillet = 100%`
 > > 3. Rest salsa 10-15 minutes for hydration and salt equilibration.
 > > 4. Warm tortillas directly over charcoal until pliable with light spotting.
 > > 5. Fill tortillas with sliced pork and top with salsa.
+
+</div>
 
 ## STRUCTURAL NOTES
 
