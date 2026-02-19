@@ -102,7 +102,8 @@ Primary Ingredient Basis: `600 g pork fillet = 100%`
 > > | Red onion | 20 g | 3.33% |
 > > | Lime juice | 15 g | 2.50% |
 > > | Salt | 2 g | 0.33% |
-> > | Fresh coriander | 10 g | 1.67% |
+> > | Fresh coriander | 7 g | 1.2% |
+> > | Fresh Mint | 3 g | 0.5% |
 > > | Corn tortillas | 6 units | 1 tortilla per 100 g basis |
 >
 > > [!column]
