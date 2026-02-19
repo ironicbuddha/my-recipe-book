@@ -11,7 +11,7 @@ primary_ingredient: "unsalted butter"
 primary_mass_g: 250
 techniques: ["melting", "emulsification", "dry folding", "low-temperature baking"]
 principles: ["gluten limitation", "sugar film formation", "starch gelation", "protein coagulation"]
-tags: ["dessert", "chocolate", "oven", "set", "tender"]
+tags: ["dish-dessert", "dessert", "chocolate", "oven", "set", "tender"]
 cssclass: modernist-recipe
 ---
 

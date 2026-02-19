@@ -11,7 +11,7 @@ primary_ingredient: "Pork (shoulder / collar / loin)"
 primary_mass_g: 1000
 techniques: [sous-vide, surface dehydration, hibachi sear, high-heat charring]
 principles: [maillard reaction, moisture control, carryover cooking, acid balance]
-tags: [pork, hibachi, spanish, green sauce, modernist]
+tags: [dish-main-course, pork, hibachi, spanish, green sauce, modernist]
 cssclass: modernist-recipe
 ---
 

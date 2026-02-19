@@ -11,7 +11,7 @@ primary_ingredient: "chicken wings or drumettes"
 primary_mass_g: 1000
 techniques: ["double frying", "starch batter coating", "sauce reduction"]
 principles: ["starch dehydration", "Maillard reaction", "sauce adhesion", "textural contrast"]
-tags: ["korean", "chicken", "frying", "crisp", "maillard"]
+tags: ["dish-main-course", "korean", "chicken", "frying", "crisp", "maillard"]
 cssclass: modernist-recipe
 ---
 

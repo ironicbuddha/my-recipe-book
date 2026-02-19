@@ -11,7 +11,7 @@ primary_ingredient: "Pork shoulder"
 primary_mass_g: 500
 techniques: [marination, caramelization, grilling, emulsified dipping sauce]
 principles: [sweet-sour-salt balance, Maillard reaction, fresh-herb contrast]
-tags: [vietnamese, noodles, grilled, street-food]
+tags: [dish-main-course, vietnamese, noodles, grilled, street-food]
 cssclass: modernist-recipe
 ---
 

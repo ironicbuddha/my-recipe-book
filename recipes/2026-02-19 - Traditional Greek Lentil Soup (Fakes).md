@@ -11,7 +11,7 @@ primary_ingredient: "brown lentils"
 primary_mass_g: 500
 techniques: ["soffritto", "lentil simmering", "acid finishing"]
 principles: ["starch thickening", "aromatic base development", "acid brightness preservation"]
-tags: ["greek", "lentils", "soup", "vegetarian", "tender"]
+tags: ["dish-soup", "greek", "lentils", "soup", "vegetarian", "tender"]
 cssclass: modernist-recipe
 ---
 

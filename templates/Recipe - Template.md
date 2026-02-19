@@ -11,7 +11,7 @@ primary_ingredient: ""
 primary_mass_g: 0
 techniques: []
 principles: []
-tags: []
+tags: [dish-main-course]
 cssclass: modernist-recipe
 ---
 

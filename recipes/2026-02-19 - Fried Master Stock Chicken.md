@@ -11,7 +11,7 @@ primary_ingredient: "whole chicken"
 primary_mass_g: 1500
 techniques: ["master stock poaching", "air-drying", "deep frying", "glaze reduction"]
 principles: ["aromatic infusion", "protein denaturation", "skin dehydration", "Maillard reaction"]
-tags: ["chinese", "chicken", "frying", "maillard", "crisp"]
+tags: ["dish-main-course", "chinese", "chicken", "frying", "maillard", "crisp"]
 cssclass: modernist-recipe
 ---
 

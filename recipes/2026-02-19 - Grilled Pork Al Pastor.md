@@ -11,7 +11,7 @@ primary_ingredient: "pork fillet"
 primary_mass_g: 600
 techniques: ["hibachi grilling", "blending", "char grilling"]
 principles: ["Maillard reaction", "protein denaturation", "enzymatic tenderization", "salt taste modulation"]
-tags: ["mexican", "pork", "charcoal", "maillard", "tender"]
+tags: ["dish-main-course", "mexican", "pork", "charcoal", "maillard", "tender"]
 cssclass: modernist-recipe
 ---
 

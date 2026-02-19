@@ -11,7 +11,7 @@ primary_ingredient: "Beef sirloin"
 primary_mass_g: 500
 techniques: [marination, high-heat grilling, rapid caramelization, fresh herb assembly]
 principles: [Maillard reaction, acid-salt balance, herbaceous contrast, thin slicing across grain]
-tags: [vietnamese, noodles, grilled, beef]
+tags: [dish-main-course, vietnamese, noodles, grilled, beef]
 cssclass: modernist-recipe
 ---
 

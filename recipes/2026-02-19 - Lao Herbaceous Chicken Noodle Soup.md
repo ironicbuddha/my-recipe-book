@@ -11,7 +11,7 @@ primary_ingredient: "whole chicken"
 primary_mass_g: 1500
 techniques: ["blanching", "gentle poaching", "broth fortification", "mortar pounding", "paste frying"]
 principles: ["collagen extraction", "aromatic infusion", "emulsion clarity", "condiment layering"]
-tags: ["lao", "chicken", "soup", "noodles", "tender"]
+tags: ["dish-soup", "lao", "chicken", "soup", "noodles", "tender"]
 cssclass: modernist-recipe
 ---
 

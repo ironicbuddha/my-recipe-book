@@ -11,7 +11,7 @@ primary_ingredient: "cake flour"
 primary_mass_g: 190
 techniques: ["dry whisking", "wet emulsification", "minimal fold", "griddle cooking"]
 principles: ["gluten limitation", "leavening activation", "Maillard reaction", "hydration ratio"]
-tags: ["american", "breakfast", "frying", "maillard", "tender"]
+tags: ["dish-breakfast", "american", "breakfast", "frying", "maillard", "tender"]
 cssclass: modernist-recipe
 ---
 

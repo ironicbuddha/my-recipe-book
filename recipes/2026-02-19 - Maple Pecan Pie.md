@@ -11,7 +11,7 @@ primary_ingredient: "Pecan halves"
 primary_mass_g: 200
 techniques: [lamination, custard-setting, staged-baking]
 principles: [sugar-structure-balance, acid-lift, thermal-control]
-tags: [pecan, maple, custard, modernist]
+tags: [dish-dessert, pecan, maple, custard, modernist]
 cssclass: modernist-recipe
 ---
 

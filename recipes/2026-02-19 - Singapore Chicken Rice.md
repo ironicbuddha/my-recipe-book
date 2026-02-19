@@ -11,7 +11,7 @@ primary_ingredient: "whole chicken"
 primary_mass_g: 1600
 techniques: ["poaching", "ice bath shocking", "fat-toasted rice", "sauce emulsion"]
 principles: ["collagen extraction", "starch absorption", "aromatic fat infusion", "thermal shock for skin texture"]
-tags: ["singaporean", "chinese", "chicken", "rice", "tender"]
+tags: ["dish-main-course", "singaporean", "chinese", "chicken", "rice", "tender"]
 cssclass: modernist-recipe
 ---
 

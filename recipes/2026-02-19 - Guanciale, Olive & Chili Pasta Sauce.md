@@ -11,7 +11,7 @@ primary_ingredient: guanciale
 primary_mass_g: 150
 techniques: [fat rendering, emulsification, reduction]
 principles: [fat as flavour carrier, starch-water emulsification, salt balance]
-tags: [pasta, italian, pork, olives, chili]
+tags: [dish-sauce, pasta, italian, pork, olives, chili]
 cssclass: modernist-recipe
 ---
 

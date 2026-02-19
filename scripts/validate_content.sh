@@ -55,6 +55,7 @@ while IFS= read -r file; do
   check_name_pattern "$file" '^[0-9]{4}-[0-9]{2}-[0-9]{2} - .+\.md$' 'Recipe'
   check_frontmatter "$file"
   check_contains "$file" '^version:' 'version field'
+  check_contains "$file" 'dish-(main-course|side-dish|dessert|breakfast|appetizer|soup|sauce|snack)' 'dish type tag'
   check_contains "$file" '^## PHASE [A-Z]+' 'PHASE section'
   check_contains "$file" '^## (STRUCTURAL NOTES|Structural Notes)' 'Structural Notes'
   check_contains "$file" '^## (FAILURE MODES|Failure Modes)' 'Failure Modes'

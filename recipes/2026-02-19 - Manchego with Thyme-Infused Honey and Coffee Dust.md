@@ -11,7 +11,7 @@ primary_ingredient: "aged Manchego (12+ months)"
 primary_mass_g: 200
 techniques: ["infusion", "fine grinding", "sifting"]
 principles: ["sweet-bitter contrast", "aromatic infusion", "flavour threshold management"]
-tags: ["spanish", "cheese", "honey", "coffee", "tasting plate"]
+tags: ["dish-appetizer", "spanish", "cheese", "honey", "coffee", "tasting plate"]
 cssclass: modernist-recipe
 ---
 

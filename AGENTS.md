@@ -25,6 +25,8 @@ Follow the rules in `README.md`:
   - Experiments: `YYYY-MM-DD - Dish Trial.md`
 - Use metric units only (`g`, `ml`, `C`).
 - Keep recipe scaling relative to the primary ingredient basis.
+- Include one dish-type tag in each recipe frontmatter `tags`:
+  - `dish-main-course`, `dish-side-dish`, `dish-dessert`, `dish-breakfast`, `dish-appetizer`, `dish-soup`, or `dish-sauce`.
 
 ## Recipe Authoring Rules
 

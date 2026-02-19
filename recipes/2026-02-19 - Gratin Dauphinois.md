@@ -11,7 +11,7 @@ primary_ingredient: "waxy potatoes"
 primary_mass_g: 1000
 techniques: ["mandoline slicing", "layered assembly", "low-temperature baking"]
 principles: ["starch gelatinisation", "cream emulsion stability", "carryover setting"]
-tags: ["french", "potato", "oven", "gelatinization", "tender"]
+tags: ["dish-side-dish", "french", "potato", "oven", "gelatinization", "tender"]
 cssclass: modernist-recipe
 ---
 

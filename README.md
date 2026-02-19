@@ -144,6 +144,7 @@ Tags should remain minimal and functional.
 
 Suggested categories:
 
+Dish Type: `dish-main-course` `dish-side-dish` `dish-dessert` `dish-breakfast` `dish-appetizer` `dish-soup` `dish-sauce`  
 Cuisine: #mexican #french #italian  
 Protein: #pork #chicken #beef  
 Heat Source: #charcoal #oven #frying  

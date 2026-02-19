@@ -11,7 +11,7 @@ primary_ingredient: "dried pinto beans"
 primary_mass_g: 450
 techniques: ["bean hydration", "fond development", "spice blooming", "slow reduction"]
 principles: ["starch gelatinisation", "Maillard reaction", "spice fat solubility", "molasses bitterness balance"]
-tags: ["american", "beef", "pork", "oven", "beans", "tender"]
+tags: ["dish-side-dish", "american", "beef", "pork", "oven", "beans", "tender"]
 cssclass: modernist-recipe
 ---
 

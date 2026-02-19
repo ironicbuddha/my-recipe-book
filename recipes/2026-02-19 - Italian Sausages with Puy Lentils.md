@@ -11,7 +11,7 @@ primary_ingredient: "Italian pork sausages"
 primary_mass_g: 500
 techniques: ["browning", "sweating", "spice infusion", "braising"]
 principles: ["Maillard reaction", "fond development", "acid reduction", "spice oil infusion"]
-tags: ["italian", "pork", "lentils", "frying", "tender"]
+tags: ["dish-main-course", "italian", "pork", "lentils", "frying", "tender"]
 cssclass: modernist-recipe
 ---
 

@@ -11,7 +11,7 @@ primary_ingredient: "Sour cherries"
 primary_mass_g: 900
 techniques: [lamination, fruit-thickening, staged-baking]
 principles: [acid-balance, starch-gelation, thermal-control]
-tags: [cherry, fruit-pie, lattice, modernist]
+tags: [dish-dessert, cherry, fruit-pie, lattice, modernist]
 cssclass: modernist-recipe
 ---
 

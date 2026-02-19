@@ -11,7 +11,7 @@ primary_ingredient: "lamb neck (bone-in)"
 primary_mass_g: 1000
 techniques: ["dry-toasting spices", "aggressive browning", "spice blooming", "low braise", "starch thickening"]
 principles: ["Maillard reaction", "collagen breakdown", "spice fat solubility", "acid brightness", "starch absorption"]
-tags: ["south-african", "lamb", "tomato", "oven", "tender"]
+tags: ["dish-main-course", "south-african", "lamb", "tomato", "oven", "tender"]
 cssclass: modernist-recipe
 ---
 
