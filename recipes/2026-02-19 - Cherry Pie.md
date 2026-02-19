@@ -15,11 +15,11 @@ tags: [cherry, fruit-pie, lattice, modernist]
 cssclass: modernist-recipe
 ---
 
-# SOUR CHERRY PIE (ALL CAPS)
+# SOUR CHERRY PIE
 
-Yield: 1 × 23 cm pie  
-Portions: 8  
-Target Internal Temperature: 95–98 °C (fruit gel zone)
+Yield: 1 × 23 cm pie
+Portions: 8
+Target Internal Temperature: 95–98 C (fruit gel zone)
 
 Primary Ingredient Basis: `900 g sour cherries = 100%`
 
@@ -35,11 +35,11 @@ Primary Ingredient Basis: `900 g sour cherries = 100%`
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | All-purpose flour | 375 g | 41.7% |
-> > | Unsalted butter (frozen) | 250 g | 27.8% |
-> > | Solid vegetable fat (optional) | 60 g | 6.7% |
-> > | Fine salt | 5 g | 0.6% |
-> > | Ice-cold water | 135 g | 15.0% |
+> > | All-purpose flour | 375 g | 41.70% |
+> > | Unsalted butter (frozen) | 250 g | 27.80% |
+> > | Solid vegetable fat (optional) | 60 g | 6.70% |
+> > | Fine salt | 5 g | 0.60% |
+> > | Ice-cold water | 135 g | 15.00% |
 >
 > > [!column]
 > > ### Method
@@ -67,13 +67,13 @@ Primary Ingredient Basis: `900 g sour cherries = 100%`
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | Sour cherries (frozen, pitted) | 900 g | 100.0% |
-> > | Granulated sugar | 150 g | 16.7% |
-> > | Cornstarch | 45 g | 5.0% |
-> > | Lemon juice | 15 g | 1.7% |
-> > | Unsalted butter (dots) | 30 g | 3.3% |
-> > | Almond extract | 5 g | 0.6% |
-> > | Fine salt | 3 g | 0.3% |
+> > | Sour cherries (frozen, pitted) | 900 g | 100.00% |
+> > | Granulated sugar | 150 g | 16.70% |
+> > | Cornstarch | 45 g | 5.00% |
+> > | Lemon juice | 15 g | 1.70% |
+> > | Unsalted butter (dots) | 30 g | 3.30% |
+> > | Almond extract | 5 g | 0.60% |
+> > | Fine salt | 3 g | 0.30% |
 >
 > > [!column]
 > > ### Method
@@ -101,40 +101,39 @@ Primary Ingredient Basis: `900 g sour cherries = 100%`
 > > ### Components
 > > | Parameter | Value | Scaling |
 > > | --- | --- | --- |
-> > | Initial bake | 200 °C | — |
+> > | Initial bake | 200 C | — |
 > > | Duration | 20 min | — |
-> > | Finish temp | 180 °C | — |
+> > | Finish temp | 180 C | — |
 > > | Finish time | 35–45 min | — |
 >
 > > [!column]
 > > ### Method
-> > 1. Bake 20 min at 200 °C.
-> > 2. Reduce to 180 °C.
+> > 1. Bake 20 min at 200 C.
+> > 2. Reduce to 180 C.
 > > 3. Bake until filling bubbles thickly through vents.
-> > 4. Internal temp should reach ~96 °C to activate cornstarch fully.
+> > 4. Internal temp should reach ~96 C to activate cornstarch fully.
 > > 5. Cool minimum 3 hours before slicing.
 
 </div>
 
 ## STRUCTURAL NOTES
 
-Cornstarch gelatinises at ~95 °C.  
-Filling must visibly bubble to ensure full activation.  
-Underbaked fruit pie = starch not fully set → runny slice.  
-Lattice improves evaporation and prevents trapped steam.  
-Sour cherries provide natural acidity; sugar is restrained for balance.
+- Cornstarch gelatinises at ~95 C.
+- Filling must visibly bubble to ensure full activation.
+- Underbaked fruit pie means starch not fully set, resulting in runny slice.
+- Lattice improves evaporation and prevents trapped steam.
+- Sour cherries provide natural acidity; sugar is restrained for balance.
 
 ## FAILURE MODES
 
 - Symptom: Runny filling.
-  - Likely cause: Insufficient internal temperature.
-  - Corrective action: Bake until sustained bubbling; verify ~96 °C.
+- Likely cause: Insufficient internal temperature.
+- Corrective action: Bake until sustained bubbling; verify ~96 C.
 
 - Symptom: Gummy texture.
-  - Likely cause: Excess starch.
-  - Corrective action: Reduce cornstarch by 5–10%.
+- Likely cause: Excess starch.
+- Corrective action: Reduce cornstarch by 5–10%.
 
 - Symptom: Soggy bottom.
-  - Likely cause: Excess cherry liquid.
-  - Corrective action: Drain cherries slightly; maintain high initial heat.
-
+- Likely cause: Excess cherry liquid.
+- Corrective action: Drain cherries slightly; maintain high initial heat.
