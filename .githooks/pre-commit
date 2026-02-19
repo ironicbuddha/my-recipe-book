@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+echo "Running repository lint checks..."
+./scripts/validate_content.sh
+echo "Lint checks passed."

@@ -1,0 +1,9 @@
+# Obsidian local state
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache/
+.obsidian/plugins/
+.obsidian/snippets/
+
+# macOS
+.DS_Store
