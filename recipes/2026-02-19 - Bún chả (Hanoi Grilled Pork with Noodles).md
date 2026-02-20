@@ -9,9 +9,9 @@ portions: 4
 target_internal_temperature_c: 68
 primary_ingredient: "Pork shoulder"
 primary_mass_g: 500
-techniques: [marination, caramelization, grilling, emulsified dipping sauce]
-principles: [sweet-sour-salt balance, Maillard reaction, fresh-herb contrast]
-tags: [dish-main-course, vietnamese, noodles, grilled, street-food]
+techniques: ["marination", "caramelization", "grilling", "emulsified dipping sauce"]
+principles: ["sweet-sour-salt balance", "Maillard reaction", "fresh-herb contrast"]
+tags: ["dish-main-course", "vietnamese", "pork", "noodles", "grilled", "street-food"]
 cssclass: modernist-recipe
 ---
 
@@ -67,7 +67,7 @@ Primary Ingredient Basis: `500 g pork shoulder = 100%`
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | Marinated pork (from Phase A) | 800 g | 160.00% |
+> > | Marinated pork (from Phase A) | 700 g | 140.00% |
 > > | Neutral oil (for brushing) | 10 g | 2.00% |
 >
 > > [!column]

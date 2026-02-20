@@ -9,9 +9,9 @@ portions: 4
 target_internal_temperature_c: 54
 primary_ingredient: "Beef sirloin"
 primary_mass_g: 500
-techniques: [marination, high-heat grilling, rapid caramelization, fresh herb assembly]
-principles: [Maillard reaction, acid-salt balance, herbaceous contrast, thin slicing across grain]
-tags: [dish-main-course, vietnamese, noodles, grilled, beef]
+techniques: ["marination", "high-heat grilling", "rapid caramelization", "fresh herb assembly"]
+principles: ["Maillard reaction", "acid-salt balance", "herbaceous contrast", "thin slicing across grain"]
+tags: ["dish-main-course", "vietnamese", "beef", "noodles", "grilled"]
 cssclass: modernist-recipe
 ---
 
