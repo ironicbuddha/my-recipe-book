@@ -27,6 +27,8 @@ Primary Ingredient Basis: `200 g pecans = 100%`
 
 ## PHASE A — LAMINATED BUTTER CRUST (BOTTOM ONLY)
 
+Single-disc formula for one 23 cm bottom crust.
+
 ---
 
 > [!columns]
@@ -35,18 +37,18 @@ Primary Ingredient Basis: `200 g pecans = 100%`
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | All-purpose flour | 375 g | 187.50% |
-> > | Unsalted butter (frozen) | 250 g | 125.00% |
-> > | Solid vegetable fat (optional) | 60 g | 30.00% |
-> > | Fine salt | 5 g | 2.50% |
-> > | Ice-cold water | 135 g | 67.50% |
+> > | All-purpose flour | 188 g | 93.75% |
+> > | Unsalted butter (frozen) | 125 g | 62.50% |
+> > | Solid vegetable fat (optional) | 30 g | 15.00% |
+> > | Fine salt | 2.5 g | 1.25% |
+> > | Ice-cold water | 68 g | 34.00% |
 >
 > > [!column]
 > > ### Method
 > > 1. Whisk flour and salt.
 > > 2. Grate frozen butter into flour; toss gently to coat without smearing.
 > > 3. Add water gradually until dough just holds when pressed.
-> > 4. Press into disc; rest 30–60 min.
+> > 4. Press into one disc; rest 30–60 min.
 > > 5. Roll to fit 23 cm tin. Do not stretch.
 > > 6. Trim with 1–1.5 cm overhang; crimp.
 > > 7. Wrap tightly and refrigerate overnight.
