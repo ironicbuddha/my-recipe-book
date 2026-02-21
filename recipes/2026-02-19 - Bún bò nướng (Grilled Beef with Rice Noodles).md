@@ -4,11 +4,11 @@ date: 2026-02-19
 type: recipe
 status: final
 version: v1.0
-yield: ~1.2 kg finished components
-portions: 4
+yield: "2 portions"
+portions: 2
 target_internal_temperature_c: 54
 primary_ingredient: "Beef sirloin"
-primary_mass_g: 500
+primary_mass_g: 250
 techniques: ["marination", "high-heat grilling", "rapid caramelization", "fresh herb assembly"]
 principles: ["Maillard reaction", "acid-salt balance", "herbaceous contrast", "thin slicing across grain"]
 tags: ["dish-main-course", "vietnamese", "beef", "noodles", "grilled"]
@@ -17,11 +17,11 @@ cssclass: modernist-recipe
 
 # BÚN BÒ NƯỚNG (GRILLED BEEF WITH RICE NOODLES)
 
-Yield: ~1.2 kg total components
-Portions: 4
+Yield: 2 portions
+Portions: 2
 Target Internal Temperature: 54 C (medium-rare; do not exceed 57 C)
 
-Primary Ingredient Basis: `500 g beef sirloin = 100%`
+Primary Ingredient Basis: `250 g beef sirloin = 100%`
 
 <div class="modernist-phase">
 
@@ -35,16 +35,16 @@ Primary Ingredient Basis: `500 g beef sirloin = 100%`
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | Beef sirloin or flank, thinly sliced across grain | 500 g | 100.00% |
-> > | Fish sauce | 25 g | 5.00% |
-> > | Light soy sauce | 15 g | 3.00% |
-> > | Sugar (palm or white) | 20 g | 4.00% |
-> > | Honey | 10 g | 2.00% |
-> > | Garlic, minced | 12 g | 2.40% |
-> > | Lemongrass (white part), finely minced | 25 g | 5.00% |
-> > | Shallots, minced | 30 g | 6.00% |
-> > | Black pepper | 3 g | 0.60% |
-> > | Neutral oil | 15 g | 3.00% |
+> > | Beef sirloin or flank, thinly sliced across grain | 250 g | 100.00% |
+> > | Fish sauce | 12.5 g | 5.00% |
+> > | Light soy sauce | 7.5 g | 3.00% |
+> > | Sugar (palm or white) | 10 g | 4.00% |
+> > | Honey | 5 g | 2.00% |
+> > | Garlic, minced | 6 g | 2.40% |
+> > | Lemongrass (white part), finely minced | 12.5 g | 5.00% |
+> > | Shallots, minced | 15 g | 6.00% |
+> > | Black pepper | 1.5 g | 0.60% |
+> > | Neutral oil | 7.5 g | 3.00% |
 >
 > > [!column]
 > > ### Method
@@ -69,8 +69,8 @@ Primary Ingredient Basis: `500 g beef sirloin = 100%`
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | Marinated beef (from Phase A) | 500 g | 100.00% |
-> > | Neutral oil (for grill) | 10 g | 2.00% |
+> > | Marinated beef (from Phase A) | 250 g | 100.00% |
+> > | Neutral oil (for grill) | 5 g | 2.00% |
 >
 > > [!column]
 > > ### Method
@@ -96,17 +96,17 @@ Primary Ingredient Basis: `500 g beef sirloin = 100%`
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | Fish sauce | 60 g | 12.00% |
-> > | Water | 60 g | 12.00% |
-> > | Rice vinegar | 60 g | 12.00% |
-> > | Sugar | 30 g | 6.00% |
-> > | Lime juice | 30 g | 6.00% |
-> > | Garlic, minced | 10 g | 2.00% |
-> > | Red chili, sliced | 5 g | 1.00% |
-> > | Carrot, thinly sliced | 50 g | 10.00% |
-> > | Rice vermicelli (dry) | 400 g | 80.00% |
-> > | Lettuce & mixed herbs (mint, Thai basil, coriander) | 200 g | 40.00% |
-> > | Roasted peanuts, crushed | 40 g | 8.00% |
+> > | Fish sauce | 30 g | 12.00% |
+> > | Water | 30 g | 12.00% |
+> > | Rice vinegar | 30 g | 12.00% |
+> > | Sugar | 15 g | 6.00% |
+> > | Lime juice | 15 g | 6.00% |
+> > | Garlic, minced | 5 g | 2.00% |
+> > | Red chili, sliced | 2.5 g | 1.00% |
+> > | Carrot, thinly sliced | 25 g | 10.00% |
+> > | Rice vermicelli (dry) | 200 g | 80.00% |
+> > | Lettuce & mixed herbs (mint, Thai basil, coriander) | 100 g | 40.00% |
+> > | Roasted peanuts, crushed | 20 g | 8.00% |
 >
 > > [!column]
 > > ### Method

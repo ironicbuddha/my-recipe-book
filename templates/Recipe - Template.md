@@ -4,8 +4,8 @@ date: YYYY-MM-DD
 type: recipe
 status: draft
 version: v1.0
-yield: ""
-portions: 0
+yield: "2 portions"
+portions: 2
 target_internal_temperature_c: 0
 primary_ingredient: ""
 primary_mass_g: 0
@@ -17,8 +17,8 @@ cssclass: modernist-recipe
 
 # RECIPE NAME (ALL CAPS)
 
-Yield:
-Portions:
+Yield: 2 portions
+Portions: 2
 Target Internal Temperature:
 
 Primary Ingredient Basis: `0 g = 100%`

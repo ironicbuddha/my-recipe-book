@@ -4,11 +4,11 @@ date: 2026-02-19
 type: recipe
 status: canonical
 version: v1.0
-yield: "4 tasting portions"
-portions: 4
+yield: "2 portions"
+portions: 2
 target_internal_temperature_c: null
 primary_ingredient: "aged Manchego (12+ months)"
-primary_mass_g: 200
+primary_mass_g: 100
 techniques: ["infusion", "fine grinding", "sifting"]
 principles: ["sweet-bitter contrast", "aromatic infusion", "flavour threshold management"]
 tags: ["dish-appetizer", "spanish", "cheese", "honey", "coffee", "tasting plate"]
@@ -17,11 +17,11 @@ cssclass: modernist-recipe
 
 # MANCHEGO WITH THYME-INFUSED HONEY & COFFEE DUST
 
-Yield: 4 small tasting portions
-Portions: 4
+Yield: 2 portions
+Portions: 2
 Target Serving Temperature: 18–20 C (cool room temperature)
 
-Primary Ingredient Basis: `200 g aged Manchego = 100%`
+Primary Ingredient Basis: `100 g aged Manchego = 100%`
 
 Sweet–bitter contrast plate. Best served at cool room temperature.
 
@@ -37,7 +37,7 @@ Sweet–bitter contrast plate. Best served at cool room temperature.
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | Aged Manchego (12+ months) | 200 g | 100.00% |
+> > | Aged Manchego (12+ months) | 100 g | 100.00% |
 >
 > > [!column]
 > > ### Method
@@ -60,8 +60,8 @@ Sweet–bitter contrast plate. Best served at cool room temperature.
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | Good-quality honey (wildflower preferred) | 60 g | 30.00% |
-> > | Fresh thyme leaves | 2 g | 1.00% |
+> > | Good-quality honey (wildflower preferred) | 30 g | 30.00% |
+> > | Fresh thyme leaves | 1 g | 1.00% |
 >
 > > [!column]
 > > ### Method
@@ -86,7 +86,7 @@ Sweet–bitter contrast plate. Best served at cool room temperature.
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | Whole coffee beans (medium roast) | 5 g | 2.50% |
+> > | Whole coffee beans (medium roast) | 2.5 g | 2.50% |
 >
 > > [!column]
 > > ### Method

@@ -4,11 +4,11 @@ date: 2026-02-19
 type: recipe
 status: canonical
 version: v2.0
-yield: "~2.2 kg finished"
-portions: 4–6
+yield: "2 portions"
+portions: 2
 target_internal_temperature_c: null
 primary_ingredient: "lamb neck (bone-in)"
-primary_mass_g: 1000
+primary_mass_g: 500
 techniques: ["dry-toasting spices", "aggressive browning", "spice blooming", "low braise", "starch thickening"]
 principles: ["Maillard reaction", "collagen breakdown", "spice fat solubility", "acid brightness", "starch absorption"]
 tags: ["dish-main-course", "south-african", "lamb", "tomato", "oven", "tender"]
@@ -17,11 +17,11 @@ cssclass: modernist-recipe
 
 # TOMATO BREDIE
 
-Yield: ~2.2 kg finished
-Portions: 4–6
+Yield: 2 portions
+Portions: 2
 Target: texture-driven endpoint (lamb collapsing, gravy thick and clingy)
 
-Primary Ingredient Basis: `1000 g lamb neck (bone-in) = 100%`
+Primary Ingredient Basis: `500 g lamb neck (bone-in) = 100%`
 
 Cape Malay cucina povera — refined. Tomato-forward, lamb-soft, warm spice present but not dominant, bright lift at finish.
 
@@ -37,9 +37,9 @@ Cape Malay cucina povera — refined. Tomato-forward, lamb-soft, warm spice pres
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | Coriander seed (whole) | 8 g | 0.80% |
-> > | Cloves (whole) | 1 g | 0.10% |
-> > | Cinnamon stick | 3 g | 0.30% |
+> > | Coriander seed (whole) | 4 g | 0.80% |
+> > | Cloves (whole) | 0.5 g | 0.10% |
+> > | Cinnamon stick | 1.5 g | 0.30% |
 >
 > > [!column]
 > > ### Method
@@ -63,9 +63,9 @@ Cape Malay cucina povera — refined. Tomato-forward, lamb-soft, warm spice pres
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | Olive oil (cooking) | 30 g | 3.00% |
-> > | Lamb neck (bone-in) | 1000 g | 100.00% |
-> > | Onion, sliced | 300 g | 30.00% |
+> > | Olive oil (cooking) | 15 g | 3.00% |
+> > | Lamb neck (bone-in) | 500 g | 100.00% |
+> > | Onion, sliced | 150 g | 30.00% |
 >
 > > [!column]
 > > ### Method
@@ -90,11 +90,11 @@ Cape Malay cucina povera — refined. Tomato-forward, lamb-soft, warm spice pres
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | Garlic | 15 g | 1.50% |
-> > | Fresh ginger (reserve 5 g for Phase F) | 15 g | 1.50% |
-> > | Tomato paste | 30 g | 3.00% |
+> > | Garlic | 7.5 g | 1.50% |
+> > | Fresh ginger (reserve 5 g for Phase F) | 7.5 g | 1.50% |
+> > | Tomato paste | 15 g | 3.00% |
 > > | Ground spices | from Phase A | — |
-> > | Mild Cape Malay curry powder | 5 g | 0.50% |
+> > | Mild Cape Malay curry powder | 2.5 g | 0.50% |
 >
 > > [!column]
 > > ### Method
@@ -118,9 +118,9 @@ Cape Malay cucina povera — refined. Tomato-forward, lamb-soft, warm spice pres
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | Tomato (good Italian tinned) | 400 g | 40.00% |
+> > | Tomato (good Italian tinned) | 200 g | 40.00% |
 > > | Cinnamon stick | from Phase A | — |
-> > | Salt (initial) | 12 g | 1.20% |
+> > | Salt (initial) | 6 g | 1.20% |
 >
 > > [!column]
 > > ### Method
@@ -146,7 +146,7 @@ Cape Malay cucina povera — refined. Tomato-forward, lamb-soft, warm spice pres
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | Potato, chunked | 300 g | 30.00% |
+> > | Potato, chunked | 150 g | 30.00% |
 >
 > > [!column]
 > > ### Method
@@ -170,12 +170,12 @@ Cape Malay cucina povera — refined. Tomato-forward, lamb-soft, warm spice pres
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | Remaining ginger, micro-grated | 5 g | 0.50% |
+> > | Remaining ginger, micro-grated | 2.5 g | 0.50% |
 > > | Reserved toasted coriander | from Phase A | — |
-> > | Red wine vinegar | 15 g | 1.50% |
-> > | Flat leaf parsley | 20 g | 2.00% |
+> > | Red wine vinegar | 7.5 g | 1.50% |
+> > | Flat leaf parsley | 10 g | 2.00% |
 > > | Salt + black pepper | to final balance | — |
-> > | Olive oil (finishing drizzle) | 10 g | 1.00% |
+> > | Olive oil (finishing drizzle) | 5 g | 1.00% |
 >
 > > [!column]
 > > ### Method

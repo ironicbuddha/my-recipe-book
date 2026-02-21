@@ -4,8 +4,8 @@ date: 2026-02-19
 type: recipe
 status: tested
 version: v1.0
-yield: ~750 g sauce + pasta
-portions: 2–3
+yield: "2 portions"
+portions: 2
 target_internal_temperature_c: null
 primary_ingredient: guanciale
 primary_mass_g: 150
@@ -17,8 +17,8 @@ cssclass: modernist-recipe
 
 # GUANCIALE, OLIVE & CHILI PASTA SAUCE
 
-Yield: ~750 g finished dish
-Portions: 2–3
+Yield: 2 portions
+Portions: 2
 Target Internal Temperature: N/A
 
 Primary Ingredient Basis: `150 g guanciale = 100%`

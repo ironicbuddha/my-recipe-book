@@ -4,7 +4,7 @@ date: 2026-02-19
 type: recipe
 status: canonical
 version: v1.0
-yield: "2 servings"
+yield: "2 portions"
 portions: 2
 target_internal_temperature_c: null
 primary_ingredient: "Italian pork sausages"
@@ -17,7 +17,7 @@ cssclass: modernist-recipe
 
 # ITALIAN SAUSAGES WITH PUY LENTILS, SPICED TOMATO & RED WINE VINEGAR
 
-Yield: 2 servings
+Yield: 2 portions
 Portions: 2
 Total Time: ~1 hour
 

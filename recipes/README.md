@@ -11,3 +11,5 @@ Rules:
 - Use PHASE sections in chronological order.
 - Use metric units only (`g`, `ml`, `C`).
 - Define a primary mass basis and percentage scaling.
+- For linearly scalable dishes, use a 2-portion canonical base.
+- Keep fixed-yield sizing only for batch-constrained formats (e.g., full pies, slab brownies).

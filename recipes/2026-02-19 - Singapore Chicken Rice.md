@@ -4,11 +4,11 @@ date: 2026-02-19
 type: recipe
 status: canonical
 version: v1.0
-yield: "4–6 servings"
-portions: 4–6
+yield: "2 portions"
+portions: 2
 target_internal_temperature_c: null
 primary_ingredient: "whole chicken"
-primary_mass_g: 1600
+primary_mass_g: 800
 techniques: ["poaching", "ice bath shocking", "fat-toasted rice", "sauce emulsion"]
 principles: ["collagen extraction", "starch absorption", "aromatic fat infusion", "thermal shock for skin texture"]
 tags: ["dish-main-course", "singaporean", "chinese", "chicken", "rice", "tender"]
@@ -17,11 +17,11 @@ cssclass: modernist-recipe
 
 # SINGAPORE CHICKEN RICE (HAINANESE)
 
-Yield: 4–6 servings
-Portions: 4–6
+Yield: 2 portions
+Portions: 2
 Target Serving Temperature: room temperature (chicken), hot (rice, broth)
 
-Primary Ingredient Basis: `1600 g whole chicken = 100%`
+Primary Ingredient Basis: `800 g whole chicken = 100%`
 
 <div class="modernist-phase">
 
@@ -35,11 +35,11 @@ Primary Ingredient Basis: `1600 g whole chicken = 100%`
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | Whole chicken | 1600 g | 100.00% |
-> > | Fresh ginger, smashed | 80 g | 5.00% |
-> > | Spring onions | 120 g | 7.50% |
-> > | Salt (for cleaning + seasoning) | 24 g | 1.50% |
-> > | Water (for poaching) | ~4000 g | — |
+> > | Whole chicken | 800 g | 100.00% |
+> > | Fresh ginger, smashed | 40 g | 5.00% |
+> > | Spring onions | 60 g | 7.50% |
+> > | Salt (for cleaning + seasoning) | 12 g | 1.50% |
+> > | Water (for poaching) | ~2000 g | — |
 >
 > > [!column]
 > > ### Method
@@ -68,12 +68,12 @@ Primary Ingredient Basis: `1600 g whole chicken = 100%`
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | Jasmine rice | 400 g | 25.00% |
-> > | Chicken fat (or neutral oil) | 32 g | 2.00% |
-> > | Garlic | 20 g | 1.25% |
-> > | Fresh ginger | 30 g | 1.90% |
-> > | Reserved chicken stock | 600 g | 37.50% |
-> > | Salt | 6 g | 0.40% |
+> > | Jasmine rice | 200 g | 25.00% |
+> > | Chicken fat (or neutral oil) | 16 g | 2.00% |
+> > | Garlic | 10 g | 1.25% |
+> > | Fresh ginger | 15 g | 1.90% |
+> > | Reserved chicken stock | 300 g | 37.50% |
+> > | Salt | 3 g | 0.40% |
 >
 > > [!column]
 > > ### Method
@@ -100,9 +100,9 @@ Primary Ingredient Basis: `1600 g whole chicken = 100%`
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | Fresh ginger, very finely grated | 60 g | 3.75% |
-> > | Neutral oil | 80 g | 5.00% |
-> > | Salt | 6 g | 0.40% |
+> > | Fresh ginger, very finely grated | 30 g | 3.75% |
+> > | Neutral oil | 40 g | 5.00% |
+> > | Salt | 3 g | 0.40% |
 >
 > > [!column]
 > > ### Method
@@ -126,13 +126,13 @@ Primary Ingredient Basis: `1600 g whole chicken = 100%`
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | Fresh red chillies | 40 g | 2.50% |
-> > | Garlic | 20 g | 1.25% |
-> > | Fresh ginger | 20 g | 1.25% |
-> > | Lime juice | 40 g | 2.50% |
-> > | Chicken stock | 40 g | 2.50% |
-> > | Sugar | 8 g | 0.50% |
-> > | Salt | 4 g | 0.25% |
+> > | Fresh red chillies | 20 g | 2.50% |
+> > | Garlic | 10 g | 1.25% |
+> > | Fresh ginger | 10 g | 1.25% |
+> > | Lime juice | 20 g | 2.50% |
+> > | Chicken stock | 20 g | 2.50% |
+> > | Sugar | 4 g | 0.50% |
+> > | Salt | 2 g | 0.25% |
 >
 > > [!column]
 > > ### Method
@@ -156,9 +156,9 @@ Primary Ingredient Basis: `1600 g whole chicken = 100%`
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | Cucumber, sliced | 200 g | 12.50% |
-> > | Fresh coriander (optional) | 20 g | 1.25% |
-> > | Light soy sauce (optional drizzle) | 20 g | 1.25% |
+> > | Cucumber, sliced | 100 g | 12.50% |
+> > | Fresh coriander (optional) | 10 g | 1.25% |
+> > | Light soy sauce (optional drizzle) | 10 g | 1.25% |
 > > | Extra broth from stock | as desired | — |
 >
 > > [!column]

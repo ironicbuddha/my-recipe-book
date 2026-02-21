@@ -4,11 +4,11 @@ date: 2026-02-19
 type: recipe
 status: final
 version: v1.0
-yield: 4 portions
-portions: 4
+yield: "2 portions"
+portions: 2
 target_internal_temperature_c: 60
 primary_ingredient: "Pork (shoulder / collar / loin)"
-primary_mass_g: 1000
+primary_mass_g: 500
 techniques: [sous-vide, surface dehydration, hibachi sear, high-heat charring]
 principles: [maillard reaction, moisture control, carryover cooking, acid balance]
 tags: [dish-main-course, pork, hibachi, spanish, green sauce, modernist]
@@ -17,11 +17,11 @@ cssclass: modernist-recipe
 
 # HIBACHI PORK WITH CHARRED GREENS & SPANISH GREEN SAUCE
 
-Yield: 4 portions
-Portions: 4
+Yield: 2 portions
+Portions: 2
 Target Internal Temperature: 58–60 C
 
-Primary Ingredient Basis: `1000 g pork = 100%`
+Primary Ingredient Basis: `500 g pork = 100%`
 
 <div class="modernist-phase">
 
@@ -35,12 +35,12 @@ Primary Ingredient Basis: `1000 g pork = 100%`
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | Pork (shoulder / collar / loin) | 1000 g | 100.00% |
-> > | Fine salt | 15 g | 1.50% |
-> > | Smoked paprika | 10 g | 1.00% |
-> > | Ground cumin | 5 g | 0.50% |
-> > | Garlic (minced) | 5 g | 0.50% |
-> > | Olive oil | 10 g | 1.00% |
+> > | Pork (shoulder / collar / loin) | 500 g | 100.00% |
+> > | Fine salt | 7.5 g | 1.50% |
+> > | Smoked paprika | 5 g | 1.00% |
+> > | Ground cumin | 2.5 g | 0.50% |
+> > | Garlic (minced) | 2.5 g | 0.50% |
+> > | Olive oil | 5 g | 1.00% |
 >
 > > [!column]
 > > ### Method
@@ -66,9 +66,9 @@ Primary Ingredient Basis: `1000 g pork = 100%`
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | Prepared pork (from Phase A) | 1000 g | 100.00% |
-> > | Neutral oil (for brushing) | 10 g | 1.00% |
-> > | Additional smoked paprika (optional refresh) | 3 g | 0.30% |
+> > | Prepared pork (from Phase A) | 500 g | 100.00% |
+> > | Neutral oil (for brushing) | 5 g | 1.00% |
+> > | Additional smoked paprika (optional refresh) | 1.5 g | 0.30% |
 >
 > > [!column]
 > > ### Method
@@ -95,10 +95,10 @@ Primary Ingredient Basis: `1000 g pork = 100%`
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | Mixed greens (broccoli / beans / courgettes) | 600 g | 60.00% |
-> > | Olive oil | 15 g | 1.50% |
-> > | Fine salt | 8 g | 0.80% |
-> > | Lemon juice or sherry vinegar | 20 g | 2.00% |
+> > | Mixed greens (broccoli / beans / courgettes) | 300 g | 60.00% |
+> > | Olive oil | 7.5 g | 1.50% |
+> > | Fine salt | 4 g | 0.80% |
+> > | Lemon juice or sherry vinegar | 10 g | 2.00% |
 >
 > > [!column]
 > > ### Method
@@ -123,12 +123,12 @@ Primary Ingredient Basis: `1000 g pork = 100%`
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | Flat-leaf parsley | 50 g | 5.00% |
-> > | Olive oil | 80 g | 8.00% |
-> > | Sherry vinegar | 20 g | 2.00% |
-> > | Garlic (finely minced) | 5 g | 0.50% |
-> > | Fine salt | 10 g | 1.00% |
-> > | Lemon zest (optional) | 2 g | 0.20% |
+> > | Flat-leaf parsley | 25 g | 5.00% |
+> > | Olive oil | 40 g | 8.00% |
+> > | Sherry vinegar | 10 g | 2.00% |
+> > | Garlic (finely minced) | 2.5 g | 0.50% |
+> > | Fine salt | 5 g | 1.00% |
+> > | Lemon zest (optional) | 1 g | 0.20% |
 >
 > > [!column]
 > > ### Method

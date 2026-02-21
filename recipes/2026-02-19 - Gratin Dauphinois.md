@@ -4,11 +4,11 @@ date: 2026-02-19
 type: recipe
 status: canonical
 version: v1.0
-yield: "~1.7 kg finished"
-portions: 4–6
+yield: "2 portions"
+portions: 2
 target_internal_temperature_c: "93–96"
 primary_ingredient: "waxy potatoes"
-primary_mass_g: 1000
+primary_mass_g: 500
 techniques: ["mandoline slicing", "layered assembly", "low-temperature baking"]
 principles: ["starch gelatinisation", "cream emulsion stability", "carryover setting"]
 tags: ["dish-side-dish", "french", "potato", "oven", "gelatinization", "tender"]
@@ -17,11 +17,11 @@ cssclass: modernist-recipe
 
 # GRATIN DAUPHINOIS
 
-Yield: ~1.7 kg finished
-Portions: 4–6
+Yield: 2 portions
+Portions: 2
 Target Internal Temperature: 93–96 C
 
-Primary Ingredient Basis: `1000 g waxy potatoes = 100%`
+Primary Ingredient Basis: `500 g waxy potatoes = 100%`
 
 <div class="modernist-phase">
 
@@ -35,11 +35,11 @@ Primary Ingredient Basis: `1000 g waxy potatoes = 100%`
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | Waxy potatoes | 1000 g | 100.00% |
-> > | Fine salt | 12 g | 1.20% |
-> > | White pepper | 1 g | 0.10% |
-> > | Garlic (finely grated) | 8 g | 0.80% |
-> > | Unsalted butter (for dish) | 15 g | 1.50% |
+> > | Waxy potatoes | 500 g | 100.00% |
+> > | Fine salt | 6 g | 1.20% |
+> > | White pepper | 0.5 g | 0.10% |
+> > | Garlic (finely grated) | 4 g | 0.80% |
+> > | Unsalted butter (for dish) | 7.5 g | 1.50% |
 >
 > > [!column]
 > > ### Method
@@ -64,7 +64,7 @@ Primary Ingredient Basis: `1000 g waxy potatoes = 100%`
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | Heavy cream (35%) | 700 g | 70.00% |
+> > | Heavy cream (35%) | 350 g | 70.00% |
 >
 > > [!column]
 > > ### Method

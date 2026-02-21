@@ -4,11 +4,11 @@ date: 2026-02-19
 type: recipe
 status: canonical
 version: v1.0
-yield: "~1.5 kg finished"
-portions: 4–6
+yield: "2 portions"
+portions: 2
 target_internal_temperature_c: "72–75"
 primary_ingredient: "whole chicken"
-primary_mass_g: 1500
+primary_mass_g: 750
 techniques: ["master stock poaching", "air-drying", "deep frying", "glaze reduction"]
 principles: ["aromatic infusion", "protein denaturation", "skin dehydration", "Maillard reaction"]
 tags: ["dish-main-course", "chinese", "chicken", "frying", "maillard", "crisp"]
@@ -17,11 +17,11 @@ cssclass: modernist-recipe
 
 # FRIED MASTER STOCK CHICKEN
 
-Yield: ~1.5 kg finished chicken
-Portions: 4–6
+Yield: 2 portions
+Portions: 2
 Target Internal Temperature: 72–75 C (thigh)
 
-Primary Ingredient Basis: `1500 g whole chicken = 100%`
+Primary Ingredient Basis: `750 g whole chicken = 100%`
 
 Soy-aromatic poached chicken, air-dried and deep-fried for blistered, crisp skin. Optimised for flavour penetration and structural skin integrity.
 
@@ -37,19 +37,19 @@ Soy-aromatic poached chicken, air-dried and deep-fried for blistered, crisp skin
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | Water | 3000 g | 200.00% |
-> > | Light soy sauce | 300 g | 20.00% |
-> > | Dark soy sauce | 75 g | 5.00% |
-> > | Shaoxing wine | 150 g | 10.00% |
-> > | Rock sugar | 90 g | 6.00% |
-> > | Ginger, crushed | 75 g | 5.00% |
-> > | Garlic cloves, smashed | 45 g | 3.00% |
-> > | Spring onions, crushed | 120 g | 8.00% |
-> > | Star anise | 6 g | 0.40% |
-> > | Cassia cinnamon | 5 g | 0.30% |
-> > | Cloves | 2 g | 0.13% |
-> > | Dried mandarin peel (optional) | 3 g | 0.20% |
-> > | White pepper | 3 g | 0.20% |
+> > | Water | 1500 g | 200.00% |
+> > | Light soy sauce | 150 g | 20.00% |
+> > | Dark soy sauce | 37.5 g | 5.00% |
+> > | Shaoxing wine | 75 g | 10.00% |
+> > | Rock sugar | 45 g | 6.00% |
+> > | Ginger, crushed | 37.5 g | 5.00% |
+> > | Garlic cloves, smashed | 22.5 g | 3.00% |
+> > | Spring onions, crushed | 60 g | 8.00% |
+> > | Star anise | 3 g | 0.40% |
+> > | Cassia cinnamon | 2.5 g | 0.30% |
+> > | Cloves | 1 g | 0.13% |
+> > | Dried mandarin peel (optional) | 1.5 g | 0.20% |
+> > | White pepper | 1.5 g | 0.20% |
 >
 > > [!column]
 > > ### Method
@@ -73,7 +73,7 @@ Soy-aromatic poached chicken, air-dried and deep-fried for blistered, crisp skin
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | Whole chicken (air-chilled preferred) | 1500 g | 100.00% |
+> > | Whole chicken (air-chilled preferred) | 750 g | 100.00% |
 > > | Master stock | from Phase A | — |
 >
 > > [!column]
@@ -122,7 +122,7 @@ Soy-aromatic poached chicken, air-dried and deep-fried for blistered, crisp skin
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | Cornflour or rice flour (light dusting) | 30 g | 2.00% |
+> > | Cornflour or rice flour (light dusting) | 15 g | 2.00% |
 > > | Neutral frying oil | as needed | — |
 >
 > > [!column]
@@ -149,9 +149,9 @@ Soy-aromatic poached chicken, air-dried and deep-fried for blistered, crisp skin
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | Reserved master stock | 250 g | 17.00% |
-> > | Honey or sugar | 20 g | 1.30% |
-> > | Rice vinegar | 20 g | 1.30% |
+> > | Reserved master stock | 125 g | 17.00% |
+> > | Honey or sugar | 10 g | 1.30% |
+> > | Rice vinegar | 10 g | 1.30% |
 >
 > > [!column]
 > > ### Method

@@ -4,11 +4,11 @@ date: 2026-02-19
 type: recipe
 status: canonical
 version: v1.0
-yield: "~2 kg finished"
-portions: 8–10
+yield: "2 portions"
+portions: 2
 target_internal_temperature_c: null
 primary_ingredient: "dried pinto beans"
-primary_mass_g: 450
+primary_mass_g: 113
 techniques: ["bean hydration", "fond development", "spice blooming", "slow reduction"]
 principles: ["starch gelatinisation", "Maillard reaction", "spice fat solubility", "molasses bitterness balance"]
 tags: ["dish-side-dish", "american", "beef", "pork", "oven", "beans", "tender"]
@@ -17,11 +17,11 @@ cssclass: modernist-recipe
 
 # COWBOY BEANS (MOLASSES, BEEF & SMOKE)
 
-Yield: ~2 kg finished beans
-Portions: 8–10
+Yield: 2 portions
+Portions: 2
 Target Internal Temperature: N/A (texture-driven endpoint)
 
-Primary Ingredient Basis: `450 g dried pinto beans = 100%`
+Primary Ingredient Basis: `113 g dried pinto beans = 100%`
 
 High-protein campfire style. Molasses-balanced, beer-enriched, slow reduction.
 
@@ -37,7 +37,7 @@ High-protein campfire style. Molasses-balanced, beer-enriched, slow reduction.
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | Dried pinto beans (or navy) | 450 g | 100.00% |
+> > | Dried pinto beans (or navy) | 112.5 g | 100.00% |
 > > | Water (for soaking + cooking) | as needed | — |
 >
 > > [!column]
@@ -62,8 +62,8 @@ High-protein campfire style. Molasses-balanced, beer-enriched, slow reduction.
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | Bacon, chopped | 200 g | 44.00% |
-> > | Beef (chuck or ground) | 300 g | 67.00% |
+> > | Bacon, chopped | 50 g | 44.00% |
+> > | Beef (chuck or ground) | 75 g | 67.00% |
 >
 > > [!column]
 > > ### Method
@@ -86,13 +86,13 @@ High-protein campfire style. Molasses-balanced, beer-enriched, slow reduction.
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | Onion, diced | 200 g | 44.00% |
-> > | Garlic, minced | 10 g | 2.00% |
-> > | Jalapeno, diced (optional) | 15 g | 3.00% |
-> > | Chili powder | 5 g | 1.00% |
-> > | Ground cumin | 3 g | 0.70% |
-> > | Smoked paprika | 2 g | 0.40% |
-> > | Black pepper | 2 g | 0.40% |
+> > | Onion, diced | 50 g | 44.00% |
+> > | Garlic, minced | 2.5 g | 2.00% |
+> > | Jalapeno, diced (optional) | 3.75 g | 3.00% |
+> > | Chili powder | 1.25 g | 1.00% |
+> > | Ground cumin | 0.75 g | 0.70% |
+> > | Smoked paprika | 0.5 g | 0.40% |
+> > | Black pepper | 0.5 g | 0.40% |
 >
 > > [!column]
 > > ### Method
@@ -117,13 +117,13 @@ High-protein campfire style. Molasses-balanced, beer-enriched, slow reduction.
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | Molasses | 80 g | 18.00% |
-> > | Dark brown sugar | 60 g | 13.00% |
-> > | Tomato sauce / crushed tomato | 120 g | 27.00% |
-> > | Yellow or Dijon mustard | 30 g | 7.00% |
-> > | Apple cider vinegar | 30 g | 7.00% |
-> > | Beer (lager or amber) | 250 g | 56.00% |
-> > | Worcestershire (optional) | 10 g | 2.00% |
+> > | Molasses | 20 g | 18.00% |
+> > | Dark brown sugar | 15 g | 13.00% |
+> > | Tomato sauce / crushed tomato | 30 g | 27.00% |
+> > | Yellow or Dijon mustard | 7.5 g | 7.00% |
+> > | Apple cider vinegar | 7.5 g | 7.00% |
+> > | Beer (lager or amber) | 62.5 g | 56.00% |
+> > | Worcestershire (optional) | 2.5 g | 2.00% |
 >
 > > [!column]
 > > ### Method

@@ -4,11 +4,11 @@ date: 2026-02-19
 type: recipe
 status: canonical
 version: v1.0
-yield: "8–10 pancakes"
-portions: 8–10
+yield: "2 portions"
+portions: 2
 target_internal_temperature_c: null
 primary_ingredient: "cake flour"
-primary_mass_g: 190
+primary_mass_g: 48
 techniques: ["dry whisking", "wet emulsification", "minimal fold", "griddle cooking"]
 principles: ["gluten limitation", "leavening activation", "Maillard reaction", "hydration ratio"]
 tags: ["dish-breakfast", "american", "breakfast", "frying", "maillard", "tender"]
@@ -17,11 +17,11 @@ cssclass: modernist-recipe
 
 # FLAPJACKS (AMERICAN PANCAKES)
 
-Yield: 8–10 pancakes
-Portions: 8–10
+Yield: 2 portions
+Portions: 2
 Target Surface Temperature: 175–185 C
 
-Primary Ingredient Basis: `190 g cake flour = 100%`
+Primary Ingredient Basis: `48 g cake flour = 100%`
 
 Breakfast is physics wearing maple syrup.
 
@@ -37,11 +37,11 @@ Breakfast is physics wearing maple syrup.
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | Cake flour | 190 g | 100.00% |
-> > | Sugar | 30 g | 15.80% |
-> > | Baking powder | 10 g | 5.30% |
-> > | Baking soda | 2.5 g | 1.30% |
-> > | Fine salt | 3 g | 1.60% |
+> > | Cake flour | 47.5 g | 100.00% |
+> > | Sugar | 7.5 g | 15.80% |
+> > | Baking powder | 2.5 g | 5.30% |
+> > | Baking soda | 0.62 g | 1.30% |
+> > | Fine salt | 0.75 g | 1.60% |
 >
 > > [!column]
 > > ### Method
@@ -64,11 +64,11 @@ Breakfast is physics wearing maple syrup.
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | Buttermilk | 300 g | 157.90% |
+> > | Buttermilk | 75 g | 157.90% |
 > > | (or milk 300 g + lemon juice 20 g) | — | — |
-> > | Whole egg | 50 g | 26.30% |
-> > | Butter, melted | 45 g | 23.70% |
-> > | Vanilla extract (optional) | 5 g | 2.60% |
+> > | Whole egg | 12.5 g | 26.30% |
+> > | Butter, melted | 11.25 g | 23.70% |
+> > | Vanilla extract (optional) | 1.25 g | 2.60% |
 >
 > > [!column]
 > > ### Method
@@ -118,7 +118,7 @@ Breakfast is physics wearing maple syrup.
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
 > > | Butter or neutral oil | as needed | — |
-> > | Batter per pancake | ~60 g | — |
+> > | Batter per pancake | ~15 g | — |
 >
 > > [!column]
 > > ### Method

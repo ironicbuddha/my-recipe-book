@@ -4,11 +4,11 @@ date: 2026-02-19
 type: recipe
 status: canonical
 version: v1.0
-yield: "~900 g finished"
-portions: 6
+yield: "2 portions"
+portions: 2
 target_internal_temperature_c: "60-62, rest to 65"
 primary_ingredient: "pork fillet"
-primary_mass_g: 600
+primary_mass_g: 200
 techniques: ["hibachi grilling", "blending", "char grilling"]
 principles: ["Maillard reaction", "protein denaturation", "enzymatic tenderization", "salt taste modulation"]
 tags: ["dish-main-course", "mexican", "pork", "charcoal", "maillard", "tender"]
@@ -17,11 +17,11 @@ cssclass: modernist-recipe
 
 # GRILLED PORK AL PASTOR (HIBACHI) WITH CHARRED PINEAPPLE-CHILLI SALSA
 
-Yield: ~900 g finished
-Portions: 6 tacos
+Yield: 2 portions
+Portions: 2
 Target Internal Temperature: 60-62 C, rest carryover to 65 C
 
-Primary Ingredient Basis: `600 g pork fillet = 100%`
+Primary Ingredient Basis: `200 g pork fillet = 100%`
 
 <div class="modernist-phase">
 
@@ -35,24 +35,24 @@ Primary Ingredient Basis: `600 g pork fillet = 100%`
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | Pork fillet | 600 g | 100.00% |
-> > | Grilled pineapple puree | 120 g | 20.00% |
-> > | Apple cider vinegar | 25 g | 4.17% |
-> > | Neutral oil | 20 g | 3.33% |
-> > | Achiote paste | 25 g | 4.17% |
-> > | Guajillo chile, rehydrated | 10 g | 1.67% |
-> > | Garlic | 5 g | 0.83% |
-> > | Salt | 5 g | 0.83% |
-> > | Cumin | 2 g | 0.33% |
-> > | Clove | 0.5 g | 0.08% |
-> > | Mexican oregano | 1 g | 0.17% |
+> > | Pork fillet | 200 g | 100.00% |
+> > | Grilled pineapple puree | 40 g | 20.00% |
+> > | Apple cider vinegar | 8.33 g | 4.17% |
+> > | Neutral oil | 6.67 g | 3.33% |
+> > | Achiote paste | 8.33 g | 4.17% |
+> > | Guajillo chile, rehydrated | 3.33 g | 1.67% |
+> > | Garlic | 1.67 g | 0.83% |
+> > | Salt | 1.67 g | 0.83% |
+> > | Cumin | 0.67 g | 0.33% |
+> > | Clove | 0.17 g | 0.08% |
+> > | Mexican oregano | 0.33 g | 0.17% |
 >
 > > [!column]
 > > ### Method
 > > 1. Combine pineapple puree, vinegar, oil, achiote, guajillo, garlic, salt, cumin, clove, and oregano; blend to a homogeneous marinade.
 > > 2. Coat pork fillet evenly with marinade in a non-reactive container.
 > > 3. Marinate refrigerated for 45 minutes to 2 hours.
-> > 4. If using pork shoulder (800 g basis), extend marination up to 6 hours.
+> > 4. If using pork shoulder (270 g basis), extend marination up to 6 hours.
 
 </div>
 
@@ -70,7 +70,7 @@ Primary Ingredient Basis: `600 g pork fillet = 100%`
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | Marinated pork fillet | 600 g raw basis | 100.00% |
+> > | Marinated pork fillet | 200 g raw basis | 100.00% |
 >
 > > [!column]
 > > ### Method
@@ -97,14 +97,14 @@ Primary Ingredient Basis: `600 g pork fillet = 100%`
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | Charred pineapple | 200 g | 33.33% |
-> > | Fresh red chilli | 5 g | 0.83% |
-> > | Red onion | 20 g | 3.33% |
-> > | Lime juice | 15 g | 2.50% |
-> > | Salt | 2 g | 0.33% |
-> > | Fresh coriander | 7 g | 1.2% |
-> > | Fresh Mint | 3 g | 0.5% |
-> > | Corn tortillas | 6 units | 1 tortilla per 100 g basis |
+> > | Charred pineapple | 66.67 g | 33.33% |
+> > | Fresh red chilli | 1.67 g | 0.83% |
+> > | Red onion | 6.67 g | 3.33% |
+> > | Lime juice | 5 g | 2.50% |
+> > | Salt | 0.67 g | 0.33% |
+> > | Fresh coriander | 2.33 g | 1.2% |
+> > | Fresh Mint | 1 g | 0.5% |
+> > | Corn tortillas | 2 units | 1 tortilla per 100 g basis |
 >
 > > [!column]
 > > ### Method

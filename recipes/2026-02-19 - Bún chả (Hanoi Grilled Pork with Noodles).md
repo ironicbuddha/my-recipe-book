@@ -4,11 +4,11 @@ date: 2026-02-19
 type: recipe
 status: final
 version: v1.0
-yield: ~1.4 kg finished components
-portions: 4
+yield: "2 portions"
+portions: 2
 target_internal_temperature_c: 68
 primary_ingredient: "Pork shoulder"
-primary_mass_g: 500
+primary_mass_g: 250
 techniques: ["marination", "caramelization", "grilling", "emulsified dipping sauce"]
 principles: ["sweet-sour-salt balance", "Maillard reaction", "fresh-herb contrast"]
 tags: ["dish-main-course", "vietnamese", "pork", "noodles", "grilled", "street-food"]
@@ -17,11 +17,11 @@ cssclass: modernist-recipe
 
 # BÚN CHẢ (HANOI GRILLED PORK WITH NOODLES)
 
-Yield: ~1.4 kg total components
-Portions: 4
+Yield: 2 portions
+Portions: 2
 Target Internal Temperature: 68 C
 
-Primary Ingredient Basis: `500 g pork shoulder = 100%`
+Primary Ingredient Basis: `250 g pork shoulder = 100%`
 
 <div class="modernist-phase">
 
@@ -35,14 +35,14 @@ Primary Ingredient Basis: `500 g pork shoulder = 100%`
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | Pork shoulder, thinly sliced | 500 g | 100.00% |
-> > | Pork mince (for patties) | 200 g | 40.00% |
-> > | Fish sauce | 30 g | 6.00% |
-> > | Sugar | 25 g | 5.00% |
-> > | Honey | 15 g | 3.00% |
-> > | Garlic, minced | 12 g | 2.40% |
-> > | Shallots, minced | 40 g | 8.00% |
-> > | Black pepper | 3 g | 0.60% |
+> > | Pork shoulder, thinly sliced | 250 g | 100.00% |
+> > | Pork mince (for patties) | 100 g | 40.00% |
+> > | Fish sauce | 15 g | 6.00% |
+> > | Sugar | 12.5 g | 5.00% |
+> > | Honey | 7.5 g | 3.00% |
+> > | Garlic, minced | 6 g | 2.40% |
+> > | Shallots, minced | 20 g | 8.00% |
+> > | Black pepper | 1.5 g | 0.60% |
 >
 > > [!column]
 > > ### Method
@@ -67,8 +67,8 @@ Primary Ingredient Basis: `500 g pork shoulder = 100%`
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | Marinated pork (from Phase A) | 700 g | 140.00% |
-> > | Neutral oil (for brushing) | 10 g | 2.00% |
+> > | Marinated pork (from Phase A) | 350 g | 140.00% |
+> > | Neutral oil (for brushing) | 5 g | 2.00% |
 >
 > > [!column]
 > > ### Method
@@ -93,16 +93,16 @@ Primary Ingredient Basis: `500 g pork shoulder = 100%`
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | Fish sauce | 60 g | 12.00% |
-> > | Water | 60 g | 12.00% |
-> > | Rice vinegar | 60 g | 12.00% |
-> > | Sugar | 30 g | 6.00% |
-> > | Lime juice | 30 g | 6.00% |
-> > | Garlic, minced | 10 g | 2.00% |
-> > | Red chili, sliced | 5 g | 1.00% |
-> > | Carrot, thinly sliced | 50 g | 10.00% |
-> > | Rice vermicelli (dry) | 400 g | 80.00% |
-> > | Lettuce & mixed herbs | 200 g | 40.00% |
+> > | Fish sauce | 30 g | 12.00% |
+> > | Water | 30 g | 12.00% |
+> > | Rice vinegar | 30 g | 12.00% |
+> > | Sugar | 15 g | 6.00% |
+> > | Lime juice | 15 g | 6.00% |
+> > | Garlic, minced | 5 g | 2.00% |
+> > | Red chili, sliced | 2.5 g | 1.00% |
+> > | Carrot, thinly sliced | 25 g | 10.00% |
+> > | Rice vermicelli (dry) | 200 g | 80.00% |
+> > | Lettuce & mixed herbs | 100 g | 40.00% |
 >
 > > [!column]
 > > ### Method

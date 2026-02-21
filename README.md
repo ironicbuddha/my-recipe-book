@@ -73,6 +73,7 @@ No ingredient may appear before it is used.
 ## Scaling Discipline
 
 All recipes define a primary mass basis.
+For dishes that scale linearly, canonical recipe quantities should target **2 portions**.
 
 Example:
 
@@ -87,6 +88,8 @@ This enables:
 - Structural comparison between recipes
 
 Avoid volumetric measures. Prefer grams.
+
+Batch-constrained formats (for example, full pies or slab brownies tied to pan geometry) may keep fixed-yield sizing.
 
 ---
 

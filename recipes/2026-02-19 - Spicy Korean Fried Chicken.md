@@ -4,11 +4,11 @@ date: 2026-02-19
 type: recipe
 status: canonical
 version: v1.0
-yield: "~1 kg finished"
-portions: 4
+yield: "2 portions"
+portions: 2
 target_internal_temperature_c: null
 primary_ingredient: "chicken wings or drumettes"
-primary_mass_g: 1000
+primary_mass_g: 500
 techniques: ["double frying", "starch batter coating", "sauce reduction"]
 principles: ["starch dehydration", "Maillard reaction", "sauce adhesion", "textural contrast"]
 tags: ["dish-main-course", "korean", "chicken", "frying", "crisp", "maillard"]
@@ -17,11 +17,11 @@ cssclass: modernist-recipe
 
 # SPICY KOREAN FRIED CHICKEN (YANGNYEOM DAK)
 
-Yield: ~1 kg finished chicken
-Portions: 4
+Yield: 2 portions
+Portions: 2
 Target: double-fried endpoint (deeply golden, audibly crisp)
 
-Primary Ingredient Basis: `1000 g chicken wings or drumettes = 100%`
+Primary Ingredient Basis: `500 g chicken wings or drumettes = 100%`
 
 Double-fried, starch-based coating for maximum crispness. Optimised for sauce adhesion without loss of crunch.
 
@@ -37,11 +37,11 @@ Double-fried, starch-based coating for maximum crispness. Optimised for sauce ad
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | Chicken wings or drumettes | 1000 g | 100.00% |
-> > | Salt | 10 g | 1.00% |
-> > | Black pepper | 2 g | 0.20% |
-> > | Garlic powder | 5 g | 0.50% |
-> > | Rice wine or dry sherry (optional) | 15 g | 1.50% |
+> > | Chicken wings or drumettes | 500 g | 100.00% |
+> > | Salt | 5 g | 1.00% |
+> > | Black pepper | 1 g | 0.20% |
+> > | Garlic powder | 2.5 g | 0.50% |
+> > | Rice wine or dry sherry (optional) | 7.5 g | 1.50% |
 >
 > > [!column]
 > > ### Method
@@ -64,11 +64,11 @@ Double-fried, starch-based coating for maximum crispness. Optimised for sauce ad
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | Cornstarch | 70 g | 7.00% |
-> > | Gluten-free flour mix (rice flour + potato starch) | 30 g | 3.00% |
-> > | Baking powder | 2 g | 0.20% |
-> > | Egg | 50 g | 5.00% |
-> > | Ice-cold water or sparkling water | 120 g | 12.00% |
+> > | Cornstarch | 35 g | 7.00% |
+> > | Gluten-free flour mix (rice flour + potato starch) | 15 g | 3.00% |
+> > | Baking powder | 1 g | 0.20% |
+> > | Egg | 25 g | 5.00% |
+> > | Ice-cold water or sparkling water | 60 g | 12.00% |
 >
 > > [!column]
 > > ### Method
@@ -120,15 +120,15 @@ Double-fried, starch-based coating for maximum crispness. Optimised for sauce ad
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | Gochujang | 40 g | 4.00% |
-> > | Ketchup | 60 g | 6.00% |
-> > | Soy sauce | 30 g | 3.00% |
-> > | Honey or brown sugar | 45 g | 4.50% |
-> > | Rice vinegar | 30 g | 3.00% |
-> > | Garlic, finely grated | 10 g | 1.00% |
-> > | Ginger, grated | 5 g | 0.50% |
-> > | Gochugaru | 10 g | 1.00% |
-> > | Sesame oil | 15 g | 1.50% |
+> > | Gochujang | 20 g | 4.00% |
+> > | Ketchup | 30 g | 6.00% |
+> > | Soy sauce | 15 g | 3.00% |
+> > | Honey or brown sugar | 22.5 g | 4.50% |
+> > | Rice vinegar | 15 g | 3.00% |
+> > | Garlic, finely grated | 5 g | 1.00% |
+> > | Ginger, grated | 2.5 g | 0.50% |
+> > | Gochugaru | 5 g | 1.00% |
+> > | Sesame oil | 7.5 g | 1.50% |
 >
 > > [!column]
 > > ### Method

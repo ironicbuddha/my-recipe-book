@@ -4,11 +4,11 @@ date: 2026-02-19
 type: recipe
 status: canonical
 version: v1.0
-yield: "4–6 servings"
-portions: 4–6
+yield: "2 portions"
+portions: 2
 target_internal_temperature_c: null
 primary_ingredient: "whole chicken"
-primary_mass_g: 1500
+primary_mass_g: 750
 techniques: ["blanching", "gentle poaching", "broth fortification", "mortar pounding", "paste frying"]
 principles: ["collagen extraction", "aromatic infusion", "emulsion clarity", "condiment layering"]
 tags: ["dish-soup", "lao", "chicken", "soup", "noodles", "tender"]
@@ -17,11 +17,11 @@ cssclass: modernist-recipe
 
 # LAO-INFLUENCED HERBACEOUS CHICKEN NOODLE SOUP WITH RED & GREEN JEOW
 
-Yield: 4–6 servings
-Portions: 4–6
+Yield: 2 portions
+Portions: 2
 Total Time: 2–2.5 hours
 
-Primary Ingredient Basis: `1500 g whole chicken = 100%`
+Primary Ingredient Basis: `750 g whole chicken = 100%`
 
 <div class="modernist-phase">
 
@@ -35,7 +35,7 @@ Primary Ingredient Basis: `1500 g whole chicken = 100%`
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | Chicken wing tips | 500 g | 33.00% |
+> > | Chicken wing tips | 250 g | 33.00% |
 > > | Cold water | as needed | — |
 >
 > > [!column]
@@ -62,15 +62,15 @@ Primary Ingredient Basis: `1500 g whole chicken = 100%`
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
 > > | Blanched wing tips | from Phase A | — |
-> > | Whole chicken | 1500 g | 100.00% |
-> > | Onion, halved | 1 large | — |
-> > | Ginger, sliced | 50 g | 3.30% |
-> > | Garlic cloves | 4–5 | — |
-> > | Lemongrass, bruised | 1 stalk | — |
-> > | Makrut lime leaves, torn | 1–2 | — |
+> > | Whole chicken | 750 g | 100.00% |
+> > | Onion, halved | 1/2 large | — |
+> > | Ginger, sliced | 25 g | 3.30% |
+> > | Garlic cloves | 2–3 | — |
+> > | Lemongrass, bruised | 1/2 stalk | — |
+> > | Makrut lime leaves, torn | 1 | — |
 > > | Coriander stems/roots | large handful | — |
-> > | Coriander seeds | 3 g | 0.20% |
-> > | White peppercorns | 2 g | 0.13% |
+> > | Coriander seeds | 1.5 g | 0.20% |
+> > | White peppercorns | 1 g | 0.13% |
 > > | Cold water | to fully submerge | — |
 > > | Fine salt | light initial seasoning | — |
 >
@@ -126,14 +126,14 @@ Primary Ingredient Basis: `1500 g whole chicken = 100%`
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | Dried red chillies | 8–12 | — |
+> > | Dried red chillies | 4–6 | — |
 > > | Hot water (for soaking) | as needed | — |
-> > | Garlic cloves | 5–6 | — |
-> > | Shallots | 2 small | — |
-> > | Neutral oil | 30 g | 2.00% |
+> > | Garlic cloves | 3 | — |
+> > | Shallots | 1 small | — |
+> > | Neutral oil | 15 g | 2.00% |
 > > | Fish sauce | to taste | — |
 > > | Lime juice or tamarind water | to taste | — |
-> > | Fermented fish sauce / padek (optional) | 5 g | 0.30% |
+> > | Fermented fish sauce / padek (optional) | 2.5 g | 0.30% |
 > > | Toasted sticky rice powder (optional) | pinch | — |
 >
 > > [!column]
@@ -162,12 +162,12 @@ Primary Ingredient Basis: `1500 g whole chicken = 100%`
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | Fresh green chillies | 4–8 | — |
-> > | Garlic cloves | 3–4 | — |
-> > | Shallot | 1 small | — |
-> > | Coriander roots/stems | 2–3 | — |
-> > | Spring onion (white + some green) | 1 | — |
-> > | Makrut lime leaf, finely sliced (optional) | 1 | — |
+> > | Fresh green chillies | 2–4 | — |
+> > | Garlic cloves | 2 | — |
+> > | Shallot | 1/2 small | — |
+> > | Coriander roots/stems | 1–2 | — |
+> > | Spring onion (white + some green) | 1/2 | — |
+> > | Makrut lime leaf, finely sliced (optional) | 1/2 | — |
 > > | Fish sauce | to taste | — |
 > > | Lime juice | to taste | — |
 > > | Fermented fish sauce / padek (optional) | a few drops | — |

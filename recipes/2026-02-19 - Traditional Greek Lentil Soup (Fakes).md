@@ -4,11 +4,11 @@ date: 2026-02-19
 type: recipe
 status: canonical
 version: v1.0
-yield: "~2.2–2.5 kg finished"
-portions: 6–8
+yield: "2 portions"
+portions: 2
 target_internal_temperature_c: null
 primary_ingredient: "brown lentils"
-primary_mass_g: 500
+primary_mass_g: 167
 techniques: ["soffritto", "lentil simmering", "acid finishing"]
 principles: ["starch thickening", "aromatic base development", "acid brightness preservation"]
 tags: ["dish-soup", "greek", "lentils", "soup", "vegetarian", "tender"]
@@ -17,11 +17,11 @@ cssclass: modernist-recipe
 
 # TRADITIONAL GREEK LENTIL SOUP (FAKES)
 
-Yield: ~2.2–2.5 kg finished soup
-Portions: 6–8
+Yield: 2 portions
+Portions: 2
 Target: texture-driven endpoint (lentils tender, broth thickened)
 
-Primary Ingredient Basis: `500 g brown lentils = 100%`
+Primary Ingredient Basis: `167 g brown lentils = 100%`
 
 Classic village-style Greek lentil soup. Finished with lemon or red wine vinegar and raw EVOO.
 
@@ -37,7 +37,7 @@ Classic village-style Greek lentil soup. Finished with lemon or red wine vinegar
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | Brown lentils (dry) | 500 g | 100.00% |
+> > | Brown lentils (dry) | 166.67 g | 100.00% |
 >
 > > [!column]
 > > ### Method
@@ -60,10 +60,10 @@ Classic village-style Greek lentil soup. Finished with lemon or red wine vinegar
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | Extra virgin olive oil (for cooking) | 60 g | 12.00% |
-> > | Onion, finely chopped | 200 g | 40.00% |
-> > | Carrot, diced | 150 g | 30.00% |
-> > | Garlic, minced | 15 g | 3.00% |
+> > | Extra virgin olive oil (for cooking) | 20 g | 12.00% |
+> > | Onion, finely chopped | 66.67 g | 40.00% |
+> > | Carrot, diced | 50 g | 30.00% |
+> > | Garlic, minced | 5 g | 3.00% |
 >
 > > [!column]
 > > ### Method
@@ -87,12 +87,12 @@ Classic village-style Greek lentil soup. Finished with lemon or red wine vinegar
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | Crushed tomatoes | 400 g | 80.00% |
-> > | Bay leaves | 2 g | 0.40% |
-> > | Dried oregano (optional) | 2 g | 0.40% |
-> > | Water or light vegetable stock | 1500 g | 300.00% |
-> > | Salt | 10 g | 2.00% |
-> > | Black pepper | 2 g | 0.40% |
+> > | Crushed tomatoes | 133.33 g | 80.00% |
+> > | Bay leaves | 0.67 g | 0.40% |
+> > | Dried oregano (optional) | 0.67 g | 0.40% |
+> > | Water or light vegetable stock | 500 g | 300.00% |
+> > | Salt | 3.33 g | 2.00% |
+> > | Black pepper | 0.67 g | 0.40% |
 > > | Prepared lentils | from Phase A | — |
 >
 > > [!column]
@@ -119,8 +119,8 @@ Classic village-style Greek lentil soup. Finished with lemon or red wine vinegar
 > > ### Components
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
-> > | Fresh lemon juice or red wine vinegar | 30 g | 6.00% |
-> > | Extra virgin olive oil (raw drizzle) | 40 g | 8.00% |
+> > | Fresh lemon juice or red wine vinegar | 10 g | 6.00% |
+> > | Extra virgin olive oil (raw drizzle) | 13.33 g | 8.00% |
 >
 > > [!column]
 > > ### Method
