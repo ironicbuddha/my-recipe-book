@@ -8,6 +8,10 @@ error() {
   errors=1
 }
 
+has_rg() {
+  command -v rg >/dev/null 2>&1
+}
+
 check_dir() {
   local dir="$1"
   if [[ ! -d "$dir" ]]; then
@@ -30,7 +34,15 @@ check_contains() {
   local file="$1"
   local pattern="$2"
   local desc="$3"
-  if ! rg -q "$pattern" "$file"; then
+  if has_rg; then
+    if ! rg -q "$pattern" "$file"; then
+      error "$(basename "$file") missing required section: $desc"
+    fi
+    return
+  fi
+
+  # Fallback for environments without ripgrep.
+  if ! grep -Eq -- "$pattern" "$file"; then
     error "$(basename "$file") missing required section: $desc"
   fi
 }
