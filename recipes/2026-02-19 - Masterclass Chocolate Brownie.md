@@ -3,7 +3,7 @@ title: "Masterclass Chocolate Brownie"
 date: 2026-02-19
 type: recipe
 status: canonical
-version: v1.0
+version: v1.1
 yield: "~1.1 kg batter"
 portions: 12–16
 target_internal_temperature_c: "88–92"
@@ -17,7 +17,7 @@ cssclass: modernist-recipe
 
 # MASTERCLASS CHOCOLATE BROWNIE
 
-Yield: ~1.1 kg batter · 20–23 cm square pan
+Yield: ~1.1 kg batter · 20–23 cm square pan or 23 cm tart tin (>=2.5 cm deep)
 Portions: 12–16
 Target Internal Temperature: 88–92 C
 
@@ -63,7 +63,7 @@ Dense matrix. Crackled surface. Controlled set.
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
 > > | Caster sugar | 300 g | 120.00% |
-> > | Eggs | 200 g | 80.00% |
+> > | Eggs (large, without shell; about 4) | 200 g | 80.00% |
 >
 > > [!column]
 > > ### Method
@@ -116,15 +116,15 @@ Dense matrix. Crackled surface. Controlled set.
 > > | Ingredient | Quantity | Scaling |
 > > | --- | --- | --- |
 > > | Prepared batter | ~1.1 kg | — |
-> > | Square pan | 20–23 cm | — |
+> > | Pan (square or tart tin) | 20–23 cm square or 23 cm tart tin (>=2.5 cm deep) | — |
 > > | Baking paper | as needed | — |
 >
 > > [!column]
 > > ### Method
 > > 1. Preheat oven to 170 C (conventional).
-> > 2. Line pan with baking paper.
-> > 3. Transfer batter and level surface.
-> > 4. Bake 25–30 min to internal temperature 88–92 C.
+> > 2. Line pan with baking paper. If using a loose-bottom tart tin, wrap the outside base and sides with foil.
+> > 3. Transfer batter and level surface. Fill no more than 80–85% of tin height.
+> > 4. Bake 22–30 min to internal temperature 88–92 C.
 > > 5. Centre should wobble slightly when shaken.
 
 </div>
