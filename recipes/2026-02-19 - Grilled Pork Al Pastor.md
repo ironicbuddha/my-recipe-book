@@ -23,98 +23,88 @@ Target Internal Temperature: 60-62 C, rest carryover to 65 C
 
 Primary Ingredient Basis: `200 g pork fillet = 100%`
 
-<div class="modernist-phase">
+
+---
 
 ## PHASE A — MARINADE PREPARATION AND PORK MARINATION
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Pork fillet | 200 g | 100.00% |
+>> | Grilled pineapple puree | 40 g | 20.00% |
+>> | Apple cider vinegar | 8.33 g | 4.17% |
+>> | Neutral oil | 6.67 g | 3.33% |
+>> | Achiote paste | 8.33 g | 4.17% |
+>> | Guajillo chile, rehydrated | 3.33 g | 1.67% |
+>> | Garlic | 1.67 g | 0.83% |
+>> | Salt | 1.67 g | 0.83% |
+>> | Cumin | 0.67 g | 0.33% |
+>> | Clove | 0.17 g | 0.08% |
+>> | Mexican oregano | 0.33 g | 0.17% |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Pork fillet | 200 g | 100.00% |
-> > | Grilled pineapple puree | 40 g | 20.00% |
-> > | Apple cider vinegar | 8.33 g | 4.17% |
-> > | Neutral oil | 6.67 g | 3.33% |
-> > | Achiote paste | 8.33 g | 4.17% |
-> > | Guajillo chile, rehydrated | 3.33 g | 1.67% |
-> > | Garlic | 1.67 g | 0.83% |
-> > | Salt | 1.67 g | 0.83% |
-> > | Cumin | 0.67 g | 0.33% |
-> > | Clove | 0.17 g | 0.08% |
-> > | Mexican oregano | 0.33 g | 0.17% |
->
-> > [!column]
-> > ### Method
-> > 1. Combine pineapple puree, vinegar, oil, achiote, guajillo, garlic, salt, cumin, clove, and oregano; blend to a homogeneous marinade.
-> > 2. Coat pork fillet evenly with marinade in a non-reactive container.
-> > 3. Marinate refrigerated for 45 minutes to 2 hours.
-> > 4. If using pork shoulder (270 g basis), extend marination up to 6 hours.
+>> [!col-right]
+>> ### Method
+>> 1. Combine pineapple puree, vinegar, oil, achiote, guajillo, garlic, salt, cumin, clove, and oregano; blend to a homogeneous marinade.
+>> 2. Coat pork fillet evenly with marinade in a non-reactive container.
+>> 3. Marinate refrigerated for 45 minutes to 2 hours.
+>> 4. If using pork shoulder (270 g basis), extend marination up to 6 hours.
 
-</div>
 
-<div class="phase-separator"></div>
-
-<div class="modernist-phase">
+---
 
 ## PHASE B — HIBACHI GRILLING, REST, AND FINAL CHAR
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Marinated pork fillet | 200 g raw basis | 100.00% |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Marinated pork fillet | 200 g raw basis | 100.00% |
->
-> > [!column]
-> > ### Method
-> > 1. Preheat hibachi to 260-300 C grate surface temperature.
-> > 2. Grill fillet over direct heat, rotating every 60-90 seconds for even surface browning.
-> > 3. Continue until internal temperature reaches 60-62 C at the geometric center.
-> > 4. Rest 5-8 minutes until carryover reaches 65 C.
-> > 5. Slice thinly against the grain.
-> > 6. Return slices briefly to high heat for fast edge caramelization without overcooking the interior.
+>> [!col-right]
+>> ### Method
+>> 1. Preheat hibachi to 260-300 C grate surface temperature.
+>> 2. Grill fillet over direct heat, rotating every 60-90 seconds for even surface browning.
+>> 3. Continue until internal temperature reaches 60-62 C at the geometric center.
+>> 4. Rest 5-8 minutes until carryover reaches 65 C.
+>> 5. Slice thinly against the grain.
+>> 6. Return slices briefly to high heat for fast edge caramelization without overcooking the interior.
 
-</div>
 
-<div class="phase-separator"></div>
-
-<div class="modernist-phase">
+---
 
 ## PHASE C — CHARRED PINEAPPLE-CHILLI SALSA AND ASSEMBLY
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Charred pineapple | 66.67 g | 33.33% |
+>> | Fresh red chilli | 1.67 g | 0.83% |
+>> | Red onion | 6.67 g | 3.33% |
+>> | Lime juice | 5 g | 2.50% |
+>> | Salt | 0.67 g | 0.33% |
+>> | Fresh coriander | 2.33 g | 1.2% |
+>> | Fresh Mint | 1 g | 0.5% |
+>> | Corn tortillas | 2 units | 1 tortilla per 100 g basis |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Charred pineapple | 66.67 g | 33.33% |
-> > | Fresh red chilli | 1.67 g | 0.83% |
-> > | Red onion | 6.67 g | 3.33% |
-> > | Lime juice | 5 g | 2.50% |
-> > | Salt | 0.67 g | 0.33% |
-> > | Fresh coriander | 2.33 g | 1.2% |
-> > | Fresh Mint | 1 g | 0.5% |
-> > | Corn tortillas | 2 units | 1 tortilla per 100 g basis |
->
-> > [!column]
-> > ### Method
-> > 1. Grill pineapple until charred at edges, then dice.
-> > 2. Combine pineapple, chilli, onion, lime juice, salt, and coriander; mix thoroughly.
-> > 3. Rest salsa 10-15 minutes for hydration and salt equilibration.
-> > 4. Warm tortillas directly over charcoal until pliable with light spotting.
-> > 5. Fill tortillas with sliced pork and top with salsa.
-
-</div>
+>> [!col-right]
+>> ### Method
+>> 1. Grill pineapple until charred at edges, then dice.
+>> 2. Combine pineapple, chilli, onion, lime juice, salt, and coriander; mix thoroughly.
+>> 3. Rest salsa 10-15 minutes for hydration and salt equilibration.
+>> 4. Warm tortillas directly over charcoal until pliable with light spotting.
+>> 5. Fill tortillas with sliced pork and top with salsa.
 
 ## RELATED LINKS
 <!-- AUTO-GENERATED:RELATED-LINKS:START -->

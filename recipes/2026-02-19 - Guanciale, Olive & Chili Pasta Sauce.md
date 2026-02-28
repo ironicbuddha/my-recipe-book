@@ -23,86 +23,76 @@ Target Internal Temperature: N/A
 
 Primary Ingredient Basis: `150 g guanciale = 100%`
 
-<div class="modernist-phase">
+
+---
 
 ## PHASE A — RENDER & AROMATICS
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Guanciale (lardons) | 150 g | 100.00% |
+>> | Garlic, thinly sliced | 8 g | 5.30% |
+>> | Fresh red chili, sliced | 5 g | 3.30% |
+>> | Black pepper | 2 g | 1.30% |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Guanciale (lardons) | 150 g | 100.00% |
-> > | Garlic, thinly sliced | 8 g | 5.30% |
-> > | Fresh red chili, sliced | 5 g | 3.30% |
-> > | Black pepper | 2 g | 1.30% |
->
-> > [!column]
-> > ### Method
-> > 1. Place guanciale in a cold wide pan.
-> > 2. Bring to medium heat and render slowly until fat releases and meat turns golden and lightly crisp (6–8 min).
-> > 3. Remove guanciale with a slotted spoon; reserve.
-> > 4. In rendered fat, gently sauté garlic and chili until fragrant but not browned.
+>> [!col-right]
+>> ### Method
+>> 1. Place guanciale in a cold wide pan.
+>> 2. Bring to medium heat and render slowly until fat releases and meat turns golden and lightly crisp (6–8 min).
+>> 3. Remove guanciale with a slotted spoon; reserve.
+>> 4. In rendered fat, gently sauté garlic and chili until fragrant but not browned.
 
-</div>
 
-<div class="phase-separator"></div>
-
-<div class="modernist-phase">
+---
 
 ## PHASE B — BUILD THE SAUCE
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Black olives, chopped | 80 g | 53.30% |
+>> | Capers, rinsed | 15 g | 10.00% |
+>> | Canned whole tomatoes, crushed | 400 g | 266.70% |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Black olives, chopped | 80 g | 53.30% |
-> > | Capers, rinsed | 15 g | 10.00% |
-> > | Canned whole tomatoes, crushed | 400 g | 266.70% |
->
-> > [!column]
-> > ### Method
-> > 1. Add olives and capers to the aromatic fat; sauté 1–2 min.
-> > 2. Add crushed tomatoes and bring to a steady simmer.
-> > 3. Reduce 10–15 min until thickened and glossy.
-> > 4. Taste and adjust seasoning — salt is rarely needed due to guanciale and olives.
+>> [!col-right]
+>> ### Method
+>> 1. Add olives and capers to the aromatic fat; sauté 1–2 min.
+>> 2. Add crushed tomatoes and bring to a steady simmer.
+>> 3. Reduce 10–15 min until thickened and glossy.
+>> 4. Taste and adjust seasoning — salt is rarely needed due to guanciale and olives.
 
-</div>
 
-<div class="phase-separator"></div>
-
-<div class="modernist-phase">
+---
 
 ## PHASE C — PASTA & EMULSION
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Dried pasta (rigatoni/spaghetti) | 300 g | 200.00% |
+>> | Reserved pasta water | ~60 g | 40.00% |
+>> | Fresh parsley, chopped | 10 g | 6.70% |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Dried pasta (rigatoni/spaghetti) | 300 g | 200.00% |
-> > | Reserved pasta water | ~60 g | 40.00% |
-> > | Fresh parsley, chopped | 10 g | 6.70% |
->
-> > [!column]
-> > ### Method
-> > 1. Cook pasta in heavily salted water until al dente.
-> > 2. Transfer pasta directly into sauce with ~60 g starchy pasta water.
-> > 3. Return guanciale to pan.
-> > 4. Toss vigorously to emulsify fat, tomato, and starch into a cohesive glaze.
-> > 5. Finish with parsley and black pepper. Serve immediately.
-
-</div>
+>> [!col-right]
+>> ### Method
+>> 1. Cook pasta in heavily salted water until al dente.
+>> 2. Transfer pasta directly into sauce with ~60 g starchy pasta water.
+>> 3. Return guanciale to pan.
+>> 4. Toss vigorously to emulsify fat, tomato, and starch into a cohesive glaze.
+>> 5. Finish with parsley and black pepper. Serve immediately.
 
 ## RELATED LINKS
 <!-- AUTO-GENERATED:RELATED-LINKS:START -->

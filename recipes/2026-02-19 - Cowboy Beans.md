@@ -25,139 +25,121 @@ Primary Ingredient Basis: `113 g dried pinto beans = 100%`
 
 High-protein campfire style. Molasses-balanced, beer-enriched, slow reduction.
 
-<div class="modernist-phase">
+
+---
 
 ## PHASE A — BEAN HYDRATION
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Dried pinto beans (or navy) | 112.5 g | 100.00% |
+>> | Water (for soaking + cooking) | as needed | — |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Dried pinto beans (or navy) | 112.5 g | 100.00% |
-> > | Water (for soaking + cooking) | as needed | — |
->
-> > [!column]
-> > ### Method
-> > 1. Cover beans with cold water (3x volume). Soak 8–12 h.
-> > 2. Drain. Cover with fresh water and simmer 30–45 min until just tender.
-> > 3. Drain, reserving cooking liquid.
+>> [!col-right]
+>> ### Method
+>> 1. Cover beans with cold water (3x volume). Soak 8–12 h.
+>> 2. Drain. Cover with fresh water and simmer 30–45 min until just tender.
+>> 3. Drain, reserving cooking liquid.
 
-</div>
 
-<div class="phase-separator"></div>
-
-<div class="modernist-phase">
+---
 
 ## PHASE B — MEAT FOUNDATION
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Bacon, chopped | 50 g | 44.00% |
+>> | Beef (chuck or ground) | 75 g | 67.00% |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Bacon, chopped | 50 g | 44.00% |
-> > | Beef (chuck or ground) | 75 g | 67.00% |
->
-> > [!column]
-> > ### Method
-> > 1. In heavy ovenproof pot, render bacon over medium heat until fat releases and edges crisp.
-> > 2. Add beef. Brown thoroughly; develop fond (deep caramelisation).
+>> [!col-right]
+>> ### Method
+>> 1. In heavy ovenproof pot, render bacon over medium heat until fat releases and edges crisp.
+>> 2. Add beef. Brown thoroughly; develop fond (deep caramelisation).
 
-</div>
 
-<div class="phase-separator"></div>
-
-<div class="modernist-phase">
+---
 
 ## PHASE C — AROMATIC BUILD & SPICE BLOOM
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Onion, diced | 50 g | 44.00% |
+>> | Garlic, minced | 2.5 g | 2.00% |
+>> | Jalapeno, diced (optional) | 3.75 g | 3.00% |
+>> | Chili powder | 1.25 g | 1.00% |
+>> | Ground cumin | 0.75 g | 0.70% |
+>> | Smoked paprika | 0.5 g | 0.40% |
+>> | Black pepper | 0.5 g | 0.40% |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Onion, diced | 50 g | 44.00% |
-> > | Garlic, minced | 2.5 g | 2.00% |
-> > | Jalapeno, diced (optional) | 3.75 g | 3.00% |
-> > | Chili powder | 1.25 g | 1.00% |
-> > | Ground cumin | 0.75 g | 0.70% |
-> > | Smoked paprika | 0.5 g | 0.40% |
-> > | Black pepper | 0.5 g | 0.40% |
->
-> > [!column]
-> > ### Method
-> > 1. Add onion (and jalapeno if using). Cook until softened and lightly caramelised.
-> > 2. Add garlic. Cook 30 seconds.
-> > 3. Add chili powder, cumin, smoked paprika, and pepper.
-> > 4. Stir 30–60 seconds to bloom spices in fat.
+>> [!col-right]
+>> ### Method
+>> 1. Add onion (and jalapeno if using). Cook until softened and lightly caramelised.
+>> 2. Add garlic. Cook 30 seconds.
+>> 3. Add chili powder, cumin, smoked paprika, and pepper.
+>> 4. Stir 30–60 seconds to bloom spices in fat.
 
-</div>
 
-<div class="phase-separator"></div>
-
-<div class="modernist-phase">
+---
 
 ## PHASE D — SAUCE INTEGRATION & BEAN COMBINATION
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Molasses | 20 g | 18.00% |
+>> | Dark brown sugar | 15 g | 13.00% |
+>> | Tomato sauce / crushed tomato | 30 g | 27.00% |
+>> | Yellow or Dijon mustard | 7.5 g | 7.00% |
+>> | Apple cider vinegar | 7.5 g | 7.00% |
+>> | Beer (lager or amber) | 62.5 g | 56.00% |
+>> | Worcestershire (optional) | 2.5 g | 2.00% |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Molasses | 20 g | 18.00% |
-> > | Dark brown sugar | 15 g | 13.00% |
-> > | Tomato sauce / crushed tomato | 30 g | 27.00% |
-> > | Yellow or Dijon mustard | 7.5 g | 7.00% |
-> > | Apple cider vinegar | 7.5 g | 7.00% |
-> > | Beer (lager or amber) | 62.5 g | 56.00% |
-> > | Worcestershire (optional) | 2.5 g | 2.00% |
->
-> > [!column]
-> > ### Method
-> > 1. Add molasses, brown sugar, mustard, vinegar, tomato, Worcestershire (if using).
-> > 2. Stir until glossy and cohesive.
-> > 3. Add beans and beer.
-> > 4. Add reserved bean liquid until mixture is just covered.
+>> [!col-right]
+>> ### Method
+>> 1. Add molasses, brown sugar, mustard, vinegar, tomato, Worcestershire (if using).
+>> 2. Stir until glossy and cohesive.
+>> 3. Add beans and beer.
+>> 4. Add reserved bean liquid until mixture is just covered.
 
-</div>
 
-<div class="phase-separator"></div>
-
-<div class="modernist-phase">
+---
 
 ## PHASE E — SLOW REDUCTION & FINAL TEXTURE
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Assembled bean pot | 1 unit | — |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Assembled bean pot | 1 unit | — |
->
-> > [!column]
-> > ### Method
-> > 1. Bake uncovered at 170 C for 2–3 h, or simmer gently on stovetop.
-> > 2. Stir occasionally; add liquid as needed to prevent scorching.
-> > 3. Reduce until thick, spoon-coating consistency.
-> > 4. Rest 15–20 min before serving to allow starch gel stabilisation.
-
-</div>
+>> [!col-right]
+>> ### Method
+>> 1. Bake uncovered at 170 C for 2–3 h, or simmer gently on stovetop.
+>> 2. Stir occasionally; add liquid as needed to prevent scorching.
+>> 3. Reduce until thick, spoon-coating consistency.
+>> 4. Rest 15–20 min before serving to allow starch gel stabilisation.
 
 ## RELATED LINKS
 <!-- AUTO-GENERATED:RELATED-LINKS:START -->

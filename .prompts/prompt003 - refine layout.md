@@ -1,38 +1,30 @@
-Refactor the following Obsidian recipe to use refined Modernist layout conventions with the Multi-Column Markdown plugin.
+Refactor the following Obsidian recipe to use the current Modernist layout conventions (pure CSS, no plugins).
 
 Apply these structural rules:
 
 1. Phase headers must span full page width (not inside column callouts).
-2. Each phase must be wrapped in a semantic container:
-   
-   <div class="modernist-phase">
-
+2. Phases are separated by `---` horizontal rules. No HTML div wrappers.
 3. Inside each phase:
    - The phase header (## PHASE X — TITLE) appears first.
-   - A horizontal rule (---) appears directly below the header.
-   - Then the two-column layout begins using:
-     
-     > [!columns]
+   - Then the two-column layout begins using native callout syntax:
+
+     > [!col]
+     >> [!col-left]
+     >> ### Components
+     >>
+     >> (table)
      >
-     > > [!column]
-     > > ### Components
-     > >
-     > > (table)
-     >
-     > > [!column]
-     > > ### Method
-     > >
-     > > (numbered steps)
+     >> [!col-right]
+     >> ### Method
+     >>
+     >> (numbered steps)
 
-4. After closing each phase container, insert a visual phase separator:
-
-   <div class="phase-separator"></div>
-
+4. Do not use any HTML divs (`<div class="modernist-phase">`, `<div class="phase-separator">`, etc.).
 5. Maintain:
    - Metric units only
    - Scaling column in %
    - Clean whitespace
-   - No deprecated column syntax
+   - No deprecated column syntax (`[!columns]`, `[!column]`, `> > [!column]`)
    - No stray indentation levels
 
 6. Do not modify frontmatter.

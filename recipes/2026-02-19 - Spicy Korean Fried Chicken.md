@@ -25,142 +25,124 @@ Primary Ingredient Basis: `500 g chicken wings or drumettes = 100%`
 
 Double-fried, starch-based coating for maximum crispness. Optimised for sauce adhesion without loss of crunch.
 
-<div class="modernist-phase">
+
+---
 
 ## PHASE A — CHICKEN PREPARATION
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Chicken wings or drumettes | 500 g | 100.00% |
+>> | Salt | 5 g | 1.00% |
+>> | Black pepper | 1 g | 0.20% |
+>> | Garlic powder | 2.5 g | 0.50% |
+>> | Rice wine or dry sherry (optional) | 7.5 g | 1.50% |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Chicken wings or drumettes | 500 g | 100.00% |
-> > | Salt | 5 g | 1.00% |
-> > | Black pepper | 1 g | 0.20% |
-> > | Garlic powder | 2.5 g | 0.50% |
-> > | Rice wine or dry sherry (optional) | 7.5 g | 1.50% |
->
-> > [!column]
-> > ### Method
-> > 1. Combine chicken, salt, pepper, garlic powder, and rice wine.
-> > 2. Mix thoroughly and rest 10–20 min at room temperature.
+>> [!col-right]
+>> ### Method
+>> 1. Combine chicken, salt, pepper, garlic powder, and rice wine.
+>> 2. Mix thoroughly and rest 10–20 min at room temperature.
 
-</div>
 
-<div class="phase-separator"></div>
-
-<div class="modernist-phase">
+---
 
 ## PHASE B — BATTER & COATING
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Cornstarch | 35 g | 7.00% |
+>> | Gluten-free flour mix (rice flour + potato starch) | 15 g | 3.00% |
+>> | Baking powder | 1 g | 0.20% |
+>> | Egg | 25 g | 5.00% |
+>> | Ice-cold water or sparkling water | 60 g | 12.00% |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Cornstarch | 35 g | 7.00% |
-> > | Gluten-free flour mix (rice flour + potato starch) | 15 g | 3.00% |
-> > | Baking powder | 1 g | 0.20% |
-> > | Egg | 25 g | 5.00% |
-> > | Ice-cold water or sparkling water | 60 g | 12.00% |
->
-> > [!column]
-> > ### Method
-> > 1. Combine cornstarch, gluten-free flour mix, and baking powder.
-> > 2. Whisk in egg and cold water until batter is smooth and lightly runny.
-> > 3. Dip chicken into batter and allow excess to drip off.
-> > 4. Arrange coated chicken on rack or tray and rest 5 min.
+>> [!col-right]
+>> ### Method
+>> 1. Combine cornstarch, gluten-free flour mix, and baking powder.
+>> 2. Whisk in egg and cold water until batter is smooth and lightly runny.
+>> 3. Dip chicken into batter and allow excess to drip off.
+>> 4. Arrange coated chicken on rack or tray and rest 5 min.
 
-</div>
 
-<div class="phase-separator"></div>
-
-<div class="modernist-phase">
+---
 
 ## PHASE C — DOUBLE FRY
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Neutral frying oil | as needed | — |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Neutral frying oil | as needed | — |
->
-> > [!column]
-> > ### Method
-> > 1. Heat oil to 160 C.
-> > 2. Fry chicken for 7–8 min until cooked through but pale.
-> > 3. Remove and drain.
-> > 4. Increase oil temperature to 185–190 C.
-> > 5. Fry chicken for 2–3 min until deeply golden and audibly crisp.
-> > 6. Drain thoroughly.
+>> [!col-right]
+>> ### Method
+>> 1. Heat oil to 160 C.
+>> 2. Fry chicken for 7–8 min until cooked through but pale.
+>> 3. Remove and drain.
+>> 4. Increase oil temperature to 185–190 C.
+>> 5. Fry chicken for 2–3 min until deeply golden and audibly crisp.
+>> 6. Drain thoroughly.
 
-</div>
 
-<div class="phase-separator"></div>
-
-<div class="modernist-phase">
+---
 
 ## PHASE D — SPICY SAUCE (YANGNYEOM)
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Gochujang | 20 g | 4.00% |
+>> | Ketchup | 30 g | 6.00% |
+>> | Soy sauce | 15 g | 3.00% |
+>> | Honey or brown sugar | 22.5 g | 4.50% |
+>> | Rice vinegar | 15 g | 3.00% |
+>> | Garlic, finely grated | 5 g | 1.00% |
+>> | Ginger, grated | 2.5 g | 0.50% |
+>> | Gochugaru | 5 g | 1.00% |
+>> | Sesame oil | 7.5 g | 1.50% |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Gochujang | 20 g | 4.00% |
-> > | Ketchup | 30 g | 6.00% |
-> > | Soy sauce | 15 g | 3.00% |
-> > | Honey or brown sugar | 22.5 g | 4.50% |
-> > | Rice vinegar | 15 g | 3.00% |
-> > | Garlic, finely grated | 5 g | 1.00% |
-> > | Ginger, grated | 2.5 g | 0.50% |
-> > | Gochugaru | 5 g | 1.00% |
-> > | Sesame oil | 7.5 g | 1.50% |
->
-> > [!column]
-> > ### Method
-> > 1. Combine all sauce ingredients except sesame oil.
-> > 2. Simmer gently for 2–3 min until slightly thickened.
-> > 3. Remove from heat and stir in sesame oil.
+>> [!col-right]
+>> ### Method
+>> 1. Combine all sauce ingredients except sesame oil.
+>> 2. Simmer gently for 2–3 min until slightly thickened.
+>> 3. Remove from heat and stir in sesame oil.
 
-</div>
 
-<div class="phase-separator"></div>
-
-<div class="modernist-phase">
+---
 
 ## PHASE E — FINISH
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Fried chicken | from Phase C | — |
+>> | Yangnyeom sauce | from Phase D | — |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Fried chicken | from Phase C | — |
-> > | Yangnyeom sauce | from Phase D | — |
->
-> > [!column]
-> > ### Method
-> > 1. Toss hot chicken in warm sauce until evenly coated.
-> > 2. Serve immediately.
-
-</div>
+>> [!col-right]
+>> ### Method
+>> 1. Toss hot chicken in warm sauce until evenly coated.
+>> 2. Serve immediately.
 
 ## RELATED LINKS
 <!-- AUTO-GENERATED:RELATED-LINKS:START -->

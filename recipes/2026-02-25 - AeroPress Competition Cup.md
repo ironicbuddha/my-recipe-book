@@ -25,55 +25,49 @@ Primary Ingredient Basis: `18 g coffee = 100%`
 
 Modern high-clarity profile: fruit-forward acidity, low sludge, precise dilution.
 
-<div class="modernist-phase">
+
+---
 
 ## PHASE A — BREW CONCENTRATE (INVERTED)
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Coffee | 18 g | 100.00% |
+>> | Water (brew) | 105 g | 583.33% |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Coffee | 18 g | 100.00% |
-> > | Water (brew) | 105 g | 583.33% |
->
-> > [!column]
-> > ### Method
-> > 1. Assemble AeroPress in inverted position.
-> > 2. Add coffee.
-> > 3. Start timer and pour 90-120 g water (105 g baseline).
-> > 4. Stir gently for 5-10 seconds.
-> > 5. Steep to a total contact time of 60-90 seconds.
+>> [!col-right]
+>> ### Method
+>> 1. Assemble AeroPress in inverted position.
+>> 2. Add coffee.
+>> 3. Start timer and pour 90-120 g water (105 g baseline).
+>> 4. Stir gently for 5-10 seconds.
+>> 5. Steep to a total contact time of 60-90 seconds.
 
-</div>
 
-<div class="phase-separator"></div>
-
-<div class="modernist-phase">
+---
 
 ## PHASE B — PRESS & BYPASS
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Brewed concentrate (from Phase A) | all | — |
+>> | Water (bypass) | 95-115 g | 527.78-638.89% |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Brewed concentrate (from Phase A) | all | — |
-> > | Water (bypass) | 95-115 g | 527.78-638.89% |
->
-> > [!column]
-> > ### Method
-> > 1. Flip onto cup and press slowly for 20-30 seconds.
-> > 2. Add 95-115 g hot water to reach 200-220 g total beverage.
-> > 3. Swirl once and serve immediately.
-
-</div>
+>> [!col-right]
+>> ### Method
+>> 1. Flip onto cup and press slowly for 20-30 seconds.
+>> 2. Add 95-115 g hot water to reach 200-220 g total beverage.
+>> 3. Swirl once and serve immediately.
 
 ## STRUCTURAL NOTES
 

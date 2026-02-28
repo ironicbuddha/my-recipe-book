@@ -25,54 +25,48 @@ Primary Ingredient Basis: `15 g coffee = 100%`
 
 Simple and sweet daily profile: balanced body, low bitterness, easy repeatability.
 
-<div class="modernist-phase">
+
+---
 
 ## PHASE A — IMMERSION BREW (STANDARD)
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Coffee | 15 g | 100.00% |
+>> | Water | 230 g | 1533.33% |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Coffee | 15 g | 100.00% |
-> > | Water | 230 g | 1533.33% |
->
-> > [!column]
-> > ### Method
-> > 1. Assemble AeroPress in standard position over cup.
-> > 2. Add coffee.
-> > 3. Pour all 230 g water at 92 C.
-> > 4. Stir briefly to wet all grounds.
-> > 5. Steep for 2 minutes.
+>> [!col-right]
+>> ### Method
+>> 1. Assemble AeroPress in standard position over cup.
+>> 2. Add coffee.
+>> 3. Pour all 230 g water at 92 C.
+>> 4. Stir briefly to wet all grounds.
+>> 5. Steep for 2 minutes.
 
-</div>
 
-<div class="phase-separator"></div>
-
-<div class="modernist-phase">
+---
 
 ## PHASE B — PRESS & SERVE
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Brewed coffee slurry (from Phase A) | all | — |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Brewed coffee slurry (from Phase A) | all | — |
->
-> > [!column]
-> > ### Method
-> > 1. Press gently over 30 seconds.
-> > 2. Stop when resistance spikes to avoid over-extracting fines.
-> > 3. Serve immediately.
-
-</div>
+>> [!col-right]
+>> ### Method
+>> 1. Press gently over 30 seconds.
+>> 2. Stop when resistance spikes to avoid over-extracting fines.
+>> 3. Serve immediately.
 
 ## STRUCTURAL NOTES
 

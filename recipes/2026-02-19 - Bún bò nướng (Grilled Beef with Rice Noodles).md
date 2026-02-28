@@ -23,101 +23,91 @@ Target Internal Temperature: 54 C (medium-rare; do not exceed 57 C)
 
 Primary Ingredient Basis: `250 g beef sirloin = 100%`
 
-<div class="modernist-phase">
+
+---
 
 ## PHASE A — BEEF MARINADE
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Beef sirloin or flank, thinly sliced across grain | 250 g | 100.00% |
+>> | Fish sauce | 12.5 g | 5.00% |
+>> | Light soy sauce | 7.5 g | 3.00% |
+>> | Sugar (palm or white) | 10 g | 4.00% |
+>> | Honey | 5 g | 2.00% |
+>> | Garlic, minced | 6 g | 2.40% |
+>> | Lemongrass (white part), finely minced | 12.5 g | 5.00% |
+>> | Shallots, minced | 15 g | 6.00% |
+>> | Black pepper | 1.5 g | 0.60% |
+>> | Neutral oil | 7.5 g | 3.00% |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Beef sirloin or flank, thinly sliced across grain | 250 g | 100.00% |
-> > | Fish sauce | 12.5 g | 5.00% |
-> > | Light soy sauce | 7.5 g | 3.00% |
-> > | Sugar (palm or white) | 10 g | 4.00% |
-> > | Honey | 5 g | 2.00% |
-> > | Garlic, minced | 6 g | 2.40% |
-> > | Lemongrass (white part), finely minced | 12.5 g | 5.00% |
-> > | Shallots, minced | 15 g | 6.00% |
-> > | Black pepper | 1.5 g | 0.60% |
-> > | Neutral oil | 7.5 g | 3.00% |
->
-> > [!column]
-> > ### Method
-> > 1. Combine fish sauce, soy, sugar, honey, garlic, lemongrass, shallots, pepper, and oil.
-> > 2. Toss beef thoroughly to coat.
-> > 3. Marinate minimum 1 hour; optimal 6–12 hours refrigerated.
-> > 4. Remove from fridge 20 minutes before grilling.
+>> [!col-right]
+>> ### Method
+>> 1. Combine fish sauce, soy, sugar, honey, garlic, lemongrass, shallots, pepper, and oil.
+>> 2. Toss beef thoroughly to coat.
+>> 3. Marinate minimum 1 hour; optimal 6–12 hours refrigerated.
+>> 4. Remove from fridge 20 minutes before grilling.
 
-</div>
 
-<div class="phase-separator"></div>
-
-<div class="modernist-phase">
+---
 
 ## PHASE B — HIGH-HEAT GRILLING
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Marinated beef (from Phase A) | 250 g | 100.00% |
+>> | Neutral oil (for grill) | 5 g | 2.00% |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Marinated beef (from Phase A) | 250 g | 100.00% |
-> > | Neutral oil (for grill) | 5 g | 2.00% |
->
-> > [!column]
-> > ### Method
-> > 1. Preheat charcoal grill or oven grill to 250 C+ surface temperature.
-> > 2. Lightly oil grates.
-> > 3. Grill beef in a single layer 60–90 seconds per side.
-> > 4. Target 52–54 C internal; rest briefly before serving.
-> > 5. Aim for caramelized edges without overcooking.
+>> [!col-right]
+>> ### Method
+>> 1. Preheat charcoal grill or oven grill to 250 C+ surface temperature.
+>> 2. Lightly oil grates.
+>> 3. Grill beef in a single layer 60–90 seconds per side.
+>> 4. Target 52–54 C internal; rest briefly before serving.
+>> 5. Aim for caramelized edges without overcooking.
 
-</div>
 
-<div class="phase-separator"></div>
-
-<div class="modernist-phase">
+---
 
 ## PHASE C — NƯỚC CHẤM & ASSEMBLY
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Fish sauce | 30 g | 12.00% |
+>> | Water | 30 g | 12.00% |
+>> | Rice vinegar | 30 g | 12.00% |
+>> | Sugar | 15 g | 6.00% |
+>> | Lime juice | 15 g | 6.00% |
+>> | Garlic, minced | 5 g | 2.00% |
+>> | Red chili, sliced | 2.5 g | 1.00% |
+>> | Carrot, thinly sliced | 25 g | 10.00% |
+>> | Rice vermicelli (dry) | 200 g | 80.00% |
+>> | Lettuce & mixed herbs (mint, Thai basil, coriander) | 100 g | 40.00% |
+>> | Roasted peanuts, crushed | 20 g | 8.00% |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Fish sauce | 30 g | 12.00% |
-> > | Water | 30 g | 12.00% |
-> > | Rice vinegar | 30 g | 12.00% |
-> > | Sugar | 15 g | 6.00% |
-> > | Lime juice | 15 g | 6.00% |
-> > | Garlic, minced | 5 g | 2.00% |
-> > | Red chili, sliced | 2.5 g | 1.00% |
-> > | Carrot, thinly sliced | 25 g | 10.00% |
-> > | Rice vermicelli (dry) | 200 g | 80.00% |
-> > | Lettuce & mixed herbs (mint, Thai basil, coriander) | 100 g | 40.00% |
-> > | Roasted peanuts, crushed | 20 g | 8.00% |
->
-> > [!column]
-> > ### Method
-> > 1. Dissolve sugar in warm water; add fish sauce, vinegar, lime, garlic, and chili.
-> > 2. Add carrot slices; rest 15 minutes.
-> > 3. Cook vermicelli 3–4 minutes in boiling water; rinse and drain.
-> > 4. Assemble bowls: noodles + lettuce + herbs.
-> > 5. Top with grilled beef and peanuts.
-> > 6. Serve dipping sauce alongside or spoon lightly over.
-
-</div>
+>> [!col-right]
+>> ### Method
+>> 1. Dissolve sugar in warm water; add fish sauce, vinegar, lime, garlic, and chili.
+>> 2. Add carrot slices; rest 15 minutes.
+>> 3. Cook vermicelli 3–4 minutes in boiling water; rinse and drain.
+>> 4. Assemble bowls: noodles + lettuce + herbs.
+>> 5. Top with grilled beef and peanuts.
+>> 6. Serve dipping sauce alongside or spoon lightly over.
 
 ## RELATED LINKS
 <!-- AUTO-GENERATED:RELATED-LINKS:START -->

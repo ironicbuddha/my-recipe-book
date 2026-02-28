@@ -25,109 +25,95 @@ Primary Ingredient Basis: `48 g cake flour = 100%`
 
 Breakfast is physics wearing maple syrup.
 
-<div class="modernist-phase">
+
+---
 
 ## PHASE A — DRY MIX
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Cake flour | 47.5 g | 100.00% |
+>> | Sugar | 7.5 g | 15.80% |
+>> | Baking powder | 2.5 g | 5.30% |
+>> | Baking soda | 0.62 g | 1.30% |
+>> | Fine salt | 0.75 g | 1.60% |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Cake flour | 47.5 g | 100.00% |
-> > | Sugar | 7.5 g | 15.80% |
-> > | Baking powder | 2.5 g | 5.30% |
-> > | Baking soda | 0.62 g | 1.30% |
-> > | Fine salt | 0.75 g | 1.60% |
->
-> > [!column]
-> > ### Method
-> > 1. Whisk all dry ingredients until evenly dispersed.
-> > 2. Ensure no clumps of leavening remain.
+>> [!col-right]
+>> ### Method
+>> 1. Whisk all dry ingredients until evenly dispersed.
+>> 2. Ensure no clumps of leavening remain.
 
-</div>
 
-<div class="phase-separator"></div>
-
-<div class="modernist-phase">
+---
 
 ## PHASE B — WET MIX
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Buttermilk | 75 g | 157.90% |
+>> | (or milk 300 g + lemon juice 20 g) | — | — |
+>> | Whole egg | 12.5 g | 26.30% |
+>> | Butter, melted | 11.25 g | 23.70% |
+>> | Vanilla extract (optional) | 1.25 g | 2.60% |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Buttermilk | 75 g | 157.90% |
-> > | (or milk 300 g + lemon juice 20 g) | — | — |
-> > | Whole egg | 12.5 g | 26.30% |
-> > | Butter, melted | 11.25 g | 23.70% |
-> > | Vanilla extract (optional) | 1.25 g | 2.60% |
->
-> > [!column]
-> > ### Method
-> > 1. Whisk until smooth and fully emulsified.
-> > 2. Butter should be melted but not hot.
+>> [!col-right]
+>> ### Method
+>> 1. Whisk until smooth and fully emulsified.
+>> 2. Butter should be melted but not hot.
 
-</div>
 
-<div class="phase-separator"></div>
-
-<div class="modernist-phase">
+---
 
 ## PHASE C — BATTER FORMATION
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Dry mix | from Phase A | — |
+>> | Wet mix | from Phase B | — |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Dry mix | from Phase A | — |
-> > | Wet mix | from Phase B | — |
->
-> > [!column]
-> > ### Method
-> > 1. Pour wet into dry.
-> > 2. Fold gently until just combined.
-> > 3. Small lumps are correct.
-> > 4. Rest 5–10 minutes to hydrate flour and activate leavening.
+>> [!col-right]
+>> ### Method
+>> 1. Pour wet into dry.
+>> 2. Fold gently until just combined.
+>> 3. Small lumps are correct.
+>> 4. Rest 5–10 minutes to hydrate flour and activate leavening.
 
-</div>
 
-<div class="phase-separator"></div>
-
-<div class="modernist-phase">
+---
 
 ## PHASE D — COOKING
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Butter or neutral oil | as needed | — |
+>> | Batter per pancake | ~15 g | — |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Butter or neutral oil | as needed | — |
-> > | Batter per pancake | ~15 g | — |
->
-> > [!column]
-> > ### Method
-> > 1. Heat pan to medium (~175–185 C surface).
-> > 2. Pour without spreading.
-> > 3. Cook until bubbles form and edges set.
-> > 4. Flip once. Cook second side ~60 seconds until golden.
-
-</div>
+>> [!col-right]
+>> ### Method
+>> 1. Heat pan to medium (~175–185 C surface).
+>> 2. Pour without spreading.
+>> 3. Cook until bubbles form and edges set.
+>> 4. Flip once. Cook second side ~60 seconds until golden.
 
 ## RELATED LINKS
 <!-- AUTO-GENERATED:RELATED-LINKS:START -->

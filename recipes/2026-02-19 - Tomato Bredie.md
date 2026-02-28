@@ -25,167 +25,145 @@ Primary Ingredient Basis: `500 g lamb neck (bone-in) = 100%`
 
 Cape Malay cucina povera — refined. Tomato-forward, lamb-soft, warm spice present but not dominant, bright lift at finish.
 
-<div class="modernist-phase">
+
+---
 
 ## PHASE A — SPICE FOUNDATION
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Coriander seed (whole) | 4 g | 0.80% |
+>> | Cloves (whole) | 0.5 g | 0.10% |
+>> | Cinnamon stick | 1.5 g | 0.30% |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Coriander seed (whole) | 4 g | 0.80% |
-> > | Cloves (whole) | 0.5 g | 0.10% |
-> > | Cinnamon stick | 1.5 g | 0.30% |
->
-> > [!column]
-> > ### Method
-> > 1. Dry-toast coriander and cloves until fragrant.
-> > 2. Grind coarsely. Keep cinnamon stick whole.
-> > 3. Reserve half the ground coriander for finishing phase.
+>> [!col-right]
+>> ### Method
+>> 1. Dry-toast coriander and cloves until fragrant.
+>> 2. Grind coarsely. Keep cinnamon stick whole.
+>> 3. Reserve half the ground coriander for finishing phase.
 
-</div>
 
-<div class="phase-separator"></div>
-
-<div class="modernist-phase">
+---
 
 ## PHASE B — STRUCTURAL BASE
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Olive oil (cooking) | 15 g | 3.00% |
+>> | Lamb neck (bone-in) | 500 g | 100.00% |
+>> | Onion, sliced | 150 g | 30.00% |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Olive oil (cooking) | 15 g | 3.00% |
-> > | Lamb neck (bone-in) | 500 g | 100.00% |
-> > | Onion, sliced | 150 g | 30.00% |
->
-> > [!column]
-> > ### Method
-> > 1. Heat oil in heavy pot.
-> > 2. Brown lamb neck aggressively in batches. Deep caramelisation. No crowding.
-> > 3. Remove meat.
-> > 4. Add onions to the rendered fat. Cook until golden and slightly jammy.
+>> [!col-right]
+>> ### Method
+>> 1. Heat oil in heavy pot.
+>> 2. Brown lamb neck aggressively in batches. Deep caramelisation. No crowding.
+>> 3. Remove meat.
+>> 4. Add onions to the rendered fat. Cook until golden and slightly jammy.
 
-</div>
 
-<div class="phase-separator"></div>
-
-<div class="modernist-phase">
+---
 
 ## PHASE C — AROMATIC BUILD
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Garlic | 7.5 g | 1.50% |
+>> | Fresh ginger (reserve 5 g for Phase F) | 7.5 g | 1.50% |
+>> | Tomato paste | 15 g | 3.00% |
+>> | Ground spices | from Phase A | — |
+>> | Mild Cape Malay curry powder | 2.5 g | 0.50% |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Garlic | 7.5 g | 1.50% |
-> > | Fresh ginger (reserve 5 g for Phase F) | 7.5 g | 1.50% |
-> > | Tomato paste | 15 g | 3.00% |
-> > | Ground spices | from Phase A | — |
-> > | Mild Cape Malay curry powder | 2.5 g | 0.50% |
->
-> > [!column]
-> > ### Method
-> > 1. Add garlic and most of the ginger. Sweat 30–45 seconds.
-> > 2. Add ground spices and curry powder. Bloom gently.
-> > 3. Stir in tomato paste and cook until darkened slightly.
+>> [!col-right]
+>> ### Method
+>> 1. Add garlic and most of the ginger. Sweat 30–45 seconds.
+>> 2. Add ground spices and curry powder. Bloom gently.
+>> 3. Stir in tomato paste and cook until darkened slightly.
 
-</div>
 
-<div class="phase-separator"></div>
-
-<div class="modernist-phase">
+---
 
 ## PHASE D — BRAISE
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Tomato (good Italian tinned) | 200 g | 40.00% |
+>> | Cinnamon stick | from Phase A | — |
+>> | Salt (initial) | 6 g | 1.20% |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Tomato (good Italian tinned) | 200 g | 40.00% |
-> > | Cinnamon stick | from Phase A | — |
-> > | Salt (initial) | 6 g | 1.20% |
->
-> > [!column]
-> > ### Method
-> > 1. Add tomatoes and return lamb to pot.
-> > 2. Add cinnamon stick.
-> > 3. Cover and simmer low 90–120 minutes.
-> > 4. Keep liquid tight and stew-like, not soupy.
-> > 5. Neck should soften and begin to collapse.
+>> [!col-right]
+>> ### Method
+>> 1. Add tomatoes and return lamb to pot.
+>> 2. Add cinnamon stick.
+>> 3. Cover and simmer low 90–120 minutes.
+>> 4. Keep liquid tight and stew-like, not soupy.
+>> 5. Neck should soften and begin to collapse.
 
-</div>
 
-<div class="phase-separator"></div>
-
-<div class="modernist-phase">
+---
 
 ## PHASE E — STARCH ABSORPTION
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Potato, chunked | 150 g | 30.00% |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Potato, chunked | 150 g | 30.00% |
->
-> > [!column]
-> > ### Method
-> > 1. Add potatoes.
-> > 2. Simmer uncovered 30–40 minutes.
-> > 3. Sauce should thicken naturally from gelatin and potato starch.
+>> [!col-right]
+>> ### Method
+>> 1. Add potatoes.
+>> 2. Simmer uncovered 30–40 minutes.
+>> 3. Sauce should thicken naturally from gelatin and potato starch.
 
-</div>
 
-<div class="phase-separator"></div>
-
-<div class="modernist-phase">
+---
 
 ## PHASE F — BRIGHTEN & LIFT
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Remaining ginger, micro-grated | 2.5 g | 0.50% |
+>> | Reserved toasted coriander | from Phase A | — |
+>> | Red wine vinegar | 7.5 g | 1.50% |
+>> | Flat leaf parsley | 10 g | 2.00% |
+>> | Salt + black pepper | to final balance | — |
+>> | Olive oil (finishing drizzle) | 5 g | 1.00% |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Remaining ginger, micro-grated | 2.5 g | 0.50% |
-> > | Reserved toasted coriander | from Phase A | — |
-> > | Red wine vinegar | 7.5 g | 1.50% |
-> > | Flat leaf parsley | 10 g | 2.00% |
-> > | Salt + black pepper | to final balance | — |
-> > | Olive oil (finishing drizzle) | 5 g | 1.00% |
->
-> > [!column]
-> > ### Method
-> > 1. Adjust salt.
-> > 2. Stir in vinegar.
-> > 3. Add fresh ginger and reserved coriander.
-> > 4. Fold in chopped parsley.
-> > 5. Drizzle olive oil just before serving.
-
-</div>
+>> [!col-right]
+>> ### Method
+>> 1. Adjust salt.
+>> 2. Stir in vinegar.
+>> 3. Add fresh ginger and reserved coriander.
+>> 4. Fold in chopped parsley.
+>> 5. Drizzle olive oil just before serving.
 
 ## RELATED LINKS
 <!-- AUTO-GENERATED:RELATED-LINKS:START -->

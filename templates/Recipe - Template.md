@@ -23,73 +23,56 @@ Target Internal Temperature:
 
 Primary Ingredient Basis: `0 g = 100%`
 
-<div class="modernist-phase">
+---
 
 ## PHASE A — TITLE
 
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Primary ingredient | 0 g | 100.0% |
+>> |  |  |  |
+>
+>> [!col-right]
+>> ### Method
+>> 1. Step one.
+>> 2. Step two.
+
 ---
-
-> [!columns]
->
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Primary ingredient | 0 g | 100.0% |
-> > |  |  |  |
->
-> > [!column]
-> > ### Method
-> > 1. Step one.
-> > 2. Step two.
-
-</div>
-
-<div class="phase-separator"></div>
-
-<div class="modernist-phase">
 
 ## PHASE B — TITLE
 
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> |  |  |  |
+>
+>> [!col-right]
+>> ### Method
+>> 1. Step one.
+>> 2. Step two.
+
 ---
-
-> [!columns]
->
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > |  |  |  |
->
-> > [!column]
-> > ### Method
-> > 1. Step one.
-> > 2. Step two.
-
-</div>
-
-<div class="phase-separator"></div>
-
-<div class="modernist-phase">
 
 ## PHASE C — TITLE
 
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> |  |  |  |
+>
+>> [!col-right]
+>> ### Method
+>> 1. Step one.
+>> 2. Step two.
+
 ---
-
-> [!columns]
->
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > |  |  |  |
->
-> > [!column]
-> > ### Method
-> > 1. Step one.
-> > 2. Step two.
-
-</div>
 
 ## STRUCTURAL NOTES
 

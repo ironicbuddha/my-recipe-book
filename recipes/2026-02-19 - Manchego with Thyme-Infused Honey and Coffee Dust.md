@@ -25,102 +25,88 @@ Primary Ingredient Basis: `100 g aged Manchego = 100%`
 
 Sweet–bitter contrast plate. Best served at cool room temperature.
 
-<div class="modernist-phase">
+
+---
 
 ## PHASE A — CHEESE PREPARATION
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Aged Manchego (12+ months) | 100 g | 100.00% |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Aged Manchego (12+ months) | 100 g | 100.00% |
->
-> > [!column]
-> > ### Method
-> > 1. Remove Manchego from refrigeration 45–60 min before serving.
-> > 2. Slice into 5–7 mm wedges or thick shards. Arrange on a neutral plate.
+>> [!col-right]
+>> ### Method
+>> 1. Remove Manchego from refrigeration 45–60 min before serving.
+>> 2. Slice into 5–7 mm wedges or thick shards. Arrange on a neutral plate.
 
-</div>
 
-<div class="phase-separator"></div>
-
-<div class="modernist-phase">
+---
 
 ## PHASE B — THYME HONEY
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Good-quality honey (wildflower preferred) | 30 g | 30.00% |
+>> | Fresh thyme leaves | 1 g | 1.00% |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Good-quality honey (wildflower preferred) | 30 g | 30.00% |
-> > | Fresh thyme leaves | 1 g | 1.00% |
->
-> > [!column]
-> > ### Method
-> > 1. Warm honey gently to 40–45 C (just fluid, not hot).
-> > 2. Stir in thyme leaves and allow to infuse 10–15 min.
-> > 3. Strain or leave leaves in for a rustic finish.
-> > 4. Goal: aromatic lift without cooked-herb bitterness.
+>> [!col-right]
+>> ### Method
+>> 1. Warm honey gently to 40–45 C (just fluid, not hot).
+>> 2. Stir in thyme leaves and allow to infuse 10–15 min.
+>> 3. Strain or leave leaves in for a rustic finish.
+>> 4. Goal: aromatic lift without cooked-herb bitterness.
 
-</div>
 
-<div class="phase-separator"></div>
-
-<div class="modernist-phase">
+---
 
 ## PHASE C — COFFEE DUST
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Whole coffee beans (medium roast) | 2.5 g | 2.50% |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Whole coffee beans (medium roast) | 2.5 g | 2.50% |
->
-> > [!column]
-> > ### Method
-> > 1. Grind coffee beans very fine, almost powder.
-> > 2. Sift through a fine sieve to remove coarse particles.
-> > 3. Use sparingly — think seasoning, not crust.
+>> [!col-right]
+>> ### Method
+>> 1. Grind coffee beans very fine, almost powder.
+>> 2. Sift through a fine sieve to remove coarse particles.
+>> 3. Use sparingly — think seasoning, not crust.
 
-</div>
 
-<div class="phase-separator"></div>
-
-<div class="modernist-phase">
+---
 
 ## PHASE D — FINISH AND ASSEMBLY
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Prepared Manchego | from Phase A | — |
+>> | Thyme honey | from Phase B | — |
+>> | Coffee dust | from Phase C | — |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Prepared Manchego | from Phase A | — |
-> > | Thyme honey | from Phase B | — |
-> > | Coffee dust | from Phase C | — |
->
-> > [!column]
-> > ### Method
-> > 1. Drizzle warm thyme honey lightly over or beside the cheese.
-> > 2. Dust with a restrained pinch of coffee powder.
-> > 3. Serve immediately.
-
-</div>
+>> [!col-right]
+>> ### Method
+>> 1. Drizzle warm thyme honey lightly over or beside the cheese.
+>> 2. Dust with a restrained pinch of coffee powder.
+>> 3. Serve immediately.
 
 ## RELATED LINKS
 <!-- AUTO-GENERATED:RELATED-LINKS:START -->

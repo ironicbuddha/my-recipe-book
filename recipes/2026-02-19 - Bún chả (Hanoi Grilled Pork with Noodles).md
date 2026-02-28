@@ -23,95 +23,85 @@ Target Internal Temperature: 68 C
 
 Primary Ingredient Basis: `250 g pork shoulder = 100%`
 
-<div class="modernist-phase">
+
+---
 
 ## PHASE A — PORK MARINADE & FORMATION
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Pork shoulder, thinly sliced | 250 g | 100.00% |
+>> | Pork mince (for patties) | 100 g | 40.00% |
+>> | Fish sauce | 15 g | 6.00% |
+>> | Sugar | 12.5 g | 5.00% |
+>> | Honey | 7.5 g | 3.00% |
+>> | Garlic, minced | 6 g | 2.40% |
+>> | Shallots, minced | 20 g | 8.00% |
+>> | Black pepper | 1.5 g | 0.60% |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Pork shoulder, thinly sliced | 250 g | 100.00% |
-> > | Pork mince (for patties) | 100 g | 40.00% |
-> > | Fish sauce | 15 g | 6.00% |
-> > | Sugar | 12.5 g | 5.00% |
-> > | Honey | 7.5 g | 3.00% |
-> > | Garlic, minced | 6 g | 2.40% |
-> > | Shallots, minced | 20 g | 8.00% |
-> > | Black pepper | 1.5 g | 0.60% |
->
-> > [!column]
-> > ### Method
-> > 1. Combine fish sauce, sugar, honey, garlic, shallots, and pepper.
-> > 2. Toss sliced pork shoulder in half the marinade.
-> > 3. Mix pork mince with remaining marinade and form small patties (~40 g each).
-> > 4. Marinate minimum 1 hour (overnight preferred).
+>> [!col-right]
+>> ### Method
+>> 1. Combine fish sauce, sugar, honey, garlic, shallots, and pepper.
+>> 2. Toss sliced pork shoulder in half the marinade.
+>> 3. Mix pork mince with remaining marinade and form small patties (~40 g each).
+>> 4. Marinate minimum 1 hour (overnight preferred).
 
-</div>
 
-<div class="phase-separator"></div>
-
-<div class="modernist-phase">
+---
 
 ## PHASE B — GRILLING
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Marinated pork (from Phase A) | 350 g | 140.00% |
+>> | Neutral oil (for brushing) | 5 g | 2.00% |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Marinated pork (from Phase A) | 350 g | 140.00% |
-> > | Neutral oil (for brushing) | 5 g | 2.00% |
->
-> > [!column]
-> > ### Method
-> > 1. Preheat charcoal grill or oven grill to high (250 C+ surface temp).
-> > 2. Lightly oil grates.
-> > 3. Grill sliced pork and patties until caramelized and lightly charred.
-> > 4. Cook to 68 C internal; rest 3–5 minutes before serving.
+>> [!col-right]
+>> ### Method
+>> 1. Preheat charcoal grill or oven grill to high (250 C+ surface temp).
+>> 2. Lightly oil grates.
+>> 3. Grill sliced pork and patties until caramelized and lightly charred.
+>> 4. Cook to 68 C internal; rest 3–5 minutes before serving.
 
-</div>
 
-<div class="phase-separator"></div>
-
-<div class="modernist-phase">
+---
 
 ## PHASE C — NƯỚC CHẤM & ASSEMBLY
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Fish sauce | 30 g | 12.00% |
+>> | Water | 30 g | 12.00% |
+>> | Rice vinegar | 30 g | 12.00% |
+>> | Sugar | 15 g | 6.00% |
+>> | Lime juice | 15 g | 6.00% |
+>> | Garlic, minced | 5 g | 2.00% |
+>> | Red chili, sliced | 2.5 g | 1.00% |
+>> | Carrot, thinly sliced | 25 g | 10.00% |
+>> | Rice vermicelli (dry) | 200 g | 80.00% |
+>> | Lettuce & mixed herbs | 100 g | 40.00% |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Fish sauce | 30 g | 12.00% |
-> > | Water | 30 g | 12.00% |
-> > | Rice vinegar | 30 g | 12.00% |
-> > | Sugar | 15 g | 6.00% |
-> > | Lime juice | 15 g | 6.00% |
-> > | Garlic, minced | 5 g | 2.00% |
-> > | Red chili, sliced | 2.5 g | 1.00% |
-> > | Carrot, thinly sliced | 25 g | 10.00% |
-> > | Rice vermicelli (dry) | 200 g | 80.00% |
-> > | Lettuce & mixed herbs | 100 g | 40.00% |
->
-> > [!column]
-> > ### Method
-> > 1. Dissolve sugar in warm water; add fish sauce, vinegar, lime, garlic, and chili.
-> > 2. Add carrot slices; rest 15 minutes.
-> > 3. Cook vermicelli in boiling water 3–4 minutes; rinse and drain.
-> > 4. Assemble bowls: noodles + herbs; serve pork alongside with dipping sauce.
-
-</div>
+>> [!col-right]
+>> ### Method
+>> 1. Dissolve sugar in warm water; add fish sauce, vinegar, lime, garlic, and chili.
+>> 2. Add carrot slices; rest 15 minutes.
+>> 3. Cook vermicelli in boiling water 3–4 minutes; rinse and drain.
+>> 4. Assemble bowls: noodles + herbs; serve pork alongside with dipping sauce.
 
 ## RELATED LINKS
 <!-- AUTO-GENERATED:RELATED-LINKS:START -->

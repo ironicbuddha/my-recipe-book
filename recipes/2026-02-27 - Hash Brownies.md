@@ -1,29 +1,32 @@
 ---
-title: "Masterclass Chocolate Brownie"
-date: 2026-02-19
+title: "Hash Brownies"
+date: 2026-02-27
 type: recipe
-status: canonical
-version: v1.2
+status: draft
+version: v1.0
 yield: "~1.1 kg batter"
-portions: 12–16
+portions: 16
 target_internal_temperature_c: "88–92"
 primary_ingredient: "unsalted butter"
 primary_mass_g: 250
 techniques: ["melting", "emulsification", "dry folding", "low-temperature baking"]
 principles: ["gluten limitation", "sugar film formation", "starch gelation", "protein coagulation"]
-tags: ["dish-dessert", "dessert", "chocolate", "oven", "set", "tender"]
+tags: ["dish-dessert", "dessert", "chocolate", "brownies", "oven", "set", "tender"]
 cssclass: modernist-recipe
 ---
 
-# MASTERCLASS CHOCOLATE BROWNIE
+# HASH BROWNIES
 
 Yield: ~1.1 kg batter · fits 20 × 20 × 4 cm square tin (~2.8 cm fill height)
-Portions: 12–16
+Portions: 16 (4 × 4)
 Target Internal Temperature: 88–92 C
 
 Primary Ingredient Basis: `250 g unsalted butter = 100%`
 
 Dense matrix. Crackled surface. Controlled set.
+
+If you choose to use an infused fat, use a commercially prepared, lab-tested product and follow its label + local laws. (I’m not including instructions for making infusions.)
+Optional related prep: [[2026-02-27 - Hash Butter]]
 
 
 ---
@@ -37,7 +40,7 @@ Dense matrix. Crackled surface. Controlled set.
 >> ### Components
 >> | Ingredient | Quantity | Scaling |
 >> | --- | --- | --- |
->> | Unsalted butter | 250 g | 100.00% |
+>> | Unsalted butter or [[2026-02-27 - Hash Butter|hash butter (lab-tested)]] | 250 g | 100.00% |
 >> | Dark chocolate 70% | 200 g | 80.00% |
 >
 >> [!col-right]
@@ -104,14 +107,14 @@ Dense matrix. Crackled surface. Controlled set.
 >> | Ingredient | Quantity | Scaling |
 >> | --- | --- | --- |
 >> | Prepared batter | ~1.1 kg | — |
->> | Pan (square or tart tin) | 20 × 20 × 4 cm square tin or 23 cm tart tin (>=2.5 cm deep) | — |
+>> | Pan (square) | 20 × 20 × 4 cm square tin | — |
 >> | Baking paper | as needed | — |
 >
 >> [!col-right]
 >> ### Method
 >> 1. Preheat oven to 170 C (conventional).
->> 2. Line pan with baking paper. If using a loose-bottom tart tin, wrap the outside base and sides with foil.
->> 3. Transfer batter and level surface. Fill no more than 80–85% of tin height (this batch is ~70% fill in a 20 × 20 × 4 cm tin).
+>> 2. Line pan with baking paper.
+>> 3. Transfer batter and level surface. Fill no more than 80–85% of tin height.
 >> 4. Bake 22–30 min to internal temperature 88–92 C.
 >> 5. Centre should wobble slightly when shaken.
 
@@ -132,37 +135,7 @@ Dense matrix. Crackled surface. Controlled set.
 >> [!col-right]
 >> ### Method
 >> 1. Cool completely at room temperature (minimum 2 h).
->> 2. Slice with a warm, clean knife for sharp edges.
-
-## RELATED LINKS
-<!-- AUTO-GENERATED:RELATED-LINKS:START -->
-
-### Techniques
-- [[Technique - Dry Folding]]
-- [[Technique - Emulsification]]
-- [[Technique - Low Temperature Baking]]
-- [[Technique - Melting]]
-
-### Principles
-- [[Principle - Gluten Limitation]]
-- [[Principle - Protein Coagulation]]
-- [[Principle - Starch Gelation]]
-- [[Principle - Sugar Film Formation]]
-
-### Ingredients
-- [[Ingredient - Baking Paper]]
-- [[Ingredient - Caster Sugar]]
-- [[Ingredient - Cocoa Powder]]
-- [[Ingredient - Dark Chocolate 70%]]
-- [[Ingredient - Egg]]
-- [[Ingredient - Fine Salt]]
-- [[Ingredient - Plain Flour]]
-- [[Ingredient - Square Pan]]
-- [[Ingredient - Unsalted Butter]]
-- [[Ingredient - Vanilla Extract]]
-- [[Ingredient - Walnuts]]
-
-<!-- AUTO-GENERATED:RELATED-LINKS:END -->
+>> 2. Slice into 16 equal squares (4 × 4) with a warm, clean knife.
 
 ## STRUCTURAL NOTES
 

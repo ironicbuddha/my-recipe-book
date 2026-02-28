@@ -23,122 +23,108 @@ Target Internal Temperature: 58–60 C
 
 Primary Ingredient Basis: `500 g pork = 100%`
 
-<div class="modernist-phase">
+
+---
 
 ## PHASE A — PORK PREPARATION (SOUS VIDE + DRY REST)
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Pork (shoulder / collar / loin) | 500 g | 100.00% |
+>> | Fine salt | 7.5 g | 1.50% |
+>> | Smoked paprika | 5 g | 1.00% |
+>> | Ground cumin | 2.5 g | 0.50% |
+>> | Garlic (minced) | 2.5 g | 0.50% |
+>> | Olive oil | 5 g | 1.00% |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Pork (shoulder / collar / loin) | 500 g | 100.00% |
-> > | Fine salt | 7.5 g | 1.50% |
-> > | Smoked paprika | 5 g | 1.00% |
-> > | Ground cumin | 2.5 g | 0.50% |
-> > | Garlic (minced) | 2.5 g | 0.50% |
-> > | Olive oil | 5 g | 1.00% |
->
-> > [!column]
-> > ### Method
-> > 1. Combine salt, paprika, cumin, and garlic. Rub evenly over pork.
-> > 2. Add olive oil and vacuum seal.
-> > 3. Cook sous vide at 60–62 C for 2–3 hours.
-> > 4. Remove from bag and pat completely dry.
-> > 5. Place uncovered on a rack in the refrigerator for 8–24 hours to dehydrate surface.
+>> [!col-right]
+>> ### Method
+>> 1. Combine salt, paprika, cumin, and garlic. Rub evenly over pork.
+>> 2. Add olive oil and vacuum seal.
+>> 3. Cook sous vide at 60–62 C for 2–3 hours.
+>> 4. Remove from bag and pat completely dry.
+>> 5. Place uncovered on a rack in the refrigerator for 8–24 hours to dehydrate surface.
 
-</div>
 
-<div class="phase-separator"></div>
-
-<div class="modernist-phase">
+---
 
 ## PHASE B — HIBACHI FINISH
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Prepared pork (from Phase A) | 500 g | 100.00% |
+>> | Neutral oil (for brushing) | 5 g | 1.00% |
+>> | Additional smoked paprika (optional refresh) | 1.5 g | 0.30% |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Prepared pork (from Phase A) | 500 g | 100.00% |
-> > | Neutral oil (for brushing) | 5 g | 1.00% |
-> > | Additional smoked paprika (optional refresh) | 1.5 g | 0.30% |
->
-> > [!column]
-> > ### Method
-> > 1. Preheat hibachi to very high heat (direct, open airflow).
-> > 2. Lightly brush pork with neutral oil.
-> > 3. Optional: dust lightly with fresh paprika.
-> > 4. Sear 30–60 seconds per side until deeply browned.
-> > 5. Remove at 55–57 C internal.
-> > 6. Rest 5–10 minutes; serve at 58–60 C.
+>> [!col-right]
+>> ### Method
+>> 1. Preheat hibachi to very high heat (direct, open airflow).
+>> 2. Lightly brush pork with neutral oil.
+>> 3. Optional: dust lightly with fresh paprika.
+>> 4. Sear 30–60 seconds per side until deeply browned.
+>> 5. Remove at 55–57 C internal.
+>> 6. Rest 5–10 minutes; serve at 58–60 C.
 
-</div>
 
-<div class="phase-separator"></div>
-
-<div class="modernist-phase">
+---
 
 ## PHASE C — CHARRED GREENS
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Mixed greens (broccoli / beans / courgettes) | 300 g | 60.00% |
+>> | Olive oil | 7.5 g | 1.50% |
+>> | Fine salt | 4 g | 0.80% |
+>> | Lemon juice or sherry vinegar | 10 g | 2.00% |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Mixed greens (broccoli / beans / courgettes) | 300 g | 60.00% |
-> > | Olive oil | 7.5 g | 1.50% |
-> > | Fine salt | 4 g | 0.80% |
-> > | Lemon juice or sherry vinegar | 10 g | 2.00% |
->
-> > [!column]
-> > ### Method
-> > 1. Toss greens with olive oil and salt.
-> > 2. Grill directly over hot coals until blistered and charred.
-> > 3. Remove while interiors remain vibrant green.
-> > 4. Finish with lemon juice or vinegar.
+>> [!col-right]
+>> ### Method
+>> 1. Toss greens with olive oil and salt.
+>> 2. Grill directly over hot coals until blistered and charred.
+>> 3. Remove while interiors remain vibrant green.
+>> 4. Finish with lemon juice or vinegar.
 
-</div>
 
-<div class="phase-separator"></div>
-
-<div class="modernist-phase">
+---
 
 ## PHASE D — SPANISH GREEN SAUCE
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Flat-leaf parsley | 25 g | 5.00% |
+>> | Olive oil | 40 g | 8.00% |
+>> | Sherry vinegar | 10 g | 2.00% |
+>> | Garlic (finely minced) | 2.5 g | 0.50% |
+>> | Fine salt | 5 g | 1.00% |
+>> | Lemon zest (optional) | 1 g | 0.20% |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Flat-leaf parsley | 25 g | 5.00% |
-> > | Olive oil | 40 g | 8.00% |
-> > | Sherry vinegar | 10 g | 2.00% |
-> > | Garlic (finely minced) | 2.5 g | 0.50% |
-> > | Fine salt | 5 g | 1.00% |
-> > | Lemon zest (optional) | 1 g | 0.20% |
->
-> > [!column]
-> > ### Method
-> > 1. Finely chop parsley.
-> > 2. Add garlic and salt; mash slightly to release oils.
-> > 3. Stir in olive oil until saucy but not loose.
-> > 4. Add vinegar gradually until bright and balanced.
-> > 5. Adjust seasoning. Rest 10 minutes before serving.
-
-</div>
+>> [!col-right]
+>> ### Method
+>> 1. Finely chop parsley.
+>> 2. Add garlic and salt; mash slightly to release oils.
+>> 3. Stir in olive oil until saucy but not loose.
+>> 4. Add vinegar gradually until bright and balanced.
+>> 5. Adjust seasoning. Rest 10 minutes before serving.
 
 ## RELATED LINKS
 <!-- AUTO-GENERATED:RELATED-LINKS:START -->

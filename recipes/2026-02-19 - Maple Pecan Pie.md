@@ -23,7 +23,8 @@ Target Internal Temperature: 88 C (custard centre)
 
 Primary Ingredient Basis: `200 g pecans = 100%`
 
-<div class="modernist-phase">
+
+---
 
 ## PHASE A — LAMINATED BUTTER CRUST (BOTTOM ONLY)
 
@@ -31,92 +32,81 @@ Single-disc formula for one 23 cm bottom crust.
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | All-purpose flour | 188 g | 93.75% |
+>> | Unsalted butter (frozen) | 125 g | 62.50% |
+>> | Solid vegetable fat (optional) | 30 g | 15.00% |
+>> | Fine salt | 2.5 g | 1.25% |
+>> | Ice-cold water | 68 g | 34.00% |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | All-purpose flour | 188 g | 93.75% |
-> > | Unsalted butter (frozen) | 125 g | 62.50% |
-> > | Solid vegetable fat (optional) | 30 g | 15.00% |
-> > | Fine salt | 2.5 g | 1.25% |
-> > | Ice-cold water | 68 g | 34.00% |
->
-> > [!column]
-> > ### Method
-> > 1. Whisk flour and salt.
-> > 2. Grate frozen butter into flour; toss gently to coat without smearing.
-> > 3. Add water gradually until dough just holds when pressed.
-> > 4. Press into one disc; rest 30–60 min.
-> > 5. Roll to fit 23 cm tin. Do not stretch.
-> > 6. Trim with 1–1.5 cm overhang; crimp.
-> > 7. Wrap tightly and refrigerate overnight.
+>> [!col-right]
+>> ### Method
+>> 1. Whisk flour and salt.
+>> 2. Grate frozen butter into flour; toss gently to coat without smearing.
+>> 3. Add water gradually until dough just holds when pressed.
+>> 4. Press into one disc; rest 30–60 min.
+>> 5. Roll to fit 23 cm tin. Do not stretch.
+>> 6. Trim with 1–1.5 cm overhang; crimp.
+>> 7. Wrap tightly and refrigerate overnight.
 
-</div>
 
-<div class="phase-separator"></div>
-
-<div class="modernist-phase">
+---
 
 ## PHASE B — MAPLE PECAN CUSTARD
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Pecan halves (toasted) | 200 g | 100.00% |
+>> | Maple syrup (dark) | 160 g | 80.00% |
+>> | Muscovado sugar | 50 g | 25.00% |
+>> | Unsalted butter (melted) | 60 g | 30.00% |
+>> | Whole eggs (3) | 150 g | 75.00% |
+>> | Extra yolk (½) | 10 g | 5.00% |
+>> | Jack Daniel's | 15 g | 7.50% |
+>> | Verjuice | 7 g | 3.50% |
+>> | Fine salt | 3 g | 1.50% |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Pecan halves (toasted) | 200 g | 100.00% |
-> > | Maple syrup (dark) | 160 g | 80.00% |
-> > | Muscovado sugar | 50 g | 25.00% |
-> > | Unsalted butter (melted) | 60 g | 30.00% |
-> > | Whole eggs (3) | 150 g | 75.00% |
-> > | Extra yolk (½) | 10 g | 5.00% |
-> > | Jack Daniel's | 15 g | 7.50% |
-> > | Verjuice | 7 g | 3.50% |
-> > | Fine salt | 3 g | 1.50% |
->
-> > [!column]
-> > ### Method
-> > 1. Toast pecans at 180 C for 8–10 min; cool fully.
-> > 2. Whisk eggs and yolk gently (no aeration).
-> > 3. Add maple, muscovado, melted butter, whiskey, verjuice, salt.
-> > 4. Scatter pecans into chilled raw crust.
-> > 5. Pour custard over.
+>> [!col-right]
+>> ### Method
+>> 1. Toast pecans at 180 C for 8–10 min; cool fully.
+>> 2. Whisk eggs and yolk gently (no aeration).
+>> 3. Add maple, muscovado, melted butter, whiskey, verjuice, salt.
+>> 4. Scatter pecans into chilled raw crust.
+>> 5. Pour custard over.
 
-</div>
 
-<div class="phase-separator"></div>
-
-<div class="modernist-phase">
+---
 
 ## PHASE C — STAGED BAKE
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Parameter | Value | Scaling |
+>> | --- | --- | --- |
+>> | Initial bake | 200 C | — |
+>> | Duration | 20 min | — |
+>> | Finish temp | 175–180 C | — |
+>> | Finish time | 30–40 min | — |
 >
-> > [!column]
-> > ### Components
-> > | Parameter | Value | Scaling |
-> > | --- | --- | --- |
-> > | Initial bake | 200 C | — |
-> > | Duration | 20 min | — |
-> > | Finish temp | 175–180 C | — |
-> > | Finish time | 30–40 min | — |
->
-> > [!column]
-> > ### Method
-> > 1. Bake 20 min at 200 C to set crust structure.
-> > 2. Reduce to 175–180 C.
-> > 3. Bake until outer ring set and centre reaches ~88 C.
-> > 4. Shield crust edge if necessary.
-> > 5. Cool minimum 2 hours (overnight preferred).
-
-</div>
+>> [!col-right]
+>> ### Method
+>> 1. Bake 20 min at 200 C to set crust structure.
+>> 2. Reduce to 175–180 C.
+>> 3. Bake until outer ring set and centre reaches ~88 C.
+>> 4. Shield crust edge if necessary.
+>> 5. Cool minimum 2 hours (overnight preferred).
 
 ## RELATED LINKS
 <!-- AUTO-GENERATED:RELATED-LINKS:START -->

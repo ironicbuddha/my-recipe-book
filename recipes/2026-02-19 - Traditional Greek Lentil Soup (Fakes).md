@@ -25,110 +25,96 @@ Primary Ingredient Basis: `167 g brown lentils = 100%`
 
 Classic village-style Greek lentil soup. Finished with lemon or red wine vinegar and raw EVOO.
 
-<div class="modernist-phase">
+
+---
 
 ## PHASE A — LENTIL PREPARATION
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Brown lentils (dry) | 166.67 g | 100.00% |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Brown lentils (dry) | 166.67 g | 100.00% |
->
-> > [!column]
-> > ### Method
-> > 1. Rinse lentils thoroughly under cold water until runoff is clear.
-> > 2. Optional: bring lentils to a brief boil (5 min), drain, and rinse to reduce bitterness.
+>> [!col-right]
+>> ### Method
+>> 1. Rinse lentils thoroughly under cold water until runoff is clear.
+>> 2. Optional: bring lentils to a brief boil (5 min), drain, and rinse to reduce bitterness.
 
-</div>
 
-<div class="phase-separator"></div>
-
-<div class="modernist-phase">
+---
 
 ## PHASE B — SOFFRITTO (AROMATIC BASE)
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Extra virgin olive oil (for cooking) | 20 g | 12.00% |
+>> | Onion, finely chopped | 66.67 g | 40.00% |
+>> | Carrot, diced | 50 g | 30.00% |
+>> | Garlic, minced | 5 g | 3.00% |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Extra virgin olive oil (for cooking) | 20 g | 12.00% |
-> > | Onion, finely chopped | 66.67 g | 40.00% |
-> > | Carrot, diced | 50 g | 30.00% |
-> > | Garlic, minced | 5 g | 3.00% |
->
-> > [!column]
-> > ### Method
-> > 1. Heat olive oil in a heavy pot over medium heat.
-> > 2. Add onion and carrot. Cook 5–7 minutes until softened and lightly translucent.
-> > 3. Add garlic and cook 30 seconds until fragrant.
+>> [!col-right]
+>> ### Method
+>> 1. Heat olive oil in a heavy pot over medium heat.
+>> 2. Add onion and carrot. Cook 5–7 minutes until softened and lightly translucent.
+>> 3. Add garlic and cook 30 seconds until fragrant.
 
-</div>
 
-<div class="phase-separator"></div>
-
-<div class="modernist-phase">
+---
 
 ## PHASE C — BUILD THE SOUP
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Crushed tomatoes | 133.33 g | 80.00% |
+>> | Bay leaves | 0.67 g | 0.40% |
+>> | Dried oregano (optional) | 0.67 g | 0.40% |
+>> | Water or light vegetable stock | 500 g | 300.00% |
+>> | Salt | 3.33 g | 2.00% |
+>> | Black pepper | 0.67 g | 0.40% |
+>> | Prepared lentils | from Phase A | — |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Crushed tomatoes | 133.33 g | 80.00% |
-> > | Bay leaves | 0.67 g | 0.40% |
-> > | Dried oregano (optional) | 0.67 g | 0.40% |
-> > | Water or light vegetable stock | 500 g | 300.00% |
-> > | Salt | 3.33 g | 2.00% |
-> > | Black pepper | 0.67 g | 0.40% |
-> > | Prepared lentils | from Phase A | — |
->
-> > [!column]
-> > ### Method
-> > 1. Stir in crushed tomatoes, bay leaves, oregano, salt, and pepper.
-> > 2. Add lentils and water/stock.
-> > 3. Bring to a boil, then reduce to a gentle simmer.
-> > 4. Cook uncovered or partially covered for 35–45 minutes, stirring occasionally, until lentils are tender and broth has thickened slightly.
-> > 5. Adjust seasoning. Add additional water if a looser texture is desired.
+>> [!col-right]
+>> ### Method
+>> 1. Stir in crushed tomatoes, bay leaves, oregano, salt, and pepper.
+>> 2. Add lentils and water/stock.
+>> 3. Bring to a boil, then reduce to a gentle simmer.
+>> 4. Cook uncovered or partially covered for 35–45 minutes, stirring occasionally, until lentils are tender and broth has thickened slightly.
+>> 5. Adjust seasoning. Add additional water if a looser texture is desired.
 
-</div>
 
-<div class="phase-separator"></div>
-
-<div class="modernist-phase">
+---
 
 ## PHASE D — FINISH (CRITICAL STEP)
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Fresh lemon juice or red wine vinegar | 10 g | 6.00% |
+>> | Extra virgin olive oil (raw drizzle) | 13.33 g | 8.00% |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Fresh lemon juice or red wine vinegar | 10 g | 6.00% |
-> > | Extra virgin olive oil (raw drizzle) | 13.33 g | 8.00% |
->
-> > [!column]
-> > ### Method
-> > 1. Remove soup from heat.
-> > 2. Stir in lemon juice or red wine vinegar just before serving.
-> > 3. Ladle into bowls and drizzle generously with raw extra virgin olive oil.
-
-</div>
+>> [!col-right]
+>> ### Method
+>> 1. Remove soup from heat.
+>> 2. Stir in lemon juice or red wine vinegar just before serving.
+>> 3. Ladle into bowls and drizzle generously with raw extra virgin olive oil.
 
 ## RELATED LINKS
 <!-- AUTO-GENERATED:RELATED-LINKS:START -->

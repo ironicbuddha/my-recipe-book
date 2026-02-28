@@ -33,19 +33,20 @@ Follow the rules in `README.md`:
 - Start from `templates/Recipe - Template.md`.
 - Keep YAML frontmatter and `version`.
 - Use chronological `PHASE` sections.
-- Use the current two-column callout pattern:
+- Use the current two-column callout pattern (pure CSS, no plugins):
 
 ```md
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
->
-> > [!column]
-> > ### Method
-> > 1. Step one.
+>> [!col-right]
+>> ### Method
+>> 1. Step one.
 ```
+
+- Separate phases with `---` horizontal rules (no HTML divs).
 
 - Include `## STRUCTURAL NOTES` and `## FAILURE MODES`.
 - Do not introduce ingredients before their first-use phase.

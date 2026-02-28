@@ -23,108 +23,94 @@ Target Internal Temperature: 93–96 C
 
 Primary Ingredient Basis: `500 g waxy potatoes = 100%`
 
-<div class="modernist-phase">
+
+---
 
 ## PHASE A — PREP & SEASON
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Waxy potatoes | 500 g | 100.00% |
+>> | Fine salt | 6 g | 1.20% |
+>> | White pepper | 0.5 g | 0.10% |
+>> | Garlic (finely grated) | 4 g | 0.80% |
+>> | Unsalted butter (for dish) | 7.5 g | 1.50% |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Waxy potatoes | 500 g | 100.00% |
-> > | Fine salt | 6 g | 1.20% |
-> > | White pepper | 0.5 g | 0.10% |
-> > | Garlic (finely grated) | 4 g | 0.80% |
-> > | Unsalted butter (for dish) | 7.5 g | 1.50% |
->
-> > [!column]
-> > ### Method
-> > 1. Preheat oven to 170 C (no fan).
-> > 2. Slice potatoes 2–3 mm thick using a mandoline. Do not rinse.
-> > 3. Combine salt, pepper, and garlic.
-> > 4. Butter shallow baking dish thoroughly.
+>> [!col-right]
+>> ### Method
+>> 1. Preheat oven to 170 C (no fan).
+>> 2. Slice potatoes 2–3 mm thick using a mandoline. Do not rinse.
+>> 3. Combine salt, pepper, and garlic.
+>> 4. Butter shallow baking dish thoroughly.
 
-</div>
 
-<div class="phase-separator"></div>
-
-<div class="modernist-phase">
+---
 
 ## PHASE B — ASSEMBLY
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Heavy cream (35%) | 350 g | 70.00% |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Heavy cream (35%) | 350 g | 70.00% |
->
-> > [!column]
-> > ### Method
-> > 1. Warm cream gently to ~40 C (optional but stabilising).
-> > 2. Layer potatoes tightly and evenly.
-> > 3. Pour cream over until just covered.
-> > 4. Tap dish lightly to release trapped air pockets.
+>> [!col-right]
+>> ### Method
+>> 1. Warm cream gently to ~40 C (optional but stabilising).
+>> 2. Layer potatoes tightly and evenly.
+>> 3. Pour cream over until just covered.
+>> 4. Tap dish lightly to release trapped air pockets.
 
-</div>
 
-<div class="phase-separator"></div>
-
-<div class="modernist-phase">
+---
 
 ## PHASE C — BAKE
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Assembled gratin | 1 unit | — |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Assembled gratin | 1 unit | — |
->
-> > [!column]
-> > ### Method
-> > 1. Cover loosely with foil.
-> > 2. Bake 45 min (structure set).
-> > 3. Remove foil and bake 30–40 min more.
-> > 4. Target internal temperature 93–96 C.
-> > 5. Top lightly golden; centre fully tender.
+>> [!col-right]
+>> ### Method
+>> 1. Cover loosely with foil.
+>> 2. Bake 45 min (structure set).
+>> 3. Remove foil and bake 30–40 min more.
+>> 4. Target internal temperature 93–96 C.
+>> 5. Top lightly golden; centre fully tender.
 
-</div>
 
-<div class="phase-separator"></div>
-
-<div class="modernist-phase">
+---
 
 ## PHASE D — SET & SERVE
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Baked gratin | 1 unit | — |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Baked gratin | 1 unit | — |
->
-> > [!column]
-> > ### Method
-> > 1. Rest minimum 30 min before slicing.
-> > 2. Starch network stabilises during rest.
-> > 3. Slice cleanly with sharp knife.
-> > 4. Serve warm, not molten.
-
-</div>
+>> [!col-right]
+>> ### Method
+>> 1. Rest minimum 30 min before slicing.
+>> 2. Starch network stabilises during rest.
+>> 3. Slice cleanly with sharp knife.
+>> 4. Serve warm, not molten.
 
 ## RELATED LINKS
 <!-- AUTO-GENERATED:RELATED-LINKS:START -->

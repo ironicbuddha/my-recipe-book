@@ -1,246 +1,185 @@
 /* ==========================================================
-   Multi-Column Markdown (ckRobinson) — Modernist Layout CSS
-   Fixes: side-by-side columns + sane tables (no letter-wrap)
+   Modernist Recipe Layout — Pure CSS, no plugins
+   Uses native Obsidian callouts for column layout.
    ========================================================== */
 
-/* Make the COLUMNS container a flex row */
-.callout[data-callout="columns"] {
-  width: 100% !important;
-}
+/* -------------------------
+   COLUMN CONTAINER: flex row
+   ------------------------- */
 
-.callout[data-callout="columns"] .callout-content {
-  display: flex !important;
-  width: 100% !important;
-  gap: 3rem !important;
-  align-items: flex-start !important;
-
-  /* CRITICAL for flex overflow sanity */
-  min-width: 0 !important;
-}
-
-/* Obsidian can wrap nested column callouts in blockquotes */
-.callout[data-callout="columns"] .callout-content > blockquote {
-  flex: 1 1 0 !important;
-  min-width: 0 !important;
-  max-width: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  border: 0 !important;
-  align-self: flex-start !important;
-}
-
-/* Each COLUMN is a flex item */
-.callout[data-callout="columns"] .callout-content > .callout[data-callout="column"] {
-  flex: 1 1 0 !important;
-  min-width: 0 !important;
-  max-width: 100% !important;
-  align-self: flex-start !important;
-}
-
-.callout[data-callout="columns"] .callout-content > blockquote > .callout[data-callout="column"] {
-  flex: 1 1 0 !important;
-  min-width: 0 !important;
-  max-width: 100% !important;
-  align-self: flex-start !important;
-}
-
-/* Optional: 45/55 split (comment these out if you prefer equal columns) */
-.callout[data-callout="columns"] .callout-content > .callout[data-callout="column"]:first-child {
-  flex: 0 1 45% !important;
-}
-.callout[data-callout="columns"] .callout-content > .callout[data-callout="column"]:last-child {
-  flex: 0 1 55% !important;
-}
-
-.callout[data-callout="columns"] .callout-content > blockquote:first-child {
-  flex: 0 1 45% !important;
-}
-.callout[data-callout="columns"] .callout-content > blockquote:last-child {
-  flex: 0 1 55% !important;
-}
-
-/* Strip callout chrome (so it feels like layout, not a warning box) */
-.callout[data-callout="columns"],
-.callout[data-callout="column"] {
+.callout[data-callout="col"] {
   background: transparent !important;
   border: 0 !important;
   box-shadow: none !important;
+  padding: 0 !important;
 }
 
-.callout[data-callout="columns"] .callout-title,
-.callout[data-callout="column"] .callout-title {
+.callout[data-callout="col"] > .callout-title {
   display: none !important;
 }
 
-.callout[data-callout="columns"] .callout-content,
-.callout[data-callout="column"] .callout-content {
+.callout[data-callout="col"] > .callout-content {
+  display: flex !important;
+  gap: 1.5rem !important;
+  align-items: flex-start !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  min-width: 0 !important;
+}
+
+/* -------------------------
+   COLUMN ITEMS
+   ------------------------- */
+
+.callout[data-callout="col-left"],
+.callout[data-callout="col-right"] {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  min-width: 0 !important;
+}
+
+.callout[data-callout="col-left"] > .callout-title,
+.callout[data-callout="col-right"] > .callout-title {
+  display: none !important;
+}
+
+.callout[data-callout="col-left"] > .callout-content,
+.callout[data-callout="col-right"] > .callout-content {
   padding: 0 !important;
   margin: 0 !important;
 }
 
-/* Keep column content pinned to the top in both Reading and Live Preview */
-.callout[data-callout="column"] .callout-content {
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: flex-start !important;
-  align-items: stretch !important;
+/* Left column: Components (45%) */
+.callout[data-callout="col-left"] {
+  flex: 0 0 45% !important;
+  border-right: 1px solid var(--background-modifier-border) !important;
+  padding-right: 1.25rem !important;
 }
 
-/* Pin first content block to top of each column (e.g., Components/Method headings) */
-.callout[data-callout="column"] .callout-content > :first-child {
+/* Right column: Method (calc remaining) */
+.callout[data-callout="col-right"] {
+  flex: 1 1 0 !important;
+  padding-left: 1.25rem !important;
+}
+
+/* Obsidian wraps nested callouts in blockquotes — handle that */
+.callout[data-callout="col"] > .callout-content > blockquote {
+  flex: 1 1 0 !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+/* Pin headings to top */
+.callout[data-callout="col-left"] > .callout-content > :first-child,
+.callout[data-callout="col-right"] > .callout-content > :first-child {
   margin-top: 0 !important;
   padding-top: 0 !important;
 }
 
-.callout[data-callout="column"] .callout-content h1:first-child,
-.callout[data-callout="column"] .callout-content h2:first-child,
-.callout[data-callout="column"] .callout-content h3:first-child,
-.callout[data-callout="column"] .callout-content h4:first-child,
-.callout[data-callout="column"] .callout-content h5:first-child,
-.callout[data-callout="column"] .callout-content h6:first-child {
+.callout[data-callout="col-left"] h3,
+.callout[data-callout="col-right"] h3 {
   margin-top: 0 !important;
 }
 
-/* Obsidian can inject leading empty paragraphs in callout bodies; remove them */
-.callout[data-callout="column"] .callout-content > p:empty {
+/* Remove empty paragraphs Obsidian injects */
+.callout[data-callout="col-left"] > .callout-content > p:empty,
+.callout[data-callout="col-right"] > .callout-content > p:empty {
   display: none !important;
 }
 
-.callout[data-callout="column"] .callout-content > p:first-child {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
-
-/* Divider + padding */
-.callout[data-callout="columns"] .callout-content > .callout[data-callout="column"]:first-child {
-  border-right: 1px solid var(--background-modifier-border) !important;
-  padding-right: 1.75rem !important;
-}
-.callout[data-callout="columns"] .callout-content > .callout[data-callout="column"]:last-child {
-  padding-left: 1.75rem !important;
-}
-
-.callout[data-callout="columns"] .callout-content > blockquote:first-child {
-  border-right: 1px solid var(--background-modifier-border) !important;
-  padding-right: 1.75rem !important;
-}
-.callout[data-callout="columns"] .callout-content > blockquote:last-child {
-  padding-left: 1.75rem !important;
-}
-
 /* -------------------------
-   TABLES: behave like tables
+   TABLES
    ------------------------- */
 
-/* Let the table size naturally */
-.callout[data-callout="column"] table {
+.callout[data-callout="col-left"] table {
   width: 100% !important;
   border-collapse: collapse;
-  table-layout: auto !important;      /* <-- IMPORTANT: no fixed-layout squeeze */
+  table-layout: auto !important;
 }
 
-/* If table content is wider than the column, scroll instead of wrapping letters */
-.callout[data-callout="column"] .table-container,
-.callout[data-callout="column"] table {
+.callout[data-callout="col-left"] .table-container,
+.callout[data-callout="col-left"] table {
   overflow-x: auto !important;
-  display: block;                      /* enables horizontal scroll for table */
+  display: block;
 }
 
-/* Table cells */
-.callout[data-callout="column"] th,
-.callout[data-callout="column"] td {
+.callout[data-callout="col-left"] th,
+.callout[data-callout="col-left"] td {
   border: 1px solid var(--background-modifier-border);
   padding: 0.4rem 0.6rem;
   vertical-align: top;
   text-align: left;
-
-  /* prevent per-letter wrapping */
   white-space: nowrap !important;
 }
 
 /* Right-align numeric cols */
-.callout[data-callout="column"] th:nth-child(2),
-.callout[data-callout="column"] th:nth-child(3),
-.callout[data-callout="column"] td:nth-child(2),
-.callout[data-callout="column"] td:nth-child(3) {
+.callout[data-callout="col-left"] th:nth-child(2),
+.callout[data-callout="col-left"] th:nth-child(3),
+.callout[data-callout="col-left"] td:nth-child(2),
+.callout[data-callout="col-left"] td:nth-child(3) {
   text-align: right;
 }
 
-/* Lists spacing */
-.callout[data-callout="column"] ol {
+/* -------------------------
+   METHOD LISTS
+   ------------------------- */
+
+.callout[data-callout="col-right"] ol {
   margin: 0 !important;
   padding: 0 !important;
   list-style-position: inside !important;
 }
-.callout[data-callout="column"] li {
+
+.callout[data-callout="col-right"] li {
   margin: 0 0 0.4rem 0 !important;
   padding-left: 0 !important;
 }
 
-/* Tighten heading-to-list spacing in Method column */
-.callout[data-callout="column"] h3 {
+.callout[data-callout="col-right"] h3 {
   margin-bottom: 0.35rem !important;
 }
 
-.callout[data-callout="column"] h3 + ol {
+.callout[data-callout="col-right"] h3 + ol {
   margin-top: 0 !important;
   margin-block-start: 0 !important;
 }
 
-/* If Obsidian injects a spacer paragraph between heading and list, neutralize it */
-.callout[data-callout="column"] h3 + p {
+.callout[data-callout="col-right"] h3 + p {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
   min-height: 0 !important;
 }
 
-/* Responsive collapse */
+/* -------------------------
+   RESPONSIVE
+   ------------------------- */
+
 @media (max-width: 900px) {
-  .callout[data-callout="columns"] .callout-content {
+  .callout[data-callout="col"] > .callout-content {
     flex-direction: column !important;
   }
-  .callout[data-callout="columns"] .callout-content > .callout[data-callout="column"]:first-child {
+  .callout[data-callout="col-left"] {
+    flex: 1 1 100% !important;
     border-right: 0 !important;
     padding-right: 0 !important;
   }
-  .callout[data-callout="columns"] .callout-content > .callout[data-callout="column"]:last-child {
-    padding-left: 0 !important;
-  }
-  .callout[data-callout="columns"] .callout-content > blockquote:first-child {
-    border-right: 0 !important;
-    padding-right: 0 !important;
-  }
-  .callout[data-callout="columns"] .callout-content > blockquote:last-child {
+  .callout[data-callout="col-right"] {
     padding-left: 0 !important;
   }
 }
 
-/* Full-width only for recipe notes (keeps readable line length elsewhere) */
+/* -------------------------
+   FULL-WIDTH
+   ------------------------- */
+
 .modernist-recipe .markdown-preview-section,
 .modernist-recipe .markdown-source-view.is-live-preview .cm-content {
   max-width: 100% !important;
 }
 
-/* Some themes clamp this container instead */
 .modernist-recipe .markdown-preview-view .markdown-preview-sizer {
   max-width: 100% !important;
-}
-
-/* Phase containers */
-.modernist-phase {
-  padding: 2rem 2.5rem;
-  background: var(--background-secondary);
-  border-radius: 6px;
-  margin-bottom: 2rem;
-}
-
-.modernist-phase > h2 {
-  margin-top: 0;
-  letter-spacing: 0.05em;
-}
-
-.phase-separator {
-  height: 1px;
-  background: var(--background-modifier-border);
-  margin: 3rem 0;
 }

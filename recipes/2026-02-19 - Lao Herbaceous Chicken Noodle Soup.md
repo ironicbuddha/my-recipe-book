@@ -23,224 +23,198 @@ Total Time: 2–2.5 hours
 
 Primary Ingredient Basis: `750 g whole chicken = 100%`
 
-<div class="modernist-phase">
+
+---
 
 ## PHASE A — BLANCH WING TIPS
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Chicken wing tips | 250 g | 33.00% |
+>> | Cold water | as needed | — |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Chicken wing tips | 250 g | 33.00% |
-> > | Cold water | as needed | — |
->
-> > [!column]
-> > ### Method
-> > 1. Bring wing tips and cold water to a hard boil.
-> > 2. Boil 3–5 minutes until heavy foam forms.
-> > 3. Drain and rinse thoroughly.
-> > 4. Set aside.
+>> [!col-right]
+>> ### Method
+>> 1. Bring wing tips and cold water to a hard boil.
+>> 2. Boil 3–5 minutes until heavy foam forms.
+>> 3. Drain and rinse thoroughly.
+>> 4. Set aside.
 
-</div>
 
-<div class="phase-separator"></div>
-
-<div class="modernist-phase">
+---
 
 ## PHASE B — FORTIFIED BROTH & POACH CHICKEN
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Blanched wing tips | from Phase A | — |
+>> | Whole chicken | 750 g | 100.00% |
+>> | Onion, halved | 1/2 large | — |
+>> | Ginger, sliced | 25 g | 3.30% |
+>> | Garlic cloves | 2–3 | — |
+>> | Lemongrass, bruised | 1/2 stalk | — |
+>> | Makrut lime leaves, torn | 1 | — |
+>> | Coriander stems/roots | large handful | — |
+>> | Coriander seeds | 1.5 g | 0.20% |
+>> | White peppercorns | 1 g | 0.13% |
+>> | Cold water | to fully submerge | — |
+>> | Fine salt | light initial seasoning | — |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Blanched wing tips | from Phase A | — |
-> > | Whole chicken | 750 g | 100.00% |
-> > | Onion, halved | 1/2 large | — |
-> > | Ginger, sliced | 25 g | 3.30% |
-> > | Garlic cloves | 2–3 | — |
-> > | Lemongrass, bruised | 1/2 stalk | — |
-> > | Makrut lime leaves, torn | 1 | — |
-> > | Coriander stems/roots | large handful | — |
-> > | Coriander seeds | 1.5 g | 0.20% |
-> > | White peppercorns | 1 g | 0.13% |
-> > | Cold water | to fully submerge | — |
-> > | Fine salt | light initial seasoning | — |
->
-> > [!column]
-> > ### Method
-> > 1. Combine all ingredients in a stockpot.
-> > 2. Add cold water to fully cover contents.
-> > 3. Heat gradually to a gentle simmer; skim impurities.
-> > 4. Do not boil.
-> > 5. After 45–55 minutes remove chicken.
-> > 6. Continue simmering wing tips 30–45 minutes.
+>> [!col-right]
+>> ### Method
+>> 1. Combine all ingredients in a stockpot.
+>> 2. Add cold water to fully cover contents.
+>> 3. Heat gradually to a gentle simmer; skim impurities.
+>> 4. Do not boil.
+>> 5. After 45–55 minutes remove chicken.
+>> 6. Continue simmering wing tips 30–45 minutes.
 
-</div>
 
-<div class="phase-separator"></div>
-
-<div class="modernist-phase">
+---
 
 ## PHASE C — STRAIN BROTH & SHRED CHICKEN
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Poached whole chicken | from Phase B | — |
+>> | Finished broth | from Phase B | — |
+>> | Fine salt | to taste | — |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Poached whole chicken | from Phase B | — |
-> > | Finished broth | from Phase B | — |
-> > | Fine salt | to taste | — |
->
-> > [!column]
-> > ### Method
-> > 1. Rest chicken 15–20 minutes.
-> > 2. Shred meat by hand into long strands.
-> > 3. Strain broth through a fine sieve without pressing solids.
-> > 4. Season broth to taste.
+>> [!col-right]
+>> ### Method
+>> 1. Rest chicken 15–20 minutes.
+>> 2. Shred meat by hand into long strands.
+>> 3. Strain broth through a fine sieve without pressing solids.
+>> 4. Season broth to taste.
 
-</div>
 
-<div class="phase-separator"></div>
-
-<div class="modernist-phase">
+---
 
 ## PHASE D — RED JEOW (SMOKY CHILLI PASTE)
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Dried red chillies | 4–6 | — |
+>> | Hot water (for soaking) | as needed | — |
+>> | Garlic cloves | 3 | — |
+>> | Shallots | 1 small | — |
+>> | Neutral oil | 15 g | 2.00% |
+>> | Fish sauce | to taste | — |
+>> | Lime juice or tamarind water | to taste | — |
+>> | Fermented fish sauce / padek (optional) | 2.5 g | 0.30% |
+>> | Toasted sticky rice powder (optional) | pinch | — |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Dried red chillies | 4–6 | — |
-> > | Hot water (for soaking) | as needed | — |
-> > | Garlic cloves | 3 | — |
-> > | Shallots | 1 small | — |
-> > | Neutral oil | 15 g | 2.00% |
-> > | Fish sauce | to taste | — |
-> > | Lime juice or tamarind water | to taste | — |
-> > | Fermented fish sauce / padek (optional) | 2.5 g | 0.30% |
-> > | Toasted sticky rice powder (optional) | pinch | — |
->
-> > [!column]
-> > ### Method
-> > 1. Toast dried chillies until fragrant; do not burn.
-> > 2. Soak in hot water 10 minutes.
-> > 3. Char garlic and shallots until blistered.
-> > 4. Pound or blend to a coarse paste.
-> > 5. Fry paste gently in oil until aromatic.
-> > 6. Season with fish sauce, then acid.
-> > 7. Cool and reserve.
+>> [!col-right]
+>> ### Method
+>> 1. Toast dried chillies until fragrant; do not burn.
+>> 2. Soak in hot water 10 minutes.
+>> 3. Char garlic and shallots until blistered.
+>> 4. Pound or blend to a coarse paste.
+>> 5. Fry paste gently in oil until aromatic.
+>> 6. Season with fish sauce, then acid.
+>> 7. Cool and reserve.
 
-</div>
 
-<div class="phase-separator"></div>
-
-<div class="modernist-phase">
+---
 
 ## PHASE E — GREEN JEOW (FRESH CHILLI PASTE)
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Fresh green chillies | 2–4 | — |
+>> | Garlic cloves | 2 | — |
+>> | Shallot | 1/2 small | — |
+>> | Coriander roots/stems | 1–2 | — |
+>> | Spring onion (white + some green) | 1/2 | — |
+>> | Makrut lime leaf, finely sliced (optional) | 1/2 | — |
+>> | Fish sauce | to taste | — |
+>> | Lime juice | to taste | — |
+>> | Fermented fish sauce / padek (optional) | a few drops | — |
+>> | Toasted sticky rice powder (optional) | pinch | — |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Fresh green chillies | 2–4 | — |
-> > | Garlic cloves | 2 | — |
-> > | Shallot | 1/2 small | — |
-> > | Coriander roots/stems | 1–2 | — |
-> > | Spring onion (white + some green) | 1/2 | — |
-> > | Makrut lime leaf, finely sliced (optional) | 1/2 | — |
-> > | Fish sauce | to taste | — |
-> > | Lime juice | to taste | — |
-> > | Fermented fish sauce / padek (optional) | a few drops | — |
-> > | Toasted sticky rice powder (optional) | pinch | — |
->
-> > [!column]
-> > ### Method
-> > 1. Pound garlic, shallot, and coriander roots into a paste.
-> > 2. Add chillies and pound coarsely.
-> > 3. Add spring onion and lime leaf; lightly incorporate.
-> > 4. Season with fish sauce and lime juice.
-> > 5. Adjust balance and reserve.
+>> [!col-right]
+>> ### Method
+>> 1. Pound garlic, shallot, and coriander roots into a paste.
+>> 2. Add chillies and pound coarsely.
+>> 3. Add spring onion and lime leaf; lightly incorporate.
+>> 4. Season with fish sauce and lime juice.
+>> 5. Adjust balance and reserve.
 
-</div>
 
-<div class="phase-separator"></div>
-
-<div class="modernist-phase">
+---
 
 ## PHASE F — COOK NOODLES
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Flat rice noodles (medium width) | as needed | — |
+>> | Boiling water | as needed | — |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Flat rice noodles (medium width) | as needed | — |
-> > | Boiling water | as needed | — |
->
-> > [!column]
-> > ### Method
-> > 1. Cook noodles until just tender.
-> > 2. Drain thoroughly.
+>> [!col-right]
+>> ### Method
+>> 1. Cook noodles until just tender.
+>> 2. Drain thoroughly.
 
-</div>
 
-<div class="phase-separator"></div>
-
-<div class="modernist-phase">
+---
 
 ## PHASE G — ASSEMBLE & SERVE (PER BOWL)
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Cooked rice noodles | per bowl | — |
+>> | Shredded chicken | per bowl | — |
+>> | Boiling hot broth | per bowl | — |
+>> | Fresh herbs (coriander, mint, dill, Thai basil) | generous | — |
+>> | Lime wedges | per bowl | — |
+>> | Red jeow | from Phase D | — |
+>> | Green jeow | from Phase E | — |
+>> | Fish sauce | to taste | — |
+>> | Chilli oil (optional) | to taste | — |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Cooked rice noodles | per bowl | — |
-> > | Shredded chicken | per bowl | — |
-> > | Boiling hot broth | per bowl | — |
-> > | Fresh herbs (coriander, mint, dill, Thai basil) | generous | — |
-> > | Lime wedges | per bowl | — |
-> > | Red jeow | from Phase D | — |
-> > | Green jeow | from Phase E | — |
-> > | Fish sauce | to taste | — |
-> > | Chilli oil (optional) | to taste | — |
->
-> > [!column]
-> > ### Method
-> > 1. Place noodles in bowl.
-> > 2. Add shredded chicken.
-> > 3. Ladle over boiling hot broth.
-> > 4. Finish generously with fresh herbs.
-> > 5. Add lime juice to taste.
-> > 6. Adjust seasoning and heat with jeow and fish sauce.
-
-</div>
+>> [!col-right]
+>> ### Method
+>> 1. Place noodles in bowl.
+>> 2. Add shredded chicken.
+>> 3. Ladle over boiling hot broth.
+>> 4. Finish generously with fresh herbs.
+>> 5. Add lime juice to taste.
+>> 6. Adjust seasoning and heat with jeow and fish sauce.
 
 ## RELATED LINKS
 <!-- AUTO-GENERATED:RELATED-LINKS:START -->

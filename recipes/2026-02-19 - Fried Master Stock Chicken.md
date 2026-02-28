@@ -25,140 +25,122 @@ Primary Ingredient Basis: `750 g whole chicken = 100%`
 
 Soy-aromatic poached chicken, air-dried and deep-fried for blistered, crisp skin. Optimised for flavour penetration and structural skin integrity.
 
-<div class="modernist-phase">
+
+---
 
 ## PHASE A — MASTER STOCK
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Water | 1500 g | 200.00% |
+>> | Light soy sauce | 150 g | 20.00% |
+>> | Dark soy sauce | 37.5 g | 5.00% |
+>> | Shaoxing wine | 75 g | 10.00% |
+>> | Rock sugar | 45 g | 6.00% |
+>> | Ginger, crushed | 37.5 g | 5.00% |
+>> | Garlic cloves, smashed | 22.5 g | 3.00% |
+>> | Spring onions, crushed | 60 g | 8.00% |
+>> | Star anise | 3 g | 0.40% |
+>> | Cassia cinnamon | 2.5 g | 0.30% |
+>> | Cloves | 1 g | 0.13% |
+>> | Dried mandarin peel (optional) | 1.5 g | 0.20% |
+>> | White pepper | 1.5 g | 0.20% |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Water | 1500 g | 200.00% |
-> > | Light soy sauce | 150 g | 20.00% |
-> > | Dark soy sauce | 37.5 g | 5.00% |
-> > | Shaoxing wine | 75 g | 10.00% |
-> > | Rock sugar | 45 g | 6.00% |
-> > | Ginger, crushed | 37.5 g | 5.00% |
-> > | Garlic cloves, smashed | 22.5 g | 3.00% |
-> > | Spring onions, crushed | 60 g | 8.00% |
-> > | Star anise | 3 g | 0.40% |
-> > | Cassia cinnamon | 2.5 g | 0.30% |
-> > | Cloves | 1 g | 0.13% |
-> > | Dried mandarin peel (optional) | 1.5 g | 0.20% |
-> > | White pepper | 1.5 g | 0.20% |
->
-> > [!column]
-> > ### Method
-> > 1. Combine all master stock ingredients in a large pot.
-> > 2. Bring to a gentle simmer and cook 10 minutes to extract aromatics.
-> > 3. Taste: liquid should be savoury-sweet and aromatic, not aggressively salty. Adjust with water if necessary.
+>> [!col-right]
+>> ### Method
+>> 1. Combine all master stock ingredients in a large pot.
+>> 2. Bring to a gentle simmer and cook 10 minutes to extract aromatics.
+>> 3. Taste: liquid should be savoury-sweet and aromatic, not aggressively salty. Adjust with water if necessary.
 
-</div>
 
-<div class="phase-separator"></div>
-
-<div class="modernist-phase">
+---
 
 ## PHASE B — POACHING
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Whole chicken (air-chilled preferred) | 750 g | 100.00% |
+>> | Master stock | from Phase A | — |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Whole chicken (air-chilled preferred) | 750 g | 100.00% |
-> > | Master stock | from Phase A | — |
->
-> > [!column]
-> > ### Method
-> > 1. Lower chicken into barely simmering stock. Ensure full submersion.
-> > 2. Maintain temperature at 85–90 C (no rolling boil).
-> > 3. Poach 35–45 min, until internal temperature at thigh reaches 72–75 C.
-> > 4. Remove carefully and hang or rest on rack.
+>> [!col-right]
+>> ### Method
+>> 1. Lower chicken into barely simmering stock. Ensure full submersion.
+>> 2. Maintain temperature at 85–90 C (no rolling boil).
+>> 3. Poach 35–45 min, until internal temperature at thigh reaches 72–75 C.
+>> 4. Remove carefully and hang or rest on rack.
 
-</div>
 
-<div class="phase-separator"></div>
-
-<div class="modernist-phase">
+---
 
 ## PHASE C — DRYING
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Poached chicken | 1 unit | — |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Poached chicken | 1 unit | — |
->
-> > [!column]
-> > ### Method
-> > 1. Cool at room temperature 20–30 min.
-> > 2. Refrigerate uncovered 4–12 hours to dry the skin thoroughly.
+>> [!col-right]
+>> ### Method
+>> 1. Cool at room temperature 20–30 min.
+>> 2. Refrigerate uncovered 4–12 hours to dry the skin thoroughly.
 
-</div>
 
-<div class="phase-separator"></div>
-
-<div class="modernist-phase">
+---
 
 ## PHASE D — FRYING
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Cornflour or rice flour (light dusting) | 15 g | 2.00% |
+>> | Neutral frying oil | as needed | — |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Cornflour or rice flour (light dusting) | 15 g | 2.00% |
-> > | Neutral frying oil | as needed | — |
->
-> > [!column]
-> > ### Method
-> > 1. Lightly dust skin with cornflour or rice flour. Shake off excess.
-> > 2. Heat oil to 180 C.
-> > 3. Fry chicken 6–8 min until skin is deeply golden and blistered.
-> > 4. Rotate carefully for even colour.
-> > 5. Remove and rest 5 min before carving.
+>> [!col-right]
+>> ### Method
+>> 1. Lightly dust skin with cornflour or rice flour. Shake off excess.
+>> 2. Heat oil to 180 C.
+>> 3. Fry chicken 6–8 min until skin is deeply golden and blistered.
+>> 4. Rotate carefully for even colour.
+>> 5. Remove and rest 5 min before carving.
 
-</div>
 
-<div class="phase-separator"></div>
-
-<div class="modernist-phase">
+---
 
 ## PHASE E — OPTIONAL GLAZE
 
 ---
 
-> [!columns]
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Reserved master stock | 125 g | 17.00% |
+>> | Honey or sugar | 10 g | 1.30% |
+>> | Rice vinegar | 10 g | 1.30% |
 >
-> > [!column]
-> > ### Components
-> > | Ingredient | Quantity | Scaling |
-> > | --- | --- | --- |
-> > | Reserved master stock | 125 g | 17.00% |
-> > | Honey or sugar | 10 g | 1.30% |
-> > | Rice vinegar | 10 g | 1.30% |
->
-> > [!column]
-> > ### Method
-> > 1. Simmer reserved master stock with honey and vinegar 3–5 min until slightly syrupy.
-> > 2. Brush lightly over carved chicken for shine.
-
-</div>
+>> [!col-right]
+>> ### Method
+>> 1. Simmer reserved master stock with honey and vinegar 3–5 min until slightly syrupy.
+>> 2. Brush lightly over carved chicken for shine.
 
 ## RELATED LINKS
 <!-- AUTO-GENERATED:RELATED-LINKS:START -->
