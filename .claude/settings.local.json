@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git checkout -b experiment/css-only-columns)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:github.com)",
+      "Bash(git stash pop)",
+      "Bash(git checkout stash@{0} -- \"recipes/2026-02-27 - Hash Brownies.md\" \"recipes/2026-02-27 - Hash Butter.md\" \"recipes/2026-02-27 Hash Butter.txt\")",
+      "Bash(ls -la \"recipes/2026-02-27 - Hash\"* \"recipes/2026-02-27 Hash\"*)",
+      "Bash(git stash drop)",
+      "Bash(python3 scripts/convert_to_new_format.py)",
+      "Bash(git commit:*)",
+      "Bash(git push -u origin experiment/css-only-columns)",
+      "Bash(git checkout main)",
+      "Bash(git merge experiment/css-only-columns)",
+      "Bash(git push)"
+    ]
+  }
+}

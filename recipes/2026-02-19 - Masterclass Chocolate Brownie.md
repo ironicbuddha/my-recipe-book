@@ -3,7 +3,7 @@ title: "Masterclass Chocolate Brownie"
 date: 2026-02-19
 type: recipe
 status: canonical
-version: v1.2
+version: v1.3
 yield: "~1.1 kg batter"
 portions: 12–16
 target_internal_temperature_c: "88–92"
@@ -58,7 +58,7 @@ Dense matrix. Crackled surface. Controlled set.
 >> ### Components
 >> | Ingredient | Quantity | Scaling |
 >> | --- | --- | --- |
->> | Caster sugar | 300 g | 120.00% |
+>> | Muscovado sugar | 300 g | 120.00% |
 >> | Eggs (large, without shell; about 4) | 200 g | 80.00% |
 >
 >> [!col-right]
@@ -151,11 +151,11 @@ Dense matrix. Crackled surface. Controlled set.
 
 ### Ingredients
 - [[Ingredient - Baking Paper]]
-- [[Ingredient - Caster Sugar]]
 - [[Ingredient - Cocoa Powder]]
 - [[Ingredient - Dark Chocolate 70%]]
 - [[Ingredient - Egg]]
 - [[Ingredient - Fine Salt]]
+- [[Ingredient - Muscovado Sugar]]
 - [[Ingredient - Plain Flour]]
 - [[Ingredient - Square Pan]]
 - [[Ingredient - Unsalted Butter]]

@@ -1,98 +1,84 @@
 ---
-title: "Asian Chicken Noodle Soup"
+title: "Asian Ginger Chicken Noodle Soup"
 date: 2026-03-03
 type: recipe
 status: canonical
 version: v2.0
-yield: "4 portions"
+yield: "~2.5 L broth + 4 portions"
 portions: 4
 target_internal_temperature_c: null
-primary_ingredient: "whole chicken"
+primary_ingredient: "chicken leg quarters"
 primary_mass_g: 1000
-techniques: ["blanching", "gentle poaching", "broth fortification", "noodle soaking"]
-principles: ["collagen extraction", "aromatic infusion", "layered assembly"]
+techniques: ["stock extraction", "gentle simmering", "aromatic fortification", "bowl assembly"]
+principles: ["collagen extraction", "aromatic infusion", "volatile preservation", "layered seasoning"]
 tags: ["dish-soup", "asian", "chicken", "noodles", "restorative"]
 cssclass: modernist-recipe
 ---
 
-# ASIAN CHICKEN NOODLE SOUP
+# ASIAN GINGER CHICKEN NOODLE SOUP
 
-Yield: 4 portions  
+Yield: approximately 2.5 L broth plus 4 portions  
 Portions: 4  
-Total Time: 2-2.5 hours
+Service Style: Clear fortified stock with fresh herb finish
 
-Primary Ingredient Basis: `1000 g whole chicken = 100%`
+Primary Ingredient Basis: `1000 g chicken leg quarters = 100%`
 
 ---
 
-## PHASE A — BLANCH WING TIPS
+## PHASE A - STOCK EXTRACTION
 
 > [!col]
 >> [!col-left]
 >> ### Components
 >> | Ingredient | Quantity | Scaling |
 >> | --- | --- | --- |
->> | Chicken wing tips | 250 g | 25.00% |
->> | Cold water | as needed | - |
->
->> [!col-right]
->> ### Method
->> 1. Combine wing tips and cold water in a pot.
->> 2. Bring to a hard boil and cook 3-5 minutes until foam forms.
->> 3. Drain and rinse wing tips thoroughly.
->> 4. Reserve for broth.
-
----
-
-## PHASE B — FORTIFIED BROTH & POACH CHICKEN
-
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Blanched wing tips | from Phase A | - |
->> | Whole chicken | 1000 g | 100.00% |
+>> | Chicken leg quarters | 1000 g | 100.00% |
+>> | Water | 2500 g | 250.00% |
+>> | Ginger, smashed | 40 g | 4.00% |
+>> | Scallions, bruised | 60 g | 6.00% |
 >> | Onion, halved | 150 g | 15.00% |
->> | Ginger, sliced | 30 g | 3.00% |
->> | Garlic cloves, crushed | 20 g | 2.00% |
->> | Lemongrass, bruised | 30 g | 3.00% |
->> | Coriander stems | 20 g | 2.00% |
->> | Shiitake stems (optional) | 30 g | 3.00% |
->> | Cold water | 3000 ml | - |
->> | Fine salt | 10 g | 1.00% |
+>> | Black peppercorns | 3 g | 0.30% |
+>> | Salt (initial) | 12 g | 1.20% |
 >
 >> [!col-right]
 >> ### Method
->> 1. Add all components to a stockpot and cover with cold water.
->> 2. Heat gradually to a gentle simmer; skim impurities.
->> 3. Hold at a bare simmer (no rolling boil) for 50-60 minutes.
->> 4. Remove whole chicken and rest until cool enough to handle.
->> 5. Continue simmering wing tips and aromatics 30-45 minutes.
+>> 1. Combine chicken and cold water.
+>> 2. Bring slowly to 85-90 C (bare simmer).
+>> 3. Skim foam during the first 20 minutes.
+>> 4. Add ginger, scallions, onion, peppercorns, and salt.
+>> 5. Maintain a gentle simmer for 90 minutes.
+>> 6. Remove chicken and strain broth.
+>> 7. Shred meat; discard bones and excess skin.
+>> 8. Chill broth and remove fat cap if maximum clarity is desired.
 
 ---
 
-## PHASE C — STRAIN BROTH & SHRED CHICKEN
+## PHASE B - AROMATIC FORTIFICATION
 
 > [!col]
 >> [!col-left]
 >> ### Components
 >> | Ingredient | Quantity | Scaling |
 >> | --- | --- | --- |
->> | Poached whole chicken | from Phase B | - |
->> | Finished broth | from Phase B | - |
->> | Fine salt | to taste | - |
+>> | Strained broth | from Phase A | - |
+>> | Garlic, smashed | 15 g | 1.50% |
+>> | Fresh ginger, sliced | 20 g | 2.00% |
+>> | Lemongrass, bruised | 25 g | 2.50% |
+>> | Kaffir lime leaves | 2 leaves (approximately 1 g) | 0.10% |
+>> | Light soy sauce (optional) | 15 g | 1.50% |
+>> | Fish sauce (optional) | 10 g | 1.00% |
 >
 >> [!col-right]
 >> ### Method
->> 1. Strain broth through a fine sieve without pressing solids.
->> 2. Pull chicken meat into long shreds.
->> 3. Reserve approximately 600 g shredded chicken for bowls.
->> 4. Season broth with salt to a clean, light savory profile.
+>> 1. Return strained broth to a gentle simmer.
+>> 2. Add garlic, ginger, lemongrass, and lime leaves.
+>> 3. Simmer 15-20 minutes only.
+>> 4. Strain or remove large aromatics.
+>> 5. Adjust seasoning with soy and/or fish sauce.
 
 ---
 
-## PHASE D — BOWL COMPONENT PREPARATION (V2)
+## PHASE C - COMPONENT PREPARATION
 
 > [!col]
 >> [!col-left]
@@ -102,67 +88,91 @@ Primary Ingredient Basis: `1000 g whole chicken = 100%`
 >> | Rice noodles (dry) | 200 g | 20.00% |
 >> | Shredded chicken (from stock) | approximately 600 g | 60.00% |
 >> | Shiitake mushrooms, sliced | 150 g | 15.00% |
->> | Baby spinach | 120 g | 12.00% |
->> | Edamame (shelled) | 200 g | 20.00% |
+>> | Bok choy, halved | 300 g | 30.00% |
 >> | Bean sprouts | 200 g | 20.00% |
 >> | Lime wedges | to serve | - |
 >
 >> [!col-right]
 >> ### Method
->> 1. Soak rice noodles in hot water until pliable, then drain.
->> 2. Simmer sliced shiitake in broth for 5 minutes.
->> 3. Add edamame and simmer 3-4 minutes if frozen, or 1-2 minutes if fresh.
->> 4. Keep baby spinach raw for bowl loading; it should wilt from broth heat.
->> 5. Keep bean sprouts raw for final assembly.
+>> 1. Soak rice noodles in hot water until pliable; drain.
+>> 2. Simmer shiitake in broth for 5 minutes.
+>> 3. Blanch bok choy in broth for 1-2 minutes; remove.
+>> 4. Keep bean sprouts raw for bowl assembly.
 
 ---
 
-## PHASE E — ASSEMBLE & SERVE
+## PHASE D - HERB FINISH PREPARATION
 
 > [!col]
 >> [!col-left]
 >> ### Components
 >> | Ingredient | Quantity | Scaling |
 >> | --- | --- | --- |
->> | Soaked rice noodles | from Phase D | - |
->> | Warm shredded chicken | from Phase D | - |
->> | Shiitake and edamame in hot broth | from Phase D | - |
->> | Raw baby spinach | from Phase D | - |
->> | Raw bean sprouts | from Phase D | - |
->> | Lime wedges | from Phase D | - |
+>> | Coriander (cilantro), rough chop | 25 g | 2.50% |
+>> | Thai basil, torn | 15 g | 1.50% |
+>> | Fresh mint, torn (optional) | 5 g | 0.50% |
+>> | Toasted sesame oil | 5 g | 0.50% |
 >
 >> [!col-right]
 >> ### Method
->> 1. Divide noodles across warm bowls.
->> 2. Add shredded chicken.
->> 3. Add a handful of raw baby spinach and bean sprouts.
->> 4. Ladle over boiling hot broth with shiitake and edamame.
->> 5. Rest 10-15 seconds to wilt spinach, then finish with lime.
+>> 1. Rough chop coriander and tear basil.
+>> 2. Tear mint if using.
+>> 3. Hold herbs dry and cool until final service.
+>> 4. Reserve sesame oil for final finishing.
+
+---
+
+## PHASE E - ASSEMBLY
+
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Rice noodles | from Phase C | - |
+>> | Shredded chicken | from Phase C | - |
+>> | Shiitake mushrooms | from Phase C | - |
+>> | Bok choy | from Phase C | - |
+>> | Bean sprouts | from Phase C | - |
+>> | Fortified boiling broth | from Phase B | - |
+>> | Herb finish + sesame oil | from Phase D | - |
+>> | Lime wedges | from Phase C | - |
+>
+>> [!col-right]
+>> ### Method
+>> 1. Build bowls in this order: noodles, shredded chicken, shiitake, bok choy, bean sprouts.
+>> 2. Ladle boiling broth over the bowl to gently wilt sprouts.
+>> 3. Finish with fresh herbs, sesame oil, and lime.
+>> 4. Serve immediately.
 
 ---
 
 ## STRUCTURAL NOTES
 
-- This v2 bowl shifts greens from bok choy-style cooking to spinach-style finishing.
-- Spinach is treated like an herb: direct bowl placement prevents overcooking and waterlogging.
-- Edamame adds sweetness, texture retention, and supplementary plant protein.
-- Collagen-rich stock and shiitake umami maintain depth while the bowl remains broth-forward.
-- Lime and ginger sharpen perception of freshness and keep the finish clean.
+- Avoid aggressive boiling; emulsified fat clouds flavor and texture.
+- Bean sprouts should remain slightly crisp.
+- Add herbs at the end to preserve volatile aromatics.
+- Broth should taste slightly over-seasoned before noodles because starch mutes salt.
+- Cross-cultural restorative logic: collagen for body, ginger for warmth, herbs for clarity, lime for lift.
 
 ## FAILURE MODES
 
-- Symptom: Spinach tastes dull and swampy.
-- Likely cause: Spinach simmered in broth instead of wilting in-bowl.
-- Corrective action: Add spinach raw to bowls and pour in boiling broth at service.
+- Symptom: Broth turns cloudy and heavy.
+- Likely cause: Temperature exceeded gentle simmer or broth was boiled hard.
+- Corrective action: Keep stock at 85-90 C and avoid rolling boil.
 
-- Symptom: Broth is cloudy and greasy.
-- Likely cause: Rolling boil during stock phase or pressing solids while straining.
-- Corrective action: Keep a bare simmer and strain gently without pressure.
+- Symptom: Herbs taste muted and cooked.
+- Likely cause: Herbs were added too early.
+- Corrective action: Add herbs only during final assembly.
 
-- Symptom: Noodles clump and turn gummy.
-- Likely cause: Over-soaking or delayed assembly.
-- Corrective action: Soak only to pliable, drain well, and assemble immediately.
+- Symptom: Bok choy is limp and sulfurous.
+- Likely cause: Over-blanching in hot broth.
+- Corrective action: Limit bok choy blanching to 1-2 minutes.
 
-- Symptom: Edamame is chalky or underdone.
-- Likely cause: Insufficient simmering time from frozen.
-- Corrective action: Simmer frozen edamame 3-4 minutes before bowl assembly.
+- Symptom: Final bowl tastes under-seasoned.
+- Likely cause: Broth was seasoned correctly in pot but diluted by noodles and vegetables.
+- Corrective action: Season broth slightly stronger before service and finish with lime.
+
+## STORY
+
+Made on a day someone needed gentleness. Clean, restorative chicken soup structure for comfort service.
