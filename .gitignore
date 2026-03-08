@@ -6,3 +6,10 @@
 
 # macOS
 .DS_Store
+
+# macOS
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
