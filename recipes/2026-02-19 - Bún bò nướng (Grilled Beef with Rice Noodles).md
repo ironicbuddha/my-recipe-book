@@ -2,7 +2,6 @@
 title: "Bún bò nướng (Grilled Beef with Rice Noodles)"
 date: 2026-02-19
 type: recipe
-status: final
 version: v1.0
 yield: "2 portions"
 portions: 2

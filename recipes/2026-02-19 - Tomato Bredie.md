@@ -2,7 +2,6 @@
 title: "Tomato Bredie — Lamb Neck, Toasted Coriander, Ginger & Red Wine Vinegar"
 date: 2026-02-19
 type: recipe
-status: canonical
 version: v2.0
 yield: "2 portions"
 portions: 2

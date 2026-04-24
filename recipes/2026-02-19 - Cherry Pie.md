@@ -2,7 +2,6 @@
 title: "Sour Cherry Pie"
 date: 2026-02-19
 type: recipe
-status: refined
 version: v2.0
 yield: 1 × 23 cm pie
 portions: 8

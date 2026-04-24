@@ -2,7 +2,6 @@
 title: "Reverse-Seared Fillet with Hibachi Cabbage, Steakhouse Fries & Gochujang Sauce"
 date: 2026-03-08
 type: recipe
-status: final
 version: v1.0
 yield: "2 portions"
 portions: 2

@@ -2,7 +2,6 @@
 title: "Lao-Influenced Herbaceous Chicken Noodle Soup with Red & Green Jeow"
 date: 2026-02-19
 type: recipe
-status: canonical
 version: v1.0
 yield: "2 portions"
 portions: 2

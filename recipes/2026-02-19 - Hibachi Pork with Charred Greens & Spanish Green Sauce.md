@@ -2,7 +2,6 @@
 title: "Hibachi Pork with Charred Greens & Spanish Green Sauce"
 date: 2026-02-19
 type: recipe
-status: final
 version: v1.0
 yield: "2 portions"
 portions: 2

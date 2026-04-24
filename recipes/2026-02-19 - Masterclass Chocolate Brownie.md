@@ -2,7 +2,6 @@
 title: "Masterclass Chocolate Brownie"
 date: 2026-02-19
 type: recipe
-status: canonical
 version: v1.3
 yield: "~1.1 kg batter"
 portions: 12–16

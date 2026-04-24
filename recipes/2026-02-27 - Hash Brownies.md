@@ -2,7 +2,6 @@
 title: "Brownies"
 date: 2026-02-27
 type: recipe
-status: draft
 version: v1.0
 yield: "~1.1 kg batter"
 portions: 16

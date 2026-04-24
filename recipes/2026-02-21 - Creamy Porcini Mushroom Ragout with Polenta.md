@@ -2,7 +2,6 @@
 title: "Creamy Porcini Mushroom Ragout with Polenta"
 date: 2026-02-21
 type: recipe
-status: draft
 version: v1.0
 yield: "2 portions"
 portions: 2

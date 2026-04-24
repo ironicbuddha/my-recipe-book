@@ -2,7 +2,6 @@
 title: "Grilled Pork Al Pastor (Hibachi) with Charred Pineapple-Chilli Salsa"
 date: 2026-02-19
 type: recipe
-status: canonical
 version: v1.0
 yield: "2 portions"
 portions: 2

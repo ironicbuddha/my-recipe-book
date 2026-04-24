@@ -2,7 +2,6 @@
 title: "Maple Pecan Pie"
 date: 2026-02-19
 type: recipe
-status: refined
 version: v3.0
 yield: 1 × 23 cm pie
 portions: 8

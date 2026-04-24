@@ -2,7 +2,6 @@
 title: "Guanciale, Olive & Chili Pasta Sauce"
 date: 2026-02-19
 type: recipe
-status: tested
 version: v1.0
 yield: "2 portions"
 portions: 2

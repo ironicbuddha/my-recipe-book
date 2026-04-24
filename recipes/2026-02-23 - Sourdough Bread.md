@@ -2,7 +2,6 @@
 title: "Sourdough Bread"
 date: 2026-02-23
 type: recipe
-status: draft
 version: v1.0
 yield: "2 loaves (~900 g each)"
 portions: 16

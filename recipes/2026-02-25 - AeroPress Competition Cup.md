@@ -2,7 +2,6 @@
 title: "AeroPress Competition Cup"
 date: 2026-02-25
 type: recipe
-status: draft
 version: v1.0
 yield: "1 cup (200-220 g)"
 portions: 1

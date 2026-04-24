@@ -2,7 +2,6 @@
 title: "Spanish Chicken and Chorizo Stew"
 date: 2026-02-24
 type: recipe
-status: draft
 version: v1.0
 yield: "2 portions"
 portions: 2

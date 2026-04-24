@@ -2,7 +2,6 @@
 title: "Asian Ginger Chicken Noodle Soup"
 date: 2026-03-03
 type: recipe
-status: canonical
 version: v2.0
 yield: "~2.5 L broth + 4 portions"
 portions: 4

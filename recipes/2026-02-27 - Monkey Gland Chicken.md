@@ -2,7 +2,6 @@
 title: "Monkey Gland Chicken"
 date: 2026-02-27
 type: recipe
-status: draft
 version: v1.0
 yield: "~1.0 kg chicken + ~0.45 kg sauce"
 portions: 4
