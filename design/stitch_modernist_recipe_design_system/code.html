@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;900&amp;family=Newsreader:ital,wght@0,400;0,500;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface": "#f9f9f9",
+                    "on-background": "#1a1c1c",
+                    "on-secondary-fixed": "#1b1c1c",
+                    "on-primary": "#ffffff",
+                    "tertiary-fixed-dim": "#ffb3ad",
+                    "surface-bright": "#f9f9f9",
+                    "tertiary": "#941d20",
+                    "on-secondary-container": "#636262",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed-variant": "#8c171b",
+                    "primary-fixed": "#ffdad4",
+                    "surface-variant": "#e2e2e2",
+                    "inverse-on-surface": "#f1f1f1",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed-variant": "#474746",
+                    "on-tertiary-container": "#ffdad6",
+                    "surface-tint": "#c00000",
+                    "on-surface": "#1a1c1c",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed": "#410000",
+                    "surface-container-low": "#f3f3f3",
+                    "on-tertiary-fixed": "#410004",
+                    "error-container": "#ffdad6",
+                    "surface-container-high": "#e8e8e8",
+                    "primary-fixed-dim": "#ffb4a8",
+                    "tertiary-fixed": "#ffdad7",
+                    "on-error": "#ffffff",
+                    "inverse-primary": "#ffb4a8",
+                    "primary-container": "#cc0000",
+                    "outline": "#926e69",
+                    "on-primary-fixed-variant": "#930000",
+                    "tertiary-container": "#b63635",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "surface-container-highest": "#e2e2e2",
+                    "surface-dim": "#dadada",
+                    "on-tertiary": "#ffffff",
+                    "background": "#f9f9f9",
+                    "outline-variant": "#e8bdb6",
+                    "on-surface-variant": "#5e3f3a",
+                    "inverse-surface": "#2f3131",
+                    "primary": "#9e0000",
+                    "secondary-container": "#e2dfde",
+                    "on-primary-container": "#ffdad4",
+                    "secondary-fixed": "#e5e2e1",
+                    "secondary": "#5f5e5e",
+                    "on-secondary": "#ffffff",
+                    "surface-container": "#eeeeee"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "4px",
+                    "table-row-height": "32px",
+                    "margin": "48px",
+                    "section-gap": "40px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "body-md": ["Work Sans"],
+                    "headline-md": ["Work Sans"],
+                    "headline-xl": ["Newsreader"],
+                    "data-table": ["Work Sans"],
+                    "body-lg": ["Work Sans"],
+                    "caption": ["Newsreader"]
+            },
+            "fontSize": {
+                    "body-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-md": ["14px", {"lineHeight": "1.5", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "headline-xl": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "data-table": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .recipe-table th {
+            border-bottom: 1px solid #1a1c1c;
+            padding-bottom: 8px;
+        }
+        .recipe-table td {
+            border-bottom: 1px solid #e2e2e2;
+            padding: 12px 0;
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex">
+<!-- SideNavBar - Shared Component -->
+<aside class="hidden md:flex flex-col w-64 h-screen py-8 px-0 bg-zinc-50 dark:bg-zinc-900 border-r border-zinc-200 dark:border-zinc-800 fixed left-0 top-0">
+<div class="px-6 mb-10">
+<h1 class="text-red-700 font-bold font-serif text-xs uppercase tracking-wider">Lab Station 01</h1>
+<p class="text-zinc-600 dark:text-zinc-400 font-serif text-[10px] uppercase tracking-[0.2em]">Precision Service</p>
+</div>
+<nav class="flex-1">
+<ul class="space-y-1">
+<li>
+<a class="flex items-center gap-4 px-6 py-3 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-colors duration-75 font-serif text-xs font-bold uppercase tracking-wider" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+                        Library
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-4 px-6 py-3 bg-red-700 text-white dark:bg-red-600 font-serif text-xs font-bold uppercase tracking-wider" href="#">
+<span class="material-symbols-outlined">straighten</span>
+                        Scales
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-4 px-6 py-3 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-colors duration-75 font-serif text-xs font-bold uppercase tracking-wider" href="#">
+<span class="material-symbols-outlined">biotech</span>
+                        Lab Journal
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-4 px-6 py-3 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-colors duration-75 font-serif text-xs font-bold uppercase tracking-wider" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+                        Inventory
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-4 px-6 py-3 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-colors duration-75 font-serif text-xs font-bold uppercase tracking-wider" href="#">
+<span class="material-symbols-outlined">calculate</span>
+                        Calculators
+                    </a>
+</li>
+</ul>
+</nav>
+<div class="px-6 mt-auto flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-zinc-200 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="close-up of a professional chef in a white uniform looking focused in a clean modern kitchen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8QoeBEp5ogjsfmszgZB2ITCWWUkp77ZXX8SioYmGmfDM12wQo49Y2O4Nh1ITIT0oGjuLOKrSI3hHmNAiAhF9OCjaw13kksljzc0eV7XDs2cB3KBysvF9RI9rBULKBe1wXi2c1BYlogMQPCIgn9Uxh733iHiqxq3ayexaO-yDOtBBuoSr1yNE_X7NXbaUbJQm4Dq1ABV8IPZcOaeeEkPoZCP-vbCO_xXMyK-0boR2PfCdRobRDQWoK_aejDTDFjASPR6X7PUnFukMR"/>
+</div>
+<div>
+<p class="text-[10px] font-bold uppercase tracking-widest text-zinc-800">Chef de Cuisine</p>
+</div>
+</div>
+</aside>
+<main class="flex-1 ml-0 md:ml-64 bg-white min-h-screen">
+<!-- TopAppBar - Shared Component -->
+<header class="flex justify-between items-center w-full px-6 h-16 bg-white dark:bg-zinc-950 border-b border-zinc-200 dark:border-zinc-800 sticky top-0 z-50">
+<div class="text-lg font-black uppercase tracking-tighter text-red-700 dark:text-red-500">
+                Modernist Cuisine
+            </div>
+<nav class="hidden md:flex gap-8">
+<a class="font-serif text-sm uppercase tracking-widest text-zinc-500 dark:text-zinc-400 hover:text-red-700 transition-colors" href="#">Techniques</a>
+<a class="font-serif text-sm uppercase tracking-widest text-zinc-500 dark:text-zinc-400 hover:text-red-700 transition-colors" href="#">Ingredients</a>
+<a class="font-serif text-sm uppercase tracking-widest text-zinc-500 dark:text-zinc-400 hover:text-red-700 transition-colors" href="#">Equipment</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-zinc-500 hover:text-red-700 transition-colors">science</button>
+<button class="material-symbols-outlined text-zinc-500 hover:text-red-700 transition-colors">settings</button>
+</div>
+</header>
+<!-- Main Recipe Canvas -->
+<article class="max-w-5xl mx-auto py-12 px-8">
+<!-- Header Section -->
+<section class="flex flex-col md:flex-row justify-between items-baseline mb-8 border-b border-zinc-900 pb-4">
+<div class="flex items-baseline gap-4">
+<h2 class="font-headline-md text-[28px] text-on-surface uppercase tracking-tight">BEEF BOURGUIGNON</h2>
+<span class="font-headline-xl text-primary text-xl italic font-normal tracking-normal">MODERNIST ADAPTATION</span>
+</div>
+<div class="text-primary font-headline-md text-base mt-2 md:mt-0">
+                    Yields 1200 g
+                </div>
+</section>
+<!-- Hero Image Callout -->
+<div class="w-full h-80 mb-12 relative overflow-hidden bg-zinc-100 border border-zinc-200">
+<img class="w-full h-full object-cover" data-alt="Gourmet beef bourguignon with red wine reduction, glazed carrots, and pearl onions on a sterile white designer plate, studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAk0-s4prQ6UoLbwZB4i3plLLH4c2aJ0PGDkjWcg1s-YBtrlrDzuCRyymDVEzKJJh-vIPzeaRTvKECYyCNHHIiE4r8_YnFA_t5fmN6sZDc6sSQzS4Z11ZmDziybAm2th-Aeo_6iJHHZj9WsM1q6VjeZlaClE8fDcWa1RskXEEoeP2TijzUWDyRUX0OOnC4BmHS4QXlCpfna6zG4I22QN4okEQ38vPiAJacU1a2bO8HyKBQ4Gt0D74g1SJvVi2UksXaR719XEJKyNPlF"/>
+<div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur px-3 py-1 text-[10px] uppercase tracking-widest font-bold border border-zinc-300">
+                    Ref: MBB-092-V2
+                </div>
+</div>
+<!-- Recipe Table -->
+<table class="w-full text-left recipe-table border-collapse">
+<thead>
+<tr class="text-on-surface">
+<th class="font-headline-md text-xs py-2 w-1/4">INGREDIENT</th>
+<th class="font-headline-md text-xs py-2 w-16 text-right">QUANTITY</th>
+<th class="font-headline-md text-xs py-2 w-24 text-right">SCALING</th>
+<th class="font-headline-md text-xs py-2 pl-12">PROCEDURE</th>
+</tr>
+</thead>
+<tbody class="font-data-table text-data-table">
+<!-- Step 1 -->
+<tr>
+<td class="font-bold">Beef Short Ribs</td>
+<td class="text-right">800 g</td>
+<td class="text-right">100 %</td>
+<td class="pl-12">
+<div class="flex gap-4">
+<span class="font-bold text-primary">01</span>
+<p>Season ribs with salt. Sear in a high-heat pressure cooker until deep brown crust forms on all sides. Remove beef and set aside.</p>
+</div>
+</td>
+</tr>
+<!-- Step 2 -->
+<tr>
+<td class="font-bold">Red Wine (Burgundy)</td>
+<td class="text-right">400 g</td>
+<td class="text-right">50 %</td>
+<td class="pl-12">
+<div class="flex gap-4">
+<span class="font-bold text-primary">02</span>
+<p>Deglaze the pressure cooker with red wine, scraping all fond from the base. Reduce liquid by half to concentrate esters.</p>
+</div>
+</td>
+</tr>
+<!-- Step 3 -->
+<tr>
+<td class="font-bold">Beef Stock (Brown)</td>
+<td class="text-right">200 g</td>
+<td class="text-right">25 %</td>
+<td class="pl-12">
+<div class="flex gap-4">
+<span class="font-bold text-primary">03</span>
+<p>Return beef to the vessel. Add stock and aromatics. Seal and pressure cook at 1 bar (15 psi) for 90 minutes.</p>
+</div>
+</td>
+</tr>
+<!-- Step 4 -->
+<tr>
+<td class="font-bold">Aromatics (Mirepoix)</td>
+<td class="text-right">120 g</td>
+<td class="text-right">15 %</td>
+<td class="pl-12">
+<div class="flex gap-4">
+<span class="font-bold text-primary">04</span>
+<p>Depressurize rapidly. Strain sauce through a fine chinois. Emulsify with cold butter if necessary for gloss and viscosity.</p>
+</div>
+</td>
+</tr>
+<!-- Step 5 -->
+<tr>
+<td class="font-bold">Pearl Onions &amp; Carrots</td>
+<td class="text-right">80 g</td>
+<td class="text-right">10 %</td>
+<td class="pl-12">
+<div class="flex gap-4">
+<span class="font-bold text-primary">05</span>
+<p>Glaze vegetables separately in 100°C steam. Combine with beef and reduced sauce immediately before service at 65°C.</p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- Equipment Notes -->
+<section class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 pt-8 border-t border-zinc-200">
+<div class="space-y-2">
+<h4 class="font-headline-md text-xs text-primary uppercase">Critical Equipment</h4>
+<ul class="text-data-table space-y-1">
+<li class="flex items-center gap-2">
+<span class="w-1 h-1 bg-primary"></span>
+                            Pressure Cooker (15 psi)
+                        </li>
+<li class="flex items-center gap-2">
+<span class="w-1 h-1 bg-primary"></span>
+                            Chinois (Fine Mesh)
+                        </li>
+</ul>
+</div>
+<div class="space-y-2">
+<h4 class="font-headline-md text-xs text-primary uppercase">Core Temperature</h4>
+<p class="text-data-table">Final serving temperature: 65°C. Sauce viscosity: 250 mPa·s at serving temp.</p>
+</div>
+<div class="space-y-2">
+<h4 class="font-headline-md text-xs text-primary uppercase">Yield Accuracy</h4>
+<p class="text-data-table">Calculated evaporation loss: 8.4%. Adjust stock if deviation exceeds 2%.</p>
+</div>
+</section>
+<!-- Footer Section -->
+<footer class="mt-20 flex justify-between items-end border-t border-zinc-100 pt-4">
+<div class="font-caption text-primary text-[10px] uppercase tracking-widest">
+                    (original 1961, adapted 2024)
+                </div>
+<div class="flex gap-4 items-center">
+<div class="w-12 h-0.5 bg-primary"></div>
+<span class="font-headline-md text-[10px] text-zinc-400 uppercase tracking-widest">Lab Station Approval Required</span>
+</div>
+</footer>
+</article>
+</main>
+<!-- Mobile Bottom Nav -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-zinc-200 h-16 flex items-center justify-around z-50">
+<button class="flex flex-col items-center gap-1 text-red-700">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="text-[10px] font-bold uppercase">Library</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-zinc-400">
+<span class="material-symbols-outlined">straighten</span>
+<span class="text-[10px] font-bold uppercase">Scale</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-zinc-400">
+<span class="material-symbols-outlined">biotech</span>
+<span class="text-[10px] font-bold uppercase">Lab</span>
+</button>
+</nav>
+</body></html>

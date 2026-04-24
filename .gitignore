@@ -25,3 +25,8 @@ pnpm-debug.log*
 ._*
 .Spotlight-V100
 .Trashes
+
+# agents
+.claude
+.codex
+.gemini

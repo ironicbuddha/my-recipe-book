@@ -6,6 +6,8 @@ Guidance for coding agents and contributors working in this repository.
 
 This repo is a structured culinary knowledge system for Obsidian.
 All content is Markdown-first, phase-based, and versioned in git.
+The repo also includes an Astro site that publishes the canonical Markdown
+content without replacing it as the source of truth.
 
 ## Repository Standards
 
@@ -18,6 +20,11 @@ Follow the rules in `README.md`:
   - `ingredients/`
   - `experiments/`
   - `templates/`
+- Keep the website layer in the project-root frontend files such as `src/`,
+  `public/`, `astro.config.mjs`, `package.json`, and related tooling config.
+- Treat the Markdown files in the canonical folders as the source of truth for
+  recipe content. Do not introduce a parallel CMS or move recipe data into the
+  Astro app.
 - Use naming conventions exactly:
   - Recipes: `YYYY-MM-DD - Dish Name.md`
   - Techniques: `Technique - Name.md`
@@ -60,7 +67,8 @@ Follow the rules in `README.md`:
 ## Validation and Hooks
 
 - Run checks locally with:
-  - `make validate`
+  - `make validate` for content changes
+  - `pnpm check` for Astro/frontend/tooling changes
 - Install commit hooks once per clone:
   - `make install-hooks`
 - Pre-commit runs `./scripts/validate_content.sh`.
@@ -79,4 +87,5 @@ Use one conceptual change per commit with structured prefixes:
 - Prefer minimal, targeted edits.
 - Preserve existing style and structure.
 - Do not rename or move files unless required.
-- After changes, run `make validate`.
+- After content changes, run `make validate`.
+- After frontend or tooling changes, run `pnpm check`.
