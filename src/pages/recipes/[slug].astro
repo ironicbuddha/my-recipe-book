@@ -1,6 +1,20 @@
 ---
+import { Picture } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 import SiteLayout from '../../layouts/SiteLayout.astro';
 import { getAllRecipes, getRecipePhases, renderRecipeBody } from '../../lib/recipes';
+
+const heroModules = import.meta.glob<{ default: ImageMetadata }>(
+  '../../assets/recipes/*.png',
+  { eager: true },
+);
+const heroBySlug: Record<string, ImageMetadata> = {};
+for (const [filePath, module] of Object.entries(heroModules)) {
+  const filename = filePath.split('/').pop()?.replace(/\.png$/, '');
+  if (filename && !filename.startsWith('_')) {
+    heroBySlug[filename] = module.default;
+  }
+}
 
 export function getStaticPaths() {
   return getAllRecipes().map((recipe) => ({
@@ -14,6 +28,7 @@ export function getStaticPaths() {
 }
 
 const { html, phaseLinks, recipe } = Astro.props;
+const heroImage = heroBySlug[recipe.slug];
 ---
 
 <SiteLayout title={`${recipe.title} | Modernist Recipe Book`} description={recipe.excerpt}>
@@ -29,6 +44,23 @@ const { html, phaseLinks, recipe } = Astro.props;
       {recipe.primaryIngredient && <span>{recipe.primaryIngredient}</span>}
     </div>
   </section>
+
+  {
+    heroImage && (
+      <figure class="recipe-hero">
+        <Picture
+          class="recipe-hero__image"
+          src={heroImage}
+          alt={`Specimen photograph for ${recipe.title}`}
+          widths={[800, 1200, 1600]}
+          sizes="(min-width: 900px) 900px, 100vw"
+          formats={['avif', 'webp']}
+          loading="eager"
+          decoding="async"
+        />
+      </figure>
+    )
+  }
 
   <article class="recipe-sheet">
     <div class="recipe-workbench">
