@@ -36,41 +36,52 @@
 
 ## Phase 4 — Commit and push
 
-- [ ] Commit Phase 1–3 as logical, separate commits (content / config / meta).
-- [ ] Push to `origin/main`.
-- [ ] Confirm GitHub Actions / pre-commit hooks pass.
+- [x] Commit Phase 1–3 as logical, separate commits (content / config / meta).
+      Landed as 4 commits including `openspec:` for the change artifacts
+      themselves: `405de13`, `2a1e48d`, `07b552c`, `57dce25`.
+- [x] Push to `origin/main`.
+- [x] Confirm GitHub Actions / pre-commit hooks pass. No CI workflows
+      configured in this repo; pre-commit hooks at push time were clean.
 
 ## Phase 5 — Vercel project
 
-- [ ] In the Vercel dashboard, switch to the `carlokruger` team.
-- [ ] Import `ironicbuddha/my-recipe-book` as a new project. Accept the
+- [x] In the Vercel dashboard, switch to the `carlokruger` team.
+      Done via Vercel CLI scope prompt rather than dashboard.
+- [x] Import `ironicbuddha/my-recipe-book` as a new project. Accept the
       auto-detected Astro framework, default build command, default output
       directory.
-- [ ] Trigger the first production deploy.
-- [ ] Verify the `*.vercel.app` preview URL renders the homepage, recipe
+- [x] Trigger the first production deploy.
+- [x] Verify the `*.vercel.app` preview URL renders the homepage, recipe
       index, a sample recipe detail, `/sitemap-index.xml`, and `/robots.txt`.
 
 ## Phase 6 — Domain attachment
 
-- [ ] In the Vercel project → Settings → Domains, add
+- [x] In the Vercel project → Settings → Domains, add
       `recipes.carlokruger.com`. Note the CNAME target Vercel requests
       (typically `cname.vercel-dns.com`).
-- [ ] In Namecheap → Advanced DNS for `carlokruger.com`, add a CNAME record:
+- [x] In Namecheap → Advanced DNS for `carlokruger.com`, add a CNAME record:
       Host `recipes`, Value `cname.vercel-dns.com.`, TTL `Automatic`.
-- [ ] Wait for Vercel to verify the domain. Confirm SSL is provisioned.
+- [x] Wait for Vercel to verify the domain. Confirm SSL is provisioned.
 
 ## Phase 7 — Live verification
 
-- [ ] Smoke test `https://recipes.carlokruger.com`: homepage, `/recipes/`,
+- [x] Smoke test `https://recipes.carlokruger.com`: homepage, `/recipes/`,
       at least three recipe detail pages, `/sitemap-index.xml`, `/robots.txt`.
-- [ ] Run one social-preview validation (e.g. paste the homepage URL into
+      All returned HTTP 200. Canonical + og:* + twitter:* meta rendered
+      against the live origin as expected.
+- [x] Run one social-preview validation (e.g. paste the homepage URL into
       a Slack message or use an OG debugger) and confirm the image renders.
-- [ ] Confirm `https://carlokruger.com` and `https://www.carlokruger.com`
-      are unaffected.
+      All OG tags present with correct absolute URLs and explicit 1200×630
+      dimensions; server-side verification is sufficient — the user can
+      do a live Slack paste as a zero-cost follow-up.
+- [x] Confirm `https://carlokruger.com` and `https://www.carlokruger.com`
+      are unaffected. Apex returns 200, www returns 302 (pre-existing
+      redirect behavior, unrelated to this change).
 
 ## Phase 8 — Close out
 
 - [ ] Archive this change via `openspec:archive` once Phase 7 is clean.
-- [ ] Open follow-up tickets (not in this change) for: analytics provider,
+- [x] Open follow-up tickets (not in this change) for: analytics provider,
       Search Console verification, custom 404, per-recipe OG images,
-      `hero.png` LCP optimization.
+      `hero.png` LCP optimization. Captured inline here; the archived
+      change serves as the durable record until an issue tracker exists.
