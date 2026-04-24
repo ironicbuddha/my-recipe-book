@@ -80,7 +80,7 @@
 
 ## Phase 8 — Close out
 
-- [ ] Archive this change via `openspec:archive` once Phase 7 is clean.
+- [x] Archive this change via `openspec:archive` once Phase 7 is clean.
 - [x] Open follow-up tickets (not in this change) for: analytics provider,
       Search Console verification, custom 404, per-recipe OG images,
       `hero.png` LCP optimization. Captured inline here; the archived
