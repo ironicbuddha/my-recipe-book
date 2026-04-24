@@ -1,10 +1,10 @@
 #!/usr/bin/env tsx
 /**
- * Batch-generates per-recipe hero images using OpenAI gpt-image-2.
+ * Batch-generates per-recipe hero images using Replicate's Flux 1.1 Pro Ultra.
  *
  * Modes:
- *   --reference        generate 4 candidate reference images (text-to-image)
- *   --only <slug>      regenerate a single recipe (image-to-image with reference)
+ *   --reference        generate 4 candidate reference images (text-only)
+ *   --only <slug>      regenerate a single recipe (text + image_prompt ref)
  *   (default)          generate heroes for every recipe missing one
  *
  * Flags:
@@ -14,12 +14,15 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
-import OpenAI from 'openai';
+import Replicate from 'replicate';
 import { RECIPES_DIR, buildPrompt } from './hero-prompt.js';
 
-const MODEL = 'gpt-image-2-2026-04-21';
-const SIZE = '1536x1024';
-const COST_PER_IMAGE_USD = 0.1;
+const MODEL_OWNER = 'black-forest-labs';
+const MODEL_NAME = 'flux-1.1-pro-ultra';
+const MODEL_VERSION = '5ea10f739af9f6d4002fae9aee4c15be14c3c8d7f8b309e634bf68df09159863';
+const MODEL_REF = `${MODEL_OWNER}/${MODEL_NAME}`;
+const COST_PER_IMAGE_USD = 0.06;
+const IMAGE_PROMPT_STRENGTH = 0.3;
 const HARD_CAP = 28 * 3;
 const REFERENCE_CANDIDATE_COUNT = 4;
 
@@ -93,8 +96,6 @@ function parseArgs(argv: string[]): Args {
 }
 
 function slugForFile(filename: string): string {
-  // Mirror the slug derivation used elsewhere: strip .md, lowercase,
-  // replace non-alphanumeric runs with single hyphens, trim hyphens.
   return filename
     .replace(/\.md$/, '')
     .toLowerCase()
@@ -106,7 +107,7 @@ interface PlannedJob {
   label: string;
   outputPath: string;
   prompt: string;
-  mode: 'generate' | 'edit';
+  mode: 'reference' | 'recipe';
 }
 
 function planReferenceJobs(): PlannedJob[] {
@@ -114,7 +115,7 @@ function planReferenceJobs(): PlannedJob[] {
     label: `reference candidate ${i + 1}`,
     outputPath: path.join(OUTPUT_DIR, `_reference_candidate_${i + 1}.png`),
     prompt: REFERENCE_PROMPT,
-    mode: 'generate',
+    mode: 'reference',
   }));
 }
 
@@ -122,7 +123,9 @@ function planRecipeJobs(args: Args): PlannedJob[] {
   const allFiles = fs.readdirSync(RECIPES_DIR).filter((f) => f.endsWith('.md'));
   const targets =
     args.mode === 'only' && args.only
-      ? allFiles.filter((f) => slugForFile(f).includes(args.only!.toLowerCase().replace(/[^a-z0-9]+/g, '-')))
+      ? allFiles.filter((f) =>
+          slugForFile(f).includes(args.only!.toLowerCase().replace(/[^a-z0-9]+/g, '-')),
+        )
       : allFiles;
 
   if (args.mode === 'only' && targets.length !== 1) {
@@ -147,44 +150,96 @@ function planRecipeJobs(args: Args): PlannedJob[] {
         label: slug,
         outputPath,
         prompt: buildPrompt(path.join(RECIPES_DIR, filename)),
-        mode: 'edit' as const,
+        mode: 'recipe' as const,
       };
     })
     .filter((job) => args.force || !fs.existsSync(job.outputPath));
 }
 
-async function runReferenceJob(client: OpenAI, job: PlannedJob): Promise<void> {
-  const response = await client.images.generate({
-    model: MODEL,
-    prompt: job.prompt,
-    size: SIZE,
-    n: 1,
-  });
-  const b64 = response.data?.[0]?.b64_json;
-  if (!b64) throw new Error(`No image returned for ${job.label}`);
-  fs.writeFileSync(job.outputPath, Buffer.from(b64, 'base64'));
+type ReplicateOutput = unknown;
+
+async function saveOutput(output: ReplicateOutput, outputPath: string): Promise<void> {
+  // Replicate's SDK returns heterogeneous shapes depending on model/version.
+  // Handle: string URL, array of URL strings, Node ReadableStream, or a
+  // FileOutput-like object with a .url accessor.
+  const first = Array.isArray(output) ? output[0] : output;
+
+  const toUrl = (item: unknown): string | null => {
+    if (typeof item === 'string') return item;
+    if (item && typeof item === 'object' && 'url' in item) {
+      const v = (item as { url: unknown }).url;
+      if (typeof v === 'string') return v;
+      if (typeof v === 'function') {
+        const resolved = (v as () => unknown)();
+        if (typeof resolved === 'string') return resolved;
+        if (resolved instanceof URL) return resolved.toString();
+      }
+    }
+    return null;
+  };
+
+  const url = toUrl(first);
+  if (url) {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`Download failed: HTTP ${res.status}`);
+    const buf = Buffer.from(await res.arrayBuffer());
+    fs.writeFileSync(outputPath, buf);
+    return;
+  }
+
+  // Stream fallback (e.g. ReadableStream).
+  if (first && typeof first === 'object' && Symbol.asyncIterator in (first as object)) {
+    const chunks: Uint8Array[] = [];
+    for await (const chunk of first as AsyncIterable<Uint8Array>) {
+      chunks.push(chunk);
+    }
+    fs.writeFileSync(outputPath, Buffer.concat(chunks));
+    return;
+  }
+
+  throw new Error(
+    `Unexpected Replicate output shape: ${typeof first} (${JSON.stringify(first).slice(0, 120)})`,
+  );
 }
 
-async function runRecipeJob(client: OpenAI, job: PlannedJob): Promise<void> {
-  const referenceStream = fs.createReadStream(REFERENCE_PATH);
-  const response = await client.images.edit({
-    model: MODEL,
-    image: referenceStream,
-    prompt: job.prompt,
-    size: SIZE,
-    n: 1,
+async function runReferenceJob(client: Replicate, job: PlannedJob): Promise<void> {
+  const output = await client.run(`${MODEL_REF}:${MODEL_VERSION}`, {
+    input: {
+      prompt: job.prompt,
+      aspect_ratio: '3:2',
+      output_format: 'png',
+      raw: true,
+      safety_tolerance: 2,
+    },
   });
-  const b64 = response.data?.[0]?.b64_json;
-  if (!b64) throw new Error(`No image returned for ${job.label}`);
-  fs.writeFileSync(job.outputPath, Buffer.from(b64, 'base64'));
+  await saveOutput(output, job.outputPath);
+}
+
+async function runRecipeJob(client: Replicate, job: PlannedJob): Promise<void> {
+  const referenceBuffer = fs.readFileSync(REFERENCE_PATH);
+  // Replicate SDK accepts a Blob/File for file-valued inputs and uploads
+  // it transparently. Using Blob keeps the entire call in one round trip.
+  const referenceBlob = new Blob([referenceBuffer], { type: 'image/png' });
+
+  const output = await client.run(`${MODEL_REF}:${MODEL_VERSION}`, {
+    input: {
+      prompt: job.prompt,
+      image_prompt: referenceBlob,
+      image_prompt_strength: IMAGE_PROMPT_STRENGTH,
+      aspect_ratio: '3:2',
+      output_format: 'png',
+      raw: true,
+      safety_tolerance: 2,
+    },
+  });
+  await saveOutput(output, job.outputPath);
 }
 
 async function main(): Promise<void> {
   const args = parseArgs(process.argv.slice(2));
   fs.mkdirSync(OUTPUT_DIR, { recursive: true });
 
-  const jobs =
-    args.mode === 'reference' ? planReferenceJobs() : planRecipeJobs(args);
+  const jobs = args.mode === 'reference' ? planReferenceJobs() : planRecipeJobs(args);
 
   if (jobs.length === 0) {
     console.log('No work to do. All outputs already exist (use --force to override).');
@@ -196,10 +251,12 @@ async function main(): Promise<void> {
   }
 
   const estimatedCost = (jobs.length * COST_PER_IMAGE_USD).toFixed(2);
-  console.log(`Model: ${MODEL}`);
-  console.log(`Size:  ${SIZE}`);
+  console.log(`Model: ${MODEL_REF} @ ${MODEL_VERSION.slice(0, 12)}`);
   console.log(`Jobs:  ${jobs.length}`);
   console.log(`Estimated cost: ~$${estimatedCost} USD (@ $${COST_PER_IMAGE_USD}/image)`);
+  if (args.mode !== 'reference') {
+    console.log(`Reference strength: ${IMAGE_PROMPT_STRENGTH}`);
+  }
   console.log('');
 
   for (const job of jobs) {
@@ -212,21 +269,21 @@ async function main(): Promise<void> {
     return;
   }
 
-  const apiKey = process.env.OPENAI_API_KEY;
+  const apiKey = process.env.REPLICATE_API_TOKEN;
   if (!apiKey) {
     throw new Error(
-      'OPENAI_API_KEY is not set. Export it in your shell or use:\n' +
-        '  OPENAI_API_KEY=sk-... pnpm gen-heroes ...',
+      'REPLICATE_API_TOKEN is not set. Add to .env.local:\n' +
+        '  REPLICATE_API_TOKEN=r8_...',
     );
   }
 
-  const client = new OpenAI({ apiKey });
+  const client = new Replicate({ auth: apiKey });
   let completed = 0;
   for (let i = 0; i < jobs.length; i++) {
     const job = jobs[i];
     process.stdout.write(`[${i + 1}/${jobs.length}] ${job.label}... `);
     try {
-      if (job.mode === 'generate') {
+      if (job.mode === 'reference') {
         await runReferenceJob(client, job);
       } else {
         await runRecipeJob(client, job);
@@ -236,9 +293,7 @@ async function main(): Promise<void> {
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err);
       console.log(`FAILED: ${msg}`);
-      // Auth / permission errors will not self-resolve; bail out early
-      // so we do not spam the same failure across the rest of the batch.
-      if (/^(401|403)\b/.test(msg)) {
+      if (/\b(401|403)\b/.test(msg)) {
         console.log('');
         console.log('Aborting batch: auth/permission error will not resolve by retrying.');
         break;
@@ -247,7 +302,9 @@ async function main(): Promise<void> {
   }
 
   console.log('');
-  console.log(`Completed ${completed}/${jobs.length} jobs. Actual cost likely ~$${(completed * COST_PER_IMAGE_USD).toFixed(2)} USD.`);
+  console.log(
+    `Completed ${completed}/${jobs.length} jobs. Actual cost likely ~$${(completed * COST_PER_IMAGE_USD).toFixed(2)} USD.`,
+  );
   if (args.mode === 'reference' && completed > 0) {
     console.log('');
     console.log('Next: review the _reference_candidate_*.png files, pick one,');
