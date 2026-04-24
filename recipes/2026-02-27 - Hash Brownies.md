@@ -1,5 +1,5 @@
 ---
-title: "Hash Brownies"
+title: "Brownies"
 date: 2026-02-27
 type: recipe
 status: draft
@@ -26,7 +26,6 @@ Primary Ingredient Basis: `250 g unsalted butter = 100%`
 Dense matrix. Crackled surface. Controlled set.
 
 If you choose to use an infused fat, use a commercially prepared, lab-tested product and follow its label + local laws. (I’m not including instructions for making infusions.)
-Optional related prep: [[2026-02-27 - Hash Butter]]
 
 
 ---
@@ -40,7 +39,7 @@ Optional related prep: [[2026-02-27 - Hash Butter]]
 >> ### Components
 >> | Ingredient | Quantity | Scaling |
 >> | --- | --- | --- |
->> | Unsalted butter or [[2026-02-27 - Hash Butter\|hash butter (lab-tested)]] | 250 g | 100.00% |
+>> | Unsalted butter | 250 g | 100.00% |
 >> | Dark chocolate 70% | 200 g | 80.00% |
 >
 >> [!col-right]
