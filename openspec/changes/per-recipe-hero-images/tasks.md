@@ -12,43 +12,44 @@
       branching for framing (cross-section for solids, overhead bowl
       for soups, cup for coffee, etc.). Interpolate dish-specific fields.
 - [x] Add a `pnpm hero-prompt <slug>` script alias in `package.json`.
-- [ ] Iterate on the template by pasting outputs into the ChatGPT
+- [x] Iterate on the template by pasting outputs into the ChatGPT
       Playground (or any web UI) until a sample recipe (e.g. Hash
       Brownies) produces an output that matches the target aesthetic.
-      Zero API cost during this loop. ← awaiting user review
+      Zero API cost during this loop. User approved 2026-04-24.
 
-## Phase 2 — Reference image
+## Phase 2 — Batch generation script (merged with former Phase 3)
 
-- [ ] Decide reference image origin (see design.md open question 2):
-      generate from scratch, curate from existing photo, or skip.
-- [ ] If generating: prompt-only generation via ChatGPT Images UI (not
-      API) to let the user iterate without script plumbing. Pick one
-      keeper.
-- [ ] Save the chosen reference to
-      `src/assets/recipes/_reference.png`. Commit it. Future
-      regenerations draw style from this file.
-- [ ] Document the reference prompt in
-      `src/assets/recipes/_reference.md` so the reference itself is
-      reproducible.
+Design revision 2026-04-24: merged former "Phase 2 (UI-generated reference)"
+into this script. Single code path handles both reference candidates
+(`--reference`) and recipe batches. Human review checkpoint remains at
+the point of choosing among reference candidates.
 
-## Phase 3 — Batch generation script
-
-- [ ] Confirm user has an OpenAI API key (see design.md open question 1).
-      Store it locally in `.env.local` (already gitignored via `.env`).
+- [x] Reference image origin decided: generate fresh (design.md
+      decision "Resolved questions"). ← 2026-04-24
+- [x] OpenAI API key available with topped-up budget. ← 2026-04-24
 - [ ] Add `openai` SDK as a devDependency (`pnpm add -D openai`).
-- [ ] Create `scripts/generate-heroes.ts`. Accepts an optional
-      comma-separated slug list (default: all recipes without an
-      existing hero). Flags: `--force` to regenerate existing,
-      `--dry-run` to print prompts + cost estimate without calling the
-      API, `--only <slug>` for a single recipe.
+- [ ] Create `scripts/generate-heroes.ts`. Modes:
+      * `--reference` — generate 4 candidate style-reference images
+        (via `/images/generations`, no reference input) into
+        `src/assets/recipes/_reference_candidate_N.png`.
+      * `--only <slug>` — generate one recipe's hero (via
+        `/images/edits` with `_reference.png` attached). Useful for
+        regenerating individual rejects.
+      * default — batch every recipe missing a hero under
+        `src/assets/recipes/<slug>.png`.
+      * `--force` — regenerate even if the file already exists.
+      * `--dry-run` — print prompts and cost estimate without
+        calling the API.
 - [ ] Pin the model snapshot: `model: 'gpt-image-2-2026-04-21'`.
-- [ ] On each recipe: call the `/edit` endpoint with
-      `src/assets/recipes/_reference.png` as the image input and the
-      prompt from `hero-prompt.ts`, download the returned PNG to
-      `src/assets/recipes/<slug>.png`.
-- [ ] Print running cost estimate and final total. Hard-cap at 28 × 3
-      calls as a safety against runaway loops.
-- [ ] Add a `pnpm gen-heroes` script alias in `package.json`.
+- [ ] Read API key from `OPENAI_API_KEY` environment variable. Fail
+      with a clear setup message if missing.
+- [ ] Print running cost estimate and final total. Hard-cap at
+      28 × 3 calls as a safety against runaway loops.
+- [ ] Add `pnpm gen-heroes` script alias in `package.json`.
+- [ ] Manual step: run `--reference`, pick the winning candidate,
+      rename it to `src/assets/recipes/_reference.png`, commit it,
+      and document the reference prompt in
+      `src/assets/recipes/_reference.md`.
 
 ## Phase 4 — Generate the initial set
 

@@ -1,9 +1,10 @@
 #!/usr/bin/env tsx
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import matter from 'gray-matter';
 
-const RECIPES_DIR = path.join(process.cwd(), 'recipes');
+export const RECIPES_DIR = path.join(process.cwd(), 'recipes');
 
 const STYLE_RULES = [
   'clinical Modernist Cuisine reference-plate aesthetic',
@@ -40,7 +41,7 @@ function normalize(s: string): string {
   return s.toLowerCase().replace(/\.md$/, '').replace(/[\s\-_]+/g, '-');
 }
 
-function findRecipeFile(query: string): string {
+export function findRecipeFile(query: string): string {
   const files = fs.readdirSync(RECIPES_DIR).filter((f) => f.endsWith('.md'));
   const needle = normalize(query);
   const matches = files.filter((f) => normalize(f).includes(needle));
@@ -117,7 +118,7 @@ function framingFor(dishType: string, primaryIngredient: string): string {
   return 'slight-angle cross-section photograph showing plating, surface crust, and internal structure';
 }
 
-function buildPrompt(filePath: string): string {
+export function buildPrompt(filePath: string): string {
   const raw = fs.readFileSync(filePath, 'utf8');
   const parsed = matter(raw);
   const data = parsed.data as RecipeFrontmatter;
@@ -167,4 +168,6 @@ function main(): void {
   console.log(buildPrompt(filePath));
 }
 
-main();
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  main();
+}
