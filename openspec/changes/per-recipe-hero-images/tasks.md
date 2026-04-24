@@ -2,19 +2,20 @@
 
 ## Phase 1 — Prompt generator (no API calls, fast iteration)
 
-- [ ] Create `scripts/hero-prompt.ts`. Accepts a recipe slug or filename
+- [x] Create `scripts/hero-prompt.ts`. Accepts a recipe slug or filename
       as an argument. Reads the recipe, parses frontmatter via
       `gray-matter`, extracts structured fields plus the first sensory
       line of the body, and emits a prompt string to stdout.
-- [ ] Add a prompt template as a top-of-file constant. Mandatory
-      boilerplate: "cross-section photograph, stark neutral background,
-      flat even light, overhead or slight angle, no hands, no serving
-      context, 3:2 aspect ratio." Interpolate dish-specific fields.
-- [ ] Add a `pnpm hero-prompt <slug>` script alias in `package.json`.
+- [x] Add a prompt template as a top-of-file constant. Mandatory
+      boilerplate: stark neutral surface, flat even light, no hands,
+      no garnish flourishes, no text, 3:2 aspect ratio. Dish-type
+      branching for framing (cross-section for solids, overhead bowl
+      for soups, cup for coffee, etc.). Interpolate dish-specific fields.
+- [x] Add a `pnpm hero-prompt <slug>` script alias in `package.json`.
 - [ ] Iterate on the template by pasting outputs into the ChatGPT
       Playground (or any web UI) until a sample recipe (e.g. Hash
       Brownies) produces an output that matches the target aesthetic.
-      Zero API cost during this loop.
+      Zero API cost during this loop. ← awaiting user review
 
 ## Phase 2 — Reference image
 
