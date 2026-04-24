@@ -1,0 +1,89 @@
+---
+import RecipeCard from '../components/RecipeCard.astro';
+import SiteLayout from '../layouts/SiteLayout.astro';
+import { getFeaturedRecipes, getLibraryCounts } from '../lib/recipes';
+
+const featuredRecipes = getFeaturedRecipes();
+const counts = getLibraryCounts();
+const libraryStats = [
+  { label: 'Recipes', value: counts.recipes, href: '/recipes/' },
+  { label: 'Techniques', value: counts.techniques },
+  { label: 'Principles', value: counts.principles },
+  { label: 'Ingredients', value: counts.ingredients },
+  { label: 'Experiments', value: counts.experiments },
+];
+const pillars = [
+  {
+    title: 'Markdown-first',
+    copy: 'The site reads the existing recipe notes directly, so the content repo stays canonical.',
+  },
+  {
+    title: 'Phase-based',
+    copy: 'Recipe phases, timing blocks, and structural notes stay visible instead of being flattened into generic blog prose.',
+  },
+  {
+    title: 'Ready to publish',
+    copy: 'Astro now provides a static site shell you can extend into search, taxonomy pages, and deployment.',
+  },
+];
+---
+
+<SiteLayout
+  title="Modernist Recipe Book"
+  description="Astro front end for the Markdown-first modernist recipe repository."
+>
+  <section class="hero">
+    <p class="eyebrow">Astro site bootstrap</p>
+    <h1>Recipes stay canonical in Markdown. The website turns them into service-ready pages.</h1>
+    <p class="lead">
+      This frontend reads the repository&apos;s existing recipe notes directly from
+      <code>recipes/</code>, preserves the phase-driven structure, and gives the
+      collection a cleaner surface for browsing and publication.
+    </p>
+    <div class="hero__actions">
+      <a class="button" href="/recipes/">Browse recipes</a>
+      <span class="button button--ghost">Source of truth: <code>recipes/</code></span>
+    </div>
+  </section>
+
+  <section class="stats-grid" aria-label="Library counts">
+    {libraryStats.map((stat) => (
+      <article class="stat-card">
+        <p class="stat-card__value">{stat.value}</p>
+        <p class="stat-card__label">
+          {stat.href ? <a href={stat.href}>{stat.label}</a> : stat.label}
+        </p>
+      </article>
+    ))}
+  </section>
+
+  <section class="section-shell">
+    <div class="section-heading">
+      <p class="eyebrow">Collection principles</p>
+      <h2>Designed around how the repository already works</h2>
+    </div>
+    <div class="pillar-grid">
+      {pillars.map((pillar) => (
+        <article class="pillar-card">
+          <h3>{pillar.title}</h3>
+          <p>{pillar.copy}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section-shell">
+    <div class="section-heading section-heading--split">
+      <div>
+        <p class="eyebrow">Recent recipes</p>
+        <h2>Canonical notes, rendered for the web</h2>
+      </div>
+      <a class="text-link" href="/recipes/">View the full collection</a>
+    </div>
+    <div class="recipe-grid">
+      {featuredRecipes.map((recipe) => (
+        <RecipeCard recipe={recipe} />
+      ))}
+    </div>
+  </section>
+</SiteLayout>

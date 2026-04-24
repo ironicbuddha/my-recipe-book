@@ -1,0 +1,33 @@
+---
+import type { RecipeEntry } from '../lib/recipes';
+
+interface Props {
+  recipe: RecipeEntry;
+}
+
+const { recipe } = Astro.props;
+const visibleTags = recipe.tags.filter((tag) => !tag.startsWith('dish-')).slice(0, 4);
+---
+
+<article class="recipe-card">
+  <p class="recipe-card__date">{recipe.dateLabel}</p>
+  <h3 class="recipe-card__title">
+    <a href={recipe.href}>{recipe.title}</a>
+  </h3>
+  <p class="recipe-card__excerpt">{recipe.excerpt}</p>
+  <div class="recipe-card__facts">
+    {recipe.dishType && <span>{recipe.dishType}</span>}
+    <span>{recipe.phaseCount} phases</span>
+    {recipe.yieldText && <span>{recipe.yieldText}</span>}
+    {recipe.serviceTarget && <span>Service {recipe.serviceTarget}</span>}
+  </div>
+  {
+    visibleTags.length > 0 && (
+      <ul class="tag-list">
+        {visibleTags.map((tag) => (
+          <li>{tag}</li>
+        ))}
+      </ul>
+    )
+  }
+</article>

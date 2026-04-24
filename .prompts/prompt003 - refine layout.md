@@ -21,6 +21,7 @@ Apply these structural rules:
 
 4. Do not use any HTML divs (`<div class="modernist-phase">`, `<div class="phase-separator">`, etc.).
 5. Maintain:
+
    - Metric units only
    - Scaling column in %
    - Clean whitespace

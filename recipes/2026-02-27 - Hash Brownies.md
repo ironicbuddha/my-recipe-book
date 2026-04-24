@@ -40,7 +40,7 @@ Optional related prep: [[2026-02-27 - Hash Butter]]
 >> ### Components
 >> | Ingredient | Quantity | Scaling |
 >> | --- | --- | --- |
->> | Unsalted butter or [[2026-02-27 - Hash Butter|hash butter (lab-tested)]] | 250 g | 100.00% |
+>> | Unsalted butter or [[2026-02-27 - Hash Butter\|hash butter (lab-tested)]] | 250 g | 100.00% |
 >> | Dark chocolate 70% | 200 g | 80.00% |
 >
 >> [!col-right]

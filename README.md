@@ -24,6 +24,8 @@ Each recipe follows a chronological, phase-driven structure aligned with real pr
 ---
 
 ## Repository Structure
+
+```text
 my-recipe-book/
 │
 ├── recipes/
@@ -33,23 +35,45 @@ my-recipe-book/
 ├── experiments/
 ├── templates/
 └── README.md
+```
+
 ### recipes/
+
 Canonical dishes formatted in Modernist house style.
 
 ### techniques/
+
 Execution mechanics (e.g., hibachi grilling, emulsification).
 
 ### principles/
+
 Scientific mechanisms (e.g., Maillard reaction, enzyme activity).
 
 ### ingredients/
+
 Ingredient-specific technical notes.
 
 ### experiments/
+
 Non-canonical trials, variations, and failures.
 
 ### templates/
+
 Standardized Markdown templates for consistency.
+
+## Website Bootstrap
+
+This repo now also contains an Astro site that reads the canonical recipe notes
+directly from `recipes/`.
+
+- Install frontend dependencies with `pnpm install`
+- Start the site with `pnpm dev`
+- Build the site with `pnpm build`
+- Run frontend checks with `pnpm lint` and `pnpm typecheck`
+- Keep content validation via `make validate`
+
+The Markdown files in the canonical folders remain the source of truth. The
+website is a presentation layer over that content, not a second content system.
 
 ---
 

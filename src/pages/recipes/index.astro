@@ -1,0 +1,33 @@
+---
+import RecipeCard from '../../components/RecipeCard.astro';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import { getAllRecipes } from '../../lib/recipes';
+
+const recipes = getAllRecipes();
+---
+
+<SiteLayout
+  title="Recipes | Modernist Recipe Book"
+  description={`Browse ${recipes.length} recipe notes from the Markdown-first modernist recipe library.`}
+>
+  <section class="page-header">
+    <p class="eyebrow">Recipe index</p>
+    <h1>All recipes</h1>
+    <p class="lead">
+      Each page is generated from the repo&apos;s existing Markdown notes and keeps the
+      phase order, structural notes, and failure modes intact.
+    </p>
+  </section>
+
+  <section class="section-shell">
+    <div class="section-heading section-heading--split">
+      <p class="eyebrow">Canonical collection</p>
+      <p class="text-link">{recipes.length} recipes published</p>
+    </div>
+    <div class="recipe-grid">
+      {recipes.map((recipe) => (
+        <RecipeCard recipe={recipe} />
+      ))}
+    </div>
+  </section>
+</SiteLayout>

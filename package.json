@@ -1,0 +1,51 @@
+{
+  "name": "my-recipe-book",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0",
+  "description": "Astro front end for a Markdown-first modernist recipe library.",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "typecheck": "astro check",
+    "validate:content": "make validate",
+    "check": "pnpm lint && pnpm typecheck && pnpm build && pnpm validate:content",
+    "lint": "pnpm lint:md && pnpm lint:ts && pnpm lint:css",
+    "lint:md": "markdownlint-cli2 README.md AGENTS.md constitution.md",
+    "lint:ts": "eslint . --ext .ts,.tsx",
+    "lint:css": "stylelint \"**/*.{css,pcss,scss}\" --allow-empty-input",
+    "format": "pnpm format:md && pnpm format:ts && pnpm format:css",
+    "format:check": "pnpm format:check:md && pnpm format:check:ts && pnpm format:check:css",
+    "format:md": "prettier --write README.md AGENTS.md constitution.md",
+    "format:ts": "prettier --write \"**/*.{ts,tsx,js,jsx,json}\"",
+    "format:css": "prettier --write \"**/*.{css,pcss,scss}\"",
+    "format:check:md": "prettier --check README.md AGENTS.md constitution.md",
+    "format:check:ts": "prettier --check \"**/*.{ts,tsx,js,jsx,json}\"",
+    "format:check:css": "prettier --check \"**/*.{css,pcss,scss}\""
+  },
+  "dependencies": {
+    "astro": "^6.1.9",
+    "gray-matter": "^4.0.3",
+    "markdown-it": "^14.1.1"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.8",
+    "@eslint/js": "^9.0.0",
+    "@types/markdown-it": "^14.1.2",
+    "@types/node": "^25.6.0",
+    "eslint": "^9.0.0",
+    "eslint-config-prettier": "^10.0.0",
+    "globals": "^16.0.0",
+    "markdownlint-cli2": "^0.18.0",
+    "prettier": "^3.0.0",
+    "stylelint": "^16.0.0",
+    "stylelint-config-standard": "^39.0.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.0.0"
+  }
+}

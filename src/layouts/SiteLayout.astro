@@ -1,0 +1,46 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  description?: string;
+  title?: string;
+}
+
+const {
+  description = 'Modernist recipe notes rendered as an Astro site.',
+  title = 'Modernist Recipe Book',
+} = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="site-brand" href="/">
+          <span class="site-brand__eyebrow">Astro bootstrap</span>
+          <span class="site-brand__name">Modernist Recipe Book</span>
+        </a>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="/">Overview</a>
+          <a href="/recipes/">Recipes</a>
+        </nav>
+      </header>
+      <main class="site-main">
+        <slot />
+      </main>
+      <footer class="site-footer">
+        Markdown in <code>recipes/</code> remains canonical. The site is a projection
+        over the repo, not a separate content store.
+      </footer>
+    </div>
+  </body>
+</html>
