@@ -10,34 +10,40 @@ changes with it. Treat it as load-bearing.
 
 ## Metadata
 
-- **Source model:** `black-forest-labs/flux-1.1-pro-ultra`
-- **Version:** `5ea10f739af9f6d4002fae9aee4c15be14c3c8d7f8b309e634bf68df09159863`
-- **Generated:** 2026-04-24
-- **Output:** 2496×1664 PNG (3:2, ~4 MP)
-- **Selected from:** 4 candidates (candidate 2)
+- **Origin:** Generated manually via OpenAI's ChatGPT Images 2.0
+  (`gpt-image-2`, ChatGPT UI). Supplied by the repository owner on
+  2026-04-24 to replace a Flux-generated candidate that was pushing
+  false "layered filling" structure into homogeneous bakes.
+- **Dimensions:** 1536×1024 PNG (3:2)
+- **Previous reference:** Flux 1.1 Pro Ultra candidate 2, committed in
+  `8b859cd` then replaced. Git history retains it if needed.
 
-## Generation prompt
+## Why this one
 
-This is the exact text prompt used (no image_prompt — reference was
-generated text-only so it could anchor the style without inheriting
-another image's bias). Stored here so the reference itself is
-reproducible.
+The Flux-generated reference visually suggested "layered dessert with
+filling" strongly enough that, at `image_prompt_strength: 0.3`, it
+pushed cream-cheese-like interior layers into a brownie output that
+should have been homogeneous. Lowering strength and tightening the
+prompt helped but the reference itself was the root signal. A
+ChatGPT-generated brownie with cleaner uniform structure became the
+new anchor.
 
-```
-A single food specimen photographed for a Modernist Cuisine reference plate.
+## Current pipeline settings
 
-Framing: vertical cross-section of a layered baked specimen (a square of dense chocolate brownie or similar), centered in the frame, showing internal crumb, crackled surface, and structural layers clearly.
-
-Style rules: seamless stark white studio backdrop; flat even studio light from above; crisp edge-to-edge focus; no harsh shadows; single specimen centered; no hands; no utensils; no garnishes; no text; no labels; no measurement annotations; muted colour palette with restrained contrast; 3:2 aspect ratio; clinical laboratory photography aesthetic; no props; no context.
-```
+- `image_prompt_strength`: `0.2` (down from initial 0.3 after the
+  filling-layer incident). Defined in `scripts/generate-heroes.ts`.
+- Template fix: `framingFor` in `scripts/hero-prompt.ts` now
+  separates layered desserts (pies, layer cakes) from homogeneous
+  bakes (brownies, breads, flapjacks), with the latter including the
+  explicit phrase "no filling, no interior layers."
 
 ## Replace procedure
 
-To regenerate with a different aesthetic:
+To swap this reference for a different one:
 
-1. Edit `REFERENCE_PROMPT` in `scripts/generate-heroes.ts`.
-2. Run `pnpm gen-heroes --reference` to produce 4 new candidates.
-3. Pick one, rename it to `_reference.png` here.
-4. Update this document with the new prompt and date.
-5. Run `pnpm gen-heroes --force` to regenerate all 28 recipe heroes
-   against the new reference.
+1. Save the new image to `src/assets/recipes/_reference.png`.
+2. Update the **Origin** line above with model, date, and rationale.
+3. Run `pnpm gen-heroes --only hash-brownies --force` as a smoke test
+   ($0.06) to confirm the new reference behaves sensibly.
+4. If good, run `pnpm gen-heroes --force` to regenerate all 28
+   recipe heroes against the new reference (~$1.68).
