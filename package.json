@@ -13,7 +13,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "hero-prompt": "tsx scripts/hero-prompt.ts",
-    "gen-heroes": "tsx scripts/generate-heroes.ts",
+    "gen-heroes": "tsx --env-file-if-exists=.env.local scripts/generate-heroes.ts",
     "typecheck": "astro check",
     "validate:content": "make validate",
     "check": "pnpm lint && pnpm typecheck && pnpm build && pnpm validate:content",
