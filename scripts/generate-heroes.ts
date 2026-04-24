@@ -222,8 +222,9 @@ async function main(): Promise<void> {
 
   const client = new OpenAI({ apiKey });
   let completed = 0;
-  for (const job of jobs) {
-    process.stdout.write(`[${completed + 1}/${jobs.length}] ${job.label}... `);
+  for (let i = 0; i < jobs.length; i++) {
+    const job = jobs[i];
+    process.stdout.write(`[${i + 1}/${jobs.length}] ${job.label}... `);
     try {
       if (job.mode === 'generate') {
         await runReferenceJob(client, job);
@@ -235,12 +236,19 @@ async function main(): Promise<void> {
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err);
       console.log(`FAILED: ${msg}`);
+      // Auth / permission errors will not self-resolve; bail out early
+      // so we do not spam the same failure across the rest of the batch.
+      if (/^(401|403)\b/.test(msg)) {
+        console.log('');
+        console.log('Aborting batch: auth/permission error will not resolve by retrying.');
+        break;
+      }
     }
   }
 
   console.log('');
   console.log(`Completed ${completed}/${jobs.length} jobs. Actual cost likely ~$${(completed * COST_PER_IMAGE_USD).toFixed(2)} USD.`);
-  if (args.mode === 'reference') {
+  if (args.mode === 'reference' && completed > 0) {
     console.log('');
     console.log('Next: review the _reference_candidate_*.png files, pick one,');
     console.log(`and rename it to ${path.relative(process.cwd(), REFERENCE_PATH)}.`);
