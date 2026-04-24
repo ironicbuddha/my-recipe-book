@@ -42,7 +42,9 @@ function normalize(s: string): string {
 }
 
 export function findRecipeFile(query: string): string {
-  const files = fs.readdirSync(RECIPES_DIR).filter((f) => f.endsWith('.md'));
+  const files = fs
+    .readdirSync(RECIPES_DIR)
+    .filter((f) => /^\d{4}-\d{2}-\d{2}/.test(f) && f.endsWith('.md'));
   const needle = normalize(query);
   const matches = files.filter((f) => normalize(f).includes(needle));
 
@@ -112,8 +114,14 @@ function framingFor(dishType: string, primaryIngredient: string): string {
   if (/coffee|espresso|tea|aeropress/.test(lower)) {
     return 'overhead photograph of a cup, showing crema or surface detail with visible depth and micro-bubble structure';
   }
-  if (/dessert|pie|brownie|pancake|flapjack/.test(lower)) {
-    return 'vertical cross-section photograph revealing internal crumb, layer, or structural texture';
+  // Layered desserts (pies, stacked cakes) want explicit layer language.
+  if (/pie|layer cake|tiramisu/.test(lower)) {
+    return 'vertical cross-section photograph revealing internal layers, crumb, and set';
+  }
+  // Homogeneous bakes (brownies, pancakes, bread) are a single material —
+  // avoid the word "layer" which Flux interprets as visible filling.
+  if (/dessert|brownie|pancake|flapjack|bread|sourdough|cookie/.test(lower)) {
+    return 'vertical cross-section photograph revealing uniform internal crumb and surface crust, no filling, no interior layers';
   }
   return 'slight-angle cross-section photograph showing plating, surface crust, and internal structure';
 }

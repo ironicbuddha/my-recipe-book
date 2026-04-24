@@ -17,12 +17,18 @@ import path from 'node:path';
 import Replicate from 'replicate';
 import { RECIPES_DIR, buildPrompt } from './hero-prompt.js';
 
-const MODEL_OWNER = 'black-forest-labs';
-const MODEL_NAME = 'flux-1.1-pro-ultra';
-const MODEL_VERSION = '5ea10f739af9f6d4002fae9aee4c15be14c3c8d7f8b309e634bf68df09159863';
-const MODEL_REF = `${MODEL_OWNER}/${MODEL_NAME}`;
-const COST_PER_IMAGE_USD = 0.06;
-const IMAGE_PROMPT_STRENGTH = 0.3;
+// Flux Kontext Max is used for recipe generation (text + input_image driven
+// semantic editing). Flux 1.1 Pro Ultra is used for the initial reference
+// candidates (text-only generation, where Pro Ultra's raw-photographic
+// output is stronger).
+const REFERENCE_MODEL = 'black-forest-labs/flux-1.1-pro-ultra';
+const REFERENCE_MODEL_VERSION =
+  '5ea10f739af9f6d4002fae9aee4c15be14c3c8d7f8b309e634bf68df09159863';
+const RECIPE_MODEL = 'black-forest-labs/flux-kontext-max';
+const RECIPE_MODEL_VERSION =
+  '8389ed8e4b16016c44fcdcc3ad142cf1e182e0a1ecaf0347b3e5254303f2beac';
+const COST_PER_REFERENCE_USD = 0.06;
+const COST_PER_RECIPE_USD = 0.08;
 const HARD_CAP = 28 * 3;
 const REFERENCE_CANDIDATE_COUNT = 4;
 
@@ -42,6 +48,7 @@ interface Args {
   only?: string;
   force: boolean;
   dryRun: boolean;
+  noReference: boolean;
 }
 
 function usage(exitCode = 0): never {
@@ -56,13 +63,16 @@ function usage(exitCode = 0): never {
     'Flags:',
     '  --force            regenerate even if output exists',
     '  --dry-run          print prompts + cost estimate, no API calls',
+    '  --no-reference     generate recipes text-only via Pro Ultra, skip',
+    '                     the style-reference image (useful when the',
+    '                     reference pollutes recipe subjects)',
   ].join('\n');
   console[exitCode === 0 ? 'log' : 'error'](msg);
   process.exit(exitCode);
 }
 
 function parseArgs(argv: string[]): Args {
-  const args: Args = { mode: 'batch', force: false, dryRun: false };
+  const args: Args = { mode: 'batch', force: false, dryRun: false, noReference: false };
   for (let i = 0; i < argv.length; i++) {
     const arg = argv[i];
     switch (arg) {
@@ -82,6 +92,9 @@ function parseArgs(argv: string[]): Args {
         break;
       case '--dry-run':
         args.dryRun = true;
+        break;
+      case '--no-reference':
+        args.noReference = true;
         break;
       case '--help':
       case '-h':
@@ -120,7 +133,9 @@ function planReferenceJobs(): PlannedJob[] {
 }
 
 function planRecipeJobs(args: Args): PlannedJob[] {
-  const allFiles = fs.readdirSync(RECIPES_DIR).filter((f) => f.endsWith('.md'));
+  const allFiles = fs
+    .readdirSync(RECIPES_DIR)
+    .filter((f) => /^\d{4}-\d{2}-\d{2}/.test(f) && f.endsWith('.md'));
   const targets =
     args.mode === 'only' && args.only
       ? allFiles.filter((f) =>
@@ -136,9 +151,9 @@ function planRecipeJobs(args: Args): PlannedJob[] {
     );
   }
 
-  if (!fs.existsSync(REFERENCE_PATH)) {
+  if (!args.noReference && !fs.existsSync(REFERENCE_PATH)) {
     throw new Error(
-      `Reference image not found at ${REFERENCE_PATH}. Run with --reference first, pick a candidate, and rename it to _reference.png.`,
+      `Reference image not found at ${REFERENCE_PATH}. Run with --reference first, pick a candidate, and rename it to _reference.png. Or pass --no-reference to generate text-only.`,
     );
   }
 
@@ -203,7 +218,7 @@ async function saveOutput(output: ReplicateOutput, outputPath: string): Promise<
 }
 
 async function runReferenceJob(client: Replicate, job: PlannedJob): Promise<void> {
-  const output = await client.run(`${MODEL_REF}:${MODEL_VERSION}`, {
+  const output = await client.run(`${REFERENCE_MODEL}:${REFERENCE_MODEL_VERSION}`, {
     input: {
       prompt: job.prompt,
       aspect_ratio: '3:2',
@@ -215,20 +230,38 @@ async function runReferenceJob(client: Replicate, job: PlannedJob): Promise<void
   await saveOutput(output, job.outputPath);
 }
 
-async function runRecipeJob(client: Replicate, job: PlannedJob): Promise<void> {
+async function runRecipeJob(
+  client: Replicate,
+  job: PlannedJob,
+  noReference: boolean,
+): Promise<void> {
+  if (noReference) {
+    // Text-only via Pro Ultra — used when the reference image pollutes
+    // the subject rather than anchoring just the aesthetic.
+    const output = await client.run(`${REFERENCE_MODEL}:${REFERENCE_MODEL_VERSION}`, {
+      input: {
+        prompt: job.prompt,
+        aspect_ratio: '3:2',
+        output_format: 'png',
+        raw: true,
+        safety_tolerance: 2,
+      },
+    });
+    await saveOutput(output, job.outputPath);
+    return;
+  }
+
   const referenceBuffer = fs.readFileSync(REFERENCE_PATH);
-  // Replicate SDK accepts a Blob/File for file-valued inputs and uploads
-  // it transparently. Using Blob keeps the entire call in one round trip.
+  // Replicate's SDK accepts Blobs for file-valued inputs and uploads
+  // them transparently. Keeps everything in one round trip.
   const referenceBlob = new Blob([referenceBuffer], { type: 'image/png' });
 
-  const output = await client.run(`${MODEL_REF}:${MODEL_VERSION}`, {
+  const output = await client.run(`${RECIPE_MODEL}:${RECIPE_MODEL_VERSION}`, {
     input: {
+      input_image: referenceBlob,
       prompt: job.prompt,
-      image_prompt: referenceBlob,
-      image_prompt_strength: IMAGE_PROMPT_STRENGTH,
       aspect_ratio: '3:2',
       output_format: 'png',
-      raw: true,
       safety_tolerance: 2,
     },
   });
@@ -250,13 +283,15 @@ async function main(): Promise<void> {
     throw new Error(`Planned ${jobs.length} jobs exceeds hard cap of ${HARD_CAP}. Aborting.`);
   }
 
-  const estimatedCost = (jobs.length * COST_PER_IMAGE_USD).toFixed(2);
-  console.log(`Model: ${MODEL_REF} @ ${MODEL_VERSION.slice(0, 12)}`);
+  const usingPro = args.mode === 'reference' || args.noReference;
+  const unitCost = usingPro ? COST_PER_REFERENCE_USD : COST_PER_RECIPE_USD;
+  const modelRef = usingPro ? REFERENCE_MODEL : RECIPE_MODEL;
+  const modelVersion = usingPro ? REFERENCE_MODEL_VERSION : RECIPE_MODEL_VERSION;
+  const estimatedCost = (jobs.length * unitCost).toFixed(2);
+  console.log(`Model: ${modelRef} @ ${modelVersion.slice(0, 12)}`);
+  console.log(`Mode:  ${args.noReference ? 'text-only (no reference)' : args.mode === 'reference' ? 'reference candidates' : 'recipe with reference'}`);
   console.log(`Jobs:  ${jobs.length}`);
-  console.log(`Estimated cost: ~$${estimatedCost} USD (@ $${COST_PER_IMAGE_USD}/image)`);
-  if (args.mode !== 'reference') {
-    console.log(`Reference strength: ${IMAGE_PROMPT_STRENGTH}`);
-  }
+  console.log(`Estimated cost: ~$${estimatedCost} USD (@ $${unitCost}/image)`);
   console.log('');
 
   for (const job of jobs) {
@@ -286,7 +321,7 @@ async function main(): Promise<void> {
       if (job.mode === 'reference') {
         await runReferenceJob(client, job);
       } else {
-        await runRecipeJob(client, job);
+        await runRecipeJob(client, job, args.noReference);
       }
       completed += 1;
       console.log('done');
@@ -303,7 +338,7 @@ async function main(): Promise<void> {
 
   console.log('');
   console.log(
-    `Completed ${completed}/${jobs.length} jobs. Actual cost likely ~$${(completed * COST_PER_IMAGE_USD).toFixed(2)} USD.`,
+    `Completed ${completed}/${jobs.length} jobs. Actual cost likely ~$${(completed * unitCost).toFixed(2)} USD.`,
   );
   if (args.mode === 'reference' && completed > 0) {
     console.log('');
