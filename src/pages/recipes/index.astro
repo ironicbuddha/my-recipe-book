@@ -4,6 +4,14 @@ import SiteLayout from '../../layouts/SiteLayout.astro';
 import { getAllRecipes } from '../../lib/recipes';
 
 const recipes = getAllRecipes();
+const dishTypes = [...new Set(recipes.map((recipe) => recipe.dishType).filter(Boolean))].sort();
+const topTags = [
+  ...new Set(
+    recipes.flatMap((recipe) => recipe.tags.filter((tag) => !tag.startsWith('dish-'))),
+  ),
+]
+  .sort()
+  .slice(0, 18);
 ---
 
 <SiteLayout
@@ -12,22 +20,92 @@ const recipes = getAllRecipes();
 >
   <section class="page-header">
     <p class="eyebrow">Recipe index</p>
-    <h1>All recipes</h1>
+    <h1>Canonical recipe protocols</h1>
     <p class="lead">
-      Each page is generated from the repo&apos;s existing Markdown notes and keeps the
-      phase order, structural notes, and failure modes intact.
+      Generated from the existing Markdown notes, preserving phase order, structural
+      notes, and failure modes as the source of truth.
     </p>
   </section>
 
   <section class="section-shell">
     <div class="section-heading section-heading--split">
       <p class="eyebrow">Canonical collection</p>
-      <p class="text-link">{recipes.length} recipes published</p>
+      <p class="text-link" data-recipe-count>{recipes.length} recipes indexed</p>
     </div>
+    <form class="library-controls" data-recipe-filters>
+      <label class="search-field">
+        <span>Search</span>
+        <input
+          type="search"
+          name="q"
+          placeholder="ingredient, technique, dish"
+          autocomplete="off"
+          data-recipe-search
+        />
+      </label>
+      <label>
+        <span>Dish type</span>
+        <select name="dish" data-recipe-dish>
+          <option value="">All dish types</option>
+          {dishTypes.map((dishType) => <option value={dishType}>{dishType}</option>)}
+        </select>
+      </label>
+      <label>
+        <span>Tag</span>
+        <select name="tag" data-recipe-tag>
+          <option value="">All tags</option>
+          {topTags.map((tag) => <option value={tag}>{tag}</option>)}
+        </select>
+      </label>
+      <button type="reset">Reset</button>
+    </form>
     <div class="recipe-grid">
       {recipes.map((recipe) => (
         <RecipeCard recipe={recipe} />
       ))}
     </div>
+    <p class="empty-state" data-empty-state hidden>
+      No recipe protocol matches those filters.
+    </p>
   </section>
+  <script>
+    const filterForm = document.querySelector('[data-recipe-filters]');
+    const cards = [...document.querySelectorAll('[data-recipe-card]')];
+    const count = document.querySelector('[data-recipe-count]');
+    const emptyState = document.querySelector('[data-empty-state]');
+
+    if (filterForm instanceof HTMLFormElement && count && emptyState) {
+      const search = filterForm.querySelector('[data-recipe-search]');
+      const dish = filterForm.querySelector('[data-recipe-dish]');
+      const tag = filterForm.querySelector('[data-recipe-tag]');
+
+      const applyFilters = () => {
+        const query = search instanceof HTMLInputElement ? search.value.trim().toLowerCase() : '';
+        const dishValue = dish instanceof HTMLSelectElement ? dish.value : '';
+        const tagValue = tag instanceof HTMLSelectElement ? tag.value : '';
+        let visibleCount = 0;
+
+        cards.forEach((card) => {
+          const searchText = card.getAttribute('data-search') ?? '';
+          const dishText = card.getAttribute('data-dish') ?? '';
+          const tagText = card.getAttribute('data-tags') ?? '';
+          const matches =
+            (!query || searchText.includes(query)) &&
+            (!dishValue || dishText === dishValue) &&
+            (!tagValue || tagText.split(' ').includes(tagValue));
+
+          card.toggleAttribute('hidden', !matches);
+          if (matches) {
+            visibleCount += 1;
+          }
+        });
+
+        count.textContent = `${visibleCount} of ${cards.length} recipes indexed`;
+        emptyState.toggleAttribute('hidden', visibleCount > 0);
+      };
+
+      filterForm.addEventListener('input', applyFilters);
+      filterForm.addEventListener('reset', () => window.setTimeout(applyFilters, 0));
+    }
+  </script>
 </SiteLayout>

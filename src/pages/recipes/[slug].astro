@@ -1,23 +1,24 @@
 ---
 import SiteLayout from '../../layouts/SiteLayout.astro';
-import { getAllRecipes, renderRecipeBody } from '../../lib/recipes';
+import { getAllRecipes, getRecipePhases, renderRecipeBody } from '../../lib/recipes';
 
 export function getStaticPaths() {
   return getAllRecipes().map((recipe) => ({
     params: { slug: recipe.slug },
     props: {
       html: renderRecipeBody(recipe.body),
+      phaseLinks: getRecipePhases(recipe.body),
       recipe,
     },
   }));
 }
 
-const { html, recipe } = Astro.props;
+const { html, phaseLinks, recipe } = Astro.props;
 ---
 
 <SiteLayout title={`${recipe.title} | Modernist Recipe Book`} description={recipe.excerpt}>
   <section class="page-header page-header--tight">
-    <a class="back-link" href="/recipes/">Back to all recipes</a>
+    <a class="back-link" href="/recipes/">All recipes</a>
     <p class="eyebrow">{recipe.dateLabel}</p>
     <h1>{recipe.title}</h1>
     <div class="fact-strip" aria-label="Recipe facts">
@@ -30,6 +31,22 @@ const { html, recipe } = Astro.props;
   </section>
 
   <article class="recipe-sheet">
-    <div class="recipe-body" set:html={html} />
+    <div class="recipe-workbench">
+      {
+        phaseLinks.length > 0 && (
+          <aside class="phase-nav" aria-label="Recipe phases">
+            <p class="phase-nav__label">Run sheet</p>
+            <ol>
+              {phaseLinks.map((phase) => (
+                <li>
+                  <a href={`#${phase.id}`}>{phase.title.replace(/^PHASE\s+/u, '')}</a>
+                </li>
+              ))}
+            </ol>
+          </aside>
+        )
+      }
+      <div class="recipe-body" set:html={html} />
+    </div>
   </article>
 </SiteLayout>

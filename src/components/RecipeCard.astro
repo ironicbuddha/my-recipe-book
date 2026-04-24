@@ -6,10 +6,29 @@ interface Props {
 }
 
 const { recipe } = Astro.props;
-const visibleTags = recipe.tags.filter((tag) => !tag.startsWith('dish-')).slice(0, 4);
+const taxonomyTags = recipe.tags.filter((tag) => !tag.startsWith('dish-'));
+const visibleTags = taxonomyTags.slice(0, 3);
+const searchIndex = [
+  recipe.title,
+  recipe.excerpt,
+  recipe.dishType,
+  recipe.yieldText,
+  recipe.serviceTarget,
+  recipe.primaryIngredient,
+  ...recipe.tags,
+]
+  .filter(Boolean)
+  .join(' ')
+  .toLowerCase();
 ---
 
-<article class="recipe-card">
+<article
+  class="recipe-card"
+  data-recipe-card
+  data-dish={recipe.dishType ?? ''}
+  data-search={searchIndex}
+  data-tags={taxonomyTags.join(' ')}
+>
   <p class="recipe-card__date">{recipe.dateLabel}</p>
   <h3 class="recipe-card__title">
     <a href={recipe.href}>{recipe.title}</a>

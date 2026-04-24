@@ -21,6 +21,17 @@ const markdownRenderer = new MarkdownIt({
   typographer: true,
 });
 
+markdownRenderer.renderer.rules.heading_open = (tokens, index, options, _env, self) => {
+  const token = tokens[index];
+  const nextToken = tokens[index + 1];
+
+  if (token.tag === 'h2' && nextToken?.type === 'inline') {
+    token.attrSet('id', slugify(nextToken.content));
+  }
+
+  return self.renderToken(tokens, index, options);
+};
+
 type KnowledgeDirectory = (typeof KNOWLEDGE_DIRS)[number];
 
 type RecipeFrontmatter = {
@@ -50,6 +61,10 @@ export type RecipeEntry = {
 };
 
 export type LibraryCounts = Record<KnowledgeDirectory, number>;
+export type RecipePhaseLink = {
+  id: string;
+  title: string;
+};
 
 export function getAllRecipes(): RecipeEntry[] {
   return getMarkdownFiles(RECIPES_DIR)
@@ -107,6 +122,20 @@ export function getLibraryCounts(): LibraryCounts {
 
 export function renderRecipeBody(markdown: string): string {
   return markdownRenderer.render(transformColumnCallouts(stripRecipeLead(markdown)));
+}
+
+export function getRecipePhases(markdown: string): RecipePhaseLink[] {
+  return stripRecipeLead(markdown)
+    .split(/\r?\n/u)
+    .filter((line) => line.startsWith('## PHASE '))
+    .map((line) => {
+      const title = line.replace(/^##\s+/u, '').trim();
+
+      return {
+        id: slugify(title),
+        title,
+      };
+    });
 }
 
 function countPhases(markdown: string): number {
