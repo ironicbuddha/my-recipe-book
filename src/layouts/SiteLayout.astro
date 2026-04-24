@@ -10,6 +10,11 @@ const {
   description = 'Modernist recipe notes rendered as an Astro site.',
   title = 'Modernist Recipe Book',
 } = Astro.props;
+const currentPath = Astro.url.pathname;
+const navItems = [
+  { href: '/', label: 'Library', active: currentPath === '/' },
+  { href: '/recipes/', label: 'Recipes', active: currentPath.startsWith('/recipes/') },
+];
 ---
 
 <html lang="en">
@@ -17,6 +22,12 @@ const {
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Work+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
@@ -26,20 +37,25 @@ const {
     <div class="site-shell">
       <header class="site-header">
         <a class="site-brand" href="/">
-          <span class="site-brand__eyebrow">Astro bootstrap</span>
+          <span class="site-brand__eyebrow">Lab Station 01</span>
           <span class="site-brand__name">Modernist Recipe Book</span>
         </a>
         <nav class="site-nav" aria-label="Primary">
-          <a href="/">Overview</a>
-          <a href="/recipes/">Recipes</a>
+          {
+            navItems.map((item) => (
+              <a href={item.href} aria-current={item.active ? 'page' : undefined}>
+                {item.label}
+              </a>
+            ))
+          }
         </nav>
       </header>
       <main class="site-main">
         <slot />
       </main>
       <footer class="site-footer">
-        Markdown in <code>recipes/</code> remains canonical. The site is a projection
-        over the repo, not a separate content store.
+        <span>Canonical source: <code>recipes/</code></span>
+        <span>Metric, phase-based, versioned in git.</span>
       </footer>
     </div>
   </body>

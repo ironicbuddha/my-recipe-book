@@ -14,17 +14,23 @@ const libraryStats = [
 ];
 const pillars = [
   {
-    title: 'Markdown-first',
-    copy: 'The site reads the existing recipe notes directly, so the content repo stays canonical.',
+    title: 'No folklore',
+    copy: 'Every note keeps ratios, timing, and failure modes where they can be tested again.',
   },
   {
-    title: 'Phase-based',
-    copy: 'Recipe phases, timing blocks, and structural notes stay visible instead of being flattened into generic blog prose.',
+    title: 'No mystery',
+    copy: 'Method is broken into phases so prep, heat, rest, finish, and service stay visible.',
   },
   {
-    title: 'Ready to publish',
-    copy: 'Astro now provides a static site shell you can extend into search, taxonomy pages, and deployment.',
+    title: 'No drift',
+    copy: 'The Markdown files remain canonical, versioned, and close enough to edit while cooking.',
   },
+];
+const operatingRules = [
+  'Measure against a primary ingredient basis.',
+  'Separate preparation from service pressure.',
+  'Record structural notes before memory edits them.',
+  'Treat failure modes as part of the recipe.',
 ];
 ---
 
@@ -33,16 +39,53 @@ const pillars = [
   description="Astro front end for the Markdown-first modernist recipe repository."
 >
   <section class="hero">
-    <p class="eyebrow">Astro site bootstrap</p>
-    <h1>Recipes stay canonical in Markdown. The website turns them into service-ready pages.</h1>
-    <p class="lead">
-      This frontend reads the repository&apos;s existing recipe notes directly from
-      <code>recipes/</code>, preserves the phase-driven structure, and gives the
-      collection a cleaner surface for browsing and publication.
-    </p>
-    <div class="hero__actions">
-      <a class="button" href="/recipes/">Browse recipes</a>
-      <span class="button button--ghost">Source of truth: <code>recipes/</code></span>
+    <img
+      class="hero__image"
+      src="/hero.png"
+      alt="Modernist culinary laboratory blending stainless steel kitchen equipment with a clinical research bench"
+      loading="eager"
+      decoding="async"
+    />
+    <div class="hero__copy">
+      <p class="eyebrow">Controlled cooking system</p>
+      <h1>Recipes for when intuition is not enough.</h1>
+      <p class="lead">
+        A personal culinary lab where dishes are reduced to ratios, phases,
+        temperature targets, timing windows, and the failures that prove the
+        method is real.
+      </p>
+      <div class="hero__actions">
+        <a class="button" href="/recipes/">Enter the library</a>
+        <span class="button button--ghost">Canonical: <code>recipes/</code></span>
+      </div>
+    </div>
+    <div class="hero-specimen hero-specimen--overlay" aria-label="Modernist recipe card specimen">
+      <p class="hero-specimen__id">PROTOCOL / LIVE FILE</p>
+      <div class="specimen-row specimen-row--head">
+        <span>Ingredient</span>
+        <span>Quantity</span>
+        <span>Scaling</span>
+      </div>
+      <div class="specimen-row">
+        <strong>Primary basis</strong>
+        <span>600 g</span>
+        <span>100 %</span>
+      </div>
+      <div class="specimen-row">
+        <strong>Salt</strong>
+        <span>9 g</span>
+        <span>1.5 %</span>
+      </div>
+      <div class="specimen-row">
+        <strong>Heat target</strong>
+        <span>63 C</span>
+        <span>core</span>
+      </div>
+      <div class="specimen-verdict">
+        <span>Failure mode logged</span>
+        <strong>Surface moisture blocked crust formation.</strong>
+      </div>
+      <p class="hero-specimen__phase">PHASE A / PREP / METHODICAL SETUP</p>
     </div>
   </section>
 
@@ -57,28 +100,33 @@ const pillars = [
     ))}
   </section>
 
-  <section class="section-shell">
+  <section class="section-shell doctrine-section">
     <div class="section-heading">
-      <p class="eyebrow">Collection principles</p>
-      <h2>Designed around how the repository already works</h2>
+      <p class="eyebrow">Operating doctrine</p>
+      <h2>Cook like the result has to survive cross-examination</h2>
     </div>
-    <div class="pillar-grid">
-      {pillars.map((pillar) => (
-        <article class="pillar-card">
-          <h3>{pillar.title}</h3>
-          <p>{pillar.copy}</p>
-        </article>
-      ))}
+    <div class="doctrine-grid">
+      <div class="pillar-grid">
+        {pillars.map((pillar) => (
+          <article class="pillar-card">
+            <h3>{pillar.title}</h3>
+            <p>{pillar.copy}</p>
+          </article>
+        ))}
+      </div>
+      <ol class="operating-rules">
+        {operatingRules.map((rule) => <li>{rule}</li>)}
+      </ol>
     </div>
   </section>
 
   <section class="section-shell">
     <div class="section-heading section-heading--split">
       <div>
-        <p class="eyebrow">Recent recipes</p>
-        <h2>Canonical notes, rendered for the web</h2>
+        <p class="eyebrow">Active protocols</p>
+        <h2>The latest controlled attempts</h2>
       </div>
-      <a class="text-link" href="/recipes/">View the full collection</a>
+      <a class="text-link" href="/recipes/">Search the archive</a>
     </div>
     <div class="recipe-grid">
       {featuredRecipes.map((recipe) => (
