@@ -14,6 +14,7 @@ export default [
       '.next/**',
       'out/**',
       '.turbo/**',
+      '.remember/**',
     ],
   },
   js.configs.recommended,

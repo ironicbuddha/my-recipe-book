@@ -29,16 +29,16 @@ the point of choosing among reference candidates.
 - [x] OpenAI API key available with topped-up budget. ← 2026-04-24
 - [ ] Add `openai` SDK as a devDependency (`pnpm add -D openai`).
 - [ ] Create `scripts/generate-heroes.ts`. Modes:
-      * `--reference` — generate 4 candidate style-reference images
+      - `--reference` — generate 4 candidate style-reference images
         (via `/images/generations`, no reference input) into
         `src/assets/recipes/_reference_candidate_N.png`.
-      * `--only <slug>` — generate one recipe's hero (via
+      - `--only <slug>` — generate one recipe's hero (via
         `/images/edits` with `_reference.png` attached). Useful for
         regenerating individual rejects.
-      * default — batch every recipe missing a hero under
+      - default — batch every recipe missing a hero under
         `src/assets/recipes/<slug>.png`.
-      * `--force` — regenerate even if the file already exists.
-      * `--dry-run` — print prompts and cost estimate without
+      - `--force` — regenerate even if the file already exists.
+      - `--dry-run` — print prompts and cost estimate without
         calling the API.
 - [ ] Pin the model snapshot: `model: 'gpt-image-2-2026-04-21'`.
 - [ ] Read API key from `OPENAI_API_KEY` environment variable. Fail

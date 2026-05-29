@@ -32,4 +32,5 @@ pnpm-debug.log*
 .claude
 .codex
 .gemini
+.remember
 .vercel

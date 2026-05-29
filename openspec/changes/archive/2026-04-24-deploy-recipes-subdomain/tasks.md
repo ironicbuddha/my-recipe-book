@@ -67,7 +67,7 @@
 
 - [x] Smoke test `https://recipes.carlokruger.com`: homepage, `/recipes/`,
       at least three recipe detail pages, `/sitemap-index.xml`, `/robots.txt`.
-      All returned HTTP 200. Canonical + og:* + twitter:* meta rendered
+      All returned HTTP 200. Canonical + `og:*` + `twitter:*` meta rendered
       against the live origin as expected.
 - [x] Run one social-preview validation (e.g. paste the homepage URL into
       a Slack message or use an OG debugger) and confirm the image renders.
