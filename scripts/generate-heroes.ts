@@ -110,10 +110,13 @@ function parseArgs(argv: string[]): Args {
 
 function slugForFile(filename: string): string {
   return filename
-    .replace(/\.md$/, '')
+    .replace(/\.md$/u, '')
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/gu, '')
     .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '');
+    .replace(/&/gu, ' and ')
+    .replace(/[^a-z0-9]+/gu, '-')
+    .replace(/^-+|-+$/gu, '');
 }
 
 interface PlannedJob {
