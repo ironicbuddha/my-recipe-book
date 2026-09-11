@@ -34,10 +34,12 @@ export type LibraryEntry = {
   basisIngredient?: string;
   backlinks: string[];
   body: string;
+  corrections: string[];
   date?: string;
   href?: string;
   identity: string;
   references: ContentReference[];
+  subjectLabel?: string;
   sourcePath: string;
   title: string;
   tags: string[];
@@ -89,6 +91,14 @@ const RECIPE_FRONTMATTER = new Set([
   'yield',
   'scale_basis',
   'tags',
+]);
+const EXPERIMENT_FRONTMATTER = new Set([
+  'title',
+  'date',
+  'identity',
+  'status',
+  'primary_subject',
+  'corrects',
 ]);
 const DISH_TAGS = new Set([
   'dish-main-course',
@@ -143,8 +153,10 @@ export function loadLibrary(
       continue;
     }
     entriesByIdentity.set(identity, [...identityEntries, entry]);
+    entriesByIdentity.set(identity, [...identityEntries, entry]);
 
     if (expectedType === 'recipe') {
+      recipeVersions.set(`${identity}@${entry.version ?? 0}`, entry);
       validateRecipe(source, entry, inventories, diagnostics);
       if (isApprovedRecipe(entry, inventories)) {
         eligible.push(entry);
@@ -158,11 +170,23 @@ export function loadLibrary(
       if (curations.has(identity)) {
         eligible.push(entry);
       }
+    } else if (expectedType === 'experiment') {
+      validateExperiment(source, diagnostics);
+      if (source.data.status === 'completed') {
+        eligible.push(entry);
+      }
     }
   }
 
   validateInventorySources(inventories, diagnostics);
+  validateExperiments(
+    sourceRecords,
+    entriesByIdentity,
+    recipeVersions,
+    diagnostics,
+  );
   validateReferences(entriesByIdentity, recipeVersions, diagnostics);
+  validatePriorCompletedEvidence(sourceRecords, diagnostics);
 
   if (diagnostics.length > 0) {
     throw new ContentValidationError(diagnostics);
@@ -178,9 +202,25 @@ export function loadLibrary(
     }
   }
 
+  const correctionNotices = new Map<string, string[]>();
+  for (const entry of eligible.filter(
+    (candidate) => candidate.type === 'experiment',
+  )) {
+    const source = sourceRecords.find(
+      (candidate) => candidate.relativePath === entry.sourcePath,
+    );
+    const corrected = source && stringValue(source.data.corrects);
+    if (corrected) {
+      correctionNotices.set(corrected, [
+        ...(correctionNotices.get(corrected) ?? []),
+        entry.identity,
+      ]);
+    }
+  }
   const withBacklinks = eligible.map((entry) => ({
     ...entry,
     backlinks: [...(backlinks.get(entry.identity) ?? [])].sort(),
+    corrections: [...(correctionNotices.get(entry.identity) ?? [])].sort(),
     href: routeFor(entry.identity),
   }));
   const recipes: RecipeEntry[] = withBacklinks
@@ -302,6 +342,7 @@ function readRecord(
       `${relativePath}: cannot parse frontmatter (${messageOf(error)})`,
     );
     return { body: '', bodyStartLine: 1, data: {}, filePath, relativePath };
+    return { body: '', bodyStartLine: 1, data: {}, filePath, relativePath };
   }
 }
 
@@ -332,9 +373,14 @@ function makeEntry(
       : undefined,
     backlinks: [],
     body: source.body,
+    corrections: [],
     date,
     identity,
     references: referencesIn(source.body, source.bodyStartLine),
+    subjectLabel:
+      type === 'experiment'
+        ? primarySubjectLabel(source.data.primary_subject)
+        : undefined,
     sourcePath: source.relativePath,
     tags: stringArray(source.data.tags),
     title: title ?? '',
@@ -430,19 +476,33 @@ function readCurations(
     const candidate = stringValue(record.data.candidate);
     const curator = stringValue(record.data.decided_by);
     const date = dateValue(record.data.decided_on);
-    if (record.data.record_type !== 'curation' || !candidate || !curator || !date) {
-      diagnostics.push(`${relativePath}: Curation requires candidate, Curator, and decision date`);
+    if (
+      record.data.record_type !== 'curation' ||
+      !candidate ||
+      !curator ||
+      !date
+    ) {
+      diagnostics.push(
+        `${relativePath}: Curation requires candidate, Curator, and decision date`,
+      );
       continue;
     }
     if (record.data.decision === 'merge-alias') {
-      if (!stringValue(record.data.survivor) || !stringValue(record.data.alias)) {
-        diagnostics.push(`${relativePath}: merge-alias Curation requires survivor and alias`);
+      if (
+        !stringValue(record.data.survivor) ||
+        !stringValue(record.data.alias)
+      ) {
+        diagnostics.push(
+          `${relativePath}: merge-alias Curation requires survivor and alias`,
+        );
       }
       continue;
     }
     if (record.data.decision === 'retire-candidate') {
       if (!stringValue(record.data.retirement_reason)) {
-        diagnostics.push(`${relativePath}: retire-candidate Curation requires retirement_reason`);
+        diagnostics.push(
+          `${relativePath}: retire-candidate Curation requires retirement_reason`,
+        );
       }
       continue;
     }
@@ -548,6 +608,277 @@ function validateKnowledge(
   }
 }
 
+function validateExperiment(source: SourceRecord, diagnostics: string[]): void {
+  for (const key of Object.keys(source.data)) {
+    if (!EXPERIMENT_FRONTMATTER.has(key)) {
+      diagnostics.push(
+        `${source.relativePath}: experiment frontmatter field ${key} is not allowed`,
+      );
+    }
+  }
+  if (!isExperimentSubject(source.data.primary_subject)) {
+    diagnostics.push(
+      `${source.relativePath}: Experiment requires exactly one valid primary_subject`,
+    );
+  }
+  if (source.data.status !== 'draft' && source.data.status !== 'completed') {
+    diagnostics.push(
+      `${source.relativePath}: Experiment status must be draft or completed`,
+    );
+    return;
+  }
+  if (
+    source.data.corrects !== undefined &&
+    source.data.corrects !== null &&
+    !isIdentityOfType(source.data.corrects, 'experiment')
+  ) {
+    diagnostics.push(
+      `${source.relativePath}: corrects must be a bare Experiment identity or null`,
+    );
+  }
+  if (source.data.status !== 'completed') {
+    return;
+  }
+  for (const section of ['Hypothesis', 'Procedure', 'Results', 'Decision']) {
+    if (!sectionBody(source.body, section)) {
+      diagnostics.push(
+        `${source.relativePath}: Completed Experiment requires ## ${section}`,
+      );
+    }
+  }
+}
+
+function validateExperiments(
+  sources: SourceRecord[],
+  entries: Map<string, LibraryEntry[]>,
+  recipeVersions: Map<string, LibraryEntry>,
+  diagnostics: string[],
+): void {
+  for (const source of sources.filter((candidate) =>
+    candidate.relativePath.startsWith(`experiments${path.sep}`),
+  )) {
+    const subject = source.data.primary_subject;
+    if (!isExperimentSubject(subject)) {
+      continue;
+    }
+    if (subject.type === 'recipe-version') {
+      if (!recipeVersions.has(`${subject.recipe}@${subject.version}`)) {
+        diagnostics.push(
+          `${source.relativePath}: primary_subject recipe version ${subject.recipe}@${subject.version} does not resolve`,
+        );
+      }
+    } else if (subject.type === 'ingredient-use') {
+      const recipe = recipeVersions.get(`${subject.recipe}@${subject.version}`);
+      if (!recipe) {
+        diagnostics.push(
+          `${source.relativePath}: primary_subject recipe version ${subject.recipe}@${subject.version} does not resolve`,
+        );
+      } else if (!hasIngredientUse(recipe.body, subject.phase, subject.key)) {
+        diagnostics.push(
+          `${source.relativePath}: primary_subject Ingredient Use ${subject.phase}/${subject.key} does not resolve in ${subject.recipe}@${subject.version}`,
+        );
+      }
+    } else if (
+      !entries
+        .get(subject.identity)
+        ?.some((entry) => entry.type === subject.type)
+    ) {
+      diagnostics.push(
+        `${source.relativePath}: primary_subject ${subject.identity} does not resolve as a ${subject.type}`,
+      );
+    }
+    const corrects = stringValue(source.data.corrects);
+    if (corrects) {
+      const corrected = entries
+        .get(corrects)
+        ?.find((entry) => entry.type === 'experiment');
+      const correctedSource = sources.find(
+        (candidate) => stringValue(candidate.data.identity) === corrects,
+      );
+      if (
+        corrected?.type !== 'experiment' ||
+        correctedSource?.data.status !== 'completed'
+      ) {
+        diagnostics.push(
+          `${source.relativePath}: corrects must resolve to a Completed Experiment`,
+        );
+      } else if (corrected.identity === stringValue(source.data.identity)) {
+        diagnostics.push(
+          `${source.relativePath}: an Experiment cannot correct itself`,
+        );
+      }
+    }
+  }
+}
+
+function validatePriorCompletedEvidence(
+  sources: SourceRecord[],
+  diagnostics: string[],
+): void {
+  const previousRoot = process.env.CULINARY_LIBRARY_PREVIOUS_ROOT;
+  if (!previousRoot) {
+    return;
+  }
+  const previousDirectory = path.join(previousRoot, 'experiments');
+  if (!fs.existsSync(previousDirectory)) {
+    return;
+  }
+  const previous = new Map<string, string>();
+  for (const filePath of readMarkdownFiles(previousDirectory)) {
+    const source = readRecord(
+      previousRoot,
+      path.relative(previousRoot, filePath),
+      diagnostics,
+    );
+    const identity = stringValue(source.data.identity);
+    if (identity && source.data.status === 'completed') {
+      previous.set(identity, completedEvidenceFingerprint(source));
+    }
+  }
+  const current = new Map(
+    sources
+      .filter((candidate) =>
+        candidate.relativePath.startsWith(`experiments${path.sep}`),
+      )
+      .flatMap((source) => {
+        const identity = stringValue(source.data.identity);
+        return identity ? [[identity, source] as const] : [];
+      }),
+  );
+  for (const [identity, fingerprint] of previous) {
+    const source = current.get(identity);
+    if (!source) {
+      diagnostics.push(
+        `experiments: prior completed evidence for ${identity} is missing`,
+      );
+    } else if (
+      source.data.status !== 'completed' ||
+      fingerprint !== completedEvidenceFingerprint(source)
+    ) {
+      diagnostics.push(
+        `${source.relativePath}: prior completed evidence for ${identity} is immutable`,
+      );
+    }
+  }
+}
+
+function completedEvidenceFingerprint(source: SourceRecord): string {
+  return stableJson({
+    decision: sectionBody(source.body, 'Decision'),
+    hypothesis: sectionBody(source.body, 'Hypothesis'),
+    primary_subject: source.data.primary_subject,
+    procedure: sectionBody(source.body, 'Procedure'),
+    results: sectionBody(source.body, 'Results'),
+  });
+}
+
+function stableJson(value: unknown): string {
+  if (Array.isArray(value)) {
+    return `[${value.map(stableJson).join(',')}]`;
+  }
+  if (isRecord(value)) {
+    return `{${Object.keys(value)
+      .sort()
+      .map((key) => `${JSON.stringify(key)}:${stableJson(value[key])}`)
+      .join(',')}}`;
+  }
+  return JSON.stringify(value);
+}
+
+function sectionBody(body: string, heading: string): string | undefined {
+  const match = body.match(
+    new RegExp(
+      `^## ${heading}\\s*\\n\\s*\\n([\\s\\S]*?)(?=^## |(?![\\s\\S]))`,
+      'mu',
+    ),
+  );
+  return match?.[1]?.trim() || undefined;
+}
+
+type ExperimentSubject =
+  | { type: 'recipe-version'; recipe: string; version: number }
+  | {
+      type: 'ingredient-use';
+      recipe: string;
+      version: number;
+      phase: string;
+      key: string;
+    }
+  | { type: 'technique' | 'principle'; identity: string };
+
+function isExperimentSubject(value: unknown): value is ExperimentSubject {
+  if (!isRecord(value) || typeof value.type !== 'string') {
+    return false;
+  }
+  if (value.type === 'recipe-version') {
+    return (
+      hasExactlyKeys(value, ['type', 'recipe', 'version']) &&
+      isIdentityOfType(value.recipe, 'recipe') &&
+      positiveInteger(value.version) !== undefined
+    );
+  }
+  if (value.type === 'ingredient-use') {
+    return (
+      hasExactlyKeys(value, ['type', 'recipe', 'version', 'phase', 'key']) &&
+      isIdentityOfType(value.recipe, 'recipe') &&
+      positiveInteger(value.version) !== undefined &&
+      typeof value.phase === 'string' &&
+      /^PHASE [A-Z]+ — .+/u.test(value.phase) &&
+      typeof value.key === 'string' &&
+      /^[a-z0-9]+(?:-[a-z0-9]+)*$/u.test(value.key)
+    );
+  }
+  return (
+    hasExactlyKeys(value, ['type', 'identity']) &&
+    (value.type === 'technique' || value.type === 'principle') &&
+    isIdentityOfType(value.identity, value.type)
+  );
+}
+
+function hasExactlyKeys(
+  value: Record<string, unknown>,
+  keys: string[],
+): boolean {
+  const actual = Object.keys(value).sort();
+  return (
+    actual.length === keys.length &&
+    actual.every((key, index) => key === keys.slice().sort()[index])
+  );
+}
+
+function primarySubjectLabel(value: unknown): string | undefined {
+  if (!isExperimentSubject(value)) {
+    return undefined;
+  }
+  if (value.type === 'recipe-version') {
+    return `${value.recipe} v${value.version}`;
+  }
+  if (value.type === 'ingredient-use') {
+    return `${value.recipe} v${value.version}; ${value.phase}; Ingredient Use ${value.key}`;
+  }
+  return value.identity;
+}
+
+function hasIngredientUse(
+  body: string,
+  phaseName: string,
+  key: string,
+): boolean {
+  const phase =
+    body.match(
+      new RegExp(
+        `^## ${escapeRegExp(phaseName)}\\s*\\n([\\s\\S]*?)(?=^## |(?![\\s\\S]))`,
+        'mu',
+      ),
+    )?.[1] ?? '';
+  return tableAfter(phase, 'Ingredient Uses').some(
+    (row) => row.Key?.trim() === key,
+  );
+}
+
+function escapeRegExp(value: string): string {
+  return value.replace(/[.*+?^${}()|[\]\\]/gu, '\\$&');
+}
 function validatePhases(
   source: SourceRecord,
   basis: unknown,
@@ -783,7 +1114,6 @@ function recipeVersionIdentity(entry: LibraryEntry): string | undefined {
     ? undefined
     : `${entry.identity}@${entry.version}`;
 }
-
 function isApprovedRecipe(
   entry: LibraryEntry,
   inventories: InventoryRow[],

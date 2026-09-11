@@ -4,11 +4,11 @@ import { loadLibrary } from '../../lib/library';
 
 export function getStaticPaths() {
   const library = loadLibrary();
-  const types = ['ingredients', 'principles', 'techniques'];
+  const types = ['experiments', 'ingredients', 'principles', 'techniques'];
   return types.map((type) => ({
     params: { type },
     props: {
-      entries: library.knowledge.filter((entry) => `${entry.type}s` === type),
+      entries: library.entries.filter((entry) => `${entry.type}s` === type),
       label: type.charAt(0).toUpperCase() + type.slice(1),
     },
   }));
@@ -19,16 +19,16 @@ const { entries, label } = Astro.props;
 
 <SiteLayout title={`${label} | Modernist Recipe Book`} description={`Curated ${label.toLowerCase()} in the culinary library.`}>
   <section class="page-header">
-    <p class="eyebrow">Curated knowledge</p>
+    <p class="eyebrow">{label === 'Experiments' ? 'Completed evidence' : 'Curated knowledge'}</p>
     <h1>{label}</h1>
-    <p class="lead">{entries.length} human-curated Knowledge Notes.</p>
+    <p class="lead">{entries.length} {label === 'Experiments' ? 'Completed Experiments.' : 'human-curated Knowledge Notes.'}</p>
   </section>
   <section class="section-shell">
     <ul class="knowledge-list">
       {entries.map((entry) => (
         <li>
           <a href={entry.href}>{entry.title}</a>
-          <p>{entry.backlinks.length} recipe backlink{entry.backlinks.length === 1 ? '' : 's'}</p>
+          <p>{entry.type === 'experiment' ? entry.subjectLabel : `${entry.backlinks.length} recipe backlink${entry.backlinks.length === 1 ? '' : 's'}`}</p>
         </li>
       ))}
     </ul>
