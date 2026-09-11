@@ -30,12 +30,56 @@ function copyPilotLibrary(): string {
   return root;
 }
 
-function validate(root: string) {
+function validate(root: string, previousRoot?: string) {
   return spawnSync('make', ['validate'], {
     cwd: process.cwd(),
     encoding: 'utf8',
-    env: { ...process.env, CULINARY_LIBRARY_ROOT: root },
+    env: {
+      ...process.env,
+      CULINARY_LIBRARY_ROOT: root,
+      ...(previousRoot
+        ? { CULINARY_LIBRARY_PREVIOUS_ROOT: previousRoot }
+        : {}),
+    },
   });
+}
+
+function completedExperiment(
+  identity: string,
+  primarySubject: string,
+  corrects = '',
+): string {
+  return `---
+title: "${identity}"
+date: 2026-09-11
+identity: ${identity}
+status: completed
+primary_subject:
+${primarySubject}
+${corrects ? `corrects: ${corrects}\n` : ''}---
+
+## Hypothesis
+
+The control can be reproduced.
+
+## Procedure
+
+1. Follow the recorded conditions.
+
+## Results
+
+The observed result is recorded even when it does not support the hypothesis.
+
+## Decision
+
+Keep the evidence available for review.
+`;
+}
+
+function writeExperiment(root: string, name: string, contents: string): void {
+  const destination = path.join(root, 'experiments', name);
+  fs.mkdirSync(path.dirname(destination), { recursive: true });
+  fs.writeFileSync(destination, contents);
 }
 
 function build(root: string) {
@@ -88,7 +132,7 @@ describe('make validate', () => {
 
     expect(result.status).toBe(0);
     expect(result.stdout).toContain(
-      'Validation passed: 1 recipe(s), 23 Knowledge Note(s).',
+      'Validation passed: 1 recipe(s), 23 Knowledge Note(s), 0 Completed Experiment(s).',
     );
   });
 
@@ -217,5 +261,130 @@ describe('make validate', () => {
     expect(result.stderr).toContain(
       'recipes/superseded/singapore-chicken-rice@2.md: Recipe Version recipe/singapore-chicken-rice@2 is not unique',
     );
+  });
+
+  it('publishes completed evidence and derived correction notices for every subject form', () => {
+    const root = copyPilotLibrary();
+    const draftPath = path.join(
+      root,
+      'recipes/drafts/singapore-chicken-rice@2.md',
+    );
+    fs.mkdirSync(path.dirname(draftPath), { recursive: true });
+    fs.writeFileSync(
+      draftPath,
+      fs
+        .readFileSync(
+          path.join(root, 'recipes/2026-02-19 - Singapore Chicken Rice.md'),
+          'utf8',
+        )
+        .replace('version: 1', 'version: 2'),
+    );
+    writeExperiment(
+      root,
+      '2026-09-11 - Recipe.md',
+      completedExperiment(
+        'experiment/recipe-trial',
+        '  type: recipe-version\n  recipe: recipe/singapore-chicken-rice\n  version: 1',
+      ),
+    );
+    writeExperiment(
+      root,
+      '2026-09-11 - Ingredient use.md',
+      completedExperiment(
+        'experiment/ingredient-use-trial',
+        '  type: ingredient-use\n  recipe: recipe/singapore-chicken-rice\n  version: 1\n  phase: PHASE A — POACH CHICKEN AND MAKE STOCK\n  key: chicken',
+      ),
+    );
+    writeExperiment(
+      root,
+      '2026-09-11 - Technique.md',
+      completedExperiment(
+        'experiment/technique-trial',
+        '  type: technique\n  identity: technique/poaching',
+      ),
+    );
+    writeExperiment(
+      root,
+      '2026-09-11 - Principle.md',
+      completedExperiment(
+        'experiment/principle-trial',
+        '  type: principle\n  identity: principle/thermal-shock-for-skin-texture',
+      ),
+    );
+    writeExperiment(
+      root,
+      '2026-09-11 - Correction.md',
+      completedExperiment(
+        'experiment/recipe-trial-correction',
+        '  type: recipe-version\n  recipe: recipe/singapore-chicken-rice\n  version: 1',
+        'experiment/recipe-trial',
+      ),
+    );
+    writeExperiment(
+      root,
+      '2026-09-11 - Unpublished recipe.md',
+      completedExperiment(
+        'experiment/unpublished-recipe-trial',
+        '  type: recipe-version\n  recipe: recipe/singapore-chicken-rice\n  version: 2',
+      ),
+    );
+
+    const result = validate(root);
+
+    expect(result.status).toBe(0);
+    expect(result.stdout).toContain('6 Completed Experiment(s).');
+    expect(build(root).status).toBe(0);
+
+    const experiment = fs.readFileSync(
+      path.join(process.cwd(), 'dist/experiments/ingredient-use-trial/index.html'),
+      'utf8',
+    );
+    const original = fs.readFileSync(
+      path.join(process.cwd(), 'dist/experiments/recipe-trial/index.html'),
+      'utf8',
+    );
+    const unpublishedSubject = fs.readFileSync(
+      path.join(
+        process.cwd(),
+        'dist/experiments/unpublished-recipe-trial/index.html',
+      ),
+      'utf8',
+    );
+    expect(experiment).toContain('recipe/singapore-chicken-rice v1; PHASE A');
+    expect(experiment).not.toContain('href="/recipes/singapore-chicken-rice/"');
+    expect(unpublishedSubject).toContain('recipe/singapore-chicken-rice v2');
+    expect(unpublishedSubject).not.toContain('href="/recipes/singapore-chicken-rice/"');
+    expect(original).toContain('Published corrections');
+    expect(original).toContain('href="/experiments/recipe-trial-correction/"');
+  });
+
+  it('rejects missing subjects, incomplete completion evidence, and changed prior evidence', () => {
+    const root = copyPilotLibrary();
+    const previousRoot = copyPilotLibrary();
+    const original = completedExperiment(
+      'experiment/immutable-trial',
+      '  type: recipe-version\n  recipe: recipe/singapore-chicken-rice\n  version: 1',
+    );
+    writeExperiment(previousRoot, '2026-09-11 - Immutable.md', original);
+    writeExperiment(
+      root,
+      '2026-09-11 - Immutable.md',
+      original.replace('The control can be reproduced.', 'Changed evidence.'),
+    );
+    writeExperiment(
+      root,
+      '2026-09-11 - Broken.md',
+      completedExperiment(
+        'experiment/broken-trial',
+        '  type: recipe-version\n  recipe: recipe/singapore-chicken-rice\n  version: 99',
+      ).replace('## Results\n\nThe observed result is recorded even when it does not support the hypothesis.\n\n', ''),
+    );
+
+    const result = validate(root, previousRoot);
+
+    expect(result.status).toBe(2);
+    expect(result.stderr).toContain('requires ## Results');
+    expect(result.stderr).toContain('recipe/singapore-chicken-rice@99 does not resolve');
+    expect(result.stderr).toContain('prior completed evidence for experiment/immutable-trial is immutable');
   });
 });

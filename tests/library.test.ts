@@ -4,8 +4,17 @@ import path from 'node:path';
 
 import { afterEach, describe, expect, it } from 'vitest';
 
-import { ContentValidationError, loadLibrary, renderContent } from '../src/lib/library';
-import { getAllRecipes, getLibraryCounts, getRecipePhases, renderRecipeBody } from '../src/lib/recipes';
+import {
+  ContentValidationError,
+  loadLibrary,
+  renderContent,
+} from '../src/lib/library';
+import {
+  getAllRecipes,
+  getLibraryCounts,
+  getRecipePhases,
+  renderRecipeBody,
+} from '../src/lib/recipes';
 
 const roots: string[] = [];
 
@@ -31,8 +40,17 @@ function writeLibrary(files: Record<string, string>): string {
 function copyPilotLibrary(): string {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), 'culinary-pilot-'));
   roots.push(root);
-  for (const directory of ['ingredients', 'principles', 'recipes', 'records', 'techniques']) {
-    fs.cpSync(path.join(process.cwd(), directory), path.join(root, directory), { recursive: true });
+  for (const directory of [
+    'experiments',
+    'ingredients',
+    'principles',
+    'recipes',
+    'records',
+    'techniques',
+  ]) {
+    fs.cpSync(path.join(process.cwd(), directory), path.join(root, directory), {
+      recursive: true,
+    });
   }
   return root;
 }
@@ -69,6 +87,38 @@ Pilot dish.
 | --- | --- | --- |
 | Dry chicken | Too much heat. | Lower the heat. |
 `;
+
+function completedExperiment(
+  identity: string,
+  subject: string,
+  corrects = '',
+): string {
+  return `---
+title: "${identity}"
+date: 2026-09-11
+identity: ${identity}
+status: completed
+primary_subject:
+${subject}
+${corrects ? `corrects: ${corrects}\n` : ''}---
+
+## Hypothesis
+
+The tested control is reproducible.
+
+## Procedure
+
+1. Follow the recorded conditions.
+
+## Results
+
+The observed result is recorded even if it does not support the hypothesis.
+
+## Decision
+
+Keep the evidence available for review.
+`;
+}
 
 describe('loadLibrary', () => {
   it('publishes identity-derived routes and relationship backlinks', () => {
@@ -149,7 +199,9 @@ approved_on: 2026-09-11
     });
 
     expect(() => loadLibrary(root)).toThrow(ContentValidationError);
-    expect(() => loadLibrary(root)).toThrow(/Pilot Chicken.md.*missing reference.*ingredient\/missing-chicken/is);
+    expect(() => loadLibrary(root)).toThrow(
+      /Pilot Chicken.md.*missing reference.*ingredient\/missing-chicken/is,
+    );
   });
 
   it('rejects a reference to an unavailable exact Recipe Version with its source and line', () => {
@@ -230,10 +282,6 @@ Establish the approved ingredient subject.
     expect(renderContent(library.recipes[0]?.body ?? '', library)).not.toContain('href="/recipes/pilot-chicken/"');
   });
 
-  it('permits repeated Ingredient Uses in separate Phases', () => {
-    expect(() => loadLibrary(copyPilotLibrary())).not.toThrow();
-  });
-
   it('accepts alias merges and candidate retirements without publishing either record', () => {
     const root = copyPilotLibrary();
     fs.writeFileSync(
@@ -278,56 +326,236 @@ decided_on: 2026-09-11
       slug: 'singapore-chicken-rice',
       title: 'Singapore Chicken Rice (Hainanese)',
     });
-    expect(getLibraryCounts()).toMatchObject({ ingredients: 15, principles: 4, recipes: 1, techniques: 4 });
+    expect(getLibraryCounts()).toMatchObject({
+      ingredients: 15,
+      principles: 4,
+      recipes: 1,
+      techniques: 4,
+    });
     expect(getRecipePhases(recipes[0]?.body ?? '')).toHaveLength(5);
-    expect(renderRecipeBody(recipes[0]?.body ?? '')).toContain('/ingredients/whole-chicken/');
-    expect(renderRecipeBody(recipes[0]?.body ?? '')).toContain('table--failure-modes');
+    expect(renderRecipeBody(recipes[0]?.body ?? '')).toContain(
+      '/ingredients/whole-chicken/',
+    );
+    expect(renderRecipeBody(recipes[0]?.body ?? '')).toContain(
+      'table--failure-modes',
+    );
   });
 
   it('keeps classified observations out of authoritative knowledge collections', () => {
-    const candidates = fs.readdirSync(path.join(process.cwd(), 'records', 'candidates'));
-    const generated = ['ingredients', 'principles', 'techniques'].flatMap((directory) =>
-      fs
-        .readdirSync(path.join(process.cwd(), directory))
-        .filter((name) => name.endsWith('.md'))
-        .filter((name) => fs.readFileSync(path.join(process.cwd(), directory, name), 'utf8').includes('generated: true')),
+    const candidates = fs.readdirSync(
+      path.join(process.cwd(), 'records', 'candidates'),
+    );
+    const generated = ['ingredients', 'principles', 'techniques'].flatMap(
+      (directory) =>
+        fs
+          .readdirSync(path.join(process.cwd(), directory))
+          .filter((name) => name.endsWith('.md'))
+          .filter((name) =>
+            fs
+              .readFileSync(path.join(process.cwd(), directory, name), 'utf8')
+              .includes('generated: true'),
+          ),
     );
 
     expect(candidates).toHaveLength(302);
     expect(generated).toEqual([]);
-    expect(getLibraryCounts()).toMatchObject({ ingredients: 15, principles: 4, recipes: 1, techniques: 4 });
+    expect(getLibraryCounts()).toMatchObject({
+      ingredients: 15,
+      principles: 4,
+      recipes: 1,
+      techniques: 4,
+    });
   });
 
   it('rejects wrong reference types and contract violations in the approved source', () => {
     const root = copyPilotLibrary();
-    const sourcePath = path.join(root, 'recipes/2026-02-19 - Singapore Chicken Rice.md');
-    const source = fs.readFileSync(sourcePath, 'utf8')
-      .replace('[Whole chicken](ref:ingredient/whole-chicken)', '[Wrong target](ref:technique/poaching)')
+    const sourcePath = path.join(
+      root,
+      'recipes/2026-02-19 - Singapore Chicken Rice.md',
+    );
+    const source = fs
+      .readFileSync(sourcePath, 'utf8')
+      .replace(
+        '[Whole chicken](ref:ingredient/whole-chicken)',
+        '[Wrong target](ref:technique/poaching)',
+      )
       .replace('| 800 g | 100.00% |', '| 800 g | 99.99% |')
-      .replace('Poached chicken, aromatic chicken-fat rice, broth, and two sauces.', '# Invalid extra title');
+      .replace(
+        'Poached chicken, aromatic chicken-fat rice, broth, and two sauces.',
+        '# Invalid extra title',
+      );
     fs.writeFileSync(sourcePath, source);
 
-    expect(() => loadLibrary(root)).toThrow(/recipe body must not contain an H1.*Ingredient Uses requires an ingredient target.*must be 100.00%/is);
+    expect(() => loadLibrary(root)).toThrow(
+      /recipe body must not contain an H1.*Ingredient Uses requires an ingredient target.*must be 100.00%/is,
+    );
   });
 
   it('rejects Phase Output consumption that does not resolve to an earlier local key', () => {
     const root = copyPilotLibrary();
-    const sourcePath = path.join(root, 'recipes/2026-02-19 - Singapore Chicken Rice.md');
+    const sourcePath = path.join(
+      root,
+      'recipes/2026-02-19 - Singapore Chicken Rice.md',
+    );
     fs.writeFileSync(
       sourcePath,
-      fs.readFileSync(sourcePath, 'utf8').replace('`chicken-stock` with the rice', '`missing-stock` with the rice'),
+      fs
+        .readFileSync(sourcePath, 'utf8')
+        .replace(
+          '`chicken-stock` with the rice',
+          '`missing-stock` with the rice',
+        ),
     );
 
-    expect(() => loadLibrary(root)).toThrow(/PHASE B — COOK AROMATIC RICE Phase Outputs Used must name an earlier local key/);
+    expect(() => loadLibrary(root)).toThrow(
+      /PHASE B — COOK AROMATIC RICE Phase Outputs Used must name an earlier local key/,
+    );
   });
 
   it('keeps the recipe route stable when its filename and title change', () => {
     const root = copyPilotLibrary();
-    const oldPath = path.join(root, 'recipes/2026-02-19 - Singapore Chicken Rice.md');
-    const renamedPath = path.join(root, 'recipes/2026-09-11 - Renamed Pilot.md');
+    const oldPath = path.join(
+      root,
+      'recipes/2026-02-19 - Singapore Chicken Rice.md',
+    );
+    const renamedPath = path.join(
+      root,
+      'recipes/2026-09-11 - Renamed Pilot.md',
+    );
     fs.renameSync(oldPath, renamedPath);
-    fs.writeFileSync(renamedPath, fs.readFileSync(renamedPath, 'utf8').replace('Singapore Chicken Rice (Hainanese)', 'Renamed pilot'));
+    fs.writeFileSync(
+      renamedPath,
+      fs
+        .readFileSync(renamedPath, 'utf8')
+        .replace('Singapore Chicken Rice (Hainanese)', 'Renamed pilot'),
+    );
 
-    expect(loadLibrary(root).recipes[0]).toMatchObject({ href: '/recipes/singapore-chicken-rice/', title: 'Renamed pilot' });
+    expect(loadLibrary(root).recipes[0]).toMatchObject({
+      href: '/recipes/singapore-chicken-rice/',
+      title: 'Renamed pilot',
+    });
+  });
+
+  it('publishes completed Experiments for every supported primary subject and derives correction notices', () => {
+    const root = copyPilotLibrary();
+    const draftPath = path.join(
+      root,
+      'recipes/drafts/singapore-chicken-rice@2.md',
+    );
+    fs.mkdirSync(path.dirname(draftPath), { recursive: true });
+    fs.writeFileSync(
+      draftPath,
+      fs
+        .readFileSync(
+          path.join(root, 'recipes/2026-02-19 - Singapore Chicken Rice.md'),
+          'utf8',
+        )
+        .replace('version: 1', 'version: 2'),
+    );
+    const experiments = {
+      'experiments/2026-09-11 - Whole recipe.md': completedExperiment(
+        'experiment/whole-recipe-trial',
+        '  type: recipe-version\n  recipe: recipe/singapore-chicken-rice\n  version: 1',
+      ),
+      'experiments/2026-09-11 - Ingredient use.md': completedExperiment(
+        'experiment/ingredient-use-trial',
+        '  type: ingredient-use\n  recipe: recipe/singapore-chicken-rice\n  version: 1\n  phase: PHASE A — POACH CHICKEN AND MAKE STOCK\n  key: chicken',
+      ),
+      'experiments/2026-09-11 - Technique.md': completedExperiment(
+        'experiment/poaching-trial',
+        '  type: technique\n  identity: technique/poaching',
+      ),
+      'experiments/2026-09-11 - Principle.md': completedExperiment(
+        'experiment/skin-trial',
+        '  type: principle\n  identity: principle/thermal-shock-for-skin-texture',
+      ),
+      'experiments/2026-09-11 - Correction.md': completedExperiment(
+        'experiment/whole-recipe-correction',
+        '  type: recipe-version\n  recipe: recipe/singapore-chicken-rice\n  version: 1',
+        'experiment/whole-recipe-trial',
+      ),
+      'experiments/2026-09-11 - Draft.md': completedExperiment(
+        'experiment/draft-recipe-trial',
+        '  type: recipe-version\n  recipe: recipe/singapore-chicken-rice\n  version: 2',
+      ),
+    };
+    for (const [relativePath, contents] of Object.entries(experiments)) {
+      const destination = path.join(root, relativePath);
+      fs.mkdirSync(path.dirname(destination), { recursive: true });
+      fs.writeFileSync(destination, contents);
+    }
+
+    const library = loadLibrary(root);
+    const original = library.entries.find(
+      (entry) => entry.identity === 'experiment/whole-recipe-trial',
+    );
+
+    expect(
+      library.entries.filter((entry) => entry.type === 'experiment'),
+    ).toHaveLength(6);
+    expect(library.recipes).toHaveLength(1);
+    expect(
+      library.entries.find(
+        (entry) => entry.identity === 'experiment/ingredient-use-trial',
+      ),
+    ).toMatchObject({
+      href: '/experiments/ingredient-use-trial/',
+      subjectLabel:
+        'recipe/singapore-chicken-rice v1; PHASE A — POACH CHICKEN AND MAKE STOCK; Ingredient Use chicken',
+    });
+    expect(original?.corrections).toEqual([
+      'experiment/whole-recipe-correction',
+    ]);
+    expect(
+      library.entries.find(
+        (entry) => entry.identity === 'experiment/draft-recipe-trial',
+      ),
+    ).toMatchObject({ subjectLabel: 'recipe/singapore-chicken-rice v2' });
+  });
+
+  it('rejects incomplete evidence, unresolved scoped subjects, and changed completed evidence from a prior library', () => {
+    const root = copyPilotLibrary();
+    const previousRoot = copyPilotLibrary();
+    const source = completedExperiment(
+      'experiment/whole-recipe-trial',
+      '  type: recipe-version\n  recipe: recipe/singapore-chicken-rice\n  version: 1',
+    );
+    for (const target of [root, previousRoot]) {
+      fs.writeFileSync(
+        path.join(target, 'experiments/2026-09-11 - Whole recipe.md'),
+        source,
+      );
+    }
+    fs.writeFileSync(
+      path.join(root, 'experiments/2026-09-11 - Broken.md'),
+      source
+        .replace('experiment/whole-recipe-trial', 'experiment/broken-trial')
+        .replace(
+          '## Results\n\nThe observed result is recorded even if it does not support the hypothesis.\n\n',
+          '',
+        )
+        .replace('version: 1', 'version: 9'),
+    );
+    fs.writeFileSync(
+      path.join(root, 'experiments/2026-09-11 - Whole recipe.md'),
+      source.replace(
+        'The tested control is reproducible.',
+        'The altered hypothesis is prohibited.',
+      ),
+    );
+    const oldPreviousRoot = process.env.CULINARY_LIBRARY_PREVIOUS_ROOT;
+    process.env.CULINARY_LIBRARY_PREVIOUS_ROOT = previousRoot;
+
+    try {
+      expect(() => loadLibrary(root)).toThrow(
+        /requires ## Results.*recipe\/singapore-chicken-rice@9 does not resolve.*prior completed evidence.*immutable/is,
+      );
+    } finally {
+      if (oldPreviousRoot === undefined) {
+        delete process.env.CULINARY_LIBRARY_PREVIOUS_ROOT;
+      } else {
+        process.env.CULINARY_LIBRARY_PREVIOUS_ROOT = oldPreviousRoot;
+      }
+    }
   });
 });
