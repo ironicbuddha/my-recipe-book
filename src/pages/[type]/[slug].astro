@@ -9,11 +9,14 @@ export function getStaticPaths() {
     props: {
       entry,
       html: renderContent(entry.body, library),
+      backlinkEntries: entry.backlinks
+        .map((identity) => library.entries.find((candidate) => candidate.identity === identity))
+        .filter((candidate) => candidate !== undefined),
     },
   }));
 }
 
-const { entry, html } = Astro.props;
+const { entry, html, backlinkEntries } = Astro.props;
 ---
 
 <SiteLayout title={`${entry.title} | Modernist Recipe Book`} description={`Curated ${entry.type} Knowledge Note.`}>
@@ -27,7 +30,9 @@ const { entry, html } = Astro.props;
       <section aria-label="Referenced by">
         <h2>Referenced by</h2>
         <ul>
-          {entry.backlinks.map((identity) => <li>{identity}</li>)}
+          {backlinkEntries.map((backlink) => (
+            <li><a href={backlink.href}>{backlink.title}</a></li>
+          ))}
         </ul>
       </section>
     )}
