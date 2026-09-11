@@ -8,6 +8,7 @@ import {
   ContentValidationError,
   loadLibrary,
   renderContent,
+  retirementRedirects,
 } from '../src/lib/library';
 import {
   getAllRecipes,
@@ -117,6 +118,67 @@ The observed result is recorded even if it does not support the hypothesis.
 ## Decision
 
 Keep the evidence available for review.
+`;
+}
+
+function identityRetirementRecord(
+  survivor = 'technique/poaching',
+  retiredIdentity = 'technique/legacy-poaching',
+): string {
+  return `---
+record_type: identity-retirement
+retired_identity: ${retiredIdentity}
+survivor: ${survivor}
+reason: "Fixture duplicate merged through the retirement mechanics."
+decided_by: "Fixture Curator"
+decided_on: 2026-09-11
+---
+`;
+}
+
+function legacyPoachingNote(): string {
+  return `---
+title: "Legacy poaching"
+identity: technique/legacy-poaching
+---
+
+## Purpose
+
+Fixture-only legacy technique.
+
+## Controls
+
+Keep a gentle simmer.
+
+## Process
+
+Poach gently.
+
+## Failure Modes
+
+Avoid boiling.
+`;
+}
+
+function legacyPoachingCuration(): string {
+  return `---
+record_type: curation
+candidate: candidate/legacy-poaching-label
+candidate_label: "Legacy poaching"
+evidence_sources: [recipe/singapore-chicken-rice@1]
+decision: establish-subject
+subject: technique/legacy-poaching
+decided_by: "Fixture Curator"
+decided_on: 2026-09-11
+---
+
+## Evidence
+
+Fixture-only predecessor subject.
+
+## Rationale
+
+Fixture-only Curation record for retirement mechanics.
 `;
 }
 
@@ -640,5 +702,118 @@ The fixture preserves the accepted limitation.
         process.env.CULINARY_LIBRARY_PREVIOUS_ROOT = oldPreviousRoot;
       }
     }
+  });
+
+  it('preserves a historical completed subject through retirement while exposing only the survivor relationship', () => {
+    const previousRoot = copyPilotLibrary();
+    const root = copyPilotLibrary();
+    for (const target of [previousRoot, root]) {
+      fs.writeFileSync(
+        path.join(target, 'techniques/Technique - Legacy Poaching.md'),
+        legacyPoachingNote(),
+      );
+      fs.writeFileSync(
+        path.join(target, 'records/curation/legacy-poaching.md'),
+        legacyPoachingCuration(),
+      );
+      fs.mkdirSync(path.join(target, 'experiments'), { recursive: true });
+      fs.writeFileSync(
+        path.join(target, 'experiments/2026-09-11 - Legacy poaching.md'),
+        completedExperiment(
+          'experiment/legacy-poaching-evidence',
+          '  type: technique\n  identity: technique/legacy-poaching',
+        ),
+      );
+    }
+    fs.rmSync(path.join(root, 'techniques/Technique - Legacy Poaching.md'));
+    fs.writeFileSync(
+      path.join(root, 'records/curation/legacy-poaching.md'),
+      identityRetirementRecord(),
+    );
+    const oldPreviousRoot = process.env.CULINARY_LIBRARY_PREVIOUS_ROOT;
+    process.env.CULINARY_LIBRARY_PREVIOUS_ROOT = previousRoot;
+
+    try {
+      const library = loadLibrary(root);
+      expect(library.retirements).toEqual([
+        {
+          retiredIdentity: 'technique/legacy-poaching',
+          survivor: 'technique/poaching',
+        },
+      ]);
+      expect(retirementRedirects(root)).toEqual({
+        '/techniques/legacy-poaching/': {
+          destination: '/techniques/poaching/',
+          status: 301,
+        },
+      });
+      expect(library.knowledge.map((entry) => entry.identity)).not.toContain(
+        'technique/legacy-poaching',
+      );
+      expect(
+        library.entries.find(
+          (entry) => entry.identity === 'experiment/legacy-poaching-evidence',
+        )?.subjectLabel,
+      ).toBe('technique/legacy-poaching');
+    } finally {
+      if (oldPreviousRoot === undefined) {
+        delete process.env.CULINARY_LIBRARY_PREVIOUS_ROOT;
+      } else {
+        process.env.CULINARY_LIBRARY_PREVIOUS_ROOT = oldPreviousRoot;
+      }
+    }
+  });
+
+  it('rejects malformed and reused retirement identities', () => {
+    const root = copyPilotLibrary();
+    fs.writeFileSync(
+      path.join(root, 'records/curation/legacy-poaching.md'),
+      identityRetirementRecord('technique/legacy-poaching'),
+    );
+    expect(() => loadLibrary(root)).toThrow(
+      /survivor must differ from retired_identity/is,
+    );
+
+    fs.writeFileSync(
+      path.join(root, 'records/curation/legacy-poaching.md'),
+      identityRetirementRecord(),
+    );
+    fs.writeFileSync(
+      path.join(root, 'techniques/Technique - Legacy Poaching.md'),
+      legacyPoachingNote(),
+    );
+    expect(() => loadLibrary(root)).toThrow(
+      /retired identity technique\/legacy-poaching is permanently reserved/is,
+    );
+
+    const retiredBasisRoot = copyPilotLibrary();
+    fs.writeFileSync(
+      path.join(retiredBasisRoot, 'records/curation/legacy-chicken.md'),
+      identityRetirementRecord(
+        'ingredient/whole-chicken',
+        'ingredient/legacy-chicken',
+      ),
+    );
+    fs.writeFileSync(
+      path.join(
+        retiredBasisRoot,
+        'recipes/2026-02-19 - Singapore Chicken Rice.md',
+      ),
+      fs
+        .readFileSync(
+          path.join(
+            retiredBasisRoot,
+            'recipes/2026-02-19 - Singapore Chicken Rice.md',
+          ),
+          'utf8',
+        )
+        .replace(
+          'ingredient: ingredient/whole-chicken',
+          'ingredient: ingredient/legacy-chicken',
+        ),
+    );
+    expect(() => loadLibrary(retiredBasisRoot)).toThrow(
+      /retired identity ingredient\/legacy-chicken cannot be used as scale_basis ingredient/is,
+    );
   });
 });

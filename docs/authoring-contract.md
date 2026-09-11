@@ -435,6 +435,8 @@ record_type: identity-retirement
 retired_identity: technique/hard-searing
 survivor: technique/searing
 reason: merged duplicate subject
+decided_by: "Carlo Kruger"
+decided_on: 2026-09-11
 ```
 
 New Experiments must use `technique/searing`; only historical Completed
