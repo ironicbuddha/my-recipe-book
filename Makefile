@@ -1,6 +1,6 @@
-.PHONY: crosslinks install-hooks validate
+.PHONY: candidates crosslinks install-hooks validate
 
-crosslinks:
+candidates crosslinks:
 	./scripts/generate_crosslinks.py
 
 install-hooks:

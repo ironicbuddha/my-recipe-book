@@ -13,7 +13,7 @@ This script:
 
 from __future__ import annotations
 
-import datetime as _dt
+import json
 import re
 from collections import defaultdict
 from pathlib import Path
@@ -24,6 +24,7 @@ RECIPES_DIR = ROOT / "recipes"
 TECHNIQUES_DIR = ROOT / "techniques"
 PRINCIPLES_DIR = ROOT / "principles"
 INGREDIENTS_DIR = ROOT / "ingredients"
+CANDIDATES_DIR = ROOT / "records" / "candidates"
 
 AUTO_START = "<!-- AUTO-GENERATED:RELATED-LINKS:START -->"
 AUTO_END = "<!-- AUTO-GENERATED:RELATED-LINKS:END -->"
@@ -314,6 +315,45 @@ def prune_generated_notes(directory: Path, expected_paths: set[Path]) -> None:
             path.unlink()
 
 
+def candidate_key(note_type: str, label: str) -> str:
+    key = re.sub(r"[^a-z0-9]+", "-", label.lower()).strip("-")
+    return f"{note_type}-{key}"
+
+
+def record_candidate(note_type: str, label: str, linked_recipes: list[str]) -> bool:
+    """Record a new observation without touching canonical content or prior evidence."""
+    CANDIDATES_DIR.mkdir(parents=True, exist_ok=True)
+    key = candidate_key(note_type, label)
+    path = CANDIDATES_DIR / f"{key}.md"
+    if path.exists():
+        return False
+    evidence = "\n".join(f"- `{recipe}`" for recipe in linked_recipes)
+    path.write_text(
+        "\n".join(
+            [
+                "---",
+                f"candidate: candidate/{key}",
+                f"observed_type: {note_type}",
+                f"observed_label: {json.dumps(label)}",
+                "classification: unclassified-current-observation",
+                "source_placeholder: null",
+                "---",
+                "",
+                "## Evidence",
+                "",
+                evidence,
+                "",
+                "## Disposition",
+                "",
+                "Await human Curation; extraction cannot establish a subject, alias, or retirement.",
+                "",
+            ]
+        ),
+        encoding="utf-8",
+    )
+    return True
+
+
 def build_related_block(
     techniques: list[str], principles: list[str], ingredients: list[str]
 ) -> str:
@@ -400,47 +440,21 @@ def main() -> None:
         for ingredient in ingredients:
             ingredients_to_recipes[ingredient].add(recipe_name)
 
-    for recipe_path in recipe_paths:
-        text = _read(recipe_path)
-        block = build_related_block(
-            recipe_to_techniques[recipe_path],
-            recipe_to_principles[recipe_path],
-            recipe_to_ingredients[recipe_path],
-        )
-        updated = upsert_related_block(text, block)
-        if updated != text:
-            _write(recipe_path, updated)
-
-    expected_technique_paths: set[Path] = set()
-    for technique, linked in techniques_to_recipes.items():
-        name = safe_file_component(technique)
-        path = TECHNIQUES_DIR / f"Technique - {name}.md"
-        expected_technique_paths.add(path)
-        generate_note(path, "technique", technique, sorted_casefold(linked))
-    prune_generated_notes(TECHNIQUES_DIR, expected_technique_paths)
-
-    expected_principle_paths: set[Path] = set()
-    for principle, linked in principles_to_recipes.items():
-        name = safe_file_component(principle)
-        path = PRINCIPLES_DIR / f"Principle - {name}.md"
-        expected_principle_paths.add(path)
-        generate_note(path, "principle", principle, sorted_casefold(linked))
-    prune_generated_notes(PRINCIPLES_DIR, expected_principle_paths)
-
-    expected_ingredient_paths: set[Path] = set()
-    for ingredient, linked in ingredients_to_recipes.items():
-        name = safe_file_component(ingredient)
-        path = INGREDIENTS_DIR / f"Ingredient - {name}.md"
-        expected_ingredient_paths.add(path)
-        generate_note(path, "ingredient", ingredient, sorted_casefold(linked))
-    prune_generated_notes(INGREDIENTS_DIR, expected_ingredient_paths)
+    created = 0
+    for note_type, observations in (
+        ("technique", techniques_to_recipes),
+        ("principle", principles_to_recipes),
+        ("ingredient", ingredients_to_recipes),
+    ):
+        for label, linked in observations.items():
+            created += record_candidate(note_type, label, sorted_casefold(linked))
 
     print(
-        "Generated cross-links for "
+        "Recorded candidate observations for "
         f"{len(recipe_paths)} recipes, "
         f"{len(techniques_to_recipes)} techniques, "
         f"{len(principles_to_recipes)} principles, "
-        f"{len(ingredients_to_recipes)} ingredients."
+        f"{len(ingredients_to_recipes)} ingredients; {created} new candidate(s)."
     )
 
 
