@@ -61,6 +61,7 @@ export type RecipeEntry = Omit<
 export type CulinaryLibrary = {
   entries: LibraryEntry[];
   knowledge: LibraryEntry[];
+  publisherRoutes: PublisherRoute[];
   recipes: RecipeEntry[];
   retirements: IdentityRetirement[];
   root: string;
@@ -70,6 +71,18 @@ export type IdentityRetirement = {
   retiredIdentity: string;
   survivor: string;
 };
+
+export type PublisherRoute =
+  | {
+      destination: string;
+      source: string;
+      type: 'redirect';
+    }
+  | {
+      recipe: string;
+      source: string;
+      type: 'withdrawal';
+    };
 
 export class ContentValidationError extends Error {
   constructor(readonly diagnostics: string[]) {
@@ -126,6 +139,7 @@ export function loadLibrary(
   const promotions = readPromotions(root, diagnostics);
   const curations = readCurations(root, diagnostics);
   const retirements = readRetirements(root, diagnostics);
+  const publisherRoutes = readPublisherRoutes(root, diagnostics);
   const entriesByIdentity = new Map<string, LibraryEntry[]>();
   const recipeVersions = new Map<string, LibraryEntry>();
   const canonicalRecipes = new Map<string, LibraryEntry>();
@@ -232,6 +246,13 @@ export function loadLibrary(
   );
   validateRetiredStructuredReferences(sourceRecords, retirements, diagnostics);
   validatePriorCompletedEvidence(sourceRecords, diagnostics);
+  validatePublisherRoutes(
+    publisherRoutes,
+    canonicalRecipes,
+    recipeVersions,
+    eligible,
+    diagnostics,
+  );
 
   if (diagnostics.length > 0) {
     throw new ContentValidationError(diagnostics);
@@ -288,6 +309,7 @@ export function loadLibrary(
     knowledge: withBacklinks.filter(
       (entry) => entry.type !== 'recipe' && entry.type !== 'experiment',
     ),
+    publisherRoutes,
     recipes,
     retirements: [...retirements.values()].map(
       ({ retiredIdentity, survivor }) => ({
@@ -352,6 +374,35 @@ export function retirementRedirects(
   );
 }
 
+/** Returns publisher-owned permanent redirects for former Recipe routes. */
+export function publisherRedirects(
+  root = process.env.CULINARY_LIBRARY_ROOT ?? process.cwd(),
+): Record<string, { destination: string; status: 301 }> {
+  return Object.fromEntries(
+    loadLibrary(root)
+      .publisherRoutes.filter(
+        (route): route is Extract<PublisherRoute, { type: 'redirect' }> =>
+          route.type === 'redirect',
+      )
+      .map((route) => [
+        route.source,
+        { destination: routeFor(route.destination), status: 301 },
+      ]),
+  );
+}
+
+/** Returns former Recipe paths that Vercel must serve with HTTP 410. */
+export function withdrawalRoutes(
+  root = process.env.CULINARY_LIBRARY_ROOT ?? process.cwd(),
+): string[] {
+  return loadLibrary(root)
+    .publisherRoutes.filter(
+      (route): route is Extract<PublisherRoute, { type: 'withdrawal' }> =>
+        route.type === 'withdrawal',
+    )
+    .map((route) => route.source);
+}
+
 function readSourceRecords(
   root: string,
   diagnostics: string[],
@@ -386,6 +437,71 @@ function readSourceRecords(
     },
   );
   return [...rootRecords, ...recipeHistory];
+}
+
+function readPublisherRoutes(
+  root: string,
+  diagnostics: string[],
+): PublisherRoute[] {
+  const relativePath = 'publisher/recipe-routes.json';
+  const filePath = path.join(root, relativePath);
+  if (!fs.existsSync(filePath)) {
+    return [];
+  }
+
+  let parsed: unknown;
+  try {
+    parsed = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+  } catch {
+    diagnostics.push(
+      `${relativePath}: publisher route registry must be valid JSON`,
+    );
+    return [];
+  }
+  if (!isRecord(parsed) || !Array.isArray(parsed.routes)) {
+    diagnostics.push(
+      `${relativePath}: publisher route registry requires a routes array`,
+    );
+    return [];
+  }
+
+  const routes: PublisherRoute[] = [];
+  for (const [index, route] of parsed.routes.entries()) {
+    const source = isRecord(route) ? stringValue(route.source) : undefined;
+    const type = isRecord(route) ? stringValue(route.type) : undefined;
+    if (!source || !isRecipeRoute(source)) {
+      diagnostics.push(
+        `${relativePath}:${index + 1}: publisher route source must be a /recipes/<slug>/ path`,
+      );
+      continue;
+    }
+    if (type === 'redirect') {
+      const destination = stringValue(route.destination);
+      if (!destination || !isRecipeIdentity(destination)) {
+        diagnostics.push(
+          `${relativePath}:${index + 1}: publisher redirect destination must be a Recipe identity`,
+        );
+        continue;
+      }
+      routes.push({ destination, source, type });
+      continue;
+    }
+    if (type === 'withdrawal') {
+      const recipe = stringValue(route.recipe);
+      if (!recipe || !isRecipeIdentity(recipe)) {
+        diagnostics.push(
+          `${relativePath}:${index + 1}: publisher withdrawal recipe must be a Recipe identity`,
+        );
+        continue;
+      }
+      routes.push({ recipe, source, type });
+      continue;
+    }
+    diagnostics.push(
+      `${relativePath}:${index + 1}: publisher route type must be redirect or withdrawal`,
+    );
+  }
+  return routes;
 }
 
 function readRecord(
@@ -1363,6 +1479,59 @@ function validateRetirements(
   }
 }
 
+function validatePublisherRoutes(
+  routes: PublisherRoute[],
+  canonicalRecipes: Map<string, LibraryEntry>,
+  recipeVersions: Map<string, LibraryEntry>,
+  eligible: LibraryEntry[],
+  diagnostics: string[],
+): void {
+  const sources = new Set<string>();
+  const canonicalRoutes = new Set(
+    [...canonicalRecipes.keys()].map((identity) => routeFor(identity)),
+  );
+  const eligibleRecipes = new Set(
+    eligible
+      .filter((entry) => entry.type === 'recipe')
+      .map((entry) => entry.identity),
+  );
+
+  for (const route of routes) {
+    if (sources.has(route.source)) {
+      diagnostics.push(`publisher route ${route.source} is not unique`);
+    }
+    sources.add(route.source);
+    if (canonicalRoutes.has(route.source)) {
+      diagnostics.push(
+        `publisher route ${route.source} collides with canonical route`,
+      );
+    }
+    if (route.type === 'redirect') {
+      if (!eligibleRecipes.has(route.destination)) {
+        diagnostics.push(
+          `publisher redirect destination ${route.destination} does not resolve to an eligible Canonical Recipe`,
+        );
+      }
+      continue;
+    }
+    if (canonicalRecipes.has(route.recipe)) {
+      diagnostics.push(
+        `publisher withdrawal recipe ${route.recipe} remains a Canonical Recipe`,
+      );
+    }
+    const preserved = [...recipeVersions.values()].some(
+      (version) =>
+        version.identity === route.recipe &&
+        version.sourcePath.startsWith(`recipes${path.sep}superseded${path.sep}`),
+    );
+    if (!preserved) {
+      diagnostics.push(
+        `publisher withdrawal recipe ${route.recipe} has no preserved Superseded Recipe Version`,
+      );
+    }
+  }
+}
+
 function isPreservedRetiredExperiment(
   source: SourceRecord,
   retiredIdentity: string,
@@ -1815,6 +1984,14 @@ function isKnowledgeIdentity(value: unknown): value is string {
     isIdentityOfType(value, 'technique') ||
     isIdentityOfType(value, 'principle')
   );
+}
+
+function isRecipeIdentity(value: unknown): value is string {
+  return isIdentityOfType(value, 'recipe');
+}
+
+function isRecipeRoute(value: string): boolean {
+  return /^\/recipes\/[a-z0-9]+(?:-[a-z0-9]+)*\/$/u.test(value);
 }
 
 function identityType(identity: string): KnowledgeType {

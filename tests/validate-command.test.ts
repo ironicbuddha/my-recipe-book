@@ -19,6 +19,7 @@ function copyPilotLibrary(): string {
   for (const directory of [
     'ingredients',
     'principles',
+    'publisher',
     'recipes',
     'records',
     'techniques',
@@ -91,6 +92,12 @@ function writePromotion(root: string, contents: string): void {
 
 function writeRetirement(root: string, contents: string): void {
   const destination = path.join(root, 'records/curation/legacy-poaching.md');
+  fs.mkdirSync(path.dirname(destination), { recursive: true });
+  fs.writeFileSync(destination, contents);
+}
+
+function writePublisherRoutes(root: string, contents: string): void {
+  const destination = path.join(root, 'publisher/recipe-routes.json');
   fs.mkdirSync(path.dirname(destination), { recursive: true });
   fs.writeFileSync(destination, contents);
 }
@@ -924,6 +931,133 @@ supporting_experiments: []
     );
     expect(chained.stderr).toContain(
       'must preserve an established identity from the prior revision',
+    );
+  });
+
+  it('publishes direct identity-targeted recipe redirects and an explanatory withdrawal page through public commands', () => {
+    const root = copyPilotLibrary();
+    writePublisherRoutes(
+      root,
+      JSON.stringify({
+        routes: [
+          {
+            source: '/recipes/original-singapore-chicken-rice/',
+            type: 'redirect',
+            destination: 'recipe/singapore-chicken-rice',
+          },
+          {
+            source: '/recipes/withdrawn-pilot-chicken/',
+            type: 'withdrawal',
+            recipe: 'recipe/withdrawn-pilot-chicken',
+          },
+        ],
+      }),
+    );
+    fs.mkdirSync(path.join(root, 'recipes/superseded'), { recursive: true });
+    fs.writeFileSync(
+      path.join(root, 'recipes/superseded/withdrawn-pilot-chicken@1.md'),
+      fs
+        .readFileSync(
+          path.join(root, 'recipes/2026-02-19 - Singapore Chicken Rice.md'),
+          'utf8',
+        )
+        .replaceAll(
+          'recipe/singapore-chicken-rice',
+          'recipe/withdrawn-pilot-chicken',
+        )
+        .replace(
+          'Singapore Chicken Rice (Hainanese)',
+          'Withdrawn pilot chicken',
+        ),
+    );
+
+    expect(validate(root).status).toBe(0);
+    expect(build(root).status).toBe(0);
+    expect(
+      fs.readFileSync(
+        path.join(
+          process.cwd(),
+          'dist/recipes/original-singapore-chicken-rice/index.html',
+        ),
+        'utf8',
+      ),
+    ).toContain(
+      'https://recipes.carlokruger.com/recipes/singapore-chicken-rice/',
+    );
+    expect(
+      fs.readFileSync(
+        path.join(process.cwd(), 'dist/withdrawn-recipe/index.html'),
+        'utf8',
+      ),
+    ).toContain('This recipe has been withdrawn.');
+  });
+
+  it('rejects colliding, indirect, unresolved, and draft recipe publisher routes through the public validation command', () => {
+    const root = copyPilotLibrary();
+    writePublisherRoutes(
+      root,
+      JSON.stringify({
+        routes: [
+          {
+            source: '/recipes/singapore-chicken-rice/',
+            type: 'redirect',
+            destination: 'recipe/singapore-chicken-rice',
+          },
+          {
+            source: '/recipes/old-chicken/',
+            type: 'redirect',
+            destination: 'recipe/missing-chicken',
+          },
+          {
+            source: '/recipes/draft-chicken/',
+            type: 'redirect',
+            destination: 'recipe/draft-chicken',
+          },
+          {
+            source: '/recipes/withdrawn-chicken/',
+            type: 'withdrawal',
+            recipe: 'recipe/singapore-chicken-rice',
+          },
+          {
+            source: '/recipes/old-chicken/',
+            type: 'withdrawal',
+            recipe: 'recipe/draft-chicken',
+          },
+        ],
+      }),
+    );
+    fs.mkdirSync(path.join(root, 'recipes/drafts'), { recursive: true });
+    fs.writeFileSync(
+      path.join(root, 'recipes/drafts/draft-chicken@1.md'),
+      fs
+        .readFileSync(
+          path.join(root, 'recipes/2026-02-19 - Singapore Chicken Rice.md'),
+          'utf8',
+        )
+        .replaceAll('recipe/singapore-chicken-rice', 'recipe/draft-chicken')
+        .replace('Singapore Chicken Rice (Hainanese)', 'Draft chicken'),
+    );
+
+    const result = validate(root);
+
+    expect(result.status).toBe(2);
+    expect(result.stderr).toContain(
+      'publisher route /recipes/singapore-chicken-rice/ collides with canonical route',
+    );
+    expect(result.stderr).toContain(
+      'publisher redirect destination recipe/missing-chicken does not resolve to an eligible Canonical Recipe',
+    );
+    expect(result.stderr).toContain(
+      'publisher redirect destination recipe/draft-chicken does not resolve to an eligible Canonical Recipe',
+    );
+    expect(result.stderr).toContain(
+      'publisher withdrawal recipe recipe/singapore-chicken-rice remains a Canonical Recipe',
+    );
+    expect(result.stderr).toContain(
+      'publisher withdrawal recipe recipe/draft-chicken has no preserved Superseded Recipe Version',
+    );
+    expect(result.stderr).toContain(
+      'publisher route /recipes/old-chicken/ is not unique',
     );
   });
 });
