@@ -427,17 +427,27 @@ function readCurations(
     const relativePath = path.relative(root, filePath);
     const record = readRecord(root, relativePath, diagnostics);
     const subject = stringValue(record.data.subject);
-    if (
-      record.data.record_type !== 'curation' ||
-      record.data.decision !== 'establish-subject' ||
-      !subject ||
-      !stringValue(record.data.candidate) ||
-      !stringValue(record.data.decided_by) ||
-      !dateValue(record.data.decided_on)
-    ) {
-      diagnostics.push(
-        `${relativePath}: invalid establish-subject Curation record`,
-      );
+    const candidate = stringValue(record.data.candidate);
+    const curator = stringValue(record.data.decided_by);
+    const date = dateValue(record.data.decided_on);
+    if (record.data.record_type !== 'curation' || !candidate || !curator || !date) {
+      diagnostics.push(`${relativePath}: Curation requires candidate, Curator, and decision date`);
+      continue;
+    }
+    if (record.data.decision === 'merge-alias') {
+      if (!stringValue(record.data.survivor) || !stringValue(record.data.alias)) {
+        diagnostics.push(`${relativePath}: merge-alias Curation requires survivor and alias`);
+      }
+      continue;
+    }
+    if (record.data.decision === 'retire-candidate') {
+      if (!stringValue(record.data.retirement_reason)) {
+        diagnostics.push(`${relativePath}: retire-candidate Curation requires retirement_reason`);
+      }
+      continue;
+    }
+    if (record.data.decision !== 'establish-subject' || !subject) {
+      diagnostics.push(`${relativePath}: invalid Curation decision`);
       continue;
     }
     if (curations.has(subject)) {

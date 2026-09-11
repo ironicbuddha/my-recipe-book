@@ -1,0 +1,251 @@
+---
+// THROWAWAY PROTOTYPE: proves that semantic Recipe Markdown can drive the
+// existing Modernist presentation without source-level layout instructions.
+import matter from 'gray-matter';
+import MarkdownIt from 'markdown-it';
+
+import recipeSource from '../../docs/prototypes/portable-recipe-contract/recipe.md?raw';
+import SiteLayout from '../layouts/SiteLayout.astro';
+
+type NamedSection = {
+  body: string;
+  title: string;
+};
+
+type RecipePrototypeData = {
+  date?: Date | string;
+  scale_basis?: {
+    ingredient?: string;
+    quantity_g?: number;
+  };
+  tags?: string[];
+  title?: string;
+  version?: number;
+  yield?: string;
+};
+
+const renderer = new MarkdownIt({
+  html: false,
+  linkify: true,
+  typographer: true,
+});
+
+const parsed = matter(recipeSource);
+const data = parsed.data as RecipePrototypeData;
+const firstTopLevelHeading = parsed.content.search(/^##\s+/mu);
+const overviewMarkdown =
+  firstTopLevelHeading === -1
+    ? parsed.content.trim()
+    : parsed.content.slice(0, firstTopLevelHeading).trim();
+const topLevelSections = splitAtHeadings(parsed.content, 2);
+const phases = topLevelSections.filter((section) => section.title.startsWith('PHASE '));
+const recipeSections = topLevelSections.filter(
+  (section) => !section.title.startsWith('PHASE '),
+);
+
+const phaseLinks = phases.map((phase) => ({
+  id: slugify(phase.title),
+  title: phase.title,
+}));
+
+const phaseHtml = phases
+  .map((phase) => {
+    const { lead, sections } = splitPhase(phase.body);
+    const components = pickSections(sections, ['Consumes', 'Ingredient Uses']);
+    const method = pickSections(sections, ['Method']);
+    const controls = pickSections(sections, [
+      'Technique Applications',
+      'Produces',
+      'Principles',
+    ]);
+
+    return [
+      `<h2 id="${slugify(phase.title)}">${escapeHtml(phase.title)}</h2>`,
+      renderer.render(lead),
+      '<div class="phase-grid">',
+      `<section class="phase-panel phase-panel--left">${renderSections(components)}</section>`,
+      `<section class="phase-panel phase-panel--right">${renderSections(method)}</section>`,
+      `<section class="phase-panel phase-panel--time">${renderSections(controls)}</section>`,
+      '</div>',
+    ].join('\n');
+  })
+  .join('\n');
+
+const recipeTailHtml = recipeSections
+  .map(
+    (section) =>
+      `<h2 id="${slugify(section.title)}">${escapeHtml(section.title)}</h2>\n${renderer.render(section.body)}`,
+  )
+  .join('\n');
+
+const dateLabel = data.date
+  ? new Intl.DateTimeFormat('en-ZA', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+    }).format(new Date(data.date))
+  : undefined;
+
+function escapeHtml(value: string): string {
+  return value
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#039;');
+}
+
+function pickSections(sections: NamedSection[], titles: string[]): NamedSection[] {
+  return titles.flatMap((title) => sections.filter((section) => section.title === title));
+}
+
+function renderSections(sections: NamedSection[]): string {
+  return sections
+    .map(
+      (section) =>
+        `<h3>${escapeHtml(section.title)}</h3>\n${renderer.render(section.body)}`,
+    )
+    .join('\n');
+}
+
+function slugify(value: string): string {
+  return value
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/gu, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/gu, '-')
+    .replace(/^-+|-+$/gu, '');
+}
+
+function splitAtHeadings(markdown: string, level: number): NamedSection[] {
+  const marker = '#'.repeat(level);
+  const heading = new RegExp(`^${marker}\\s+(.+)$`, 'u');
+  const sections: NamedSection[] = [];
+  let current: NamedSection | undefined;
+
+  for (const line of markdown.split(/\r?\n/u)) {
+    const match = line.match(heading);
+
+    if (match) {
+      if (current) {
+        current.body = current.body.trim();
+        sections.push(current);
+      }
+
+      current = { body: '', title: match[1].trim() };
+      continue;
+    }
+
+    if (current) {
+      current.body += `${line}\n`;
+    }
+  }
+
+  if (current) {
+    current.body = current.body.trim();
+    sections.push(current);
+  }
+
+  return sections;
+}
+
+function splitPhase(markdown: string): { lead: string; sections: NamedSection[] } {
+  const phaseBody = markdown.replace(/\n?---\s*$/u, '').trim();
+  const firstSubheading = phaseBody.search(/^###\s+/mu);
+
+  if (firstSubheading === -1) {
+    return { lead: phaseBody, sections: [] };
+  }
+
+  return {
+    lead: phaseBody.slice(0, firstSubheading).trim(),
+    sections: splitAtHeadings(phaseBody.slice(firstSubheading), 3),
+  };
+}
+---
+
+<SiteLayout
+  title={`${data.title ?? 'Portable Recipe'} | Contract prototype`}
+  description="Throwaway rendered proof for the portable Recipe Markdown contract."
+>
+  <section class="page-header page-header--tight">
+    <p class="eyebrow">Throwaway contract prototype</p>
+    <h1>{data.title}</h1>
+    <div class="fact-strip" aria-label="Recipe facts">
+      {dateLabel && <span>{dateLabel}</span>}
+      {data.version !== undefined && <span>Version {data.version}</span>}
+      {data.yield && <span>{data.yield}</span>}
+      {
+        data.scale_basis?.ingredient && data.scale_basis.quantity_g && (
+          <span>
+            {data.scale_basis.quantity_g} g {data.scale_basis.ingredient} = 100%
+          </span>
+        )
+      }
+      {data.tags?.map((tag) => <span>{tag}</span>)}
+    </div>
+  </section>
+
+  <article class="recipe-sheet prototype-contract">
+    <div class="recipe-workbench">
+      <aside class="phase-nav" aria-label="Recipe phases">
+        <p class="phase-nav__label">Run sheet</p>
+        <ol>
+          {
+            phaseLinks.map((phase) => (
+              <li>
+                <a href={`#${phase.id}`}>{phase.title.replace(/^PHASE\s+/u, '')}</a>
+              </li>
+            ))
+          }
+        </ol>
+      </aside>
+      <div
+        class="recipe-body"
+        set:html={`${renderer.render(overviewMarkdown)}${phaseHtml}${recipeTailHtml}`}
+      />
+    </div>
+  </article>
+</SiteLayout>
+
+<style is:global>
+  .prototype-contract .recipe-body table {
+    table-layout: fixed;
+  }
+
+  .prototype-contract .recipe-body th,
+  .prototype-contract .recipe-body td,
+  .prototype-contract .recipe-body th:nth-child(2),
+  .prototype-contract .recipe-body th:nth-child(3),
+  .prototype-contract .recipe-body td:nth-child(2),
+  .prototype-contract .recipe-body td:nth-child(3) {
+    overflow-wrap: break-word;
+    text-align: left;
+    white-space: normal;
+  }
+
+  .prototype-contract .phase-panel--left th:nth-child(2),
+  .prototype-contract .phase-panel--left th:nth-child(3),
+  .prototype-contract .phase-panel--left td:nth-child(2),
+  .prototype-contract .phase-panel--left td:nth-child(3) {
+    width: 4.2rem;
+  }
+
+  @media (max-width: 640px) {
+    .prototype-contract .recipe-body table {
+      font-size: 0.8rem;
+    }
+
+    .prototype-contract .recipe-body th,
+    .prototype-contract .recipe-body td {
+      padding-right: 0.3rem;
+    }
+
+    .prototype-contract .phase-panel--left th:nth-child(2),
+    .prototype-contract .phase-panel--left th:nth-child(3),
+    .prototype-contract .phase-panel--left td:nth-child(2),
+    .prototype-contract .phase-panel--left td:nth-child(3) {
+      width: 3.4rem;
+    }
+  }
+</style>

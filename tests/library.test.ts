@@ -234,6 +234,41 @@ Establish the approved ingredient subject.
     expect(() => loadLibrary(copyPilotLibrary())).not.toThrow();
   });
 
+  it('accepts alias merges and candidate retirements without publishing either record', () => {
+    const root = copyPilotLibrary();
+    fs.writeFileSync(
+      path.join(root, 'records/curation/whole-chicken-alias.md'),
+      `---
+record_type: curation
+candidate: candidate/ingredient-whole-chicken
+candidate_label: "Whole chicken"
+evidence_sources: [recipe/singapore-chicken-rice@1]
+decision: merge-alias
+survivor: ingredient/whole-chicken
+alias: "Whole chicken"
+decided_by: "Curator"
+decided_on: 2026-09-11
+---
+`,
+    );
+    fs.writeFileSync(
+      path.join(root, 'records/curation/square-pan-retired.md'),
+      `---
+record_type: curation
+candidate: candidate/ingredient-square-pan
+candidate_label: "Square pan"
+evidence_sources: [recipe/masterclass-chocolate-brownie@1]
+decision: retire-candidate
+retirement_reason: "Equipment, not an Ingredient."
+decided_by: "Curator"
+decided_on: 2026-09-11
+---
+`,
+    );
+
+    expect(loadLibrary(root).knowledge).toHaveLength(23);
+  });
+
   it('projects the approved pilot through the recipe-facing public helpers', () => {
     const recipes = getAllRecipes();
 
@@ -247,6 +282,20 @@ Establish the approved ingredient subject.
     expect(getRecipePhases(recipes[0]?.body ?? '')).toHaveLength(5);
     expect(renderRecipeBody(recipes[0]?.body ?? '')).toContain('/ingredients/whole-chicken/');
     expect(renderRecipeBody(recipes[0]?.body ?? '')).toContain('table--failure-modes');
+  });
+
+  it('keeps classified observations out of authoritative knowledge collections', () => {
+    const candidates = fs.readdirSync(path.join(process.cwd(), 'records', 'candidates'));
+    const generated = ['ingredients', 'principles', 'techniques'].flatMap((directory) =>
+      fs
+        .readdirSync(path.join(process.cwd(), directory))
+        .filter((name) => name.endsWith('.md'))
+        .filter((name) => fs.readFileSync(path.join(process.cwd(), directory, name), 'utf8').includes('generated: true')),
+    );
+
+    expect(candidates).toHaveLength(302);
+    expect(generated).toEqual([]);
+    expect(getLibraryCounts()).toMatchObject({ ingredients: 15, principles: 4, recipes: 1, techniques: 4 });
   });
 
   it('rejects wrong reference types and contract violations in the approved source', () => {

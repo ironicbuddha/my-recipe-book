@@ -49,3 +49,17 @@ Do not silently rewrite it while authoring the new contract.
 - Preserve unrelated working-tree edits.
 - Use one conceptual commit with the applicable prefix: `recipe:`,
   `technique:`, `principle:`, or `experiment:`.
+
+## Agent skills
+
+### Issue tracker
+
+Issues are tracked in GitHub Issues; external pull requests are not a triage surface. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+Triage uses the canonical `needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, and `wontfix` labels. See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+This is a single-context repository. See `docs/agents/domain.md`.
