@@ -14,6 +14,9 @@ const currentPath = Astro.url.pathname;
 const navItems = [
   { href: '/', label: 'Library', active: currentPath === '/' },
   { href: '/recipes/', label: 'Recipes', active: currentPath.startsWith('/recipes/') },
+  { href: '/ingredients/', label: 'Ingredients', active: currentPath.startsWith('/ingredients/') },
+  { href: '/techniques/', label: 'Techniques', active: currentPath.startsWith('/techniques/') },
+  { href: '/principles/', label: 'Principles', active: currentPath.startsWith('/principles/') },
 ];
 const canonicalUrl = new URL(currentPath, Astro.site).toString();
 const ogImage = new URL('/og-image.jpg', Astro.site).toString();

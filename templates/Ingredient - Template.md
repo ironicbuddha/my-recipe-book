@@ -1,38 +1,16 @@
 ---
 title: ""
-date: YYYY-MM-DD
-type: ingredient
-version: v1.0
-aliases: []
-category: ""
+identity: ingredient/example-ingredient
 ---
 
-# Ingredient: <Name>
-
 ## Functional Profile
-- Water:
-- Protein:
-- Fat:
-- Carbohydrate:
 
-## Sensory Profile
-- Flavor:
-- Aroma:
-- Texture:
+Describe relevant composition and process behaviour.
 
 ## Handling
-- Storage:
-- Prep:
-- Shelf behavior:
 
-## Process Behavior
-- Thermal response:
-- Binding/emulsion behavior:
-- Browning potential:
+Describe storage, preparation, and constraints.
 
-## Pairings and Constraints
-- Pairings:
-- Antagonists:
+## Culinary Use
 
-## Notes
-- 
+Describe the curated, human-authored knowledge for this Ingredient.

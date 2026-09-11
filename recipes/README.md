@@ -1,15 +1,13 @@
 # Recipes
 
-Canonical dishes in Modernist Kitchen house style.
+Canonical Recipe admission boundary. New recipes follow the portable
+[authoring contract](../docs/authoring-contract.md); the current corpus is
+legacy material awaiting migration.
 
 Naming:
 `YYYY-MM-DD - Dish Name.md`
 
 Rules:
 - Use `templates/Recipe - Template.md`.
-- Include YAML frontmatter and `version`.
-- Use PHASE sections in chronological order.
-- Use metric units only (`g`, `ml`, `C`).
-- Define a primary mass basis and percentage scaling.
-- For linearly scalable dishes, use a 2-portion canonical base.
-- Keep fixed-yield sizing only for batch-constrained formats (e.g., full pies, slab brownies).
+- Use `templates/Recipe - Template.md`.
+- Keep Drafts and Superseded Recipe Versions outside this admission boundary.

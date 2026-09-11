@@ -1,94 +1,54 @@
 # AGENTS.md
 
-Guidance for coding agents and contributors working in this repository.
-
 ## Purpose
 
-This repo is a structured culinary knowledge system for Obsidian.
-All content is Markdown-first, phase-based, and versioned in git.
-The repo also includes an Astro site that publishes the canonical Markdown
-content without replacing it as the source of truth.
+This repository is a Markdown-first culinary knowledge system. Repository-held
+Markdown is authoritative; Astro is a projection of eligible content and owns
+all presentation. Do not add a CMS, browser editor, Obsidian callouts, CSS
+classes, or layout tokens to canonical source.
 
-## Repository Standards
+## Authoring contract
 
-Follow the rules in `README.md`:
+Read [docs/authoring-contract.md](docs/authoring-contract.md) before adding or
+migrating canonical content. It is the repository's complete serialization
+guide and records which rules are accepted semantics versus local storage
+choices.
 
-- Keep content in the canonical folders:
-  - `recipes/`
-  - `techniques/`
-  - `principles/`
-  - `ingredients/`
-  - `experiments/`
-  - `templates/`
-- Keep the website layer in the project-root frontend files such as `src/`,
-  `public/`, `astro.config.mjs`, `package.json`, and related tooling config.
-- Treat the Markdown files in the canonical folders as the source of truth for
-  recipe content. Do not introduce a parallel CMS or move recipe data into the
-  Astro app.
-- Use naming conventions exactly:
-  - Recipes: `YYYY-MM-DD - Dish Name.md`
-  - Techniques: `Technique - Name.md`
-  - Principles: `Principle - Name.md`
-  - Experiments: `YYYY-MM-DD - Dish Trial.md`
-- Use metric units only (`g`, `ml`, `C`).
-- Keep recipe scaling relative to the primary ingredient basis.
-- Include one dish-type tag in each recipe frontmatter `tags`:
-  - `dish-main-course`, `dish-side-dish`, `dish-dessert`, `dish-breakfast`, `dish-appetizer`, `dish-soup`, or `dish-sauce`.
+- Use the templates in `templates/`; do not copy legacy recipe formatting.
+- Canonical Recipes live directly in `recipes/`. Recipe Drafts and Superseded
+  Recipe Versions are repository-held but are not canonical or publication
+  eligible.
+- Keep identities immutable and independent of titles, filenames, aliases, and
+  routes. Structured metadata uses bare typed identities; Markdown links use
+  `ref:<identity>` targets.
+- Recipes use a single frontmatter title, a positive-integer `version`, one
+  `scale_basis`, exactly one approved `dish-*` tag, semantic PHASE headings,
+  and a Recipe-level Failure Modes table. Do not add a body H1, Structural
+  Notes, recipe-wide technique/principle lists, `cssclass`, status, or
+  presentation metadata.
+- Ingredient Uses are introduced in their first-use Phase. Numeric quantities
+  are `g` or `ml`; temperatures are `C`; times are `s`, `min`, or `h`.
+- Promotion, Curation, retirement, and grandfathering records require the
+  relevant templates and human Curator decisions. Do not fabricate acceptance,
+  experimental evidence, or Curation.
 
-## Recipe Authoring Rules
+## Naming and layout
 
-- Start from `templates/Recipe - Template.md`.
-- Keep YAML frontmatter and `version`.
-- Use chronological `PHASE` sections.
-- Use the current two-column callout pattern (pure CSS, no plugins):
+- Recipes: `YYYY-MM-DD - Dish Name.md`
+- Techniques: `Technique - Name.md`
+- Principles: `Principle - Name.md`
+- Experiments: `YYYY-MM-DD - Dish Trial.md`
 
-```md
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->
->> [!col-right]
->> ### Method
->> 1. Step one.
-```
+The existing corpus is legacy material awaiting a separately approved migration.
+Do not silently rewrite it while authoring the new contract.
 
-- Separate phases with `---` horizontal rules (no HTML divs).
+## Validation and commits
 
-- Include `## STRUCTURAL NOTES` and `## FAILURE MODES`.
-- Do not introduce ingredients before their first-use phase.
-
-## Obsidian Layout
-
-- Active snippet: `.obsidian/snippets/modernist-layout.css`
-- Recipe notes should include `cssclass: modernist-recipe` in frontmatter.
-- Keep layout changes in the snippet file, not ad hoc inline styles.
-
-## Validation and Hooks
-
-- Run checks locally with:
-  - `make validate` for content changes
-  - `pnpm check` for Astro/frontend/tooling changes
-- Install commit hooks once per clone:
-  - `make install-hooks`
-- Pre-commit runs `./scripts/validate_content.sh`.
-
-## Commit Discipline
-
-Use one conceptual change per commit with structured prefixes:
-
-- `recipe: ...`
-- `technique: ...`
-- `principle: ...`
-- `experiment: ...`
-
-## Agent Behavior
-
-- Prefer minimal, targeted edits.
-- Preserve existing style and structure.
-- Do not rename or move files unless required.
-- After content changes, run `make validate`.
-- After frontend or tooling changes, run `pnpm check`.
+- Run `make validate` after content or template changes.
+- Run `pnpm check` after Astro, frontend, or tooling changes.
+- Preserve unrelated working-tree edits.
+- Use one conceptual commit with the applicable prefix: `recipe:`,
+  `technique:`, `principle:`, or `experiment:`.
 
 ## Agent skills
 

@@ -1,16 +1,16 @@
 ---
-title: "Fresh Coriander"
-date: 2026-02-19
-type: ingredient
-version: v1.0
-generated: true
+title: "Fresh coriander"
+identity: ingredient/fresh-coriander
 ---
 
-# Ingredient: Fresh Coriander
+## Functional Profile
 
-## Purpose
-Auto-generated link node. Expand with composition, handling, and behavior.
+Fresh coriander leaves add a bright, herbaceous aroma.
 
-## Used In Recipes
-- [[2026-02-19 - Grilled Pork Al Pastor]]
-- [[2026-02-19 - Singapore Chicken Rice]]
+## Handling
+
+Wash, dry, and add at the end so the aroma remains fresh.
+
+## Culinary Use
+
+Use optionally as a fragrant finish.

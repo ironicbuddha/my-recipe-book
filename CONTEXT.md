@@ -1,5 +1,14 @@
 # Modernist Recipe Book
 
+<!-- BEGIN HANDOFF DISCOVERY -->
+## Handoff Discovery
+
+Before starting work in this repository, check `../handoff/` for handoff documents whose metadata `source_repo` matches this repository path. Load the most recently modified matching handoff document into context before making changes.
+
+Most recent handoff: `../handoff/recipe-site-handoff-20260529-153127.md`
+Last updated: 2026-05-29 15:31
+<!-- END HANDOFF DISCOVERY -->
+
 A structured culinary knowledge system that preserves authoritative Recipes,
 experimental evidence, and reusable culinary knowledge.
 

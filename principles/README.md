@@ -1,10 +1,11 @@
 # Principles
 
-Scientific mechanisms that explain culinary outcomes.
+Curated Principle Knowledge Notes. Candidates are evidence only and do not
+belong in this authoritative collection.
 
 Naming:
 `Principle - Name.md`
 
 Rules:
 - Use `templates/Principle - Template.md`.
-- Document mechanism, observable effects, and control levers.
+- Use immutable `principle/...` identities and human Curation records.

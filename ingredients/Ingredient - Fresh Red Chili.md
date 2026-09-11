@@ -1,17 +1,16 @@
 ---
-title: "Fresh Red Chili"
-date: 2026-02-19
-type: ingredient
-version: v1.0
-generated: true
+title: "Fresh red chili"
+identity: ingredient/fresh-red-chili
 ---
 
-# Ingredient: Fresh Red Chili
+## Functional Profile
 
-## Purpose
-Auto-generated link node. Expand with composition, handling, and behavior.
+Fresh red chilli peppers bring heat, colour, and fresh pepper flavour.
 
-## Used In Recipes
-- [[2026-02-19 - Grilled Pork Al Pastor]]
-- [[2026-02-19 - Guanciale, Olive & Chili Pasta Sauce]]
-- [[2026-02-19 - Singapore Chicken Rice]]
+## Handling
+
+Wash and trim before blending; adjust quantity for the chilli’s actual heat.
+
+## Culinary Use
+
+Blend into the chilli sauce.

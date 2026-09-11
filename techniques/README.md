@@ -1,10 +1,11 @@
 # Techniques
 
-Execution mechanics and procedural methods.
+Curated Technique Knowledge Notes. Candidates are evidence only and do not
+belong in this authoritative collection.
 
 Naming:
 `Technique - Name.md`
 
 Rules:
 - Use `templates/Technique - Template.md`.
-- Focus on process control, variables, and failure modes.
+- Use immutable `technique/...` identities and human Curation records.

@@ -1,15 +1,16 @@
 ---
-title: "Thermal Shock For Skin Texture"
-date: 2026-02-19
-type: principle
-version: v1.0
-generated: true
+title: "Thermal shock for skin texture"
+identity: principle/thermal-shock-for-skin-texture
 ---
 
-# Principle: Thermal Shock For Skin Texture
+## Core Mechanism
 
-## Purpose
-Auto-generated link node. Expand with mechanism, control levers, and evidence.
+Rapidly cooling cooked poultry skin stops cooking and sets its collagen-rich surface into a firmer, silkier texture.
 
-## Used In Recipes
-- [[2026-02-19 - Singapore Chicken Rice]]
+## Conditions and Controls
+
+Transfer the poultry directly to ice water while the skin is hot and keep it submerged for the stated period.
+
+## Culinary Implications
+
+An immediate ice bath gives poached chicken the characteristic firm, silky skin expected in this dish.

@@ -1,16 +1,16 @@
 ---
-title: "Starch Absorption"
-date: 2026-02-19
-type: principle
-version: v1.0
-generated: true
+title: "Starch absorption"
+identity: principle/starch-absorption
 ---
 
-# Principle: Starch Absorption
+## Core Mechanism
 
-## Purpose
-Auto-generated link node. Expand with mechanism, control levers, and evidence.
+Rice absorbs a measured cooking liquid while heat gelatinises its starch, setting tenderness and final moisture.
 
-## Used In Recipes
-- [[2026-02-19 - Singapore Chicken Rice]]
-- [[2026-02-19 - Tomato Bredie]]
+## Conditions and Controls
+
+Control the liquid quantity, keep the vessel covered when specified, and rest after cooking so moisture distributes through the grains.
+
+## Culinary Implications
+
+Using chicken stock in rice transfers seasoning and aroma into the grains without making them soupy.
