@@ -37,9 +37,7 @@ function validate(root: string, previousRoot?: string) {
     env: {
       ...process.env,
       CULINARY_LIBRARY_ROOT: root,
-      ...(previousRoot
-        ? { CULINARY_LIBRARY_PREVIOUS_ROOT: previousRoot }
-        : {}),
+      ...(previousRoot ? { CULINARY_LIBRARY_PREVIOUS_ROOT: previousRoot } : {}),
     },
   });
 }
@@ -82,11 +80,71 @@ function writeExperiment(root: string, name: string, contents: string): void {
   fs.writeFileSync(destination, contents);
 }
 
-function build(root: string) {
+function writePromotion(root: string, contents: string): void {
+  const destination = path.join(
+    root,
+    'records/promotions/singapore-chicken-rice@2.md',
+  );
+  fs.mkdirSync(path.dirname(destination), { recursive: true });
+  fs.writeFileSync(destination, contents);
+}
+
+function promotionRecord(
+  supportingExperiments = '  - experiment/promotion-trial',
+): string {
+  return `---
+record_type: promotion
+recipe: recipe/singapore-chicken-rice
+version: 2
+supporting_experiments:
+${supportingExperiments}
+accepted_by: "Fixture Curator"
+accepted_on: 2026-09-11
+---
+
+## Rationale
+
+The recorded result is acceptable despite the hypothesis outcome.
+
+## Known Shortcomings
+
+The fixture records a remaining limitation for Curator review.
+`;
+}
+
+function preparePromotionTransition(root: string): void {
+  const canonicalPath = path.join(
+    root,
+    'recipes/2026-02-19 - Singapore Chicken Rice.md',
+  );
+  const versionOne = fs.readFileSync(canonicalPath, 'utf8');
+  const versionTwo = versionOne.replace('version: 1', 'version: 2');
+  fs.mkdirSync(path.join(root, 'recipes/superseded'), { recursive: true });
+  fs.writeFileSync(
+    path.join(root, 'recipes/superseded/singapore-chicken-rice@1.md'),
+    versionOne,
+  );
+  fs.writeFileSync(canonicalPath, versionTwo);
+  writeExperiment(
+    root,
+    '2026-09-11 - Promotion trial.md',
+    completedExperiment(
+      'experiment/promotion-trial',
+      '  type: recipe-version\n  recipe: recipe/singapore-chicken-rice\n  version: 2',
+    ),
+  );
+  writePromotion(root, promotionRecord());
+}
+
+function build(root: string, previousRoot?: string) {
   return spawnSync('pnpm', ['build'], {
     cwd: process.cwd(),
     encoding: 'utf8',
-    env: { ...process.env, CULINARY_LIBRARY_ROOT: root },
+    env: {
+      ...process.env,
+      CULINARY_LIBRARY_ROOT: root,
+      ...(previousRoot ? { CULINARY_LIBRARY_PREVIOUS_ROOT: previousRoot } : {}),
+    },
   });
 }
 
@@ -108,8 +166,14 @@ function writeSupersededRecipe(root: string, bodySuffix = ''): string {
 }
 
 function writeCanonicalRecipeWithoutHero(root: string): void {
-  const sourcePath = path.join(root, 'recipes/2026-02-19 - Singapore Chicken Rice.md');
-  const destinationPath = path.join(root, 'recipes/2026-09-11 - Hero Fallback Pilot.md');
+  const sourcePath = path.join(
+    root,
+    'recipes/2026-02-19 - Singapore Chicken Rice.md',
+  );
+  const destinationPath = path.join(
+    root,
+    'recipes/2026-09-11 - Hero Fallback Pilot.md',
+  );
   const source = fs
     .readFileSync(sourcePath, 'utf8')
     .replace('Singapore Chicken Rice (Hainanese)', 'Hero fallback pilot')
@@ -119,10 +183,12 @@ function writeCanonicalRecipeWithoutHero(root: string): void {
   const inventoryPath = path.join(root, 'records/migrations/first-pilot.md');
   fs.writeFileSync(
     inventoryPath,
-    fs.readFileSync(inventoryPath, 'utf8').replace(
-      '\n## Route Preservation',
-      '\n| `recipes/2026-09-11 - Hero Fallback Pilot.md` | recipe/hero-fallback-pilot | v1.0 | 1 | retain-canonical | historical evidence and Promotion Record only |\n\n## Route Preservation',
-    ),
+    fs
+      .readFileSync(inventoryPath, 'utf8')
+      .replace(
+        '\n## Route Preservation',
+        '\n| `recipes/2026-09-11 - Hero Fallback Pilot.md` | recipe/hero-fallback-pilot | v1.0 | 1 | retain-canonical | historical evidence and Promotion Record only |\n\n## Route Preservation',
+      ),
   );
 }
 
@@ -157,8 +223,16 @@ describe('make validate', () => {
 
   it('fails the Astro publication build for invalid authoritative content', () => {
     const root = copyPilotLibrary();
-    const sourcePath = path.join(root, 'recipes/2026-02-19 - Singapore Chicken Rice.md');
-    fs.writeFileSync(sourcePath, fs.readFileSync(sourcePath, 'utf8').replace('800 g | 100.00%', '800 g | 80.00%'));
+    const sourcePath = path.join(
+      root,
+      'recipes/2026-02-19 - Singapore Chicken Rice.md',
+    );
+    fs.writeFileSync(
+      sourcePath,
+      fs
+        .readFileSync(sourcePath, 'utf8')
+        .replace('800 g | 100.00%', '800 g | 80.00%'),
+    );
 
     const result = build(root);
 
@@ -336,7 +410,10 @@ describe('make validate', () => {
     expect(build(root).status).toBe(0);
 
     const experiment = fs.readFileSync(
-      path.join(process.cwd(), 'dist/experiments/ingredient-use-trial/index.html'),
+      path.join(
+        process.cwd(),
+        'dist/experiments/ingredient-use-trial/index.html',
+      ),
       'utf8',
     );
     const original = fs.readFileSync(
@@ -353,7 +430,9 @@ describe('make validate', () => {
     expect(experiment).toContain('recipe/singapore-chicken-rice v1; PHASE A');
     expect(experiment).not.toContain('href="/recipes/singapore-chicken-rice/"');
     expect(unpublishedSubject).toContain('recipe/singapore-chicken-rice v2');
-    expect(unpublishedSubject).not.toContain('href="/recipes/singapore-chicken-rice/"');
+    expect(unpublishedSubject).not.toContain(
+      'href="/recipes/singapore-chicken-rice/"',
+    );
     expect(original).toContain('Published corrections');
     expect(original).toContain('href="/experiments/recipe-trial-correction/"');
   });
@@ -377,14 +456,248 @@ describe('make validate', () => {
       completedExperiment(
         'experiment/broken-trial',
         '  type: recipe-version\n  recipe: recipe/singapore-chicken-rice\n  version: 99',
-      ).replace('## Results\n\nThe observed result is recorded even when it does not support the hypothesis.\n\n', ''),
+      ).replace(
+        '## Results\n\nThe observed result is recorded even when it does not support the hypothesis.\n\n',
+        '',
+      ),
     );
 
     const result = validate(root, previousRoot);
 
     expect(result.status).toBe(2);
     expect(result.stderr).toContain('requires ## Results');
-    expect(result.stderr).toContain('recipe/singapore-chicken-rice@99 does not resolve');
-    expect(result.stderr).toContain('prior completed evidence for experiment/immutable-trial is immutable');
+    expect(result.stderr).toContain(
+      'recipe/singapore-chicken-rice@99 does not resolve',
+    );
+    expect(result.stderr).toContain(
+      'prior completed evidence for experiment/immutable-trial is immutable',
+    );
+  });
+
+  it('admits an exact Curator Promotion only with a prior draft, matching whole-Recipe evidence, and preserved predecessor', () => {
+    const previousRoot = copyPilotLibrary();
+    const draftPath = path.join(
+      previousRoot,
+      'recipes/drafts/singapore-chicken-rice@2.md',
+    );
+    fs.mkdirSync(path.dirname(draftPath), { recursive: true });
+    fs.writeFileSync(
+      draftPath,
+      fs
+        .readFileSync(
+          path.join(
+            previousRoot,
+            'recipes/2026-02-19 - Singapore Chicken Rice.md',
+          ),
+          'utf8',
+        )
+        .replace('version: 1', 'version: 2'),
+    );
+    const root = copyPilotLibrary();
+    preparePromotionTransition(root);
+
+    const result = validate(root, previousRoot);
+
+    expect(result.status).toBe(0);
+    expect(build(root, previousRoot).status).toBe(0);
+    expect(
+      fs.existsSync(
+        path.join(
+          process.cwd(),
+          'dist/recipes/singapore-chicken-rice@1/index.html',
+        ),
+      ),
+    ).toBe(false);
+  });
+
+  it('fails closed when the public command cannot compare a Promotion with a prior revision', () => {
+    const root = copyPilotLibrary();
+    preparePromotionTransition(root);
+
+    const result = validate(root);
+
+    expect(result.status).toBe(2);
+    expect(result.stderr).toContain(
+      'records/promotions: prior revision is required to validate Promotion history',
+    );
+  });
+
+  it('rejects incomplete or wrongly scoped Promotion evidence and a mutated predecessor through the public command', () => {
+    const previousRoot = copyPilotLibrary();
+    const draftPath = path.join(
+      previousRoot,
+      'recipes/drafts/singapore-chicken-rice@2.md',
+    );
+    fs.mkdirSync(path.dirname(draftPath), { recursive: true });
+    fs.writeFileSync(
+      draftPath,
+      fs
+        .readFileSync(
+          path.join(
+            previousRoot,
+            'recipes/2026-02-19 - Singapore Chicken Rice.md',
+          ),
+          'utf8',
+        )
+        .replace('version: 1', 'version: 2'),
+    );
+    const root = copyPilotLibrary();
+    preparePromotionTransition(root);
+    fs.writeFileSync(
+      path.join(root, 'experiments/2026-09-11 - Promotion trial.md'),
+      completedExperiment(
+        'experiment/promotion-trial',
+        '  type: ingredient-use\n  recipe: recipe/singapore-chicken-rice\n  version: 2\n  phase: PHASE A — POACH CHICKEN AND MAKE STOCK\n  key: chicken',
+      ),
+    );
+    const predecessorPath = path.join(
+      root,
+      'recipes/superseded/singapore-chicken-rice@1.md',
+    );
+    fs.writeFileSync(
+      predecessorPath,
+      fs.readFileSync(predecessorPath, 'utf8').replace('800 g', '799 g'),
+    );
+
+    const result = validate(root, previousRoot);
+
+    expect(result.status).toBe(2);
+    expect(result.stderr).toContain(
+      'must be Completed evidence for exact whole Recipe Version recipe/singapore-chicken-rice@2',
+    );
+    expect(result.stderr).toContain(
+      'Superseded Recipe Version recipe/singapore-chicken-rice@1 is immutable',
+    );
+  });
+
+  it('rejects an inventory exemption added for a new Recipe Version', () => {
+    const previousRoot = copyPilotLibrary();
+    const root = copyPilotLibrary();
+    const canonicalPath = path.join(
+      root,
+      'recipes/2026-02-19 - Singapore Chicken Rice.md',
+    );
+    fs.writeFileSync(
+      canonicalPath,
+      fs
+        .readFileSync(canonicalPath, 'utf8')
+        .replace('version: 1', 'version: 2'),
+    );
+    const inventoryPath = path.join(root, 'records/migrations/first-pilot.md');
+    fs.writeFileSync(
+      inventoryPath,
+      fs
+        .readFileSync(inventoryPath, 'utf8')
+        .replace('| v1.0 | 1 |', '| v2.0 | 2 |'),
+    );
+
+    const result = validate(root, previousRoot);
+
+    expect(result.status).toBe(2);
+    expect(result.stderr).toContain(
+      'grandfathering exemption recipe/singapore-chicken-rice@2 was not an existing Canonical Recipe in the prior revision',
+    );
+  });
+
+  it('requires a new Recipe Draft version for a culinary change after completed draft evidence', () => {
+    const previousRoot = copyPilotLibrary();
+    const draftPath = path.join(
+      previousRoot,
+      'recipes/drafts/singapore-chicken-rice@2.md',
+    );
+    fs.mkdirSync(path.dirname(draftPath), { recursive: true });
+    fs.writeFileSync(
+      draftPath,
+      fs
+        .readFileSync(
+          path.join(
+            previousRoot,
+            'recipes/2026-02-19 - Singapore Chicken Rice.md',
+          ),
+          'utf8',
+        )
+        .replace('version: 1', 'version: 2'),
+    );
+    writeExperiment(
+      previousRoot,
+      '2026-09-11 - Draft evidence.md',
+      completedExperiment(
+        'experiment/draft-evidence',
+        '  type: recipe-version\n  recipe: recipe/singapore-chicken-rice\n  version: 2',
+      ),
+    );
+    const root = copyPilotLibrary();
+    fs.mkdirSync(
+      path.dirname(
+        path.join(root, 'recipes/drafts/singapore-chicken-rice@2.md'),
+      ),
+      {
+        recursive: true,
+      },
+    );
+    fs.writeFileSync(
+      path.join(root, 'recipes/drafts/singapore-chicken-rice@2.md'),
+      fs
+        .readFileSync(draftPath, 'utf8')
+        .replace('Poached chicken', 'Roasted chicken'),
+    );
+    fs.mkdirSync(path.join(root, 'experiments'), { recursive: true });
+    fs.copyFileSync(
+      path.join(previousRoot, 'experiments/2026-09-11 - Draft evidence.md'),
+      path.join(root, 'experiments/2026-09-11 - Draft evidence.md'),
+    );
+
+    const result = validate(root, previousRoot);
+
+    expect(result.status).toBe(2);
+    expect(result.stderr).toContain(
+      'Recipe Draft recipe/singapore-chicken-rice@2 changed after completed evidence; Culinary Changes require a new Recipe Draft version',
+    );
+  });
+
+  it('rejects malformed and duplicate Promotion Records through the public command', () => {
+    const root = copyPilotLibrary();
+    const malformedPath = path.join(root, 'records/promotions/malformed.md');
+    fs.mkdirSync(path.dirname(malformedPath), { recursive: true });
+    fs.writeFileSync(
+      malformedPath,
+      `---
+record_type: not-promotion
+recipe: ingredient/not-a-recipe
+version: 0
+supporting_experiments: []
+---
+`,
+    );
+    const duplicatePath = path.join(root, 'records/promotions/duplicate.md');
+    fs.mkdirSync(path.dirname(duplicatePath), { recursive: true });
+    fs.writeFileSync(duplicatePath, promotionRecord());
+    fs.writeFileSync(
+      path.join(root, 'recipes/2026-02-19 - Singapore Chicken Rice.md'),
+      fs
+        .readFileSync(
+          path.join(root, 'recipes/2026-02-19 - Singapore Chicken Rice.md'),
+          'utf8',
+        )
+        .replace('version: 1', 'version: 2'),
+    );
+    writePromotion(root, promotionRecord());
+
+    const result = validate(root);
+
+    expect(result.status).toBe(2);
+    expect(result.stderr).toContain('record_type must be promotion');
+    expect(result.stderr).toContain(
+      'Promotion requires an exact Recipe Version',
+    );
+    expect(result.stderr).toContain(
+      'Promotion requires accepting Curator, date, Rationale, and Known Shortcomings',
+    );
+    expect(result.stderr).toContain(
+      'Promotion requires supporting Completed Experiments',
+    );
+    expect(result.stderr).toContain(
+      'multiple Promotion Records admit recipe/singapore-chicken-rice@2',
+    );
   });
 });
