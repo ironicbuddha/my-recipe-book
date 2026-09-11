@@ -89,6 +89,73 @@ function writePromotion(root: string, contents: string): void {
   fs.writeFileSync(destination, contents);
 }
 
+function writeRetirement(root: string, contents: string): void {
+  const destination = path.join(root, 'records/curation/legacy-poaching.md');
+  fs.mkdirSync(path.dirname(destination), { recursive: true });
+  fs.writeFileSync(destination, contents);
+}
+
+function retirementRecord(
+  survivor = 'technique/poaching',
+  retiredIdentity = 'technique/legacy-poaching',
+): string {
+  return `---
+record_type: identity-retirement
+retired_identity: ${retiredIdentity}
+survivor: ${survivor}
+reason: "Fixture duplicate merged through the retirement mechanics."
+decided_by: "Fixture Curator"
+decided_on: 2026-09-11
+---
+`;
+}
+
+function legacyPoachingNote(): string {
+  return `---
+title: "Legacy poaching"
+identity: technique/legacy-poaching
+---
+
+## Purpose
+
+Fixture-only legacy technique.
+
+## Controls
+
+Keep a gentle simmer.
+
+## Process
+
+Poach gently.
+
+## Failure Modes
+
+Avoid boiling.
+`;
+}
+
+function legacyPoachingCuration(): string {
+  return `---
+record_type: curation
+candidate: candidate/legacy-poaching-label
+candidate_label: "Legacy poaching"
+evidence_sources: [recipe/singapore-chicken-rice@1]
+decision: establish-subject
+subject: technique/legacy-poaching
+decided_by: "Fixture Curator"
+decided_on: 2026-09-11
+---
+
+## Evidence
+
+Fixture-only predecessor subject.
+
+## Rationale
+
+Fixture-only Curation record for retirement mechanics.
+`;
+}
+
 function promotionRecord(
   supportingExperiments = '  - experiment/promotion-trial',
 ): string {
@@ -698,6 +765,165 @@ supporting_experiments: []
     );
     expect(result.stderr).toContain(
       'multiple Promotion Records admit recipe/singapore-chicken-rice@2',
+    );
+  });
+
+  it('migrates an established identity without rewriting completed evidence and publishes a direct permanent redirect', () => {
+    const previousRoot = copyPilotLibrary();
+    fs.writeFileSync(
+      path.join(previousRoot, 'techniques/Technique - Legacy Poaching.md'),
+      legacyPoachingNote(),
+    );
+    fs.writeFileSync(
+      path.join(previousRoot, 'records/curation/legacy-poaching.md'),
+      legacyPoachingCuration(),
+    );
+    writeExperiment(
+      previousRoot,
+      '2026-09-11 - Legacy poaching evidence.md',
+      completedExperiment(
+        'experiment/legacy-poaching-evidence',
+        '  type: technique\n  identity: technique/legacy-poaching',
+      ),
+    );
+
+    const root = copyPilotLibrary();
+    fs.writeFileSync(
+      path.join(root, 'recipes/2026-02-19 - Singapore Chicken Rice.md'),
+      fs
+        .readFileSync(
+          path.join(root, 'recipes/2026-02-19 - Singapore Chicken Rice.md'),
+          'utf8',
+        )
+        .replaceAll('technique/poaching', 'technique/legacy-poaching'),
+    );
+    fs.writeFileSync(
+      path.join(root, 'techniques/Technique - Legacy Poaching.md'),
+      legacyPoachingNote(),
+    );
+    fs.writeFileSync(
+      path.join(root, 'records/curation/legacy-poaching.md'),
+      legacyPoachingCuration(),
+    );
+    writeExperiment(
+      root,
+      '2026-09-11 - Legacy poaching evidence.md',
+      completedExperiment(
+        'experiment/legacy-poaching-evidence',
+        '  type: technique\n  identity: technique/legacy-poaching',
+      ),
+    );
+
+    fs.rmSync(path.join(root, 'techniques/Technique - Legacy Poaching.md'));
+    fs.writeFileSync(
+      path.join(root, 'records/curation/legacy-poaching.md'),
+      retirementRecord(),
+    );
+    fs.writeFileSync(
+      path.join(root, 'recipes/2026-02-19 - Singapore Chicken Rice.md'),
+      fs
+        .readFileSync(
+          path.join(root, 'recipes/2026-02-19 - Singapore Chicken Rice.md'),
+          'utf8',
+        )
+        .replaceAll('technique/legacy-poaching', 'technique/poaching'),
+    );
+
+    const result = validate(root, previousRoot);
+
+    expect(result.status).toBe(0);
+    expect(build(root, previousRoot).status).toBe(0);
+    const redirect = fs.readFileSync(
+      path.join(process.cwd(), 'dist/techniques/legacy-poaching/index.html'),
+      'utf8',
+    );
+    expect(redirect).toContain(
+      'https://recipes.carlokruger.com/techniques/poaching/',
+    );
+  });
+
+  it('rejects retired identity reuse, a new Experiment subject, and invalid retirement destinations through the public command', () => {
+    const root = copyPilotLibrary();
+    writeRetirement(root, retirementRecord());
+    fs.writeFileSync(
+      path.join(root, 'recipes/2026-02-19 - Singapore Chicken Rice.md'),
+      `${fs
+        .readFileSync(
+          path.join(root, 'recipes/2026-02-19 - Singapore Chicken Rice.md'),
+          'utf8',
+        )
+        .trimEnd()}\n\nSee [legacy method](ref:technique/legacy-poaching).\n`,
+    );
+    writeExperiment(
+      root,
+      '2026-09-11 - New legacy subject.md',
+      completedExperiment(
+        'experiment/new-legacy-subject',
+        '  type: technique\n  identity: technique/legacy-poaching',
+      ),
+    );
+
+    const result = validate(root);
+
+    expect(result.status).toBe(2);
+    expect(result.stderr).toContain(
+      'retired identity technique/legacy-poaching cannot be used by a current reference',
+    );
+    expect(result.stderr).toContain(
+      'retired identity technique/legacy-poaching is only valid for a preserved Completed Experiment subject',
+    );
+
+    fs.writeFileSync(
+      path.join(root, 'records/curation/legacy-poaching.md'),
+      retirementRecord('technique/missing-survivor'),
+    );
+    const invalidDestination = validate(root);
+    expect(invalidDestination.status).toBe(2);
+    expect(invalidDestination.stderr).toContain(
+      'retirement survivor technique/missing-survivor does not resolve to an eligible Knowledge Note',
+    );
+  });
+
+  it('fails closed for malformed, colliding, chained, and reused retirement identities through the public command', () => {
+    const root = copyPilotLibrary();
+    writeRetirement(root, retirementRecord('technique/legacy-poaching'));
+    const selfRetirement = validate(root);
+    expect(selfRetirement.status).toBe(2);
+    expect(selfRetirement.stderr).toContain(
+      'identity retirement survivor must differ from retired_identity',
+    );
+
+    writeRetirement(root, retirementRecord());
+    fs.writeFileSync(
+      path.join(root, 'records/curation/duplicate-retirement.md'),
+      retirementRecord(),
+    );
+    fs.writeFileSync(
+      path.join(root, 'techniques/Technique - Legacy Poaching.md'),
+      legacyPoachingNote(),
+    );
+    const collision = validate(root);
+    expect(collision.status).toBe(2);
+    expect(collision.stderr).toContain(
+      'multiple retirement records reserve technique/legacy-poaching',
+    );
+    expect(collision.stderr).toContain(
+      'retired identity technique/legacy-poaching is permanently reserved',
+    );
+
+    fs.rmSync(path.join(root, 'records/curation/duplicate-retirement.md'));
+    fs.rmSync(path.join(root, 'techniques/Technique - Legacy Poaching.md'));
+    fs.writeFileSync(
+      path.join(root, 'records/curation/chained-retirement.md'),
+      retirementRecord('technique/legacy-poaching', 'technique/older-poaching'),
+    );
+    const chained = validate(root);
+    expect(chained.status).toBe(2);
+    expect(chained.stderr).toContain(
+      'cannot redirect through retired survivor technique/legacy-poaching',
+    );
+    expect(chained.stderr).toContain(
+      'must preserve an established identity from the prior revision',
     );
   });
 });

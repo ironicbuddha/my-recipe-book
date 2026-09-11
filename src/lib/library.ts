@@ -62,7 +62,13 @@ export type CulinaryLibrary = {
   entries: LibraryEntry[];
   knowledge: LibraryEntry[];
   recipes: RecipeEntry[];
+  retirements: IdentityRetirement[];
   root: string;
+};
+
+export type IdentityRetirement = {
+  retiredIdentity: string;
+  survivor: string;
 };
 
 export class ContentValidationError extends Error {
@@ -119,6 +125,7 @@ export function loadLibrary(
   const inventories = readInventories(root, diagnostics);
   const promotions = readPromotions(root, diagnostics);
   const curations = readCurations(root, diagnostics);
+  const retirements = readRetirements(root, diagnostics);
   const entriesByIdentity = new Map<string, LibraryEntry[]>();
   const recipeVersions = new Map<string, LibraryEntry>();
   const canonicalRecipes = new Map<string, LibraryEntry>();
@@ -135,6 +142,12 @@ export function loadLibrary(
     }
 
     validateIdentity(source, expectedType, identity, diagnostics);
+    if (retirements.has(identity)) {
+      diagnostics.push(
+        `${source.relativePath}: retired identity ${identity} is permanently reserved`,
+      );
+      continue;
+    }
     const entry = makeEntry(source, expectedType, identity, diagnostics);
     const identityEntries = entriesByIdentity.get(identity) ?? [];
     if (expectedType === 'recipe') {
@@ -199,6 +212,7 @@ export function loadLibrary(
     sourceRecords,
     entriesByIdentity,
     recipeVersions,
+    retirements,
     diagnostics,
   );
   validatePromotions(
@@ -209,7 +223,14 @@ export function loadLibrary(
     inventories,
     diagnostics,
   );
-  validateReferences(entriesByIdentity, recipeVersions, diagnostics);
+  validateRetirements(retirements, entriesByIdentity, eligible, diagnostics);
+  validateReferences(
+    entriesByIdentity,
+    recipeVersions,
+    retirements,
+    diagnostics,
+  );
+  validateRetiredStructuredReferences(sourceRecords, retirements, diagnostics);
   validatePriorCompletedEvidence(sourceRecords, diagnostics);
 
   if (diagnostics.length > 0) {
@@ -268,6 +289,12 @@ export function loadLibrary(
       (entry) => entry.type !== 'recipe' && entry.type !== 'experiment',
     ),
     recipes,
+    retirements: [...retirements.values()].map(
+      ({ retiredIdentity, survivor }) => ({
+        retiredIdentity,
+        survivor,
+      }),
+    ),
     root,
   };
 }
@@ -311,6 +338,18 @@ export function routeFor(identity: string): string {
   const [type, key] = identity.split('/');
   const plural = `${type}s`;
   return `/${plural}/${key}/`;
+}
+
+/** Returns publisher-owned permanent redirects for retired public identities. */
+export function retirementRedirects(
+  root = process.env.CULINARY_LIBRARY_ROOT ?? process.cwd(),
+): Record<string, { destination: string; status: 301 }> {
+  return Object.fromEntries(
+    loadLibrary(root).retirements.map((retirement) => [
+      routeFor(retirement.retiredIdentity),
+      { destination: routeFor(retirement.survivor), status: 301 },
+    ]),
+  );
 }
 
 function readSourceRecords(
@@ -573,6 +612,9 @@ function readCurations(
   for (const filePath of readMarkdownFiles(directory)) {
     const relativePath = path.relative(root, filePath);
     const record = readRecord(root, relativePath, diagnostics);
+    if (record.data.record_type === 'identity-retirement') {
+      continue;
+    }
     const subject = stringValue(record.data.subject);
     const candidate = stringValue(record.data.candidate);
     const curator = stringValue(record.data.decided_by);
@@ -620,6 +662,53 @@ function readCurations(
     curations.set(subject, record);
   }
   return curations;
+}
+
+function readRetirements(
+  root: string,
+  diagnostics: string[],
+): Map<string, IdentityRetirement> {
+  const directory = path.join(root, 'records/curation');
+  if (!fs.existsSync(directory)) {
+    return new Map();
+  }
+  const retirements = new Map<string, IdentityRetirement>();
+  for (const filePath of readMarkdownFiles(directory)) {
+    const relativePath = path.relative(root, filePath);
+    const record = readRecord(root, relativePath, diagnostics);
+    if (record.data.record_type !== 'identity-retirement') {
+      continue;
+    }
+    const retiredIdentity = stringValue(record.data.retired_identity);
+    const survivor = stringValue(record.data.survivor);
+    if (
+      !isKnowledgeIdentity(retiredIdentity) ||
+      !isKnowledgeIdentity(survivor) ||
+      identityType(retiredIdentity) !== identityType(survivor) ||
+      !stringValue(record.data.reason) ||
+      !stringValue(record.data.decided_by) ||
+      !dateValue(record.data.decided_on)
+    ) {
+      diagnostics.push(
+        `${relativePath}: identity retirement requires same-type Knowledge identities, reason, Curator, and decision date`,
+      );
+      continue;
+    }
+    if (retiredIdentity === survivor) {
+      diagnostics.push(
+        `${relativePath}: identity retirement survivor must differ from retired_identity`,
+      );
+      continue;
+    }
+    if (retirements.has(retiredIdentity)) {
+      diagnostics.push(
+        `${relativePath}: multiple retirement records reserve ${retiredIdentity}`,
+      );
+      continue;
+    }
+    retirements.set(retiredIdentity, { retiredIdentity, survivor });
+  }
+  return retirements;
 }
 
 function validateRecipe(source: SourceRecord, diagnostics: string[]): void {
@@ -740,6 +829,7 @@ function validateExperiments(
   sources: SourceRecord[],
   entries: Map<string, LibraryEntry[]>,
   recipeVersions: Map<string, LibraryEntry>,
+  retirements: Map<string, IdentityRetirement>,
   diagnostics: string[],
 ): void {
   for (const source of sources.filter((candidate) =>
@@ -766,14 +856,23 @@ function validateExperiments(
           `${source.relativePath}: primary_subject Ingredient Use ${subject.phase}/${subject.key} does not resolve in ${subject.recipe}@${subject.version}`,
         );
       }
-    } else if (
-      !entries
-        .get(subject.identity)
-        ?.some((entry) => entry.type === subject.type)
-    ) {
-      diagnostics.push(
-        `${source.relativePath}: primary_subject ${subject.identity} does not resolve as a ${subject.type}`,
-      );
+    } else {
+      const retirement = retirements.get(subject.identity);
+      if (retirement) {
+        if (!isPreservedRetiredExperiment(source, subject.identity)) {
+          diagnostics.push(
+            `${source.relativePath}: retired identity ${subject.identity} is only valid for a preserved Completed Experiment subject`,
+          );
+        }
+      } else if (
+        !entries
+          .get(subject.identity)
+          ?.some((entry) => entry.type === subject.type)
+      ) {
+        diagnostics.push(
+          `${source.relativePath}: primary_subject ${subject.identity} does not resolve as a ${subject.type}`,
+        );
+      }
     }
     const corrects = stringValue(source.data.corrects);
     if (corrects) {
@@ -1167,11 +1266,18 @@ function validateInventorySources(
 function validateReferences(
   entriesByIdentity: Map<string, LibraryEntry[]>,
   recipeVersions: Map<string, LibraryEntry>,
+  retirements: Map<string, IdentityRetirement>,
   diagnostics: string[],
 ): void {
   for (const entries of entriesByIdentity.values()) {
     for (const entry of entries) {
       for (const reference of entry.references) {
+        if (retirements.has(reference.identity)) {
+          diagnostics.push(
+            `${entry.sourcePath}:${reference.line}: retired identity ${reference.identity} cannot be used by a current reference`,
+          );
+          continue;
+        }
         const targets = entriesByIdentity.get(reference.identity) ?? [];
         if (targets.length === 0) {
           diagnostics.push(
@@ -1195,6 +1301,93 @@ function validateReferences(
       }
     }
   }
+}
+
+function validateRetiredStructuredReferences(
+  sources: SourceRecord[],
+  retirements: Map<string, IdentityRetirement>,
+  diagnostics: string[],
+): void {
+  for (const source of sources) {
+    if (!source.relativePath.startsWith(`recipes${path.sep}`)) {
+      continue;
+    }
+    const basis = source.data.scale_basis;
+    if (isRecord(basis) && retirements.has(String(basis.ingredient))) {
+      diagnostics.push(
+        `${source.relativePath}: retired identity ${basis.ingredient} cannot be used as scale_basis ingredient`,
+      );
+    }
+  }
+}
+
+function validateRetirements(
+  retirements: Map<string, IdentityRetirement>,
+  entries: Map<string, LibraryEntry[]>,
+  eligible: LibraryEntry[],
+  diagnostics: string[],
+): void {
+  const eligibleIdentities = new Set(eligible.map((entry) => entry.identity));
+  const previousRoot = process.env.CULINARY_LIBRARY_PREVIOUS_ROOT;
+  const previousIdentities =
+    previousRoot && fs.existsSync(previousRoot)
+      ? new Set(
+          readSourceRecords(previousRoot, []).flatMap((source) => {
+            const identity = stringValue(source.data.identity);
+            return identity ? [identity] : [];
+          }),
+        )
+      : undefined;
+
+  for (const retirement of retirements.values()) {
+    if (retirements.has(retirement.survivor)) {
+      diagnostics.push(
+        `records/curation: retirement ${retirement.retiredIdentity} cannot redirect through retired survivor ${retirement.survivor}`,
+      );
+    }
+    if (entries.has(retirement.retiredIdentity)) {
+      diagnostics.push(
+        `records/curation: retired identity ${retirement.retiredIdentity} must not be present in current content`,
+      );
+    }
+    if (!eligibleIdentities.has(retirement.survivor)) {
+      diagnostics.push(
+        `records/curation: retirement survivor ${retirement.survivor} does not resolve to an eligible Knowledge Note`,
+      );
+    }
+    if (!previousIdentities?.has(retirement.retiredIdentity)) {
+      diagnostics.push(
+        `records/curation: retirement ${retirement.retiredIdentity} must preserve an established identity from the prior revision`,
+      );
+    }
+  }
+}
+
+function isPreservedRetiredExperiment(
+  source: SourceRecord,
+  retiredIdentity: string,
+): boolean {
+  if (source.data.status !== 'completed') {
+    return false;
+  }
+  const previousRoot = process.env.CULINARY_LIBRARY_PREVIOUS_ROOT;
+  if (!previousRoot || !fs.existsSync(previousRoot)) {
+    return false;
+  }
+  const previousPath = path.join(previousRoot, source.relativePath);
+  if (!fs.existsSync(previousPath)) {
+    return false;
+  }
+  const previous = readRecord(previousRoot, source.relativePath, []);
+  const previousSubject = previous.data.primary_subject;
+  return (
+    previous.data.status === 'completed' &&
+    isExperimentSubject(previousSubject) &&
+    (previousSubject.type === 'technique' ||
+      previousSubject.type === 'principle') &&
+    previousSubject.identity === retiredIdentity &&
+    stableJson(previousSubject) === stableJson(source.data.primary_subject)
+  );
 }
 
 function recipeVersionIdentity(entry: LibraryEntry): string | undefined {
@@ -1614,6 +1807,18 @@ function isIdentityOfType(value: unknown, type: ContentType): boolean {
     value.startsWith(`${type}/`) &&
     IDENTITY_PATTERN.test(value)
   );
+}
+
+function isKnowledgeIdentity(value: unknown): value is string {
+  return (
+    isIdentityOfType(value, 'ingredient') ||
+    isIdentityOfType(value, 'technique') ||
+    isIdentityOfType(value, 'principle')
+  );
+}
+
+function identityType(identity: string): KnowledgeType {
+  return identity.split('/')[0] as KnowledgeType;
 }
 
 function isRecord(value: unknown): value is Record<string, unknown> {
