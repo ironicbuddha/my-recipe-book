@@ -3,9 +3,9 @@
 <!-- BEGIN HANDOFF DISCOVERY -->
 ## Handoff Discovery
 
-Before starting work in this repository, check `/Users/carlo/dev/handoff-docs` for handoff documents whose metadata `source_repo` matches this repository path. Load the most recently modified matching handoff document into context before making changes.
+Before starting work in this repository, check `../handoff/` for handoff documents whose metadata `source_repo` matches this repository path. Load the most recently modified matching handoff document into context before making changes.
 
-Most recent handoff: `/Users/carlo/dev/handoff-docs/recipe-site-handoff-20260529-153127.md`
+Most recent handoff: `../handoff/recipe-site-handoff-20260529-153127.md`
 Last updated: 2026-05-29 15:31
 <!-- END HANDOFF DISCOVERY -->
 
