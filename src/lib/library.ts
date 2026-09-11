@@ -117,9 +117,11 @@ export function loadLibrary(
   const diagnostics: string[] = [];
   const sourceRecords = readSourceRecords(root, diagnostics);
   const inventories = readInventories(root, diagnostics);
+  const promotions = readPromotions(root, diagnostics);
   const curations = readCurations(root, diagnostics);
   const entriesByIdentity = new Map<string, LibraryEntry[]>();
   const recipeVersions = new Map<string, LibraryEntry>();
+  const canonicalRecipes = new Map<string, LibraryEntry>();
   const eligible: LibraryEntry[] = [];
 
   for (const source of sourceRecords) {
@@ -146,6 +148,16 @@ export function loadLibrary(
       if (exactIdentity) {
         recipeVersions.set(exactIdentity, entry);
       }
+      if (!isUnpublishedRecipe(source.relativePath)) {
+        const canonical = canonicalRecipes.get(identity);
+        if (canonical) {
+          diagnostics.push(
+            `${source.relativePath}: Recipe ${identity} has more than one Canonical Recipe`,
+          );
+        } else {
+          canonicalRecipes.set(identity, entry);
+        }
+      }
     } else if (identityEntries.length > 0) {
       diagnostics.push(
         `${source.relativePath}: identity ${identity} is not unique`,
@@ -157,8 +169,12 @@ export function loadLibrary(
 
     if (expectedType === 'recipe') {
       recipeVersions.set(`${identity}@${entry.version ?? 0}`, entry);
-      validateRecipe(source, entry, inventories, diagnostics);
-      if (isApprovedRecipe(entry, inventories)) {
+      validateRecipe(source, diagnostics);
+      if (
+        !isUnpublishedRecipe(source.relativePath) &&
+        (isApprovedRecipe(entry, inventories) ||
+          isPromotedRecipe(entry, promotions))
+      ) {
         eligible.push(entry);
       }
     } else if (
@@ -183,6 +199,14 @@ export function loadLibrary(
     sourceRecords,
     entriesByIdentity,
     recipeVersions,
+    diagnostics,
+  );
+  validatePromotions(
+    promotions,
+    sourceRecords,
+    canonicalRecipes,
+    recipeVersions,
+    inventories,
     diagnostics,
   );
   validateReferences(entriesByIdentity, recipeVersions, diagnostics);
@@ -253,7 +277,11 @@ export function renderContent(body: string, library: CulinaryLibrary): string {
   const publishedRecipeVersions = new Set(
     library.entries
       .filter((entry) => entry.type === 'recipe')
-      .flatMap((entry) => (entry.version === undefined ? [] : [`${entry.identity}@${entry.version}`])),
+      .flatMap((entry) =>
+        entry.version === undefined
+          ? []
+          : [`${entry.identity}@${entry.version}`],
+      ),
   );
   const renderer = new MarkdownIt({ linkify: true, typographer: true });
   renderer.renderer.rules.table_open = (tokens, index, options, _env, self) => {
@@ -265,13 +293,17 @@ export function renderContent(body: string, library: CulinaryLibrary): string {
     }
     return self.renderToken(tokens, index, options);
   };
-  const resolved = body.replace(REF_PATTERN, (match, identity: string, version: string | undefined) => {
-    const label = match.slice(1, match.indexOf(']'));
-    const isPublished = version === undefined ? published.has(identity) : publishedRecipeVersions.has(`${identity}@${version}`);
-    return isPublished
-      ? `[${label}](${routeFor(identity)})`
-      : label;
-  });
+  const resolved = body.replace(
+    REF_PATTERN,
+    (match, identity: string, version: string | undefined) => {
+      const label = match.slice(1, match.indexOf(']'));
+      const isPublished =
+        version === undefined
+          ? published.has(identity)
+          : publishedRecipeVersions.has(`${identity}@${version}`);
+      return isPublished ? `[${label}](${routeFor(identity)})` : label;
+    },
+  );
   return renderer.render(resolved);
 }
 
@@ -416,6 +448,17 @@ type InventoryRow = {
   disposition: string;
 };
 
+type PromotionRecord = {
+  acceptedOn?: string;
+  acceptedBy?: string;
+  filePath: string;
+  recipe?: string;
+  rationale?: string;
+  shortcomings?: string;
+  supportingExperiments: string[];
+  version?: number;
+};
+
 function readInventories(root: string, diagnostics: string[]): InventoryRow[] {
   const directory = path.join(root, 'records/migrations');
   if (!fs.existsSync(directory)) {
@@ -457,6 +500,64 @@ function readInventories(root: string, diagnostics: string[]): InventoryRow[] {
         { identity, source: sourceFile, version, disposition: row.Disposition },
       ];
     });
+  });
+}
+
+function readPromotions(
+  root: string,
+  diagnostics: string[],
+): PromotionRecord[] {
+  const directory = path.join(root, 'records/promotions');
+  if (!fs.existsSync(directory)) {
+    return [];
+  }
+  return readMarkdownFiles(directory).map((filePath) => {
+    const relativePath = path.relative(root, filePath);
+    const source = readRecord(root, relativePath, diagnostics);
+    const record: PromotionRecord = {
+      acceptedBy: stringValue(source.data.accepted_by),
+      acceptedOn: dateValue(source.data.accepted_on),
+      filePath: relativePath,
+      rationale: sectionBody(source.body, 'Rationale'),
+      recipe: stringValue(source.data.recipe),
+      shortcomings: sectionBody(source.body, 'Known Shortcomings'),
+      supportingExperiments: stringArray(source.data.supporting_experiments),
+      version: positiveInteger(source.data.version),
+    };
+    if (source.data.record_type !== 'promotion') {
+      diagnostics.push(`${relativePath}: record_type must be promotion`);
+    }
+    if (
+      !isIdentityOfType(record.recipe, 'recipe') ||
+      record.version === undefined
+    ) {
+      diagnostics.push(
+        `${relativePath}: Promotion requires an exact Recipe Version`,
+      );
+    }
+    if (
+      !record.acceptedBy ||
+      !record.acceptedOn ||
+      !record.rationale ||
+      !record.shortcomings
+    ) {
+      diagnostics.push(
+        `${relativePath}: Promotion requires accepting Curator, date, Rationale, and Known Shortcomings`,
+      );
+    }
+    if (record.supportingExperiments.length === 0) {
+      diagnostics.push(
+        `${relativePath}: Promotion requires supporting Completed Experiments`,
+      );
+    }
+    for (const identity of record.supportingExperiments) {
+      if (!isIdentityOfType(identity, 'experiment')) {
+        diagnostics.push(
+          `${relativePath}: supporting_experiments must contain Experiment identities`,
+        );
+      }
+    }
+    return record;
   });
 }
 
@@ -521,12 +622,7 @@ function readCurations(
   return curations;
 }
 
-function validateRecipe(
-  source: SourceRecord,
-  entry: LibraryEntry,
-  inventories: InventoryRow[],
-  diagnostics: string[],
-): void {
+function validateRecipe(source: SourceRecord, diagnostics: string[]): void {
   for (const key of Object.keys(source.data)) {
     if (!RECIPE_FRONTMATTER.has(key)) {
       diagnostics.push(
@@ -562,14 +658,6 @@ function validateRecipe(
     );
   }
   validatePhases(source, basis, diagnostics);
-  if (
-    !isUnpublishedRecipe(source.relativePath) &&
-    !isApprovedRecipe(entry, inventories)
-  ) {
-    diagnostics.push(
-      `${source.relativePath}: recipe is not admitted by an exact approved inventory row`,
-    );
-  }
 }
 
 function isUnpublishedRecipe(relativePath: string): boolean {
@@ -1124,6 +1212,278 @@ function isApprovedRecipe(
       row.version === entry.version &&
       row.disposition === 'retain-canonical',
   );
+}
+
+function isPromotedRecipe(
+  entry: LibraryEntry,
+  promotions: PromotionRecord[],
+): boolean {
+  return promotions.some(
+    (promotion) =>
+      promotion.recipe === entry.identity &&
+      promotion.version === entry.version,
+  );
+}
+
+function validatePromotions(
+  promotions: PromotionRecord[],
+  sources: SourceRecord[],
+  canonicalRecipes: Map<string, LibraryEntry>,
+  recipeVersions: Map<string, LibraryEntry>,
+  inventories: InventoryRow[],
+  diagnostics: string[],
+): void {
+  const byExactVersion = new Map<string, PromotionRecord>();
+  const experiments = new Map(
+    sources
+      .filter((source) =>
+        source.relativePath.startsWith(`experiments${path.sep}`),
+      )
+      .flatMap((source) => {
+        const identity = stringValue(source.data.identity);
+        return identity ? [[identity, source] as const] : [];
+      }),
+  );
+
+  for (const promotion of promotions) {
+    if (!promotion.recipe || promotion.version === undefined) {
+      continue;
+    }
+    const exactVersion = `${promotion.recipe}@${promotion.version}`;
+    if (byExactVersion.has(exactVersion)) {
+      diagnostics.push(
+        `${promotion.filePath}: multiple Promotion Records admit ${exactVersion}`,
+      );
+      continue;
+    }
+    byExactVersion.set(exactVersion, promotion);
+    const canonical = canonicalRecipes.get(promotion.recipe);
+    if (!canonical || canonical.version !== promotion.version) {
+      diagnostics.push(
+        `${promotion.filePath}: Promotion must admit the current Canonical Recipe ${exactVersion}`,
+      );
+    }
+    const seenExperiments = new Set<string>();
+    for (const identity of promotion.supportingExperiments) {
+      if (seenExperiments.has(identity)) {
+        diagnostics.push(
+          `${promotion.filePath}: supporting_experiments repeats ${identity}`,
+        );
+        continue;
+      }
+      seenExperiments.add(identity);
+      const experiment = experiments.get(identity);
+      const subject = experiment?.data.primary_subject;
+      if (
+        experiment?.data.status !== 'completed' ||
+        !isExperimentSubject(subject) ||
+        subject.type !== 'recipe-version' ||
+        subject.recipe !== promotion.recipe ||
+        subject.version !== promotion.version
+      ) {
+        diagnostics.push(
+          `${promotion.filePath}: supporting Experiment ${identity} must be Completed evidence for exact whole Recipe Version ${exactVersion}`,
+        );
+      }
+    }
+  }
+
+  for (const canonical of canonicalRecipes.values()) {
+    if (
+      !isApprovedRecipe(canonical, inventories) &&
+      !byExactVersion.has(`${canonical.identity}@${canonical.version}`)
+    ) {
+      diagnostics.push(
+        `${canonical.sourcePath}: Canonical Recipe requires an exact Promotion Record or approved grandfathering row`,
+      );
+    }
+  }
+
+  validatePromotionHistory(
+    promotions,
+    sources,
+    canonicalRecipes,
+    recipeVersions,
+    inventories,
+    diagnostics,
+  );
+}
+
+function validatePromotionHistory(
+  promotions: PromotionRecord[],
+  sources: SourceRecord[],
+  canonicalRecipes: Map<string, LibraryEntry>,
+  recipeVersions: Map<string, LibraryEntry>,
+  inventories: InventoryRow[],
+  diagnostics: string[],
+): void {
+  const previousRoot = process.env.CULINARY_LIBRARY_PREVIOUS_ROOT;
+  if (!previousRoot || !fs.existsSync(previousRoot)) {
+    if (promotions.length > 0) {
+      diagnostics.push(
+        'records/promotions: prior revision is required to validate Promotion history',
+      );
+    }
+    return;
+  }
+  const previousDiagnostics: string[] = [];
+  const previousSources = readSourceRecords(previousRoot, previousDiagnostics);
+  if (previousDiagnostics.length > 0) {
+    diagnostics.push(
+      ...previousDiagnostics.map(
+        (diagnostic) => `previous revision: ${diagnostic}`,
+      ),
+    );
+    return;
+  }
+  const previousCanonical = new Map<string, SourceRecord>(
+    previousSources
+      .filter(
+        (source) =>
+          source.relativePath.startsWith(`recipes${path.sep}`) &&
+          !isUnpublishedRecipe(source.relativePath),
+      )
+      .flatMap((source) => {
+        const identity = stringValue(source.data.identity);
+        const version = positiveInteger(source.data.version);
+        return identity && version
+          ? [[`${identity}@${version}`, source] as const]
+          : [];
+      }),
+  );
+  const previousDrafts = new Set(
+    previousSources
+      .filter((source) =>
+        source.relativePath.startsWith(`recipes${path.sep}drafts${path.sep}`),
+      )
+      .flatMap((source) => {
+        const identity = stringValue(source.data.identity);
+        const version = positiveInteger(source.data.version);
+        return identity && version ? [`${identity}@${version}`] : [];
+      }),
+  );
+
+  for (const canonical of canonicalRecipes.values()) {
+    const exactVersion = `${canonical.identity}@${canonical.version}`;
+    const isPromoted = promotions.some(
+      (promotion) =>
+        promotion.recipe === canonical.identity &&
+        promotion.version === canonical.version,
+    );
+    const predecessor = [...previousCanonical.entries()].find(
+      ([exactVersion]) => exactVersion.startsWith(`${canonical.identity}@`),
+    );
+    if (!predecessor) {
+      if (isPromoted && !previousDrafts.has(exactVersion)) {
+        diagnostics.push(
+          `${canonical.sourcePath}: promoted Recipe Version ${exactVersion} was not a prior Recipe Draft`,
+        );
+      }
+      continue;
+    }
+    const [previousExactVersion, previousSource] = predecessor;
+    if (previousExactVersion === `${canonical.identity}@${canonical.version}`) {
+      continue;
+    }
+    if (!previousDrafts.has(`${canonical.identity}@${canonical.version}`)) {
+      diagnostics.push(
+        `${canonical.sourcePath}: promoted Recipe Version ${canonical.identity}@${canonical.version} was not a prior Recipe Draft`,
+      );
+    }
+    const historical = recipeVersions.get(previousExactVersion);
+    if (
+      !historical ||
+      !historical.sourcePath.startsWith(
+        `recipes${path.sep}superseded${path.sep}`,
+      )
+    ) {
+      diagnostics.push(
+        `${canonical.sourcePath}: Promotion must preserve predecessor ${previousExactVersion} as a Superseded Recipe Version`,
+      );
+    } else {
+      const currentSource = sources.find(
+        (source) => source.relativePath === historical.sourcePath,
+      );
+      if (
+        !currentSource ||
+        recipeFingerprint(currentSource) !== recipeFingerprint(previousSource)
+      ) {
+        diagnostics.push(
+          `${historical.sourcePath}: Superseded Recipe Version ${previousExactVersion} is immutable`,
+        );
+      }
+    }
+  }
+
+  for (const inventory of inventories) {
+    const exactVersion = `${inventory.identity}@${inventory.version}`;
+    if (
+      inventory.disposition === 'retain-canonical' &&
+      canonicalRecipes.has(inventory.identity) &&
+      !previousCanonical.has(exactVersion)
+    ) {
+      diagnostics.push(
+        `records/migrations: grandfathering exemption ${exactVersion} was not an existing Canonical Recipe in the prior revision`,
+      );
+    }
+  }
+
+  for (const experiment of previousSources) {
+    if (
+      !experiment.relativePath.startsWith(`experiments${path.sep}`) ||
+      experiment.data.status !== 'completed' ||
+      !isExperimentSubject(experiment.data.primary_subject)
+    ) {
+      continue;
+    }
+    const subject = experiment.data.primary_subject;
+    if (
+      subject.type !== 'recipe-version' &&
+      subject.type !== 'ingredient-use'
+    ) {
+      continue;
+    }
+    const exactVersion = `${subject.recipe}@${subject.version}`;
+    const priorRecipe = previousSources.find(
+      (source) => recipeVersionIdentityFromSource(source) === exactVersion,
+    );
+    const currentRecipe = recipeVersions.get(exactVersion);
+    const targetsDraft = priorRecipe?.relativePath.startsWith(
+      `recipes${path.sep}drafts${path.sep}`,
+    );
+    if (
+      (subject.type === 'ingredient-use' || targetsDraft) &&
+      priorRecipe &&
+      currentRecipe
+    ) {
+      const currentSource = sources.find(
+        (source) => source.relativePath === currentRecipe.sourcePath,
+      );
+      if (
+        currentSource &&
+        recipeFingerprint(currentSource) !== recipeFingerprint(priorRecipe)
+      ) {
+        diagnostics.push(
+          `${currentSource.relativePath}: Recipe Draft ${exactVersion} changed after completed evidence; Culinary Changes require a new Recipe Draft version`,
+        );
+      }
+    }
+  }
+}
+
+function recipeVersionIdentityFromSource(
+  source: SourceRecord,
+): string | undefined {
+  if (!source.relativePath.startsWith(`recipes${path.sep}`)) {
+    return undefined;
+  }
+  const identity = stringValue(source.data.identity);
+  const version = positiveInteger(source.data.version);
+  return identity && version ? `${identity}@${version}` : undefined;
+}
+
+function recipeFingerprint(source: SourceRecord): string {
+  return stableJson({ body: source.body, data: source.data });
 }
 
 function referencesIn(body: string, startLine = 1): ContentReference[] {

@@ -206,7 +206,10 @@ approved_on: 2026-09-11
 
   it('rejects a reference to an unavailable exact Recipe Version with its source and line', () => {
     const root = copyPilotLibrary();
-    const sourcePath = path.join(root, 'recipes/2026-02-19 - Singapore Chicken Rice.md');
+    const sourcePath = path.join(
+      root,
+      'recipes/2026-02-19 - Singapore Chicken Rice.md',
+    );
     fs.writeFileSync(
       sourcePath,
       `${fs.readFileSync(sourcePath, 'utf8')}\nSee [an unavailable version](ref:recipe/singapore-chicken-rice@2).\n`,
@@ -278,8 +281,12 @@ Establish the approved ingredient subject.
     const library = loadLibrary(root);
 
     expect(library.recipes).toHaveLength(1);
-    expect(renderContent(library.recipes[0]?.body ?? '', library)).toContain('See next version.');
-    expect(renderContent(library.recipes[0]?.body ?? '', library)).not.toContain('href="/recipes/pilot-chicken/"');
+    expect(renderContent(library.recipes[0]?.body ?? '', library)).toContain(
+      'See next version.',
+    );
+    expect(
+      renderContent(library.recipes[0]?.body ?? '', library),
+    ).not.toContain('href="/recipes/pilot-chicken/"');
   });
 
   it('accepts alias merges and candidate retirements without publishing either record', () => {
@@ -365,6 +372,82 @@ decided_on: 2026-09-11
       recipes: 1,
       techniques: 4,
     });
+  });
+
+  it('admits a complete exact-version Promotion Record without treating it as automated Curation', () => {
+    const previousRoot = copyPilotLibrary();
+    const previousCanonicalPath = path.join(
+      previousRoot,
+      'recipes/2026-02-19 - Singapore Chicken Rice.md',
+    );
+    fs.mkdirSync(path.join(previousRoot, 'recipes/drafts'), {
+      recursive: true,
+    });
+    fs.writeFileSync(
+      path.join(previousRoot, 'recipes/drafts/singapore-chicken-rice@2.md'),
+      fs
+        .readFileSync(previousCanonicalPath, 'utf8')
+        .replace('version: 1', 'version: 2'),
+    );
+    const root = copyPilotLibrary();
+    const canonicalPath = path.join(
+      root,
+      'recipes/2026-02-19 - Singapore Chicken Rice.md',
+    );
+    const versionOne = fs.readFileSync(canonicalPath, 'utf8');
+    fs.mkdirSync(path.join(root, 'recipes/superseded'), { recursive: true });
+    fs.writeFileSync(
+      path.join(root, 'recipes/superseded/singapore-chicken-rice@1.md'),
+      versionOne,
+    );
+    fs.writeFileSync(
+      canonicalPath,
+      versionOne.replace('version: 1', 'version: 2'),
+    );
+    fs.mkdirSync(path.join(root, 'experiments'), { recursive: true });
+    fs.writeFileSync(
+      path.join(root, 'experiments/2026-09-11 - Promotion trial.md'),
+      completedExperiment(
+        'experiment/promotion-trial',
+        '  type: recipe-version\n  recipe: recipe/singapore-chicken-rice\n  version: 2',
+      ),
+    );
+    fs.mkdirSync(path.join(root, 'records/promotions'), { recursive: true });
+    fs.writeFileSync(
+      path.join(root, 'records/promotions/singapore-chicken-rice@2.md'),
+      `---
+record_type: promotion
+recipe: recipe/singapore-chicken-rice
+version: 2
+supporting_experiments:
+  - experiment/promotion-trial
+accepted_by: "Fixture Curator"
+accepted_on: 2026-09-11
+---
+
+## Rationale
+
+The result is accepted for this fixture only.
+
+## Known Shortcomings
+
+The fixture preserves the accepted limitation.
+`,
+    );
+
+    const priorRoot = process.env.CULINARY_LIBRARY_PREVIOUS_ROOT;
+    process.env.CULINARY_LIBRARY_PREVIOUS_ROOT = previousRoot;
+    try {
+      expect(loadLibrary(root).recipes).toMatchObject([
+        { identity: 'recipe/singapore-chicken-rice', version: 2 },
+      ]);
+    } finally {
+      if (priorRoot) {
+        process.env.CULINARY_LIBRARY_PREVIOUS_ROOT = priorRoot;
+      } else {
+        delete process.env.CULINARY_LIBRARY_PREVIOUS_ROOT;
+      }
+    }
   });
 
   it('rejects wrong reference types and contract violations in the approved source', () => {
