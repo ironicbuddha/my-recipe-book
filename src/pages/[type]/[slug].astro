@@ -1,0 +1,35 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import { loadLibrary, renderContent } from '../../lib/library';
+
+export function getStaticPaths() {
+  const library = loadLibrary();
+  return library.knowledge.map((entry) => ({
+    params: { slug: entry.identity.split('/')[1], type: `${entry.type}s` },
+    props: {
+      entry,
+      html: renderContent(entry.body, library),
+    },
+  }));
+}
+
+const { entry, html } = Astro.props;
+---
+
+<SiteLayout title={`${entry.title} | Modernist Recipe Book`} description={`Curated ${entry.type} Knowledge Note.`}>
+  <section class="page-header page-header--tight">
+    <p class="eyebrow">{entry.type}</p>
+    <h1>{entry.title}</h1>
+  </section>
+  <article class="recipe-sheet">
+    <div class="recipe-body" set:html={html} />
+    {entry.backlinks.length > 0 && (
+      <section aria-label="Referenced by">
+        <h2>Referenced by</h2>
+        <ul>
+          {entry.backlinks.map((identity) => <li>{identity}</li>)}
+        </ul>
+      </section>
+    )}
+  </article>
+</SiteLayout>

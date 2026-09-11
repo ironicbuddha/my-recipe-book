@@ -1,15 +1,16 @@
 ---
-title: "Chicken Fat"
-date: 2026-02-19
-type: ingredient
-version: v1.0
-generated: true
+title: "Chicken fat"
+identity: ingredient/chicken-fat
 ---
 
-# Ingredient: Chicken Fat
+## Functional Profile
 
-## Purpose
-Auto-generated link node. Expand with composition, handling, and behavior.
+Rendered chicken fat carries chicken flavour and coats grains with fat before liquid cooking.
 
-## Used In Recipes
-- [[2026-02-19 - Singapore Chicken Rice]]
+## Handling
+
+Warm gently and keep below the point where accompanying aromatics brown.
+
+## Culinary Use
+
+Use as the primary fat for aromatic rice.

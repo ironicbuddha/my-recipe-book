@@ -1,19 +1,16 @@
 ---
-title: "Lime Juice"
-date: 2026-02-19
-type: ingredient
-version: v1.0
-generated: true
+title: "Lime juice"
+identity: ingredient/lime-juice
 ---
 
-# Ingredient: Lime Juice
+## Functional Profile
 
-## Purpose
-Auto-generated link node. Expand with composition, handling, and behavior.
+Fresh lime juice supplies acidity and volatile citrus aroma.
 
-## Used In Recipes
-- [[2026-02-19 - Bún bò nướng (Grilled Beef with Rice Noodles)]]
-- [[2026-02-19 - Bún chả (Hanoi Grilled Pork with Noodles)]]
-- [[2026-02-19 - Grilled Pork Al Pastor]]
-- [[2026-02-19 - Lao Herbaceous Chicken Noodle Soup]]
-- [[2026-02-19 - Singapore Chicken Rice]]
+## Handling
+
+Juice shortly before use and avoid extended high heat that dulls the aroma.
+
+## Culinary Use
+
+Balance the chilli sauce.

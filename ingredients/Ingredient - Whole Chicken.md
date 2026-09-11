@@ -1,17 +1,16 @@
 ---
-title: "Whole Chicken"
-date: 2026-02-19
-type: ingredient
-version: v1.0
-generated: true
+title: "Whole chicken"
+identity: ingredient/whole-chicken
 ---
 
-# Ingredient: Whole Chicken
+## Functional Profile
 
-## Purpose
-Auto-generated link node. Expand with composition, handling, and behavior.
+An intact chicken provides lean meat, collagen-rich skin and bones, and flavour for a poaching liquid.
 
-## Used In Recipes
-- [[2026-02-19 - Fried Master Stock Chicken]]
-- [[2026-02-19 - Lao Herbaceous Chicken Noodle Soup]]
-- [[2026-02-19 - Singapore Chicken Rice]]
+## Handling
+
+Keep chilled, clean with the stated salt treatment, and cook promptly after preparation.
+
+## Culinary Use
+
+Use as the recipe mass basis; poach it for serving meat and stock.

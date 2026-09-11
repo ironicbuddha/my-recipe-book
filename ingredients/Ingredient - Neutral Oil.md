@@ -1,20 +1,16 @@
 ---
-title: "Neutral Oil"
-date: 2026-02-19
-type: ingredient
-version: v1.0
-generated: true
+title: "Neutral oil"
+identity: ingredient/neutral-oil
 ---
 
-# Ingredient: Neutral Oil
+## Functional Profile
 
-## Purpose
-Auto-generated link node. Expand with composition, handling, and behavior.
+A mild-flavoured oil transfers heat and carries aromatic compounds without adding a competing flavour.
 
-## Used In Recipes
-- [[2026-02-19 - Bún bò nướng (Grilled Beef with Rice Noodles)]]
-- [[2026-02-19 - Bún chả (Hanoi Grilled Pork with Noodles)]]
-- [[2026-02-19 - Grilled Pork Al Pastor]]
-- [[2026-02-19 - Hibachi Pork with Charred Greens & Spanish Green Sauce]]
-- [[2026-02-19 - Lao Herbaceous Chicken Noodle Soup]]
-- [[2026-02-19 - Singapore Chicken Rice]]
+## Handling
+
+Choose an oil suitable for the stated temperature and heat it only to the required point.
+
+## Culinary Use
+
+Use as the chicken-fat substitute and to bloom the ginger sauce.
