@@ -152,15 +152,28 @@ approved_on: 2026-09-11
     expect(() => loadLibrary(root)).toThrow(/Pilot Chicken.md.*missing reference.*ingredient\/missing-chicken/is);
   });
 
-  it('keeps resolved drafts out of routes and renders them without anchors', () => {
+  it('rejects a reference to an unavailable exact Recipe Version with its source and line', () => {
+    const root = copyPilotLibrary();
+    const sourcePath = path.join(root, 'recipes/2026-02-19 - Singapore Chicken Rice.md');
+    fs.writeFileSync(
+      sourcePath,
+      `${fs.readFileSync(sourcePath, 'utf8')}\nSee [an unavailable version](ref:recipe/singapore-chicken-rice@2).\n`,
+    );
+
+    expect(() => loadLibrary(root)).toThrow(
+      /recipes\/2026-02-19 - Singapore Chicken Rice.md:\d+: missing Recipe Version recipe\/singapore-chicken-rice@2/is,
+    );
+  });
+
+  it('keeps an unpublished exact Recipe Version out of routes and renders it without an anchor', () => {
     const root = writeLibrary({
       'recipes/2026-09-11 - Pilot Chicken.md': recipe.replace(
         'Pilot dish.',
-        'See [next version](ref:recipe/pilot-chicken-draft@2).',
+        'See [next version](ref:recipe/pilot-chicken@2).',
       ),
-      'recipes/drafts/pilot-chicken-draft@2.md': recipe
-        .replaceAll('pilot-chicken', 'pilot-chicken-draft')
+      'recipes/drafts/pilot-chicken@2.md': recipe
         .replace('Pilot chicken', 'Pilot chicken draft')
+        .replace('version: 1', 'version: 2')
         .replace('Pilot dish.', 'Unpublished draft.'),
       'ingredients/Ingredient - Chicken.md': `---
 title: "Chicken"
@@ -214,7 +227,11 @@ Establish the approved ingredient subject.
 
     expect(library.recipes).toHaveLength(1);
     expect(renderContent(library.recipes[0]?.body ?? '', library)).toContain('See next version.');
-    expect(renderContent(library.recipes[0]?.body ?? '', library)).not.toContain('pilot-chicken-draft/');
+    expect(renderContent(library.recipes[0]?.body ?? '', library)).not.toContain('href="/recipes/pilot-chicken/"');
+  });
+
+  it('permits repeated Ingredient Uses in separate Phases', () => {
+    expect(() => loadLibrary(copyPilotLibrary())).not.toThrow();
   });
 
   it('projects the approved pilot through the recipe-facing public helpers', () => {

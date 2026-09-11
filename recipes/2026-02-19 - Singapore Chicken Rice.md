@@ -61,6 +61,8 @@ Poached chicken, aromatic chicken-fat rice, broth, and two sauces.
 | chicken-fat | [Chicken fat](ref:ingredient/chicken-fat) | 16 g | 2.00% | Coat the rice and aromatics. |
 | neutral-oil-substitute | [Neutral oil](ref:ingredient/neutral-oil) | 16 g | 2.00% | Use only as the chicken-fat substitute. |
 | garlic | [Garlic](ref:ingredient/garlic) | 10 g | 1.25% | Gently warm with the rice fat. |
+| fresh-ginger | [Fresh ginger](ref:ingredient/fresh-ginger) | 15 g | 1.88% | Warm with the rice fat. |
+| salt | [Salt](ref:ingredient/salt) | 3 g | 0.38% | Season the rice with the stock. |
 
 ### Technique Applications
 
@@ -94,6 +96,14 @@ Poached chicken, aromatic chicken-fat rice, broth, and two sauces.
 
 ## PHASE C — MAKE GINGER SAUCE
 
+### Ingredient Uses
+
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| neutral-oil | [Neutral oil](ref:ingredient/neutral-oil) | 40 g | 5.00% | Heat until shimmering. |
+| fresh-ginger | [Fresh ginger](ref:ingredient/fresh-ginger) | 30 g | 3.75% | Grate for the sauce. |
+| salt | [Salt](ref:ingredient/salt) | 3 g | 0.38% | Season the sauce. |
+
 ### Technique Applications
 
 | Technique | Controls | Purpose |
@@ -122,6 +132,9 @@ Poached chicken, aromatic chicken-fat rice, broth, and two sauces.
 | Key | Ingredient | Quantity | Scaling | Use |
 | --- | --- | --- | --- | --- |
 | fresh-red-chili | [Fresh red chili](ref:ingredient/fresh-red-chili) | 20 g | 2.50% | Provide heat and colour. |
+| garlic | [Garlic](ref:ingredient/garlic) | 10 g | 1.25% | Balance the chilli with savoury heat. |
+| fresh-ginger | [Fresh ginger](ref:ingredient/fresh-ginger) | 10 g | 1.25% | Add fresh aromatic heat. |
+| salt | [Salt](ref:ingredient/salt) | 2 g | 0.25% | Season the blended sauce. |
 | lime-juice | [Lime juice](ref:ingredient/lime-juice) | 20 ml | 2.50% | Balance the sauce with acidity. |
 | sugar | [Sugar](ref:ingredient/sugar) | 4 g | 0.50% | Round the heat, acid, and salt. |
 
@@ -149,6 +162,7 @@ Poached chicken, aromatic chicken-fat rice, broth, and two sauces.
 | Key | Ingredient | Quantity | Scaling | Use |
 | --- | --- | --- | --- | --- |
 | cucumber | [Cucumber](ref:ingredient/cucumber) | 100 g | 12.50% | Slice as a cool accompaniment. |
+| spring-onion | [Spring onion](ref:ingredient/spring-onion) | 30 g | 3.75% | Serve in the broth. |
 | fresh-coriander | [Fresh coriander](ref:ingredient/fresh-coriander) | 10 g | 1.25% | Use optionally as a fragrant finish. |
 | light-soy-sauce | [Light soy sauce](ref:ingredient/light-soy-sauce) | 10 ml | 1.25% | Use optionally as a savoury drizzle. |
 

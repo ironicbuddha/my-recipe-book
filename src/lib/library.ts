@@ -4,7 +4,13 @@ import path from 'node:path';
 import matter from 'gray-matter';
 import MarkdownIt from 'markdown-it';
 
-export const CONTENT_TYPES = ['recipe', 'ingredient', 'technique', 'principle', 'experiment'] as const;
+export const CONTENT_TYPES = [
+  'recipe',
+  'ingredient',
+  'technique',
+  'principle',
+  'experiment',
+] as const;
 export type ContentType = (typeof CONTENT_TYPES)[number];
 export type KnowledgeType = Exclude<ContentType, 'recipe' | 'experiment'>;
 
@@ -12,6 +18,7 @@ type Frontmatter = Record<string, unknown>;
 
 type SourceRecord = {
   body: string;
+  bodyStartLine: number;
   data: Frontmatter;
   filePath: string;
   relativePath: string;
@@ -39,7 +46,10 @@ export type LibraryEntry = {
   yieldText?: string;
 };
 
-export type RecipeEntry = Omit<LibraryEntry, 'date' | 'href' | 'type' | 'version'> & {
+export type RecipeEntry = Omit<
+  LibraryEntry,
+  'date' | 'href' | 'type' | 'version'
+> & {
   date: string;
   href: string;
   type: 'recipe';
@@ -67,9 +77,19 @@ const DIRECTORY_TYPE: Record<string, ContentType> = {
   recipes: 'recipe',
   techniques: 'technique',
 };
-const IDENTITY_PATTERN = /^(recipe|ingredient|technique|principle|experiment)\/[a-z0-9]+(?:-[a-z0-9]+)*$/u;
-const REF_PATTERN = /\[[^\]]+\]\(ref:([a-z]+\/[a-z0-9]+(?:-[a-z0-9]+)*)(?:@(\d+))?\)/gu;
-const RECIPE_FRONTMATTER = new Set(['title', 'date', 'identity', 'version', 'yield', 'scale_basis', 'tags']);
+const IDENTITY_PATTERN =
+  /^(recipe|ingredient|technique|principle|experiment)\/[a-z0-9]+(?:-[a-z0-9]+)*$/u;
+const REF_PATTERN =
+  /\[[^\]]+\]\(ref:([a-z]+\/[a-z0-9]+(?:-[a-z0-9]+)*)(?:@(\d+))?\)/gu;
+const RECIPE_FRONTMATTER = new Set([
+  'title',
+  'date',
+  'identity',
+  'version',
+  'yield',
+  'scale_basis',
+  'tags',
+]);
 const DISH_TAGS = new Set([
   'dish-main-course',
   'dish-side-dish',
@@ -81,16 +101,20 @@ const DISH_TAGS = new Set([
 ]);
 
 /** Loads the eligible, identity-addressed publication library from a repository root. */
-export function loadLibrary(root = process.env.CULINARY_LIBRARY_ROOT ?? process.cwd()): CulinaryLibrary {
+export function loadLibrary(
+  root = process.env.CULINARY_LIBRARY_ROOT ?? process.cwd(),
+): CulinaryLibrary {
   const diagnostics: string[] = [];
   const sourceRecords = readSourceRecords(root, diagnostics);
   const inventories = readInventories(root, diagnostics);
   const curations = readCurations(root, diagnostics);
-  const entriesByIdentity = new Map<string, LibraryEntry>();
+  const entriesByIdentity = new Map<string, LibraryEntry[]>();
+  const recipeVersions = new Map<string, LibraryEntry>();
   const eligible: LibraryEntry[] = [];
 
   for (const source of sourceRecords) {
-    const expectedType = DIRECTORY_TYPE[source.relativePath.split(path.sep)[0] ?? ''];
+    const expectedType =
+      DIRECTORY_TYPE[source.relativePath.split(path.sep)[0] ?? ''];
     const identity = stringValue(source.data.identity);
 
     // Legacy files deliberately have no stable identity and are excluded until migration.
@@ -100,18 +124,36 @@ export function loadLibrary(root = process.env.CULINARY_LIBRARY_ROOT ?? process.
 
     validateIdentity(source, expectedType, identity, diagnostics);
     const entry = makeEntry(source, expectedType, identity, diagnostics);
-    if (entriesByIdentity.has(identity)) {
-      diagnostics.push(`${source.relativePath}: identity ${identity} is not unique`);
+    const identityEntries = entriesByIdentity.get(identity) ?? [];
+    if (expectedType === 'recipe') {
+      const exactIdentity = recipeVersionIdentity(entry);
+      if (exactIdentity && recipeVersions.has(exactIdentity)) {
+        diagnostics.push(
+          `${source.relativePath}: Recipe Version ${exactIdentity} is not unique`,
+        );
+        continue;
+      }
+      if (exactIdentity) {
+        recipeVersions.set(exactIdentity, entry);
+      }
+    } else if (identityEntries.length > 0) {
+      diagnostics.push(
+        `${source.relativePath}: identity ${identity} is not unique`,
+      );
       continue;
     }
-    entriesByIdentity.set(identity, entry);
+    entriesByIdentity.set(identity, [...identityEntries, entry]);
 
     if (expectedType === 'recipe') {
       validateRecipe(source, entry, inventories, diagnostics);
       if (isApprovedRecipe(entry, inventories)) {
         eligible.push(entry);
       }
-    } else if (expectedType === 'ingredient' || expectedType === 'technique' || expectedType === 'principle') {
+    } else if (
+      expectedType === 'ingredient' ||
+      expectedType === 'technique' ||
+      expectedType === 'principle'
+    ) {
       validateKnowledge(source, entry, curations, diagnostics);
       if (curations.has(identity)) {
         eligible.push(entry);
@@ -120,7 +162,7 @@ export function loadLibrary(root = process.env.CULINARY_LIBRARY_ROOT ?? process.
   }
 
   validateInventorySources(inventories, diagnostics);
-  validateReferences(entriesByIdentity, eligible, diagnostics);
+  validateReferences(entriesByIdentity, recipeVersions, diagnostics);
 
   if (diagnostics.length > 0) {
     throw new ContentValidationError(diagnostics);
@@ -150,11 +192,17 @@ export function loadLibrary(root = process.env.CULINARY_LIBRARY_ROOT ?? process.
       type: 'recipe' as const,
       version: entry.version ?? 0,
     }))
-    .sort((left, right) => right.date.localeCompare(left.date) || left.title.localeCompare(right.title));
+    .sort(
+      (left, right) =>
+        right.date.localeCompare(left.date) ||
+        left.title.localeCompare(right.title),
+    );
 
   return {
     entries: withBacklinks,
-    knowledge: withBacklinks.filter((entry) => entry.type !== 'recipe' && entry.type !== 'experiment'),
+    knowledge: withBacklinks.filter(
+      (entry) => entry.type !== 'recipe' && entry.type !== 'experiment',
+    ),
     recipes,
     root,
   };
@@ -162,17 +210,27 @@ export function loadLibrary(root = process.env.CULINARY_LIBRARY_ROOT ?? process.
 
 export function renderContent(body: string, library: CulinaryLibrary): string {
   const published = new Set(library.entries.map((entry) => entry.identity));
+  const publishedRecipeVersions = new Set(
+    library.entries
+      .filter((entry) => entry.type === 'recipe')
+      .flatMap((entry) => (entry.version === undefined ? [] : [`${entry.identity}@${entry.version}`])),
+  );
   const renderer = new MarkdownIt({ linkify: true, typographer: true });
   renderer.renderer.rules.table_open = (tokens, index, options, _env, self) => {
-    const header = tokens.slice(index, index + 8).find((token) => token.type === 'inline')?.content;
+    const header = tokens
+      .slice(index, index + 8)
+      .find((token) => token.type === 'inline')?.content;
     if (header === 'Symptom') {
       tokens[index]?.attrJoin('class', 'table--failure-modes');
     }
     return self.renderToken(tokens, index, options);
   };
-  const resolved = body.replace(REF_PATTERN, (match, identity: string) => {
+  const resolved = body.replace(REF_PATTERN, (match, identity: string, version: string | undefined) => {
     const label = match.slice(1, match.indexOf(']'));
-    return published.has(identity) ? `[${label}](${routeFor(identity)})` : label;
+    const isPublished = version === undefined ? published.has(identity) : publishedRecipeVersions.has(`${identity}@${version}`);
+    return isPublished
+      ? `[${label}](${routeFor(identity)})`
+      : label;
   });
   return renderer.render(resolved);
 }
@@ -183,7 +241,10 @@ export function routeFor(identity: string): string {
   return `/${plural}/${key}/`;
 }
 
-function readSourceRecords(root: string, diagnostics: string[]): SourceRecord[] {
+function readSourceRecords(
+  root: string,
+  diagnostics: string[],
+): SourceRecord[] {
   const rootRecords = Object.keys(DIRECTORY_TYPE).flatMap((directory) => {
     const absoluteDirectory = path.join(root, directory);
     if (!fs.existsSync(absoluteDirectory)) {
@@ -192,27 +253,55 @@ function readSourceRecords(root: string, diagnostics: string[]): SourceRecord[] 
 
     return fs
       .readdirSync(absoluteDirectory, { withFileTypes: true })
-      .filter((item) => item.isFile() && item.name.endsWith('.md') && item.name !== 'README.md')
+      .filter(
+        (item) =>
+          item.isFile() &&
+          item.name.endsWith('.md') &&
+          item.name !== 'README.md',
+      )
       .sort((left, right) => left.name.localeCompare(right.name))
-      .map((item) => readRecord(root, path.join(directory, item.name), diagnostics));
+      .map((item) =>
+        readRecord(root, path.join(directory, item.name), diagnostics),
+      );
   });
-  const recipeHistory = ['recipes/drafts', 'recipes/superseded'].flatMap((directory) => {
-    const absoluteDirectory = path.join(root, directory);
-    return fs.existsSync(absoluteDirectory)
-      ? readMarkdownFiles(absoluteDirectory).map((filePath) => readRecord(root, path.relative(root, filePath), diagnostics))
-      : [];
-  });
+  const recipeHistory = ['recipes/drafts', 'recipes/superseded'].flatMap(
+    (directory) => {
+      const absoluteDirectory = path.join(root, directory);
+      return fs.existsSync(absoluteDirectory)
+        ? readMarkdownFiles(absoluteDirectory).map((filePath) =>
+            readRecord(root, path.relative(root, filePath), diagnostics),
+          )
+        : [];
+    },
+  );
   return [...rootRecords, ...recipeHistory];
 }
 
-function readRecord(root: string, relativePath: string, diagnostics: string[]): SourceRecord {
+function readRecord(
+  root: string,
+  relativePath: string,
+  diagnostics: string[],
+): SourceRecord {
   const filePath = path.join(root, relativePath);
   try {
-    const parsed = matter(fs.readFileSync(filePath, 'utf8'));
-    return { body: parsed.content.trim(), data: parsed.data, filePath, relativePath };
+    const raw = fs.readFileSync(filePath, 'utf8');
+    const parsed = matter(raw);
+    const body = parsed.content.trim();
+    const firstBodyCharacter = parsed.content.search(/\S/u);
+    const bodyStart =
+      raw.indexOf(parsed.content) + Math.max(firstBodyCharacter, 0);
+    return {
+      body,
+      bodyStartLine: raw.slice(0, bodyStart).split(/\r?\n/u).length,
+      data: parsed.data,
+      filePath,
+      relativePath,
+    };
   } catch (error) {
-    diagnostics.push(`${relativePath}: cannot parse frontmatter (${messageOf(error)})`);
-    return { body: '', data: {}, filePath, relativePath };
+    diagnostics.push(
+      `${relativePath}: cannot parse frontmatter (${messageOf(error)})`,
+    );
+    return { body: '', bodyStartLine: 1, data: {}, filePath, relativePath };
   }
 }
 
@@ -228,7 +317,9 @@ function makeEntry(
   }
   const version = positiveInteger(source.data.version);
   if (type === 'recipe' && version === undefined) {
-    diagnostics.push(`${source.relativePath}: recipe version must be a positive integer`);
+    diagnostics.push(
+      `${source.relativePath}: recipe version must be a positive integer`,
+    );
   }
   const date = dateValue(source.data.date);
   if (type === 'recipe' && !date) {
@@ -236,12 +327,14 @@ function makeEntry(
   }
 
   return {
-    basisIngredient: isRecord(source.data.scale_basis) ? stringValue(source.data.scale_basis.ingredient) : undefined,
+    basisIngredient: isRecord(source.data.scale_basis)
+      ? stringValue(source.data.scale_basis.ingredient)
+      : undefined,
     backlinks: [],
     body: source.body,
     date,
     identity,
-    references: referencesIn(source.body),
+    references: referencesIn(source.body, source.bodyStartLine),
     sourcePath: source.relativePath,
     tags: stringArray(source.data.tags),
     title: title ?? '',
@@ -258,15 +351,24 @@ function validateIdentity(
   diagnostics: string[],
 ): void {
   if (!IDENTITY_PATTERN.test(identity)) {
-    diagnostics.push(`${source.relativePath}: identity ${identity} violates the typed identity rule`);
+    diagnostics.push(
+      `${source.relativePath}: identity ${identity} violates the typed identity rule`,
+    );
     return;
   }
   if (!identity.startsWith(`${expectedType}/`)) {
-    diagnostics.push(`${source.relativePath}: identity ${identity} has type mismatched with ${expectedType}`);
+    diagnostics.push(
+      `${source.relativePath}: identity ${identity} has type mismatched with ${expectedType}`,
+    );
   }
 }
 
-type InventoryRow = { identity: string; source: string; version: number; disposition: string };
+type InventoryRow = {
+  identity: string;
+  source: string;
+  version: number;
+  disposition: string;
+};
 
 function readInventories(root: string, diagnostics: string[]): InventoryRow[] {
   const directory = path.join(root, 'records/migrations');
@@ -277,26 +379,45 @@ function readInventories(root: string, diagnostics: string[]): InventoryRow[] {
     const relativePath = path.relative(root, filePath);
     const source = readRecord(root, relativePath, diagnostics);
     if (source.data.record_type !== 'grandfathering-inventory') {
-      diagnostics.push(`${relativePath}: migration record must declare grandfathering-inventory`);
+      diagnostics.push(
+        `${relativePath}: migration record must declare grandfathering-inventory`,
+      );
       return [];
     }
-    if (!stringValue(source.data.approved_by) || !dateValue(source.data.approved_on)) {
-      diagnostics.push(`${relativePath}: grandfathering inventory needs Curator and approval date`);
+    if (
+      !stringValue(source.data.approved_by) ||
+      !dateValue(source.data.approved_on)
+    ) {
+      diagnostics.push(
+        `${relativePath}: grandfathering inventory needs Curator and approval date`,
+      );
     }
     return parseTable(source.body.split(/^## /mu)[0] ?? '').flatMap((row) => {
       const sourceFile = unquoteCode(row['Source file']);
       const identity = row.Recipe;
       const version = positiveIntegerText(row['Mapped version']);
-      if (!sourceFile || !identity || version === undefined || !row.Disposition) {
-        diagnostics.push(`${relativePath}: invalid grandfathering inventory row`);
+      if (
+        !sourceFile ||
+        !identity ||
+        version === undefined ||
+        !row.Disposition
+      ) {
+        diagnostics.push(
+          `${relativePath}: invalid grandfathering inventory row`,
+        );
         return [];
       }
-      return [{ identity, source: sourceFile, version, disposition: row.Disposition }];
+      return [
+        { identity, source: sourceFile, version, disposition: row.Disposition },
+      ];
     });
   });
 }
 
-function readCurations(root: string, diagnostics: string[]): Map<string, SourceRecord> {
+function readCurations(
+  root: string,
+  diagnostics: string[],
+): Map<string, SourceRecord> {
   const directory = path.join(root, 'records/curation');
   if (!fs.existsSync(directory)) {
     return new Map();
@@ -314,11 +435,15 @@ function readCurations(root: string, diagnostics: string[]): Map<string, SourceR
       !stringValue(record.data.decided_by) ||
       !dateValue(record.data.decided_on)
     ) {
-      diagnostics.push(`${relativePath}: invalid establish-subject Curation record`);
+      diagnostics.push(
+        `${relativePath}: invalid establish-subject Curation record`,
+      );
       continue;
     }
     if (curations.has(subject)) {
-      diagnostics.push(`${relativePath}: multiple Curation records establish ${subject}`);
+      diagnostics.push(
+        `${relativePath}: multiple Curation records establish ${subject}`,
+      );
       continue;
     }
     curations.set(subject, record);
@@ -334,32 +459,54 @@ function validateRecipe(
 ): void {
   for (const key of Object.keys(source.data)) {
     if (!RECIPE_FRONTMATTER.has(key)) {
-      diagnostics.push(`${source.relativePath}: recipe frontmatter field ${key} is not allowed`);
+      diagnostics.push(
+        `${source.relativePath}: recipe frontmatter field ${key} is not allowed`,
+      );
     }
   }
   const tags = stringArray(source.data.tags);
   const dishTags = tags.filter((tag) => DISH_TAGS.has(tag));
   if (dishTags.length !== 1) {
-    diagnostics.push(`${source.relativePath}: recipe requires exactly one approved dish-* tag`);
+    diagnostics.push(
+      `${source.relativePath}: recipe requires exactly one approved dish-* tag`,
+    );
   }
   const basis = source.data.scale_basis;
-  if (!isRecord(basis) || !isIdentityOfType(basis.ingredient, 'ingredient') || !positiveNumber(basis.quantity_g)) {
-    diagnostics.push(`${source.relativePath}: scale_basis requires ingredient identity and positive quantity_g`);
+  if (
+    !isRecord(basis) ||
+    !isIdentityOfType(basis.ingredient, 'ingredient') ||
+    !positiveNumber(basis.quantity_g)
+  ) {
+    diagnostics.push(
+      `${source.relativePath}: scale_basis requires ingredient identity and positive quantity_g`,
+    );
   }
   if (/^#\s+/mu.test(source.body)) {
-    diagnostics.push(`${source.relativePath}: recipe body must not contain an H1`);
+    diagnostics.push(
+      `${source.relativePath}: recipe body must not contain an H1`,
+    );
   }
   if (/^##\s+(STRUCTURAL NOTES|Structural Notes)/mu.test(source.body)) {
-    diagnostics.push(`${source.relativePath}: Structural Notes are not part of the recipe contract`);
+    diagnostics.push(
+      `${source.relativePath}: Structural Notes are not part of the recipe contract`,
+    );
   }
   validatePhases(source, basis, diagnostics);
-  if (!isUnpublishedRecipe(source.relativePath) && !isApprovedRecipe(entry, inventories)) {
-    diagnostics.push(`${source.relativePath}: recipe is not admitted by an exact approved inventory row`);
+  if (
+    !isUnpublishedRecipe(source.relativePath) &&
+    !isApprovedRecipe(entry, inventories)
+  ) {
+    diagnostics.push(
+      `${source.relativePath}: recipe is not admitted by an exact approved inventory row`,
+    );
   }
 }
 
 function isUnpublishedRecipe(relativePath: string): boolean {
-  return relativePath.startsWith(`recipes${path.sep}drafts${path.sep}`) || relativePath.startsWith(`recipes${path.sep}superseded${path.sep}`);
+  return (
+    relativePath.startsWith(`recipes${path.sep}drafts${path.sep}`) ||
+    relativePath.startsWith(`recipes${path.sep}superseded${path.sep}`)
+  );
 }
 
 function validateKnowledge(
@@ -369,29 +516,45 @@ function validateKnowledge(
   diagnostics: string[],
 ): void {
   if (!curations.has(entry.identity)) {
-    diagnostics.push(`${source.relativePath}: Knowledge Note lacks an establish-subject Curation record`);
+    diagnostics.push(
+      `${source.relativePath}: Knowledge Note lacks an establish-subject Curation record`,
+    );
   }
   const requiredSections: Record<KnowledgeType, string[]> = {
     ingredient: ['## Functional Profile', '## Handling', '## Culinary Use'],
-    principle: ['## Core Mechanism', '## Conditions and Controls', '## Culinary Implications'],
+    principle: [
+      '## Core Mechanism',
+      '## Conditions and Controls',
+      '## Culinary Implications',
+    ],
     technique: ['## Purpose', '## Controls', '## Process', '## Failure Modes'],
   };
   for (const heading of requiredSections[entry.type as KnowledgeType]) {
     if (!source.body.includes(heading)) {
-      diagnostics.push(`${source.relativePath}: Knowledge Note requires ${heading}`);
+      diagnostics.push(
+        `${source.relativePath}: Knowledge Note requires ${heading}`,
+      );
     }
   }
 }
 
-function validatePhases(source: SourceRecord, basis: unknown, diagnostics: string[]): void {
+function validatePhases(
+  source: SourceRecord,
+  basis: unknown,
+  diagnostics: string[],
+): void {
   const phaseStarts = [...source.body.matchAll(/^## (PHASE [A-Z]+ — .+)$/gmu)];
   if (phaseStarts.length === 0) {
-    diagnostics.push(`${source.relativePath}: recipe requires semantic PHASE headings`);
+    diagnostics.push(
+      `${source.relativePath}: recipe requires semantic PHASE headings`,
+    );
     return;
   }
   const phaseNames = new Set<string>();
-  const seenIngredientReferences = new Set<string>();
-  const producedOutputs = new Map<string, { consumers: number; phase: string }>();
+  const producedOutputs = new Map<
+    string,
+    { consumers: number; phase: string }
+  >();
   let basisTotal = 0;
   for (let index = 0; index < phaseStarts.length; index += 1) {
     const match = phaseStarts[index];
@@ -401,72 +564,118 @@ function validatePhases(source: SourceRecord, basis: unknown, diagnostics: strin
     }
     phaseNames.add(phaseName);
     const start = (match?.index ?? 0) + (match?.[0].length ?? 0);
-    const end = phaseStarts[index + 1]?.index ?? source.body.search(/^## FAILURE MODES$/mu);
+    const end =
+      phaseStarts[index + 1]?.index ??
+      source.body.search(/^## FAILURE MODES$/mu);
     const phase = source.body.slice(start, end < 0 ? source.body.length : end);
-    const headings = [...phase.matchAll(/^### (.+)$/gmu)].map((heading) => heading[1] ?? '');
-    const knownOrder = ['Ingredient Uses', 'Technique Applications', 'Principles', 'Method', 'Phase Outputs Used', 'Phase Outputs'];
+    const headings = [...phase.matchAll(/^### (.+)$/gmu)].map(
+      (heading) => heading[1] ?? '',
+    );
+    const knownOrder = [
+      'Ingredient Uses',
+      'Technique Applications',
+      'Principles',
+      'Method',
+      'Phase Outputs Used',
+      'Phase Outputs',
+    ];
     let last = -1;
     for (const heading of headings) {
       const position = knownOrder.indexOf(heading);
       if (position < 0) {
-        diagnostics.push(`${source.relativePath}: ${phaseName} has unsupported subsection ${heading}`);
+        diagnostics.push(
+          `${source.relativePath}: ${phaseName} has unsupported subsection ${heading}`,
+        );
       } else if (position < last) {
-        diagnostics.push(`${source.relativePath}: ${phaseName} subsections are out of semantic order`);
+        diagnostics.push(
+          `${source.relativePath}: ${phaseName} subsections are out of semantic order`,
+        );
       } else {
         last = position;
       }
     }
-    if (!headings.includes('Method') || !/^### Method\s*\n\s*\n1\. /mu.test(phase)) {
-      diagnostics.push(`${source.relativePath}: ${phaseName} requires an ordered imperative Method`);
+    if (
+      !headings.includes('Method') ||
+      !/^### Method\s*\n\s*\n1\. /mu.test(phase)
+    ) {
+      diagnostics.push(
+        `${source.relativePath}: ${phaseName} requires an ordered imperative Method`,
+      );
     }
     const uses = tableAfter(phase, 'Ingredient Uses');
+    const phaseIngredientReferences = new Set<string>();
     for (const row of uses) {
       const ingredient = referenceIdentity(row.Ingredient);
       const quantity = row.Quantity?.trim();
       if (!ingredient || !quantity) {
-        diagnostics.push(`${source.relativePath}: ${phaseName} Ingredient Use needs ingredient and quantity`);
+        diagnostics.push(
+          `${source.relativePath}: ${phaseName} Ingredient Use needs ingredient and quantity`,
+        );
         continue;
       }
       if (!ingredient.startsWith('ingredient/')) {
-        diagnostics.push(`${source.relativePath}: ${phaseName} Ingredient Uses requires an ingredient target, not ${ingredient}`);
+        diagnostics.push(
+          `${source.relativePath}: ${phaseName} Ingredient Uses requires an ingredient target, not ${ingredient}`,
+        );
       }
-      if (seenIngredientReferences.has(ingredient)) {
-        diagnostics.push(`${source.relativePath}: ${phaseName} repeats Ingredient Use ${ingredient}; introduce it at first use only`);
+      if (phaseIngredientReferences.has(ingredient)) {
+        diagnostics.push(
+          `${source.relativePath}: ${phaseName} repeats Ingredient Use ${ingredient}`,
+        );
       }
-      seenIngredientReferences.add(ingredient);
+      phaseIngredientReferences.add(ingredient);
       const numeric = quantity.match(/^(\d+(?:\.\d+)?) (g|ml)$/u);
       if (!numeric && quantity !== 'As needed') {
-        diagnostics.push(`${source.relativePath}: ${phaseName} quantity ${quantity} must use g, ml, or As needed`);
+        diagnostics.push(
+          `${source.relativePath}: ${phaseName} quantity ${quantity} must use g, ml, or As needed`,
+        );
       }
       const scale = row.Scaling?.trim();
       if (numeric && isRecord(basis) && positiveNumber(basis.quantity_g)) {
-        const expected = scalingFor(numeric[1] ?? '0', String(basis.quantity_g));
+        const expected = scalingFor(
+          numeric[1] ?? '0',
+          String(basis.quantity_g),
+        );
         if (scale !== expected) {
-          diagnostics.push(`${source.relativePath}: ${phaseName} scaling ${scale ?? ''} must be ${expected}`);
+          diagnostics.push(
+            `${source.relativePath}: ${phaseName} scaling ${scale ?? ''} must be ${expected}`,
+          );
         }
         if (ingredient === basis.ingredient && numeric[2] === 'g') {
           basisTotal += Number(numeric[1]);
         }
       } else if (quantity === 'As needed' && scale !== '—') {
-        diagnostics.push(`${source.relativePath}: ${phaseName} As needed quantity must use — scaling`);
+        diagnostics.push(
+          `${source.relativePath}: ${phaseName} As needed quantity must use — scaling`,
+        );
       }
     }
-    for (const reference of referencesIn(sectionAfter(phase, 'Technique Applications'))) {
+    for (const reference of referencesIn(
+      sectionAfter(phase, 'Technique Applications'),
+    )) {
       if (!reference.identity.startsWith('technique/')) {
-        diagnostics.push(`${source.relativePath}: ${phaseName} Technique Applications requires a technique target, not ${reference.identity}`);
+        diagnostics.push(
+          `${source.relativePath}: ${phaseName} Technique Applications requires a technique target, not ${reference.identity}`,
+        );
       }
     }
     for (const reference of referencesIn(sectionAfter(phase, 'Principles'))) {
       if (!reference.identity.startsWith('principle/')) {
-        diagnostics.push(`${source.relativePath}: ${phaseName} Principles requires a principle target, not ${reference.identity}`);
+        diagnostics.push(
+          `${source.relativePath}: ${phaseName} Principles requires a principle target, not ${reference.identity}`,
+        );
       }
     }
     for (const output of tableAfter(phase, 'Phase Outputs')) {
       const key = output.Key?.trim();
       if (!key || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/u.test(key)) {
-        diagnostics.push(`${source.relativePath}: ${phaseName} Phase Output requires a lowercase local key`);
+        diagnostics.push(
+          `${source.relativePath}: ${phaseName} Phase Output requires a lowercase local key`,
+        );
       } else if (producedOutputs.has(key)) {
-        diagnostics.push(`${source.relativePath}: ${phaseName} duplicates Phase Output ${key}`);
+        diagnostics.push(
+          `${source.relativePath}: ${phaseName} duplicates Phase Output ${key}`,
+        );
       } else {
         producedOutputs.set(key, { consumers: 0, phase: phaseName });
       }
@@ -475,56 +684,100 @@ function validatePhases(source: SourceRecord, basis: unknown, diagnostics: strin
       const key = outputUse.Use?.match(/`([a-z0-9]+(?:-[a-z0-9]+)*)`/u)?.[1];
       const producer = key ? producedOutputs.get(key) : undefined;
       if (!key || !producer) {
-        diagnostics.push(`${source.relativePath}: ${phaseName} Phase Outputs Used must name an earlier local key`);
+        diagnostics.push(
+          `${source.relativePath}: ${phaseName} Phase Outputs Used must name an earlier local key`,
+        );
       } else {
         producer.consumers += 1;
       }
     }
   }
-  if (!/^## FAILURE MODES\s*\n\s*\n\| Symptom \| Likely cause \| Corrective action \|/mu.test(source.body)) {
-    diagnostics.push(`${source.relativePath}: recipe requires a Failure Modes table`);
+  if (
+    !/^## FAILURE MODES\s*\n\s*\n\| Symptom \| Likely cause \| Corrective action \|/mu.test(
+      source.body,
+    )
+  ) {
+    diagnostics.push(
+      `${source.relativePath}: recipe requires a Failure Modes table`,
+    );
   }
-  if (isRecord(basis) && positiveNumber(basis.quantity_g) && basisTotal !== Number(basis.quantity_g)) {
-    diagnostics.push(`${source.relativePath}: scale basis Ingredient Uses total ${basisTotal} g, not ${basis.quantity_g} g`);
+  if (
+    isRecord(basis) &&
+    positiveNumber(basis.quantity_g) &&
+    basisTotal !== Number(basis.quantity_g)
+  ) {
+    diagnostics.push(
+      `${source.relativePath}: scale basis Ingredient Uses total ${basisTotal} g, not ${basis.quantity_g} g`,
+    );
   }
   for (const [key, output] of producedOutputs) {
     if (output.consumers === 0) {
-      diagnostics.push(`${source.relativePath}: Phase Output ${key} from ${output.phase} has no later consumer`);
+      diagnostics.push(
+        `${source.relativePath}: Phase Output ${key} from ${output.phase} has no later consumer`,
+      );
     }
   }
 }
 
-function validateInventorySources(inventories: InventoryRow[], diagnostics: string[]): void {
+function validateInventorySources(
+  inventories: InventoryRow[],
+  diagnostics: string[],
+): void {
   const seen = new Set<string>();
   for (const inventory of inventories) {
     const exactVersion = `${inventory.identity}@${inventory.version}`;
     if (seen.has(exactVersion)) {
-      diagnostics.push(`records/migrations: multiple inventory rows admit ${exactVersion}`);
+      diagnostics.push(
+        `records/migrations: multiple inventory rows admit ${exactVersion}`,
+      );
     }
     seen.add(exactVersion);
   }
 }
 
 function validateReferences(
-  entries: Map<string, LibraryEntry>,
-  eligible: LibraryEntry[],
+  entriesByIdentity: Map<string, LibraryEntry[]>,
+  recipeVersions: Map<string, LibraryEntry>,
   diagnostics: string[],
 ): void {
-  const eligibleIdentities = new Set(eligible.map((entry) => entry.identity));
-  for (const entry of eligible) {
-    for (const reference of entry.references) {
-      const target = entries.get(reference.identity);
-      if (!target) {
-        diagnostics.push(`${entry.sourcePath}:${reference.line}: missing reference ${reference.identity}`);
-      } else if (!eligibleIdentities.has(target.identity)) {
-        // Unpublished targets are valid graph edges, but must never be anchors.
-        continue;
+  for (const entries of entriesByIdentity.values()) {
+    for (const entry of entries) {
+      for (const reference of entry.references) {
+        const targets = entriesByIdentity.get(reference.identity) ?? [];
+        if (targets.length === 0) {
+          diagnostics.push(
+            `${entry.sourcePath}:${reference.line}: missing reference ${reference.identity}`,
+          );
+        } else if (
+          reference.version !== undefined &&
+          !reference.identity.startsWith('recipe/')
+        ) {
+          diagnostics.push(
+            `${entry.sourcePath}:${reference.line}: exact version reference ${reference.identity}@${reference.version} must target a Recipe`,
+          );
+        } else if (
+          reference.version !== undefined &&
+          !recipeVersions.has(`${reference.identity}@${reference.version}`)
+        ) {
+          diagnostics.push(
+            `${entry.sourcePath}:${reference.line}: missing Recipe Version ${reference.identity}@${reference.version}`,
+          );
+        }
       }
     }
   }
 }
 
-function isApprovedRecipe(entry: LibraryEntry, inventories: InventoryRow[]): boolean {
+function recipeVersionIdentity(entry: LibraryEntry): string | undefined {
+  return entry.version === undefined
+    ? undefined
+    : `${entry.identity}@${entry.version}`;
+}
+
+function isApprovedRecipe(
+  entry: LibraryEntry,
+  inventories: InventoryRow[],
+): boolean {
   return inventories.some(
     (row) =>
       row.identity === entry.identity &&
@@ -533,21 +786,28 @@ function isApprovedRecipe(entry: LibraryEntry, inventories: InventoryRow[]): boo
   );
 }
 
-function referencesIn(body: string): ContentReference[] {
+function referencesIn(body: string, startLine = 1): ContentReference[] {
   return [...body.matchAll(REF_PATTERN)].map((match) => ({
     identity: match[1] ?? '',
-    line: body.slice(0, match.index).split(/\r?\n/u).length,
+    line: startLine + body.slice(0, match.index).split(/\r?\n/u).length - 1,
     version: match[2] ? Number(match[2]) : undefined,
   }));
 }
 
-function tableAfter(markdown: string, heading: string): Record<string, string>[] {
-  const match = markdown.match(new RegExp(`^### ${heading}\\s*\\n\\s*\\n((?:\\|.*\\n?)+)`, 'mu'));
+function tableAfter(
+  markdown: string,
+  heading: string,
+): Record<string, string>[] {
+  const match = markdown.match(
+    new RegExp(`^### ${heading}\\s*\\n\\s*\\n((?:\\|.*\\n?)+)`, 'mu'),
+  );
   return match ? parseTable(match[1] ?? '') : [];
 }
 
 function sectionAfter(markdown: string, heading: string): string {
-  const match = markdown.match(new RegExp(`^### ${heading}\\s*\\n([\\s\\S]*?)(?=^### |$)`, 'mu'));
+  const match = markdown.match(
+    new RegExp(`^### ${heading}\\s*\\n([\\s\\S]*?)(?=^### |$)`, 'mu'),
+  );
   return match?.[1] ?? '';
 }
 
@@ -561,7 +821,9 @@ function parseTable(markdown: string): Record<string, string>[] {
   const headers = splitTableLine(lines[0] ?? '');
   return lines.slice(2).map((line) => {
     const values = splitTableLine(line);
-    return Object.fromEntries(headers.map((header, index) => [header, values[index] ?? '']));
+    return Object.fromEntries(
+      headers.map((header, index) => [header, values[index] ?? '']),
+    );
   });
 }
 
@@ -584,7 +846,8 @@ function scalingFor(quantity: string, basis: string): string {
   const basisScale = 10n ** BigInt(decimalPlaces(basis));
   const scaledNumerator = numerator * basisScale * 10_000n;
   const scaledDenominator = denominator * quantityScale;
-  const hundredths = (scaledNumerator + scaledDenominator / 2n) / scaledDenominator;
+  const hundredths =
+    (scaledNumerator + scaledDenominator / 2n) / scaledDenominator;
   return `${(hundredths / 100n).toString()}.${(hundredths % 100n).toString().padStart(2, '0')}%`;
 }
 
@@ -614,16 +877,25 @@ function stringValue(value: unknown): string | undefined {
 }
 
 function dateValue(value: unknown): string | undefined {
-  const candidate = value instanceof Date ? value.toISOString().slice(0, 10) : stringValue(value);
-  return candidate && /^\d{4}-\d{2}-\d{2}$/u.test(candidate) ? candidate : undefined;
+  const candidate =
+    value instanceof Date
+      ? value.toISOString().slice(0, 10)
+      : stringValue(value);
+  return candidate && /^\d{4}-\d{2}-\d{2}$/u.test(candidate)
+    ? candidate
+    : undefined;
 }
 
 function positiveInteger(value: unknown): number | undefined {
-  return typeof value === 'number' && Number.isInteger(value) && value > 0 ? value : undefined;
+  return typeof value === 'number' && Number.isInteger(value) && value > 0
+    ? value
+    : undefined;
 }
 
 function positiveIntegerText(value: string | undefined): number | undefined {
-  return value && /^\d+$/u.test(value) ? positiveInteger(Number(value)) : undefined;
+  return value && /^\d+$/u.test(value)
+    ? positiveInteger(Number(value))
+    : undefined;
 }
 
 function positiveNumber(value: unknown): value is number {
@@ -631,11 +903,17 @@ function positiveNumber(value: unknown): value is number {
 }
 
 function stringArray(value: unknown): string[] {
-  return Array.isArray(value) ? value.filter((item): item is string => typeof item === 'string') : [];
+  return Array.isArray(value)
+    ? value.filter((item): item is string => typeof item === 'string')
+    : [];
 }
 
 function isIdentityOfType(value: unknown, type: ContentType): boolean {
-  return typeof value === 'string' && value.startsWith(`${type}/`) && IDENTITY_PATTERN.test(value);
+  return (
+    typeof value === 'string' &&
+    value.startsWith(`${type}/`) &&
+    IDENTITY_PATTERN.test(value)
+  );
 }
 
 function isRecord(value: unknown): value is Record<string, unknown> {
