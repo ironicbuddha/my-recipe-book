@@ -1,19 +1,16 @@
 ---
 title: "Water"
-date: 2026-02-19
-type: ingredient
-version: v1.0
-generated: true
+identity: ingredient/water
 ---
 
-# Ingredient: Water
+## Functional Profile
 
-## Purpose
-Auto-generated link node. Expand with composition, handling, and behavior.
+Potable water provides the cooking medium and extracts soluble flavour from chicken and aromatics.
 
-## Used In Recipes
-- [[2026-02-19 - Bún bò nướng (Grilled Beef with Rice Noodles)]]
-- [[2026-02-19 - Bún chả (Hanoi Grilled Pork with Noodles)]]
-- [[2026-02-19 - Cowboy Beans]]
-- [[2026-02-19 - Fried Master Stock Chicken]]
-- [[2026-02-19 - Singapore Chicken Rice]]
+## Handling
+
+Use clean water and maintain enough volume to cover food during the specified cooking period.
+
+## Culinary Use
+
+Use as the poaching medium that becomes the chicken stock.

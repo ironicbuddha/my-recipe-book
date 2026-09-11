@@ -1,15 +1,16 @@
 ---
-title: "Aromatic Fat Infusion"
-date: 2026-02-19
-type: principle
-version: v1.0
-generated: true
+title: "Aromatic fat infusion"
+identity: principle/aromatic-fat-infusion
 ---
 
-# Principle: Aromatic Fat Infusion
+## Core Mechanism
 
-## Purpose
-Auto-generated link node. Expand with mechanism, control levers, and evidence.
+Warm fat dissolves and carries aroma compounds from ingredients such as ginger and garlic into the finished food.
 
-## Used In Recipes
-- [[2026-02-19 - Singapore Chicken Rice]]
+## Conditions and Controls
+
+Use enough heat to release aroma but not so much that delicate aromatics brown or burn.
+
+## Culinary Implications
+
+Ginger and garlic perfume rice and ginger sauce more evenly when their aromas first enter warm fat.

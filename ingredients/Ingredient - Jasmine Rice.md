@@ -1,15 +1,16 @@
 ---
-title: "Jasmine Rice"
-date: 2026-02-19
-type: ingredient
-version: v1.0
-generated: true
+title: "Jasmine rice"
+identity: ingredient/jasmine-rice
 ---
 
-# Ingredient: Jasmine Rice
+## Functional Profile
 
-## Purpose
-Auto-generated link node. Expand with composition, handling, and behavior.
+Jasmine rice is a fragrant long-grain rice that absorbs seasoned liquid and cooks to tender, separate grains.
 
-## Used In Recipes
-- [[2026-02-19 - Singapore Chicken Rice]]
+## Handling
+
+Rinse until mostly clear and measure its cooking liquid consistently.
+
+## Culinary Use
+
+Use as the stock-cooked rice component of the dish.

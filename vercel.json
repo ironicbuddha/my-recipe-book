@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/recipes/2026-02-19-singapore-chicken-rice/",
+      "destination": "/recipes/singapore-chicken-rice/",
+      "permanent": true
+    }
+  ]
+}

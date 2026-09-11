@@ -1,215 +1,176 @@
 ---
 title: "Singapore Chicken Rice (Hainanese)"
 date: 2026-02-19
-type: recipe
-version: v1.0
+identity: recipe/singapore-chicken-rice
+version: 1
 yield: "2 portions"
-portions: 2
-target_internal_temperature_c: null
-primary_ingredient: "whole chicken"
-primary_mass_g: 800
-techniques: ["poaching", "ice bath shocking", "fat-toasted rice", "sauce emulsion"]
-principles: ["collagen extraction", "starch absorption", "aromatic fat infusion", "thermal shock for skin texture"]
-tags: ["dish-main-course", "singaporean", "chinese", "chicken", "rice", "tender"]
-cssclass: modernist-recipe
+scale_basis:
+  ingredient: ingredient/whole-chicken
+  quantity_g: 800
+tags: [dish-main-course, singaporean, chinese, chicken, rice, tender]
 ---
 
-# SINGAPORE CHICKEN RICE (HAINANESE)
+Poached chicken, aromatic chicken-fat rice, broth, and two sauces.
 
-Yield: 2 portions
-Portions: 2
-Target Serving Temperature: room temperature (chicken), hot (rice, broth)
+## PHASE A — POACH CHICKEN AND MAKE STOCK
 
-Primary Ingredient Basis: `800 g whole chicken = 100%`
+### Ingredient Uses
 
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| chicken | [Whole chicken](ref:ingredient/whole-chicken) | 800 g | 100.00% | Clean and poach breast-side down. |
+| ginger | [Fresh ginger](ref:ingredient/fresh-ginger) | 40 g | 5.00% | Smash for the poaching liquid. |
+| spring-onion | [Spring onion](ref:ingredient/spring-onion) | 60 g | 7.50% | Add to the poaching liquid. |
+| salt | [Salt](ref:ingredient/salt) | 12 g | 1.50% | Rub over the chicken, then season the liquid. |
+| water | [Water](ref:ingredient/water) | 2000 ml | 250.00% | Cover the chicken for poaching. |
 
----
+### Technique Applications
 
-## PHASE A — CHICKEN (POACH & STOCK)
-
----
-
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Whole chicken | 800 g | 100.00% |
->> | Fresh ginger, smashed | 40 g | 5.00% |
->> | Spring onions | 60 g | 7.50% |
->> | Salt (for cleaning + seasoning) | 12 g | 1.50% |
->> | Water (for poaching) | ~2000 g | — |
->
->> [!col-right]
->> ### Method
->> 1. Rub chicken thoroughly with salt (1.5%), rinse clean.
->> 2. Bring water to boil with ginger and spring onions.
->> 3. Lower chicken in (breast down).
->> 4. Return to boil, then reduce to bare simmer.
->> 5. Simmer 30–35 min.
->> 6. Turn heat off; rest in liquid 15 min.
->> 7. Transfer to ice bath 5 min.
->> 8. Reserve poaching liquid (this is your stock).
-
-
----
-
-## PHASE B — RICE
-
----
-
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Jasmine rice | 200 g | 25.00% |
->> | Chicken fat (or neutral oil) | 16 g | 2.00% |
->> | Garlic | 10 g | 1.25% |
->> | Fresh ginger | 15 g | 1.90% |
->> | Reserved chicken stock | 300 g | 37.50% |
->> | Salt | 3 g | 0.40% |
->
->> [!col-right]
->> ### Method
->> 1. Rinse rice until mostly clear.
->> 2. Gently heat fat; add garlic and ginger (no browning).
->> 3. Add rice; coat in fat.
->> 4. Add stock and salt.
->> 5. Cook covered (standard absorption method).
->> 6. Rest 10 min. Fluff gently.
-
-
----
-
-## PHASE C — GINGER SAUCE
-
----
-
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Fresh ginger, very finely grated | 30 g | 3.75% |
->> | Neutral oil | 40 g | 5.00% |
->> | Salt | 3 g | 0.40% |
->
->> [!col-right]
->> ### Method
->> 1. Heat oil until shimmering (~180 C).
->> 2. Pour over grated ginger and salt.
->> 3. Stir. Adjust seasoning.
-
-
----
-
-## PHASE D — CHILLI SAUCE
-
----
-
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Fresh red chillies | 20 g | 2.50% |
->> | Garlic | 10 g | 1.25% |
->> | Fresh ginger | 10 g | 1.25% |
->> | Lime juice | 20 g | 2.50% |
->> | Chicken stock | 20 g | 2.50% |
->> | Sugar | 4 g | 0.50% |
->> | Salt | 2 g | 0.25% |
->
->> [!col-right]
->> ### Method
->> 1. Blend all ingredients smooth.
->> 2. Adjust heat, acid, salt.
->> 3. Texture should be spoonable, not watery.
-
-
----
-
-## PHASE E — ASSEMBLE & SERVE
-
----
-
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Cucumber, sliced | 100 g | 12.50% |
->> | Fresh coriander (optional) | 10 g | 1.25% |
->> | Light soy sauce (optional drizzle) | 10 g | 1.25% |
->> | Extra broth from stock | as desired | — |
->
->> [!col-right]
->> ### Method
->> 1. Serve chicken at room temperature.
->> 2. Chop through bone.
->> 3. Spoon a little stock over sliced chicken for gloss.
->> 4. Rice should be fragrant but not greasy.
->> 5. Broth on the side with spring onion.
-
-## RELATED LINKS
-<!-- AUTO-GENERATED:RELATED-LINKS:START -->
-
-### Techniques
-- [[Technique - Fat Toasted Rice]]
-- [[Technique - Ice Bath Shocking]]
-- [[Technique - Poaching]]
-- [[Technique - Sauce Emulsion]]
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [Poaching](ref:technique/poaching) | Bare simmer; 30–35 min, then 15 min off heat | Cook the chicken gently while producing stock. |
+| [Ice-bath shocking](ref:technique/ice-bath-shocking) | Ice water; 5 min | Stop carryover cooking and set the skin. |
 
 ### Principles
-- [[Principle - Aromatic Fat Infusion]]
-- [[Principle - Collagen Extraction]]
-- [[Principle - Starch Absorption]]
-- [[Principle - Thermal Shock For Skin Texture]]
 
-### Ingredients
-- [[Ingredient - Chicken Fat]]
-- [[Ingredient - Chicken Stock]]
-- [[Ingredient - Cucumber]]
-- [[Ingredient - Extra Broth From Stock]]
-- [[Ingredient - Fresh Coriander]]
-- [[Ingredient - Fresh Ginger]]
-- [[Ingredient - Fresh Red Chili]]
-- [[Ingredient - Garlic]]
-- [[Ingredient - Jasmine Rice]]
-- [[Ingredient - Light Soy Sauce]]
-- [[Ingredient - Lime Juice]]
-- [[Ingredient - Neutral Oil]]
-- [[Ingredient - Salt]]
-- [[Ingredient - Spring Onion]]
-- [[Ingredient - Sugar]]
-- [[Ingredient - Water]]
-- [[Ingredient - Whole Chicken]]
+- [Collagen extraction](ref:principle/collagen-extraction) — Gentle heat enriches the poaching liquid without aggressively tightening the meat.
+- [Thermal shock for skin texture](ref:principle/thermal-shock-for-skin-texture) — Immediate chilling firms the chicken skin.
 
-<!-- AUTO-GENERATED:RELATED-LINKS:END -->
+### Method
 
-## STRUCTURAL NOTES
+1. Rub the chicken with the salt, then rinse it clean.
+2. Bring the water, ginger, and spring onion to a boil.
+3. Lower the chicken breast-side down, return the liquid to a boil, then reduce it to a bare simmer.
+4. Simmer for 30–35 min, turn off the heat, and rest the chicken in the liquid for 15 min.
+5. Transfer the chicken to an ice bath for 5 min and reserve the poaching liquid.
 
-- The ice bath after poaching shocks the skin, tightening collagen into a firm gel layer that gives Hainanese chicken its characteristic silky-bouncy texture.
-- Resting the chicken in residual heat (heat off, lid on) provides gentle carryover cooking without tightening muscle fibres.
-- Cooking rice in chicken stock with rendered fat is the entire point — plain water rice is a different dish.
-- The ginger sauce relies on hot oil to bloom volatile aromatics on contact. Lukewarm oil produces a flat, raw-tasting paste.
-- Chilli sauce should balance heat, acid, and sweetness — if any one dominates, the trinity of sauces loses its purpose.
+### Phase Outputs
+
+| Key | Phase Output | Description |
+| --- | --- | --- |
+| poached-chicken | Poached chicken | Chilled chicken ready to slice and serve. |
+| chicken-stock | Chicken stock | Reserved poaching liquid for rice, sauce, and broth. |
+
+## PHASE B — COOK AROMATIC RICE
+
+### Ingredient Uses
+
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| jasmine-rice | [Jasmine rice](ref:ingredient/jasmine-rice) | 200 g | 25.00% | Rinse until mostly clear. |
+| chicken-fat | [Chicken fat](ref:ingredient/chicken-fat) | 16 g | 2.00% | Coat the rice and aromatics. |
+| neutral-oil-substitute | [Neutral oil](ref:ingredient/neutral-oil) | 16 g | 2.00% | Use only as the chicken-fat substitute. |
+| garlic | [Garlic](ref:ingredient/garlic) | 10 g | 1.25% | Gently warm with the rice fat. |
+
+### Technique Applications
+
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [Fat-toasted rice](ref:technique/fat-toasted-rice) | Gentle heat; no browning | Coat each grain with aromatic fat before stock is added. |
+
+### Principles
+
+- [Aromatic fat infusion](ref:principle/aromatic-fat-infusion) — The warm fat carries ginger and garlic aroma through the rice.
+- [Starch absorption](ref:principle/starch-absorption) — Measured stock hydrates and gelatinises the rice during covered cooking.
+
+### Method
+
+1. Gently warm either the chicken fat or its neutral-oil substitute with the garlic and 15 g of the ginger from Phase A; do not brown them.
+2. Add the rice and coat it in the aromatic fat.
+3. Add 300 ml of chicken stock and 3 g of the salt from Phase A, then cook covered by the standard absorption method.
+4. Rest the rice for 10 min and fluff it gently.
+
+### Phase Outputs Used
+
+| Phase Output | Use |
+| --- | --- |
+| Chicken stock | Add 300 ml of `chicken-stock` with the rice. |
+
+### Phase Outputs
+
+| Key | Phase Output | Description |
+| --- | --- | --- |
+| chicken-rice | Chicken-fat rice | Fragrant cooked rice ready for service. |
+
+## PHASE C — MAKE GINGER SAUCE
+
+### Technique Applications
+
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [Sauce emulsion](ref:technique/sauce-emulsion) | Shimmering oil; stir immediately | Disperse the hot oil through the grated ginger. |
+
+### Principles
+
+- [Aromatic fat infusion](ref:principle/aromatic-fat-infusion) — Hot oil blooms the grated ginger on contact.
+
+### Method
+
+1. Heat 40 g of the neutral oil from Phase B until shimmering, about 180 C.
+2. Pour it over 30 g of grated ginger and 3 g of salt from Phase A, then stir and adjust seasoning.
+
+### Phase Outputs
+
+| Key | Phase Output | Description |
+| --- | --- | --- |
+| ginger-sauce | Ginger sauce | Hot-oil ginger sauce for the sliced chicken. |
+
+## PHASE D — MAKE CHILLI SAUCE
+
+### Ingredient Uses
+
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| fresh-red-chili | [Fresh red chili](ref:ingredient/fresh-red-chili) | 20 g | 2.50% | Provide heat and colour. |
+| lime-juice | [Lime juice](ref:ingredient/lime-juice) | 20 ml | 2.50% | Balance the sauce with acidity. |
+| sugar | [Sugar](ref:ingredient/sugar) | 4 g | 0.50% | Round the heat, acid, and salt. |
+
+### Method
+
+1. Blend the chili with 10 g garlic, 10 g ginger, and 2 g salt from Phase A, chicken stock, lime juice, and sugar until smooth.
+2. Adjust heat, acid, and salt until the sauce is spoonable rather than watery.
+
+### Phase Outputs Used
+
+| Phase Output | Use |
+| --- | --- |
+| Chicken stock | Add 20 ml of `chicken-stock`. |
+
+### Phase Outputs
+
+| Key | Phase Output | Description |
+| --- | --- | --- |
+| chilli-sauce | Chilli sauce | Fresh blended chilli sauce for serving. |
+
+## PHASE E — ASSEMBLE AND SERVE
+
+### Ingredient Uses
+
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| cucumber | [Cucumber](ref:ingredient/cucumber) | 100 g | 12.50% | Slice as a cool accompaniment. |
+| fresh-coriander | [Fresh coriander](ref:ingredient/fresh-coriander) | 10 g | 1.25% | Use optionally as a fragrant finish. |
+| light-soy-sauce | [Light soy sauce](ref:ingredient/light-soy-sauce) | 10 ml | 1.25% | Use optionally as a savoury drizzle. |
+
+### Method
+
+1. Serve the sliced chicken at room temperature with rice, cucumber, optional coriander, optional light soy sauce, ginger sauce, chilli sauce, and broth.
+
+### Phase Outputs Used
+
+| Phase Output | Use |
+| --- | --- |
+| Poached chicken | Chop `poached-chicken` through the bone and spoon over broth. |
+| Chicken-fat rice | Serve `chicken-rice` hot beside the chicken. |
+| Ginger sauce | Serve `ginger-sauce` beside the chicken. |
+| Chilli sauce | Serve `chilli-sauce` beside the chicken. |
+| Chicken stock | Serve remaining `chicken-stock` as broth with spring onion. |
 
 ## FAILURE MODES
 
-- Symptom: Chicken skin is flabby and gelatinous.
-- Likely cause: Ice bath skipped or too brief.
-- Corrective action: Submerge fully in ice water for a full 5 minutes immediately after poaching.
-
-- Symptom: Chicken meat is dry and stringy.
-- Likely cause: Simmered too aggressively or too long.
-- Corrective action: Maintain bare simmer (not rolling boil). Pull at 30–35 min and rest in liquid off heat.
-
-- Symptom: Rice is greasy and clumpy.
-- Likely cause: Too much fat, or garlic and ginger were browned (releasing bitter compounds).
-- Corrective action: Use 2% fat ratio. Cook aromatics gently — fragrant, not coloured.
-
-- Symptom: Ginger sauce tastes raw and harsh.
-- Likely cause: Oil was not hot enough when poured over ginger.
-- Corrective action: Oil must be shimmering (~180 C). The sizzle on contact is the bloom.
+| Symptom | Likely cause | Corrective action |
+| --- | --- | --- |
+| Flabby chicken skin | The ice bath was skipped or too brief. | Submerge the chicken fully in ice water for 5 min immediately after poaching. |
+| Dry, stringy chicken | The liquid boiled too aggressively or too long. | Hold a bare simmer, then rest the chicken off heat. |
+| Greasy, clumpy rice | Too much fat was used or the aromatics browned. | Use 2.00% fat and warm the aromatics gently without colouring them. |
+| Raw, harsh ginger sauce | The oil was too cool. | Heat the oil until shimmering before pouring it over the ginger. |

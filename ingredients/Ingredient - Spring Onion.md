@@ -1,17 +1,16 @@
 ---
-title: "Spring Onion"
-date: 2026-02-19
-type: ingredient
-version: v1.0
-generated: true
+title: "Spring onion"
+identity: ingredient/spring-onion
 ---
 
-# Ingredient: Spring Onion
+## Functional Profile
 
-## Purpose
-Auto-generated link node. Expand with composition, handling, and behavior.
+Spring onion is a mild allium that gives broth a fresh, savoury aroma.
 
-## Used In Recipes
-- [[2026-02-19 - Fried Master Stock Chicken]]
-- [[2026-02-19 - Lao Herbaceous Chicken Noodle Soup]]
-- [[2026-02-19 - Singapore Chicken Rice]]
+## Handling
+
+Rinse thoroughly and trim damaged leaves before using in liquids or as a finish.
+
+## Culinary Use
+
+Use to perfume the poaching liquid and finish the accompanying broth.

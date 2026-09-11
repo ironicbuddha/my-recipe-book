@@ -1,16 +1,16 @@
 ---
-title: "Collagen Extraction"
-date: 2026-02-19
-type: principle
-version: v1.0
-generated: true
+title: "Collagen extraction"
+identity: principle/collagen-extraction
 ---
 
-# Principle: Collagen Extraction
+## Core Mechanism
 
-## Purpose
-Auto-generated link node. Expand with mechanism, control levers, and evidence.
+Gentle moist heat converts collagen-rich connective tissue into gelatin, enriching the surrounding liquid and changing texture.
 
-## Used In Recipes
-- [[2026-02-19 - Lao Herbaceous Chicken Noodle Soup]]
-- [[2026-02-19 - Singapore Chicken Rice]]
+## Conditions and Controls
+
+Use moist heat below a violent boil and allow enough time for collagen to dissolve without over-tightening lean meat.
+
+## Culinary Implications
+
+Poaching poultry can produce a useful, gelatin-rich stock while keeping the meat tender.

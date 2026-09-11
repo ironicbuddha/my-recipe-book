@@ -15,6 +15,7 @@
     "hero-prompt": "tsx scripts/hero-prompt.ts",
     "gen-heroes": "tsx --env-file-if-exists=.env.local scripts/generate-heroes.ts",
     "typecheck": "astro check",
+    "test": "vitest run --coverage",
     "validate:content": "make validate",
     "check": "pnpm lint && pnpm typecheck && pnpm build && pnpm validate:content",
     "lint": "pnpm lint:md && pnpm lint:ts && pnpm lint:css",
@@ -41,6 +42,7 @@
     "@eslint/js": "^9.0.0",
     "@types/markdown-it": "^14.1.2",
     "@types/node": "^25.6.0",
+    "@vitest/coverage-v8": "^5.0.0",
     "eslint": "^9.0.0",
     "eslint-config-prettier": "^10.0.0",
     "globals": "^16.0.0",
@@ -53,11 +55,7 @@
     "stylelint-config-standard": "^39.0.0",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.0.0"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "sharp"
-    ]
+    "typescript-eslint": "^8.0.0",
+    "vitest": "^5.0.0"
   }
 }

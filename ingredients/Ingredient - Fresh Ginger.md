@@ -1,16 +1,16 @@
 ---
-title: "Fresh Ginger"
-date: 2026-02-19
-type: ingredient
-version: v1.0
-generated: true
+title: "Fresh ginger"
+identity: ingredient/fresh-ginger
 ---
 
-# Ingredient: Fresh Ginger
+## Functional Profile
 
-## Purpose
-Auto-generated link node. Expand with composition, handling, and behavior.
+Fresh ginger root contributes pungent, citrusy aroma that changes quickly with heat.
 
-## Used In Recipes
-- [[2026-02-19 - Singapore Chicken Rice]]
-- [[2026-02-19 - Tomato Bredie]]
+## Handling
+
+Peel only as needed; smash for stock, grate finely for sauce, and avoid browning when a fresh aroma is wanted.
+
+## Culinary Use
+
+Use in the poaching liquid, aromatic rice, and hot-oil ginger sauce.

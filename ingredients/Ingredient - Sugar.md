@@ -1,18 +1,16 @@
 ---
 title: "Sugar"
-date: 2026-02-19
-type: ingredient
-version: v1.0
-generated: true
+identity: ingredient/sugar
 ---
 
-# Ingredient: Sugar
+## Functional Profile
 
-## Purpose
-Auto-generated link node. Expand with composition, handling, and behavior.
+Sugar supplies sweetness that can round acid, salt, and chilli heat.
 
-## Used In Recipes
-- [[2026-02-19 - Bún bò nướng (Grilled Beef with Rice Noodles)]]
-- [[2026-02-19 - Bún chả (Hanoi Grilled Pork with Noodles)]]
-- [[2026-02-19 - Flapjacks (American Pancakes)]]
-- [[2026-02-19 - Singapore Chicken Rice]]
+## Handling
+
+Measure the small stated amount and dissolve or blend it completely.
+
+## Culinary Use
+
+Balance the chilli sauce.

@@ -1,15 +1,16 @@
 ---
 title: "Cucumber"
-date: 2026-02-19
-type: ingredient
-version: v1.0
-generated: true
+identity: ingredient/cucumber
 ---
 
-# Ingredient: Cucumber
+## Functional Profile
 
-## Purpose
-Auto-generated link node. Expand with composition, handling, and behavior.
+Fresh cucumber contributes cool moisture and crisp texture.
 
-## Used In Recipes
-- [[2026-02-19 - Singapore Chicken Rice]]
+## Handling
+
+Keep chilled and slice near service to retain crispness.
+
+## Culinary Use
+
+Serve sliced beside the chicken and rice.

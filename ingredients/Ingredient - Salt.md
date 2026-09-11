@@ -1,20 +1,16 @@
 ---
 title: "Salt"
-date: 2026-02-19
-type: ingredient
-version: v1.0
-generated: true
+identity: ingredient/salt
 ---
 
-# Ingredient: Salt
+## Functional Profile
 
-## Purpose
-Auto-generated link node. Expand with composition, handling, and behavior.
+Sodium chloride seasons food and moderates the perception of bitterness, sweetness, and acidity.
 
-## Used In Recipes
-- [[2026-02-19 - Grilled Pork Al Pastor]]
-- [[2026-02-19 - Italian Sausages with Puy Lentils]]
-- [[2026-02-19 - Singapore Chicken Rice]]
-- [[2026-02-19 - Spicy Korean Fried Chicken]]
-- [[2026-02-19 - Tomato Bredie]]
-- [[2026-02-19 - Traditional Greek Lentil Soup (Fakes)]]
+## Handling
+
+Measure by mass where a stated ratio controls the result and reserve final adjustment for serving.
+
+## Culinary Use
+
+Use to clean and season chicken, rice, and sauces.

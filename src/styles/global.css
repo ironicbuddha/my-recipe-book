@@ -1048,10 +1048,10 @@ code {
   text-transform: uppercase;
 }
 
-.recipe-body td:nth-child(2),
-.recipe-body td:nth-child(3),
-.recipe-body th:nth-child(2),
-.recipe-body th:nth-child(3) {
+.recipe-body table:not(.table--failure-modes) td:nth-child(2),
+.recipe-body table:not(.table--failure-modes) td:nth-child(3),
+.recipe-body table:not(.table--failure-modes) th:nth-child(2),
+.recipe-body table:not(.table--failure-modes) th:nth-child(3) {
   font-variant-numeric: tabular-nums;
   text-align: right;
   white-space: nowrap;

@@ -1,17 +1,16 @@
 ---
-title: "Light Soy Sauce"
-date: 2026-02-19
-type: ingredient
-version: v1.0
-generated: true
+title: "Light soy sauce"
+identity: ingredient/light-soy-sauce
 ---
 
-# Ingredient: Light Soy Sauce
+## Functional Profile
 
-## Purpose
-Auto-generated link node. Expand with composition, handling, and behavior.
+Light soy sauce is a fermented seasoning that adds salt, savoury depth, and colour without heavy sweetness.
 
-## Used In Recipes
-- [[2026-02-19 - Bún bò nướng (Grilled Beef with Rice Noodles)]]
-- [[2026-02-19 - Fried Master Stock Chicken]]
-- [[2026-02-19 - Singapore Chicken Rice]]
+## Handling
+
+Measure sparingly because its salt concentration varies by producer.
+
+## Culinary Use
+
+Use optionally as a savoury finishing drizzle.
