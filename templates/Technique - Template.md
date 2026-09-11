@@ -1,37 +1,22 @@
 ---
 title: ""
-date: YYYY-MM-DD
-type: technique
-version: v1.0
-tags: []
+identity: technique/example-technique
 ---
 
-# Technique: <Name>
-
 ## Purpose
-What this technique is used for.
 
-## Inputs
-- 
+Describe the culinary result this technique achieves.
 
-## Equipment
-- 
+## Controls
+
+Describe temperature, time, contact, agitation, or ratio controls as relevant.
 
 ## Process
-1. 
-2. 
-3. 
 
-## Control Variables
-- Temperature (C):
-- Time:
-- Mass/ratio:
-- Agitation/contact:
+1. Describe the reproducible method.
 
 ## Failure Modes
-- Symptom:
-- Likely cause:
-- Corrective action:
 
-## References
-- 
+| Symptom | Likely cause | Corrective action |
+| --- | --- | --- |
+|  |  |  |

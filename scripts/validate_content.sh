@@ -69,7 +69,6 @@ while IFS= read -r file; do
   check_contains "$file" '^version:' 'version field'
   check_contains "$file" 'dish-(main-course|side-dish|dessert|breakfast|appetizer|soup|sauce|snack)' 'dish type tag'
   check_contains "$file" '^## PHASE [A-Z]+' 'PHASE section'
-  check_contains "$file" '^## (STRUCTURAL NOTES|Structural Notes)' 'Structural Notes'
   check_contains "$file" '^## (FAILURE MODES|Failure Modes)' 'Failure Modes'
 done < <(find recipes -maxdepth 1 -type f -name '*.md' ! -name 'README.md' | sort)
 

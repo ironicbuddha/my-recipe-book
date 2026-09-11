@@ -1,105 +1,60 @@
 ---
 title: ""
 date: YYYY-MM-DD
-type: recipe
-status: draft
-version: v1.0
-yield: "2 portions"
-portions: 2
-service_target: "18:30"
-target_internal_temperature_c: 0
-primary_ingredient: ""
-primary_mass_g: 0
-techniques: []
-principles: []
+identity: recipe/example-service-dish
+version: 1
+yield: "2 servings"
+scale_basis:
+  ingredient: ingredient/example-primary-ingredient
+  quantity_g: 500
 tags: [dish-main-course]
-cssclass: modernist-recipe
 ---
 
-# RECIPE NAME (ALL CAPS)
+An optional unheaded overview can explain the service plan.
 
-Yield: 2 portions
-Portions: 2
-Service Target: 18:30
-Target Internal Temperature:
+## PHASE A — PREPARE
 
-Primary Ingredient Basis: `0 g = 100%`
+**Timing:** Start 45 min before service.
 
-Short process summary with timing emphasis.
+### Ingredient Uses
 
----
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| primary | [Example primary ingredient](ref:ingredient/example-primary-ingredient) | 500 g | 100.00% | Portion for cooking. |
 
-## PHASE A - TITLE
+### Method
 
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Primary ingredient | 0 g | 100.00% |
->> |  |  |  |
->
->> [!col-right]
->> ### Method
->> 1. Step one.
->> 2. Step two.
->
->> [!col-time]
->> ### Timing
->> - 17:45 Start this phase.
->> - 17:55 Hand off to next phase.
->> - Hold or serve immediately as needed.
+1. Portion the ingredient.
 
----
+### Phase Outputs
 
-## PHASE B - TITLE
+| Key | Phase Output | Description |
+| --- | --- | --- |
+| portions | Portioned ingredient | Prepared portions for the cook phase. |
 
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> |  |  |  |
->
->> [!col-right]
->> ### Method
->> 1. Step one.
->> 2. Step two.
->
->> [!col-time]
->> ### Timing
->> - 18:00 Execute this phase.
->> - Note passive time or overlap here.
+## PHASE B — COOK
 
----
+**Timing:** Start 20 min before service.
+**May overlap:** PHASE C — SET TABLE.
 
-## PHASE C - TITLE
+### Phase Outputs Used
 
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> |  |  |  |
->
->> [!col-right]
->> ### Method
->> 1. Step one.
->> 2. Step two.
->
->> [!col-time]
->> ### Timing
->> - 18:20 Final phase begins.
->> - 18:30 Plate and serve.
+| Phase Output | Use |
+| --- | --- |
+| Portioned ingredient | Cook all of `portions`. |
 
----
+### Method
 
-## STRUCTURAL NOTES
+1. Cook the portions and hold briefly.
 
-Concise scientific explanation of key transformations and service dependencies.
+## PHASE C — SET TABLE
+
+### Method
+
+1. Set warm plates while Phase B cooks.
 
 ## FAILURE MODES
 
-- Symptom:
-- Likely cause:
-- Corrective action:
+| Symptom | Likely cause | Corrective action |
+| --- | --- | --- |
+| Late service | The overlap was not started on time. | Start Phase C with Phase B. |

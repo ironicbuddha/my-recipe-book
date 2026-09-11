@@ -1,85 +1,60 @@
 ---
 title: ""
 date: YYYY-MM-DD
-type: recipe
-status: draft
-version: v1.0
-yield: "2 portions"
-portions: 2
-target_internal_temperature_c: 0
-primary_ingredient: ""
-primary_mass_g: 0
-techniques: []
-principles: []
+identity: recipe/example-dish
+version: 1
+yield: "2 servings"
+scale_basis:
+  ingredient: ingredient/example-primary-ingredient
+  quantity_g: 500
 tags: [dish-main-course]
-cssclass: modernist-recipe
 ---
 
-# RECIPE NAME (ALL CAPS)
+One unheaded overview paragraph may describe the dish and supplies the excerpt.
 
-Yield: 2 portions
-Portions: 2
-Target Internal Temperature:
+## PHASE A — PREPARE BASE
 
-Primary Ingredient Basis: `0 g = 100%`
+### Ingredient Uses
 
----
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| primary | [Example primary ingredient](ref:ingredient/example-primary-ingredient) | 500 g | 100.00% | Cut into 25 mm pieces. |
 
-## PHASE A — TITLE
+### Technique Applications
 
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Primary ingredient | 0 g | 100.0% |
->> |  |  |  |
->
->> [!col-right]
->> ### Method
->> 1. Step one.
->> 2. Step two.
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [Example technique](ref:technique/example-technique) | 180 C; 20 min | Develop colour without drying the centre. |
 
----
+### Principles
 
-## PHASE B — TITLE
+- [Example principle](ref:principle/example-principle) — Explain the causal effect in this Phase.
 
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> |  |  |  |
->
->> [!col-right]
->> ### Method
->> 1. Step one.
->> 2. Step two.
+### Method
 
----
+1. Prepare the declared ingredient.
+2. Apply the stated technique until the control is reached.
 
-## PHASE C — TITLE
+### Phase Outputs
 
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> |  |  |  |
->
->> [!col-right]
->> ### Method
->> 1. Step one.
->> 2. Step two.
+| Key | Phase Output | Description |
+| --- | --- | --- |
+| prepared-base | Prepared base | The seasoned cooked base for finishing. |
 
----
+## PHASE B — FINISH AND SERVE
 
-## STRUCTURAL NOTES
+### Phase Outputs Used
 
-Concise scientific explanation of key transformations.
+| Phase Output | Use |
+| --- | --- |
+| Prepared base | Plate all of `prepared-base`. |
+
+### Method
+
+1. Plate the prepared base and serve.
 
 ## FAILURE MODES
 
-- Symptom:
-- Likely cause:
-- Corrective action:
+| Symptom | Likely cause | Corrective action |
+| --- | --- | --- |
+| Dry centre | Heat was too high or cooking went too long. | Reduce the control temperature or stop sooner. |

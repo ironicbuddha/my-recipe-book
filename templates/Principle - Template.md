@@ -1,34 +1,16 @@
 ---
 title: ""
-date: YYYY-MM-DD
-type: principle
-version: v1.0
-tags: []
+identity: principle/example-principle
 ---
 
-# Principle: <Name>
-
 ## Core Mechanism
-Brief scientific mechanism.
 
-## Conditions
-- Required:
-- Inhibitors:
+Describe the causal mechanism.
 
-## Observable Effects
-- 
+## Conditions and Controls
+
+Describe required conditions, inhibitors, and usable controls.
 
 ## Culinary Implications
-- 
 
-## Control Levers
-- Temperature (C):
-- pH:
-- Time:
-- Water activity:
-
-## Failure Modes / Misapplication
-- 
-
-## References
-- 
+Describe observable effects and appropriate application.

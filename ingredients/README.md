@@ -1,10 +1,11 @@
 # Ingredients
 
-Ingredient-specific technical notes and behavior.
+Curated Ingredient Knowledge Notes. Candidates are evidence only and do not
+belong in this authoritative collection.
 
 Naming:
 `Ingredient - Name.md`
 
 Rules:
 - Use `templates/Ingredient - Template.md`.
-- Track composition, handling, compatibility, and constraints.
+- Use immutable `ingredient/...` identities and human Curation records.
