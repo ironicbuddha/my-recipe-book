@@ -89,3 +89,17 @@ Use one conceptual change per commit with structured prefixes:
 - Do not rename or move files unless required.
 - After content changes, run `make validate`.
 - After frontend or tooling changes, run `pnpm check`.
+
+## Agent skills
+
+### Issue tracker
+
+Issues are tracked in GitHub Issues; external pull requests are not a triage surface. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+Triage uses the canonical `needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, and `wontfix` labels. See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+This is a single-context repository. See `docs/agents/domain.md`.
