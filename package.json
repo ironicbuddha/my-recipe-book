@@ -11,6 +11,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "release:verify": "./scripts/release-gate.sh",
     "astro": "astro",
     "hero-prompt": "tsx scripts/hero-prompt.ts",
     "gen-heroes": "tsx --env-file-if-exists=.env.local scripts/generate-heroes.ts",

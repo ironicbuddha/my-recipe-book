@@ -5,6 +5,8 @@ import {
 } from './src/lib/library.ts';
 
 export const config = {
+  buildCommand: 'pnpm release:verify',
+  outputDirectory: 'dist',
   redirects: [
     ...Object.entries({
       ...publisherRedirects(),

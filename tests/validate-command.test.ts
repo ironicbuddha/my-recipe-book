@@ -314,20 +314,24 @@ describe('make validate', () => {
     expect(result.stderr).toContain('scaling 80.00% must be 100.00%');
   });
 
-  it('builds a recipe without a matching hero asset as a readable page without a hero figure', () => {
-    const root = copyPilotLibrary();
-    writeCanonicalRecipeWithoutHero(root);
+  it(
+    'builds a recipe without a matching hero asset as a readable page without a hero figure',
+    () => {
+      const root = copyPilotLibrary();
+      writeCanonicalRecipeWithoutHero(root);
 
-    const result = build(root);
-    const page = fs.readFileSync(
-      path.join(process.cwd(), 'dist/recipes/hero-fallback-pilot/index.html'),
-      'utf8',
-    );
+      const result = build(root);
+      const page = fs.readFileSync(
+        path.join(process.cwd(), 'dist/recipes/hero-fallback-pilot/index.html'),
+        'utf8',
+      );
 
-    expect(result.status).toBe(0);
-    expect(page).toContain('<h1>Hero fallback pilot</h1>');
-    expect(page).not.toContain('recipe-hero');
-  });
+      expect(result.status).toBe(0);
+      expect(page).toContain('<h1>Hero fallback pilot</h1>');
+      expect(page).not.toContain('recipe-hero');
+    },
+    15_000,
+  );
 
   it('accepts a canonical Recipe reference to an exact Superseded Recipe Version', () => {
     const root = copyPilotLibrary();

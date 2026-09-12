@@ -30,5 +30,5 @@ jobs:
       - name: Install ripgrep
         run: sudo apt-get update && sudo apt-get install -y ripgrep
 
-      - name: Run validation
-        run: ./scripts/validate_content.sh
+      - name: Run release gate
+        run: pnpm release:verify
