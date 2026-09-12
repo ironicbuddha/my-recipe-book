@@ -38,6 +38,9 @@ Knowledge Candidates, and Retired Candidates are not.
 
 - `make validate` validates the current content boundary.
 - `pnpm check` runs linting, Astro typechecking, a build, and content validation.
+- `pnpm release:verify` is the fail-closed release gate used by Vercel and CI.
+  It runs validation, linting, type checking, tests, and an artifact-checked
+  build. See [the release-gate guide](docs/release-gate.md).
 - `make install-hooks` installs the content-validation pre-commit hook.
 
 ## Commit discipline

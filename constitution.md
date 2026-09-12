@@ -12,7 +12,7 @@ The canonical content lives in the repository root folders such as `recipes/`,
 - Build tool: `Vite`
 - Package manager: `pnpm`
 - Runtime versions: `Node 22.x`
-- Deployment target: `static host (TBD)`
+- Deployment target: `Vercel static hosting`
 
 ## Working Standards
 
@@ -22,6 +22,8 @@ The canonical content lives in the repository root folders such as `recipes/`,
 - Public site changes must pass `pnpm lint`, `pnpm typecheck`, and
   `pnpm build`.
 - Content changes must continue to pass `make validate`.
+- Vercel deployments must run `pnpm release:verify`; a failed or incomplete
+  gate must not replace the active production deployment.
 - New non-obvious logic gets short comments or nearby documentation.
 - Repo-local guidance in `AGENTS.md` takes precedence for content structure and
   recipe authoring rules.
@@ -34,11 +36,11 @@ Pull requests should not merge unless these pass:
 - `pnpm lint`
 - `pnpm typecheck`
 - `pnpm build`
+- `pnpm release:verify` for deployable changes
 
 ## Exceptions
 
-- Deployment hosting is not chosen yet. When a host is selected, document the
-  build and release path here and in `README.md`.
+- Preview-rehearsal results do not constitute Curator acceptance or Promotion.
 
 ## Versioning
 
