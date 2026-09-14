@@ -97,6 +97,22 @@ the source-linked entries in `records/candidates/` and the 2026-09-02 candidate
 classification; do not create a subject merely because it is named in legacy
 frontmatter.
 
+**Sourdough evidence repair:** the source-linked candidate records below are
+the complete Batch 1 queue for labels named in Sourdough Bread's legacy
+frontmatter. They have no generated placeholders: they are direct legacy-source
+observations from `recipes/2026-02-23 - Sourdough Bread.md`, outside the fixed
+302-placeholder audit universe. They are unaccepted candidate evidence, not
+established subjects, aliases, or Curation decisions.
+
+- Techniques: `candidate/technique-levain-build`,
+  `candidate/technique-autolyse`, `candidate/technique-bulk-fermentation`,
+  `candidate/technique-stretch-and-fold`, `candidate/technique-cold-retard`,
+  and `candidate/technique-dutch-oven-baking`.
+- Principles: `candidate/principle-yeast-and-lab-fermentation`,
+  `candidate/principle-gluten-development`,
+  `candidate/principle-salt-control-of-fermentation`, and
+  `candidate/principle-steam-assisted-oven-spring`.
+
 **Exact proposed grandfathering list:**
 `recipe/sour-cherry-pie@2`, `recipe/flapjacks-american-pancakes@1`,
 `recipe/maple-pecan-pie@3`, `recipe/masterclass-chocolate-brownie@1`, and

@@ -426,7 +426,53 @@ decided_on: 2026-09-11
           ),
     );
 
-    expect(candidates).toHaveLength(302);
+    const directSourdoughCandidates = [
+      'principle-gluten-development.md',
+      'principle-salt-control-of-fermentation.md',
+      'principle-steam-assisted-oven-spring.md',
+      'principle-yeast-and-lab-fermentation.md',
+      'technique-autolyse.md',
+      'technique-bulk-fermentation.md',
+      'technique-cold-retard.md',
+      'technique-dutch-oven-baking.md',
+      'technique-levain-build.md',
+      'technique-stretch-and-fold.md',
+    ];
+
+    expect(candidates).toHaveLength(312);
+    const observedWithoutPlaceholder = candidates
+      .filter((name) =>
+        fs
+          .readFileSync(
+            path.join(process.cwd(), 'records', 'candidates', name),
+            'utf8',
+          )
+          .includes('source_placeholder: null'),
+      )
+      .sort();
+
+    expect(observedWithoutPlaceholder).toEqual(directSourdoughCandidates);
+    expect(
+      candidates.filter(
+        (name) =>
+          !fs
+            .readFileSync(
+              path.join(process.cwd(), 'records', 'candidates', name),
+              'utf8',
+            )
+            .includes('source_placeholder: null'),
+      ),
+    ).toHaveLength(302);
+    expect(
+      observedWithoutPlaceholder.every((name) =>
+        fs
+          .readFileSync(
+            path.join(process.cwd(), 'records', 'candidates', name),
+            'utf8',
+          )
+          .includes('2026-02-23 - Sourdough Bread.md'),
+      ),
+    ).toBe(true);
     expect(generated).toEqual([]);
     expect(getLibraryCounts()).toMatchObject({
       ingredients: 15,
