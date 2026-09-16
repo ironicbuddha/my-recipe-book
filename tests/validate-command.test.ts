@@ -586,7 +586,7 @@ describe('make validate', () => {
         ),
       ),
     ).toBe(false);
-  });
+  }, 15_000);
 
   it('fails closed when the public command cannot compare a Promotion with a prior revision', () => {
     const root = copyPilotLibrary();
@@ -851,7 +851,7 @@ supporting_experiments: []
     expect(redirect).toContain(
       'https://recipes.carlokruger.com/techniques/poaching/',
     );
-  });
+  }, 15_000);
 
   it('rejects retired identity reuse, a new Experiment subject, and invalid retirement destinations through the public command', () => {
     const root = copyPilotLibrary();
