@@ -4,6 +4,31 @@
       "source": "/recipes/2026-02-19-singapore-chicken-rice/",
       "type": "redirect",
       "destination": "recipe/singapore-chicken-rice"
+    },
+    {
+      "source": "/recipes/2026-02-19-cherry-pie/",
+      "type": "redirect",
+      "destination": "recipe/sour-cherry-pie"
+    },
+    {
+      "source": "/recipes/2026-02-19-flapjacks-american-pancakes/",
+      "type": "redirect",
+      "destination": "recipe/flapjacks-american-pancakes"
+    },
+    {
+      "source": "/recipes/2026-02-19-maple-pecan-pie/",
+      "type": "redirect",
+      "destination": "recipe/maple-pecan-pie"
+    },
+    {
+      "source": "/recipes/2026-02-19-masterclass-chocolate-brownie/",
+      "type": "redirect",
+      "destination": "recipe/masterclass-chocolate-brownie"
+    },
+    {
+      "source": "/recipes/2026-02-23-sourdough-bread/",
+      "type": "redirect",
+      "destination": "recipe/sourdough-bread"
     }
   ]
 }

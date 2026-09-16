@@ -1,159 +1,112 @@
 ---
 title: "Maple Pecan Pie"
 date: 2026-02-19
-type: recipe
-version: v3.0
-yield: 1 × 23 cm pie
-portions: 8
-target_internal_temperature_c: 88
-primary_ingredient: "Pecan halves"
-primary_mass_g: 200
-techniques: [lamination, custard-setting, staged-baking]
-principles: [sugar-structure-balance, acid-lift, thermal-control]
-tags: [dish-dessert, pecan, maple, custard, modernist]
-cssclass: modernist-recipe
+identity: recipe/maple-pecan-pie
+version: 3
+yield: "1 × 23 cm pie"
+scale_basis:
+  ingredient: ingredient/pecans
+  quantity_g: 200
+tags: [dish-dessert, pecan, maple, custard]
 ---
 
-# MAPLE PECAN PIE
+A maple pecan custard in a laminated bottom crust.
 
-Yield: 1 × 23 cm pie
-Portions: 8
-Target Internal Temperature: 88 C (custard centre)
+## PHASE A — MAKE CRUST
 
-Primary Ingredient Basis: `200 g pecans = 100%`
+### Ingredient Uses
 
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| flour | [All-purpose flour](ref:ingredient/all-purpose-flour) | 188 g | 94.00% | Form the crust. |
+| butter | [Butter](ref:ingredient/butter) | 125 g | 62.50% | Keep frozen. |
+| shortening | [Vegetable shortening](ref:ingredient/vegetable-shortening) | 30 g | 15.00% | Optional fat. |
+| salt | [Salt](ref:ingredient/salt) | 2.5 g | 1.25% | Season the dough. |
+| water | [Water](ref:ingredient/water) | 68 g | 34.00% | Bind the dough. |
 
----
+### Technique Applications
 
-## PHASE A — LAMINATED BUTTER CRUST (BOTTOM ONLY)
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [Lamination](ref:technique/lamination) | Rest 30–60 min; do not stretch. | Keep the crust tender and layered. |
 
-Single-disc formula for one 23 cm bottom crust.
+### Method
 
----
+1. Combine flour, salt, frozen butter, shortening, and water until the dough just holds.
+2. Roll into a 23 cm tin, crimp, and refrigerate overnight.
 
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | All-purpose flour | 188 g | 93.75% |
->> | Unsalted butter (frozen) | 125 g | 62.50% |
->> | Solid vegetable fat (optional) | 30 g | 15.00% |
->> | Fine salt | 2.5 g | 1.25% |
->> | Ice-cold water | 68 g | 34.00% |
->
->> [!col-right]
->> ### Method
->> 1. Whisk flour and salt.
->> 2. Grate frozen butter into flour; toss gently to coat without smearing.
->> 3. Add water gradually until dough just holds when pressed.
->> 4. Press into one disc; rest 30–60 min.
->> 5. Roll to fit 23 cm tin. Do not stretch.
->> 6. Trim with 1–1.5 cm overhang; crimp.
->> 7. Wrap tightly and refrigerate overnight.
+### Phase Outputs
 
+| Key | Phase Output | Description |
+| --- | --- | --- |
+| pie-shell | Pie shell | Chilled raw bottom crust. |
 
----
+## PHASE B — MAKE CUSTARD
 
-## PHASE B — MAPLE PECAN CUSTARD
+### Ingredient Uses
 
----
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| pecans | [Pecans](ref:ingredient/pecans) | 200 g | 100.00% | Toast and cool fully. |
+| maple-syrup | [Maple syrup](ref:ingredient/maple-syrup) | 160 g | 80.00% | Sweeten the custard. |
+| muscovado | [Muscovado sugar](ref:ingredient/muscovado-sugar) | 50 g | 25.00% | Add depth. |
+| butter | [Butter](ref:ingredient/butter) | 60 g | 30.00% | Add melted. |
+| egg | [Egg](ref:ingredient/egg) | 150 g | 75.00% | Set the custard. |
+| egg-yolk | [Egg yolk](ref:ingredient/egg-yolk) | 10 g | 5.00% | Enrich the filling. |
+| whiskey | [Tennessee whiskey](ref:ingredient/tennessee-whiskey) | 15 g | 7.50% | Jack Daniel's is an optional brand note. |
+| verjuice | [Verjuice](ref:ingredient/verjuice) | 7 g | 3.50% | Add acidity. |
+| salt | [Salt](ref:ingredient/salt) | 3 g | 1.50% | Season the custard. |
 
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Pecan halves (toasted) | 200 g | 100.00% |
->> | Maple syrup (dark) | 160 g | 80.00% |
->> | Muscovado sugar | 50 g | 25.00% |
->> | Unsalted butter (melted) | 60 g | 30.00% |
->> | Whole eggs (3) | 150 g | 75.00% |
->> | Extra yolk (½) | 10 g | 5.00% |
->> | Jack Daniel's | 15 g | 7.50% |
->> | Verjuice | 7 g | 3.50% |
->> | Fine salt | 3 g | 1.50% |
->
->> [!col-right]
->> ### Method
->> 1. Toast pecans at 180 C for 8–10 min; cool fully.
->> 2. Whisk eggs and yolk gently (no aeration).
->> 3. Add maple, muscovado, melted butter, whiskey, verjuice, salt.
->> 4. Scatter pecans into chilled raw crust.
->> 5. Pour custard over.
+### Technique Applications
 
-
----
-
-## PHASE C — STAGED BAKE
-
----
-
-> [!col]
->> [!col-left]
->> ### Components
->> | Parameter | Value | Scaling |
->> | --- | --- | --- |
->> | Initial bake | 200 C | — |
->> | Duration | 20 min | — |
->> | Finish temp | 175–180 C | — |
->> | Finish time | 30–40 min | — |
->
->> [!col-right]
->> ### Method
->> 1. Bake 20 min at 200 C to set crust structure.
->> 2. Reduce to 175–180 C.
->> 3. Bake until outer ring set and centre reaches ~88 C.
->> 4. Shield crust edge if necessary.
->> 5. Cool minimum 2 hours (overnight preferred).
-
-## RELATED LINKS
-<!-- AUTO-GENERATED:RELATED-LINKS:START -->
-
-### Techniques
-- [[Technique - Custard Setting]]
-- [[Technique - Lamination]]
-- [[Technique - Staged Baking]]
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [Custard setting](ref:technique/custard-setting) | Whisk gently; finish at about 88 C. | Set without curdling. |
 
 ### Principles
-- [[Principle - Acid Lift]]
-- [[Principle - Sugar Structure Balance]]
-- [[Principle - Thermal Control]]
 
-### Ingredients
-- [[Ingredient - All Purpose Flour]]
-- [[Ingredient - Egg]]
-- [[Ingredient - Extra Yolk]]
-- [[Ingredient - Fine Salt]]
-- [[Ingredient - Ice Cold Water]]
-- [[Ingredient - Jack Daniel's]]
-- [[Ingredient - Maple Syrup]]
-- [[Ingredient - Muscovado Sugar]]
-- [[Ingredient - Pecan Halves]]
-- [[Ingredient - Solid Vegetable Fat]]
-- [[Ingredient - Unsalted Butter]]
-- [[Ingredient - Verjuice]]
+- [Protein coagulation](ref:principle/protein-coagulation) — Egg proteins set the filling with heat.
+- [Acid balance](ref:principle/acid-balance) — Verjuice brightens the sweet custard.
 
-<!-- AUTO-GENERATED:RELATED-LINKS:END -->
+### Method
 
-## STRUCTURAL NOTES
+1. Whisk eggs and yolk gently, then add maple syrup, sugar, butter, whiskey, verjuice, and salt.
+2. Pour over the pecans in the pie shell.
 
-- Custard sets via egg protein coagulation at ~82–90 C.
-- Sugar delays coagulation; excess sugar slows set.
-- Extra yolk increases lecithin and protein density, improving slice integrity.
-- Verjuice provides acid lift without destabilising custard.
-- High initial heat locks crust lamination before butter fully melts.
+### Phase Outputs Used
+
+| Phase Output | Use |
+| --- | --- |
+| Pie shell | Scatter pecans into `pie-shell` before filling. |
+
+### Phase Outputs
+
+| Key | Phase Output | Description |
+| --- | --- | --- |
+| filled-pecan-pie | Filled pecan pie | Pie ready for staged baking. |
+
+## PHASE C — BAKE PIE
+
+### Technique Applications
+
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [Staged baking](ref:technique/staged-baking) | 200 C for 20 min, then 175–180 C for 30–40 min. | Set crust and custard progressively. |
+
+### Method
+
+1. Bake at 200 C for 20 min, then reduce to 175–180 C until the outer ring is set.
+2. Cool for at least 2 h before slicing.
+
+### Phase Outputs Used
+
+| Phase Output | Use |
+| --- | --- |
+| Filled pecan pie | Bake `filled-pecan-pie` until the outer ring is set and centre reaches about 88 C. |
 
 ## FAILURE MODES
 
-- Symptom: Runny centre.
-- Likely cause: Excess sugar or insufficient internal temp.
-- Corrective action: Reduce sugar or bake to 88 C centre.
-
-- Symptom: Overbrowned crust.
-- Likely cause: Excessive initial heat or prolonged exposure.
-- Corrective action: Shield rim earlier; reduce initial temp slightly.
-
-- Symptom: Custard curdled.
-- Likely cause: Overbake above 90 C.
-- Corrective action: Lower finish temp; remove at controlled wobble.
+| Symptom | Likely cause | Corrective action |
+| --- | --- | --- |
+| Runny centre | Insufficient internal temperature. | Bake until the centre reaches about 88 C. |
+| Curdled custard | Pie was overbaked. | Lower the finishing heat and remove at controlled wobble. |

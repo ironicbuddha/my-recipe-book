@@ -1779,10 +1779,14 @@ function validatePromotionHistory(
 
   for (const inventory of inventories) {
     const exactVersion = `${inventory.identity}@${inventory.version}`;
+    const legacySourceExists = previousSources.some(
+      (source) => source.relativePath === inventory.source && !stringValue(source.data.identity),
+    );
     if (
       inventory.disposition === 'retain-canonical' &&
       canonicalRecipes.has(inventory.identity) &&
-      !previousCanonical.has(exactVersion)
+      !previousCanonical.has(exactVersion) &&
+      !legacySourceExists
     ) {
       diagnostics.push(
         `records/migrations: grandfathering exemption ${exactVersion} was not an existing Canonical Recipe in the prior revision`,
