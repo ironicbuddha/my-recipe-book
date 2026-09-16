@@ -1,236 +1,119 @@
 ---
 title: "Sourdough Bread"
 date: 2026-02-23
-type: recipe
-version: v1.0
+identity: recipe/sourdough-bread
+version: 1
 yield: "2 loaves (~900 g each)"
-portions: 16
-target_internal_temperature_c: 98
-primary_ingredient: "bread flour"
-primary_mass_g: 1100
-techniques: ["levain build", "autolyse", "bulk fermentation", "stretch and fold", "cold retard", "dutch oven baking"]
-principles: ["yeast and LAB fermentation", "gluten development", "salt control of fermentation", "steam-assisted oven spring"]
-tags: ["dish-side-dish", "bread", "sourdough"]
-cssclass: modernist-recipe
+scale_basis:
+  ingredient: ingredient/bread-flour
+  quantity_g: 1100
+tags: [dish-side-dish, bread, sourdough]
 ---
 
-# SOURDOUGH BREAD
+Lean naturally leavened bread with staged fermentation, folds, and covered baking.
 
-Yield: 2 loaves (~900 g each)
-Portions: 16
-Target Internal Temperature: 98 C
+## PHASE A — BUILD LEVAIN
 
-Primary Ingredient Basis: `1100 g bread flour = 100%`
+### Ingredient Uses
 
-Lean naturally leavened sourdough with staged fermentation, fold-based strength building, and covered-then-uncovered dutch oven bake.
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| starter | [Mature sourdough starter](ref:ingredient/mature-sourdough-starter) | 20 g | 1.82% | Inoculate the levain. |
+| flour | [Bread flour](ref:ingredient/bread-flour) | 100 g | 9.09% | Feed the levain. |
+| water | [Water](ref:ingredient/water) | 100 g | 9.09% | Hydrate the levain. |
 
+### Technique Applications
 
----
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [Levain build](ref:technique/levain-build) | Ferment about 8 h at room temperature until expanded and active. | Produce ripe leaven. |
 
-## PHASE A — BUILD LEVAIN (8 HOURS)
+### Principles
 
----
+- [Yeast and lactic acid bacteria fermentation](ref:principle/yeast-and-lactic-acid-bacteria-fermentation) — The culture produces gas and acidity.
 
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Mature sourdough starter | 20 g | 1.82% |
->> | Bread flour | 100 g | 9.09% |
->> | Tepid water | 100 g | 9.09% |
->
->> [!col-right]
->> ### Method
->> 1. Mix starter, flour, and tepid water until homogeneous.
->> 2. Cover and ferment at room temperature for about 8 hours, until expanded and active.
+### Method
 
+1. Mix starter, flour, and water until homogeneous.
+2. Cover and ferment until expanded and active.
 
----
+### Phase Outputs
 
-## PHASE B — MIX DOUGH & INITIAL REST (30 MINUTES TO 4 HOURS)
+| Key | Phase Output | Description |
+| --- | --- | --- |
+| ripe-levain | Ripe levain | Active leaven for the dough. |
 
----
+## PHASE B — MIX AND DEVELOP DOUGH
 
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Ripe levain (from Phase A) | all | — |
->> | Bread flour | 1000 g | 90.91% |
->> | Tepid water | 600 g | 54.55% |
->
->> [!col-right]
->> ### Method
->> 1. Combine water and ripe levain in a large bowl.
->> 2. Add flour and mix until no dry pockets remain.
->> 3. Cover and rest for 30 minutes to 4 hours in a warm place.
+### Ingredient Uses
 
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| flour | [Bread flour](ref:ingredient/bread-flour) | 1000 g | 90.91% | Mix into the dough. |
+| water | [Water](ref:ingredient/water) | 640 g | 58.18% | Use 600 g to hydrate the flour and reserve 40 g to dissolve salt. |
+| salt | [Salt](ref:ingredient/salt) | 20 g | 1.82% | Dissolve in the additional water. |
 
----
+### Technique Applications
 
-## PHASE C — ADD SALT (15 MINUTES)
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [Autolyse](ref:technique/autolyse) | Rest flour and water 30 min to 4 h. | Hydrate flour before salt incorporation. |
+| [Folding](ref:technique/folding) | Perform 3 stretch-and-fold sets over 90 min. | Strengthen dough without intensive kneading. |
+| [Bulk fermentation](ref:technique/bulk-fermentation) | Ferment 2–3 h until visibly aerated. | Develop gas and dough structure. |
 
----
+### Principles
 
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Sea salt | 20 g | 1.82% |
->> | Water | 40 g | 3.64% |
->
->> [!col-right]
->> ### Method
->> 1. Dissolve sea salt in water.
->> 2. Add the salt solution to the dough.
->> 3. Mix and squeeze the dough until fully combined, about 15 minutes.
+- [Hydration ratio](ref:principle/hydration-ratio) — Water proportion controls dough handling and crumb.
+- [Gluten development](ref:principle/gluten-development) — Resting and folding develop structure.
+- [Salt control of fermentation](ref:principle/salt-control-of-fermentation) — Salt affects fermentation timing.
 
+### Method
 
----
+1. Combine water, ripe levain, and flour; cover and rest.
+2. Dissolve salt in the additional water, mix it into the dough, and perform three stretch-and-fold sets.
+3. Let the dough bulk ferment until visibly aerated.
 
-## PHASE D — STRETCH & FOLD SERIES (90 MINUTES)
+### Phase Outputs Used
 
----
+| Phase Output | Use |
+| --- | --- |
+| Ripe levain | Dissolve `ripe-levain` in the dough water. |
 
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Salted dough (from Phase C) | all | — |
->
->> [!col-right]
->> ### Method
->> 1. Perform one full stretch-and-fold set.
->> 2. Rest 30 minutes.
->> 3. Repeat for a total of 3 sets over 90 minutes.
+### Phase Outputs
 
+| Key | Phase Output | Description |
+| --- | --- | --- |
+| bulk-dough | Bulk-fermented dough | Aerated dough ready to divide. |
 
----
+## PHASE C — SHAPE, PROOF, AND BAKE
 
-## PHASE E — BULK PROOF (2 TO 3 HOURS)
+### Technique Applications
 
----
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [Staged baking](ref:technique/staged-baking) | Bake covered then uncover for the last 10 min; total about 40 min at 240 C. | Allow spring before browning the crust. |
 
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Dough (from Phase D) | all | — |
->
->> [!col-right]
->> ### Method
->> 1. Keep dough in a warm place and allow bulk fermentation for 2 to 3 hours.
->> 2. Dough should look aerated and rise visibly before dividing.
+### Principles
 
+- [Steam-assisted oven spring](ref:principle/steam-assisted-oven-spring) — Covered baking delays crust setting during expansion.
+- [Maillard reaction](ref:principle/maillard-reaction) — The uncovered finish browns the crust.
 
----
+### Method
 
-## PHASE F — DIVIDE & BENCH REST (30 MINUTES)
+1. Divide the dough into two, pre-shape, rest 30 min, shape, and proof 2–3 h at room temperature or overnight in the refrigerator.
+2. Preheat a lidded casserole at 240 C for at least 20 min.
+3. Bake each scored loaf covered, uncover for the final 10 min, and cool completely before slicing.
 
----
+### Phase Outputs Used
 
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Bulk-fermented dough | all | — |
->
->> [!col-right]
->> ### Method
->> 1. Turn dough out and divide into 2 equal pieces.
->> 2. Pre-shape each piece into a tight round.
->> 3. Rest 30 minutes, covered, to relax gluten.
-
-
----
-
-## PHASE G — FINAL SHAPE & FINAL PROOF
-
----
-
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Rested dough rounds | 2 pieces | — |
->
->> [!col-right]
->> ### Method
->> 1. Shape each dough piece and place seam-side up in proofing bowls.
->> 2. Proof 2 to 3 hours at room temperature, or retard overnight in the refrigerator.
->> 3. If retarding, place plastic wrap directly over the dough surface.
-
-
----
-
-## PHASE H — PREHEAT OVEN & VESSEL (20 MINUTES)
-
----
-
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Oven temperature | 240 C | — |
->> | Lidded casserole or dutch oven | 1 | — |
->
->> [!col-right]
->> ### Method
->> 1. Heat oven to 240 C.
->> 2. Place lidded casserole dish in the oven and preheat at least 20 minutes.
-
-
----
-
-## PHASE I — BAKE (40 MINUTES)
-
----
-
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Proofed dough | 1 loaf per bake | — |
->> | Parchment paper | as needed | — |
->
->> [!col-right]
->> ### Method
->> 1. Transfer loaf onto parchment, score, and lower into the hot casserole dish.
->> 2. Cover with lid and bake.
->> 3. Remove lid for the last 10 minutes to brown the crust.
->> 4. Total bake time is about 40 minutes per loaf.
->> 5. Cool completely before slicing.
-
-## STRUCTURAL NOTES
-
-- This formula is approximately 67% hydration when counting flour and water added directly to the dough and levain.
-- Salt is added after initial hydration to allow easier gluten development early in mixing.
-- Repeated folds strengthen dough structure without intensive mechanical kneading.
-- Covered baking traps steam, promoting oven spring before dry heat sets crust color.
+| Phase Output | Use |
+| --- | --- |
+| Bulk-fermented dough | Divide `bulk-dough`, pre-shape, rest, shape, proof, and score. |
 
 ## FAILURE MODES
 
-- Symptom: Dense loaf with low rise.
-- Likely cause: Under-fermented levain or insufficient bulk proof.
-- Corrective action: Extend fermentation and confirm levain is fully active before mixing.
-
-- Symptom: Dough spreads flat during shaping.
-- Likely cause: Weak gluten or overproofing.
-- Corrective action: Add one extra fold set in Phase D and shorten final proof.
-
-- Symptom: Pale, soft crust.
-- Likely cause: Lid removed too late or oven temperature too low.
-- Corrective action: Verify 240 C preheat and keep the final uncovered 10 minutes.
-
-- Symptom: Gummy crumb.
-- Likely cause: Underbaked center or slicing while hot.
-- Corrective action: Bake to an internal temperature near 98 C and cool fully before cutting.
+| Symptom | Likely cause | Corrective action |
+| --- | --- | --- |
+| Dense loaf | Levain or bulk fermentation was insufficient. | Extend fermentation and confirm levain activity. |
+| Flat dough | Gluten was weak or dough overproofed. | Add a fold set and shorten final proof. |
+| Gummy crumb | Centre was underbaked or sliced hot. | Bake to about 98 C and cool fully. |

@@ -1,168 +1,84 @@
 ---
 title: "Flapjacks (American Pancakes)"
 date: 2026-02-19
-type: recipe
-version: v1.0
-yield: "2 portions"
-portions: 2
-target_internal_temperature_c: null
-primary_ingredient: "cake flour"
-primary_mass_g: 48
-techniques: ["dry whisking", "wet emulsification", "minimal fold", "griddle cooking"]
-principles: ["gluten limitation", "leavening activation", "Maillard reaction", "hydration ratio"]
-tags: ["dish-breakfast", "american", "breakfast", "frying", "maillard", "tender"]
-cssclass: modernist-recipe
+identity: recipe/flapjacks-american-pancakes
+version: 1
+yield: "8 pancakes"
+scale_basis:
+  ingredient: ingredient/cake-flour
+  quantity_g: 47.5
+tags: [dish-breakfast, pancakes]
 ---
 
-# FLAPJACKS (AMERICAN PANCAKES)
+Tender American pancakes cooked on a lightly greased griddle.
 
-Yield: 2 portions
-Portions: 2
-Target Surface Temperature: 175–185 C
+## PHASE A — MIX BATTER
 
-Primary Ingredient Basis: `48 g cake flour = 100%`
+### Ingredient Uses
 
-Breakfast is physics wearing maple syrup.
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| flour | [Cake flour](ref:ingredient/cake-flour) | 47.5 g | 100.00% | Sift for the dry base. |
+| sugar | [Sugar](ref:ingredient/sugar) | 7.5 g | 15.79% | Sweeten the batter. |
+| baking-powder | [Baking powder](ref:ingredient/baking-powder) | 2.5 g | 5.26% | Provide lift. |
+| baking-soda | [Baking soda](ref:ingredient/baking-soda) | 0.62 g | 1.31% | Support the acidic dairy. |
+| salt | [Salt](ref:ingredient/salt) | 0.75 g | 1.58% | Season the batter. |
+| buttermilk | [Buttermilk](ref:ingredient/buttermilk) | 75 g | 157.89% | Hydrate the dry mix. |
+| egg | [Egg](ref:ingredient/egg) | 12.5 g | 26.32% | Bind the batter. |
+| butter | [Butter](ref:ingredient/butter) | 11.25 g | 23.68% | Add melted fat. |
+| vanilla | [Vanilla extract](ref:ingredient/vanilla-extract) | 1.25 g | 2.63% | Optional flavouring. |
 
+### Technique Applications
 
----
-
-## PHASE A — DRY MIX
-
----
-
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Cake flour | 47.5 g | 100.00% |
->> | Sugar | 7.5 g | 15.80% |
->> | Baking powder | 2.5 g | 5.30% |
->> | Baking soda | 0.62 g | 1.30% |
->> | Fine salt | 0.75 g | 1.60% |
->
->> [!col-right]
->> ### Method
->> 1. Whisk all dry ingredients until evenly dispersed.
->> 2. Ensure no clumps of leavening remain.
-
-
----
-
-## PHASE B — WET MIX
-
----
-
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Buttermilk | 75 g | 157.90% |
->> | (or milk 300 g + lemon juice 20 g) | — | — |
->> | Whole egg | 12.5 g | 26.30% |
->> | Butter, melted | 11.25 g | 23.70% |
->> | Vanilla extract (optional) | 1.25 g | 2.60% |
->
->> [!col-right]
->> ### Method
->> 1. Whisk until smooth and fully emulsified.
->> 2. Butter should be melted but not hot.
-
-
----
-
-## PHASE C — BATTER FORMATION
-
----
-
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Dry mix | from Phase A | — |
->> | Wet mix | from Phase B | — |
->
->> [!col-right]
->> ### Method
->> 1. Pour wet into dry.
->> 2. Fold gently until just combined.
->> 3. Small lumps are correct.
->> 4. Rest 5–10 minutes to hydrate flour and activate leavening.
-
-
----
-
-## PHASE D — COOKING
-
----
-
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Butter or neutral oil | as needed | — |
->> | Batter per pancake | ~15 g | — |
->
->> [!col-right]
->> ### Method
->> 1. Heat pan to medium (~175–185 C surface).
->> 2. Pour without spreading.
->> 3. Cook until bubbles form and edges set.
->> 4. Flip once. Cook second side ~60 seconds until golden.
-
-## RELATED LINKS
-<!-- AUTO-GENERATED:RELATED-LINKS:START -->
-
-### Techniques
-- [[Technique - Dry Whisking]]
-- [[Technique - Griddle Cooking]]
-- [[Technique - Minimal Fold]]
-- [[Technique - Wet Emulsification]]
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [Whisking](ref:technique/whisking) | Combine only until no dry flour remains. | Avoid excess gluten development. |
 
 ### Principles
-- [[Principle - Gluten Limitation]]
-- [[Principle - Hydration Ratio]]
-- [[Principle - Leavening Activation]]
-- [[Principle - Maillard Reaction]]
 
-### Ingredients
-- [[Ingredient - Baking Powder]]
-- [[Ingredient - Baking Soda]]
-- [[Ingredient - Butter]]
-- [[Ingredient - Butter Or Neutral Oil]]
-- [[Ingredient - Buttermilk]]
-- [[Ingredient - Cake Flour]]
-- [[Ingredient - Egg]]
-- [[Ingredient - Fine Salt]]
-- [[Ingredient - Sugar]]
-- [[Ingredient - Vanilla Extract]]
+- [Gluten limitation](ref:principle/gluten-limitation) — Minimal mixing keeps pancakes tender.
+- [Leavening activation](ref:principle/leavening-activation) — Chemical leaveners create lift under hydration and heat.
 
-<!-- AUTO-GENERATED:RELATED-LINKS:END -->
+### Method
 
-## STRUCTURAL NOTES
+1. Whisk the dry ingredients, then whisk in buttermilk, egg, butter, and optional vanilla only until combined.
+2. Rest the batter briefly.
 
-- Hydration (milk + egg relative to flour) is approximately 184%.
-- Fat (butter + egg fat) is approximately 50% of flour weight.
-- Sugar is modest — structure remains tender, not cake-like.
-- This ratio gives you a classic diner flapjack: soft interior, mild tang, moderate browning.
-- If you bump hydration above 200%, you move toward crepe territory.
-- If you increase fat above 35% butter alone, you approach cake crumb.
-- If you cut sugar below 10%, browning suffers.
+### Phase Outputs
+
+| Key | Phase Output | Description |
+| --- | --- | --- |
+| pancake-batter | Pancake batter | Rested batter ready for the griddle. |
+
+## PHASE B — GRIDDLE PANCAKES
+
+### Ingredient Uses
+
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| butter | [Butter](ref:ingredient/butter) | As needed | — | Grease the griddle as one approved alternative. |
+| neutral-oil | [Neutral oil](ref:ingredient/neutral-oil) | As needed | — | Use instead of butter as the other approved alternative. |
+
+### Technique Applications
+
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [Griddling](ref:technique/griddling) | Cook about 15 g batter per pancake; turn when bubbles form. | Cook evenly without scorching. |
+
+### Method
+
+1. Heat a lightly greased griddle and cook small portions until bubbles form.
+2. Turn once and cook until set, then serve.
+
+### Phase Outputs Used
+
+| Phase Output | Use |
+| --- | --- |
+| Pancake batter | Portion `pancake-batter` onto the hot griddle. |
 
 ## FAILURE MODES
 
-- Symptom: Flat, dense pancakes with no lift.
-- Likely cause: Overmixed batter developed too much gluten, or leavening is expired.
-- Corrective action: Fold only until just combined — lumps are fine. Test baking powder freshness in hot water.
-
-- Symptom: Raw centre, burnt exterior.
-- Likely cause: Pan too hot; batter too thick from insufficient hydration.
-- Corrective action: Reduce to medium heat (175–185 C surface). Do not spread the batter — let it flow naturally.
-
-- Symptom: Rubbery, tough texture.
-- Likely cause: Overmixing activated gluten network beyond desired threshold.
-- Corrective action: Mix with fewer strokes. Rest the batter to relax gluten before cooking.
+| Symptom | Likely cause | Corrective action |
+| --- | --- | --- |
+| Tough pancakes | Batter was overmixed. | Mix with fewer strokes and rest the batter. |
+| Pale pancakes | Griddle was too cool. | Preheat the surface before cooking. |

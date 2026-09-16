@@ -7,6 +7,7 @@ import { afterEach, describe, expect, it } from 'vitest';
 import {
   ContentValidationError,
   loadLibrary,
+  publisherRedirects,
   renderContent,
   retirementRedirects,
 } from '../src/lib/library';
@@ -183,6 +184,51 @@ Fixture-only Curation record for retirement mechanics.
 }
 
 describe('loadLibrary', () => {
+  it('publishes the approved Batch 1 canonical recipes but excludes the Hash Brownies draft', () => {
+    const library = loadLibrary();
+
+    expect(library.recipes.map((recipe) => recipe.identity)).toEqual(
+      expect.arrayContaining([
+        'recipe/sour-cherry-pie',
+        'recipe/flapjacks-american-pancakes',
+        'recipe/maple-pecan-pie',
+        'recipe/masterclass-chocolate-brownie',
+        'recipe/sourdough-bread',
+      ]),
+    );
+    expect(library.recipes.map((recipe) => recipe.identity)).not.toContain(
+      'recipe/hash-brownies',
+    );
+  });
+
+  it('preserves every approved Batch 1 legacy route without giving the draft a public route', () => {
+    expect(publisherRedirects()).toMatchObject({
+      '/recipes/2026-02-19-cherry-pie/': {
+        destination: '/recipes/sour-cherry-pie/',
+        status: 301,
+      },
+      '/recipes/2026-02-19-flapjacks-american-pancakes/': {
+        destination: '/recipes/flapjacks-american-pancakes/',
+        status: 301,
+      },
+      '/recipes/2026-02-19-maple-pecan-pie/': {
+        destination: '/recipes/maple-pecan-pie/',
+        status: 301,
+      },
+      '/recipes/2026-02-19-masterclass-chocolate-brownie/': {
+        destination: '/recipes/masterclass-chocolate-brownie/',
+        status: 301,
+      },
+      '/recipes/2026-02-23-sourdough-bread/': {
+        destination: '/recipes/sourdough-bread/',
+        status: 301,
+      },
+    });
+    expect(publisherRedirects()).not.toHaveProperty(
+      '/recipes/2026-02-27-hash-brownies/',
+    );
+  });
+
   it('publishes identity-derived routes and relationship backlinks', () => {
     const root = writeLibrary({
       'recipes/2026-09-11 - Pilot Chicken.md': recipe,
@@ -383,29 +429,30 @@ decided_on: 2026-09-11
 `,
     );
 
-    expect(loadLibrary(root).knowledge).toHaveLength(23);
+    expect(loadLibrary(root).knowledge).toHaveLength(70);
   });
 
   it('projects the approved pilot through the recipe-facing public helpers', () => {
     const recipes = getAllRecipes();
 
-    expect(recipes).toHaveLength(1);
-    expect(recipes[0]).toMatchObject({
+    expect(recipes).toHaveLength(6);
+    expect(recipes).toEqual(expect.arrayContaining([expect.objectContaining({
       href: '/recipes/singapore-chicken-rice/',
       slug: 'singapore-chicken-rice',
       title: 'Singapore Chicken Rice (Hainanese)',
-    });
+    })]));
     expect(getLibraryCounts()).toMatchObject({
-      ingredients: 15,
-      principles: 4,
-      recipes: 1,
-      techniques: 4,
+      ingredients: 40,
+      principles: 16,
+      recipes: 6,
+      techniques: 14,
     });
-    expect(getRecipePhases(recipes[0]?.body ?? '')).toHaveLength(5);
-    expect(renderRecipeBody(recipes[0]?.body ?? '')).toContain(
+    const singapore = recipes.find((recipe) => recipe.slug === 'singapore-chicken-rice');
+    expect(getRecipePhases(singapore?.body ?? '')).toHaveLength(5);
+    expect(renderRecipeBody(singapore?.body ?? '')).toContain(
       '/ingredients/whole-chicken/',
     );
-    expect(renderRecipeBody(recipes[0]?.body ?? '')).toContain(
+    expect(renderRecipeBody(singapore?.body ?? '')).toContain(
       'table--failure-modes',
     );
   });
@@ -475,10 +522,10 @@ decided_on: 2026-09-11
     ).toBe(true);
     expect(generated).toEqual([]);
     expect(getLibraryCounts()).toMatchObject({
-      ingredients: 15,
-      principles: 4,
-      recipes: 1,
-      techniques: 4,
+      ingredients: 40,
+      principles: 16,
+      recipes: 6,
+      techniques: 14,
     });
   });
 
@@ -546,9 +593,9 @@ The fixture preserves the accepted limitation.
     const priorRoot = process.env.CULINARY_LIBRARY_PREVIOUS_ROOT;
     process.env.CULINARY_LIBRARY_PREVIOUS_ROOT = previousRoot;
     try {
-      expect(loadLibrary(root).recipes).toMatchObject([
-        { identity: 'recipe/singapore-chicken-rice', version: 2 },
-      ]);
+      expect(loadLibrary(root).recipes).toEqual(expect.arrayContaining([
+        expect.objectContaining({ identity: 'recipe/singapore-chicken-rice', version: 2 }),
+      ]));
     } finally {
       if (priorRoot) {
         process.env.CULINARY_LIBRARY_PREVIOUS_ROOT = priorRoot;
@@ -621,7 +668,7 @@ The fixture preserves the accepted limitation.
         .replace('Singapore Chicken Rice (Hainanese)', 'Renamed pilot'),
     );
 
-    expect(loadLibrary(root).recipes[0]).toMatchObject({
+    expect(loadLibrary(root).recipes.find((recipe) => recipe.identity === 'recipe/singapore-chicken-rice')).toMatchObject({
       href: '/recipes/singapore-chicken-rice/',
       title: 'Renamed pilot',
     });
@@ -684,7 +731,7 @@ The fixture preserves the accepted limitation.
     expect(
       library.entries.filter((entry) => entry.type === 'experiment'),
     ).toHaveLength(6);
-    expect(library.recipes).toHaveLength(1);
+    expect(library.recipes).toHaveLength(6);
     expect(
       library.entries.find(
         (entry) => entry.identity === 'experiment/ingredient-use-trial',
