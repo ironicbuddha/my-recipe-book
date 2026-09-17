@@ -7,6 +7,7 @@ import argparse
 import json
 import re
 from collections import defaultdict
+from datetime import date
 from pathlib import Path
 
 
@@ -239,22 +240,105 @@ def candidate_key(note_type: str, label: str) -> str:
     return f"{note_type}-{key}"
 
 
+def has_nonempty_section(text: str, heading: str) -> bool:
+    match = re.search(
+        rf"^## {re.escape(heading)}\s*\n\s*\n([\s\S]*?)(?=^## |\Z)",
+        text,
+        flags=re.M,
+    )
+    return bool(match and match.group(1).strip())
+
+
+def frontmatter_list(text: str, key: str) -> list[str]:
+    frontmatter = re.match(r"^---\n(.*?)\n---\n", text, flags=re.S)
+    if not frontmatter:
+        return []
+    contents = frontmatter.group(1)
+    value = parse_frontmatter(text).get(key, "")
+    if flow_values := split_flow_list(value):
+        return flow_values
+    match = re.search(
+        rf"^{re.escape(key)}:\s*\n((?:[ \t]+-\s*[^\n]+\n?)*)",
+        contents,
+        flags=re.M,
+    )
+    if not match:
+        return []
+    return [
+        strip_quotes(item)
+        for item in re.findall(r"^[ \t]+-\s*([^\n]+)$", match.group(1), flags=re.M)
+        if strip_quotes(item)
+    ]
+
+
+def valid_date(value: str) -> bool:
+    if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", value):
+        return False
+    try:
+        date.fromisoformat(value)
+    except ValueError:
+        return False
+    return True
+
+
+def recipe_versions(root: Path) -> set[str]:
+    versions: set[str] = set()
+    recipes_dir = root / "recipes"
+    if not recipes_dir.exists():
+        return versions
+    for path in recipes_dir.rglob("*.md"):
+        if path.name == "README.md":
+            continue
+        record = parse_frontmatter(_read(path))
+        identity = record.get("identity", "")
+        version = record.get("version", "")
+        if re.fullmatch(r"recipe/[a-z0-9]+(?:-[a-z0-9]+)*", identity) and re.fullmatch(
+            r"[1-9]\d*", version
+        ):
+            versions.add(f"{identity}@{version}")
+    return versions
+
+
+def valid_evidence_sources(sources: list[str], known_recipe_versions: set[str]) -> bool:
+    return bool(sources) and all(
+        source in known_recipe_versions for source in sources
+    )
+
+
+def candidate_matches_label(candidate: str, label: str) -> bool:
+    match = re.fullmatch(
+        r"candidate/(technique|principle|ingredient)-[a-z0-9]+(?:-[a-z0-9]+)*",
+        candidate,
+    )
+    return bool(
+        match and candidate == f"candidate/{candidate_key(match.group(1), label)}"
+    )
+
+
 def retired_candidate_keys(root: Path) -> set[str]:
     """Return candidates whose Curator decision permanently retired the observation."""
     curation_dir = root / "records" / "curation"
     if not curation_dir.exists():
         return set()
     retired: set[str] = set()
+    known_recipe_versions = recipe_versions(root)
     for path in curation_dir.rglob("*.md"):
-        record = parse_frontmatter(_read(path))
+        text = _read(path)
+        record = parse_frontmatter(text)
         candidate = record.get("candidate", "")
+        candidate_label = strip_quotes(record.get("candidate_label", ""))
+        evidence_sources = frontmatter_list(text, "evidence_sources")
         if (
             record.get("record_type") == "curation"
             and record.get("decision") == "retire-candidate"
-            and record.get("retirement_reason")
-            and record.get("decided_by")
-            and re.fullmatch(r"\d{4}-\d{2}-\d{2}", record.get("decided_on", ""))
-            and re.fullmatch(r"candidate/[a-z0-9-]+", candidate)
+            and candidate_label
+            and candidate_matches_label(candidate, candidate_label)
+            and valid_evidence_sources(evidence_sources, known_recipe_versions)
+            and strip_quotes(record.get("retirement_reason", ""))
+            and strip_quotes(record.get("decided_by", ""))
+            and valid_date(record.get("decided_on", ""))
+            and has_nonempty_section(text, "Evidence")
+            and has_nonempty_section(text, "Rationale")
         ):
             retired.add(candidate.removeprefix("candidate/"))
     return retired
