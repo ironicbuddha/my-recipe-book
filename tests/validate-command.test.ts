@@ -43,6 +43,17 @@ function validate(root: string, previousRoot?: string) {
   });
 }
 
+function extractCandidates(root: string) {
+  return spawnSync(
+    'python3',
+    ['scripts/generate_crosslinks.py', '--root', root],
+    {
+      cwd: process.cwd(),
+      encoding: 'utf8',
+    },
+  );
+}
+
 function completedExperiment(
   identity: string,
   primarySubject: string,
@@ -267,6 +278,97 @@ function writeCanonicalRecipeWithoutHero(root: string): void {
 }
 
 describe('make validate', () => {
+  it('records recurring extraction evidence without reopening a retired Candidate', () => {
+    const root = fs.mkdtempSync(path.join(os.tmpdir(), 'culinary-candidates-'));
+    roots.push(root);
+    fs.mkdirSync(path.join(root, 'recipes'), { recursive: true });
+    fs.writeFileSync(
+      path.join(root, 'recipes/2026-09-11 - First.md'),
+      `---
+techniques: [Pan searing]
+---
+`,
+    );
+    fs.writeFileSync(
+      path.join(root, 'recipes/2026-09-11 - Second.md'),
+      `---
+techniques: [Pan searing]
+---
+`,
+    );
+    fs.writeFileSync(
+      path.join(root, 'recipes/2026-09-11 - Third.md'),
+      `---
+techniques: [Invalid retirement]
+---
+`,
+    );
+    fs.mkdirSync(path.join(root, 'records/candidates'), { recursive: true });
+    fs.writeFileSync(
+      path.join(root, 'records/candidates/technique-pan-searing.md'),
+      `---
+candidate: candidate/technique-pan-searing
+observed_type: technique
+observed_label: "Pan searing"
+classification: curation-candidate
+source_placeholder: 'techniques/Technique - Pan Searing.md'
+---
+
+## Evidence
+
+Historical placeholder evidence remains intact.
+
+## Disposition
+
+Await human Curation.
+`,
+    );
+    fs.mkdirSync(path.join(root, 'records/curation'), { recursive: true });
+    fs.writeFileSync(
+      path.join(root, 'records/curation/invalid-retirement.md'),
+      `---
+record_type: curation
+candidate: candidate/technique-invalid-retirement
+decision: retire-candidate
+---
+`,
+    );
+
+    expect(extractCandidates(root).status).toBe(0);
+    const candidate = path.join(
+      root,
+      'records/candidates/technique-pan-searing.md',
+    );
+    expect(fs.readFileSync(candidate, 'utf8')).toContain(
+      'Frequency: 2 current Recipe(s).',
+    );
+    expect(fs.readFileSync(candidate, 'utf8')).toContain(
+      'Historical placeholder evidence remains intact.',
+    );
+    expect(
+      fs.existsSync(
+        path.join(root, 'records/candidates/technique-invalid-retirement.md'),
+      ),
+    ).toBe(true);
+
+    fs.writeFileSync(
+      path.join(root, 'records/curation/pan-searing.md'),
+      `---
+record_type: curation
+candidate: candidate/technique-pan-searing
+decision: retire-candidate
+retirement_reason: "Fixture candidate is not a valid Technique."
+decided_by: "Fixture Curator"
+decided_on: 2026-09-11
+---
+`,
+    );
+    fs.rmSync(candidate);
+
+    expect(extractCandidates(root).status).toBe(0);
+    expect(fs.existsSync(candidate)).toBe(false);
+  });
+
   it('accepts the isolated approved library', () => {
     const result = validate(copyPilotLibrary());
 
@@ -314,24 +416,20 @@ describe('make validate', () => {
     expect(result.stderr).toContain('scaling 80.00% must be 100.00%');
   });
 
-  it(
-    'builds a recipe without a matching hero asset as a readable page without a hero figure',
-    () => {
-      const root = copyPilotLibrary();
-      writeCanonicalRecipeWithoutHero(root);
+  it('builds a recipe without a matching hero asset as a readable page without a hero figure', () => {
+    const root = copyPilotLibrary();
+    writeCanonicalRecipeWithoutHero(root);
 
-      const result = build(root);
-      const page = fs.readFileSync(
-        path.join(process.cwd(), 'dist/recipes/hero-fallback-pilot/index.html'),
-        'utf8',
-      );
+    const result = build(root);
+    const page = fs.readFileSync(
+      path.join(process.cwd(), 'dist/recipes/hero-fallback-pilot/index.html'),
+      'utf8',
+    );
 
-      expect(result.status).toBe(0);
-      expect(page).toContain('<h1>Hero fallback pilot</h1>');
-      expect(page).not.toContain('recipe-hero');
-    },
-    15_000,
-  );
+    expect(result.status).toBe(0);
+    expect(page).toContain('<h1>Hero fallback pilot</h1>');
+    expect(page).not.toContain('recipe-hero');
+  }, 15_000);
 
   it('accepts a canonical Recipe reference to an exact Superseded Recipe Version', () => {
     const root = copyPilotLibrary();

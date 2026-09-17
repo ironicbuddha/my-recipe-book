@@ -1,41 +1,17 @@
 #!/usr/bin/env python3
-"""Generate cross-links and extracted notes from recipe markdown files.
-
-This script:
-- Parses recipe frontmatter for techniques/principles/primary ingredient.
-- Extracts ingredients from recipe component tables.
-- Creates/updates:
-  - techniques/Technique - <Name>.md
-  - principles/Principle - <Name>.md
-  - ingredients/Ingredient - <Name>.md
-- Inserts an auto-generated "RELATED LINKS" section in each recipe.
-"""
+"""Extract recipe observations into non-authoritative Knowledge Candidates."""
 
 from __future__ import annotations
 
+import argparse
 import json
 import re
 from collections import defaultdict
 from pathlib import Path
 
 
-ROOT = Path(__file__).resolve().parent.parent
-RECIPES_DIR = ROOT / "recipes"
-TECHNIQUES_DIR = ROOT / "techniques"
-PRINCIPLES_DIR = ROOT / "principles"
-INGREDIENTS_DIR = ROOT / "ingredients"
-CANDIDATES_DIR = ROOT / "records" / "candidates"
-
-AUTO_START = "<!-- AUTO-GENERATED:RELATED-LINKS:START -->"
-AUTO_END = "<!-- AUTO-GENERATED:RELATED-LINKS:END -->"
-
-
 def _read(path: Path) -> str:
     return path.read_text(encoding="utf-8")
-
-
-def _write(path: Path, content: str) -> None:
-    path.write_text(content, encoding="utf-8")
 
 
 def parse_frontmatter(text: str) -> dict[str, str]:
@@ -117,13 +93,6 @@ def titleize(text: str) -> str:
         else:
             words.append(_title_token(word))
     return " ".join(words)
-
-
-def safe_file_component(text: str) -> str:
-    text = text.replace("/", " or ")
-    text = re.sub(r"[<>:\"\\|?*]", "", text)
-    text = text.replace("  ", " ")
-    return text.strip(" .")
 
 
 def strip_quote_prefix(line: str) -> str:
@@ -265,69 +234,78 @@ def sorted_casefold(values: set[str]) -> list[str]:
     return sorted(values, key=lambda x: x.casefold())
 
 
-def generate_note(
-    path: Path,
-    note_type: str,
-    display_name: str,
-    linked_recipes: list[str],
-) -> None:
-    today = _dt.date.today().isoformat()
-    if note_type == "technique":
-        heading = f"# Technique: {display_name}"
-        purpose = "Auto-generated link node. Expand with process controls and failure modes."
-    elif note_type == "principle":
-        heading = f"# Principle: {display_name}"
-        purpose = "Auto-generated link node. Expand with mechanism, control levers, and evidence."
-    else:
-        heading = f"# Ingredient: {display_name}"
-        purpose = "Auto-generated link node. Expand with composition, handling, and behavior."
-
-    body = [
-        "---",
-        f'title: "{display_name}"',
-        f"date: {today}",
-        f"type: {note_type}",
-        "version: v1.0",
-        "generated: true",
-        "---",
-        "",
-        heading,
-        "",
-        "## Purpose",
-        purpose,
-        "",
-        "## Used In Recipes",
-    ]
-    for recipe in linked_recipes:
-        body.append(f"- [[{recipe}]]")
-    body.append("")
-    _write(path, "\n".join(body))
-
-
-def prune_generated_notes(directory: Path, expected_paths: set[Path]) -> None:
-    for path in directory.glob("*.md"):
-        if path.name == "README.md":
-            continue
-        if path in expected_paths:
-            continue
-        text = _read(path)
-        if "generated: true" in text:
-            path.unlink()
-
-
 def candidate_key(note_type: str, label: str) -> str:
     key = re.sub(r"[^a-z0-9]+", "-", label.lower()).strip("-")
     return f"{note_type}-{key}"
 
 
-def record_candidate(note_type: str, label: str, linked_recipes: list[str]) -> bool:
-    """Record a new observation without touching canonical content or prior evidence."""
-    CANDIDATES_DIR.mkdir(parents=True, exist_ok=True)
-    key = candidate_key(note_type, label)
-    path = CANDIDATES_DIR / f"{key}.md"
-    if path.exists():
-        return False
+def retired_candidate_keys(root: Path) -> set[str]:
+    """Return candidates whose Curator decision permanently retired the observation."""
+    curation_dir = root / "records" / "curation"
+    if not curation_dir.exists():
+        return set()
+    retired: set[str] = set()
+    for path in curation_dir.rglob("*.md"):
+        record = parse_frontmatter(_read(path))
+        candidate = record.get("candidate", "")
+        if (
+            record.get("record_type") == "curation"
+            and record.get("decision") == "retire-candidate"
+            and record.get("retirement_reason")
+            and record.get("decided_by")
+            and re.fullmatch(r"\d{4}-\d{2}-\d{2}", record.get("decided_on", ""))
+            and re.fullmatch(r"candidate/[a-z0-9-]+", candidate)
+        ):
+            retired.add(candidate.removeprefix("candidate/"))
+    return retired
+
+
+def extraction_block(linked_recipes: list[str]) -> str:
     evidence = "\n".join(f"- `{recipe}`" for recipe in linked_recipes)
+    return "\n".join(
+        [
+            "## Current Extraction",
+            "",
+            "<!-- CANDIDATE-EXTRACTOR:START -->",
+            f"Frequency: {len(linked_recipes)} current Recipe(s).",
+            evidence,
+            "<!-- CANDIDATE-EXTRACTOR:END -->",
+        ]
+    )
+
+
+def update_extraction_block(path: Path, linked_recipes: list[str]) -> bool:
+    """Update only extractor-owned current-observation data, preserving all evidence."""
+    text = _read(path)
+    block = extraction_block(linked_recipes)
+    pattern = re.compile(
+        r"<!-- CANDIDATE-EXTRACTOR:START -->.*?<!-- CANDIDATE-EXTRACTOR:END -->",
+        re.S,
+    )
+    updated = pattern.sub(block, text)
+    if updated == text:
+        updated = text.rstrip() + "\n\n" + block + "\n"
+    if updated != text:
+        path.write_text(updated, encoding="utf-8")
+        return True
+    return False
+
+
+def record_candidate(
+    candidates_dir: Path,
+    retired_candidates: set[str],
+    note_type: str,
+    label: str,
+    linked_recipes: list[str],
+) -> str:
+    """Record a current observation without altering Knowledge Notes or Curation."""
+    candidates_dir.mkdir(parents=True, exist_ok=True)
+    key = candidate_key(note_type, label)
+    if key in retired_candidates:
+        return "unchanged"
+    path = candidates_dir / f"{key}.md"
+    if path.exists():
+        return "updated" if update_extraction_block(path, linked_recipes) else "unchanged"
     path.write_text(
         "\n".join(
             [
@@ -341,7 +319,10 @@ def record_candidate(note_type: str, label: str, linked_recipes: list[str]) -> b
                 "",
                 "## Evidence",
                 "",
-                evidence,
+                f"Original label: {json.dumps(label)}.",
+                "Provenance: current Recipe extraction.",
+                "",
+                extraction_block(linked_recipes),
                 "",
                 "## Disposition",
                 "",
@@ -351,57 +332,13 @@ def record_candidate(note_type: str, label: str, linked_recipes: list[str]) -> b
         ),
         encoding="utf-8",
     )
-    return True
+    return "created"
 
 
-def build_related_block(
-    techniques: list[str], principles: list[str], ingredients: list[str]
-) -> str:
-    lines = [
-        "## RELATED LINKS",
-        AUTO_START,
-        "",
-        "### Techniques",
-    ]
-    if techniques:
-        lines.extend([f"- [[Technique - {t}]]" for t in techniques])
-    else:
-        lines.append("- None")
-    lines.extend(["", "### Principles"])
-    if principles:
-        lines.extend([f"- [[Principle - {p}]]" for p in principles])
-    else:
-        lines.append("- None")
-    lines.extend(["", "### Ingredients"])
-    if ingredients:
-        lines.extend([f"- [[Ingredient - {i}]]" for i in ingredients])
-    else:
-        lines.append("- None")
-    lines.extend(["", AUTO_END, ""])
-    return "\n".join(lines)
-
-
-def upsert_related_block(recipe_text: str, block: str) -> str:
-    if AUTO_START in recipe_text and AUTO_END in recipe_text:
-        pattern = re.compile(
-            rf"## RELATED LINKS\n{re.escape(AUTO_START)}.*?{re.escape(AUTO_END)}\n?",
-            flags=re.S,
-        )
-        return pattern.sub(block, recipe_text)
-
-    marker = "## STRUCTURAL NOTES"
-    idx = recipe_text.find(marker)
-    if idx == -1:
-        if not recipe_text.endswith("\n"):
-            recipe_text += "\n"
-        return recipe_text + "\n" + block
-    prefix = recipe_text[:idx].rstrip() + "\n\n"
-    suffix = recipe_text[idx:]
-    return prefix + block + "\n" + suffix
-
-
-def main() -> None:
-    recipe_paths = sorted(p for p in RECIPES_DIR.glob("*.md") if p.name != "README.md")
+def main(root: Path) -> None:
+    recipes_dir = root / "recipes"
+    candidates_dir = root / "records" / "candidates"
+    recipe_paths = sorted(p for p in recipes_dir.glob("*.md") if p.name != "README.md")
 
     techniques_to_recipes: dict[str, set[str]] = defaultdict(set)
     principles_to_recipes: dict[str, set[str]] = defaultdict(set)
@@ -441,22 +378,42 @@ def main() -> None:
             ingredients_to_recipes[ingredient].add(recipe_name)
 
     created = 0
+    updated = 0
+    retired_candidates = retired_candidate_keys(root)
     for note_type, observations in (
         ("technique", techniques_to_recipes),
         ("principle", principles_to_recipes),
         ("ingredient", ingredients_to_recipes),
     ):
         for label, linked in observations.items():
-            created += record_candidate(note_type, label, sorted_casefold(linked))
+            result = record_candidate(
+                candidates_dir,
+                retired_candidates,
+                note_type,
+                label,
+                sorted_casefold(linked),
+            )
+            if result == "created":
+                created += 1
+            elif result == "updated":
+                updated += 1
 
     print(
         "Recorded candidate observations for "
         f"{len(recipe_paths)} recipes, "
         f"{len(techniques_to_recipes)} techniques, "
         f"{len(principles_to_recipes)} principles, "
-        f"{len(ingredients_to_recipes)} ingredients; {created} new candidate(s)."
+        f"{len(ingredients_to_recipes)} ingredients; "
+        f"{created} new candidate(s), {updated} updated candidate(s)."
     )
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--root",
+        type=Path,
+        default=Path(__file__).resolve().parent.parent,
+        help="repository root (defaults to this script's repository)",
+    )
+    main(parser.parse_args().root.resolve())
