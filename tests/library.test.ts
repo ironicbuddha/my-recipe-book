@@ -462,10 +462,186 @@ retirement_reason: "Equipment, not an Ingredient."
 decided_by: "Curator"
 decided_on: 2026-09-11
 ---
+
+## Evidence
+
+The original label was observed in the listed Recipe.
+
+## Rationale
+
+The Curator reviewed the evidence and retired this Candidate.
 `,
     );
 
     expect(loadLibrary(root).knowledge).toHaveLength(133);
+  });
+
+  it.each([
+    [
+      'missing narrative evidence',
+      `## Rationale
+
+The Curator reviewed the evidence and retired this Candidate.`,
+      'retire-candidate Curation requires non-empty Evidence and Rationale sections',
+    ],
+    [
+      'candidate label that does not match its key',
+      `## Evidence
+
+The original label was observed in the listed Recipe.
+
+## Rationale
+
+The Curator reviewed the evidence and retired this Candidate.`,
+      'retire-candidate Curation candidate must agree with candidate_label',
+    ],
+    [
+      'unknown evidence source',
+      `## Evidence
+
+The original label was observed in the listed Recipe.
+
+## Rationale
+
+The Curator reviewed the evidence and retired this Candidate.`,
+      'retire-candidate Curation evidence_sources must contain exact Recipe Versions',
+    ],
+    [
+      'invalid calendar date',
+      `## Evidence
+
+The original label was observed in the listed Recipe.
+
+## Rationale
+
+The Curator reviewed the evidence and retired this Candidate.`,
+      'Curation requires candidate, Curator, and decision date',
+    ],
+  ])('rejects retire-candidate Curation with %s', (description, body, diagnostic) => {
+    const root = copyPilotLibrary();
+    const label = description === 'candidate label that does not match its key'
+      ? 'Square skillet'
+      : 'Square pan';
+    const evidence = description === 'unknown evidence source'
+      ? 'recipe/missing@1'
+      : 'recipe/masterclass-chocolate-brownie@1';
+    const date = description === 'invalid calendar date' ? '2026-02-31' : '2026-09-11';
+    fs.writeFileSync(
+      path.join(root, 'records/curation/square-pan-retired.md'),
+      `---
+record_type: curation
+candidate: candidate/ingredient-square-pan
+candidate_label: "${label}"
+evidence_sources: [${evidence}]
+decision: retire-candidate
+retirement_reason: "Equipment, not an Ingredient."
+decided_by: "Curator"
+decided_on: ${date}
+---
+
+${body}
+`,
+    );
+
+    expect(() => loadLibrary(root)).toThrow(ContentValidationError);
+    expect(() => loadLibrary(root)).toThrow(diagnostic);
+  });
+
+  it('requires decided_on in Curation frontmatter rather than its narrative body', () => {
+    const root = copyPilotLibrary();
+    fs.writeFileSync(
+      path.join(root, 'records/curation/square-pan-retired.md'),
+      `---
+record_type: curation
+candidate: candidate/ingredient-square-pan
+candidate_label: "Square pan"
+evidence_sources: [recipe/masterclass-chocolate-brownie@1]
+decision: retire-candidate
+retirement_reason: "Equipment, not an Ingredient."
+decided_by: "Curator"
+---
+
+## Evidence
+
+decided_on: 2026-09-11
+
+## Rationale
+
+The Curator reviewed the evidence and retired this Candidate.
+`,
+    );
+
+    expect(() => loadLibrary(root)).toThrow(
+      'Curation requires candidate, Curator, and decision date',
+    );
+  });
+
+  it('rejects non-string retire-candidate evidence sources', () => {
+    const root = copyPilotLibrary();
+    fs.writeFileSync(
+      path.join(root, 'records/curation/square-pan-retired.md'),
+      `---
+record_type: curation
+candidate: candidate/ingredient-square-pan
+candidate_label: "Square pan"
+evidence_sources: [recipe/masterclass-chocolate-brownie@1, 42]
+decision: retire-candidate
+retirement_reason: "Equipment, not an Ingredient."
+decided_by: "Curator"
+decided_on: 2026-09-11
+---
+
+## Evidence
+
+The original label was observed in the listed Recipe.
+
+## Rationale
+
+The Curator reviewed the evidence and retired this Candidate.
+`,
+    );
+
+    expect(() => loadLibrary(root)).toThrow(
+      'retire-candidate Curation evidence_sources must contain exact Recipe Versions',
+    );
+  });
+
+  it('requires retirement evidence to use extractor-recognized Recipe Version syntax', () => {
+    const root = copyPilotLibrary();
+    const source = path.join(
+      root,
+      'recipes/2026-02-19 - Masterclass Chocolate Brownie.md',
+    );
+    fs.writeFileSync(
+      source,
+      fs.readFileSync(source, 'utf8').replace('version: 1', 'version: 01'),
+    );
+    fs.writeFileSync(
+      path.join(root, 'records/curation/square-pan-retired.md'),
+      `---
+record_type: curation
+candidate: candidate/ingredient-square-pan
+candidate_label: "Square pan"
+evidence_sources: [recipe/masterclass-chocolate-brownie@1]
+decision: retire-candidate
+retirement_reason: "Equipment, not an Ingredient."
+decided_by: "Curator"
+decided_on: 2026-09-11
+---
+
+## Evidence
+
+The original label was observed in the listed Recipe.
+
+## Rationale
+
+The Curator reviewed the evidence and retired this Candidate.
+`,
+    );
+
+    expect(() => loadLibrary(root)).toThrow(
+      'retire-candidate Curation evidence_sources must contain exact Recipe Versions',
+    );
   });
 
   it('projects the approved pilot through the recipe-facing public helpers', () => {

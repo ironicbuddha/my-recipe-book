@@ -137,7 +137,7 @@ export function loadLibrary(
   const sourceRecords = readSourceRecords(root, diagnostics);
   const inventories = readInventories(root, diagnostics);
   const promotions = readPromotions(root, diagnostics);
-  const curations = readCurations(root, diagnostics);
+  const curations = readCurations(root, sourceRecords, diagnostics);
   const retirements = readRetirements(root, diagnostics);
   const publisherRoutes = readPublisherRoutes(root, diagnostics);
   const entriesByIdentity = new Map<string, LibraryEntry[]>();
@@ -718,6 +718,7 @@ function readPromotions(
 
 function readCurations(
   root: string,
+  sourceRecords: SourceRecord[],
   diagnostics: string[],
 ): Map<string, SourceRecord> {
   const directory = path.join(root, 'records/curation');
@@ -725,6 +726,12 @@ function readCurations(
     return new Map();
   }
   const curations = new Map<string, SourceRecord>();
+  const recipeVersions = new Set(
+    sourceRecords
+      .filter((source) => isRecipeIdentity(stringValue(source.data.identity)))
+      .map(recipeVersionIdentityFromSource)
+      .filter((identity): identity is string => identity !== undefined),
+  );
   for (const filePath of readMarkdownFiles(directory)) {
     const relativePath = path.relative(root, filePath);
     const record = readRecord(root, relativePath, diagnostics);
@@ -734,7 +741,9 @@ function readCurations(
     const subject = stringValue(record.data.subject);
     const candidate = stringValue(record.data.candidate);
     const curator = stringValue(record.data.decided_by);
-    const date = dateValue(record.data.decided_on);
+    const date = dateValue(
+      frontmatterScalar(record.filePath, 'decided_on') ?? record.data.decided_on,
+    );
     if (
       record.data.record_type !== 'curation' ||
       !candidate ||
@@ -761,6 +770,32 @@ function readCurations(
       if (!stringValue(record.data.retirement_reason)) {
         diagnostics.push(
           `${relativePath}: retire-candidate Curation requires retirement_reason`,
+        );
+      }
+      const label = stringValue(record.data.candidate_label);
+      if (!label || !candidateMatchesLabel(candidate, label)) {
+        diagnostics.push(
+          `${relativePath}: retire-candidate Curation candidate must agree with candidate_label`,
+        );
+      }
+      const evidenceSources = record.data.evidence_sources;
+      if (
+        !Array.isArray(evidenceSources) ||
+        evidenceSources.length === 0 ||
+        evidenceSources.some(
+          (source) => typeof source !== 'string' || !recipeVersions.has(source),
+        )
+      ) {
+        diagnostics.push(
+          `${relativePath}: retire-candidate Curation evidence_sources must contain exact Recipe Versions`,
+        );
+      }
+      if (
+        !hasNonemptySection(record.body, 'Evidence') ||
+        !hasNonemptySection(record.body, 'Rationale')
+      ) {
+        diagnostics.push(
+          `${relativePath}: retire-candidate Curation requires non-empty Evidence and Rationale sections`,
         );
       }
       continue;
@@ -1844,8 +1879,10 @@ function recipeVersionIdentityFromSource(
     return undefined;
   }
   const identity = stringValue(source.data.identity);
-  const version = positiveInteger(source.data.version);
-  return identity && version ? `${identity}@${version}` : undefined;
+  const version = frontmatterScalar(source.filePath, 'version');
+  return identity && version && /^[1-9]\d*$/u.test(version)
+    ? `${identity}@${version}`
+    : undefined;
 }
 
 function recipeFingerprint(source: SourceRecord): string {
@@ -1947,9 +1984,39 @@ function dateValue(value: unknown): string | undefined {
     value instanceof Date
       ? value.toISOString().slice(0, 10)
       : stringValue(value);
-  return candidate && /^\d{4}-\d{2}-\d{2}$/u.test(candidate)
+  if (!candidate || !/^\d{4}-\d{2}-\d{2}$/u.test(candidate)) {
+    return undefined;
+  }
+  const date = new Date(`${candidate}T00:00:00.000Z`);
+  return !Number.isNaN(date.valueOf()) && date.toISOString().slice(0, 10) === candidate
     ? candidate
     : undefined;
+}
+
+function candidateMatchesLabel(candidate: string, label: string): boolean {
+  const match = /^candidate\/(technique|principle|ingredient)-[a-z0-9]+(?:-[a-z0-9]+)*$/u.exec(
+    candidate,
+  );
+  const key = label.toLowerCase().replace(/[^a-z0-9]+/gu, '-').replace(/^-|-$/gu, '');
+  return Boolean(match && candidate === `candidate/${match[1]}-${key}`);
+}
+
+function hasNonemptySection(body: string, heading: string): boolean {
+  const section = new RegExp(
+    `^## ${heading}\\s*\\n\\s*\\n([\\s\\S]*?)(?=^## |(?![\\s\\S]))`,
+    'mu',
+  ).exec(body);
+  return Boolean(section?.[1].trim());
+}
+
+function frontmatterScalar(filePath: string, key: string): string | undefined {
+  const raw = fs.readFileSync(filePath, 'utf8');
+  const frontmatter = /^---\r?\n([\s\S]*?)\r?\n---/u.exec(raw)?.[1];
+  if (!frontmatter) {
+    return undefined;
+  }
+  const match = new RegExp(`^${key}:\\s*(.+?)\\s*$`, 'mu').exec(frontmatter);
+  return match?.[1].replace(/^['"]|['"]$/gu, '').trim();
 }
 
 function positiveInteger(value: unknown): number | undefined {
