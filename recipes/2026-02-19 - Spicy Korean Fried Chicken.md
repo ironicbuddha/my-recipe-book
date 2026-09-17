@@ -1,210 +1,91 @@
 ---
 title: "Spicy Korean Fried Chicken (Yangnyeom Dak)"
 date: 2026-02-19
-type: recipe
-version: v1.0
+identity: recipe/spicy-korean-fried-chicken
+version: 1
 yield: "2 portions"
-portions: 2
-target_internal_temperature_c: null
-primary_ingredient: "chicken wings or drumettes"
-primary_mass_g: 500
-techniques: ["double frying", "starch batter coating", "sauce reduction"]
-principles: ["starch dehydration", "Maillard reaction", "sauce adhesion", "textural contrast"]
-tags: ["dish-main-course", "korean", "chicken", "frying", "crisp", "maillard"]
-cssclass: modernist-recipe
+scale_basis:
+  ingredient: ingredient/chicken-wings
+  quantity_g: 500
+tags: [dish-main-course, korean, chicken, frying]
 ---
 
-# SPICY KOREAN FRIED CHICKEN (YANGNYEOM DAK)
+Double-fried chicken with a crisp starch coating and spicy yangnyeom sauce.
 
-Yield: 2 portions
-Portions: 2
-Target: double-fried endpoint (deeply golden, audibly crisp)
+## PHASE A — SEASON CHICKEN
 
-Primary Ingredient Basis: `500 g chicken wings or drumettes = 100%`
+### Ingredient Uses
 
-Double-fried, starch-based coating for maximum crispness. Optimised for sauce adhesion without loss of crunch.
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| chicken-wings | [Chicken wings](ref:ingredient/chicken-wings) | 500 g | 100.00% | Use wings as one approved alternative. |
+| chicken-drumettes | [Chicken drumettes](ref:ingredient/chicken-drumettes) | As needed | — | Use instead of wings as the other approved alternative. |
+| salt | [Salt](ref:ingredient/salt) | 5 g | 1.00% | Season the chicken. |
+| black-pepper | [Black pepper](ref:ingredient/black-pepper) | 1 g | 0.20% | Season the chicken. |
+| garlic-powder | [Garlic powder](ref:ingredient/garlic-powder) | 2.5 g | 0.50% | Season the chicken. |
+| rice-wine | [Rice wine](ref:ingredient/rice-wine) | 7.5 g | 1.50% | Optional aromatic. |
 
+### Method
 
----
+1. Combine the chicken with seasoning and rest 10–20 min at room temperature.
 
-## PHASE A — CHICKEN PREPARATION
+## PHASE B — MAKE BATTER AND DOUBLE FRY
 
----
+### Ingredient Uses
 
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Chicken wings or drumettes | 500 g | 100.00% |
->> | Salt | 5 g | 1.00% |
->> | Black pepper | 1 g | 0.20% |
->> | Garlic powder | 2.5 g | 0.50% |
->> | Rice wine or dry sherry (optional) | 7.5 g | 1.50% |
->
->> [!col-right]
->> ### Method
->> 1. Combine chicken, salt, pepper, garlic powder, and rice wine.
->> 2. Mix thoroughly and rest 10–20 min at room temperature.
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| cornstarch | [Cornstarch](ref:ingredient/cornstarch) | 35 g | 7.00% | Form the crisp coating. |
+| gluten-free-flour | [Gluten-free flour mix](ref:ingredient/gluten-free-flour-mix) | 15 g | 3.00% | Form the crisp coating. |
+| baking-powder | [Baking powder](ref:ingredient/baking-powder) | 1 g | 0.20% | Lighten the batter. |
+| egg | [Egg](ref:ingredient/egg) | 25 g | 5.00% | Bind the batter. |
+| water | [Water](ref:ingredient/water) | 60 g | 12.00% | Use ice-cold or sparkling water. |
+| frying-oil | [Neutral frying oil](ref:ingredient/neutral-frying-oil) | As needed | — | Fry the coated chicken. |
 
+### Technique Applications
 
----
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [Starch batter coating](ref:technique/starch-batter-coating) | Rest coated chicken 5 min before frying. | Form a thin, adherent coating. |
+| [Double frying](ref:technique/double-frying) | Fry at 160 C, drain, then fry at 185–190 C until audibly crisp. | Cook the chicken and dehydrate the crust. |
 
-## PHASE B — BATTER & COATING
+### Method
 
----
+1. Whisk the batter, coat the chicken, rest it on a rack, and fry twice at the stated temperatures.
 
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Cornstarch | 35 g | 7.00% |
->> | Gluten-free flour mix (rice flour + potato starch) | 15 g | 3.00% |
->> | Baking powder | 1 g | 0.20% |
->> | Egg | 25 g | 5.00% |
->> | Ice-cold water or sparkling water | 60 g | 12.00% |
->
->> [!col-right]
->> ### Method
->> 1. Combine cornstarch, gluten-free flour mix, and baking powder.
->> 2. Whisk in egg and cold water until batter is smooth and lightly runny.
->> 3. Dip chicken into batter and allow excess to drip off.
->> 4. Arrange coated chicken on rack or tray and rest 5 min.
+## PHASE C — MAKE SAUCE AND FINISH
 
+### Ingredient Uses
 
----
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| gochujang | [Gochujang](ref:ingredient/gochujang) | 20 g | 4.00% | Make the sauce. |
+| ketchup | [Ketchup](ref:ingredient/ketchup) | 30 g | 6.00% | Make the sauce. |
+| soy-sauce | [Soy sauce](ref:ingredient/soy-sauce) | 15 g | 3.00% | Season the sauce. |
+| brown-sugar | [Brown sugar](ref:ingredient/brown-sugar) | 22.5 g | 4.50% | Balance the sauce. |
+| rice-vinegar | [Rice vinegar](ref:ingredient/rice-vinegar) | 15 g | 3.00% | Brighten the sauce. |
+| garlic | [Garlic](ref:ingredient/garlic) | 5 g | 1.00% | Grate into the sauce. |
+| ginger | [Ginger](ref:ingredient/ginger) | 2.5 g | 0.50% | Grate into the sauce. |
+| gochugaru | [Gochugaru](ref:ingredient/gochugaru) | 5 g | 1.00% | Add chile heat. |
+| sesame-oil | [Sesame oil](ref:ingredient/sesame-oil) | 7.5 g | 1.50% | Stir in off heat. |
 
-## PHASE C — DOUBLE FRY
+### Technique Applications
 
----
-
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Neutral frying oil | as needed | — |
->
->> [!col-right]
->> ### Method
->> 1. Heat oil to 160 C.
->> 2. Fry chicken for 7–8 min until cooked through but pale.
->> 3. Remove and drain.
->> 4. Increase oil temperature to 185–190 C.
->> 5. Fry chicken for 2–3 min until deeply golden and audibly crisp.
->> 6. Drain thoroughly.
-
-
----
-
-## PHASE D — SPICY SAUCE (YANGNYEOM)
-
----
-
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Gochujang | 20 g | 4.00% |
->> | Ketchup | 30 g | 6.00% |
->> | Soy sauce | 15 g | 3.00% |
->> | Honey or brown sugar | 22.5 g | 4.50% |
->> | Rice vinegar | 15 g | 3.00% |
->> | Garlic, finely grated | 5 g | 1.00% |
->> | Ginger, grated | 2.5 g | 0.50% |
->> | Gochugaru | 5 g | 1.00% |
->> | Sesame oil | 7.5 g | 1.50% |
->
->> [!col-right]
->> ### Method
->> 1. Combine all sauce ingredients except sesame oil.
->> 2. Simmer gently for 2–3 min until slightly thickened.
->> 3. Remove from heat and stir in sesame oil.
-
-
----
-
-## PHASE E — FINISH
-
----
-
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Fried chicken | from Phase C | — |
->> | Yangnyeom sauce | from Phase D | — |
->
->> [!col-right]
->> ### Method
->> 1. Toss hot chicken in warm sauce until evenly coated.
->> 2. Serve immediately.
-
-## RELATED LINKS
-<!-- AUTO-GENERATED:RELATED-LINKS:START -->
-
-### Techniques
-- [[Technique - Double Frying]]
-- [[Technique - Sauce Reduction]]
-- [[Technique - Starch Batter Coating]]
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [Reduction](ref:technique/reduction) | Simmer 2–3 min until slightly thickened. | Meld and concentrate the sauce. |
 
 ### Principles
-- [[Principle - Maillard Reaction]]
-- [[Principle - Sauce Adhesion]]
-- [[Principle - Starch Dehydration]]
-- [[Principle - Textural Contrast]]
 
-### Ingredients
-- [[Ingredient - Baking Powder]]
-- [[Ingredient - Black Pepper]]
-- [[Ingredient - Chicken Wings Or Drumettes]]
-- [[Ingredient - Cornstarch]]
-- [[Ingredient - Egg]]
-- [[Ingredient - Fried Chicken]]
-- [[Ingredient - Garlic]]
-- [[Ingredient - Garlic Powder]]
-- [[Ingredient - Ginger]]
-- [[Ingredient - Gluten Free Flour Mix]]
-- [[Ingredient - Gochugaru]]
-- [[Ingredient - Gochujang]]
-- [[Ingredient - Honey Or Brown Sugar]]
-- [[Ingredient - Ice Cold Water Or Sparkling Water]]
-- [[Ingredient - Ketchup]]
-- [[Ingredient - Neutral Frying Oil]]
-- [[Ingredient - Rice Vinegar]]
-- [[Ingredient - Rice Wine Or Dry Sherry]]
-- [[Ingredient - Salt]]
-- [[Ingredient - Sesame Oil]]
-- [[Ingredient - Soy Sauce]]
-- [[Ingredient - Yangnyeom Sauce]]
+- [Starch dehydration](ref:principle/starch-dehydration) — The second fry dries the coating for lasting crispness.
 
-<!-- AUTO-GENERATED:RELATED-LINKS:END -->
+### Method
 
-## STRUCTURAL NOTES
-
-- Potato starch in the GF mix is critical for long-lasting crispness — it dehydrates more completely than wheat flour during frying.
-- Batter temperature should remain cold until frying; cold batter hitting hot oil creates more violent steam release, building a rougher, crispier surface.
-- The first fry at 160 C cooks the chicken through and sets the starch structure. The second fry at 185–190 C dehydrates the crust for lasting crunch.
-- Sauce should coat, not soak — excess sauce will soften the crust. Half-sauced service preserves textural contrast.
-- Sesame oil is added off heat to preserve its volatile aromatics.
+1. Simmer sauce ingredients except sesame oil, stir in sesame oil off heat, and toss the hot chicken lightly before serving.
 
 ## FAILURE MODES
 
-- Symptom: Coating falls off during frying.
-- Likely cause: Batter too thick or chicken not rested after coating.
-- Corrective action: Thin batter to lightly runny consistency. Rest coated chicken 5 min before first fry.
-
-- Symptom: Crisp coating goes soggy within minutes of saucing.
-- Likely cause: Too much sauce, or sauce applied to insufficiently drained chicken.
-- Corrective action: Drain chicken thoroughly after second fry. Toss in sauce — do not drown. Serve immediately.
-
-- Symptom: Chicken is cooked through but coating is pale and soft.
-- Likely cause: Second fry skipped or oil temperature too low.
-- Corrective action: Second fry at 185–190 C is non-negotiable. Fry until deeply golden and audibly crisp.
-
-- Symptom: Sauce tastes harsh and one-dimensional.
-- Likely cause: Insufficient simmer time or missing acid balance.
-- Corrective action: Simmer a full 2–3 min to meld flavours. Adjust vinegar and honey for sweet-sour balance.
+| Symptom | Likely cause | Corrective action |
+| --- | --- | --- |
+| Soggy coating | Chicken was drowned in sauce. | Drain after the second fry and toss lightly. |
+| Pale soft chicken | The second fry was skipped or too cool. | Fry again at 185–190 C until crisp. |

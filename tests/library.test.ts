@@ -184,6 +184,50 @@ Fixture-only Curation record for retirement mechanics.
 }
 
 describe('loadLibrary', () => {
+  it('publishes only the approved Batch 2 canonical recipes', () => {
+    const recipes = loadLibrary().recipes.map((recipe) => recipe.identity);
+
+    expect(recipes).toEqual(
+      expect.arrayContaining([
+        'recipe/bun-bo-nuong',
+        'recipe/bun-cha',
+        'recipe/fried-master-stock-chicken',
+        'recipe/lao-herbaceous-chicken-noodle-soup',
+        'recipe/asian-ginger-chicken-noodle-soup',
+        'recipe/spicy-korean-fried-chicken',
+      ]),
+    );
+  });
+
+  it('preserves every approved Batch 2 legacy route as a permanent redirect', () => {
+    expect(publisherRedirects()).toMatchObject({
+      '/recipes/2026-02-19-bun-bo-nuong-grilled-beef-with-rice-noodles/': {
+        destination: '/recipes/bun-bo-nuong/',
+        status: 301,
+      },
+      '/recipes/2026-02-19-bun-cha-hanoi-grilled-pork-with-noodles/': {
+        destination: '/recipes/bun-cha/',
+        status: 301,
+      },
+      '/recipes/2026-02-19-fried-master-stock-chicken/': {
+        destination: '/recipes/fried-master-stock-chicken/',
+        status: 301,
+      },
+      '/recipes/2026-02-19-lao-herbaceous-chicken-noodle-soup/': {
+        destination: '/recipes/lao-herbaceous-chicken-noodle-soup/',
+        status: 301,
+      },
+      '/recipes/2026-03-03-asian-chicken-noodle-soup/': {
+        destination: '/recipes/asian-ginger-chicken-noodle-soup/',
+        status: 301,
+      },
+      '/recipes/2026-02-19-spicy-korean-fried-chicken/': {
+        destination: '/recipes/spicy-korean-fried-chicken/',
+        status: 301,
+      },
+    });
+  });
+
   it('publishes the approved Batch 1 canonical recipes but excludes the Hash Brownies draft', () => {
     const library = loadLibrary();
 
@@ -429,25 +473,31 @@ decided_on: 2026-09-11
 `,
     );
 
-    expect(loadLibrary(root).knowledge).toHaveLength(70);
+    expect(loadLibrary(root).knowledge).toHaveLength(142);
   });
 
   it('projects the approved pilot through the recipe-facing public helpers', () => {
     const recipes = getAllRecipes();
 
-    expect(recipes).toHaveLength(6);
-    expect(recipes).toEqual(expect.arrayContaining([expect.objectContaining({
-      href: '/recipes/singapore-chicken-rice/',
-      slug: 'singapore-chicken-rice',
-      title: 'Singapore Chicken Rice (Hainanese)',
-    })]));
+    expect(recipes).toHaveLength(12);
+    expect(recipes).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          href: '/recipes/singapore-chicken-rice/',
+          slug: 'singapore-chicken-rice',
+          title: 'Singapore Chicken Rice (Hainanese)',
+        }),
+      ]),
+    );
     expect(getLibraryCounts()).toMatchObject({
-      ingredients: 40,
-      principles: 16,
-      recipes: 6,
-      techniques: 14,
+      ingredients: 88,
+      principles: 28,
+      recipes: 12,
+      techniques: 26,
     });
-    const singapore = recipes.find((recipe) => recipe.slug === 'singapore-chicken-rice');
+    const singapore = recipes.find(
+      (recipe) => recipe.slug === 'singapore-chicken-rice',
+    );
     expect(getRecipePhases(singapore?.body ?? '')).toHaveLength(5);
     expect(renderRecipeBody(singapore?.body ?? '')).toContain(
       '/ingredients/whole-chicken/',
@@ -522,10 +572,10 @@ decided_on: 2026-09-11
     ).toBe(true);
     expect(generated).toEqual([]);
     expect(getLibraryCounts()).toMatchObject({
-      ingredients: 40,
-      principles: 16,
-      recipes: 6,
-      techniques: 14,
+      ingredients: 88,
+      principles: 28,
+      recipes: 12,
+      techniques: 26,
     });
   });
 
@@ -593,9 +643,14 @@ The fixture preserves the accepted limitation.
     const priorRoot = process.env.CULINARY_LIBRARY_PREVIOUS_ROOT;
     process.env.CULINARY_LIBRARY_PREVIOUS_ROOT = previousRoot;
     try {
-      expect(loadLibrary(root).recipes).toEqual(expect.arrayContaining([
-        expect.objectContaining({ identity: 'recipe/singapore-chicken-rice', version: 2 }),
-      ]));
+      expect(loadLibrary(root).recipes).toEqual(
+        expect.arrayContaining([
+          expect.objectContaining({
+            identity: 'recipe/singapore-chicken-rice',
+            version: 2,
+          }),
+        ]),
+      );
     } finally {
       if (priorRoot) {
         process.env.CULINARY_LIBRARY_PREVIOUS_ROOT = priorRoot;
@@ -668,7 +723,11 @@ The fixture preserves the accepted limitation.
         .replace('Singapore Chicken Rice (Hainanese)', 'Renamed pilot'),
     );
 
-    expect(loadLibrary(root).recipes.find((recipe) => recipe.identity === 'recipe/singapore-chicken-rice')).toMatchObject({
+    expect(
+      loadLibrary(root).recipes.find(
+        (recipe) => recipe.identity === 'recipe/singapore-chicken-rice',
+      ),
+    ).toMatchObject({
       href: '/recipes/singapore-chicken-rice/',
       title: 'Renamed pilot',
     });
@@ -731,7 +790,7 @@ The fixture preserves the accepted limitation.
     expect(
       library.entries.filter((entry) => entry.type === 'experiment'),
     ).toHaveLength(6);
-    expect(library.recipes).toHaveLength(6);
+    expect(library.recipes).toHaveLength(12);
     expect(
       library.entries.find(
         (entry) => entry.identity === 'experiment/ingredient-use-trial',

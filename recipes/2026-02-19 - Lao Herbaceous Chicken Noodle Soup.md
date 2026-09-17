@@ -1,297 +1,91 @@
 ---
-title: "Lao-Influenced Herbaceous Chicken Noodle Soup with Red & Green Jeow"
+title: "Lao-Influenced Herbaceous Chicken Noodle Soup with Red and Green Jeow"
 date: 2026-02-19
-type: recipe
-version: v1.0
+identity: recipe/lao-herbaceous-chicken-noodle-soup
+version: 1
 yield: "2 portions"
-portions: 2
-target_internal_temperature_c: null
-primary_ingredient: "whole chicken"
-primary_mass_g: 750
-techniques: ["blanching", "gentle poaching", "broth fortification", "mortar pounding", "paste frying"]
-principles: ["collagen extraction", "aromatic infusion", "emulsion clarity", "condiment layering"]
-tags: ["dish-soup", "lao", "chicken", "soup", "noodles", "tender"]
-cssclass: modernist-recipe
+scale_basis:
+  ingredient: ingredient/whole-chicken
+  quantity_g: 750
+tags: [dish-soup, lao, chicken, noodles]
 ---
 
-# LAO-INFLUENCED HERBACEOUS CHICKEN NOODLE SOUP WITH RED & GREEN JEOW
+Clear chicken broth with rice noodles, herbs, and red and green jeow.
 
-Yield: 2 portions
-Portions: 2
-Total Time: 2–2.5 hours
+## PHASE A — BLANCH AND SIMMER BROTH
 
-Primary Ingredient Basis: `750 g whole chicken = 100%`
+### Ingredient Uses
 
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| chicken | [Whole chicken](ref:ingredient/whole-chicken) | 750 g | 100.00% | Poach in the broth. |
+| wing-tips | [Chicken wing tips](ref:ingredient/chicken-wing-tips) | 250 g | 33.33% | Build body in the broth. |
+| ginger | [Ginger](ref:ingredient/ginger) | 25 g | 3.33% | Slice for the broth. |
+| coriander-seed | [Coriander seed](ref:ingredient/coriander-seed) | 1.5 g | 0.20% | Season the broth. |
+| white-peppercorn | [White peppercorns](ref:ingredient/white-peppercorns) | 1 g | 0.13% | Season the broth. |
+| water | [Water](ref:ingredient/water) | As needed | — | Fully submerge the ingredients. |
 
----
+### Technique Applications
 
-## PHASE A — BLANCH WING TIPS
-
----
-
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Chicken wing tips | 250 g | 33.00% |
->> | Cold water | as needed | — |
->
->> [!col-right]
->> ### Method
->> 1. Bring wing tips and cold water to a hard boil.
->> 2. Boil 3–5 minutes until heavy foam forms.
->> 3. Drain and rinse thoroughly.
->> 4. Set aside.
-
-
----
-
-## PHASE B — FORTIFIED BROTH & POACH CHICKEN
-
----
-
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Blanched wing tips | from Phase A | — |
->> | Whole chicken | 750 g | 100.00% |
->> | Onion, halved | 1/2 large | — |
->> | Ginger, sliced | 25 g | 3.30% |
->> | Garlic cloves | 2–3 | — |
->> | Lemongrass, bruised | 1/2 stalk | — |
->> | Makrut lime leaves, torn | 1 | — |
->> | Coriander stems/roots | large handful | — |
->> | Coriander seeds | 1.5 g | 0.20% |
->> | White peppercorns | 1 g | 0.13% |
->> | Cold water | to fully submerge | — |
->> | Fine salt | light initial seasoning | — |
->
->> [!col-right]
->> ### Method
->> 1. Combine all ingredients in a stockpot.
->> 2. Add cold water to fully cover contents.
->> 3. Heat gradually to a gentle simmer; skim impurities.
->> 4. Do not boil.
->> 5. After 45–55 minutes remove chicken.
->> 6. Continue simmering wing tips 30–45 minutes.
-
-
----
-
-## PHASE C — STRAIN BROTH & SHRED CHICKEN
-
----
-
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Poached whole chicken | from Phase B | — |
->> | Finished broth | from Phase B | — |
->> | Fine salt | to taste | — |
->
->> [!col-right]
->> ### Method
->> 1. Rest chicken 15–20 minutes.
->> 2. Shred meat by hand into long strands.
->> 3. Strain broth through a fine sieve without pressing solids.
->> 4. Season broth to taste.
-
-
----
-
-## PHASE D — RED JEOW (SMOKY CHILLI PASTE)
-
----
-
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Dried red chillies | 4–6 | — |
->> | Hot water (for soaking) | as needed | — |
->> | Garlic cloves | 3 | — |
->> | Shallots | 1 small | — |
->> | Neutral oil | 15 g | 2.00% |
->> | Fish sauce | to taste | — |
->> | Lime juice or tamarind water | to taste | — |
->> | Fermented fish sauce / padek (optional) | 2.5 g | 0.30% |
->> | Toasted sticky rice powder (optional) | pinch | — |
->
->> [!col-right]
->> ### Method
->> 1. Toast dried chillies until fragrant; do not burn.
->> 2. Soak in hot water 10 minutes.
->> 3. Char garlic and shallots until blistered.
->> 4. Pound or blend to a coarse paste.
->> 5. Fry paste gently in oil until aromatic.
->> 6. Season with fish sauce, then acid.
->> 7. Cool and reserve.
-
-
----
-
-## PHASE E — GREEN JEOW (FRESH CHILLI PASTE)
-
----
-
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Fresh green chillies | 2–4 | — |
->> | Garlic cloves | 2 | — |
->> | Shallot | 1/2 small | — |
->> | Coriander roots/stems | 1–2 | — |
->> | Spring onion (white + some green) | 1/2 | — |
->> | Makrut lime leaf, finely sliced (optional) | 1/2 | — |
->> | Fish sauce | to taste | — |
->> | Lime juice | to taste | — |
->> | Fermented fish sauce / padek (optional) | a few drops | — |
->> | Toasted sticky rice powder (optional) | pinch | — |
->
->> [!col-right]
->> ### Method
->> 1. Pound garlic, shallot, and coriander roots into a paste.
->> 2. Add chillies and pound coarsely.
->> 3. Add spring onion and lime leaf; lightly incorporate.
->> 4. Season with fish sauce and lime juice.
->> 5. Adjust balance and reserve.
-
-
----
-
-## PHASE F — COOK NOODLES
-
----
-
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Flat rice noodles (medium width) | as needed | — |
->> | Boiling water | as needed | — |
->
->> [!col-right]
->> ### Method
->> 1. Cook noodles until just tender.
->> 2. Drain thoroughly.
-
-
----
-
-## PHASE G — ASSEMBLE & SERVE (PER BOWL)
-
----
-
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Cooked rice noodles | per bowl | — |
->> | Shredded chicken | per bowl | — |
->> | Boiling hot broth | per bowl | — |
->> | Fresh herbs (coriander, mint, dill, Thai basil) | generous | — |
->> | Lime wedges | per bowl | — |
->> | Red jeow | from Phase D | — |
->> | Green jeow | from Phase E | — |
->> | Fish sauce | to taste | — |
->> | Chilli oil (optional) | to taste | — |
->
->> [!col-right]
->> ### Method
->> 1. Place noodles in bowl.
->> 2. Add shredded chicken.
->> 3. Ladle over boiling hot broth.
->> 4. Finish generously with fresh herbs.
->> 5. Add lime juice to taste.
->> 6. Adjust seasoning and heat with jeow and fish sauce.
-
-## RELATED LINKS
-<!-- AUTO-GENERATED:RELATED-LINKS:START -->
-
-### Techniques
-- [[Technique - Blanching]]
-- [[Technique - Broth Fortification]]
-- [[Technique - Gentle Poaching]]
-- [[Technique - Mortar Pounding]]
-- [[Technique - Paste Frying]]
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [Blanching](ref:technique/blanching) | Boil wing tips 3–5 min, drain, and rinse. | Remove foam before broth-making. |
+| [Poaching](ref:technique/poaching) | Heat to a gentle simmer; never boil. | Cook chicken while keeping the broth clear. |
 
 ### Principles
-- [[Principle - Aromatic Infusion]]
-- [[Principle - Collagen Extraction]]
-- [[Principle - Condiment Layering]]
-- [[Principle - Emulsion Clarity]]
 
-### Ingredients
-- [[Ingredient - Blanched Wing Tips]]
-- [[Ingredient - Boiling Hot Broth]]
-- [[Ingredient - Boiling Water]]
-- [[Ingredient - Chicken Wing Tips]]
-- [[Ingredient - Chili Oil]]
-- [[Ingredient - Cold Water]]
-- [[Ingredient - Coriander Roots / Stems]]
-- [[Ingredient - Coriander Seed]]
-- [[Ingredient - Coriander Stems / Roots]]
-- [[Ingredient - Dried Red Chili]]
-- [[Ingredient - Fermented Fish Sauce / Padek]]
-- [[Ingredient - Fine Salt]]
-- [[Ingredient - Finished Broth]]
-- [[Ingredient - Fish Sauce]]
-- [[Ingredient - Flat Rice Noodles]]
-- [[Ingredient - Fresh Green Chili]]
-- [[Ingredient - Fresh Herbs]]
-- [[Ingredient - Garlic Cloves]]
-- [[Ingredient - Ginger]]
-- [[Ingredient - Green Jeow]]
-- [[Ingredient - Hot Water]]
-- [[Ingredient - Lemongrass]]
-- [[Ingredient - Lime Juice]]
-- [[Ingredient - Lime Juice Or Tamarind Water]]
-- [[Ingredient - Lime Wedges]]
-- [[Ingredient - Makrut Lime Leaf]]
-- [[Ingredient - Neutral Oil]]
-- [[Ingredient - Onion]]
-- [[Ingredient - Red Jeow]]
-- [[Ingredient - Shallot]]
-- [[Ingredient - Shredded Chicken]]
-- [[Ingredient - Spring Onion]]
-- [[Ingredient - Toasted Sticky Rice Powder]]
-- [[Ingredient - White Peppercorns]]
-- [[Ingredient - Whole Chicken]]
+- [Collagen extraction](ref:principle/collagen-extraction) — Wing tips give the broth body during the simmer.
 
-<!-- AUTO-GENERATED:RELATED-LINKS:END -->
+### Method
 
-## STRUCTURAL NOTES
+1. Blanch and rinse wing tips, then simmer them with chicken and aromatics.
+2. Remove chicken after 45–55 min and continue simmering wing tips for 30–45 min.
 
-- Blanching wing tips removes blood proteins and impurities, ensuring a clear broth. Skipping this step produces a cloudy, livery stock.
-- Gentle simmering (never boiling) keeps the broth clear — rolling boils emulsify fat and particulates into permanent haze.
-- Wing tips provide collagen-rich body that the whole chicken alone cannot deliver in this timeframe.
-- The two jeow function as independent condiment layers — red brings smoky depth, green brings sharp freshness. They should not be combined.
-- Straining without pressing solids preserves clarity; pressing extracts starch and fine particulates.
+## PHASE B — MAKE JEOW AND NOODLES
+
+### Ingredient Uses
+
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| dried-red-chili | [Dried red chili](ref:ingredient/dried-red-chili) | As needed | — | Toast and soak for red jeow. |
+| fresh-green-chili | [Fresh green chili](ref:ingredient/fresh-green-chili) | As needed | — | Pound for green jeow. |
+| garlic | [Garlic](ref:ingredient/garlic) | As needed | — | Pound into both jeow. |
+| shallot | [Shallot](ref:ingredient/shallot) | As needed | — | Char and pound. |
+| neutral-oil | [Neutral oil](ref:ingredient/neutral-oil) | 15 g | 2.00% | Fry the red jeow paste. |
+| fish-sauce | [Fish sauce](ref:ingredient/fish-sauce) | As needed | — | Season the condiments. |
+| lime-juice | [Lime juice](ref:ingredient/lime-juice) | As needed | — | Balance the condiments. |
+| padek | [Padek](ref:ingredient/padek) | As needed | — | Optional Lao fermented-fish seasoning. |
+| flat-rice-noodles | [Flat rice noodles](ref:ingredient/flat-rice-noodles) | As needed | — | Cook until just tender. |
+
+### Technique Applications
+
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [Mortar pounding](ref:technique/mortar-pounding) | Pound the aromatics to a coarse paste. | Build the red and green jeow. |
+| [Paste frying](ref:technique/paste-frying) | Fry red jeow gently until aromatic. | Cook out the raw paste flavour. |
+
+### Method
+
+1. Make separate red and green jeow, adjusting each with fish sauce, acid, and optional padek.
+2. Cook and drain the noodles.
+
+## PHASE C — ASSEMBLE SOUP
+
+### Ingredient Uses
+
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| mixed-herbs | [Mixed herbs](ref:ingredient/mixed-herbs) | As needed | — | Finish each bowl generously. |
+| chili-oil | [Chili oil](ref:ingredient/chili-oil) | As needed | — | Optional bowl seasoning. |
+
+### Method
+
+1. Shred the rested chicken and strain the broth without pressing the solids.
+2. Assemble noodles and chicken, ladle over hot broth, and finish with herbs, lime, jeow, and optional chili oil.
 
 ## FAILURE MODES
 
-- Symptom: Broth is cloudy and greasy.
-- Likely cause: Stock was boiled rather than simmered, or solids were pressed during straining.
-- Corrective action: Maintain gentle simmer throughout. Strain through fine sieve without pressing.
-
-- Symptom: Chicken is dry and stringy.
-- Likely cause: Overcooked — left in simmering broth too long.
-- Corrective action: Remove chicken at 45–55 minutes and rest before shredding. Residual heat finishes carryover.
-
-- Symptom: Red jeow tastes bitter and acrid.
-- Likely cause: Chillies burnt during toasting.
-- Corrective action: Toast over medium heat, moving constantly. Remove at first sign of fragrance, not colour change.
-
-- Symptom: Soup tastes flat despite seasoning.
-- Likely cause: Insufficient acid or condiment balance at the bowl stage.
-- Corrective action: Add lime juice and a spoonful of jeow. Fish sauce for salt, acid for lift.
+| Symptom | Likely cause | Corrective action |
+| --- | --- | --- |
+| Cloudy broth | Broth boiled or solids were pressed. | Hold a gentle simmer and strain without pressure. |
+| Bitter red jeow | Chillies burned while toasting. | Toast over medium heat and remove at first fragrance. |

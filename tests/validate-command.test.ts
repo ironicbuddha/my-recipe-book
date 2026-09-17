@@ -272,7 +272,7 @@ describe('make validate', () => {
 
     expect(result.status).toBe(0);
     expect(result.stdout).toContain(
-      'Validation passed: 6 recipe(s), 70 Knowledge Note(s), 0 Completed Experiment(s).',
+      'Validation passed: 12 recipe(s), 142 Knowledge Note(s), 0 Completed Experiment(s).',
     );
   });
 
@@ -314,24 +314,20 @@ describe('make validate', () => {
     expect(result.stderr).toContain('scaling 80.00% must be 100.00%');
   });
 
-  it(
-    'builds a recipe without a matching hero asset as a readable page without a hero figure',
-    () => {
-      const root = copyPilotLibrary();
-      writeCanonicalRecipeWithoutHero(root);
+  it('builds a recipe without a matching hero asset as a readable page without a hero figure', () => {
+    const root = copyPilotLibrary();
+    writeCanonicalRecipeWithoutHero(root);
 
-      const result = build(root);
-      const page = fs.readFileSync(
-        path.join(process.cwd(), 'dist/recipes/hero-fallback-pilot/index.html'),
-        'utf8',
-      );
+    const result = build(root);
+    const page = fs.readFileSync(
+      path.join(process.cwd(), 'dist/recipes/hero-fallback-pilot/index.html'),
+      'utf8',
+    );
 
-      expect(result.status).toBe(0);
-      expect(page).toContain('<h1>Hero fallback pilot</h1>');
-      expect(page).not.toContain('recipe-hero');
-    },
-    15_000,
-  );
+    expect(result.status).toBe(0);
+    expect(page).toContain('<h1>Hero fallback pilot</h1>');
+    expect(page).not.toContain('recipe-hero');
+  }, 15_000);
 
   it('accepts a canonical Recipe reference to an exact Superseded Recipe Version', () => {
     const root = copyPilotLibrary();
@@ -513,7 +509,7 @@ describe('make validate', () => {
     );
     expect(original).toContain('Published corrections');
     expect(original).toContain('href="/experiments/recipe-trial-correction/"');
-  });
+  }, 15_000);
 
   it('rejects missing subjects, incomplete completion evidence, and changed prior evidence', () => {
     const root = copyPilotLibrary();

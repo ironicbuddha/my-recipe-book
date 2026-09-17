@@ -1,167 +1,90 @@
 ---
 title: "Bún bò nướng (Grilled Beef with Rice Noodles)"
 date: 2026-02-19
-type: recipe
-version: v1.0
+identity: recipe/bun-bo-nuong
+version: 1
 yield: "2 portions"
-portions: 2
-target_internal_temperature_c: 54
-primary_ingredient: "Beef sirloin"
-primary_mass_g: 250
-techniques: ["marination", "high-heat grilling", "rapid caramelization", "fresh herb assembly"]
-principles: ["Maillard reaction", "acid-salt balance", "herbaceous contrast", "thin slicing across grain"]
-tags: ["dish-main-course", "vietnamese", "beef", "noodles", "grilled"]
-cssclass: modernist-recipe
+scale_basis:
+  ingredient: ingredient/beef-sirloin
+  quantity_g: 250
+tags: [dish-main-course, vietnamese, beef, noodles, grilled]
 ---
 
-# BÚN BÒ NƯỚNG (GRILLED BEEF WITH RICE NOODLES)
+Marinated beef, rice vermicelli, herbs, and nước chấm.
 
-Yield: 2 portions
-Portions: 2
-Target Internal Temperature: 54 C (medium-rare; do not exceed 57 C)
+## PHASE A — MARINATE BEEF
 
-Primary Ingredient Basis: `250 g beef sirloin = 100%`
+### Ingredient Uses
 
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| beef | [Beef sirloin](ref:ingredient/beef-sirloin) | 250 g | 100.00% | Slice thinly across the grain. |
+| fish-sauce | [Fish sauce](ref:ingredient/fish-sauce) | 12.5 g | 5.00% | Season the marinade. |
+| light-soy | [Light soy sauce](ref:ingredient/light-soy-sauce) | 7.5 g | 3.00% | Add savoury seasoning. |
+| sugar | [Sugar](ref:ingredient/sugar) | 10 g | 4.00% | Balance salinity. |
+| honey | [Honey](ref:ingredient/honey) | 5 g | 2.00% | Support browning. |
+| garlic | [Garlic](ref:ingredient/garlic) | 6 g | 2.40% | Mince finely. |
+| lemongrass | [Lemongrass](ref:ingredient/lemongrass) | 12.5 g | 5.00% | Mince the white part. |
+| shallot | [Shallot](ref:ingredient/shallot) | 15 g | 6.00% | Mince finely. |
+| black-pepper | [Black pepper](ref:ingredient/black-pepper) | 1.5 g | 0.60% | Season the beef. |
+| neutral-oil | [Neutral oil](ref:ingredient/neutral-oil) | 7.5 g | 3.00% | Coat the beef. |
 
----
+### Technique Applications
 
-## PHASE A — BEEF MARINADE
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [Marination](ref:technique/marination) | Refrigerate 1 h minimum or 6–12 h for deeper seasoning. | Season the beef before grilling. |
 
----
+### Method
 
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Beef sirloin or flank, thinly sliced across grain | 250 g | 100.00% |
->> | Fish sauce | 12.5 g | 5.00% |
->> | Light soy sauce | 7.5 g | 3.00% |
->> | Sugar (palm or white) | 10 g | 4.00% |
->> | Honey | 5 g | 2.00% |
->> | Garlic, minced | 6 g | 2.40% |
->> | Lemongrass (white part), finely minced | 12.5 g | 5.00% |
->> | Shallots, minced | 15 g | 6.00% |
->> | Black pepper | 1.5 g | 0.60% |
->> | Neutral oil | 7.5 g | 3.00% |
->
->> [!col-right]
->> ### Method
->> 1. Combine fish sauce, soy, sugar, honey, garlic, lemongrass, shallots, pepper, and oil.
->> 2. Toss beef thoroughly to coat.
->> 3. Marinate minimum 1 hour; optimal 6–12 hours refrigerated.
->> 4. Remove from fridge 20 minutes before grilling.
+1. Combine the seasonings, coat the beef, and refrigerate for the stated time.
+2. Remove the beef 20 min before grilling.
 
+## PHASE B — GRILL BEEF
 
----
+### Ingredient Uses
 
-## PHASE B — HIGH-HEAT GRILLING
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| grill-oil | [Neutral oil](ref:ingredient/neutral-oil) | 5 g | 2.00% | Oil the grill grates. |
 
----
+### Technique Applications
 
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Marinated beef (from Phase A) | 250 g | 100.00% |
->> | Neutral oil (for grill) | 5 g | 2.00% |
->
->> [!col-right]
->> ### Method
->> 1. Preheat charcoal grill or oven grill to 250 C+ surface temperature.
->> 2. Lightly oil grates.
->> 3. Grill beef in a single layer 60–90 seconds per side.
->> 4. Target 52–54 C internal; rest briefly before serving.
->> 5. Aim for caramelized edges without overcooking.
-
-
----
-
-## PHASE C — NƯỚC CHẤM & ASSEMBLY
-
----
-
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Fish sauce | 30 g | 12.00% |
->> | Water | 30 g | 12.00% |
->> | Rice vinegar | 30 g | 12.00% |
->> | Sugar | 15 g | 6.00% |
->> | Lime juice | 15 g | 6.00% |
->> | Garlic, minced | 5 g | 2.00% |
->> | Red chili, sliced | 2.5 g | 1.00% |
->> | Carrot, thinly sliced | 25 g | 10.00% |
->> | Rice vermicelli (dry) | 200 g | 80.00% |
->> | Lettuce & mixed herbs (mint, Thai basil, coriander) | 100 g | 40.00% |
->> | Roasted peanuts, crushed | 20 g | 8.00% |
->
->> [!col-right]
->> ### Method
->> 1. Dissolve sugar in warm water; add fish sauce, vinegar, lime, garlic, and chili.
->> 2. Add carrot slices; rest 15 minutes.
->> 3. Cook vermicelli 3–4 minutes in boiling water; rinse and drain.
->> 4. Assemble bowls: noodles + lettuce + herbs.
->> 5. Top with grilled beef and peanuts.
->> 6. Serve dipping sauce alongside or spoon lightly over.
-
-## RELATED LINKS
-<!-- AUTO-GENERATED:RELATED-LINKS:START -->
-
-### Techniques
-- [[Technique - Fresh Herb Assembly]]
-- [[Technique - High Heat Grilling]]
-- [[Technique - Marination]]
-- [[Technique - Rapid Caramelization]]
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [Grilling](ref:technique/grilling) | 250 C surface; 60–90 s per side; 52–54 C centre. | Caramelise edges without overcooking the beef. |
 
 ### Principles
-- [[Principle - Acid Salt Balance]]
-- [[Principle - Herbaceous Contrast]]
-- [[Principle - Maillard Reaction]]
-- [[Principle - Thin Slicing Across Grain]]
 
-### Ingredients
-- [[Ingredient - Beef Sirloin]]
-- [[Ingredient - Black Pepper]]
-- [[Ingredient - Carrot]]
-- [[Ingredient - Fish Sauce]]
-- [[Ingredient - Garlic]]
-- [[Ingredient - Honey]]
-- [[Ingredient - Lemongrass]]
-- [[Ingredient - Lettuce And Mixed Herbs]]
-- [[Ingredient - Light Soy Sauce]]
-- [[Ingredient - Lime Juice]]
-- [[Ingredient - Neutral Oil]]
-- [[Ingredient - Red Chili]]
-- [[Ingredient - Rice Vermicelli]]
-- [[Ingredient - Rice Vinegar]]
-- [[Ingredient - Roasted Peanuts]]
-- [[Ingredient - Shallot]]
-- [[Ingredient - Sugar]]
-- [[Ingredient - Water]]
+- [Maillard reaction](ref:principle/maillard-reaction) — High heat develops browned flavour before the centre overcooks.
 
-<!-- AUTO-GENERATED:RELATED-LINKS:END -->
+### Method
 
-## STRUCTURAL NOTES
+1. Grill the marinated beef in a single layer and rest briefly.
 
-- Thin slicing across the grain shortens muscle fibers, increasing perceived tenderness.
-- High heat promotes rapid Maillard browning before internal overcooking occurs.
-- Lemongrass contributes citral-driven brightness that offsets beef fat.
-- Nước chấm rebalances sweetness, salinity, and acidity in real time at the table.
+## PHASE C — MAKE NOODLES AND SERVE
+
+### Ingredient Uses
+
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| rice-vermicelli | [Rice vermicelli](ref:ingredient/rice-vermicelli) | 200 g | 80.00% | Cook, rinse, and drain. |
+| lettuce-herbs | [Mixed herbs](ref:ingredient/mixed-herbs) | 100 g | 40.00% | Assemble with the noodles. |
+| peanuts | [Roasted peanuts](ref:ingredient/roasted-peanuts) | 20 g | 8.00% | Crush for the bowls. |
+| sauce-water | [Water](ref:ingredient/water) | 30 g | 12.00% | Dissolve the sauce sugar. |
+| sauce-vinegar | [Rice vinegar](ref:ingredient/rice-vinegar) | 30 g | 12.00% | Acidify nước chấm. |
+| lime-juice | [Lime juice](ref:ingredient/lime-juice) | 15 g | 6.00% | Brighten the sauce. |
+| red-chili | [Red chili](ref:ingredient/red-chili) | 2.5 g | 1.00% | Slice into the sauce. |
+| carrot | [Carrot](ref:ingredient/carrot) | 25 g | 10.00% | Slice into the sauce. |
+
+### Method
+
+1. Dissolve sauce sugar in warm water, add fish sauce, vinegar, lime, garlic, and chili, then rest the carrot for 15 min.
+2. Assemble noodles with herbs, grilled beef, peanuts, and sauce.
 
 ## FAILURE MODES
 
-- Symptom: Tough beef.
-- Likely cause: Incorrect slicing direction or overcooking.
-- Corrective action: Slice perpendicular to grain; grill very briefly.
-
-- Symptom: Burnt exterior, raw interior.
-- Likely cause: Excess sugar pooling.
-- Corrective action: Shake off excess marinade before grilling.
-
-- Symptom: Sauce tastes flat.
-- Likely cause: Acid-sugar imbalance.
-- Corrective action: Adjust lime or sugar incrementally.
+| Symptom | Likely cause | Corrective action |
+| --- | --- | --- |
+| Tough beef | Sliced with the grain or overcooked. | Slice across the grain and grill briefly. |
+| Flat sauce | Acid and sweetness are unbalanced. | Adjust lime or sugar in small increments. |
