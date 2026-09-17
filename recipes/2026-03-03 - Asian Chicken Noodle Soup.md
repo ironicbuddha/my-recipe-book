@@ -1,177 +1,83 @@
 ---
 title: "Asian Ginger Chicken Noodle Soup"
 date: 2026-03-03
-type: recipe
-version: v2.0
-yield: "~2.5 L broth + 4 portions"
-portions: 4
-target_internal_temperature_c: null
-primary_ingredient: "chicken leg quarters"
-primary_mass_g: 1000
-techniques: ["stock extraction", "gentle simmering", "aromatic fortification", "bowl assembly"]
-principles: ["collagen extraction", "aromatic infusion", "volatile preservation", "layered seasoning"]
-tags: ["dish-soup", "asian", "chicken", "noodles", "restorative"]
-cssclass: modernist-recipe
+identity: recipe/asian-ginger-chicken-noodle-soup
+version: 2
+yield: "2.5 L broth plus 4 portions"
+scale_basis:
+  ingredient: ingredient/whole-chicken
+  quantity_g: 1000
+tags: [dish-soup, asian, chicken, noodles]
 ---
 
-# ASIAN GINGER CHICKEN NOODLE SOUP
+Clear fortified chicken broth with noodles, vegetables, and fresh herbs.
 
-Yield: approximately 2.5 L broth plus 4 portions  
-Portions: 4  
-Service Style: Clear fortified stock with fresh herb finish
+## PHASE A — EXTRACT STOCK
 
-Primary Ingredient Basis: `1000 g chicken leg quarters = 100%`
+### Ingredient Uses
 
----
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| chicken | [Whole chicken](ref:ingredient/whole-chicken) | 1000 g | 100.00% | Use chicken leg quarters for the stock and shredded meat. |
+| water | [Water](ref:ingredient/water) | 2500 g | 250.00% | Form the broth. |
+| ginger | [Fresh ginger](ref:ingredient/fresh-ginger) | 40 g | 4.00% | Smash for the stock. |
+| spring-onion | [Spring onion](ref:ingredient/spring-onion) | 60 g | 6.00% | Bruise for the stock. |
+| onion | [Onion](ref:ingredient/onion) | 150 g | 15.00% | Halve for the stock. |
+| peppercorns | [Black pepper](ref:ingredient/black-pepper) | 3 g | 0.30% | Season the stock. |
+| salt | [Salt](ref:ingredient/salt) | 12 g | 1.20% | Season the stock. |
 
-## PHASE A - STOCK EXTRACTION
+### Principles
 
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Chicken leg quarters | 1000 g | 100.00% |
->> | Water | 2500 g | 250.00% |
->> | Ginger, smashed | 40 g | 4.00% |
->> | Scallions, bruised | 60 g | 6.00% |
->> | Onion, halved | 150 g | 15.00% |
->> | Black peppercorns | 3 g | 0.30% |
->> | Salt (initial) | 12 g | 1.20% |
->
->> [!col-right]
->> ### Method
->> 1. Combine chicken and cold water.
->> 2. Bring slowly to 85-90 C (bare simmer).
->> 3. Skim foam during the first 20 minutes.
->> 4. Add ginger, scallions, onion, peppercorns, and salt.
->> 5. Maintain a gentle simmer for 90 minutes.
->> 6. Remove chicken and strain broth.
->> 7. Shred meat; discard bones and excess skin.
->> 8. Chill broth and remove fat cap if maximum clarity is desired.
+- [Aromatic infusion](ref:principle/aromatic-infusion) — Slow extraction carries aromatic flavour into the broth.
 
----
+### Method
 
-## PHASE B - AROMATIC FORTIFICATION
+1. Combine the chicken and water, bring slowly to 85–90 C, skim for 20 min, add the aromatics and salt, simmer gently for 90 min, then remove and shred the chicken and strain the broth.
 
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Strained broth | from Phase A | - |
->> | Garlic, smashed | 15 g | 1.50% |
->> | Fresh ginger, sliced | 20 g | 2.00% |
->> | Lemongrass, bruised | 25 g | 2.50% |
->> | Kaffir lime leaves | 2 leaves (approximately 1 g) | 0.10% |
->> | Light soy sauce (optional) | 15 g | 1.50% |
->> | Fish sauce (optional) | 10 g | 1.00% |
->
->> [!col-right]
->> ### Method
->> 1. Return strained broth to a gentle simmer.
->> 2. Add garlic, ginger, lemongrass, and lime leaves.
->> 3. Simmer 15-20 minutes only.
->> 4. Strain or remove large aromatics.
->> 5. Adjust seasoning with soy and/or fish sauce.
+## PHASE B — FORTIFY BROTH
 
----
+### Ingredient Uses
 
-## PHASE C - COMPONENT PREPARATION
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| garlic | [Garlic](ref:ingredient/garlic) | 15 g | 1.50% | Smash into the broth. |
+| ginger | [Fresh ginger](ref:ingredient/fresh-ginger) | 20 g | 2.00% | Slice into the broth. |
+| lemongrass | [Lemongrass](ref:ingredient/lemongrass) | 25 g | 2.50% | Bruise into the broth. |
+| makrut-lime-leaves | [Makrut lime leaves](ref:ingredient/makrut-lime-leaves) | 1 g | 0.10% | Add aromatic citrus notes. |
+| light-soy | [Light soy sauce](ref:ingredient/light-soy-sauce) | 15 g | 1.50% | Add optional seasoning. |
+| fish-sauce | [Fish sauce](ref:ingredient/fish-sauce) | 10 g | 1.00% | Add optional seasoning. |
 
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Rice noodles (dry) | 200 g | 20.00% |
->> | Shredded chicken (from stock) | approximately 600 g | 60.00% |
->> | Shiitake mushrooms, sliced | 150 g | 15.00% |
->> | Bok choy, halved | 300 g | 30.00% |
->> | Bean sprouts | 200 g | 20.00% |
->> | Lime wedges | to serve | - |
->
->> [!col-right]
->> ### Method
->> 1. Soak rice noodles in hot water until pliable; drain.
->> 2. Simmer shiitake in broth for 5 minutes.
->> 3. Blanch bok choy in broth for 1-2 minutes; remove.
->> 4. Keep bean sprouts raw for bowl assembly.
+### Method
 
----
+1. Return the strained broth to a gentle simmer with the aromatics and makrut lime leaves for 15–20 min, remove them, and adjust with light soy sauce and/or fish sauce.
 
-## PHASE D - HERB FINISH PREPARATION
+## PHASE C — PREPARE BOWL COMPONENTS
 
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Coriander (cilantro), rough chop | 25 g | 2.50% |
->> | Thai basil, torn | 15 g | 1.50% |
->> | Fresh mint, torn (optional) | 5 g | 0.50% |
->> | Toasted sesame oil | 5 g | 0.50% |
->
->> [!col-right]
->> ### Method
->> 1. Rough chop coriander and tear basil.
->> 2. Tear mint if using.
->> 3. Hold herbs dry and cool until final service.
->> 4. Reserve sesame oil for final finishing.
+### Ingredient Uses
 
----
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| rice-vermicelli | [Rice vermicelli](ref:ingredient/rice-vermicelli) | 200 g | 20.00% | Soak and drain for the bowls. |
+| shiitake | [Shiitake mushrooms](ref:ingredient/shiitake-mushrooms) | 150 g | 15.00% | Simmer in broth. |
+| bok-choy | [Bok choy](ref:ingredient/bok-choy) | 300 g | 30.00% | Blanch in broth. |
+| bean-sprouts | [Bean sprouts](ref:ingredient/bean-sprouts) | 200 g | 20.00% | Keep raw for the bowls. |
+| fresh-coriander | [Fresh coriander](ref:ingredient/fresh-coriander) | 25 g | 2.50% | Finish the bowls. |
+| thai-basil | [Thai basil](ref:ingredient/thai-basil) | 15 g | 1.50% | Finish the bowls. |
+| mint | [Mint](ref:ingredient/mint) | 5 g | 0.50% | Add optional fresh finish. |
+| sesame-oil | [Sesame oil](ref:ingredient/sesame-oil) | 5 g | 0.50% | Finish the bowls. |
+| lime-juice | [Lime juice](ref:ingredient/lime-juice) | As needed | — | Brighten at service. |
 
-## PHASE E - ASSEMBLY
+### Principles
 
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Rice noodles | from Phase C | - |
->> | Shredded chicken | from Phase C | - |
->> | Shiitake mushrooms | from Phase C | - |
->> | Bok choy | from Phase C | - |
->> | Bean sprouts | from Phase C | - |
->> | Fortified boiling broth | from Phase B | - |
->> | Herb finish + sesame oil | from Phase D | - |
->> | Lime wedges | from Phase C | - |
->
->> [!col-right]
->> ### Method
->> 1. Build bowls in this order: noodles, shredded chicken, shiitake, bok choy, bean sprouts.
->> 2. Ladle boiling broth over the bowl to gently wilt sprouts.
->> 3. Finish with fresh herbs, sesame oil, and lime.
->> 4. Serve immediately.
+- [Fresh herb contrast](ref:principle/fresh-herb-contrast) — Add herbs at service to preserve their volatile freshness.
 
----
+### Method
 
-## STRUCTURAL NOTES
-
-- Avoid aggressive boiling; emulsified fat clouds flavor and texture.
-- Bean sprouts should remain slightly crisp.
-- Add herbs at the end to preserve volatile aromatics.
-- Broth should taste slightly over-seasoned before noodles because starch mutes salt.
-- Cross-cultural restorative logic: collagen for body, ginger for warmth, herbs for clarity, lime for lift.
+1. Soak and drain the noodles, simmer the shiitake for 5 min, blanch the bok choy for 1–2 min, then build bowls with noodles, shredded chicken, vegetables, raw sprouts, boiling broth, herbs, sesame oil, and lime juice.
 
 ## FAILURE MODES
 
-- Symptom: Broth turns cloudy and heavy.
-- Likely cause: Temperature exceeded gentle simmer or broth was boiled hard.
-- Corrective action: Keep stock at 85-90 C and avoid rolling boil.
-
-- Symptom: Herbs taste muted and cooked.
-- Likely cause: Herbs were added too early.
-- Corrective action: Add herbs only during final assembly.
-
-- Symptom: Bok choy is limp and sulfurous.
-- Likely cause: Over-blanching in hot broth.
-- Corrective action: Limit bok choy blanching to 1-2 minutes.
-
-- Symptom: Final bowl tastes under-seasoned.
-- Likely cause: Broth was seasoned correctly in pot but diluted by noodles and vegetables.
-- Corrective action: Season broth slightly stronger before service and finish with lime.
-
-## STORY
-
-Made on a day someone needed gentleness. Clean, restorative chicken soup structure for comfort service.
+| Symptom | Likely cause | Corrective action |
+| --- | --- | --- |
+| Cloudy, heavy broth | The broth boiled hard. | Keep the stock at 85–90 C and avoid a rolling boil. |
+| Limp bok choy | It was blanched too long. | Blanch for only 1–2 min. |

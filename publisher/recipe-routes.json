@@ -29,6 +29,36 @@
       "source": "/recipes/2026-02-23-sourdough-bread/",
       "type": "redirect",
       "destination": "recipe/sourdough-bread"
+    },
+    {
+      "source": "/recipes/2026-02-19-bun-bo-nuong-grilled-beef-with-rice-noodles/",
+      "type": "redirect",
+      "destination": "recipe/bun-bo-nuong"
+    },
+    {
+      "source": "/recipes/2026-02-19-bun-cha-hanoi-grilled-pork-with-noodles/",
+      "type": "redirect",
+      "destination": "recipe/bun-cha"
+    },
+    {
+      "source": "/recipes/2026-02-19-fried-master-stock-chicken/",
+      "type": "redirect",
+      "destination": "recipe/fried-master-stock-chicken"
+    },
+    {
+      "source": "/recipes/2026-02-19-lao-herbaceous-chicken-noodle-soup/",
+      "type": "redirect",
+      "destination": "recipe/lao-herbaceous-chicken-noodle-soup"
+    },
+    {
+      "source": "/recipes/2026-03-03-asian-chicken-noodle-soup/",
+      "type": "redirect",
+      "destination": "recipe/asian-ginger-chicken-noodle-soup"
+    },
+    {
+      "source": "/recipes/2026-02-19-spicy-korean-fried-chicken/",
+      "type": "redirect",
+      "destination": "recipe/spicy-korean-fried-chicken"
     }
   ]
 }

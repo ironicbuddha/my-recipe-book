@@ -272,7 +272,7 @@ describe('make validate', () => {
 
     expect(result.status).toBe(0);
     expect(result.stdout).toContain(
-      'Validation passed: 6 recipe(s), 70 Knowledge Note(s), 0 Completed Experiment(s).',
+      'Validation passed: 12 recipe(s), 133 Knowledge Note(s), 0 Completed Experiment(s).',
     );
   });
 

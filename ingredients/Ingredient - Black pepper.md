@@ -1,0 +1,16 @@
+---
+title: "Black pepper"
+identity: ingredient/black-pepper
+---
+
+## Functional Profile
+
+Black pepper contributes its characteristic flavour, aroma, or texture to the approved Batch 2 recipes.
+
+## Handling
+
+Prepare and store it appropriately; follow the stated quantity, timing, and temperature controls in the Recipe.
+
+## Culinary Use
+
+Use black pepper where the recipe identifies its specific functional role.
