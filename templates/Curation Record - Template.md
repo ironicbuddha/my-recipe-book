@@ -3,6 +3,8 @@ record_type: curation
 candidate: candidate/example-label
 candidate_label: ""
 evidence_sources: []
+# Only for an explicitly grandfathered historical retirement:
+# evidence_observation_exemption: historical-curation
 decision: establish-subject
 decided_by: ""
 decided_on: YYYY-MM-DD

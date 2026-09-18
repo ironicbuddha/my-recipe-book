@@ -301,6 +301,8 @@ techniques: [Pan searing]
     fs.writeFileSync(
       path.join(root, 'recipes/2026-09-11 - Third.md'),
       `---
+identity: recipe/third
+version: 1
 techniques: [Invalid retirement]
 ---
 `,
@@ -378,9 +380,37 @@ candidate: candidate/technique-pan-searing
 candidate_label: "Pan searing"
 evidence_sources: [recipe/missing@1]
 decision: retire-candidate
-retirement_reason: ""
-decided_by: ""
-decided_on: 2026-02-31
+retirement_reason: "Fixture candidate is not a valid Technique."
+decided_by: "Fixture Curator"
+decided_on: 2026-09-11
+---
+
+## Evidence
+
+The original label was observed in the listed Recipe.
+
+## Rationale
+
+The Curator reviewed the evidence and retired this Candidate.
+`,
+    );
+    fs.rmSync(candidate);
+
+    expect(extractCandidates(root).status).toBe(0);
+    expect(fs.existsSync(candidate)).toBe(true);
+
+    fs.writeFileSync(
+      path.join(root, 'records/curation/pan-searing.md'),
+      `---
+record_type: curation
+candidate: candidate/technique-pan-searing
+candidate_label: "Pan searing"
+evidence_sources:
+  - recipe/third@1
+decision: retire-candidate
+retirement_reason: "Fixture candidate is not a valid Technique."
+decided_by: "Fixture Curator"
+decided_on: 2026-09-11
 ---
 
 ## Evidence

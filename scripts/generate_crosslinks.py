@@ -201,7 +201,17 @@ def extract_table_ingredients(text: str) -> list[str]:
     i = 0
     while i < len(lines):
         clean = strip_quote_prefix(lines[i])
-        if re.match(r"^\|\s*Ingredient\s*\|\s*Quantity\s*\|\s*Scaling\s*\|", clean, re.I):
+        legacy_table = re.match(
+            r"^\|\s*Ingredient\s*\|\s*Quantity\s*\|\s*Scaling\s*\|",
+            clean,
+            re.I,
+        )
+        canonical_table = re.match(
+            r"^\|\s*Key\s*\|\s*Ingredient\s*\|\s*Quantity\s*\|",
+            clean,
+            re.I,
+        )
+        if legacy_table or canonical_table:
             j = i + 1
             # Skip separator line.
             if j < len(lines):
@@ -213,8 +223,10 @@ def extract_table_ingredients(text: str) -> list[str]:
                 if not row_clean.startswith("|"):
                     break
                 cells = [c.strip() for c in row_clean.strip("|").split("|")]
-                if cells:
-                    ing = normalize_ingredient(cells[0])
+                ingredient_column = 1 if canonical_table else 0
+                if len(cells) > ingredient_column:
+                    raw_ingredient = re.sub(r"^\[([^\]]+)\]\([^)]*\)$", r"\1", cells[ingredient_column])
+                    ing = normalize_ingredient(raw_ingredient)
                     if ing is not None:
                         out.append(ing)
                 j += 1
@@ -299,10 +311,21 @@ def recipe_versions(root: Path) -> set[str]:
     return versions
 
 
-def valid_evidence_sources(sources: list[str], known_recipe_versions: set[str]) -> bool:
+def valid_evidence_sources(
+    sources: list[str],
+    known_recipe_versions: set[str],
+    candidate: str,
+    recipe_observations: dict[str, set[str]],
+) -> bool:
     return bool(sources) and all(
-        source in known_recipe_versions for source in sources
+        source in known_recipe_versions
+        and candidate.removeprefix("candidate/") in recipe_observations.get(source, set())
+        for source in sources
     )
+
+
+def known_evidence_sources(sources: list[str], known_recipe_versions: set[str]) -> bool:
+    return bool(sources) and all(source in known_recipe_versions for source in sources)
 
 
 def candidate_matches_label(candidate: str, label: str) -> bool:
@@ -315,6 +338,46 @@ def candidate_matches_label(candidate: str, label: str) -> bool:
     )
 
 
+def observations_for_recipe(text: str, frontmatter: dict[str, str]) -> set[str]:
+    techniques = {
+        candidate_key("technique", canonical_term(value))
+        for value in split_flow_list(frontmatter.get("techniques", "[]"))
+        if cleanup_space(value)
+    }
+    principles = {
+        candidate_key("principle", canonical_term(value))
+        for value in split_flow_list(frontmatter.get("principles", "[]"))
+        if cleanup_space(value)
+    }
+    ingredients = set(extract_table_ingredients(text))
+    primary = normalize_ingredient(strip_quotes(frontmatter.get("primary_ingredient", "")))
+    if primary:
+        ingredients.add(primary)
+    return techniques | principles | {
+        candidate_key("ingredient", ingredient) for ingredient in ingredients
+    }
+
+
+def recipe_candidate_observations(root: Path) -> dict[str, set[str]]:
+    observations: dict[str, set[str]] = {}
+    for path in (root / "recipes").glob("*.md"):
+        if path.name == "README.md":
+            continue
+        text = _read(path)
+        frontmatter = parse_frontmatter(text)
+        identity = frontmatter.get("identity", "")
+        version = frontmatter.get("version", "")
+        if re.fullmatch(r"recipe/[a-z0-9]+(?:-[a-z0-9]+)*", identity) and re.fullmatch(
+            r"[1-9]\d*", version
+        ):
+            observations[f"{identity}@{version}"] = observations_for_recipe(text, frontmatter)
+    return observations
+
+
+def has_historical_curation_exemption(record: dict[str, str]) -> bool:
+    return record.get("evidence_observation_exemption") == "historical-curation"
+
+
 def retired_candidate_keys(root: Path) -> set[str]:
     """Return candidates whose Curator decision permanently retired the observation."""
     curation_dir = root / "records" / "curation"
@@ -322,6 +385,7 @@ def retired_candidate_keys(root: Path) -> set[str]:
         return set()
     retired: set[str] = set()
     known_recipe_versions = recipe_versions(root)
+    observations = recipe_candidate_observations(root)
     for path in curation_dir.rglob("*.md"):
         text = _read(path)
         record = parse_frontmatter(text)
@@ -333,7 +397,13 @@ def retired_candidate_keys(root: Path) -> set[str]:
             and record.get("decision") == "retire-candidate"
             and candidate_label
             and candidate_matches_label(candidate, candidate_label)
-            and valid_evidence_sources(evidence_sources, known_recipe_versions)
+            and known_evidence_sources(evidence_sources, known_recipe_versions)
+            and (
+                has_historical_curation_exemption(record)
+                or valid_evidence_sources(
+                    evidence_sources, known_recipe_versions, candidate, observations
+                )
+            )
             and strip_quotes(record.get("retirement_reason", ""))
             and strip_quotes(record.get("decided_by", ""))
             and valid_date(record.get("decided_on", ""))

@@ -426,6 +426,12 @@ The label refers to equipment rather than culinary knowledge.
 Retain the evidence and do not reopen this candidate automatically.
 ```
 
+Retirement evidence must observe the candidate in each cited exact Recipe
+Version. A historical Curation decision whose source was recorded before that
+linkage requirement may declare
+`evidence_observation_exemption: historical-curation`; it remains an explicit
+Curator exception and does not weaken the requirement for later retirements.
+
 An established-subject merge migrates current references to the survivor and
 permanently reserves the losing identity. Completed Experiments retain their
 historical primary subject through a resolvable retirement record:

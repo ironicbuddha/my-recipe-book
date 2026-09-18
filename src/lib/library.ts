@@ -732,6 +732,17 @@ function readCurations(
       .map(recipeVersionIdentityFromSource)
       .filter((identity): identity is string => identity !== undefined),
   );
+  const recipeCandidateObservations = new Map(
+    sourceRecords
+      .filter((source) => path.dirname(source.relativePath) === 'recipes')
+      .map((source) => {
+        const recipeVersion = recipeVersionIdentityFromSource(source);
+        return recipeVersion
+          ? [recipeVersion, candidateObservations(source)] as const
+          : undefined;
+      })
+      .filter((entry): entry is readonly [string, Set<string>] => entry !== undefined),
+  );
   for (const filePath of readMarkdownFiles(directory)) {
     const relativePath = path.relative(root, filePath);
     const record = readRecord(root, relativePath, diagnostics);
@@ -788,6 +799,15 @@ function readCurations(
       ) {
         diagnostics.push(
           `${relativePath}: retire-candidate Curation evidence_sources must contain exact Recipe Versions`,
+        );
+      } else if (
+        !hasHistoricalCurationExemption(record) &&
+        evidenceSources.some(
+          (source) => !recipeCandidateObservations.get(source)?.has(candidate.replace(/^candidate\//u, '')),
+        )
+      ) {
+        diagnostics.push(
+          `${relativePath}: retire-candidate Curation evidence_sources must observe the candidate`,
         );
       }
       if (
@@ -1999,6 +2019,82 @@ function candidateMatchesLabel(candidate: string, label: string): boolean {
   );
   const key = label.toLowerCase().replace(/[^a-z0-9]+/gu, '-').replace(/^-|-$/gu, '');
   return Boolean(match && candidate === `candidate/${match[1]}-${key}`);
+}
+
+function candidateObservations(source: SourceRecord): Set<string> {
+  const observations = new Set<string>();
+  for (const [type, values] of [
+    ['technique', source.data.techniques],
+    ['principle', source.data.principles],
+  ] as const) {
+    for (const value of stringList(values)) {
+      observations.add(`${type}-${candidateKey(value)}`);
+    }
+  }
+  for (const ingredient of extractObservedIngredients(source.body)) {
+    observations.add(`ingredient-${candidateKey(normalizeObservedIngredient(ingredient))}`);
+  }
+  const primaryIngredient = stringValue(source.data.primary_ingredient);
+  if (primaryIngredient) {
+    observations.add(`ingredient-${candidateKey(normalizeObservedIngredient(primaryIngredient))}`);
+  }
+  return observations;
+}
+
+function hasHistoricalCurationExemption(record: SourceRecord): boolean {
+  return record.data.evidence_observation_exemption === 'historical-curation';
+}
+
+function stringList(value: unknown): string[] {
+  return Array.isArray(value)
+    ? value.filter((item): item is string => typeof item === 'string' && item.trim() !== '')
+    : [];
+}
+
+function extractObservedIngredients(body: string): string[] {
+  const ingredients: string[] = [];
+  const lines = body.split(/\r?\n/u);
+  for (let index = 0; index < lines.length; index += 1) {
+    const header = lines[index]?.replace(/^\s*>\s*/u, '') ?? '';
+    const canonical = /^\|\s*Key\s*\|\s*Ingredient\s*\|\s*Quantity\s*\|/iu.test(header);
+    const legacy = /^\|\s*Ingredient\s*\|\s*Quantity\s*\|\s*Scaling\s*\|/iu.test(header);
+    if (!canonical && !legacy) continue;
+    index += 1;
+    while (index < lines.length && /^\s*>?\s*\|\s*-+/u.test(lines[index] ?? '')) index += 1;
+    while (index < lines.length) {
+      const row = (lines[index] ?? '').replace(/^\s*>\s*/u, '').trim();
+      if (!row.startsWith('|')) break;
+      const value = row.split('|').slice(1, -1)[canonical ? 1 : 0]?.trim();
+      if (value) ingredients.push(value.replace(/^\[([^\]]+)\]\([^)]*\)$/u, '$1'));
+      index += 1;
+    }
+  }
+  return [...new Set(ingredients)];
+}
+
+function candidateKey(label: string): string {
+  return label.toLowerCase().replace(/[^a-z0-9]+/gu, '-').replace(/^-|-$/gu, '');
+}
+
+function normalizeObservedIngredient(raw: string): string {
+  let value = raw.trim();
+  const lower = value.toLowerCase();
+  if (!value || [
+    'from phase', 'dry mix', 'wet mix', 'prepared ', 'reserved ', 'assembled ',
+    'baked ', 'cooked ', 'poached ', 'initial bake', 'finish temp', 'finish time',
+    'duration', 'parameter', 'batter per pancake',
+  ].some((token) => lower.includes(token)) || ['ingredient', '---'].includes(lower)) return '';
+  value = value.replace(/\([^)]*\)/gu, '').split(',', 1)[0]?.trim() ?? '';
+  value = value.replace(/^(prepared|reserved|assembled|baked|cooked|poached)\s+/iu, '').trim().replace(/^-+|-+$/gu, '').trim();
+  const normalized = value.toLowerCase().replace(/&/gu, ' and ').replace(/\s+/gu, ' ').trim()
+    .replace(/\bchillies\b/gu, 'chili').replace(/\bchilies\b/gu, 'chili').replace(/\bchilli\b/gu, 'chili');
+  const aliases: Record<string, string> = {
+    'bay leaves': 'bay leaf', 'beef sirloin or flank': 'beef sirloin', cloves: 'clove',
+    'coriander seeds': 'coriander seed', 'makrut lime leaves': 'makrut lime leaf', shallots: 'shallot',
+    'spring onions': 'spring onion', 'whole eggs': 'egg', 'whole egg': 'egg', eggs: 'egg',
+    'coriander stems or roots': 'coriander roots or stems', 'fresh red chilli': 'fresh red chili',
+  };
+  return aliases[normalized] ?? (/^fresh red chili(?:es)?$/u.test(normalized) ? 'fresh red chili' : normalized);
 }
 
 function hasNonemptySection(body: string, heading: string): boolean {

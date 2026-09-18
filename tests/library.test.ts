@@ -454,11 +454,11 @@ decided_on: 2026-09-11
       path.join(root, 'records/curation/square-pan-retired.md'),
       `---
 record_type: curation
-candidate: candidate/ingredient-square-pan
-candidate_label: "Square pan"
+candidate: candidate/ingredient-dark-chocolate
+candidate_label: "Dark chocolate"
 evidence_sources: [recipe/masterclass-chocolate-brownie@1]
 decision: retire-candidate
-retirement_reason: "Equipment, not an Ingredient."
+retirement_reason: "A duplicate label does not establish a distinct Ingredient."
 decided_by: "Curator"
 decided_on: 2026-09-11
 ---
@@ -474,6 +474,79 @@ The Curator reviewed the evidence and retired this Candidate.
     );
 
     expect(loadLibrary(root).knowledge).toHaveLength(133);
+  });
+
+  it('requires retire-candidate evidence sources to observe the candidate', () => {
+    const root = copyPilotLibrary();
+    fs.mkdirSync(path.join(root, 'records/candidates'), { recursive: true });
+    fs.writeFileSync(
+      path.join(root, 'records/candidates/ingredient-dark-chocolate.md'),
+      `<!-- CANDIDATE-EXTRACTOR:START -->
+- \`recipe/masterclass-chocolate-brownie@1\`
+<!-- CANDIDATE-EXTRACTOR:END -->\n`,
+    );
+    fs.writeFileSync(
+      path.join(root, 'records/curation/dark-chocolate-retired.md'),
+      `---
+record_type: curation
+candidate: candidate/ingredient-dark-chocolate
+candidate_label: "Dark chocolate"
+evidence_sources: [recipe/singapore-chicken-rice@1]
+decision: retire-candidate
+retirement_reason: "A duplicate label does not establish a distinct Ingredient."
+decided_by: "Curator"
+decided_on: 2026-09-11
+---
+
+## Evidence
+
+The original label was observed in the listed Recipe.
+
+## Rationale
+
+The Curator reviewed the evidence and retired this Candidate.
+`,
+    );
+
+    expect(() => loadLibrary(root)).toThrow(
+      'retire-candidate Curation evidence_sources must observe the candidate',
+    );
+  });
+
+  it('allows an explicit historical Curation exemption for unrelated evidence', () => {
+    const root = copyPilotLibrary();
+    fs.mkdirSync(path.join(root, 'records/candidates'), { recursive: true });
+    fs.writeFileSync(
+      path.join(root, 'records/candidates/ingredient-dark-chocolate.md'),
+      `<!-- CANDIDATE-EXTRACTOR:START -->
+- \`recipe/masterclass-chocolate-brownie@1\`
+<!-- CANDIDATE-EXTRACTOR:END -->\n`,
+    );
+    fs.writeFileSync(
+      path.join(root, 'records/curation/dark-chocolate-retired.md'),
+      `---
+record_type: curation
+candidate: candidate/ingredient-dark-chocolate
+candidate_label: "Dark chocolate"
+evidence_sources: [recipe/singapore-chicken-rice@1]
+evidence_observation_exemption: historical-curation
+decision: retire-candidate
+retirement_reason: "A duplicate label does not establish a distinct Ingredient."
+decided_by: "Curator"
+decided_on: 2026-09-11
+---
+
+## Evidence
+
+The historical Curation record predates exact observation linkage.
+
+## Rationale
+
+The Curator explicitly grandfathered the historical retirement.
+`,
+    );
+
+    expect(() => loadLibrary(root)).not.toThrow();
   });
 
   it.each([
