@@ -52,7 +52,7 @@ revision history.
 | 1     | `recipes/2026-02-19 - Maple Pecan Pie.md`                                                                | v3.0           | `recipe/maple-pecan-pie`                                                        |              3 | retain-canonical     | redirect `/recipes/2026-02-19-maple-pecan-pie/`                                                                 |
 | 1     | `recipes/2026-02-19 - Masterclass Chocolate Brownie.md`                                                  | v1.3           | `recipe/masterclass-chocolate-brownie`                                          |              1 | retain-canonical     | redirect `/recipes/2026-02-19-masterclass-chocolate-brownie/`                                                   |
 | 1     | `recipes/2026-02-23 - Sourdough Bread.md`                                                                | v1.0           | `recipe/sourdough-bread`                                                        |              1 | retain-canonical     | redirect `/recipes/2026-02-23-sourdough-bread/`                                                                 |
-| 1     | `recipes/2026-02-27 - Hash Brownies.md`                                                                  | v1.0           | `recipe/hash-brownies`                                                          |              1 | move-to-draft        | no redirect decision until Curator resolves scope and relationship to the Masterclass Chocolate Brownie source  |
+| 1     | `recipes/2026-02-27 - Hash Brownies.md`                                                                  | v1.0           | `recipe/hash-brownies`                                                          |              1 | move-to-draft        | withdraw `/recipes/2026-02-27-hash-brownies/` (HTTP 410); no redirect is proposed while its relationship to Masterclass Chocolate Brownie remains unresolved |
 | 2     | `recipes/2026-02-19 - Bún bò nướng (Grilled Beef with Rice Noodles).md`                                  | v1.0           | `recipe/bun-bo-nuong`                                                           |              1 | retain-canonical     | redirect `/recipes/2026-02-19-bun-bo-nuong-grilled-beef-with-rice-noodles/`                                     |
 | 2     | `recipes/2026-02-19 - Bún chả (Hanoi Grilled Pork with Noodles).md`                                      | v1.0           | `recipe/bun-cha`                                                                |              1 | retain-canonical     | redirect `/recipes/2026-02-19-bun-cha-hanoi-grilled-pork-with-noodles/`                                         |
 | 2     | `recipes/2026-02-19 - Fried Master Stock Chicken.md`                                                     | v1.0           | `recipe/fried-master-stock-chicken`                                             |              1 | retain-canonical     | redirect `/recipes/2026-02-19-fried-master-stock-chicken/`                                                      |
@@ -90,12 +90,20 @@ listed mapping as a row in a later `records/migrations/<batch>.md` record.
 **Membership:** Sour Cherry Pie; Flapjacks; Maple Pecan Pie; Masterclass
 Chocolate Brownie; Sourdough Bread; Hash Brownies.
 
-**Needed knowledge subjects:** only the candidates observed directly in these
-six sources, including lamination, staged baking, folding, low-temperature
-baking, fermentation, and their ingredients/principles. Reconcile only through
-the source-linked entries in `records/candidates/` and the 2026-09-02 candidate
-classification; do not create a subject merely because it is named in legacy
-frontmatter.
+**Knowledge-review queue and ownership:** Batch 1 owns review of only these
+direct legacy-frontmatter labels from its six members. Techniques: lamination,
+fruit thickening, staged baking, dry whisking, wet emulsification, minimal
+fold, griddle cooking, custard setting, melting, emulsification, dry folding,
+low-temperature baking, levain build, autolyse, bulk fermentation, stretch and
+fold, cold retard, and Dutch oven baking. Principles: acid balance, starch
+gelation, thermal control, gluten limitation, leavening activation, Maillard
+reaction, hydration ratio, sugar-structure balance, acid lift, sugar film
+formation, protein coagulation, yeast and LAB fermentation, gluten development,
+salt control of fermentation, and steam-assisted oven spring. Reconcile only
+through the source-linked entries in `records/candidates/` and the 2026-09-02
+candidate classification; do not create a subject merely because it is named in
+legacy frontmatter. Each label requires an explicit Curator decision before a
+converted Recipe can use it as a culinary reference.
 
 **Sourdough evidence repair:** the source-linked candidate records below are
 the complete Batch 1 queue for labels named in Sourdough Bread's legacy
@@ -130,11 +138,21 @@ needed new version. Do not make that determination while converting formatting.
 Herbaceous Chicken Noodle Soup; Asian Ginger Chicken Noodle Soup; Spicy Korean
 Fried Chicken.
 
-**Shared-subject ownership:** this packet owns review of its direct labels for
-grilling, marination, poaching, frying, broth/stock practices, noodles, and
-their ingredients/principles. Singapore Chicken Rice pilot subjects remain
-evidence only; reuse requires a fresh, explicit Curator decision for the
-remaining records.
+**Knowledge-review queue and ownership:** Batch 2 owns review of only these
+direct legacy-frontmatter labels from its six members. Techniques: marination,
+high-heat grilling, rapid caramelization, fresh herb assembly, caramelization,
+grilling, emulsified dipping sauce, master stock poaching, air-drying, deep
+frying, glaze reduction, blanching, gentle poaching, broth fortification,
+mortar pounding, paste frying, stock extraction, gentle simmering, aromatic
+fortification, bowl assembly, double frying, starch batter coating, and sauce
+reduction. Principles: Maillard reaction, acid-salt balance, herbaceous
+contrast, thin slicing across grain, sweet-sour-salt balance, fresh-herb
+contrast, aromatic infusion, protein denaturation, skin dehydration, collagen
+extraction, emulsion clarity, condiment layering, volatile preservation,
+layered seasoning, starch dehydration, sauce adhesion, and textural contrast.
+Each label requires an explicit Curator decision before a converted Recipe can
+use it as a culinary reference. Singapore Chicken Rice pilot subjects remain
+evidence only; reuse requires a fresh, explicit Curator decision.
 
 **Exact proposed grandfathering list:** `recipe/bun-bo-nuong@1`,
 `recipe/bun-cha@1`, `recipe/fried-master-stock-chicken@1`,
@@ -152,9 +170,20 @@ do not normalize ingredients, controls, or endpoints without Curator review.
 Lentils; Guanciale, Olive & Chili Pasta Sauce; Porchetta; Soy Garlic Sesame
 Gochujang Hibachi Chicken Tacos.
 
-**Shared-subject ownership:** this packet owns its observed live-fire,
-braising, sauce, pork, and compound-label candidate questions. In particular,
-ingredient alternatives and output-like labels must remain provenance until a
+**Knowledge-review queue and ownership:** Batch 3 owns review of only these
+direct legacy-frontmatter labels from its six members. Techniques: hibachi
+grilling, blending, char grilling, sous-vide, surface dehydration, hibachi
+sear, high-heat charring, browning, sweating, spice infusion, braising, fat
+rendering, emulsification, reduction, dry brining, rolling and tying, low
+roasting, high-temperature crisping, salsa verde, lacquering, quick pickling,
+crema, and starch coating. Principles: Maillard reaction, protein denaturation,
+enzymatic tenderization, salt taste modulation, moisture control, carryover
+cooking, acid balance, fond development, acid reduction, spice oil infusion,
+fat as flavour carrier, starch-water emulsification, salt balance, salt
+diffusion, collagen conversion, crackling dehydration, aromatic extraction,
+sugar caramelization, and glaze viscosity. Each label requires an explicit
+Curator decision before a converted Recipe can use it as a culinary reference.
+Ingredient alternatives and output-like labels remain provenance until the
 Curator resolves them under the compound-label rule.
 
 **Exact proposed grandfathering list:** `recipe/grilled-pork-al-pastor@1`,
@@ -174,9 +203,21 @@ Ingredients. Those are culinary decisions, not mechanical migration work.
 Greek Lentil Soup; Creamy Porcini Mushroom Ragout with Polenta; Spanish Chicken
 and Chorizo Stew.
 
-**Shared-subject ownership:** this packet owns its direct simmering, braising,
-starch, dairy-emulsion, spice, legume, and mushroom candidate questions. It
-must not silently treat generated duplicate/alias classifications as Curation.
+**Knowledge-review queue and ownership:** Batch 4 owns review of only these
+direct legacy-frontmatter labels from its six members. Techniques: bean
+hydration, fond development, spice blooming, slow reduction, mandoline slicing,
+layered assembly, low-temperature baking, dry-toasting spices, aggressive
+browning, low braise, starch thickening, soffritto, lentil simmering, acid
+finishing, hydration, sweating, reduction, gelatinization, emulsification, wine
+reduction, and stewing. Principles: starch gelatinisation, Maillard reaction,
+spice fat solubility, molasses bitterness balance, cream emulsion stability,
+carryover setting, collagen breakdown, acid brightness, starch absorption,
+aromatic base development, acid brightness preservation, starch thickening,
+aroma extraction, starch gelatinization, water activity control, fat as flavour
+carrier, fond dissolution, fat-soluble spice extraction, and collagen
+conversion. Each label requires an explicit Curator decision before a converted
+Recipe can use it as a culinary reference. Generated duplicate/alias
+classifications are not Curation.
 
 **Exact proposed grandfathering list:** `recipe/cowboy-beans@1`,
 `recipe/gratin-dauphinois@1`, `recipe/tomato-bredie@2`,
@@ -194,10 +235,22 @@ Recipe version; preserve legacy text as source evidence meanwhile.
 Competition Cup; AeroPress Everyday Cup; Monkey Gland Chicken; Reverse-Seared
 Fillet; Celery, Green Apple & Fennel Pollen Slaw.
 
-**Shared-subject ownership:** this packet owns direct beverage-extraction,
-coffee, service-timing, searing, cold-assembly, and related candidate questions.
-The two AeroPress sources are jointly reviewed to avoid inventing duplicate
-Technique or Principle subjects from near-synonymous labels.
+**Knowledge-review queue and ownership:** Batch 5 owns review of only these
+direct legacy-frontmatter labels from its six members. Techniques: infusion,
+fine grinding, sifting, inverted AeroPress, controlled agitation, bypass
+dilution, slow press, standard AeroPress, full-immersion brew, gentle press,
+salting, searing, oven roasting, simmering, glazing, low temperature baking,
+hibachi sear, high heat charring, double frying, paste frying, knife slicing,
+emulsification, and cold assembly. Principles: sweet-bitter contrast, aromatic
+infusion, flavour threshold management, high concentration extraction, clarity
+via dilution, agitation control, bitterness avoidance, balanced extraction,
+sweetness preservation, repeatability, surface drying, Maillard reaction,
+sweet-sour balance, carryover cooking, protein denaturation, moisture control,
+acid balance, textural contrast, aromatic continuity, and texture preservation.
+Each label requires an explicit Curator decision before a converted Recipe can
+use it as a culinary reference. The two AeroPress sources are jointly reviewed
+to avoid inventing duplicate Technique or Principle subjects from
+near-synonymous labels.
 
 **Exact proposed grandfathering list:**
 `recipe/manchego-thyme-infused-honey-coffee-dust@1`,
@@ -230,8 +283,9 @@ one as a culinary reference.
 Import is deferred until after cutover. A later implementation packet may
 mechanically convert only a Curator-approved batch, write its exact
 grandfathering inventory, and add direct one-hop redirects only for
-retain-canonical mappings. A move-to-draft source has no public-route decision
-until later Curation, evidence, and Promotion permit one.
+retain-canonical mappings. A move-to-draft source has a proposed explicit
+withdrawal outcome; it cannot gain a public Recipe route unless later Curation,
+evidence, and Promotion permit one.
 
 ## Curator decisions required before implementation
 
@@ -243,6 +297,7 @@ until later Curation, evidence, and Promotion permit one.
    retirement decision using the preserved candidate evidence.
 4. Separate any Culinary Change from mechanical conversion and decide whether it
    needs a new Draft version and new evidence.
-5. For Hash Brownies, decide the relationship to Masterclass Chocolate Brownie
-   and whether either source may be admitted, drafted, withdrawn, or otherwise
-   handled. This packet intentionally makes no such decision.
+5. For Hash Brownies, decide whether to approve the proposed draft and
+   withdrawal outcome or amend it after resolving its relationship to
+   Masterclass Chocolate Brownie. This proposal neither performs the withdrawal
+   nor makes that Curator decision.
