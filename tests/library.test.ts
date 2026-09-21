@@ -479,7 +479,7 @@ The Curator reviewed the evidence and retired this Candidate.
 `,
     );
 
-    expect(loadLibrary(root).knowledge).toHaveLength(133);
+    expect(loadLibrary(root).knowledge).toHaveLength(165);
   });
 
   it('requires retire-candidate evidence sources to observe the candidate', () => {
@@ -927,9 +927,9 @@ The Curator reviewed the evidence and retired this Candidate.
     );
     expect(getLibraryCounts()).toMatchObject({
       ingredients: 86,
-      principles: 24,
+      principles: 39,
       recipes: 12,
-      techniques: 23,
+      techniques: 40,
     });
     const singapore = recipes.find(
       (recipe) => recipe.slug === 'singapore-chicken-rice',
@@ -1000,9 +1000,9 @@ The Curator reviewed the evidence and retired this Candidate.
     expect(generated).toEqual([]);
     expect(getLibraryCounts()).toMatchObject({
       ingredients: 86,
-      principles: 24,
+      principles: 39,
       recipes: 12,
-      techniques: 23,
+      techniques: 40,
     });
   });
 
