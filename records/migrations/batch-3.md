@@ -1,0 +1,17 @@
+---
+record_type: grandfathering-inventory
+approved_by: "Carlo Kruger, Curator"
+approved_on: 2026-09-21
+---
+
+| Source file | Recipe | Old version | Mapped version | Disposition | Exemption |
+| --- | --- | --- | --- | --- | --- |
+| `recipes/2026-02-19 - Grilled Pork Al Pastor.md` | recipe/grilled-pork-al-pastor | v1.0 | 1 | retain-canonical | historical evidence and Promotion Record only |
+| `recipes/2026-02-19 - Hibachi Pork with Charred Greens & Spanish Green Sauce.md` | recipe/hibachi-pork-charred-greens-spanish-green-sauce | v1.0 | 1 | retain-canonical | historical evidence and Promotion Record only |
+| `recipes/2026-02-19 - Italian Sausages with Puy Lentils.md` | recipe/italian-sausages-puy-lentils | v1.0 | 1 | retain-canonical | historical evidence and Promotion Record only |
+| `recipes/2026-02-19 - Guanciale, Olive & Chili Pasta Sauce.md` | recipe/guanciale-olive-chili-pasta-sauce | v1.0 | 1 | retain-canonical | historical evidence and Promotion Record only |
+| `recipes/2026-05-29 - Porchetta-with-fennel-pollen-and-salsa-verde.md` | recipe/porchetta-fennel-pollen-salsa-verde | v1.0 | 1 | retain-canonical | historical evidence and Promotion Record only |
+| `recipes/2026-05-29 - Soy-garlic-sesame-gochujang-hibachi-chicken-tacos.md` | recipe/soy-garlic-sesame-gochujang-hibachi-chicken-tacos | v1.0 | 1 | retain-canonical | historical evidence and Promotion Record only |
+
+Each row is an exact, one-time migration exemption. All content and reference
+contracts still apply; no exemption carries into a new version.
