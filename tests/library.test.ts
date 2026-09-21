@@ -200,22 +200,28 @@ describe('loadLibrary', () => {
     );
     expect(publisherRedirects()).toMatchObject({
       '/recipes/2026-02-19-bun-bo-nuong-grilled-beef-with-rice-noodles/': {
-        destination: '/recipes/bun-bo-nuong/', status: 301,
+        destination: '/recipes/bun-bo-nuong/',
+        status: 301,
       },
       '/recipes/2026-02-19-bun-cha-hanoi-grilled-pork-with-noodles/': {
-        destination: '/recipes/bun-cha/', status: 301,
+        destination: '/recipes/bun-cha/',
+        status: 301,
       },
       '/recipes/2026-02-19-fried-master-stock-chicken/': {
-        destination: '/recipes/fried-master-stock-chicken/', status: 301,
+        destination: '/recipes/fried-master-stock-chicken/',
+        status: 301,
       },
       '/recipes/2026-02-19-lao-herbaceous-chicken-noodle-soup/': {
-        destination: '/recipes/lao-herbaceous-chicken-noodle-soup/', status: 301,
+        destination: '/recipes/lao-herbaceous-chicken-noodle-soup/',
+        status: 301,
       },
       '/recipes/2026-03-03-asian-chicken-noodle-soup/': {
-        destination: '/recipes/asian-ginger-chicken-noodle-soup/', status: 301,
+        destination: '/recipes/asian-ginger-chicken-noodle-soup/',
+        status: 301,
       },
       '/recipes/2026-02-19-spicy-korean-fried-chicken/': {
-        destination: '/recipes/spicy-korean-fried-chicken/', status: 301,
+        destination: '/recipes/spicy-korean-fried-chicken/',
+        status: 301,
       },
     });
   });
@@ -549,6 +555,189 @@ The Curator explicitly grandfathered the historical retirement.
     expect(() => loadLibrary(root)).not.toThrow();
   });
 
+  it('resolves every Curation decision through an approved legacy mapping before conversion', () => {
+    const root = writeLibrary({
+      'recipes/2026-09-11 - Pilot Chicken.md': recipe,
+      'recipes/2026-09-12 - Batch Three Legacy.md': `---
+techniques: [Live-fire searing]
+---
+`,
+      'ingredients/Ingredient - Chicken.md': `---
+title: "Chicken"
+identity: ingredient/chicken
+---
+
+## Functional Profile
+
+Poultry meat.
+
+## Handling
+
+Keep chilled.
+
+## Culinary Use
+
+Cook thoroughly.
+`,
+      'techniques/Technique - Live-fire Searing.md': `---
+title: "Live-fire searing"
+identity: technique/live-fire-searing
+---
+
+## Purpose
+
+Brown food over direct heat.
+
+## Controls
+
+Use a hot grill.
+
+## Process
+
+Sear until browned.
+
+## Failure Modes
+
+Avoid scorching.
+`,
+      'records/migrations/pilot.md': `---
+record_type: grandfathering-inventory
+approved_by: "Curator"
+approved_on: 2026-09-11
+---
+
+| Source file | Recipe | Old version | Mapped version | Disposition | Exemption |
+| --- | --- | --- | --- | --- | --- |
+| \`recipes/2026-09-11 - Pilot Chicken.md\` | recipe/pilot-chicken | v1.0 | 1 | retain-canonical | historical evidence and Promotion Record only |
+| \`recipes/2026-09-12 - Batch Three Legacy.md\` | recipe/batch-three-legacy | v1.0 | 1 | retain-canonical | historical evidence and Promotion Record only |
+`,
+      'records/curation/chicken.md': `---
+record_type: curation
+candidate: candidate/ingredient-chicken
+evidence_sources: [recipe/pilot-chicken@1]
+decision: establish-subject
+subject: ingredient/chicken
+decided_by: "Curator"
+decided_on: 2026-09-11
+---
+
+## Evidence
+
+The pilot source records chicken.
+
+## Rationale
+
+Establish the ingredient subject.
+`,
+      'records/curation/live-fire-searing.md': `---
+record_type: curation
+candidate: candidate/technique-live-fire-searing
+evidence_sources: [recipe/batch-three-legacy@1]
+decision: establish-subject
+subject: technique/live-fire-searing
+decided_by: "Curator"
+decided_on: 2026-09-12
+---
+
+## Evidence
+
+The mapped legacy source records the technique.
+
+## Rationale
+
+Establish the subject.
+`,
+      'records/curation/live-fire-alias.md': `---
+record_type: curation
+candidate: candidate/technique-live-fire-searing
+evidence_sources: [recipe/batch-three-legacy@1]
+decision: merge-alias
+survivor: technique/live-fire-searing
+alias: "Live-fire sear"
+decided_by: "Curator"
+decided_on: 2026-09-12
+---
+
+## Evidence
+
+The mapped legacy source records the technique.
+
+## Rationale
+
+Keep the alternate label attached to the established subject.
+`,
+      'records/curation/live-fire-retirement.md': `---
+record_type: curation
+candidate: candidate/technique-live-fire-searing
+candidate_label: "Live-fire searing"
+evidence_sources: [recipe/batch-three-legacy@1]
+decision: retire-candidate
+retirement_reason: "The observed label is represented by the established subject."
+decided_by: "Curator"
+decided_on: 2026-09-12
+---
+
+## Evidence
+
+The mapped legacy source records the technique.
+
+## Rationale
+
+The duplicate candidate is not needed.
+`,
+    });
+
+    expect(() => loadLibrary(root)).not.toThrow();
+
+    const curationPath = path.join(
+      root,
+      'records/curation/live-fire-searing.md',
+    );
+    fs.writeFileSync(
+      curationPath,
+      fs
+        .readFileSync(curationPath, 'utf8')
+        .replace('recipe/batch-three-legacy@1', 'recipe/unmapped-legacy@1'),
+    );
+    expect(() => loadLibrary(root)).toThrow(
+      'Curation evidence_sources must resolve to exact Recipe observations or approved legacy mappings',
+    );
+
+    fs.writeFileSync(
+      curationPath,
+      fs
+        .readFileSync(curationPath, 'utf8')
+        .replace('recipe/unmapped-legacy@1', 'recipe/batch-three-legacy@1'),
+    );
+    const inventoryPath = path.join(root, 'records/migrations/pilot.md');
+    fs.writeFileSync(
+      inventoryPath,
+      fs
+        .readFileSync(inventoryPath, 'utf8')
+        .replace('approved_by: "Curator"', 'approved_by: ""'),
+    );
+    expect(() => loadLibrary(root)).toThrow(
+      'Curation evidence_sources must resolve to exact Recipe observations or approved legacy mappings',
+    );
+    fs.writeFileSync(
+      inventoryPath,
+      fs
+        .readFileSync(inventoryPath, 'utf8')
+        .replace('approved_by: ""', 'approved_by: "Curator"'),
+    );
+    const legacyPath = path.join(
+      root,
+      'recipes/2026-09-12 - Batch Three Legacy.md',
+    );
+    fs.writeFileSync(
+      legacyPath,
+      '---\ntechniques: [Different technique]\n---\n',
+    );
+    expect(() => loadLibrary(root)).toThrow(
+      'Curation evidence_sources must observe the candidate',
+    );
+  });
+
   it.each([
     [
       'missing narrative evidence',
@@ -590,18 +779,23 @@ The original label was observed in the listed Recipe.
 The Curator reviewed the evidence and retired this Candidate.`,
       'Curation requires candidate, Curator, and decision date',
     ],
-  ])('rejects retire-candidate Curation with %s', (description, body, diagnostic) => {
-    const root = copyPilotLibrary();
-    const label = description === 'candidate label that does not match its key'
-      ? 'Square skillet'
-      : 'Square pan';
-    const evidence = description === 'unknown evidence source'
-      ? 'recipe/missing@1'
-      : 'recipe/masterclass-chocolate-brownie@1';
-    const date = description === 'invalid calendar date' ? '2026-02-31' : '2026-09-11';
-    fs.writeFileSync(
-      path.join(root, 'records/curation/square-pan-retired.md'),
-      `---
+  ])(
+    'rejects retire-candidate Curation with %s',
+    (description, body, diagnostic) => {
+      const root = copyPilotLibrary();
+      const label =
+        description === 'candidate label that does not match its key'
+          ? 'Square skillet'
+          : 'Square pan';
+      const evidence =
+        description === 'unknown evidence source'
+          ? 'recipe/missing@1'
+          : 'recipe/masterclass-chocolate-brownie@1';
+      const date =
+        description === 'invalid calendar date' ? '2026-02-31' : '2026-09-11';
+      fs.writeFileSync(
+        path.join(root, 'records/curation/square-pan-retired.md'),
+        `---
 record_type: curation
 candidate: candidate/ingredient-square-pan
 candidate_label: "${label}"
@@ -614,11 +808,12 @@ decided_on: ${date}
 
 ${body}
 `,
-    );
+      );
 
-    expect(() => loadLibrary(root)).toThrow(ContentValidationError);
-    expect(() => loadLibrary(root)).toThrow(diagnostic);
-  });
+      expect(() => loadLibrary(root)).toThrow(ContentValidationError);
+      expect(() => loadLibrary(root)).toThrow(diagnostic);
+    },
+  );
 
   it('requires decided_on in Curation frontmatter rather than its narrative body', () => {
     const root = copyPilotLibrary();
@@ -721,18 +916,24 @@ The Curator reviewed the evidence and retired this Candidate.
     const recipes = getAllRecipes();
 
     expect(recipes).toHaveLength(12);
-    expect(recipes).toEqual(expect.arrayContaining([expect.objectContaining({
-      href: '/recipes/singapore-chicken-rice/',
-      slug: 'singapore-chicken-rice',
-      title: 'Singapore Chicken Rice (Hainanese)',
-    })]));
+    expect(recipes).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          href: '/recipes/singapore-chicken-rice/',
+          slug: 'singapore-chicken-rice',
+          title: 'Singapore Chicken Rice (Hainanese)',
+        }),
+      ]),
+    );
     expect(getLibraryCounts()).toMatchObject({
       ingredients: 86,
       principles: 24,
       recipes: 12,
       techniques: 23,
     });
-    const singapore = recipes.find((recipe) => recipe.slug === 'singapore-chicken-rice');
+    const singapore = recipes.find(
+      (recipe) => recipe.slug === 'singapore-chicken-rice',
+    );
     expect(getRecipePhases(singapore?.body ?? '')).toHaveLength(5);
     expect(renderRecipeBody(singapore?.body ?? '')).toContain(
       '/ingredients/whole-chicken/',
@@ -878,9 +1079,14 @@ The fixture preserves the accepted limitation.
     const priorRoot = process.env.CULINARY_LIBRARY_PREVIOUS_ROOT;
     process.env.CULINARY_LIBRARY_PREVIOUS_ROOT = previousRoot;
     try {
-      expect(loadLibrary(root).recipes).toEqual(expect.arrayContaining([
-        expect.objectContaining({ identity: 'recipe/singapore-chicken-rice', version: 2 }),
-      ]));
+      expect(loadLibrary(root).recipes).toEqual(
+        expect.arrayContaining([
+          expect.objectContaining({
+            identity: 'recipe/singapore-chicken-rice',
+            version: 2,
+          }),
+        ]),
+      );
     } finally {
       if (priorRoot) {
         process.env.CULINARY_LIBRARY_PREVIOUS_ROOT = priorRoot;
@@ -953,7 +1159,11 @@ The fixture preserves the accepted limitation.
         .replace('Singapore Chicken Rice (Hainanese)', 'Renamed pilot'),
     );
 
-    expect(loadLibrary(root).recipes.find((recipe) => recipe.identity === 'recipe/singapore-chicken-rice')).toMatchObject({
+    expect(
+      loadLibrary(root).recipes.find(
+        (recipe) => recipe.identity === 'recipe/singapore-chicken-rice',
+      ),
+    ).toMatchObject({
       href: '/recipes/singapore-chicken-rice/',
       title: 'Renamed pilot',
     });

@@ -137,7 +137,12 @@ export function loadLibrary(
   const sourceRecords = readSourceRecords(root, diagnostics);
   const inventories = readInventories(root, diagnostics);
   const promotions = readPromotions(root, diagnostics);
-  const curations = readCurations(root, sourceRecords, diagnostics);
+  const curations = readCurations(
+    root,
+    sourceRecords,
+    inventories,
+    diagnostics,
+  );
   const retirements = readRetirements(root, diagnostics);
   const publisherRoutes = readPublisherRoutes(root, diagnostics);
   const entriesByIdentity = new Map<string, LibraryEntry[]>();
@@ -597,6 +602,7 @@ function validateIdentity(
 }
 
 type InventoryRow = {
+  approved: boolean;
   identity: string;
   source: string;
   version: number;
@@ -628,10 +634,11 @@ function readInventories(root: string, diagnostics: string[]): InventoryRow[] {
       );
       return [];
     }
-    if (
-      !stringValue(source.data.approved_by) ||
-      !dateValue(source.data.approved_on)
-    ) {
+    const approved = Boolean(
+      stringValue(source.data.approved_by) &&
+      dateValue(source.data.approved_on),
+    );
+    if (!approved) {
       diagnostics.push(
         `${relativePath}: grandfathering inventory needs Curator and approval date`,
       );
@@ -652,7 +659,13 @@ function readInventories(root: string, diagnostics: string[]): InventoryRow[] {
         return [];
       }
       return [
-        { identity, source: sourceFile, version, disposition: row.Disposition },
+        {
+          approved,
+          identity,
+          source: sourceFile,
+          version,
+          disposition: row.Disposition,
+        },
       ];
     });
   });
@@ -719,6 +732,7 @@ function readPromotions(
 function readCurations(
   root: string,
   sourceRecords: SourceRecord[],
+  inventories: InventoryRow[],
   diagnostics: string[],
 ): Map<string, SourceRecord> {
   const directory = path.join(root, 'records/curation');
@@ -726,22 +740,9 @@ function readCurations(
     return new Map();
   }
   const curations = new Map<string, SourceRecord>();
-  const recipeVersions = new Set(
-    sourceRecords
-      .filter((source) => isRecipeIdentity(stringValue(source.data.identity)))
-      .map(recipeVersionIdentityFromSource)
-      .filter((identity): identity is string => identity !== undefined),
-  );
-  const recipeCandidateObservations = new Map(
-    sourceRecords
-      .filter((source) => path.dirname(source.relativePath) === 'recipes')
-      .map((source) => {
-        const recipeVersion = recipeVersionIdentityFromSource(source);
-        return recipeVersion
-          ? [recipeVersion, candidateObservations(source)] as const
-          : undefined;
-      })
-      .filter((entry): entry is readonly [string, Set<string>] => entry !== undefined),
+  const evidenceSourcesByRecipe = curationEvidenceSources(
+    sourceRecords,
+    inventories,
   );
   for (const filePath of readMarkdownFiles(directory)) {
     const relativePath = path.relative(root, filePath);
@@ -753,7 +754,8 @@ function readCurations(
     const candidate = stringValue(record.data.candidate);
     const curator = stringValue(record.data.decided_by);
     const date = dateValue(
-      frontmatterScalar(record.filePath, 'decided_on') ?? record.data.decided_on,
+      frontmatterScalar(record.filePath, 'decided_on') ??
+        record.data.decided_on,
     );
     if (
       record.data.record_type !== 'curation' ||
@@ -765,6 +767,39 @@ function readCurations(
         `${relativePath}: Curation requires candidate, Curator, and decision date`,
       );
       continue;
+    }
+    const evidenceSources = record.data.evidence_sources;
+    if (
+      !Array.isArray(evidenceSources) ||
+      evidenceSources.length === 0 ||
+      evidenceSources.some(
+        (source) =>
+          typeof source !== 'string' || !evidenceSourcesByRecipe.has(source),
+      )
+    ) {
+      diagnostics.push(
+        record.data.decision === 'retire-candidate'
+          ? `${relativePath}: retire-candidate Curation evidence_sources must contain exact Recipe Versions`
+          : `${relativePath}: Curation evidence_sources must resolve to exact Recipe observations or approved legacy mappings`,
+      );
+    } else if (
+      (record.data.decision === 'retire-candidate'
+        ? !hasHistoricalCurationExemption(record)
+        : evidenceSources.some(
+            (source) => evidenceSourcesByRecipe.get(source)?.isLegacyMapping,
+          )) &&
+      evidenceSources.some(
+        (source) =>
+          !evidenceSourcesByRecipe
+            .get(source)
+            ?.observations.has(candidate.replace(/^candidate\//u, '')),
+      )
+    ) {
+      diagnostics.push(
+        record.data.decision === 'retire-candidate'
+          ? `${relativePath}: retire-candidate Curation evidence_sources must observe the candidate`
+          : `${relativePath}: Curation evidence_sources must observe the candidate`,
+      );
     }
     if (record.data.decision === 'merge-alias') {
       if (
@@ -787,27 +822,6 @@ function readCurations(
       if (!label || !candidateMatchesLabel(candidate, label)) {
         diagnostics.push(
           `${relativePath}: retire-candidate Curation candidate must agree with candidate_label`,
-        );
-      }
-      const evidenceSources = record.data.evidence_sources;
-      if (
-        !Array.isArray(evidenceSources) ||
-        evidenceSources.length === 0 ||
-        evidenceSources.some(
-          (source) => typeof source !== 'string' || !recipeVersions.has(source),
-        )
-      ) {
-        diagnostics.push(
-          `${relativePath}: retire-candidate Curation evidence_sources must contain exact Recipe Versions`,
-        );
-      } else if (
-        !hasHistoricalCurationExemption(record) &&
-        evidenceSources.some(
-          (source) => !recipeCandidateObservations.get(source)?.has(candidate.replace(/^candidate\//u, '')),
-        )
-      ) {
-        diagnostics.push(
-          `${relativePath}: retire-candidate Curation evidence_sources must observe the candidate`,
         );
       }
       if (
@@ -1577,7 +1591,9 @@ function validatePublisherRoutes(
     const preserved = [...recipeVersions.values()].some(
       (version) =>
         version.identity === route.recipe &&
-        version.sourcePath.startsWith(`recipes${path.sep}superseded${path.sep}`),
+        version.sourcePath.startsWith(
+          `recipes${path.sep}superseded${path.sep}`,
+        ),
     );
     if (!preserved) {
       diagnostics.push(
@@ -1835,7 +1851,9 @@ function validatePromotionHistory(
   for (const inventory of inventories) {
     const exactVersion = `${inventory.identity}@${inventory.version}`;
     const legacySourceExists = previousSources.some(
-      (source) => source.relativePath === inventory.source && !stringValue(source.data.identity),
+      (source) =>
+        source.relativePath === inventory.source &&
+        !stringValue(source.data.identity),
     );
     if (
       inventory.disposition === 'retain-canonical' &&
@@ -2008,17 +2026,66 @@ function dateValue(value: unknown): string | undefined {
     return undefined;
   }
   const date = new Date(`${candidate}T00:00:00.000Z`);
-  return !Number.isNaN(date.valueOf()) && date.toISOString().slice(0, 10) === candidate
+  return !Number.isNaN(date.valueOf()) &&
+    date.toISOString().slice(0, 10) === candidate
     ? candidate
     : undefined;
 }
 
 function candidateMatchesLabel(candidate: string, label: string): boolean {
-  const match = /^candidate\/(technique|principle|ingredient)-[a-z0-9]+(?:-[a-z0-9]+)*$/u.exec(
-    candidate,
-  );
-  const key = label.toLowerCase().replace(/[^a-z0-9]+/gu, '-').replace(/^-|-$/gu, '');
+  const match =
+    /^candidate\/(technique|principle|ingredient)-[a-z0-9]+(?:-[a-z0-9]+)*$/u.exec(
+      candidate,
+    );
+  const key = label
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/gu, '-')
+    .replace(/^-|-$/gu, '');
   return Boolean(match && candidate === `candidate/${match[1]}-${key}`);
+}
+
+type CurationEvidenceSource = {
+  isLegacyMapping: boolean;
+  observations: Set<string>;
+};
+
+function curationEvidenceSources(
+  sourceRecords: SourceRecord[],
+  inventories: InventoryRow[],
+): Map<string, CurationEvidenceSource> {
+  const sources = new Map<string, CurationEvidenceSource>();
+  const legacySources = new Map(
+    sourceRecords
+      .filter(
+        (source) =>
+          source.relativePath.startsWith(`recipes${path.sep}`) &&
+          !stringValue(source.data.identity),
+      )
+      .map((source) => [source.relativePath, source] as const),
+  );
+
+  for (const source of sourceRecords) {
+    const recipeVersion = recipeVersionIdentityFromSource(source);
+    if (recipeVersion) {
+      sources.set(recipeVersion, {
+        isLegacyMapping: false,
+        observations: candidateObservations(source),
+      });
+    }
+  }
+  for (const inventory of inventories) {
+    const legacySource = inventory.approved
+      ? legacySources.get(inventory.source)
+      : undefined;
+    const recipeVersion = `${inventory.identity}@${inventory.version}`;
+    if (legacySource && !sources.has(recipeVersion)) {
+      sources.set(recipeVersion, {
+        isLegacyMapping: true,
+        observations: candidateObservations(legacySource),
+      });
+    }
+  }
+  return sources;
 }
 
 function candidateObservations(source: SourceRecord): Set<string> {
@@ -2032,11 +2099,15 @@ function candidateObservations(source: SourceRecord): Set<string> {
     }
   }
   for (const ingredient of extractObservedIngredients(source.body)) {
-    observations.add(`ingredient-${candidateKey(normalizeObservedIngredient(ingredient))}`);
+    observations.add(
+      `ingredient-${candidateKey(normalizeObservedIngredient(ingredient))}`,
+    );
   }
   const primaryIngredient = stringValue(source.data.primary_ingredient);
   if (primaryIngredient) {
-    observations.add(`ingredient-${candidateKey(normalizeObservedIngredient(primaryIngredient))}`);
+    observations.add(
+      `ingredient-${candidateKey(normalizeObservedIngredient(primaryIngredient))}`,
+    );
   }
   return observations;
 }
@@ -2047,7 +2118,10 @@ function hasHistoricalCurationExemption(record: SourceRecord): boolean {
 
 function stringList(value: unknown): string[] {
   return Array.isArray(value)
-    ? value.filter((item): item is string => typeof item === 'string' && item.trim() !== '')
+    ? value.filter(
+        (item): item is string =>
+          typeof item === 'string' && item.trim() !== '',
+      )
     : [];
 }
 
@@ -2056,16 +2130,21 @@ function extractObservedIngredients(body: string): string[] {
   const lines = body.split(/\r?\n/u);
   for (let index = 0; index < lines.length; index += 1) {
     const header = lines[index]?.replace(/^\s*>\s*/u, '') ?? '';
-    const canonical = /^\|\s*Key\s*\|\s*Ingredient\s*\|\s*Quantity\s*\|/iu.test(header);
-    const legacy = /^\|\s*Ingredient\s*\|\s*Quantity\s*\|\s*Scaling\s*\|/iu.test(header);
+    const canonical = /^\|\s*Key\s*\|\s*Ingredient\s*\|\s*Quantity\s*\|/iu.test(
+      header,
+    );
+    const legacy =
+      /^\|\s*Ingredient\s*\|\s*Quantity\s*\|\s*Scaling\s*\|/iu.test(header);
     if (!canonical && !legacy) continue;
     index += 1;
-    while (index < lines.length && /^\s*>?\s*\|\s*-+/u.test(lines[index] ?? '')) index += 1;
+    while (index < lines.length && /^\s*>?\s*\|\s*-+/u.test(lines[index] ?? ''))
+      index += 1;
     while (index < lines.length) {
       const row = (lines[index] ?? '').replace(/^\s*>\s*/u, '').trim();
       if (!row.startsWith('|')) break;
       const value = row.split('|').slice(1, -1)[canonical ? 1 : 0]?.trim();
-      if (value) ingredients.push(value.replace(/^\[([^\]]+)\]\([^)]*\)$/u, '$1'));
+      if (value)
+        ingredients.push(value.replace(/^\[([^\]]+)\]\([^)]*\)$/u, '$1'));
       index += 1;
     }
   }
@@ -2073,28 +2152,75 @@ function extractObservedIngredients(body: string): string[] {
 }
 
 function candidateKey(label: string): string {
-  return label.toLowerCase().replace(/[^a-z0-9]+/gu, '-').replace(/^-|-$/gu, '');
+  return label
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/gu, '-')
+    .replace(/^-|-$/gu, '');
 }
 
 function normalizeObservedIngredient(raw: string): string {
   let value = raw.trim();
   const lower = value.toLowerCase();
-  if (!value || [
-    'from phase', 'dry mix', 'wet mix', 'prepared ', 'reserved ', 'assembled ',
-    'baked ', 'cooked ', 'poached ', 'initial bake', 'finish temp', 'finish time',
-    'duration', 'parameter', 'batter per pancake',
-  ].some((token) => lower.includes(token)) || ['ingredient', '---'].includes(lower)) return '';
-  value = value.replace(/\([^)]*\)/gu, '').split(',', 1)[0]?.trim() ?? '';
-  value = value.replace(/^(prepared|reserved|assembled|baked|cooked|poached)\s+/iu, '').trim().replace(/^-+|-+$/gu, '').trim();
-  const normalized = value.toLowerCase().replace(/&/gu, ' and ').replace(/\s+/gu, ' ').trim()
-    .replace(/\bchillies\b/gu, 'chili').replace(/\bchilies\b/gu, 'chili').replace(/\bchilli\b/gu, 'chili');
+  if (
+    !value ||
+    [
+      'from phase',
+      'dry mix',
+      'wet mix',
+      'prepared ',
+      'reserved ',
+      'assembled ',
+      'baked ',
+      'cooked ',
+      'poached ',
+      'initial bake',
+      'finish temp',
+      'finish time',
+      'duration',
+      'parameter',
+      'batter per pancake',
+    ].some((token) => lower.includes(token)) ||
+    ['ingredient', '---'].includes(lower)
+  )
+    return '';
+  value =
+    value
+      .replace(/\([^)]*\)/gu, '')
+      .split(',', 1)[0]
+      ?.trim() ?? '';
+  value = value
+    .replace(/^(prepared|reserved|assembled|baked|cooked|poached)\s+/iu, '')
+    .trim()
+    .replace(/^-+|-+$/gu, '')
+    .trim();
+  const normalized = value
+    .toLowerCase()
+    .replace(/&/gu, ' and ')
+    .replace(/\s+/gu, ' ')
+    .trim()
+    .replace(/\bchillies\b/gu, 'chili')
+    .replace(/\bchilies\b/gu, 'chili')
+    .replace(/\bchilli\b/gu, 'chili');
   const aliases: Record<string, string> = {
-    'bay leaves': 'bay leaf', 'beef sirloin or flank': 'beef sirloin', cloves: 'clove',
-    'coriander seeds': 'coriander seed', 'makrut lime leaves': 'makrut lime leaf', shallots: 'shallot',
-    'spring onions': 'spring onion', 'whole eggs': 'egg', 'whole egg': 'egg', eggs: 'egg',
-    'coriander stems or roots': 'coriander roots or stems', 'fresh red chilli': 'fresh red chili',
+    'bay leaves': 'bay leaf',
+    'beef sirloin or flank': 'beef sirloin',
+    cloves: 'clove',
+    'coriander seeds': 'coriander seed',
+    'makrut lime leaves': 'makrut lime leaf',
+    shallots: 'shallot',
+    'spring onions': 'spring onion',
+    'whole eggs': 'egg',
+    'whole egg': 'egg',
+    eggs: 'egg',
+    'coriander stems or roots': 'coriander roots or stems',
+    'fresh red chilli': 'fresh red chili',
   };
-  return aliases[normalized] ?? (/^fresh red chili(?:es)?$/u.test(normalized) ? 'fresh red chili' : normalized);
+  return (
+    aliases[normalized] ??
+    (/^fresh red chili(?:es)?$/u.test(normalized)
+      ? 'fresh red chili'
+      : normalized)
+  );
 }
 
 function hasNonemptySection(body: string, heading: string): boolean {

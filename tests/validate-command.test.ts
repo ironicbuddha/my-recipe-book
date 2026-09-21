@@ -278,6 +278,81 @@ function writeCanonicalRecipeWithoutHero(root: string): void {
 }
 
 describe('make validate', () => {
+  it('keeps a retired legacy candidate out of extraction only through its approved mapping', () => {
+    const root = fs.mkdtempSync(
+      path.join(os.tmpdir(), 'culinary-legacy-candidate-'),
+    );
+    roots.push(root);
+    fs.mkdirSync(path.join(root, 'recipes'), { recursive: true });
+    fs.writeFileSync(
+      path.join(root, 'recipes/2026-09-12 - Batch Three Legacy.md'),
+      `---
+techniques: [Live-fire searing]
+---
+`,
+    );
+    fs.mkdirSync(path.join(root, 'records/migrations'), { recursive: true });
+    fs.writeFileSync(
+      path.join(root, 'records/migrations/batch-3.md'),
+      `---
+record_type: grandfathering-inventory
+approved_by: "Fixture Curator"
+approved_on: 2026-09-12
+---
+
+| Source file | Recipe | Old version | Mapped version | Disposition | Exemption |
+| --- | --- | --- | --- | --- | --- |
+| \`recipes/2026-09-12 - Batch Three Legacy.md\` | recipe/batch-three-legacy | v1.0 | 1 | retain-canonical | historical evidence and Promotion Record only |
+`,
+    );
+    fs.mkdirSync(path.join(root, 'records/curation'), { recursive: true });
+    fs.writeFileSync(
+      path.join(root, 'records/curation/live-fire-searing.md'),
+      `---
+record_type: curation
+candidate: candidate/technique-live-fire-searing
+candidate_label: "Live-fire searing"
+evidence_sources: [recipe/batch-three-legacy@1]
+decision: retire-candidate
+retirement_reason: "Fixture-only duplicate candidate."
+decided_by: "Fixture Curator"
+decided_on: 2026-09-12
+---
+
+## Evidence
+
+The approved mapping identifies the exact legacy source.
+
+## Rationale
+
+The fixture retires the observed candidate.
+`,
+    );
+
+    expect(extractCandidates(root).status).toBe(0);
+    expect(
+      fs.existsSync(
+        path.join(root, 'records/candidates/technique-live-fire-searing.md'),
+      ),
+    ).toBe(false);
+
+    fs.writeFileSync(
+      path.join(root, 'records/curation/live-fire-searing.md'),
+      fs
+        .readFileSync(
+          path.join(root, 'records/curation/live-fire-searing.md'),
+          'utf8',
+        )
+        .replace('recipe/batch-three-legacy@1', 'recipe/unmapped-legacy@1'),
+    );
+    expect(extractCandidates(root).status).toBe(0);
+    expect(
+      fs.existsSync(
+        path.join(root, 'records/candidates/technique-live-fire-searing.md'),
+      ),
+    ).toBe(true);
+  });
+
   it('records recurring extraction evidence without reopening a retired Candidate', () => {
     const root = fs.mkdtempSync(path.join(os.tmpdir(), 'culinary-candidates-'));
     roots.push(root);

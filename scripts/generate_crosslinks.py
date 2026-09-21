@@ -374,6 +374,56 @@ def recipe_candidate_observations(root: Path) -> dict[str, set[str]]:
     return observations
 
 
+def approved_legacy_curation_observations(root: Path) -> dict[str, set[str]]:
+    legacy_sources: dict[str, set[str]] = {}
+    recipes_dir = root / "recipes"
+    if recipes_dir.exists():
+        for path in recipes_dir.rglob("*.md"):
+            if path.name == "README.md":
+                continue
+            text = _read(path)
+            if not parse_frontmatter(text).get("identity", ""):
+                legacy_sources[str(path.relative_to(root))] = observations_for_recipe(
+                    text, parse_frontmatter(text)
+                )
+
+    mappings: dict[str, set[str]] = {}
+    inventory_dir = root / "records" / "migrations"
+    if not inventory_dir.exists():
+        return mappings
+    for path in inventory_dir.rglob("*.md"):
+        text = _read(path)
+        record = parse_frontmatter(text)
+        if (
+            record.get("record_type") != "grandfathering-inventory"
+            or not strip_quotes(record.get("approved_by", ""))
+            or not valid_date(record.get("approved_on", ""))
+        ):
+            continue
+        for row in markdown_table_rows(re.split(r"^## ", text, maxsplit=1, flags=re.M)[0]):
+            source = row.get("Source file", "").strip().strip("`")
+            identity = row.get("Recipe", "").strip()
+            version = row.get("Mapped version", "").strip()
+            if (
+                source in legacy_sources
+                and re.fullmatch(r"recipe/[a-z0-9]+(?:-[a-z0-9]+)*", identity)
+                and re.fullmatch(r"[1-9]\d*", version)
+            ):
+                mappings.setdefault(f"{identity}@{version}", legacy_sources[source])
+    return mappings
+
+
+def markdown_table_rows(text: str) -> list[dict[str, str]]:
+    lines = [line.strip() for line in text.splitlines() if line.strip().startswith("|")]
+    if len(lines) < 3:
+        return []
+    headers = [cell.strip() for cell in lines[0].strip("|").split("|")]
+    return [
+        dict(zip(headers, [cell.strip() for cell in line.strip("|").split("|")]))
+        for line in lines[2:]
+    ]
+
+
 def has_historical_curation_exemption(record: dict[str, str]) -> bool:
     return record.get("evidence_observation_exemption") == "historical-curation"
 
@@ -386,6 +436,11 @@ def retired_candidate_keys(root: Path) -> set[str]:
     retired: set[str] = set()
     known_recipe_versions = recipe_versions(root)
     observations = recipe_candidate_observations(root)
+    for recipe_version, legacy_observations in approved_legacy_curation_observations(
+        root
+    ).items():
+        observations.setdefault(recipe_version, legacy_observations)
+        known_recipe_versions.add(recipe_version)
     for path in curation_dir.rglob("*.md"):
         text = _read(path)
         record = parse_frontmatter(text)
