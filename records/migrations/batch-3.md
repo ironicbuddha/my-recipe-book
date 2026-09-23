@@ -46,3 +46,8 @@ contracts still apply; no exemption carries into a new version.
 - `recipe/italian-sausages-puy-lentils@1`: the Curator selected generic
   `ingredient/dried-chili` on 2026-09-23, distinct from the existing
   `ingredient/dried-red-chili`; the source names no colour or variety.
+- `recipe/italian-sausages-puy-lentils@1`: the Curator selected
+  `ingredient/water` for the source's approximately 600 g “water or light
+  stock” on 2026-09-23 and approved removal of the unspecified stock
+  alternative from the converted Recipe. Retain the source wording here as
+  migration evidence of that Culinary Change.
