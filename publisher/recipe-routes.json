@@ -79,6 +79,11 @@
       "source": "/recipes/2026-02-19-grilled-pork-al-pastor/",
       "type": "redirect",
       "destination": "recipe/grilled-pork-al-pastor"
+    },
+    {
+      "source": "/recipes/2026-05-29-porchetta-with-fennel-pollen-and-salsa-verde/",
+      "type": "redirect",
+      "destination": "recipe/porchetta-fennel-pollen-salsa-verde"
     }
   ]
 }

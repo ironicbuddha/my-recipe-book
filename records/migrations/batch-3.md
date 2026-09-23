@@ -22,6 +22,11 @@ Recipe, Knowledge Note, or public page.
 
 ## Ingredient decisions for conversion
 
+- `recipe/porchetta-fennel-pollen-salsa-verde@1`: on 2026-09-23 the Curator
+  selected the measured 3000 g pork belly as the only meat. The legacy
+  overview and preparation step mention loin without a quantity; omit that
+  unmeasured addition from the converted Recipe. This is an explicit Culinary
+  Change, not an inferred loin amount.
 - `recipe/hibachi-pork-charred-greens-spanish-green-sauce@1`: the Curator selected
   `ingredient/pork-shoulder` as the 500 g scale-basis Ingredient on 2026-09-23.
   The legacy source also offers pork collar and loin; preserve those alternatives

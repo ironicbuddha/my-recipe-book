@@ -953,7 +953,11 @@ approved_on: 2026-09-12
     const root = copyPilotLibrary();
     const snapshotPath = path.join(
       root,
-      'records/migrations/legacy-sources/batch-3/grilled-pork-al-pastor.txt',
+      'records/migrations/legacy-sources/batch-3/soy-garlic-sesame-gochujang-hibachi-chicken-tacos.txt',
+    );
+    fs.copyFileSync(
+      snapshotPath,
+      path.join(root, 'recipes/2026-05-29 - Soy-garlic-sesame-gochujang-hibachi-chicken-tacos.md'),
     );
     fs.appendFileSync(snapshotPath, '\n');
 
