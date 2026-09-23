@@ -35,3 +35,7 @@ contracts still apply; no exemption carries into a new version.
   “flat-leaf parsley” and generic “fresh parsley” uses on 2026-09-23. This
   makes the previously unspecified fresh-parsley cultivar explicit. Preserve
   the porchetta slaw's parsley-or-mint option.
+- `recipe/italian-sausages-puy-lentils@1`: the Curator selected the existing
+  `ingredient/canned-whole-tomatoes` subject for “plum tomatoes (tinned,
+  crushed)” on 2026-09-23. Keep the plum variety and crushing instruction on
+  that Recipe's Ingredient Use; do not establish a duplicate tomato identity.
