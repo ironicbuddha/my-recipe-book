@@ -22,6 +22,12 @@ Recipe, Knowledge Note, or public page.
 
 ## Ingredient decisions for conversion
 
+- `recipe/soy-garlic-sesame-gochujang-hibachi-chicken-tacos@1`: on
+  2026-09-23 the Curator selected 10 g of prepared
+  `ingredient/gluten-free-flour-mix` for the source's “gluten-free flour mix,
+  rice flour and potato starch.” The source gives no split among those
+  materials. Do not invent separate rice-flour or potato-starch quantities in
+  the converted Recipe.
 - `recipe/porchetta-fennel-pollen-salsa-verde@1`: on 2026-09-23 the Curator
   selected the measured 3000 g pork belly as the only meat. The legacy
   overview and preparation step mention loin without a quantity; omit that
@@ -61,3 +67,18 @@ Recipe, Knowledge Note, or public page.
   stock” on 2026-09-23 and approved removal of the unspecified stock
   alternative from the converted Recipe. Retain the source wording here as
   migration evidence of that Culinary Change.
+
+## Conversion review
+
+On 2026-09-23, all six approved `retain-canonical` Recipe versions were
+converted in place. The six exact pre-conversion snapshots above preserve the
+legacy wording used by Curation. `make validate` passed with 18 Recipes and
+214 Knowledge Notes; `pnpm test` passed 60 tests; `pnpm check` passed and
+built 240 static pages. The Batch 3 route test checks six eligible canonical
+destinations and six direct 301 declarations.
+
+The local Astro preview served each of the six old paths as an HTML redirect
+page with a direct meta refresh to its canonical path, and each destination
+returned 200. That local server returns 200 for the redirect pages. The
+publisher-owned Vercel 301 response still requires a deployed preview request
+before issue #23's HTTP outcome can be accepted.

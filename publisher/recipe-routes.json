@@ -84,6 +84,11 @@
       "source": "/recipes/2026-05-29-porchetta-with-fennel-pollen-and-salsa-verde/",
       "type": "redirect",
       "destination": "recipe/porchetta-fennel-pollen-salsa-verde"
+    },
+    {
+      "source": "/recipes/2026-05-29-soy-garlic-sesame-gochujang-hibachi-chicken-tacos/",
+      "type": "redirect",
+      "destination": "recipe/soy-garlic-sesame-gochujang-hibachi-chicken-tacos"
     }
   ]
 }

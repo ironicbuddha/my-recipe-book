@@ -184,23 +184,35 @@ Fixture-only Curation record for retirement mechanics.
 }
 
 describe('loadLibrary', () => {
-  it('publishes converted Batch 3 Guanciale and maps its legacy URL', () => {
+  it('publishes exactly the six converted Batch 3 recipes with one-hop old routes', () => {
     const library = loadLibrary();
+    const routes = publisherRedirects();
+    const batch = [
+      ['grilled-pork-al-pastor', '2026-02-19-grilled-pork-al-pastor'],
+      [
+        'hibachi-pork-charred-greens-spanish-green-sauce',
+        '2026-02-19-hibachi-pork-with-charred-greens-and-spanish-green-sauce',
+      ],
+      ['italian-sausages-puy-lentils', '2026-02-19-italian-sausages-with-puy-lentils'],
+      ['guanciale-olive-chili-pasta-sauce', '2026-02-19-guanciale-olive-and-chili-pasta-sauce'],
+      ['porchetta-fennel-pollen-salsa-verde', '2026-05-29-porchetta-with-fennel-pollen-and-salsa-verde'],
+      [
+        'soy-garlic-sesame-gochujang-hibachi-chicken-tacos',
+        '2026-05-29-soy-garlic-sesame-gochujang-hibachi-chicken-tacos',
+      ],
+    ] as const;
 
-    expect(
-      library.recipes.find(
-        (recipe) => recipe.identity === 'recipe/guanciale-olive-chili-pasta-sauce',
-      ),
-    ).toMatchObject({
-      href: '/recipes/guanciale-olive-chili-pasta-sauce/',
-      version: 1,
-    });
-    expect(publisherRedirects()).toMatchObject({
-      '/recipes/2026-02-19-guanciale-olive-and-chili-pasta-sauce/': {
-        destination: '/recipes/guanciale-olive-chili-pasta-sauce/',
-        status: 301,
-      },
-    });
+    expect(batch).toHaveLength(6);
+    for (const [key, oldSlug] of batch) {
+      const destination = `/recipes/${key}/`;
+      const source = `/recipes/${oldSlug}/`;
+      expect(library.recipes.find((recipe) => recipe.identity === `recipe/${key}`)).toMatchObject({
+        href: destination,
+        version: 1,
+      });
+      expect(routes[source]).toEqual({ destination, status: 301 });
+      expect(routes).not.toHaveProperty(destination);
+    }
   });
 
   it('publishes exactly the approved Batch 2 canonical recipes and preserves their legacy routes', () => {

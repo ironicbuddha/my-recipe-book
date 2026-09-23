@@ -1,186 +1,222 @@
 ---
 title: "Soy Garlic Sesame Gochujang Hibachi Chicken Tacos"
 date: 2026-05-29
-type: recipe
-version: v1.0
-yield: "1 kg chicken / 8-12 tacos"
-portions: 6
-target_internal_temperature_c: "72-74"
-primary_ingredient: "chicken thighs"
-primary_mass_g: 1000
-techniques: ["hibachi grilling", "lacquering", "quick pickling", "crema", "starch coating"]
-principles: ["Maillard reaction", "sugar caramelization", "fat rendering", "acid balance", "glaze viscosity"]
-tags: ["dish-main-course", "korean", "mexican", "chicken", "charcoal", "taco", "crisp", "spicy"]
-cssclass: modernist-recipe
+identity: recipe/soy-garlic-sesame-gochujang-hibachi-chicken-tacos
+version: 1
+yield: "1 kg chicken / 8–12 tacos"
+scale_basis:
+  ingredient: ingredient/chicken-thigh
+  quantity_g: 1000
+tags: [dish-main-course, korean, mexican, chicken, charcoal, taco, crisp, spicy]
 ---
 
-# SOY GARLIC SESAME GOCHUJANG HIBACHI CHICKEN TACOS
+Charcoal-grilled chicken thighs are lacquered with a sweet soy-garlic glaze and served in flour tortillas with cucumber pickle, lime crema, and cabbage.
 
-Yield: 1 kg chicken / 8-12 tacos
-Portions: 6
-Target Internal Temperature: 72-74 C
+## PHASE A — COAT THE CHICKEN
 
-Primary Ingredient Basis: `1000 g boneless chicken thighs = 100%`
+### Ingredient Uses
 
-Charcoal-grilled chicken thighs lacquered with a sweet soy-garlic glaze, inspired by Korean fried chicken, yakitori technique, and live-fire cooking.
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| chicken | [Chicken thigh](ref:ingredient/chicken-thigh) | 1000 g | 100.00% | Use boneless thighs; trim and pat thoroughly dry. |
+| seasoning-salt | [Salt](ref:ingredient/salt) | 12 g | 1.20% | Season the coating. |
+| pepper | [Black pepper](ref:ingredient/black-pepper) | 3 g | 0.30% | Season the coating. |
+| cornstarch | [Cornstarch](ref:ingredient/cornstarch) | 30 g | 3.00% | Keep the coating thin. |
+| flour-mix | [Gluten-free flour mix](ref:ingredient/gluten-free-flour-mix) | 10 g | 1.00% | Use a prepared mix as the extra coating flour. |
 
----
+### Technique Applications
 
-## PHASE A — CHICKEN PREPARATION
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [Starch coating](ref:technique/starch-coating) | Extremely thin layer on dry chicken | Encourage browning and give the glaze an anchor without a fried crust. |
 
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | ---: | ---: |
->> | Boneless chicken thighs | 1000 g | 100.0% |
->> | Salt | 12 g | 1.2% |
->> | Black pepper | 3 g | 0.3% |
->> | Cornstarch | 30 g | 3.0% |
->> | Gluten-free flour mix, rice flour and potato starch | 10 g | 1.0% |
->
->> [!col-right]
->> ### Method
->> 1. Trim chicken thighs if needed and pat dry thoroughly.
->> 2. Combine salt, pepper, cornstarch, and gluten-free flour mix.
->> 3. Lightly dust chicken with the mixture.
->> 4. Keep the coating extremely thin; it should encourage browning and help the glaze cling without creating a fried crust.
+### Principles
 
----
+- [Maillard reaction](ref:principle/maillard-reaction) — Dry chicken and a restrained coating help the surface brown over the grill.
 
-## PHASE B — QUICK CUCUMBER PICKLE
+### Method
 
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | ---: | ---: |
->> | Cucumber, thinly sliced | 200 g | 20.0% |
->> | Rice vinegar | 60 g | 6.0% |
->> | Sugar | 20 g | 2.0% |
->> | Salt | 3 g | 0.3% |
->
->> [!col-right]
->> ### Method
->> 1. Combine rice vinegar, sugar, and salt.
->> 2. Toss with sliced cucumber.
->> 3. Refrigerate until needed.
+1. Trim the boneless thighs if needed and pat thoroughly dry.
+2. Combine salt, black pepper, cornstarch, and the prepared gluten-free flour mix.
+3. Lightly dust the chicken with the mixture. Keep the coating extremely thin.
 
----
+### Phase Outputs
 
-## PHASE C — LIME CREMA
+| Key | Phase Output | Description |
+| --- | --- | --- |
+| coated-chicken | Coated chicken | Dry, lightly dusted thighs ready for grilling. |
 
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | ---: | ---: |
->> | Sour cream | 150 g | 15.0% |
->> | Lime juice | 20 g | 2.0% |
->> | Soy sauce | 5 g | 0.5% |
->> | Sugar | 3 g | 0.3% |
->
->> [!col-right]
->> ### Method
->> 1. Combine sour cream, lime juice, soy sauce, and sugar.
->> 2. Whisk smooth.
->> 3. Refrigerate until serving.
+## PHASE B — QUICK-PICKLE THE CUCUMBER
 
----
+### Ingredient Uses
 
-## PHASE D — SOY GARLIC SESAME GOCHUJANG GLAZE
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| cucumber | [Cucumber](ref:ingredient/cucumber) | 200 g | 20.00% | Thinly slice. |
+| pickle-vinegar | [Rice vinegar](ref:ingredient/rice-vinegar) | 60 g | 6.00% | Mix with the sugar and salt. |
+| pickle-sugar | [Sugar](ref:ingredient/sugar) | 20 g | 2.00% | Dissolve in the vinegar. |
+| pickle-salt | [Salt](ref:ingredient/salt) | 3 g | 0.30% | Dissolve in the vinegar. |
 
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | ---: | ---: |
->> | Soy sauce | 60 g | 6.0% |
->> | Honey | 50 g | 5.0% |
->> | Brown sugar | 20 g | 2.0% |
->> | Garlic, finely grated | 20 g | 2.0% |
->> | Ginger, grated | 8 g | 0.8% |
->> | Rice vinegar | 20 g | 2.0% |
->> | Gochujang | 15 g | 1.5% |
->> | Sesame oil | 10 g | 1.0% |
->> | Butter | 20 g | 2.0% |
->
->> [!col-right]
->> ### Method
->> 1. Combine soy sauce, honey, brown sugar, garlic, ginger, rice vinegar, and gochujang in a saucepan.
->> 2. Simmer gently for 2-3 minutes until lightly thickened.
->> 3. Remove from heat and whisk in sesame oil and butter.
->> 4. Hold warm. The glaze should be glossy and lightly syrupy, not thick like barbecue sauce.
+### Technique Applications
 
----
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [Quick pickling](ref:technique/quick-pickling) | Refrigerate until assembly | Add a sharp, crisp contrast to the glazed chicken. |
 
-## PHASE E — HIBACHI COOKING AND LACQUERING
+### Principles
 
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | ---: | ---: |
->> | Prepared chicken thighs | 1000 g raw basis | 100.0% |
->> | Soy garlic sesame gochujang glaze | all | 22.3% |
->
->> [!col-right]
->> ### Method
->> 1. Prepare a hibachi or charcoal grill for medium-high direct heat.
->> 2. Grill chicken thighs mostly undisturbed to develop colour and light char.
->> 3. Allow fat to render slowly and encourage occasional flare-ups for smoke and caramelisation.
->> 4. During the final 1-2 minutes of cooking, begin brushing chicken with glaze.
->> 5. Flip and glaze repeatedly to build lacquered layers.
->> 6. Cook until the thickest point reaches 72-74 C.
->> 7. Rest chicken for 3-5 minutes before slicing.
+- [Acid balance](ref:principle/acid-balance) — The pickle's vinegar cuts through the sweet, salty glaze.
 
----
+### Method
 
-## PHASE F — TACO ASSEMBLY
+1. Combine the rice vinegar, sugar, and salt until the solids dissolve.
+2. Toss with the sliced cucumber and refrigerate until needed.
 
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | ---: | ---: |
->> | Small flour tortillas | 8-12 units | - |
->> | Shredded cabbage | 150 g | 15.0% |
->> | Glazed chicken, sliced | all | 100.0% |
->> | Quick cucumber pickle | all | 28.3% |
->> | Lime crema | all | 17.8% |
->> | Spring onion, sliced | 30 g | 3.0% |
->> | Coriander leaves | 10 g | 1.0% |
->> | Toasted sesame seeds | 5 g | 0.5% |
->
->> [!col-right]
->> ### Method
->> 1. Warm tortillas over the grill.
->> 2. Slice chicken into bite-sized pieces.
->> 3. Assemble tacos with cabbage, glazed chicken, cucumber pickle, lime crema, spring onion, coriander, and toasted sesame seeds.
->> 4. Serve immediately.
+### Phase Outputs
 
----
+| Key | Phase Output | Description |
+| --- | --- | --- |
+| cucumber-pickle | Cucumber pickle | Chilled, lightly pickled cucumber for the tacos. |
 
-## STRUCTURAL NOTES
+## PHASE C — MAKE THE LIME CREMA
 
-The thin starch coating increases dry surface area for browning and gives the glaze a light anchor without turning the chicken into a fried preparation. The glaze is applied only at the end because soy, honey, brown sugar, and gochujang can scorch over direct charcoal heat. Pickle and lime crema counter the sweet-salty glaze with acidity and cooling fat.
+### Ingredient Uses
+
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| sour-cream | [Sour cream](ref:ingredient/sour-cream) | 150 g | 15.00% | Base of the crema. |
+| crema-lime | [Lime juice](ref:ingredient/lime-juice) | 20 g | 2.00% | Brighten the crema. |
+| crema-soy | [Soy sauce](ref:ingredient/soy-sauce) | 5 g | 0.50% | Season the crema. |
+| crema-sugar | [Sugar](ref:ingredient/sugar) | 3 g | 0.30% | Balance the lime. |
+
+### Technique Applications
+
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [Whisking](ref:technique/whisking) | Smooth mixture | Combine the crema without lumps. |
+
+### Principles
+
+- [Acid balance](ref:principle/acid-balance) — Lime and cooling sour cream counter the rich, sweet glaze.
+
+### Method
+
+1. Combine sour cream, lime juice, soy sauce, and sugar.
+2. Whisk smooth and refrigerate until serving.
+
+### Phase Outputs
+
+| Key | Phase Output | Description |
+| --- | --- | --- |
+| lime-crema | Lime crema | Cool, lightly sweetened lime sauce for assembly. |
+
+## PHASE D — MAKE THE SOY-GARLIC GOCHUJANG GLAZE
+
+### Ingredient Uses
+
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| glaze-soy | [Soy sauce](ref:ingredient/soy-sauce) | 60 g | 6.00% | Salty base of the glaze. |
+| honey | [Honey](ref:ingredient/honey) | 50 g | 5.00% | Sweeten the glaze. |
+| brown-sugar | [Brown sugar](ref:ingredient/brown-sugar) | 20 g | 2.00% | Sweeten the glaze. |
+| glaze-garlic | [Garlic](ref:ingredient/garlic) | 20 g | 2.00% | Finely grate. |
+| ginger | [Fresh ginger](ref:ingredient/fresh-ginger) | 8 g | 0.80% | Grate. |
+| glaze-vinegar | [Rice vinegar](ref:ingredient/rice-vinegar) | 20 g | 2.00% | Balance the sweetness. |
+| gochujang | [Gochujang](ref:ingredient/gochujang) | 15 g | 1.50% | Add heat and depth. |
+| sesame-oil | [Sesame oil](ref:ingredient/sesame-oil) | 10 g | 1.00% | Whisk in off heat. |
+| butter | [Butter](ref:ingredient/butter) | 20 g | 2.00% | Whisk in off heat. |
+
+### Technique Applications
+
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [Reduction](ref:technique/reduction) | Gentle simmer; 2–3 min | Lightly thicken the glaze without making it heavy. |
+
+### Principles
+
+- [Glaze viscosity](ref:principle/glaze-viscosity) — A lightly syrupy glaze builds thin, glossy layers on the grilled chicken.
+- [Sugar caramelization](ref:principle/sugar-caramelization) — Sweet glaze can scorch on direct charcoal heat, so it is applied near the end.
+
+### Method
+
+1. Combine soy sauce, honey, brown sugar, grated garlic and ginger, rice vinegar, and gochujang in a saucepan.
+2. Simmer gently for 2–3 min until lightly thickened.
+3. Remove from heat and whisk in sesame oil and butter. Hold warm; the glaze should be glossy and lightly syrupy.
+
+### Phase Outputs
+
+| Key | Phase Output | Description |
+| --- | --- | --- |
+| gochujang-glaze | Gochujang glaze | Warm soy-garlic-sesame glaze for lacquering. |
+
+## PHASE E — GRILL AND LACQUER THE CHICKEN
+
+### Technique Applications
+
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [Grilling](ref:technique/grilling) | Medium-high direct hibachi heat; 72–74 C at thickest point | Build colour and light char while cooking the thighs through. |
+| [Lacquering](ref:technique/lacquering) | Brush during final 1–2 min; flip repeatedly | Build glossy layers without burning the sugars. |
+
+### Principles
+
+- [Fat rendering](ref:principle/fat-rendering) — Slow release of thigh fat supports browning and occasional smoky flare-ups.
+- [Sugar caramelization](ref:principle/sugar-caramelization) — Applying glaze late limits scorching over coals.
+
+### Method
+
+1. Prepare a hibachi or charcoal grill for medium-high direct heat.
+2. Grill the coated thighs mostly undisturbed to develop colour and light char, allowing fat to render and occasional flare-ups to add smoke.
+3. During the final 1–2 min, brush with the warm glaze. Flip and glaze repeatedly to build lacquered layers.
+4. Cook until the thickest point reaches 72–74 C. Rest for 3–5 min before slicing.
+
+### Phase Outputs Used
+
+| Phase Output | Use |
+| --- | --- |
+| Coated chicken | Grill all of `coated-chicken`. |
+| Gochujang glaze | Brush `gochujang-glaze` onto the chicken during the final minute or two. |
+
+### Phase Outputs
+
+| Key | Phase Output | Description |
+| --- | --- | --- |
+| glazed-chicken | Glazed chicken | Rested, lacquered thighs ready to slice. |
+
+## PHASE F — ASSEMBLE THE TACOS
+
+### Ingredient Uses
+
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| tortillas | [Flour tortillas](ref:ingredient/flour-tortillas) | As needed | — | Use 8–12 small tortillas; warm over the grill. |
+| cabbage | [Cabbage](ref:ingredient/cabbage) | 150 g | 15.00% | Shred. |
+| spring-onion | [Spring onion](ref:ingredient/spring-onion) | 30 g | 3.00% | Slice. |
+| coriander | [Fresh coriander](ref:ingredient/fresh-coriander) | 10 g | 1.00% | Use the leaves. |
+| sesame-seeds | [Sesame seeds](ref:ingredient/sesame-seeds) | 5 g | 0.50% | Toast before serving. |
+
+### Principles
+
+- [Acid balance](ref:principle/acid-balance) — Pickle and crema brighten the sweet, salty chicken.
+
+### Method
+
+1. Warm the tortillas over the grill and slice the rested chicken into bite-sized pieces.
+2. Fill each tortilla with shredded cabbage, glazed chicken, cucumber pickle, and lime crema.
+3. Finish with spring onion, coriander leaves, and toasted sesame seeds. Serve immediately.
+
+### Phase Outputs Used
+
+| Phase Output | Use |
+| --- | --- |
+| Glazed chicken | Slice all of `glazed-chicken` for the tacos. |
+| Cucumber pickle | Divide `cucumber-pickle` among the tacos. |
+| Lime crema | Spoon `lime-crema` over the filling. |
 
 ## FAILURE MODES
 
-- Symptom: Glaze tastes burnt or bitter.
-- Likely cause: Sugary glaze was applied too early over direct heat.
-- Corrective action: Grill chicken first, then lacquer only during the final 1-2 minutes.
-
-- Symptom: Chicken surface is pasty rather than browned.
-- Likely cause: Coating was too thick or chicken was wet before dusting.
-- Corrective action: Pat chicken dry and use only a very thin starch layer.
-
-- Symptom: Tacos taste heavy or overly sweet.
-- Likely cause: Too much glaze or insufficient acid contrast.
-- Corrective action: Use restrained glaze layers and increase cucumber pickle or lime crema acidity.
-
-## VARIATIONS
-
-- Spicier: increase gochujang or add chilli oil to the glaze.
-- Smokier: add a small amount of smoked paprika to the chicken seasoning.
-- Extra charred: finish glazed chicken directly over open flame for light blistering.
+| Symptom | Likely cause | Corrective action |
+| --- | --- | --- |
+| Glaze tastes burnt or bitter | Sugary glaze was applied too early | Grill first, then lacquer only during the final 1–2 min. |
+| Chicken surface is pasty | Coating was too thick or chicken was wet | Pat dry and use only a thin starch layer. |
+| Tacos taste heavy or overly sweet | Too much glaze or too little acid | Use restrained glaze layers and increase pickle or crema acidity. |
