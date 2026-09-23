@@ -43,3 +43,6 @@ contracts still apply; no exemption carries into a new version.
   `ingredient/cinnamon` on 2026-09-23, distinct from the existing
   `ingredient/cassia-cinnamon` subject. Preserve the source's stick-or-ground
   choice; remove the stick only when that form is used.
+- `recipe/italian-sausages-puy-lentils@1`: the Curator selected generic
+  `ingredient/dried-chili` on 2026-09-23, distinct from the existing
+  `ingredient/dried-red-chili`; the source names no colour or variety.
