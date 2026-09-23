@@ -79,6 +79,8 @@ destinations and six direct 301 declarations.
 
 The local Astro preview served each of the six old paths as an HTML redirect
 page with a direct meta refresh to its canonical path, and each destination
-returned 200. That local server returns 200 for the redirect pages. The
-publisher-owned Vercel 301 response still requires a deployed preview request
-before issue #23's HTTP outcome can be accepted.
+returned 200. That local server returns 200 for the redirect pages. On the
+draft PR #42 Vercel preview for commit `8616145`, authenticated HEAD requests
+to all six old paths returned one-hop HTTP 301 with the exact canonical
+`Location`; all six destinations returned HTTP 200. Production was not
+changed.
