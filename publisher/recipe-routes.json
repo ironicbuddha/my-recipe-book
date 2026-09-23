@@ -64,6 +64,11 @@
       "source": "/recipes/2026-02-19-guanciale-olive-and-chili-pasta-sauce/",
       "type": "redirect",
       "destination": "recipe/guanciale-olive-chili-pasta-sauce"
+    },
+    {
+      "source": "/recipes/2026-02-19-italian-sausages-with-puy-lentils/",
+      "type": "redirect",
+      "destination": "recipe/italian-sausages-puy-lentils"
     }
   ]
 }
