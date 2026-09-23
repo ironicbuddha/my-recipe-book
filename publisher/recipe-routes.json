@@ -59,6 +59,11 @@
       "source": "/recipes/2026-02-19-spicy-korean-fried-chicken/",
       "type": "redirect",
       "destination": "recipe/spicy-korean-fried-chicken"
+    },
+    {
+      "source": "/recipes/2026-02-19-guanciale-olive-and-chili-pasta-sauce/",
+      "type": "redirect",
+      "destination": "recipe/guanciale-olive-chili-pasta-sauce"
     }
   ]
 }

@@ -563,7 +563,7 @@ The Curator reviewed the evidence and retired this Candidate.
 
     expect(result.status).toBe(0);
     expect(result.stdout).toMatch(
-      /Validation passed: 12 recipe\(s\), \d+ Knowledge Note\(s\), 0 Completed Experiment\(s\)\./u,
+      /Validation passed: \d+ recipe\(s\), \d+ Knowledge Note\(s\), 0 Completed Experiment\(s\)\./u,
     );
   });
 

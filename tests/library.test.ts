@@ -184,6 +184,25 @@ Fixture-only Curation record for retirement mechanics.
 }
 
 describe('loadLibrary', () => {
+  it('publishes converted Batch 3 Guanciale and maps its legacy URL', () => {
+    const library = loadLibrary();
+
+    expect(
+      library.recipes.find(
+        (recipe) => recipe.identity === 'recipe/guanciale-olive-chili-pasta-sauce',
+      ),
+    ).toMatchObject({
+      href: '/recipes/guanciale-olive-chili-pasta-sauce/',
+      version: 1,
+    });
+    expect(publisherRedirects()).toMatchObject({
+      '/recipes/2026-02-19-guanciale-olive-and-chili-pasta-sauce/': {
+        destination: '/recipes/guanciale-olive-chili-pasta-sauce/',
+        status: 301,
+      },
+    });
+  });
+
   it('publishes exactly the approved Batch 2 canonical recipes and preserves their legacy routes', () => {
     const library = loadLibrary();
     const approvedRecipes = [
@@ -773,6 +792,176 @@ The duplicate candidate is not needed.
     );
   });
 
+  it('retains exact Phase Output labels as Curation evidence after conversion', () => {
+    const root = writeLibrary({
+      'recipes/2026-09-12 - Chicken.md': `---
+title: "Chicken"
+date: 2026-09-12
+identity: recipe/chicken
+version: 1
+yield: "2 portions"
+scale_basis:
+  ingredient: ingredient/chicken
+  quantity_g: 500
+tags: [dish-main-course]
+---
+
+## PHASE A — PREPARE
+
+### Ingredient Uses
+
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| chicken | [Chicken](ref:ingredient/chicken) | 500 g | 100.00% | Marinate. |
+
+### Method
+
+1. Marinate the chicken.
+
+### Phase Outputs
+
+| Key | Phase Output | Description |
+| --- | --- | --- |
+| marinated-chicken | Marinated chicken | Chicken ready to cook. |
+
+## PHASE B — COOK
+
+### Method
+
+1. Cook the marinated chicken.
+
+### Phase Outputs Used
+
+| Phase Output | Use |
+| --- | --- |
+| Marinated chicken | Cook all of \`marinated-chicken\`. |
+
+## FAILURE MODES
+
+| Symptom | Likely cause | Corrective action |
+| --- | --- | --- |
+| Dry chicken | Cooking ran long | Shorten cooking time. |
+`,
+      'ingredients/Ingredient - Chicken.md': `---
+title: "Chicken"
+identity: ingredient/chicken
+---
+
+## Functional Profile
+
+Poultry meat.
+
+## Handling
+
+Keep chilled.
+
+## Culinary Use
+
+Cook thoroughly.
+`,
+      'records/curation/chicken.md': `---
+record_type: curation
+candidate: candidate/ingredient-chicken
+candidate_label: "Chicken"
+evidence_sources: [recipe/chicken@1]
+decision: establish-subject
+subject: ingredient/chicken
+decided_by: "Curator"
+decided_on: 2026-09-12
+---
+
+## Evidence
+
+The Recipe uses chicken.
+
+## Rationale
+
+Establish the subject.
+`,
+      'records/curation/marinated-chicken.md': `---
+record_type: curation
+candidate: candidate/ingredient-marinated-chicken
+candidate_label: "Marinated Chicken"
+evidence_sources: [recipe/chicken@1]
+decision: retire-candidate
+retirement_reason: "A same-Recipe Phase Output, not a new Ingredient."
+decided_by: "Curator"
+decided_on: 2026-09-12
+---
+
+## Evidence
+
+The Recipe names marinated chicken as its Phase Output.
+
+## Rationale
+
+Retire the prepared-state candidate.
+`,
+      'records/migrations/chicken.md': `---
+record_type: grandfathering-inventory
+approved_by: "Curator"
+approved_on: 2026-09-12
+---
+
+| Source file | Recipe | Old version | Mapped version | Disposition | Exemption |
+| --- | --- | --- | --- | --- | --- |
+| \`recipes/2026-09-12 - Chicken.md\` | recipe/chicken | v1.0 | 1 | retain-canonical | historical evidence and Promotion Record only |
+`,
+    });
+
+    expect(() => loadLibrary(root)).not.toThrow();
+    const recipePath = path.join(root, 'recipes/2026-09-12 - Chicken.md');
+    fs.writeFileSync(
+      recipePath,
+      fs.readFileSync(recipePath, 'utf8').replace(
+        '| marinated-chicken | Marinated chicken |',
+        '| marinated-chicken | Seasoned chicken |',
+      ),
+    );
+    expect(() => loadLibrary(root)).toThrow(
+      'retire-candidate Curation evidence_sources must observe the candidate',
+    );
+  });
+
+  it('uses exact portable legacy snapshots for converted Batch 3 Curation', () => {
+    const root = copyPilotLibrary();
+    const guancialeSnapshot = path.join(
+      root,
+      'records/migrations/legacy-sources/batch-3/guanciale-olive-chili-pasta-sauce.txt',
+    );
+    const original = fs.readFileSync(guancialeSnapshot, 'utf8');
+
+    expect(() => loadLibrary(root)).not.toThrow();
+    fs.writeFileSync(
+      guancialeSnapshot,
+      original
+        .replace('primary_ingredient: guanciale', 'primary_ingredient: pancetta')
+        .replace('Guanciale (lardons)', 'Pancetta (lardons)'),
+    );
+    expect(() => loadLibrary(root)).toThrow(
+      'Curation evidence_sources must observe the candidate',
+    );
+
+    fs.writeFileSync(guancialeSnapshot, original);
+    fs.rmSync(guancialeSnapshot);
+    expect(() => loadLibrary(root)).toThrow(
+      'invalid or missing evidence snapshot',
+    );
+  });
+
+  it('rejects a Batch 3 snapshot that differs from an unconverted source', () => {
+    const root = copyPilotLibrary();
+    const snapshotPath = path.join(
+      root,
+      'records/migrations/legacy-sources/batch-3/grilled-pork-al-pastor.txt',
+    );
+    fs.appendFileSync(snapshotPath, '\n');
+
+    expect(() => loadLibrary(root)).toThrow(
+      'evidence snapshot differs from the unconverted source',
+    );
+  });
+
   it.each([
     [
       'missing narrative evidence',
@@ -950,7 +1139,7 @@ The Curator reviewed the evidence and retired this Candidate.
   it('projects the approved pilot through the recipe-facing public helpers', () => {
     const recipes = getAllRecipes();
 
-    expect(recipes).toHaveLength(12);
+    expect(recipes).toHaveLength(loadLibrary(process.cwd()).recipes.length);
     expect(recipes).toEqual(
       expect.arrayContaining([
         expect.objectContaining({
@@ -965,7 +1154,7 @@ The Curator reviewed the evidence and retired this Candidate.
         (entry) => entry.type === 'ingredient',
       ).length,
       principles: 39,
-      recipes: 12,
+      recipes: recipes.length,
       techniques: 40,
     });
     const singapore = recipes.find(
@@ -1195,6 +1384,7 @@ The fixture preserves the accepted limitation.
 
   it('publishes completed Experiments for every supported primary subject and derives correction notices', () => {
     const root = copyPilotLibrary();
+    const originalRecipeCount = loadLibrary(root).recipes.length;
     const draftPath = path.join(
       root,
       'recipes/drafts/singapore-chicken-rice@2.md',
@@ -1250,7 +1440,7 @@ The fixture preserves the accepted limitation.
     expect(
       library.entries.filter((entry) => entry.type === 'experiment'),
     ).toHaveLength(6);
-    expect(library.recipes).toHaveLength(12);
+    expect(library.recipes).toHaveLength(originalRecipeCount);
     expect(
       library.entries.find(
         (entry) => entry.identity === 'experiment/ingredient-use-trial',
