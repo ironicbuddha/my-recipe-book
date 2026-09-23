@@ -15,3 +15,10 @@ approved_on: 2026-09-21
 
 Each row is an exact, one-time migration exemption. All content and reference
 contracts still apply; no exemption carries into a new version.
+
+## Ingredient decisions for conversion
+
+- `recipe/hibachi-pork-charred-greens-spanish-green-sauce@1`: the Curator selected
+  `ingredient/pork-shoulder` as the 500 g scale-basis Ingredient on 2026-09-23.
+  The legacy source also offers pork collar and loin; preserve those alternatives
+  explicitly and review their identities before converting this Recipe.
