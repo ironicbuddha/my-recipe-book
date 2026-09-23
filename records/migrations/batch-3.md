@@ -22,3 +22,7 @@ contracts still apply; no exemption carries into a new version.
   `ingredient/pork-shoulder` as the 500 g scale-basis Ingredient on 2026-09-23.
   The legacy source also offers pork collar and loin; preserve those alternatives
   explicitly and review their identities before converting this Recipe.
+- `recipe/hibachi-pork-charred-greens-spanish-green-sauce@1`: the Curator selected
+  broccoli for the 300 g charred-greens Ingredient Use on 2026-09-23. The legacy
+  parenthetical also names “beans” and courgettes; preserve those alternatives
+  without interpreting the unspecified beans as a particular variety.
