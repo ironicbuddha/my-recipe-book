@@ -1,164 +1,130 @@
 ---
 title: "Grilled Pork Al Pastor (Hibachi) with Charred Pineapple-Chilli Salsa"
 date: 2026-02-19
-type: recipe
-version: v1.0
+identity: recipe/grilled-pork-al-pastor
+version: 1
 yield: "2 portions"
-portions: 2
-target_internal_temperature_c: "60-62, rest to 65"
-primary_ingredient: "pork fillet"
-primary_mass_g: 200
-techniques: ["hibachi grilling", "blending", "char grilling"]
-principles: ["Maillard reaction", "protein denaturation", "enzymatic tenderization", "salt taste modulation"]
-tags: ["dish-main-course", "mexican", "pork", "charcoal", "maillard", "tender"]
-cssclass: modernist-recipe
+scale_basis:
+  ingredient: ingredient/pork-fillet
+  quantity_g: 200
+tags: [dish-main-course, mexican, pork, charcoal, maillard, tender]
 ---
 
-# GRILLED PORK AL PASTOR (HIBACHI) WITH CHARRED PINEAPPLE-CHILLI SALSA
+Pork fillet is marinated with grilled pineapple puree, cooked over hibachi coals, and served in warm corn tortillas with charred pineapple and chili salsa.
 
-Yield: 2 portions
-Portions: 2
-Target Internal Temperature: 60-62 C, rest carryover to 65 C
+## PHASE A — MARINATE THE PORK
 
-Primary Ingredient Basis: `200 g pork fillet = 100%`
+### Ingredient Uses
 
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| pork | [Pork fillet](ref:ingredient/pork-fillet) | 200 g | 100.00% | Selected basis; [pork shoulder](ref:ingredient/pork-shoulder) is an alternative at a 270 g basis. |
+| puree | [Grilled pineapple puree](ref:ingredient/grilled-pineapple-puree) | 40 g | 20.00% | Use the prepared puree; its raw yield is unspecified. |
+| vinegar | [Apple cider vinegar](ref:ingredient/apple-cider-vinegar) | 8.33 g | 4.17% | Blend into the marinade. |
+| oil | [Neutral oil](ref:ingredient/neutral-oil) | 6.67 g | 3.34% | Blend into the marinade. |
+| achiote | [Achiote paste](ref:ingredient/achiote-paste) | 8.33 g | 4.17% | Blend into the marinade. |
+| guajillo | [Guajillo chile](ref:ingredient/guajillo-chile) | 3.33 g | 1.67% | Rehydrate before blending. |
+| garlic | [Garlic](ref:ingredient/garlic) | 1.67 g | 0.84% | Blend into the marinade. |
+| salt | [Salt](ref:ingredient/salt) | 1.67 g | 0.84% | Season the marinade. |
+| cumin | [Cumin](ref:ingredient/cumin) | 0.67 g | 0.34% | Blend into the marinade. |
+| clove | [Cloves](ref:ingredient/cloves) | 0.17 g | 0.09% | Blend into the marinade. |
+| oregano | [Mexican oregano](ref:ingredient/mexican-oregano) | 0.33 g | 0.17% | Blend into the marinade. |
 
----
+### Technique Applications
 
-## PHASE A — MARINADE PREPARATION AND PORK MARINATION
-
----
-
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Pork fillet | 200 g | 100.00% |
->> | Grilled pineapple puree | 40 g | 20.00% |
->> | Apple cider vinegar | 8.33 g | 4.17% |
->> | Neutral oil | 6.67 g | 3.33% |
->> | Achiote paste | 8.33 g | 4.17% |
->> | Guajillo chile, rehydrated | 3.33 g | 1.67% |
->> | Garlic | 1.67 g | 0.83% |
->> | Salt | 1.67 g | 0.83% |
->> | Cumin | 0.67 g | 0.33% |
->> | Clove | 0.17 g | 0.08% |
->> | Mexican oregano | 0.33 g | 0.17% |
->
->> [!col-right]
->> ### Method
->> 1. Combine pineapple puree, vinegar, oil, achiote, guajillo, garlic, salt, cumin, clove, and oregano; blend to a homogeneous marinade.
->> 2. Coat pork fillet evenly with marinade in a non-reactive container.
->> 3. Marinate refrigerated for 45 minutes to 2 hours.
->> 4. If using pork shoulder (270 g basis), extend marination up to 6 hours.
-
-
----
-
-## PHASE B — HIBACHI GRILLING, REST, AND FINAL CHAR
-
----
-
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Marinated pork fillet | 200 g raw basis | 100.00% |
->
->> [!col-right]
->> ### Method
->> 1. Preheat hibachi to 260-300 C grate surface temperature.
->> 2. Grill fillet over direct heat, rotating every 60-90 seconds for even surface browning.
->> 3. Continue until internal temperature reaches 60-62 C at the geometric center.
->> 4. Rest 5-8 minutes until carryover reaches 65 C.
->> 5. Slice thinly against the grain.
->> 6. Return slices briefly to high heat for fast edge caramelization without overcooking the interior.
-
-
----
-
-## PHASE C — CHARRED PINEAPPLE-CHILLI SALSA AND ASSEMBLY
-
----
-
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Charred pineapple | 66.67 g | 33.33% |
->> | Fresh red chilli | 1.67 g | 0.83% |
->> | Red onion | 6.67 g | 3.33% |
->> | Lime juice | 5 g | 2.50% |
->> | Salt | 0.67 g | 0.33% |
->> | Fresh coriander | 2.33 g | 1.2% |
->> | Fresh Mint | 1 g | 0.5% |
->> | Corn tortillas | 2 units | 1 tortilla per 100 g basis |
->
->> [!col-right]
->> ### Method
->> 1. Grill pineapple until charred at edges, then dice.
->> 2. Combine pineapple, chilli, onion, lime juice, salt, and coriander; mix thoroughly.
->> 3. Rest salsa 10-15 minutes for hydration and salt equilibration.
->> 4. Warm tortillas directly over charcoal until pliable with light spotting.
->> 5. Fill tortillas with sliced pork and top with salsa.
-
-## RELATED LINKS
-<!-- AUTO-GENERATED:RELATED-LINKS:START -->
-
-### Techniques
-- [[Technique - Blending]]
-- [[Technique - Char Grilling]]
-- [[Technique - Hibachi Grilling]]
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [Blending](ref:technique/blending) | Homogeneous mixture | Distribute the marinade evenly over the fillet. |
 
 ### Principles
-- [[Principle - Enzymatic Tenderization]]
-- [[Principle - Maillard Reaction]]
-- [[Principle - Protein Denaturation]]
-- [[Principle - Salt Taste Modulation]]
 
-### Ingredients
-- [[Ingredient - Achiote Paste]]
-- [[Ingredient - Apple Cider Vinegar]]
-- [[Ingredient - Charred Pineapple]]
-- [[Ingredient - Clove]]
-- [[Ingredient - Corn Tortillas]]
-- [[Ingredient - Cumin]]
-- [[Ingredient - Fresh Coriander]]
-- [[Ingredient - Fresh Mint]]
-- [[Ingredient - Fresh Red Chili]]
-- [[Ingredient - Garlic]]
-- [[Ingredient - Grilled Pineapple Puree]]
-- [[Ingredient - Guajillo Chile]]
-- [[Ingredient - Lime Juice]]
-- [[Ingredient - Marinated Pork Fillet]]
-- [[Ingredient - Mexican Oregano]]
-- [[Ingredient - Neutral Oil]]
-- [[Ingredient - Pork Fillet]]
-- [[Ingredient - Red Onion]]
-- [[Ingredient - Salt]]
+- [Enzymatic tenderization](ref:principle/enzymatic-tenderization) — Grilled pineapple and bounded marination avoid an excessively soft pork surface.
 
-<!-- AUTO-GENERATED:RELATED-LINKS:END -->
+### Method
 
-## STRUCTURAL NOTES
+1. Combine the grilled pineapple puree, vinegar, oil, achiote, rehydrated guajillo, garlic, salt, cumin, clove, and oregano; blend until homogeneous.
+2. Coat the pork fillet evenly in a non-reactive container. Refrigerate for 45 min to 2 h.
+3. If using pork shoulder at the source's 270 g basis, marinate for up to 6 h.
 
-- Bromelain activity in pineapple can soften muscle proteins; grilling the pineapple and keeping marination time bounded reduces uncontrolled proteolysis and surface mush.
-- High-heat hibachi contact accelerates Maillard reaction on exposed pork surfaces, building roasted aromatics and color.
-- Pork fillet (lean) has lower fat buffering and narrower thermal tolerance than shoulder; fillet requires stricter endpoint control to avoid dryness.
-- Salt in the salsa suppresses perceived sweetness and sharpens acidity, improving balance against caramelized fruit sugars.
+### Phase Outputs
+
+| Key | Phase Output | Description |
+| --- | --- | --- |
+| marinated-pork | Marinated pork | Coated fillet ready for direct grilling. |
+
+## PHASE B — GRILL, REST, AND CHAR
+
+### Technique Applications
+
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [Grilling](ref:technique/grilling) | Hibachi grate at 260–300 C; turn every 60–90 s; 60–62 C centre | Brown the surface while reaching the intended internal temperature. |
+| [Charring](ref:technique/charring) | Brief final pass after slicing | Caramelize edges without drying the interior. |
+
+### Principles
+
+- [Protein denaturation](ref:principle/protein-denaturation) — The fillet has a narrow endpoint before it becomes dry.
+- [Maillard reaction](ref:principle/maillard-reaction) — Hot coals brown the exposed pork surfaces.
+
+### Method
+
+1. Preheat the hibachi to 260–300 C at the grate. Grill the marinated fillet over direct heat, rotating every 60–90 s.
+2. Continue until the centre reaches 60–62 C. Rest for 5–8 min, aiming for 65 C after carryover.
+3. Slice thinly against the grain, then return the slices briefly to high heat for fast edge caramelization without overcooking the interior.
+
+### Phase Outputs Used
+
+| Phase Output | Use |
+| --- | --- |
+| Marinated pork | Grill all of `marinated-pork`. |
+
+### Phase Outputs
+
+| Key | Phase Output | Description |
+| --- | --- | --- |
+| sliced-pork | Sliced pork | Grilled, rested, and briefly charred pork for the tortillas. |
+
+## PHASE C — CHAR THE PINEAPPLE AND ASSEMBLE
+
+### Ingredient Uses
+
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| pineapple | [Pineapple](ref:ingredient/pineapple) | 66.67 g | 33.34% | Char the raw fruit, then dice for salsa. |
+| chili | [Fresh red chili](ref:ingredient/fresh-red-chili) | 1.67 g | 0.84% | Chop for salsa. |
+| onion | [Red onion](ref:ingredient/red-onion) | 6.67 g | 3.34% | Chop for salsa. |
+| lime | [Lime juice](ref:ingredient/lime-juice) | 5 g | 2.50% | Add to salsa. |
+| salsa-salt | [Salt](ref:ingredient/salt) | 0.67 g | 0.34% | Season the salsa. |
+| coriander | [Fresh coriander](ref:ingredient/fresh-coriander) | 2.33 g | 1.17% | Chop for salsa. |
+| mint | [Mint](ref:ingredient/mint) | 1 g | 0.50% | Use fresh leaves; source amount, add with the herbs if desired. |
+| tortillas | [Corn tortillas](ref:ingredient/corn-tortillas) | As needed | — | Use 2 tortillas at this basis; warm over charcoal. |
+
+### Technique Applications
+
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [Grilling](ref:technique/grilling) | Direct heat; char pineapple edges | Add caramelized fruit notes to the salsa. |
+
+### Principles
+
+- [Salt taste modulation](ref:principle/salt-taste-modulation) — Salt and lime sharpen the charred fruit's sweetness.
+
+### Method
+
+1. Grill the pineapple until its edges char, then dice it.
+2. Combine pineapple, chili, onion, lime juice, salt, coriander, and optional mint. Rest for 10–15 min.
+3. Warm 2 corn tortillas directly over charcoal until pliable with light spotting. Fill with the sliced pork and top with salsa.
+
+### Phase Outputs Used
+
+| Phase Output | Use |
+| --- | --- |
+| Sliced pork | Divide all of `sliced-pork` between the warm tortillas. |
 
 ## FAILURE MODES
 
-- Symptom: Exterior burns before center reaches 60 C.
-- Likely cause: Excessive grate temperature or insufficient turning frequency.
-- Corrective action: Raise grate distance, reduce local fuel intensity, turn every 45-60 seconds.
-
-- Symptom: Pork texture is dry and chalky.
-- Likely cause: Internal temperature exceeded target range or post-slice rechar time was too long.
-- Corrective action: Pull at 60-62 C, verify probe placement, and limit second char pass to 15-30 seconds.
-
-- Symptom: Salsa tastes flat or too sweet.
-- Likely cause: Low acid/salt balance or insufficient resting time.
-- Corrective action: Increase lime and salt incrementally, then rest 10 minutes and reassess.
+| Symptom | Likely cause | Corrective action |
+| --- | --- | --- |
+| Exterior burns before the centre reaches 60 C | Grate too hot or turning too infrequent | Raise the grate or reduce fuel intensity; turn every 45–60 s. |
+| Pork is dry and chalky | Internal endpoint exceeded or final char was too long | Pull at 60–62 C and limit the second char to 15–30 s. |
+| Salsa tastes flat or too sweet | Insufficient acid, salt, or rest | Adjust lime and salt incrementally, rest 10 min, then reassess. |

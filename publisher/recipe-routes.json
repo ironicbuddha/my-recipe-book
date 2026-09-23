@@ -74,6 +74,11 @@
       "source": "/recipes/2026-02-19-hibachi-pork-with-charred-greens-and-spanish-green-sauce/",
       "type": "redirect",
       "destination": "recipe/hibachi-pork-charred-greens-spanish-green-sauce"
+    },
+    {
+      "source": "/recipes/2026-02-19-grilled-pork-al-pastor/",
+      "type": "redirect",
+      "destination": "recipe/grilled-pork-al-pastor"
     }
   ]
 }
