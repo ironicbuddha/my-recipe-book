@@ -1,199 +1,162 @@
 ---
 title: "Italian Sausages with Puy Lentils, Spiced Tomato & Red Wine Vinegar"
 date: 2026-02-19
-type: recipe
-version: v1.0
+identity: recipe/italian-sausages-puy-lentils
+version: 1
 yield: "2 portions"
-portions: 2
-target_internal_temperature_c: null
-primary_ingredient: "Italian pork sausages"
-primary_mass_g: 500
-techniques: ["browning", "sweating", "spice infusion", "braising"]
-principles: ["Maillard reaction", "fond development", "acid reduction", "spice oil infusion"]
-tags: ["dish-main-course", "italian", "pork", "lentils", "frying", "tender"]
-cssclass: modernist-recipe
+scale_basis:
+  ingredient: ingredient/italian-pork-sausages
+  quantity_g: 500
+tags: [dish-main-course, italian, pork, lentils, frying, tender]
 ---
 
-# ITALIAN SAUSAGES WITH PUY LENTILS, SPICED TOMATO & RED WINE VINEGAR
-
-Yield: 2 portions
-Portions: 2
-Total Time: ~1 hour
-
-Primary Ingredient Basis: `500 g Italian pork sausages = 100%`
-
-Whole-sausage braise with structured lentils and warm spiced tomato. Serve with crusty bread or soft polenta.
-
-
----
+Whole sausages braised over structured Puy lentils with warm spiced tomato. Serve with crusty bread or soft polenta.
 
 ## PHASE A — BROWN THE SAUSAGES
 
----
+### Ingredient Uses
 
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Italian pork sausages | 500 g | 100.00% |
->
->> [!col-right]
->> ### Method
->> 1. Heat a wide, heavy pan over medium heat.
->> 2. Add olive oil.
->> 3. Brown sausages evenly on all sides until deeply coloured but not cooked through (6–8 minutes).
->> 4. Remove and reserve. Do not pierce.
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| sausages | [Italian pork sausages](ref:ingredient/italian-pork-sausages) | 500 g | 100.00% | Keep whole and unpierced. |
+| browning-oil | [Olive oil](ref:ingredient/olive-oil) | As needed | — | Coat the pan lightly. |
 
+### Technique Applications
 
----
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [Browning](ref:technique/browning) | Medium heat; 6–8 min | Colour the casings before braising. |
+
+### Principles
+
+- [Maillard reaction](ref:principle/maillard-reaction) — Even browning adds savoury depth without cooking the sausages through.
+
+### Method
+
+1. Heat a wide, heavy pan over medium heat and add enough olive oil to coat it lightly.
+2. Brown the whole sausages on all sides for 6–8 min until deeply coloured but not cooked through. Do not pierce them.
+3. Remove and reserve the sausages.
+
+### Phase Outputs
+
+| Key | Phase Output | Description |
+| --- | --- | --- |
+| browned-sausages | Browned sausages | Whole, coloured sausages for the braise. |
 
 ## PHASE B — BUILD THE LENTIL BASE
 
----
+### Ingredient Uses
 
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Puy lentils (dry) | 120 g | 24.00% |
->> | Onion, fine dice | 100 g | 20.00% |
->> | Carrot, fine dice | 80 g | 16.00% |
->> | Celery, fine dice | 60 g | 12.00% |
->> | Red wine vinegar | 30 g | 6.00% |
->> | Bay leaf | 1 leaf | — |
->> | Water or light stock | ~600 g | 120.00% |
->> | Salt | to taste | — |
->
->> [!col-right]
->> ### Method
->> 1. Reduce heat to medium-low.
->> 2. Add onion, carrot, celery with a pinch of salt. Sweat gently 8–10 minutes until soft. No browning.
->> 3. Stir in lentils and bay leaf.
->> 4. Add red wine vinegar and cook 30–45 seconds to reduce sharpness.
->> 5. Add water/stock to cover lentils by ~2 cm.
->> 6. Bring to gentle simmer.
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| lentils | [Puy lentils](ref:ingredient/puy-lentils) | 120 g | 24.00% | Use dry, whole lentils. |
+| onion | [Onion](ref:ingredient/onion) | 100 g | 20.00% | Finely dice. |
+| carrot | [Carrot](ref:ingredient/carrot) | 80 g | 16.00% | Finely dice. |
+| celery | [Celery](ref:ingredient/celery) | 60 g | 12.00% | Finely dice. |
+| vinegar | [Red wine vinegar](ref:ingredient/red-wine-vinegar) | 30 g | 6.00% | Reduce briefly before adding water. |
+| bay-leaf | [Bay leaf](ref:ingredient/bay-leaf) | As needed | — | Use 1 leaf; remove before serving. |
+| water | [Water](ref:ingredient/water) | 600 g | 120.00% | Add about enough to cover the lentils by 2 cm. |
+| salt | [Salt](ref:ingredient/salt) | As needed | — | Add a pinch while sweating; adjust at the end. |
 
+### Technique Applications
 
----
-
-## PHASE C — SPICED TOMATO SAUCE
-
----
-
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Olive oil | 15 g | 3.00% |
->> | Garlic, sliced | 10 g | 2.00% |
->> | Dried chilli | 1 g | 0.20% |
->> | Plum tomatoes (tinned, crushed) | 400 g | 80.00% |
->> | Cinnamon (stick or ground) | 2 g | 0.40% |
->> | Star anise (optional) | 1 g | 0.20% |
->> | Black pepper | to taste | — |
->
->> [!col-right]
->> ### Method
->> 1. Heat olive oil over low heat.
->> 2. Add garlic and chilli. Infuse gently; do not brown.
->> 3. Add crushed tomatoes, cinnamon, and optional star anise.
->> 4. Simmer 15–20 minutes until slightly thickened.
->> 5. Remove cinnamon stick and star anise before combining.
-
-
----
-
-## PHASE D — BRAISE & FINISH
-
----
-
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Browned sausages | from Phase A | — |
->> | Lentil base | from Phase B | — |
->> | Spiced tomato sauce | from Phase C | — |
->> | Extra virgin olive oil | 10 g | 2.00% |
->> | Flat-leaf parsley (optional) | 5 g | 1.00% |
->
->> [!col-right]
->> ### Method
->> 1. Nestle browned sausages into lentils.
->> 2. Spoon tomato sauce over sausages and lentils.
->> 3. Cover loosely and simmer gently 20–25 minutes until lentils are tender and sausages cooked through.
->> 4. Uncover for final 5 minutes to tighten sauce slightly.
->> 5. Remove bay leaf.
->> 6. Adjust salt and acidity if needed.
->> 7. Finish with extra virgin olive oil and parsley.
->> 8. Serve sausages whole over lentils with sauce spooned generously over.
-
-## RELATED LINKS
-<!-- AUTO-GENERATED:RELATED-LINKS:START -->
-
-### Techniques
-- [[Technique - Braising]]
-- [[Technique - Browning]]
-- [[Technique - Spice Infusion]]
-- [[Technique - Sweating]]
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [Sweating](ref:technique/sweating) | Medium-low heat; 8–10 min; no browning | Soften the vegetables. |
+| [Reduction](ref:technique/reduction) | 30–45 s after adding vinegar | Mellow the vinegar. |
 
 ### Principles
-- [[Principle - Acid Reduction]]
-- [[Principle - Fond Development]]
-- [[Principle - Maillard Reaction]]
-- [[Principle - Spice Oil Infusion]]
 
-### Ingredients
-- [[Ingredient - Bay Leaf]]
-- [[Ingredient - Black Pepper]]
-- [[Ingredient - Browned Sausages]]
-- [[Ingredient - Carrot]]
-- [[Ingredient - Celery]]
-- [[Ingredient - Cinnamon]]
-- [[Ingredient - Dried Chili]]
-- [[Ingredient - Extra Virgin Olive Oil]]
-- [[Ingredient - Flat Leaf Parsley]]
-- [[Ingredient - Garlic]]
-- [[Ingredient - Italian Pork Sausages]]
-- [[Ingredient - Lentil Base]]
-- [[Ingredient - Olive Oil]]
-- [[Ingredient - Onion]]
-- [[Ingredient - Plum Tomatoes]]
-- [[Ingredient - Puy Lentils]]
-- [[Ingredient - Red Wine Vinegar]]
-- [[Ingredient - Salt]]
-- [[Ingredient - Spiced Tomato Sauce]]
-- [[Ingredient - Star Anise]]
-- [[Ingredient - Water Or Light Stock]]
+- [Acid reduction](ref:principle/acid-reduction) — Brief reduction keeps acidity without a raw bite.
 
-<!-- AUTO-GENERATED:RELATED-LINKS:END -->
+### Method
 
-## STRUCTURAL NOTES
+1. Reduce the sausage pan to medium-low heat. Add onion, carrot, celery, and a pinch of salt. Sweat for 8–10 min until soft without browning.
+2. Stir in the dry lentils and bay leaf. Add vinegar and cook for 30–45 s.
+3. Add about 600 g water, enough to cover the lentils by roughly 2 cm, and bring to a gentle simmer.
 
-- Browning the sausages without piercing preserves internal fat and moisture; the casing acts as a barrier during braising.
-- Sweating the mirepoix without colour builds sweetness without bitterness — this is a foundation layer, not a flavour accent.
-- Red wine vinegar is added early and reduced to mellow its sharpness; it provides background acidity that lifts the earthy lentils.
-- Cinnamon and star anise in the tomato sauce are warm spice accents — they should whisper, not shout.
-- Puy lentils hold their shape under braising better than red or yellow varieties; do not substitute with split lentils.
+### Phase Outputs
+
+| Key | Phase Output | Description |
+| --- | --- | --- |
+| lentil-base | Lentil base | Vegetables and lentils simmering in water and reduced vinegar. |
+
+## PHASE C — MAKE THE SPICED TOMATO SAUCE
+
+### Ingredient Uses
+
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| sauce-oil | [Olive oil](ref:ingredient/olive-oil) | 15 g | 3.00% | Heat gently to carry aromatics. |
+| garlic | [Garlic](ref:ingredient/garlic) | 10 g | 2.00% | Slice. |
+| chili | [Dried chili](ref:ingredient/dried-chili) | 1 g | 0.20% | Infuse without scorching. |
+| tomatoes | [Canned whole tomatoes](ref:ingredient/canned-whole-tomatoes) | 400 g | 80.00% | Use tinned plum tomatoes, crushed. |
+| cinnamon | [Cinnamon](ref:ingredient/cinnamon) | 2 g | 0.40% | Use stick or ground; remove the stick before combining. |
+| star-anise | [Star anise](ref:ingredient/star-anise) | 1 g | 0.20% | Optional; remove before combining. |
+| pepper | [Black pepper](ref:ingredient/black-pepper) | As needed | — | Season the sauce. |
+
+### Technique Applications
+
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [Infusion](ref:technique/infusion) | Low heat; do not brown garlic | Carry garlic and chili through the oil. |
+| [Reduction](ref:technique/reduction) | Gentle simmer; 15–20 min | Thicken the tomatoes and mellow their acidity. |
+
+### Principles
+
+- [Aromatic fat infusion](ref:principle/aromatic-fat-infusion) — Gentle heat carries chili and garlic into the oil without burning them.
+
+### Method
+
+1. Heat the olive oil over low heat. Add garlic and dried chili; infuse gently without browning the garlic.
+2. Add the crushed tinned plum tomatoes, cinnamon, and optional star anise. Season with black pepper.
+3. Simmer for 15–20 min until slightly thickened. Remove any cinnamon stick and star anise before combining.
+
+### Phase Outputs
+
+| Key | Phase Output | Description |
+| --- | --- | --- |
+| spiced-tomato-sauce | Spiced tomato sauce | Gently reduced tomato with garlic, chili, and warm spice. |
+
+## PHASE D — BRAISE AND SERVE
+
+### Ingredient Uses
+
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| finishing-oil | [Extra virgin olive oil](ref:ingredient/extra-virgin-olive-oil) | 10 g | 2.00% | Finish after braising. |
+| parsley | [Flat-leaf parsley](ref:ingredient/flat-leaf-parsley) | 5 g | 1.00% | Optional garnish. |
+
+### Technique Applications
+
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [Braising](ref:technique/braising) | Gentle simmer; 20–25 min; uncover for final 5 min | Cook sausages through while retaining lentil shape. |
+
+### Principles
+
+- [Maillard reaction](ref:principle/maillard-reaction) — The browned sausage surface seasons the braise.
+
+### Method
+
+1. Nestle the browned sausages into the lentil base and spoon the tomato sauce over them.
+2. Cover loosely and simmer gently for 20–25 min until the lentils are tender and sausages cooked through. Check the lentils at 20 min; they should hold their shape.
+3. Uncover for the final 5 min to tighten the sauce. Remove the bay leaf, then adjust salt and acidity if needed.
+4. Finish with extra virgin olive oil and optional parsley. Serve the sausages whole over the lentils with sauce.
+
+### Phase Outputs Used
+
+| Phase Output | Use |
+| --- | --- |
+| Browned sausages | Nestle all of `browned-sausages` into the lentils. |
+| Lentil base | Braise the sausages in `lentil-base`. |
+| Spiced tomato sauce | Spoon all of `spiced-tomato-sauce` over the sausages and lentils. |
 
 ## FAILURE MODES
 
-- Symptom: Sausages are dry and split open.
-- Likely cause: Pierced during browning or braised at too high a temperature.
-- Corrective action: Never pierce. Brown over medium heat and braise at a gentle simmer.
-
-- Symptom: Lentils are mushy and have lost all structure.
-- Likely cause: Overcooked or wrong lentil variety used.
-- Corrective action: Use Puy or Castelluccio lentils. Check at 20 minutes — they should be tender but hold shape.
-
-- Symptom: Tomato sauce tastes raw and acidic.
-- Likely cause: Insufficient simmer time for the tomatoes.
-- Corrective action: Simmer a full 15–20 minutes. The sauce should be slightly thickened and mellow before combining.
-
-- Symptom: Dish tastes flat despite seasoning.
-- Likely cause: Missing finishing acid or olive oil.
-- Corrective action: Check acidity — a small splash of vinegar at the end sharpens everything. Raw olive oil adds richness and aroma.
+| Symptom | Likely cause | Corrective action |
+| --- | --- | --- |
+| Sausages are dry and split | They were pierced or braised too hot | Keep them whole and unpierced; braise at a gentle simmer. |
+| Lentils are mushy | Overcooking or split lentils | Check at 20 min; use whole Puy or Castelluccio lentils. |
+| Tomato sauce tastes raw and acidic | Insufficient reduction | Simmer for 15–20 min until slightly thickened. |
+| Dish tastes flat | Insufficient finishing acidity or oil | Adjust acidity to taste and add the measured extra virgin olive oil. |

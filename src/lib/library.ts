@@ -604,6 +604,8 @@ function validateIdentity(
 type InventoryRow = {
   approved: boolean;
   identity: string;
+  oldVersion?: string;
+  snapshot?: string;
   source: string;
   version: number;
   disposition: string;
@@ -645,6 +647,7 @@ function readInventories(root: string, diagnostics: string[]): InventoryRow[] {
     }
     return parseTable(source.body.split(/^## /mu)[0] ?? '').flatMap((row) => {
       const sourceFile = unquoteCode(row['Source file']);
+      const snapshot = unquoteCode(row['Evidence snapshot']);
       const identity = row.Recipe;
       const version = positiveIntegerText(row['Mapped version']);
       if (
@@ -662,6 +665,8 @@ function readInventories(root: string, diagnostics: string[]): InventoryRow[] {
         {
           approved,
           identity,
+          oldVersion: row['Old version'],
+          snapshot,
           source: sourceFile,
           version,
           disposition: row.Disposition,
@@ -741,8 +746,10 @@ function readCurations(
   }
   const curations = new Map<string, SourceRecord>();
   const evidenceSourcesByRecipe = curationEvidenceSources(
+    root,
     sourceRecords,
     inventories,
+    diagnostics,
   );
   for (const filePath of readMarkdownFiles(directory)) {
     const relativePath = path.relative(root, filePath);
@@ -2050,8 +2057,10 @@ type CurationEvidenceSource = {
 };
 
 function curationEvidenceSources(
+  root: string,
   sourceRecords: SourceRecord[],
   inventories: InventoryRow[],
+  diagnostics: string[],
 ): Map<string, CurationEvidenceSource> {
   const sources = new Map<string, CurationEvidenceSource>();
   const legacySources = new Map(
@@ -2074,11 +2083,48 @@ function curationEvidenceSources(
     }
   }
   for (const inventory of inventories) {
-    const legacySource = inventory.approved
+    let legacySource = inventory.approved
       ? legacySources.get(inventory.source)
       : undefined;
+    if (inventory.approved && inventory.snapshot) {
+      const snapshotPath = inventory.snapshot;
+      if (
+        !/^records\/migrations\/legacy-sources\/[a-z0-9/-]+\.txt$/u.test(
+          snapshotPath,
+        ) ||
+        path.posix.basename(snapshotPath) !==
+          `${inventory.identity.split('/')[1]}.txt` ||
+        !fs.existsSync(path.join(root, snapshotPath))
+      ) {
+        diagnostics.push(
+          `records/migrations: invalid or missing evidence snapshot for ${inventory.identity}@${inventory.version}`,
+        );
+        continue;
+      }
+      const snapshot = readRecord(root, snapshotPath, diagnostics);
+      if (
+        stringValue(snapshot.data.identity) ||
+        frontmatterScalar(snapshot.filePath, 'version') !== inventory.oldVersion
+      ) {
+        diagnostics.push(
+          `${snapshotPath}: evidence snapshot must be the mapped legacy version`,
+        );
+        continue;
+      }
+      if (
+        legacySource &&
+        fs.readFileSync(snapshot.filePath, 'utf8') !==
+          fs.readFileSync(legacySource.filePath, 'utf8')
+      ) {
+        diagnostics.push(
+          `${snapshotPath}: evidence snapshot differs from the unconverted source`,
+        );
+        continue;
+      }
+      legacySource = snapshot;
+    }
     const recipeVersion = `${inventory.identity}@${inventory.version}`;
-    if (legacySource && !sources.has(recipeVersion)) {
+    if (legacySource && (!sources.has(recipeVersion) || inventory.snapshot)) {
       sources.set(recipeVersion, {
         isLegacyMapping: true,
         observations: candidateObservations(legacySource),
@@ -2102,6 +2148,16 @@ function candidateObservations(source: SourceRecord): Set<string> {
     observations.add(
       `ingredient-${candidateKey(normalizeObservedIngredient(ingredient))}`,
     );
+  }
+  for (const phase of source.body.split(/^## PHASE [A-Z]+ — .+$/gmu).slice(1)) {
+    for (const output of tableAfter(phase, 'Phase Outputs')) {
+      const label = output['Phase Output'];
+      if (label) {
+        observations.add(
+          `ingredient-${candidateKey(normalizeObservedIngredient(label))}`,
+        );
+      }
+    }
   }
   const primaryIngredient = stringValue(source.data.primary_ingredient);
   if (primaryIngredient) {
@@ -2128,8 +2184,10 @@ function stringList(value: unknown): string[] {
 function extractObservedIngredients(body: string): string[] {
   const ingredients: string[] = [];
   const lines = body.split(/\r?\n/u);
+  const stripQuotePrefix = (line: string): string =>
+    line.replace(/^\s*(?:>\s*)*/u, '');
   for (let index = 0; index < lines.length; index += 1) {
-    const header = lines[index]?.replace(/^\s*>\s*/u, '') ?? '';
+    const header = stripQuotePrefix(lines[index] ?? '');
     const canonical = /^\|\s*Key\s*\|\s*Ingredient\s*\|\s*Quantity\s*\|/iu.test(
       header,
     );
@@ -2137,10 +2195,13 @@ function extractObservedIngredients(body: string): string[] {
       /^\|\s*Ingredient\s*\|\s*Quantity\s*\|\s*Scaling\s*\|/iu.test(header);
     if (!canonical && !legacy) continue;
     index += 1;
-    while (index < lines.length && /^\s*>?\s*\|\s*-+/u.test(lines[index] ?? ''))
+    while (
+      index < lines.length &&
+      /^\|\s*-+/u.test(stripQuotePrefix(lines[index] ?? ''))
+    )
       index += 1;
     while (index < lines.length) {
-      const row = (lines[index] ?? '').replace(/^\s*>\s*/u, '').trim();
+      const row = stripQuotePrefix(lines[index] ?? '').trim();
       if (!row.startsWith('|')) break;
       const value = row.split('|').slice(1, -1)[canonical ? 1 : 0]?.trim();
       if (value)

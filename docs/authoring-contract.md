@@ -463,6 +463,15 @@ and all other contracts still apply; the exemption never carries forward.
 | `2024-06-01 - Chicken.md` | recipe/charred-chicken-lemon-pan-sauce | v1.0 | 1 | retain-canonical | historical evidence and Promotion Record only |
 ```
 
+When later Curation records cite labels that a portable conversion will remove,
+the inventory may add an `Evidence snapshot` column. Its value is a repository
+path under `records/migrations/legacy-sources/` ending in `.txt`. The file is
+an exact copy of the approved legacy source Markdown, including frontmatter.
+While the source remains unconverted, validation requires byte-for-byte
+equality. After conversion, the snapshot retains exact observation evidence
+for that one approved source/version mapping. It is not a Recipe or public page
+and cannot extend the grandfathering exemption.
+
 ## Current implementation boundary
 
 This guide establishes authoring examples and record serialization. The current

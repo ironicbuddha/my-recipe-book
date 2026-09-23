@@ -59,6 +59,36 @@
       "source": "/recipes/2026-02-19-spicy-korean-fried-chicken/",
       "type": "redirect",
       "destination": "recipe/spicy-korean-fried-chicken"
+    },
+    {
+      "source": "/recipes/2026-02-19-guanciale-olive-and-chili-pasta-sauce/",
+      "type": "redirect",
+      "destination": "recipe/guanciale-olive-chili-pasta-sauce"
+    },
+    {
+      "source": "/recipes/2026-02-19-italian-sausages-with-puy-lentils/",
+      "type": "redirect",
+      "destination": "recipe/italian-sausages-puy-lentils"
+    },
+    {
+      "source": "/recipes/2026-02-19-hibachi-pork-with-charred-greens-and-spanish-green-sauce/",
+      "type": "redirect",
+      "destination": "recipe/hibachi-pork-charred-greens-spanish-green-sauce"
+    },
+    {
+      "source": "/recipes/2026-02-19-grilled-pork-al-pastor/",
+      "type": "redirect",
+      "destination": "recipe/grilled-pork-al-pastor"
+    },
+    {
+      "source": "/recipes/2026-05-29-porchetta-with-fennel-pollen-and-salsa-verde/",
+      "type": "redirect",
+      "destination": "recipe/porchetta-fennel-pollen-salsa-verde"
+    },
+    {
+      "source": "/recipes/2026-05-29-soy-garlic-sesame-gochujang-hibachi-chicken-tacos/",
+      "type": "redirect",
+      "destination": "recipe/soy-garlic-sesame-gochujang-hibachi-chicken-tacos"
     }
   ]
 }

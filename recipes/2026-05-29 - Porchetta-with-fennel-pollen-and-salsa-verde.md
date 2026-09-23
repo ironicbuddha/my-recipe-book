@@ -1,206 +1,240 @@
 ---
 title: "Porchetta with Fennel Pollen & Salsa Verde"
 date: 2026-05-29
-type: recipe
-version: v1.0
-yield: "15 sandwiches / 10-12 generous portions"
-portions: 12
-target_internal_temperature_c: "58-60, rest before final crisping"
-primary_ingredient: "pork belly"
-primary_mass_g: 3000
-techniques: ["dry brining", "rolling and tying", "low roasting", "high-temperature crisping", "salsa verde"]
-principles: ["salt diffusion", "collagen conversion", "crackling dehydration", "fat rendering", "aromatic extraction"]
-tags: ["dish-main-course", "italian", "pork", "oven", "crisp", "roast", "sandwich"]
-cssclass: modernist-recipe
+identity: recipe/porchetta-fennel-pollen-salsa-verde
+version: 1
+yield: "15 sandwiches / 10–12 generous portions"
+scale_basis:
+  ingredient: ingredient/pork-belly
+  quantity_g: 3000
+tags: [dish-main-course, italian, pork, oven, crisp, roast, sandwich]
 ---
 
-# PORCHETTA WITH FENNEL POLLEN & SALSA VERDE
+Skin-on pork belly is rolled with fennel, garlic, and herbs, roasted gently, then finished at high heat for crisp crackling. Serve with salsa verde and fennel slaw.
 
-Yield: 15 sandwiches / 10-12 generous portions
-Portions: 12
-Target Internal Temperature: 58-60 C before rest and final crisping
+## PHASE A — PREPARE THE PORK BELLY
 
-Primary Ingredient Basis: `3000 g pork belly = 100%`
+### Ingredient Uses
 
-Classic central Italian porchetta using pork belly wrapped around loin, optimised for crisp crackling, aromatic herb penetration, and next-day reheating.
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| pork-belly | [Pork belly](ref:ingredient/pork-belly) | 3000 g | 100.00% | Use skin-on belly; butterfly into a flat rectangle. |
+| kosher-salt | [Salt](ref:ingredient/salt) | 45 g | 1.50% | Use kosher salt; reserve a pinch for the herb paste. |
 
----
+### Principles
 
-## PHASE A — PORK PREPARATION
+- [Salt diffusion](ref:principle/salt-diffusion) — Seasoning the meat before the long uncovered rest gives salt time to penetrate.
 
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | ---: | ---: |
->> | Pork belly with skin | 3000 g | 100.0% |
->> | Kosher salt | 45 g | 1.5% |
->
->> [!col-right]
->> ### Method
->> 1. Butterfly pork belly and loin as needed into a flat rectangle.
->> 2. Score the meat side lightly in a shallow crosshatch pattern.
->> 3. Do not pierce the skin.
->> 4. Season the meat side with kosher salt.
+### Method
 
----
+1. Butterfly the skin-on pork belly as needed into a flat rectangle. Score the meat side lightly in a shallow crosshatch pattern; do not pierce the skin.
+2. Reserve a pinch of the measured kosher salt for the herb paste and season the meat side with the remainder.
 
-## PHASE B — HERB STUFFING
+### Phase Outputs
 
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | ---: | ---: |
->> | Garlic | 30 g | 1.0% |
->> | Fresh rosemary leaves | 10 g | 0.3% |
->> | Fresh sage leaves | 15 g | 0.5% |
->> | Fresh parsley | 30 g | 1.0% |
->> | Lemon zest | 10 g | 0.3% |
->> | Fennel seeds, toasted | 12 g | 0.4% |
->> | Fennel pollen | 3 g | 0.1% |
->> | Coarse black pepper | 10 g | 0.3% |
->> | Chilli flakes | 4 g | 0.1% |
->> | Olive oil | 20 g | 0.7% |
->
->> [!col-right]
->> ### Method
->> 1. Toast fennel seeds lightly until fragrant.
->> 2. Pound fennel seeds, black pepper, and chilli flakes in a mortar until coarse.
->> 3. Add garlic and salt; pound into a rough paste.
->> 4. Add rosemary and sage; bruise thoroughly.
->> 5. Fold in parsley, lemon zest, fennel pollen, and olive oil to form a loose aromatic paste.
+| Key | Phase Output | Description |
+| --- | --- | --- |
+| seasoned-belly | Seasoned pork belly | Flat, scored, salted belly with intact skin. |
 
----
+## PHASE B — POUND THE HERB STUFFING
 
-## PHASE C — ASSEMBLY AND DRY BRINE
+### Ingredient Uses
 
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | ---: | ---: |
->> | Prepared pork belly | 3000 g raw basis | 100.0% |
->> | Herb stuffing | all | 4.8% |
->
->> [!col-right]
->> ### Method
->> 1. Rub herb mixture evenly over the meat side of the pork.
->> 2. Roll tightly into a cylinder with skin facing outward.
->> 3. Tie securely with butcher's twine every 2-3 cm.
->> 4. Place porchetta uncovered on a rack over a tray.
->> 5. Refrigerate 12-24 hours uncovered to dry the skin and penetrate seasoning.
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| stuffing-garlic | [Garlic](ref:ingredient/garlic) | 30 g | 1.00% | Pound into the paste. |
+| rosemary | [Rosemary leaves](ref:ingredient/rosemary-leaves) | 10 g | 0.33% | Use fresh leaves. |
+| sage | [Sage leaves](ref:ingredient/sage-leaves) | 15 g | 0.50% | Use fresh leaves. |
+| stuffing-parsley | [Flat-leaf parsley](ref:ingredient/flat-leaf-parsley) | 30 g | 1.00% | Chop for the paste. |
+| zest | [Lemon zest](ref:ingredient/lemon-zest) | 10 g | 0.33% | Fold into the paste. |
+| fennel-seeds | [Fennel seeds](ref:ingredient/fennel-seeds) | 12 g | 0.40% | Toast lightly. |
+| fennel-pollen | [Fennel pollen](ref:ingredient/fennel-pollen) | 3 g | 0.10% | Fold into the paste. |
+| coarse-pepper | [Black pepper](ref:ingredient/black-pepper) | 10 g | 0.33% | Use coarsely ground pepper. |
+| chili-flakes | [Chili flakes](ref:ingredient/chili-flakes) | 4 g | 0.13% | Pound with the spices. |
+| stuffing-oil | [Olive oil](ref:ingredient/olive-oil) | 20 g | 0.67% | Loosen the herb paste. |
 
----
+### Technique Applications
 
-## PHASE D — LOW ROAST AND HOLD
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [Mortar pounding](ref:technique/mortar-pounding) | Coarse spice and herb paste | Bruise herbs and release their aromatics. |
 
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | ---: | ---: |
->> | Tied porchetta | all | 100.0% |
->
->> [!col-right]
->> ### Method
->> 1. Preheat oven to 145 C.
->> 2. Place porchetta on a rack over a roasting tray.
->> 3. Roast until internal temperature reaches 58-60 C, approximately 2.5-3.5 hours.
->> 4. Rest 30-45 minutes minimum.
->> 5. For next-day service, chill uncovered overnight after cooling.
+### Principles
 
----
+- [Aromatic extraction](ref:principle/aromatic-extraction) — Toasting and pounding fennel and herbs releases their volatile aromas.
 
-## PHASE E — FINAL CRISPING
+### Method
 
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | ---: | ---: |
->> | Roasted porchetta | all | 100.0% |
->
->> [!col-right]
->> ### Method
->> 1. Bring porchetta toward room temperature for 60 minutes.
->> 2. Heat oven to 250 C.
->> 3. Roast until skin blisters and crackles, approximately 25-40 minutes.
->> 4. Rotate as needed for even crackling development.
->> 5. Rest porchetta 15 minutes before slicing.
+1. Toast the fennel seeds lightly until fragrant. Pound them with the black pepper and chili flakes until coarse.
+2. Add the garlic and reserved pinch of salt; pound into a rough paste. Add the rosemary and sage and bruise thoroughly.
+3. Fold in the flat-leaf parsley, lemon zest, fennel pollen, and olive oil to make a loose aromatic paste.
 
----
+### Phase Outputs
 
-## PHASE F — SALSA VERDE
+| Key | Phase Output | Description |
+| --- | --- | --- |
+| herb-stuffing | Herb stuffing | Loose fennel, garlic, and herb paste for the belly. |
 
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | ---: | ---: |
->> | Flat-leaf parsley | 80 g | 2.7% |
->> | Garlic | 10 g | 0.3% |
->> | Anchovy fillets | 15 g | 0.5% |
->> | Capers | 20 g | 0.7% |
->> | Dijon mustard | 10 g | 0.3% |
->> | Lemon juice | 30 g | 1.0% |
->> | Red wine vinegar | 20 g | 0.7% |
->> | Olive oil | 120 g | 4.0% |
->> | Salt | to taste | - |
->> | Black pepper | to taste | - |
->
->> [!col-right]
->> ### Method
->> 1. Finely chop parsley, garlic, anchovy, and capers.
->> 2. Combine with mustard, lemon juice, vinegar, and olive oil.
->> 3. Adjust seasoning with salt and pepper.
->> 4. Hold cool until service.
+## PHASE C — ROLL AND DRY BRINE
 
----
+### Technique Applications
 
-## PHASE G — FENNEL SLAW AND SERVICE
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [Rolling and tying](ref:technique/rolling-and-tying) | Skin outward; ties every 2–3 cm | Hold the belly in a compact cylinder for even roasting and slicing. |
+| [Dry brining](ref:technique/dry-brining) | Uncovered on a rack; refrigerated 12–24 h | Let seasoning penetrate and dry the skin. |
 
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | ---: | ---: |
->> | Fennel bulb, shaved thin | 400 g | 13.3% |
->> | Lemon juice | 40 g | 1.3% |
->> | Olive oil | 30 g | 1.0% |
->> | Parsley or mint | 10 g | 0.3% |
->> | Salt | to taste | - |
->> | Focaccia | as needed | - |
->
->> [!col-right]
->> ### Method
->> 1. Toss shaved fennel with lemon juice, olive oil, herbs, and salt immediately before serving.
->> 2. Slice porchetta into thick slabs using a serrated knife or cleaver.
->> 3. Serve on focaccia with salsa verde and fennel slaw.
+### Principles
 
----
+- [Crackling dehydration](ref:principle/crackling-dehydration) — Exposing the skin during the chilled rest helps it blister in the final roast.
 
-## STRUCTURAL NOTES
+### Method
 
-Porchetta depends on separating the objectives of tender meat and crisp skin. The low roast gently brings the pork to target temperature while rendering fat, while the uncovered dry brine and high-temperature finish dehydrate and blister the skin. Fennel seed and fennel pollen provide a volatile aromatic profile that carries through the roast, salsa verde, and slaw.
+1. Rub the herb stuffing evenly over the meat side of the seasoned pork belly.
+2. Roll tightly into a cylinder with the skin facing outward and tie securely every 2–3 cm.
+3. Set uncovered on a rack over a tray and refrigerate for 12–24 h.
+
+### Phase Outputs Used
+
+| Phase Output | Use |
+| --- | --- |
+| Seasoned pork belly | Roll all of `seasoned-belly` around the stuffing. |
+| Herb stuffing | Spread all of `herb-stuffing` over the meat side. |
+
+### Phase Outputs
+
+| Key | Phase Output | Description |
+| --- | --- | --- |
+| tied-porchetta | Tied porchetta | Dry-brined roll with the skin facing outward. |
+
+## PHASE D — LOW ROAST AND REST
+
+### Technique Applications
+
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [Low roasting](ref:technique/low-roasting) | 145 C oven; approximately 2.5–3.5 h; 58–60 C internal | Bring the roll to the source's target internal temperature. |
+
+### Principles
+
+- [Fat rendering](ref:principle/fat-rendering) — Gentle heat begins releasing belly fat before the high-heat finish.
+- [Collagen conversion](ref:principle/collagen-conversion) — The long, gentle roast softens the rolled belly.
+
+### Method
+
+1. Preheat the oven to 145 C. Put the tied porchetta on a rack over a roasting tray.
+2. Roast until the centre reaches 58–60 C, approximately 2.5–3.5 h.
+3. Rest for at least 30–45 min. For next-day service, cool, then chill uncovered overnight.
+
+### Phase Outputs Used
+
+| Phase Output | Use |
+| --- | --- |
+| Tied porchetta | Roast all of `tied-porchetta`. |
+
+### Phase Outputs
+
+| Key | Phase Output | Description |
+| --- | --- | --- |
+| low-roasted-porchetta | Low-roasted porchetta | Rested roll ready for final crisping. |
+
+## PHASE E — CRISP THE SKIN
+
+### Technique Applications
+
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [High-temperature crisping](ref:technique/high-temperature-crisping) | 250 C oven; approximately 25–40 min | Blister the dry skin into crackling. |
+
+### Principles
+
+- [Crackling dehydration](ref:principle/crackling-dehydration) — Dry skin and intense heat build a crisp surface.
+
+### Method
+
+1. Bring the low-roasted porchetta toward room temperature for 60 min.
+2. Heat the oven to 250 C. Roast for about 25–40 min until the skin blisters and crackles, rotating as needed.
+3. Rest for 15 min before slicing.
+
+### Phase Outputs Used
+
+| Phase Output | Use |
+| --- | --- |
+| Low-roasted porchetta | Crisp all of `low-roasted-porchetta`. |
+
+### Phase Outputs
+
+| Key | Phase Output | Description |
+| --- | --- | --- |
+| crisp-porchetta | Crisp porchetta | Rested roast with blistered skin for slicing. |
+
+## PHASE F — MAKE THE SALSA VERDE
+
+### Ingredient Uses
+
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| salsa-parsley | [Flat-leaf parsley](ref:ingredient/flat-leaf-parsley) | 80 g | 2.67% | Finely chop. |
+| salsa-garlic | [Garlic](ref:ingredient/garlic) | 10 g | 0.33% | Finely chop. |
+| anchovies | [Anchovy fillets](ref:ingredient/anchovy-fillets) | 15 g | 0.50% | Finely chop. |
+| capers | [Capers](ref:ingredient/capers) | 20 g | 0.67% | Finely chop. |
+| mustard | [Dijon mustard](ref:ingredient/dijon-mustard) | 10 g | 0.33% | Stir into the salsa. |
+| salsa-lemon | [Lemon juice](ref:ingredient/lemon-juice) | 30 g | 1.00% | Brighten the salsa. |
+| vinegar | [Red wine vinegar](ref:ingredient/red-wine-vinegar) | 20 g | 0.67% | Brighten the salsa. |
+| salsa-oil | [Olive oil](ref:ingredient/olive-oil) | 120 g | 4.00% | Combine with chopped ingredients. |
+| salsa-salt | [Salt](ref:ingredient/salt) | As needed | — | Adjust to taste. |
+| salsa-pepper | [Black pepper](ref:ingredient/black-pepper) | As needed | — | Adjust to taste. |
+
+### Principles
+
+- [Aromatic extraction](ref:principle/aromatic-extraction) — Chopping the herbs and aromatics releases flavour into the sauce.
+
+### Method
+
+1. Finely chop the parsley, garlic, anchovy fillets, and capers.
+2. Combine with Dijon mustard, lemon juice, red wine vinegar, and olive oil.
+3. Adjust with salt and black pepper; hold cool until service.
+
+### Phase Outputs
+
+| Key | Phase Output | Description |
+| --- | --- | --- |
+| salsa-verde | Salsa verde | Bright herb sauce for the sliced pork. |
+
+## PHASE G — MAKE FENNEL SLAW AND SERVE
+
+### Ingredient Uses
+
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| fennel-bulb | [Fennel bulb](ref:ingredient/fennel-bulb) | 400 g | 13.33% | Shave thinly. |
+| slaw-lemon | [Lemon juice](ref:ingredient/lemon-juice) | 40 g | 1.33% | Dress just before serving. |
+| slaw-oil | [Olive oil](ref:ingredient/olive-oil) | 30 g | 1.00% | Dress just before serving. |
+| slaw-herb | [Flat-leaf parsley](ref:ingredient/flat-leaf-parsley) | 10 g | 0.33% | Use parsley, or [mint](ref:ingredient/mint) instead. |
+| slaw-salt | [Salt](ref:ingredient/salt) | As needed | — | Season the slaw. |
+| focaccia | [Focaccia](ref:ingredient/focaccia) | As needed | — | Use enough for up to 15 sandwiches. |
+
+### Principles
+
+- [Acid balance](ref:principle/acid-balance) — Lemon in the slaw cuts through the richness of the roast.
+
+### Method
+
+1. Toss the shaved fennel with lemon juice, olive oil, parsley or mint, and salt immediately before serving.
+2. Slice the crisp porchetta into thick slabs with a serrated knife or cleaver.
+3. Serve on focaccia with salsa verde and fennel slaw.
+
+### Phase Outputs Used
+
+| Phase Output | Use |
+| --- | --- |
+| Crisp porchetta | Slice all of `crisp-porchetta` for service. |
+| Salsa verde | Serve `salsa-verde` with the sliced pork. |
 
 ## FAILURE MODES
 
-- Symptom: Skin remains leathery rather than crisp.
-- Likely cause: Skin was too wet, pierced, or finished at too low a temperature.
-- Corrective action: Dry uncovered for 12-24 hours, avoid piercing the skin, and finish at 250 C until blistered.
-
-- Symptom: Roast slices fall apart when cut.
-- Likely cause: Roll was tied too loosely or sliced before sufficient resting.
-- Corrective action: Tie every 2-3 cm under firm tension and rest at least 15 minutes after final crisping.
-
-- Symptom: Herb stuffing tastes muted.
-- Likely cause: Fennel and herbs were insufficiently bruised or seasoning did not diffuse.
-- Corrective action: Pound aromatics into a coarse paste and keep the 12-24 hour dry-brine window.
-
-## VARIATIONS
-
-- Umbrian style: increase sage and reduce parsley.
-- Roman style: add wild fennel fronds and extra black pepper.
-- Spicier: increase chilli flakes and add Calabrian chilli paste.
-- More rustic: incorporate chopped roasted fennel bulb into stuffing.
+| Symptom | Likely cause | Corrective action |
+| --- | --- | --- |
+| Skin is leathery | Skin was wet, pierced, or finished too cool | Dry uncovered for 12–24 h, avoid piercing, and finish at 250 C until blistered. |
+| Slices fall apart | Roll was tied loosely or cut too soon | Tie every 2–3 cm under firm tension and rest at least 15 min after crisping. |
+| Herb stuffing tastes muted | Aromatics were not bruised or seasoning did not diffuse | Pound into a coarse paste and keep the 12–24 h dry-brine window. |

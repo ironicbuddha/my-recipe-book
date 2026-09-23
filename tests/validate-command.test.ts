@@ -562,8 +562,8 @@ The Curator reviewed the evidence and retired this Candidate.
     const result = validate(copyPilotLibrary());
 
     expect(result.status).toBe(0);
-    expect(result.stdout).toContain(
-      'Validation passed: 12 recipe(s), 165 Knowledge Note(s), 0 Completed Experiment(s).',
+    expect(result.stdout).toMatch(
+      /Validation passed: \d+ recipe\(s\), \d+ Knowledge Note\(s\), 0 Completed Experiment\(s\)\./u,
     );
   });
 

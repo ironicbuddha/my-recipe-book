@@ -5,6 +5,7 @@ import { publisherRedirects, retirementRedirects } from './src/lib/library.ts';
 
 // https://astro.build/config
 export default defineConfig({
+  build: { redirects: true },
   redirects: {
     ...publisherRedirects(),
     ...retirementRedirects(),
