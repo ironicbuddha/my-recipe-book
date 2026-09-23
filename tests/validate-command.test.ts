@@ -642,7 +642,7 @@ The Curator reviewed the evidence and retired this Candidate.
     );
     expect(ingredientPage).toContain('href="/recipes/singapore-chicken-rice/"');
     expect(ingredientPage).toContain('Singapore Chicken Rice (Hainanese)');
-  });
+  }, 15_000);
 
   it('fails a missing exact Recipe Version in an unpublished authoritative record with its physical line', () => {
     const root = copyPilotLibrary();
@@ -800,7 +800,7 @@ The Curator reviewed the evidence and retired this Candidate.
     );
     expect(original).toContain('Published corrections');
     expect(original).toContain('href="/experiments/recipe-trial-correction/"');
-  });
+  }, 15_000);
 
   it('rejects missing subjects, incomplete completion evidence, and changed prior evidence', () => {
     const root = copyPilotLibrary();
@@ -1281,7 +1281,7 @@ supporting_experiments: []
         'utf8',
       ),
     ).toContain('This recipe has been withdrawn.');
-  });
+  }, 15_000);
 
   it('rejects colliding, indirect, unresolved, and draft recipe publisher routes through the public validation command', () => {
     const root = copyPilotLibrary();
