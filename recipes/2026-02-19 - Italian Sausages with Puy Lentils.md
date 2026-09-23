@@ -157,6 +157,6 @@ Whole sausages braised over structured Puy lentils with warm spiced tomato. Serv
 | Symptom | Likely cause | Corrective action |
 | --- | --- | --- |
 | Sausages are dry and split | They were pierced or braised too hot | Keep them whole and unpierced; braise at a gentle simmer. |
-| Lentils are mushy | Overcooking or split lentils | Check at 20 min; use whole Puy lentils. The legacy source also suggested Castelluccio lentils. |
+| Lentils are mushy | Overcooking or split lentils | Check at 20 min; use whole Puy or Castelluccio lentils. |
 | Tomato sauce tastes raw and acidic | Insufficient reduction | Simmer for 15–20 min until slightly thickened. |
 | Dish tastes flat | Insufficient finishing acidity or oil | Adjust acidity to taste and add the measured extra virgin olive oil. |

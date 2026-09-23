@@ -19,7 +19,7 @@ Pork fillet is marinated with grilled pineapple puree, cooked over hibachi coals
 | Key | Ingredient | Quantity | Scaling | Use |
 | --- | --- | --- | --- | --- |
 | pork | [Pork fillet](ref:ingredient/pork-fillet) | 200 g | 100.00% | Selected basis; [pork shoulder](ref:ingredient/pork-shoulder) is an alternative at a 270 g basis. |
-| puree | [Grilled pineapple puree](ref:ingredient/grilled-pineapple-puree) | 40 g | 20.00% | Use the prepared puree; its raw yield is unspecified. |
+| puree | [Grilled pineapple puree](ref:ingredient/grilled-pineapple-puree) | 40 g | 20.00% | Use prepared grilled pineapple puree in the marinade. |
 | vinegar | [Apple cider vinegar](ref:ingredient/apple-cider-vinegar) | 8.33 g | 4.17% | Blend into the marinade. |
 | oil | [Neutral oil](ref:ingredient/neutral-oil) | 6.67 g | 3.34% | Blend into the marinade. |
 | achiote | [Achiote paste](ref:ingredient/achiote-paste) | 8.33 g | 4.17% | Blend into the marinade. |
