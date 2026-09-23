@@ -31,3 +31,7 @@ contracts still apply; no exemption carries into a new version.
   source supplies no method or raw yield for making it. Preserve the 66.67 g
   pineapple used in the salsa separately; its charring is a preparation step
   stated in that Recipe.
+- For Batch 3, the Curator selected `ingredient/flat-leaf-parsley` for both
+  “flat-leaf parsley” and generic “fresh parsley” uses on 2026-09-23. This
+  makes the previously unspecified fresh-parsley cultivar explicit. Preserve
+  the porchetta slaw's parsley-or-mint option.
