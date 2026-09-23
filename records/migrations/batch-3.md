@@ -26,3 +26,8 @@ contracts still apply; no exemption carries into a new version.
   broccoli for the 300 g charred-greens Ingredient Use on 2026-09-23. The legacy
   parenthetical also names “beans” and courgettes; preserve those alternatives
   without interpreting the unspecified beans as a particular variety.
+- `recipe/grilled-pork-al-pastor@1`: the Curator selected the source's 40 g
+  grilled pineapple puree as a distinct prepared Ingredient on 2026-09-23. The
+  source supplies no method or raw yield for making it. Preserve the 66.67 g
+  pineapple used in the salsa separately; its charring is a preparation step
+  stated in that Recipe.
