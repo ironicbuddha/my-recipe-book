@@ -1,179 +1,157 @@
 ---
 title: "Hibachi Pork with Charred Greens & Spanish Green Sauce"
 date: 2026-02-19
-type: recipe
-version: v1.0
+identity: recipe/hibachi-pork-charred-greens-spanish-green-sauce
+version: 1
 yield: "2 portions"
-portions: 2
-target_internal_temperature_c: 60
-primary_ingredient: "Pork (shoulder / collar / loin)"
-primary_mass_g: 500
-techniques: [sous-vide, surface dehydration, hibachi sear, high-heat charring]
-principles: [maillard reaction, moisture control, carryover cooking, acid balance]
+scale_basis:
+  ingredient: ingredient/pork-shoulder
+  quantity_g: 500
 tags: [dish-main-course, pork, hibachi, spanish, green sauce, modernist]
-cssclass: modernist-recipe
 ---
 
-# HIBACHI PORK WITH CHARRED GREENS & SPANISH GREEN SAUCE
+Pork shoulder is cooked sous vide, dried, and seared quickly over hot coals, with charred broccoli and a parsley and sherry vinegar sauce.
 
-Yield: 2 portions
-Portions: 2
-Target Internal Temperature: 58–60 C
+## PHASE A — COOK AND DRY THE PORK
 
-Primary Ingredient Basis: `500 g pork = 100%`
+### Ingredient Uses
 
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| pork | [Pork shoulder](ref:ingredient/pork-shoulder) | 500 g | 100.00% | Selected basis; [pork collar](ref:ingredient/pork-collar) or [pork loin](ref:ingredient/pork-loin) may be used instead. |
+| salt | [Salt](ref:ingredient/salt) | 7.5 g | 1.50% | Use fine salt in the rub. |
+| paprika | [Smoked paprika](ref:ingredient/smoked-paprika) | 5 g | 1.00% | Rub evenly over the pork. |
+| cumin | [Cumin](ref:ingredient/cumin) | 2.5 g | 0.50% | Use ground cumin. |
+| garlic | [Garlic](ref:ingredient/garlic) | 2.5 g | 0.50% | Mince for the rub. |
+| oil | [Olive oil](ref:ingredient/olive-oil) | 5 g | 1.00% | Add before sealing. |
 
----
+### Technique Applications
 
-## PHASE A — PORK PREPARATION (SOUS VIDE + DRY REST)
-
----
-
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Pork (shoulder / collar / loin) | 500 g | 100.00% |
->> | Fine salt | 7.5 g | 1.50% |
->> | Smoked paprika | 5 g | 1.00% |
->> | Ground cumin | 2.5 g | 0.50% |
->> | Garlic (minced) | 2.5 g | 0.50% |
->> | Olive oil | 5 g | 1.00% |
->
->> [!col-right]
->> ### Method
->> 1. Combine salt, paprika, cumin, and garlic. Rub evenly over pork.
->> 2. Add olive oil and vacuum seal.
->> 3. Cook sous vide at 60–62 C for 2–3 hours.
->> 4. Remove from bag and pat completely dry.
->> 5. Place uncovered on a rack in the refrigerator for 8–24 hours to dehydrate surface.
-
-
----
-
-## PHASE B — HIBACHI FINISH
-
----
-
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Prepared pork (from Phase A) | 500 g | 100.00% |
->> | Neutral oil (for brushing) | 5 g | 1.00% |
->> | Additional smoked paprika (optional refresh) | 1.5 g | 0.30% |
->
->> [!col-right]
->> ### Method
->> 1. Preheat hibachi to very high heat (direct, open airflow).
->> 2. Lightly brush pork with neutral oil.
->> 3. Optional: dust lightly with fresh paprika.
->> 4. Sear 30–60 seconds per side until deeply browned.
->> 5. Remove at 55–57 C internal.
->> 6. Rest 5–10 minutes; serve at 58–60 C.
-
-
----
-
-## PHASE C — CHARRED GREENS
-
----
-
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Mixed greens (broccoli / beans / courgettes) | 300 g | 60.00% |
->> | Olive oil | 7.5 g | 1.50% |
->> | Fine salt | 4 g | 0.80% |
->> | Lemon juice or sherry vinegar | 10 g | 2.00% |
->
->> [!col-right]
->> ### Method
->> 1. Toss greens with olive oil and salt.
->> 2. Grill directly over hot coals until blistered and charred.
->> 3. Remove while interiors remain vibrant green.
->> 4. Finish with lemon juice or vinegar.
-
-
----
-
-## PHASE D — SPANISH GREEN SAUCE
-
----
-
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Flat-leaf parsley | 25 g | 5.00% |
->> | Olive oil | 40 g | 8.00% |
->> | Sherry vinegar | 10 g | 2.00% |
->> | Garlic (finely minced) | 2.5 g | 0.50% |
->> | Fine salt | 5 g | 1.00% |
->> | Lemon zest (optional) | 1 g | 0.20% |
->
->> [!col-right]
->> ### Method
->> 1. Finely chop parsley.
->> 2. Add garlic and salt; mash slightly to release oils.
->> 3. Stir in olive oil until saucy but not loose.
->> 4. Add vinegar gradually until bright and balanced.
->> 5. Adjust seasoning. Rest 10 minutes before serving.
-
-## RELATED LINKS
-<!-- AUTO-GENERATED:RELATED-LINKS:START -->
-
-### Techniques
-- [[Technique - Hibachi Sear]]
-- [[Technique - High Heat Charring]]
-- [[Technique - Sous Vide]]
-- [[Technique - Surface Dehydration]]
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [Sous vide](ref:technique/sous-vide) | 60–62 C; 2–3 h | Cook the pork evenly before the brief sear. |
 
 ### Principles
-- [[Principle - Acid Balance]]
-- [[Principle - Carryover Cooking]]
-- [[Principle - Maillard Reaction]]
-- [[Principle - Moisture Control]]
 
-### Ingredients
-- [[Ingredient - Additional Smoked Paprika]]
-- [[Ingredient - Fine Salt]]
-- [[Ingredient - Flat Leaf Parsley]]
-- [[Ingredient - Garlic]]
-- [[Ingredient - Ground Cumin]]
-- [[Ingredient - Lemon Juice Or Sherry Vinegar]]
-- [[Ingredient - Lemon Zest]]
-- [[Ingredient - Mixed Greens]]
-- [[Ingredient - Neutral Oil]]
-- [[Ingredient - Olive Oil]]
-- [[Ingredient - Pork]]
-- [[Ingredient - Sherry Vinegar]]
-- [[Ingredient - Smoked Paprika]]
+- [Maillard reaction](ref:principle/maillard-reaction) — Drying the cooked surface supports rapid browning during the sear.
 
-<!-- AUTO-GENERATED:RELATED-LINKS:END -->
+### Method
 
-## STRUCTURAL NOTES
+1. Combine the salt, paprika, ground cumin, and minced garlic. Rub evenly over the pork, add the olive oil, and vacuum seal.
+2. Cook sous vide at 60–62 C for 2–3 h.
+3. Remove from the bag and pat completely dry. Place uncovered on a rack in the refrigerator for 8–24 h to dehydrate the surface.
 
-- Sous vide ensures uniform pasteurisation and controlled protein denaturation.
-- Overnight refrigeration dehydrates the surface, increasing Maillard efficiency and reducing flare-ups.
-- High-heat searing triggers rapid browning without further internal cooking.
-- Acid in both greens and sauce balances pork fat and paprika sweetness.
+### Phase Outputs
+
+| Key | Phase Output | Description |
+| --- | --- | --- |
+| prepared-pork | Prepared pork | Cooked, seasoned pork with a dry surface for searing. |
+
+## PHASE B — SEAR THE PORK
+
+### Ingredient Uses
+
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| searing-oil | [Neutral oil](ref:ingredient/neutral-oil) | 5 g | 1.00% | Brush lightly over the pork. |
+| finishing-paprika | [Smoked paprika](ref:ingredient/smoked-paprika) | 1.5 g | 0.30% | Optional refresh before searing. |
+
+### Technique Applications
+
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [Searing](ref:technique/searing) | Very hot hibachi; 30–60 s per side; remove at 55–57 C | Brown the dry exterior quickly. |
+
+### Principles
+
+- [Carryover cooking](ref:principle/carryover-cooking) — Resting brings the serving temperature toward 58–60 C.
+- [Maillard reaction](ref:principle/maillard-reaction) — Dryness and direct heat create the crust rapidly.
+
+### Method
+
+1. Preheat the hibachi for very high direct heat with open airflow. Brush the prepared pork lightly with neutral oil and optionally dust with fresh smoked paprika.
+2. Sear for 30–60 s per side until deeply browned. Remove at 55–57 C internal.
+3. Rest for 5–10 min; serve at 58–60 C.
+
+### Phase Outputs Used
+
+| Phase Output | Use |
+| --- | --- |
+| Prepared pork | Sear all of `prepared-pork` over the hibachi. |
+
+### Phase Outputs
+
+| Key | Phase Output | Description |
+| --- | --- | --- |
+| seared-pork | Seared pork | Rested pork with a browned crust for serving. |
+
+## PHASE C — CHAR THE BROCCOLI
+
+### Ingredient Uses
+
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| broccoli | [Broccoli](ref:ingredient/broccoli) | 300 g | 60.00% | Selected greens; [green beans](ref:ingredient/green-beans) or [courgettes](ref:ingredient/courgette) may be used instead. |
+| greens-oil | [Olive oil](ref:ingredient/olive-oil) | 7.5 g | 1.50% | Toss with the vegetable. |
+| greens-salt | [Salt](ref:ingredient/salt) | 4 g | 0.80% | Use fine salt. |
+| finishing-acid | [Lemon juice](ref:ingredient/lemon-juice) | 10 g | 2.00% | Finish the greens; [sherry vinegar](ref:ingredient/sherry-vinegar) is an alternative. |
+
+### Technique Applications
+
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [Charring](ref:technique/charring) | Directly over hot coals; stop while interiors are vibrant | Blister the vegetable without overcooking it. |
+
+### Principles
+
+- [Acid balance](ref:principle/acid-balance) — A sharp finish balances pork fat and char.
+
+### Method
+
+1. Toss the broccoli with olive oil and fine salt.
+2. Grill directly over hot coals until blistered and charred. Remove while the interior remains vibrant.
+3. Finish with the lemon juice, or the same amount of sherry vinegar.
+
+### Phase Outputs
+
+| Key | Phase Output | Description |
+| --- | --- | --- |
+| charred-greens | Charred greens | Broccoli with charred edges and a bright acid finish. |
+
+## PHASE D — MAKE THE GREEN SAUCE AND SERVE
+
+### Ingredient Uses
+
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| parsley | [Flat-leaf parsley](ref:ingredient/flat-leaf-parsley) | 25 g | 5.00% | Finely chop. |
+| sauce-oil | [Olive oil](ref:ingredient/olive-oil) | 40 g | 8.00% | Stir in until saucy but not loose. |
+| vinegar | [Sherry vinegar](ref:ingredient/sherry-vinegar) | 10 g | 2.00% | Add gradually to balance. |
+| sauce-garlic | [Garlic](ref:ingredient/garlic) | 2.5 g | 0.50% | Finely mince. |
+| sauce-salt | [Salt](ref:ingredient/salt) | 5 g | 1.00% | Use fine salt. |
+| zest | [Lemon zest](ref:ingredient/lemon-zest) | 1 g | 0.20% | Optional. |
+
+### Principles
+
+- [Acid balance](ref:principle/acid-balance) — Vinegar brightens the herb sauce against the rich pork.
+
+### Method
+
+1. Finely chop the parsley. Add the minced garlic and salt; mash slightly to release the herbs' oils.
+2. Stir in the olive oil until saucy but not loose. Add sherry vinegar gradually, then optional lemon zest, and adjust seasoning.
+3. Rest the sauce for 10 min. Serve with the seared pork and charred greens.
+
+### Phase Outputs Used
+
+| Phase Output | Use |
+| --- | --- |
+| Seared pork | Serve all of `seared-pork` with sauce. |
+| Charred greens | Serve all of `charred-greens` alongside the pork. |
 
 ## FAILURE MODES
 
-- Symptom: Pale crust.
-- Likely cause: Surface moisture not removed.
-- Corrective action: Extend uncovered refrigeration or pat dry more thoroughly.
-
-- Symptom: Excess smoke and flare-ups.
-- Likely cause: Surface fat or sugar igniting.
-- Corrective action: Use neutral oil lightly; avoid sugary rub components.
-
-- Symptom: Dry pork.
-- Likely cause: Internal temperature exceeded 63 C.
-- Corrective action: Pull earlier; trust carryover.
+| Symptom | Likely cause | Corrective action |
+| --- | --- | --- |
+| Pale crust | Surface moisture remains | Pat dry more thoroughly or extend uncovered refrigeration. |
+| Excess smoke and flare-ups | Too much surface fat or sugar ignites | Brush on neutral oil lightly and avoid sugary rub components. |
+| Dry pork | Internal temperature exceeded 63 C | Pull from the sear earlier and allow carryover during the rest. |

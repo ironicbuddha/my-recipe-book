@@ -69,6 +69,11 @@
       "source": "/recipes/2026-02-19-italian-sausages-with-puy-lentils/",
       "type": "redirect",
       "destination": "recipe/italian-sausages-puy-lentils"
+    },
+    {
+      "source": "/recipes/2026-02-19-hibachi-pork-with-charred-greens-and-spanish-green-sauce/",
+      "type": "redirect",
+      "destination": "recipe/hibachi-pork-charred-greens-spanish-green-sauce"
     }
   ]
 }
