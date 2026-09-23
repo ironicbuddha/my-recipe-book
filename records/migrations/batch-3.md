@@ -24,8 +24,9 @@ contracts still apply; no exemption carries into a new version.
   explicitly and review their identities before converting this Recipe.
 - `recipe/hibachi-pork-charred-greens-spanish-green-sauce@1`: the Curator selected
   broccoli for the 300 g charred-greens Ingredient Use on 2026-09-23. The legacy
-  parenthetical also names “beans” and courgettes; preserve those alternatives
-  without interpreting the unspecified beans as a particular variety.
+  parenthetical also names “beans” and courgettes. The Curator identified the
+  “beans” alternative as green beans on 2026-09-23; preserve green beans and
+  courgettes as alternatives to the broccoli default.
 - `recipe/grilled-pork-al-pastor@1`: the Curator selected the source's 40 g
   grilled pineapple puree as a distinct prepared Ingredient on 2026-09-23. The
   source supplies no method or raw yield for making it. Preserve the 66.67 g
