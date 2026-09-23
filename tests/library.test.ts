@@ -441,6 +441,7 @@ Establish the approved ingredient subject.
 
   it('accepts alias merges and candidate retirements without publishing either record', () => {
     const root = copyPilotLibrary();
+    const knowledgeCount = loadLibrary(root).knowledge.length;
     fs.writeFileSync(
       path.join(root, 'records/curation/whole-chicken-alias.md'),
       `---
@@ -479,7 +480,7 @@ The Curator reviewed the evidence and retired this Candidate.
 `,
     );
 
-    expect(loadLibrary(root).knowledge).toHaveLength(165);
+    expect(loadLibrary(root).knowledge).toHaveLength(knowledgeCount);
   });
 
   it('requires retire-candidate evidence sources to observe the candidate', () => {
@@ -561,6 +562,13 @@ The Curator explicitly grandfathered the historical retirement.
       'recipes/2026-09-12 - Batch Three Legacy.md': `---
 techniques: [Live-fire searing]
 ---
+
+> [!col]
+>> [!col-left]
+>> ### Components
+>> | Ingredient | Quantity | Scaling |
+>> | --- | --- | --- |
+>> | Chicken | 500 g | 100.00% |
 `,
       'ingredients/Ingredient - Chicken.md': `---
 title: "Chicken"
@@ -666,6 +674,26 @@ The mapped legacy source records the technique.
 
 Keep the alternate label attached to the established subject.
 `,
+      'records/curation/legacy-chicken-alias.md': `---
+record_type: curation
+candidate: candidate/ingredient-chicken
+candidate_label: "Chicken"
+evidence_sources: [recipe/batch-three-legacy@1]
+decision: merge-alias
+survivor: ingredient/chicken
+alias: "Chicken"
+decided_by: "Curator"
+decided_on: 2026-09-12
+---
+
+## Evidence
+
+The nested legacy component table records chicken.
+
+## Rationale
+
+Reuse the established subject.
+`,
       'records/curation/live-fire-retirement.md': `---
 record_type: curation
 candidate: candidate/technique-live-fire-searing
@@ -688,6 +716,17 @@ The duplicate candidate is not needed.
     });
 
     expect(() => loadLibrary(root)).not.toThrow();
+
+    const legacyPath = path.join(
+      root,
+      'recipes/2026-09-12 - Batch Three Legacy.md',
+    );
+    const legacySource = fs.readFileSync(legacyPath, 'utf8');
+    fs.writeFileSync(legacyPath, legacySource.replace('>> | Chicken |', '>> | Pork |'));
+    expect(() => loadLibrary(root)).toThrow(
+      'Curation evidence_sources must observe the candidate',
+    );
+    fs.writeFileSync(legacyPath, legacySource);
 
     const curationPath = path.join(
       root,
@@ -724,10 +763,6 @@ The duplicate candidate is not needed.
       fs
         .readFileSync(inventoryPath, 'utf8')
         .replace('approved_by: ""', 'approved_by: "Curator"'),
-    );
-    const legacyPath = path.join(
-      root,
-      'recipes/2026-09-12 - Batch Three Legacy.md',
     );
     fs.writeFileSync(
       legacyPath,
@@ -926,7 +961,9 @@ The Curator reviewed the evidence and retired this Candidate.
       ]),
     );
     expect(getLibraryCounts()).toMatchObject({
-      ingredients: 86,
+      ingredients: loadLibrary(process.cwd()).knowledge.filter(
+        (entry) => entry.type === 'ingredient',
+      ).length,
       principles: 39,
       recipes: 12,
       techniques: 40,
@@ -944,6 +981,7 @@ The Curator reviewed the evidence and retired this Candidate.
   });
 
   it('keeps classified observations out of authoritative knowledge collections', () => {
+    const countsBefore = getLibraryCounts();
     const candidates = fs.readdirSync(
       path.join(process.cwd(), 'records', 'candidates'),
     );
@@ -998,12 +1036,7 @@ The Curator reviewed the evidence and retired this Candidate.
       ),
     ).toBe(true);
     expect(generated).toEqual([]);
-    expect(getLibraryCounts()).toMatchObject({
-      ingredients: 86,
-      principles: 39,
-      recipes: 12,
-      techniques: 40,
-    });
+    expect(getLibraryCounts()).toEqual(countsBefore);
   });
 
   it('admits a complete exact-version Promotion Record without treating it as automated Curation', () => {

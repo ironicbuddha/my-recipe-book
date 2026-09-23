@@ -2128,8 +2128,10 @@ function stringList(value: unknown): string[] {
 function extractObservedIngredients(body: string): string[] {
   const ingredients: string[] = [];
   const lines = body.split(/\r?\n/u);
+  const stripQuotePrefix = (line: string): string =>
+    line.replace(/^\s*(?:>\s*)*/u, '');
   for (let index = 0; index < lines.length; index += 1) {
-    const header = lines[index]?.replace(/^\s*>\s*/u, '') ?? '';
+    const header = stripQuotePrefix(lines[index] ?? '');
     const canonical = /^\|\s*Key\s*\|\s*Ingredient\s*\|\s*Quantity\s*\|/iu.test(
       header,
     );
@@ -2137,10 +2139,13 @@ function extractObservedIngredients(body: string): string[] {
       /^\|\s*Ingredient\s*\|\s*Quantity\s*\|\s*Scaling\s*\|/iu.test(header);
     if (!canonical && !legacy) continue;
     index += 1;
-    while (index < lines.length && /^\s*>?\s*\|\s*-+/u.test(lines[index] ?? ''))
+    while (
+      index < lines.length &&
+      /^\|\s*-+/u.test(stripQuotePrefix(lines[index] ?? ''))
+    )
       index += 1;
     while (index < lines.length) {
-      const row = (lines[index] ?? '').replace(/^\s*>\s*/u, '').trim();
+      const row = stripQuotePrefix(lines[index] ?? '').trim();
       if (!row.startsWith('|')) break;
       const value = row.split('|').slice(1, -1)[canonical ? 1 : 0]?.trim();
       if (value)
