@@ -1,231 +1,192 @@
 ---
 title: "Tomato Bredie — Lamb Neck, Toasted Coriander, Ginger & Red Wine Vinegar"
 date: 2026-02-19
-type: recipe
-version: v2.0
+identity: recipe/tomato-bredie
+version: 2
 yield: "2 portions"
-portions: 2
-target_internal_temperature_c: null
-primary_ingredient: "lamb neck (bone-in)"
-primary_mass_g: 500
-techniques: ["dry-toasting spices", "aggressive browning", "spice blooming", "low braise", "starch thickening"]
-principles: ["Maillard reaction", "collagen breakdown", "spice fat solubility", "acid brightness", "starch absorption"]
-tags: ["dish-main-course", "south-african", "lamb", "tomato", "oven", "tender"]
-cssclass: modernist-recipe
+scale_basis:
+  ingredient: ingredient/lamb-neck
+  quantity_g: 500
+tags: [dish-main-course, south-african, lamb, tomato, oven, tender]
 ---
 
-# TOMATO BREDIE
+Tomato-forward Cape Malay bredie with collapsing lamb neck, warm spice, a naturally thick gravy, and a bright ginger-vinegar finish. Split toasted coriander between the cooked base and finish for aromatic layering.
 
-Yield: 2 portions
-Portions: 2
-Target: texture-driven endpoint (lamb collapsing, gravy thick and clingy)
+## PHASE A — TOAST SPICES
 
-Primary Ingredient Basis: `500 g lamb neck (bone-in) = 100%`
+### Ingredient Uses
 
-Cape Malay cucina povera — refined. Tomato-forward, lamb-soft, warm spice present but not dominant, bright lift at finish.
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| coriander | [Coriander seed](ref:ingredient/coriander-seed) | 4 g | 0.80% | Toast and grind; reserve half for finishing. |
+| cloves | [Clove](ref:ingredient/cloves) | 0.5 g | 0.10% | Toast whole and grind. |
+| cinnamon | [Cinnamon](ref:ingredient/cinnamon) | 1.5 g | 0.30% | Keep as a whole stick for the braise. |
 
+### Technique Applications
 
----
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [Dry toasting spices](ref:technique/dry-toasting-spices) | Toast coriander and cloves until fragrant; grind coarsely | Develop warm spice aroma without burning. |
 
-## PHASE A — SPICE FOUNDATION
+### Method
 
----
+1. Dry-toast coriander seeds and cloves until fragrant, then grind coarsely.
+2. Keep the cinnamon stick whole and reserve half the ground coriander for the finish.
 
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Coriander seed (whole) | 4 g | 0.80% |
->> | Cloves (whole) | 0.5 g | 0.10% |
->> | Cinnamon stick | 1.5 g | 0.30% |
->
->> [!col-right]
->> ### Method
->> 1. Dry-toast coriander and cloves until fragrant.
->> 2. Grind coarsely. Keep cinnamon stick whole.
->> 3. Reserve half the ground coriander for finishing phase.
+### Phase Outputs
 
+| Key | Phase Output | Description |
+| --- | --- | --- |
+| prepared-spices | Prepared spices | Ground toasted coriander and cloves, reserved coriander, and whole cinnamon. |
 
----
+## PHASE B — BROWN LAMB AND ONIONS
 
-## PHASE B — STRUCTURAL BASE
+### Ingredient Uses
 
----
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| cooking-oil | [Olive oil](ref:ingredient/olive-oil) | 15 g | 3.00% | Heat in a heavy pot. |
+| lamb | [Lamb neck](ref:ingredient/lamb-neck) | 500 g | 100.00% | Use bone-in pieces and brown in batches. |
+| onions | [Onion](ref:ingredient/onion) | 150 g | 30.00% | Slice and cook in the rendered fat. |
 
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Olive oil (cooking) | 15 g | 3.00% |
->> | Lamb neck (bone-in) | 500 g | 100.00% |
->> | Onion, sliced | 150 g | 30.00% |
->
->> [!col-right]
->> ### Method
->> 1. Heat oil in heavy pot.
->> 2. Brown lamb neck aggressively in batches. Deep caramelisation. No crowding.
->> 3. Remove meat.
->> 4. Add onions to the rendered fat. Cook until golden and slightly jammy.
+### Technique Applications
 
-
----
-
-## PHASE C — AROMATIC BUILD
-
----
-
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Garlic | 7.5 g | 1.50% |
->> | Fresh ginger (reserve 5 g for Phase F) | 7.5 g | 1.50% |
->> | Tomato paste | 15 g | 3.00% |
->> | Ground spices | from Phase A | — |
->> | Mild Cape Malay curry powder | 2.5 g | 0.50% |
->
->> [!col-right]
->> ### Method
->> 1. Add garlic and most of the ginger. Sweat 30–45 seconds.
->> 2. Add ground spices and curry powder. Bloom gently.
->> 3. Stir in tomato paste and cook until darkened slightly.
-
-
----
-
-## PHASE D — BRAISE
-
----
-
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Tomato (good Italian tinned) | 200 g | 40.00% |
->> | Cinnamon stick | from Phase A | — |
->> | Salt (initial) | 6 g | 1.20% |
->
->> [!col-right]
->> ### Method
->> 1. Add tomatoes and return lamb to pot.
->> 2. Add cinnamon stick.
->> 3. Cover and simmer low 90–120 minutes.
->> 4. Keep liquid tight and stew-like, not soupy.
->> 5. Neck should soften and begin to collapse.
-
-
----
-
-## PHASE E — STARCH ABSORPTION
-
----
-
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Potato, chunked | 150 g | 30.00% |
->
->> [!col-right]
->> ### Method
->> 1. Add potatoes.
->> 2. Simmer uncovered 30–40 minutes.
->> 3. Sauce should thicken naturally from gelatin and potato starch.
-
-
----
-
-## PHASE F — BRIGHTEN & LIFT
-
----
-
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Remaining ginger, micro-grated | 2.5 g | 0.50% |
->> | Reserved toasted coriander | from Phase A | — |
->> | Red wine vinegar | 7.5 g | 1.50% |
->> | Flat leaf parsley | 10 g | 2.00% |
->> | Salt + black pepper | to final balance | — |
->> | Olive oil (finishing drizzle) | 5 g | 1.00% |
->
->> [!col-right]
->> ### Method
->> 1. Adjust salt.
->> 2. Stir in vinegar.
->> 3. Add fresh ginger and reserved coriander.
->> 4. Fold in chopped parsley.
->> 5. Drizzle olive oil just before serving.
-
-## RELATED LINKS
-<!-- AUTO-GENERATED:RELATED-LINKS:START -->
-
-### Techniques
-- [[Technique - Aggressive Browning]]
-- [[Technique - Dry Toasting Spices]]
-- [[Technique - Low Braise]]
-- [[Technique - Spice Blooming]]
-- [[Technique - Starch Thickening]]
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [Browning](ref:technique/browning) | High enough heat for deep colour; uncrowded batches | Build the lamb fond that gives the braise depth. |
 
 ### Principles
-- [[Principle - Acid Brightness]]
-- [[Principle - Collagen Breakdown]]
-- [[Principle - Maillard Reaction]]
-- [[Principle - Spice Fat Solubility]]
-- [[Principle - Starch Absorption]]
 
-### Ingredients
-- [[Ingredient - Cinnamon Stick]]
-- [[Ingredient - Clove]]
-- [[Ingredient - Coriander Seed]]
-- [[Ingredient - Flat Leaf Parsley]]
-- [[Ingredient - Fresh Ginger]]
-- [[Ingredient - Garlic]]
-- [[Ingredient - Ground Spices]]
-- [[Ingredient - Lamb Neck]]
-- [[Ingredient - Mild Cape Malay Curry Powder]]
-- [[Ingredient - Olive Oil]]
-- [[Ingredient - Onion]]
-- [[Ingredient - Potato]]
-- [[Ingredient - Red Wine Vinegar]]
-- [[Ingredient - Remaining Ginger]]
-- [[Ingredient - Salt]]
-- [[Ingredient - Salt + Black Pepper]]
-- [[Ingredient - Tomato]]
-- [[Ingredient - Tomato Paste]]
+- [Maillard reaction](ref:principle/maillard-reaction) — Browned lamb contributes savoury depth to the tomato gravy.
 
-<!-- AUTO-GENERATED:RELATED-LINKS:END -->
+### Method
 
-## STRUCTURAL NOTES
+1. Heat the oil in a heavy pot and brown bone-in lamb neck deeply in batches without crowding.
+2. Remove the lamb; cook the sliced onions in the pot fat until golden and slightly jammy.
 
-- The vinegar tightens the tomatoes — without it the dish reads as flat and sweet.
-- Fresh coriander and ginger at the finish give verticality against the long-cooked base.
-- The finishing olive oil rounds edges and adds richness without heaviness.
-- Maillard reaction on the lamb is non-negotiable — this is your depth. No crowding the pot.
-- Splitting the toasted coriander between Phase C (cooked in) and Phase F (added fresh) creates aromatic layering — the same spice at two different stages reads as complexity.
-- Potato starch and gelatin from the lamb neck thicken the gravy naturally. No flour needed.
+### Phase Outputs
+
+| Key | Phase Output | Description |
+| --- | --- | --- |
+| browned-lamb | Browned lamb | Lamb and its pot fond ready for the braise. |
+
+## PHASE C — BUILD THE AROMATICS
+
+### Ingredient Uses
+
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| garlic | [Garlic](ref:ingredient/garlic) | 7.5 g | 1.50% | Mince. |
+| cooking-ginger | [Fresh ginger](ref:ingredient/fresh-ginger) | 5 g | 1.00% | Cook now; retain the separate 2.5 g finishing use. |
+| tomato-paste | [Tomato paste](ref:ingredient/tomato-paste) | 15 g | 3.00% | Cook until slightly darkened. |
+| curry-powder | [Mild Cape Malay curry powder](ref:ingredient/mild-cape-malay-curry-powder) | 2.5 g | 0.50% | Bloom with the toasted spices. |
+
+### Technique Applications
+
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [Spice blooming](ref:technique/spice-blooming) | Gentle heat for 30–60 s before liquid | Distribute spice aromas through the fat without scorching. |
+
+### Principles
+
+- [Fat as flavour carrier](ref:principle/fat-as-flavour-carrier) — Blooming spices in the pot fat distributes their aroma through the braise.
+
+### Method
+
+1. Add garlic and 5 g fresh ginger to the onions and sweat for 30–45 s.
+2. Add the ground toasted spices, except the reserved coriander, and the curry powder; bloom gently for 30–60 s.
+3. Stir in tomato paste and cook until slightly darkened.
+
+### Phase Outputs Used
+
+| Phase Output | Use |
+| --- | --- |
+| Prepared spices | Use the ground spices from `prepared-spices`, retaining the cinnamon and reserved coriander. |
+
+## PHASE D — BRAISE THE LAMB
+
+### Ingredient Uses
+
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| tomatoes | [Tomato](ref:ingredient/tomato) | 200 g | 40.00% | Use good tinned tomato without assuming a whole or plum form. |
+| initial-salt | [Salt](ref:ingredient/salt) | 6 g | 1.20% | Season the braise. |
+
+### Technique Applications
+
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [Braising](ref:technique/braising) | Covered, low simmer for 90–120 min | Convert tough neck to tender meat while keeping the liquid tight. |
+
+### Principles
+
+- [Collagen conversion](ref:principle/collagen-conversion) — Slow moist heat softens lamb neck and gives the gravy body.
+
+### Method
+
+1. Add tinned tomato and return the browned lamb to the pot; add the whole cinnamon stick and salt.
+2. Cover and simmer low for 90–120 min, keeping the liquid stew-like rather than soupy.
+3. Continue until the lamb begins to collapse.
+
+### Phase Outputs Used
+
+| Phase Output | Use |
+| --- | --- |
+| Browned lamb | Return all of `browned-lamb` and its fond to the pot. |
+| Prepared spices | Add the whole cinnamon from `prepared-spices`. |
+
+## PHASE E — THICKEN WITH POTATO
+
+### Ingredient Uses
+
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| potatoes | [Potato](ref:ingredient/potato) | 150 g | 30.00% | Cut into chunks. |
+
+### Technique Applications
+
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [Starch thickening](ref:technique/starch-thickening) | Uncovered simmer for 30–40 min | Let potato starch and lamb gelatin tighten the gravy without flour. |
+
+### Method
+
+1. Add chunked potatoes and simmer uncovered for 30–40 min.
+2. Stop when the potatoes are tender and the gravy is thick and clingy.
+
+## PHASE F — BRIGHTEN AND SERVE
+
+### Ingredient Uses
+
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| finishing-ginger | [Fresh ginger](ref:ingredient/fresh-ginger) | 2.5 g | 0.50% | Micro-grate and add at the finish. |
+| vinegar | [Red wine vinegar](ref:ingredient/red-wine-vinegar) | 7.5 g | 1.50% | Brighten the long-cooked tomato base. |
+| parsley | [Flat leaf parsley](ref:ingredient/flat-leaf-parsley) | 10 g | 2.00% | Chop and fold through. |
+| final-seasoning | [Salt](ref:ingredient/salt) | As needed | — | Balance with [black pepper](ref:ingredient/black-pepper) to taste. |
+| finishing-oil | [Olive oil](ref:ingredient/olive-oil) | 5 g | 1.00% | Drizzle just before serving. |
+
+### Principles
+
+- [Acid balance](ref:principle/acid-balance) — Vinegar and fresh aromatics lift the sweet, slow-cooked tomato base.
+
+### Method
+
+1. Adjust salt and black pepper, then stir in the vinegar.
+2. Add the fresh 2.5 g ginger and reserved toasted coriander.
+3. Fold in parsley and drizzle olive oil just before serving.
+
+### Phase Outputs Used
+
+| Phase Output | Use |
+| --- | --- |
+| Prepared spices | Add the reserved toasted coriander from `prepared-spices`. |
 
 ## FAILURE MODES
 
-- Symptom: Gravy is thin and soupy.
-- Likely cause: Too much liquid during braise, or potatoes not given enough uncovered simmer time.
-- Corrective action: Keep liquid tight during braise. Simmer uncovered in Phase E until sauce is thick and clingy.
-
-- Symptom: Lamb is tough and chewy.
-- Likely cause: Insufficient braise time or heat too high.
-- Corrective action: Low simmer for a full 90–120 minutes. Neck should be collapsing, not resisting.
-
-- Symptom: Dish tastes flat despite seasoning.
-- Likely cause: Skipped the finishing phase — no acid, no fresh aromatics.
-- Corrective action: Phase F is not optional. Vinegar, fresh ginger, reserved coriander, and parsley are the difference between good and great.
-
-- Symptom: Spices taste raw and powdery.
-- Likely cause: Spice bloom skipped or too brief.
-- Corrective action: Toast whole spices properly. Bloom ground spices in fat for a full 30–60 seconds before adding liquid.
+| Symptom | Likely cause | Corrective action |
+| --- | --- | --- |
+| Thin, soupy gravy | Too much braising liquid or too little uncovered potato simmer. | Keep liquid tight and simmer uncovered until clingy. |
+| Tough, chewy lamb | Braise was too short or too hot. | Simmer low for 90–120 min until neck begins to collapse. |
+| Flat flavour | Vinegar and fresh finishing aromatics were skipped. | Complete the ginger, coriander, parsley, and vinegar finish. |
+| Raw, powdery spices | Toasting or fat bloom was skipped. | Toast whole spices and bloom ground spices for 30–60 s. |

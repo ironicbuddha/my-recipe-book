@@ -89,6 +89,36 @@
       "source": "/recipes/2026-05-29-soy-garlic-sesame-gochujang-hibachi-chicken-tacos/",
       "type": "redirect",
       "destination": "recipe/soy-garlic-sesame-gochujang-hibachi-chicken-tacos"
+    },
+    {
+      "source": "/recipes/2026-02-19-cowboy-beans/",
+      "type": "redirect",
+      "destination": "recipe/cowboy-beans"
+    },
+    {
+      "source": "/recipes/2026-02-19-gratin-dauphinois/",
+      "type": "redirect",
+      "destination": "recipe/gratin-dauphinois"
+    },
+    {
+      "source": "/recipes/2026-02-19-tomato-bredie/",
+      "type": "redirect",
+      "destination": "recipe/tomato-bredie"
+    },
+    {
+      "source": "/recipes/2026-02-19-traditional-greek-lentil-soup-fakes/",
+      "type": "redirect",
+      "destination": "recipe/traditional-greek-lentil-soup-fakes"
+    },
+    {
+      "source": "/recipes/2026-02-21-creamy-porcini-mushroom-ragout-with-polenta/",
+      "type": "redirect",
+      "destination": "recipe/creamy-porcini-mushroom-ragout-polenta"
+    },
+    {
+      "source": "/recipes/2026-02-24-spanish-chicken-and-chorizo-stew/",
+      "type": "redirect",
+      "destination": "recipe/spanish-chicken-chorizo-stew"
     }
   ]
 }

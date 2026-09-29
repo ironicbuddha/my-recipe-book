@@ -1,157 +1,127 @@
 ---
 title: "Gratin Dauphinois"
 date: 2026-02-19
-type: recipe
-version: v1.0
+identity: recipe/gratin-dauphinois
+version: 1
 yield: "2 portions"
-portions: 2
-target_internal_temperature_c: "93–96"
-primary_ingredient: "waxy potatoes"
-primary_mass_g: 500
-techniques: ["mandoline slicing", "layered assembly", "low-temperature baking"]
-principles: ["starch gelatinisation", "cream emulsion stability", "carryover setting"]
-tags: ["dish-side-dish", "french", "potato", "oven", "gelatinization", "tender"]
-cssclass: modernist-recipe
+scale_basis:
+  ingredient: ingredient/waxy-potatoes
+  quantity_g: 500
+tags: [dish-side-dish, french, potato, oven, gelatinization, tender]
 ---
 
-# GRATIN DAUPHINOIS
+Thin waxy potato layers bake in cream and set during a long rest. Traditional dauphinois contains no cheese.
 
-Yield: 2 portions
-Portions: 2
-Target Internal Temperature: 93–96 C
+## PHASE A — PREPARE POTATOES AND SEASONING
 
-Primary Ingredient Basis: `500 g waxy potatoes = 100%`
+### Ingredient Uses
 
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| potatoes | [Waxy potatoes](ref:ingredient/waxy-potatoes) | 500 g | 100.00% | Slice 2–3 mm thick; do not rinse away the surface starch. |
+| salt | [Fine salt](ref:ingredient/salt) | 6 g | 1.20% | Mix with pepper and garlic for the layers. |
+| pepper | [White pepper](ref:ingredient/white-pepper) | 0.5 g | 0.10% | Mix with salt and garlic. |
+| garlic | [Garlic](ref:ingredient/garlic) | 4 g | 0.80% | Finely grate and mix into the seasoning. |
+| dish-butter | [Butter](ref:ingredient/butter) | 7.5 g | 1.50% | Use unsalted butter to coat the shallow baking dish. |
 
----
+### Technique Applications
 
-## PHASE A — PREP & SEASON
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [Mandoline slicing](ref:technique/mandoline-slicing) | Uniform 2–3 mm slices | Ensure the centre cooks before the top browns. |
 
----
+### Method
 
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Waxy potatoes | 500 g | 100.00% |
->> | Fine salt | 6 g | 1.20% |
->> | White pepper | 0.5 g | 0.10% |
->> | Garlic (finely grated) | 4 g | 0.80% |
->> | Unsalted butter (for dish) | 7.5 g | 1.50% |
->
->> [!col-right]
->> ### Method
->> 1. Preheat oven to 170 C (no fan).
->> 2. Slice potatoes 2–3 mm thick using a mandoline. Do not rinse.
->> 3. Combine salt, pepper, and garlic.
->> 4. Butter shallow baking dish thoroughly.
+1. Preheat a conventional oven to 170 C with no fan.
+2. Slice the potatoes uniformly with a mandoline; do not rinse.
+3. Combine salt, pepper, and garlic for distribution between the layers.
+4. Butter a shallow baking dish thoroughly.
 
+### Phase Outputs
 
----
+| Key | Phase Output | Description |
+| --- | --- | --- |
+| sliced-potatoes | Sliced potatoes | Starchy potato slices and mixed seasoning ready for layering. |
 
-## PHASE B — ASSEMBLY
+## PHASE B — ASSEMBLE THE GRATIN
 
----
+### Ingredient Uses
 
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Heavy cream (35%) | 350 g | 70.00% |
->
->> [!col-right]
->> ### Method
->> 1. Warm cream gently to ~40 C (optional but stabilising).
->> 2. Layer potatoes tightly and evenly.
->> 3. Pour cream over until just covered.
->> 4. Tap dish lightly to release trapped air pockets.
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| cream | [Heavy cream](ref:ingredient/heavy-cream) | 350 g | 70.00% | Use 35% cream; optionally warm to about 40 C. |
 
+### Technique Applications
 
----
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [Layered assembly](ref:technique/layered-assembly) | Even layers with seasoning distributed between them | Season the potato throughout and allow cream to reach every layer. |
+
+### Method
+
+1. Warm the cream gently to about 40 C if desired.
+2. Layer the sliced potatoes tightly and evenly, distributing the mixed salt, pepper, and garlic between layers.
+3. Pour the cream over until the potatoes are just covered.
+4. Tap the dish lightly to release trapped air.
+
+### Phase Outputs Used
+
+| Phase Output | Use |
+| --- | --- |
+| Sliced potatoes | Layer all of `sliced-potatoes` with the seasoning. |
+
+### Phase Outputs
+
+| Key | Phase Output | Description |
+| --- | --- | --- |
+| assembled-gratin | Assembled gratin | Seasoned potato layers covered with cream. |
 
 ## PHASE C — BAKE
 
----
+### Principles
 
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Assembled gratin | 1 unit | — |
->
->> [!col-right]
->> ### Method
->> 1. Cover loosely with foil.
->> 2. Bake 45 min (structure set).
->> 3. Remove foil and bake 30–40 min more.
->> 4. Target internal temperature 93–96 C.
->> 5. Top lightly golden; centre fully tender.
+- [Starch gelatinisation](ref:principle/starch-gelatinisation) — Potato surface starch thickens and binds the cream as it heats.
+- [Cream emulsion stability](ref:principle/cream-emulsion-stability) — Gentle, even oven heat limits separation.
 
+### Method
 
----
+1. Cover the dish loosely with foil and bake at 170 C, no fan, for 45 min.
+2. Remove the foil and bake for another 30–40 min until lightly golden and fully tender at the centre.
+3. Check that the centre reaches 93–96 C.
 
-## PHASE D — SET & SERVE
+### Phase Outputs Used
 
----
+| Phase Output | Use |
+| --- | --- |
+| Assembled gratin | Bake all of `assembled-gratin`. |
 
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Baked gratin | 1 unit | — |
->
->> [!col-right]
->> ### Method
->> 1. Rest minimum 30 min before slicing.
->> 2. Starch network stabilises during rest.
->> 3. Slice cleanly with sharp knife.
->> 4. Serve warm, not molten.
+### Phase Outputs
 
-## RELATED LINKS
-<!-- AUTO-GENERATED:RELATED-LINKS:START -->
+| Key | Phase Output | Description |
+| --- | --- | --- |
+| baked-gratin | Baked gratin | Tender gratin ready to set before slicing. |
 
-### Techniques
-- [[Technique - Layered Assembly]]
-- [[Technique - Low Temperature Baking]]
-- [[Technique - Mandoline Slicing]]
+## PHASE D — REST AND SERVE
 
 ### Principles
-- [[Principle - Carryover Setting]]
-- [[Principle - Cream Emulsion Stability]]
-- [[Principle - Starch Gelatinisation]]
 
-### Ingredients
-- [[Ingredient - Fine Salt]]
-- [[Ingredient - Garlic]]
-- [[Ingredient - Heavy Cream]]
-- [[Ingredient - Unsalted Butter]]
-- [[Ingredient - Waxy Potatoes]]
-- [[Ingredient - White Pepper]]
+- [Carryover cooking](ref:principle/carryover-cooking) — The hot gratin continues to settle as its starch network firms during rest.
 
-<!-- AUTO-GENERATED:RELATED-LINKS:END -->
+### Method
 
-## STRUCTURAL NOTES
+1. Rest the baked gratin for at least 30 min before slicing.
+2. Slice cleanly with a sharp knife and serve warm rather than molten.
 
-- Potato starch gelatinises at 65–70 C, naturally thickening the cream without flour.
-- Excess heat may cause cream separation — 170 C with no fan maintains gentle, even convection.
-- Traditional dauphinois contains no cheese. This is the hill we die on.
-- Resting is mandatory for structural cohesion and clean slicing; the starch network needs time to set.
-- Do not rinse sliced potatoes — surface starch is the binding agent.
+### Phase Outputs Used
+
+| Phase Output | Use |
+| --- | --- |
+| Baked gratin | Rest and slice all of `baked-gratin`. |
 
 ## FAILURE MODES
 
-- Symptom: Cream has split and looks grainy.
-- Likely cause: Oven temperature too high or fan convection creating hot spots.
-- Corrective action: Reduce to 160–170 C, no fan. Ensure foil coverage for initial bake.
-
-- Symptom: Centre still raw, top already dark.
-- Likely cause: Potato slices too thick or layers too tightly packed restricting cream penetration.
-- Corrective action: Slice 2–3 mm consistently with mandoline. Ensure cream reaches every layer.
-
-- Symptom: Gratin collapses into mush when sliced.
-- Likely cause: Insufficient resting time — starch network hasn't set.
-- Corrective action: Rest a full 30 min minimum. Patience isn't optional here.
+| Symptom | Likely cause | Corrective action |
+| --- | --- | --- |
+| Cream looks grainy or split | Oven heat was too high or fan convection made hot spots. | Bake at 160–170 C without a fan and keep the initial foil cover. |
+| Centre is raw while the top is dark | Slices were too thick or cream did not penetrate the layers. | Slice uniformly at 2–3 mm and make sure cream reaches each layer. |
+| Gratin collapses when sliced | It did not rest long enough to set. | Rest for at least 30 min before slicing. |

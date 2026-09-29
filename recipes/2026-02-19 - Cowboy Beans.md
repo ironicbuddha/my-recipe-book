@@ -1,211 +1,170 @@
 ---
 title: "Cowboy Beans (Molasses, Beef & Smoke)"
 date: 2026-02-19
-type: recipe
-version: v1.0
+identity: recipe/cowboy-beans
+version: 1
 yield: "2 portions"
-portions: 2
-target_internal_temperature_c: null
-primary_ingredient: "dried pinto beans"
-primary_mass_g: 113
-techniques: ["bean hydration", "fond development", "spice blooming", "slow reduction"]
-principles: ["starch gelatinisation", "Maillard reaction", "spice fat solubility", "molasses bitterness balance"]
-tags: ["dish-side-dish", "american", "beef", "pork", "oven", "beans", "tender"]
-cssclass: modernist-recipe
+scale_basis:
+  ingredient: ingredient/pinto-beans
+  quantity_g: 112.5
+tags: [dish-side-dish, american, beef, pork, oven, beans, tender]
 ---
 
-# COWBOY BEANS (MOLASSES, BEEF & SMOKE)
+High-protein campfire-style beans with molasses, beer, browned beef, and a slow reduction. Pinto beans give a creamier interior; navy beans give a tighter texture. The flavour integrates further during an extended hold and is often best on day two.
 
-Yield: 2 portions
-Portions: 2
-Target Internal Temperature: N/A (texture-driven endpoint)
+## PHASE A — HYDRATE AND PART-COOK BEANS
 
-Primary Ingredient Basis: `113 g dried pinto beans = 100%`
+### Ingredient Uses
 
-High-protein campfire style. Molasses-balanced, beer-enriched, slow reduction.
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| beans | [Pinto beans](ref:ingredient/pinto-beans) | 112.5 g | 100.00% | Use dried beans; [navy beans](ref:ingredient/navy-beans) are an alternative. |
+| bean-water | [Water](ref:ingredient/water) | As needed | — | Cold water for soaking and fresh water for cooking; reserve some cooking liquid. |
 
+### Technique Applications
 
----
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [Bean hydration](ref:technique/bean-hydration) | Soak for 8–12 h; simmer for 30–45 min to just tender | Hydrate beans without making them mushy before the final bake. |
 
-## PHASE A — BEAN HYDRATION
+### Method
 
----
+1. Cover dried beans with roughly three times their volume of cold water and soak for 8–12 h.
+2. Drain, cover with fresh water, and simmer for 30–45 min until just tender with a slight bite.
+3. Drain and reserve the cooking liquid.
 
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Dried pinto beans (or navy) | 112.5 g | 100.00% |
->> | Water (for soaking + cooking) | as needed | — |
->
->> [!col-right]
->> ### Method
->> 1. Cover beans with cold water (3x volume). Soak 8–12 h.
->> 2. Drain. Cover with fresh water and simmer 30–45 min until just tender.
->> 3. Drain, reserving cooking liquid.
+### Phase Outputs
 
+| Key | Phase Output | Description |
+| --- | --- | --- |
+| cooked-beans | Cooked beans | Part-cooked beans and reserved liquid for the sauce. |
 
----
+## PHASE B — BUILD THE MEAT FOUNDATION
 
-## PHASE B — MEAT FOUNDATION
+### Ingredient Uses
 
----
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| bacon | [Bacon](ref:ingredient/bacon) | 50 g | 44.44% | Chop and render. |
+| beef | [Beef chuck](ref:ingredient/beef-chuck) | 75 g | 66.67% | Use chopped chuck; [ground beef](ref:ingredient/ground-beef) is an alternative. |
 
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Bacon, chopped | 50 g | 44.00% |
->> | Beef (chuck or ground) | 75 g | 67.00% |
->
->> [!col-right]
->> ### Method
->> 1. In heavy ovenproof pot, render bacon over medium heat until fat releases and edges crisp.
->> 2. Add beef. Brown thoroughly; develop fond (deep caramelisation).
+### Technique Applications
 
-
----
-
-## PHASE C — AROMATIC BUILD & SPICE BLOOM
-
----
-
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Onion, diced | 50 g | 44.00% |
->> | Garlic, minced | 2.5 g | 2.00% |
->> | Jalapeno, diced (optional) | 3.75 g | 3.00% |
->> | Chili powder | 1.25 g | 1.00% |
->> | Ground cumin | 0.75 g | 0.70% |
->> | Smoked paprika | 0.5 g | 0.40% |
->> | Black pepper | 0.5 g | 0.40% |
->
->> [!col-right]
->> ### Method
->> 1. Add onion (and jalapeno if using). Cook until softened and lightly caramelised.
->> 2. Add garlic. Cook 30 seconds.
->> 3. Add chili powder, cumin, smoked paprika, and pepper.
->> 4. Stir 30–60 seconds to bloom spices in fat.
-
-
----
-
-## PHASE D — SAUCE INTEGRATION & BEAN COMBINATION
-
----
-
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Molasses | 20 g | 18.00% |
->> | Dark brown sugar | 15 g | 13.00% |
->> | Tomato sauce / crushed tomato | 30 g | 27.00% |
->> | Yellow or Dijon mustard | 7.5 g | 7.00% |
->> | Apple cider vinegar | 7.5 g | 7.00% |
->> | Beer (lager or amber) | 62.5 g | 56.00% |
->> | Worcestershire (optional) | 2.5 g | 2.00% |
->
->> [!col-right]
->> ### Method
->> 1. Add molasses, brown sugar, mustard, vinegar, tomato, Worcestershire (if using).
->> 2. Stir until glossy and cohesive.
->> 3. Add beans and beer.
->> 4. Add reserved bean liquid until mixture is just covered.
-
-
----
-
-## PHASE E — SLOW REDUCTION & FINAL TEXTURE
-
----
-
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Assembled bean pot | 1 unit | — |
->
->> [!col-right]
->> ### Method
->> 1. Bake uncovered at 170 C for 2–3 h, or simmer gently on stovetop.
->> 2. Stir occasionally; add liquid as needed to prevent scorching.
->> 3. Reduce until thick, spoon-coating consistency.
->> 4. Rest 15–20 min before serving to allow starch gel stabilisation.
-
-## RELATED LINKS
-<!-- AUTO-GENERATED:RELATED-LINKS:START -->
-
-### Techniques
-- [[Technique - Bean Hydration]]
-- [[Technique - Fond Development]]
-- [[Technique - Slow Reduction]]
-- [[Technique - Spice Blooming]]
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [Fond development](ref:technique/fond-development) | Medium heat to render bacon, then thorough beef browning | Build a deeply caramelised pot base. |
 
 ### Principles
-- [[Principle - Maillard Reaction]]
-- [[Principle - Molasses Bitterness Balance]]
-- [[Principle - Spice Fat Solubility]]
-- [[Principle - Starch Gelatinisation]]
 
-### Ingredients
-- [[Ingredient - Apple Cider Vinegar]]
-- [[Ingredient - Bacon]]
-- [[Ingredient - Beef]]
-- [[Ingredient - Beer]]
-- [[Ingredient - Black Pepper]]
-- [[Ingredient - Chili Powder]]
-- [[Ingredient - Dark Brown Sugar]]
-- [[Ingredient - Dried Pinto Beans]]
-- [[Ingredient - Garlic]]
-- [[Ingredient - Ground Cumin]]
-- [[Ingredient - Jalapeno]]
-- [[Ingredient - Molasses]]
-- [[Ingredient - Onion]]
-- [[Ingredient - Smoked Paprika]]
-- [[Ingredient - Tomato Sauce / Crushed Tomato]]
-- [[Ingredient - Water]]
-- [[Ingredient - Worcestershire]]
-- [[Ingredient - Yellow Or Dijon Mustard]]
+- [Maillard reaction](ref:principle/maillard-reaction) — Well-browned beef creates depth in the finished sauce.
 
-<!-- AUTO-GENERATED:RELATED-LINKS:END -->
+### Method
 
-## STRUCTURAL NOTES
+1. Render the bacon in a heavy ovenproof pot over medium heat until its fat releases and the edges crisp.
+2. Add the beef and brown thoroughly to develop deep fond; do not rush this step.
 
-- Pinto beans yield creamier interior; navy beans produce tighter structure.
-- Molasses provides bitterness and mineral depth; balance with vinegar if overly sweet.
-- Fond development during beef browning is critical for depth — do not rush this step.
-- Blooming spices in rendered fat unlocks fat-soluble flavour compounds that water alone won't extract.
-- Extended holding improves integration; flavour peaks on day two.
+## PHASE C — SOFTEN AROMATICS AND BLOOM SPICES
+
+### Ingredient Uses
+
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| onion | [Onion](ref:ingredient/onion) | 50 g | 44.44% | Dice. |
+| garlic | [Garlic](ref:ingredient/garlic) | 2.5 g | 2.22% | Mince. |
+| jalapeno | [Jalapeno](ref:ingredient/jalapeno) | 3.75 g | 3.33% | Optional; dice and cook with onion. |
+| chili-powder | [Chili powder](ref:ingredient/chili-powder) | 1.25 g | 1.11% | Bloom in rendered fat. |
+| cumin | [Ground cumin](ref:ingredient/cumin) | 0.75 g | 0.67% | Bloom in rendered fat. |
+| paprika | [Smoked paprika](ref:ingredient/smoked-paprika) | 0.5 g | 0.44% | Bloom in rendered fat. |
+| pepper | [Black pepper](ref:ingredient/black-pepper) | 0.5 g | 0.44% | Bloom with the other spices. |
+
+### Technique Applications
+
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [Spice blooming](ref:technique/spice-blooming) | Stir spices in bacon fat for 30–60 s | Release fat-carried spice aromas without scorching. |
+
+### Principles
+
+- [Fat as flavour carrier](ref:principle/fat-as-flavour-carrier) — Rendered fat distributes the warm spices through the beans.
+
+### Method
+
+1. Add onion and optional jalapeno to the meat pot; cook until softened and lightly caramelised.
+2. Add garlic and cook for 30 s.
+3. Stir in chili powder, cumin, smoked paprika, and pepper for 30–60 s to bloom in the fat.
+
+## PHASE D — COMBINE BEANS AND SAUCE
+
+### Ingredient Uses
+
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| molasses | [Molasses](ref:ingredient/molasses) | 20 g | 17.78% | Balance its bitter mineral note with acid. |
+| brown-sugar | [Dark brown sugar](ref:ingredient/dark-brown-sugar) | 15 g | 13.33% | Sweeten the sauce. |
+| tomato-sauce | [Tomato sauce](ref:ingredient/tomato-sauce) | 30 g | 26.67% | [Crushed tomato](ref:ingredient/tomato) is an alternative. |
+| mustard | [Yellow mustard](ref:ingredient/yellow-mustard) | 7.5 g | 6.67% | [Dijon mustard](ref:ingredient/dijon-mustard) is an alternative. |
+| vinegar | [Apple cider vinegar](ref:ingredient/apple-cider-vinegar) | 7.5 g | 6.67% | Balance the molasses and sugar. |
+| beer | [Lager beer](ref:ingredient/lager-beer) | 62.5 g | 55.56% | [Amber beer](ref:ingredient/amber-beer) is an alternative. |
+| worcestershire | [Worcestershire sauce](ref:ingredient/worcestershire-sauce) | 2.5 g | 2.22% | Optional savoury seasoning. |
+
+### Principles
+
+- [Molasses bitterness balance](ref:principle/molasses-bitterness-balance) — Vinegar counters excess sweetness while leaving molasses depth.
+
+### Method
+
+1. Add molasses, sugar, tomato sauce or crushed tomato, mustard, vinegar, and optional Worcestershire; stir until glossy.
+2. Add the cooked beans and beer.
+3. Add reserved bean liquid until the mixture is just covered, not submerged.
+
+### Phase Outputs Used
+
+| Phase Output | Use |
+| --- | --- |
+| Cooked beans | Add all of `cooked-beans` and enough of its reserved liquid to cover. |
+
+### Phase Outputs
+
+| Key | Phase Output | Description |
+| --- | --- | --- |
+| assembled-beans | Assembled bean pot | Beans in molasses-beer sauce, ready for slow reduction. |
+
+## PHASE E — REDUCE AND REST
+
+### Technique Applications
+
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [Reduction](ref:technique/reduction) | Uncovered at 170 C for 2–3 h, or gently on the stovetop | Concentrate the sauce until it coats a spoon. |
+
+### Principles
+
+- [Starch gelatinisation](ref:principle/starch-gelatinisation) — Resting lets the thickened bean sauce stabilise.
+
+### Method
+
+1. Bake uncovered at 170 C for 2–3 h, or simmer gently on the stovetop, stirring occasionally.
+2. Add reserved bean liquid as needed to prevent scorching, keeping the sauce thick rather than soupy.
+3. When spoon-coating, rest for 15–20 min before serving.
+
+### Phase Outputs Used
+
+| Phase Output | Use |
+| --- | --- |
+| Assembled bean pot | Reduce and rest all of `assembled-beans`. |
 
 ## FAILURE MODES
 
-- Symptom: Beans are mushy and have lost all structure.
-- Likely cause: Over-soaked or over-simmered in Phase A before baking.
-- Corrective action: Simmer only until just tender (slight bite remaining). The oven phase finishes them.
-
-- Symptom: Sauce is thin and watery after baking.
-- Likely cause: Too much liquid added, or insufficient bake time.
-- Corrective action: Continue uncovered baking. Liquid should just cover beans at start — not submerge them.
-
-- Symptom: Scorched bottom, uneven texture.
-- Likely cause: Oven too hot or insufficient stirring during long bake.
-- Corrective action: Reduce to 160–170 C, stir every 30–45 min, and ensure pot is heavy-bottomed.
-
-- Symptom: Flat, one-dimensional flavour.
-- Likely cause: Skipped fond development or spice bloom.
-- Corrective action: Brown meat aggressively before proceeding. Bloom spices a full 60 seconds in fat.
+| Symptom | Likely cause | Corrective action |
+| --- | --- | --- |
+| Beans lose their structure | They soaked or simmered too long before baking. | Part-cook only until just tender; the final reduction finishes them. |
+| Sauce is watery | Too much liquid or too short a bake. | Start with liquid just covering the beans and continue uncovered reduction. |
+| Bottom scorches | Heat was too high or the long bake was not stirred. | Use a heavy pot at 160–170 C and stir every 30–45 min. |
+| Flavour is flat | Beef fond or spice bloom was skipped. | Brown beef deeply and bloom the spices in fat. |
 
 ## VARIATIONS
 
-- **Campfire Version**: Replace 50% beer with strong coffee.
-- **Smokier**: Add 5 g chipotle powder or 1 diced canned chipotle.
-- **Lean Ranch**: Omit beef; increase bacon to 300 g.
-- **Brisket Leftover Edition**: Replace beef with 300 g chopped smoked brisket.
+- **Campfire:** Replace half the beer with strong coffee.
+- **Smokier:** Add 5 g chipotle powder or one diced canned chipotle.
+- **Lean Ranch:** Omit beef and increase bacon to 300 g.
+- **Brisket leftovers:** Replace the beef with 300 g chopped smoked brisket.

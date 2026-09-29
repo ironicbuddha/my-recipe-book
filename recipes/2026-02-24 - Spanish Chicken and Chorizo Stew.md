@@ -1,136 +1,136 @@
 ---
 title: "Spanish Chicken and Chorizo Stew"
 date: 2026-02-24
-type: recipe
-version: v1.0
+identity: recipe/spanish-chicken-chorizo-stew
+version: 1
 yield: "2 portions"
-portions: 2
-target_internal_temperature_c: 85
-primary_ingredient: "chicken thighs (boneless, skinless)"
-primary_mass_g: 600
-techniques: ["aggressive browning", "wine reduction", "spice blooming", "stewing"]
-principles: ["Maillard reaction", "fond dissolution", "fat-soluble spice extraction", "collagen conversion"]
-tags: ["dish-main-course", "spanish", "chicken", "chorizo", "beans", "stew"]
-cssclass: modernist-recipe
+scale_basis:
+  ingredient: ingredient/chicken-thigh
+  quantity_g: 600
+tags: [dish-main-course, spanish, chicken, chorizo, beans, stew]
 ---
 
-# SPANISH CHICKEN AND CHORIZO STEW
+Spicy tomato stew with cured Spanish chorizo, tinned beans, and a red wine reduction, served over rice. Browned chicken and rendered chorizo build a fat-and-fond base; add the beans late so they remain creamy and intact.
 
-Yield: 2 portions
-Portions: 2
-Target Internal Temperature: 85 C (texture-driven endpoint: thighs tender, sauce tight)
+## PHASE A — RENDER CHORIZO AND BROWN CHICKEN
 
-Primary Ingredient Basis: `600 g chicken thighs (boneless, skinless) = 100%`
+### Ingredient Uses
 
-Spicy tomato stew with cured chorizo, tinned beans, and a red wine reduction. Serve over rice.
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| olive-oil | [Olive oil](ref:ingredient/olive-oil) | 20 g | 3.33% | Heat in a heavy pot. |
+| chorizo | [Spanish chorizo](ref:ingredient/spanish-chorizo) | 150 g | 25.00% | Use cured chorizo, sliced. |
+| chicken | [Chicken thigh](ref:ingredient/chicken-thigh) | 600 g | 100.00% | Use boneless, skinless thighs. |
+| initial-salt | [Salt](ref:ingredient/salt) | 8 g | 1.33% | Season the chicken before browning. |
+| pepper | [Black pepper](ref:ingredient/black-pepper) | 1 g | 0.17% | Season the chicken. |
 
+### Technique Applications
 
----
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [Browning](ref:technique/browning) | Chorizo 2–3 min; chicken in uncrowded batches over medium-high heat | Render smoky fat and develop deep chicken colour without cooking it through. |
 
-## PHASE A — BROWN CHICKEN + RENDER CHORIZO
+### Principles
 
----
+- [Maillard reaction](ref:principle/maillard-reaction) — Browning chicken forms savoury fond for the sauce.
+- [Fat rendering](ref:principle/fat-rendering) — Chorizo fat carries smoked spice into the stew.
 
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Olive oil | 20 g | 3.33% |
->> | Chorizo (cured Spanish), sliced | 150 g | 25.00% |
->> | Chicken thighs (boneless, skinless) | 600 g | 100.00% |
->> | Salt (initial) | 8 g | 1.33% |
->> | Black pepper | 1 g | 0.17% |
->
->> [!col-right]
->> ### Method
->> 1. Heat a heavy pot over medium heat. Add olive oil.
->> 2. Add chorizo and fry 2–3 minutes until fat renders and edges start to crisp.
->> 3. Remove chorizo and reserve, leaving fat in the pot.
->> 4. Season chicken with salt + pepper.
->> 5. Increase heat to medium-high and brown chicken hard in batches in the chorizo fat. Aim for deep colour; avoid crowding.
->> 6. Remove chicken and reserve.
+### Method
 
+1. Heat the oil in a heavy pot over medium heat; fry sliced chorizo for 2–3 min until it renders fat and the edges crisp. Remove and reserve it, leaving the fat in the pot.
+2. Season the chicken with salt and pepper.
+3. Increase heat to medium-high and brown the chicken deeply in uncrowded batches. Remove and reserve it without cooking through.
 
----
+### Phase Outputs
 
-## PHASE B — AROMATICS, WINE GLAZE, TOMATO STEW + BEANS
+| Key | Phase Output | Description |
+| --- | --- | --- |
+| browned-chicken | Browned chicken | Coloured thigh pieces for the stew. |
+| rendered-chorizo | Rendered chorizo | Crisp-edged slices reserved for the stew. |
 
----
+## PHASE B — BUILD AND STEW THE SAUCE
 
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Onion, diced | 200 g | 33.33% |
->> | Garlic, minced | 15 g | 2.50% |
->> | Smoked paprika | 6 g | 1.00% |
->> | Ground cumin | 3 g | 0.50% |
->> | Ground coriander | 3 g | 0.50% |
->> | Bird's eye chili, minced | 8 g | 1.33% |
->> | Tomato paste | 15 g | 2.50% |
->> | Red wine | 125 ml | 20.83% |
->> | Fish sauce | 10 ml | 1.67% |
->> | Worcestershire sauce | 15 ml | 2.50% |
->> | Sherry vinegar | 15 ml | 2.50% |
->> | Whole tomatoes (tinned), hand-crushed | 400 g | 66.67% |
->> | Water | 250 g | 41.67% |
->> | Beans (tinned, drained; cannellini/kidney/black/pinto) | 240 g | 40.00% |
-> >
->> [!col-right]
->> ### Method
->> 1. Lower heat to medium. Add onion to the pot fat and cook 6–8 minutes until softened and lightly golden.
->> 2. Add garlic. Cook 30–45 seconds.
->> 3. Add paprika, cumin, coriander, chili, and tomato paste. Bloom 60–90 seconds, stirring, until fragrant and the paste darkens slightly.
->> 4. Add red wine and reduce to a glaze (nearly dry; thick syrupy film on the pot).
->> 5. Add crushed tomatoes, water, fish sauce, Worcestershire sauce, and sherry vinegar. Stir to dissolve fond.
->> 6. Return chicken to the pot. Bring to a gentle simmer, cover, and stew 30–45 minutes until thighs are tender.
->> 7. Add drained beans for the final 8–10 minutes to heat through without breaking down.
->> 8. Uncover for the last few minutes to tighten sauce as needed. Adjust salt to final balance.
+### Ingredient Uses
 
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| onion | [Onion](ref:ingredient/onion) | 200 g | 33.33% | Dice and soften in the pot fat. |
+| garlic | [Garlic](ref:ingredient/garlic) | 15 g | 2.50% | Mince and add after onion. |
+| paprika | [Smoked paprika](ref:ingredient/smoked-paprika) | 6 g | 1.00% | Bloom with the other spices. |
+| cumin | [Cumin](ref:ingredient/cumin) | 3 g | 0.50% | Use ground cumin. |
+| coriander | [Coriander seed](ref:ingredient/coriander-seed) | 3 g | 0.50% | Use ground coriander. |
+| chili | [Bird's eye chili](ref:ingredient/birds-eye-chili) | 8 g | 1.33% | Mince. |
+| tomato-paste | [Tomato paste](ref:ingredient/tomato-paste) | 15 g | 2.50% | Bloom and darken slightly. |
+| wine | [Red wine](ref:ingredient/red-wine) | 125 ml | 20.83% | Reduce to a nearly dry glaze. |
+| fish-sauce | [Fish sauce](ref:ingredient/fish-sauce) | 10 ml | 1.67% | Season the tomato sauce. |
+| worcestershire | [Worcestershire sauce](ref:ingredient/worcestershire-sauce) | 15 ml | 2.50% | Season the tomato sauce. |
+| sherry-vinegar | [Sherry vinegar](ref:ingredient/sherry-vinegar) | 15 ml | 2.50% | Brighten the sauce. |
+| tomatoes | [Tomato](ref:ingredient/tomato) | 400 g | 66.67% | Use tinned whole tomatoes, crushed by hand. |
+| stew-water | [Water](ref:ingredient/water) | 250 g | 41.67% | Add to the tomato base. |
+| beans | [Cannellini beans](ref:ingredient/cannellini-beans) | 240 g | 40.00% | Use drained tinned beans; [kidney beans](ref:ingredient/kidney-beans), [black beans](ref:ingredient/black-beans), or [pinto beans](ref:ingredient/pinto-beans) are alternatives. |
 
----
+### Technique Applications
 
-## PHASE C — RICE + SERVE
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [Spice blooming](ref:technique/spice-blooming) | Medium heat for 60–90 s, stirring | Extract spices into chorizo fat without burning them. |
+| [Reduction](ref:technique/reduction) | Red wine to a nearly dry, syrupy glaze | Concentrate wine and expose the fond before adding tomato. |
+| [Stewing](ref:technique/stewing) | Gentle covered simmer for 30–45 min; beans only for final 8–10 min | Tenderize thighs while keeping beans intact and sauce tight. |
 
----
+### Principles
 
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Rice (dry; basmati/jasmine/white) | 160 g | 26.67% |
->> | Water (for rice) | 320 g | 53.33% |
->> | Salt (for rice water) | 2 g | 0.33% |
->
->> [!col-right]
->> ### Method
->> 1. Cook rice (1:2 rice:water by mass): 160 g rice + 320 g water + 2 g salt.
->> 2. Spoon stew over rice. Keep the sauce tight and glossy.
+- [Fat as flavour carrier](ref:principle/fat-as-flavour-carrier) — Rendered chorizo fat distributes paprika, cumin, coriander, and chili.
+- [Fond dissolution](ref:principle/fond-dissolution) — Wine and tomato liquid dissolve browned pot fond into the sauce.
+- [Collagen conversion](ref:principle/collagen-conversion) — Gentle stewing tenderizes the thighs without a hard boil.
 
-## STRUCTURAL NOTES
+### Method
 
-- Browning chicken and rendering chorizo builds a fat-and-fond base that carries smoked paprika and cumin.
-- Red wine reduced to a glaze concentrates fruit/tannin and becomes the backbone of the sauce once tomatoes hit the pot.
-- Blooming spices in fat prevents raw, dusty flavour and distributes heat evenly through the stew.
-- Beans go in late to avoid chalky skins and blowout; they should read as creamy and intact.
+1. Lower the pot to medium heat and soften onion in the rendered fat for 6–8 min until lightly golden; add garlic for 30–45 s.
+2. Add paprika, ground cumin, ground coriander, chili, and tomato paste. Stir for 60–90 s until fragrant and slightly darker.
+3. Add red wine and reduce to a nearly dry, syrupy glaze.
+4. Add hand-crushed tinned tomatoes, water, fish sauce, Worcestershire sauce, and sherry vinegar; scrape up the fond.
+5. Return both the browned chicken and reserved chorizo to the pot. Bring to a gentle simmer, cover, and stew for 30–45 min until the thighs are tender, near an 85 C texture endpoint.
+6. Add drained beans for the final 8–10 min to heat through without breaking. Uncover for the last few minutes to tighten the sauce as needed; adjust salt to balance.
+
+### Phase Outputs Used
+
+| Phase Output | Use |
+| --- | --- |
+| Browned chicken | Return all of `browned-chicken` with the tomato base. |
+| Rendered chorizo | Return all of `rendered-chorizo` with the chicken. |
+
+### Phase Outputs
+
+| Key | Phase Output | Description |
+| --- | --- | --- |
+| finished-stew | Finished stew | Tender chicken, intact beans, and tight tomato sauce for plating. |
+
+## PHASE C — COOK RICE AND SERVE
+
+### Ingredient Uses
+
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| rice | [Basmati rice](ref:ingredient/basmati-rice) | 160 g | 26.67% | Dry rice; [jasmine rice](ref:ingredient/jasmine-rice) or [white rice](ref:ingredient/white-rice) are alternatives. |
+| rice-water | [Water](ref:ingredient/water) | 320 g | 53.33% | Use a 1:2 rice-to-water mass ratio. |
+| rice-salt | [Salt](ref:ingredient/salt) | 2 g | 0.33% | Season the rice water. |
+
+### Method
+
+1. Cook the rice with 320 g water and 2 g salt until tender.
+2. Spoon the stew over the rice, keeping the sauce tight and glossy.
+
+### Phase Outputs Used
+
+| Phase Output | Use |
+| --- | --- |
+| Finished stew | Spoon all of `finished-stew` over the cooked rice. |
 
 ## FAILURE MODES
 
-- Symptom: Sauce is thin and soupy.
-- Likely cause: Too much added water, simmer too low/short, or pot covered the entire time.
-- Corrective action: Uncover and simmer to tighten; next time add less water and reduce wine to a true glaze.
-
-- Symptom: Stew tastes harsh and bitter.
-- Likely cause: Burnt spices or garlic, or wine reduced too hard at high heat.
-- Corrective action: Bloom spices briefly on medium (30–60 seconds) and add wine before anything scorches.
-
-- Symptom: Chicken is tight/dry.
-- Likely cause: Browning too far into doneness and then over-stewing at a hard boil.
-- Corrective action: Brown for colour, then stew at a gentle simmer; stop when thighs are tender (~85 C texture endpoint).
-
-- Symptom: Beans are broken/mushy.
-- Likely cause: Added too early and boiled aggressively.
-- Corrective action: Add beans only for final 8–10 minutes and keep simmer gentle.
+| Symptom | Likely cause | Corrective action |
+| --- | --- | --- |
+| Thin, soupy sauce | Too much water, inadequate wine reduction, or a fully covered finish. | Reduce wine to a glaze, then uncover and simmer to tighten. |
+| Harsh, bitter stew | Garlic or spices burned, or wine reduced too hard. | Bloom briefly over medium heat and add wine before scorching. |
+| Tight, dry chicken | It browned to doneness or boiled hard during the stew. | Brown for colour, then simmer gently to a tender thigh texture near 85 C. |
+| Broken, mushy beans | They were added too early or boiled aggressively. | Add only for the final 8–10 min at a gentle simmer. |
