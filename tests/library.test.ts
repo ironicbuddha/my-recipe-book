@@ -1169,9 +1169,9 @@ The Curator reviewed the evidence and retired this Candidate.
       ingredients: loadLibrary(process.cwd()).knowledge.filter(
         (entry) => entry.type === 'ingredient',
       ).length,
-      principles: 39,
+      principles: 42,
       recipes: recipes.length,
-      techniques: 40,
+      techniques: 52,
     });
     const singapore = recipes.find(
       (recipe) => recipe.slug === 'singapore-chicken-rice',
