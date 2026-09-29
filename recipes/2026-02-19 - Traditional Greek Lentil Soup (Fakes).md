@@ -1,170 +1,129 @@
 ---
 title: "Traditional Greek Lentil Soup (Fakes)"
 date: 2026-02-19
-type: recipe
-version: v1.0
+identity: recipe/traditional-greek-lentil-soup-fakes
+version: 1
 yield: "2 portions"
-portions: 2
-target_internal_temperature_c: null
-primary_ingredient: "brown lentils"
-primary_mass_g: 167
-techniques: ["soffritto", "lentil simmering", "acid finishing"]
-principles: ["starch thickening", "aromatic base development", "acid brightness preservation"]
-tags: ["dish-soup", "greek", "lentils", "soup", "vegetarian", "tender"]
-cssclass: modernist-recipe
+scale_basis:
+  ingredient: ingredient/brown-lentils
+  quantity_g: 166.67
+tags: [dish-soup, greek, lentils, soup, vegetarian, tender]
 ---
 
-# TRADITIONAL GREEK LENTIL SOUP (FAKES)
+Village-style Greek lentil soup, finished off heat with lemon or red wine vinegar and raw extra virgin olive oil. For a thicker body, blend 1–2 ladles and return them to the pot. Refrigerate for 3–4 days; reheat gently and refresh with acid and oil.
 
-Yield: 2 portions
-Portions: 2
-Target: texture-driven endpoint (lentils tender, broth thickened)
+## PHASE A — PREPARE LENTILS
 
-Primary Ingredient Basis: `167 g brown lentils = 100%`
+### Ingredient Uses
 
-Classic village-style Greek lentil soup. Finished with lemon or red wine vinegar and raw EVOO.
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| lentils | [Brown lentils](ref:ingredient/brown-lentils) | 166.67 g | 100.00% | Use dry lentils; rinse thoroughly. |
 
+### Method
 
----
+1. Rinse the lentils under cold water until runoff is clear.
+2. If the lentils are old or dusty, optionally boil for 5 min, then drain and rinse to reduce bitterness.
 
-## PHASE A — LENTIL PREPARATION
+### Phase Outputs
 
----
+| Key | Phase Output | Description |
+| --- | --- | --- |
+| prepared-lentils | Prepared lentils | Rinsed, optionally pre-boiled lentils ready to simmer. |
 
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Brown lentils (dry) | 166.67 g | 100.00% |
->
->> [!col-right]
->> ### Method
->> 1. Rinse lentils thoroughly under cold water until runoff is clear.
->> 2. Optional: bring lentils to a brief boil (5 min), drain, and rinse to reduce bitterness.
+## PHASE B — MAKE THE SOFFRITTO
 
+### Ingredient Uses
 
----
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| cooking-oil | [Extra virgin olive oil](ref:ingredient/extra-virgin-olive-oil) | 20 g | 12.00% | Heat for the aromatic base. |
+| onion | [Onion](ref:ingredient/onion) | 66.67 g | 40.00% | Finely chop. |
+| carrot | [Carrot](ref:ingredient/carrot) | 50 g | 30.00% | Dice. |
+| garlic | [Garlic](ref:ingredient/garlic) | 5 g | 3.00% | Mince and add after the vegetables soften. |
 
-## PHASE B — SOFFRITTO (AROMATIC BASE)
+### Technique Applications
 
----
-
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Extra virgin olive oil (for cooking) | 20 g | 12.00% |
->> | Onion, finely chopped | 66.67 g | 40.00% |
->> | Carrot, diced | 50 g | 30.00% |
->> | Garlic, minced | 5 g | 3.00% |
->
->> [!col-right]
->> ### Method
->> 1. Heat olive oil in a heavy pot over medium heat.
->> 2. Add onion and carrot. Cook 5–7 minutes until softened and lightly translucent.
->> 3. Add garlic and cook 30 seconds until fragrant.
-
-
----
-
-## PHASE C — BUILD THE SOUP
-
----
-
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Crushed tomatoes | 133.33 g | 80.00% |
->> | Bay leaves | 0.67 g | 0.40% |
->> | Dried oregano (optional) | 0.67 g | 0.40% |
->> | Water or light vegetable stock | 500 g | 300.00% |
->> | Salt | 3.33 g | 2.00% |
->> | Black pepper | 0.67 g | 0.40% |
->> | Prepared lentils | from Phase A | — |
->
->> [!col-right]
->> ### Method
->> 1. Stir in crushed tomatoes, bay leaves, oregano, salt, and pepper.
->> 2. Add lentils and water/stock.
->> 3. Bring to a boil, then reduce to a gentle simmer.
->> 4. Cook uncovered or partially covered for 35–45 minutes, stirring occasionally, until lentils are tender and broth has thickened slightly.
->> 5. Adjust seasoning. Add additional water if a looser texture is desired.
-
-
----
-
-## PHASE D — FINISH (CRITICAL STEP)
-
----
-
-> [!col]
->> [!col-left]
->> ### Components
->> | Ingredient | Quantity | Scaling |
->> | --- | --- | --- |
->> | Fresh lemon juice or red wine vinegar | 10 g | 6.00% |
->> | Extra virgin olive oil (raw drizzle) | 13.33 g | 8.00% |
->
->> [!col-right]
->> ### Method
->> 1. Remove soup from heat.
->> 2. Stir in lemon juice or red wine vinegar just before serving.
->> 3. Ladle into bowls and drizzle generously with raw extra virgin olive oil.
-
-## RELATED LINKS
-<!-- AUTO-GENERATED:RELATED-LINKS:START -->
-
-### Techniques
-- [[Technique - Acid Finishing]]
-- [[Technique - Lentil Simmering]]
-- [[Technique - Soffritto]]
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [Soffritto](ref:technique/soffritto) | Medium heat; onion and carrot for 5–7 min, then garlic for 30 s | Build a sweet, translucent aromatic base without burning garlic. |
 
 ### Principles
-- [[Principle - Acid Brightness Preservation]]
-- [[Principle - Aromatic Base Development]]
-- [[Principle - Starch Thickening]]
 
-### Ingredients
-- [[Ingredient - Bay Leaf]]
-- [[Ingredient - Black Pepper]]
-- [[Ingredient - Brown Lentils]]
-- [[Ingredient - Carrot]]
-- [[Ingredient - Crushed Tomatoes]]
-- [[Ingredient - Dried Oregano]]
-- [[Ingredient - Extra Virgin Olive Oil]]
-- [[Ingredient - Fresh Lemon Juice Or Red Wine Vinegar]]
-- [[Ingredient - Garlic]]
-- [[Ingredient - Onion]]
-- [[Ingredient - Salt]]
-- [[Ingredient - Water Or Light Vegetable Stock]]
+- [Aromatic extraction](ref:principle/aromatic-extraction) — Gently cooked aromatics form the soup's savoury foundation.
 
-<!-- AUTO-GENERATED:RELATED-LINKS:END -->
+### Method
 
-## STRUCTURAL NOTES
+1. Heat the oil in a heavy pot over medium heat.
+2. Cook onion and carrot for 5–7 min until softened and lightly translucent.
+3. Add garlic and cook for 30 s until fragrant.
 
-- For a slightly thicker body, blend 1–2 ladles of soup and return to the pot.
-- Lemon provides brighter acidity; red wine vinegar gives deeper earthiness. Choose based on mood.
-- The finishing olive oil and acid must be added at the end to preserve aroma and brightness — cooking destroys the volatile compounds you're paying for.
-- Keeps well refrigerated for 3–4 days; reheat gently and refresh with additional lemon and olive oil before serving.
+## PHASE C — SIMMER THE SOUP
+
+### Ingredient Uses
+
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| tomatoes | [Tomato](ref:ingredient/tomato) | 133.33 g | 80.00% | Use crushed tomatoes. |
+| bay | [Bay leaf](ref:ingredient/bay-leaf) | 0.67 g | 0.40% | Add whole leaves. |
+| oregano | [Oregano](ref:ingredient/oregano) | 0.67 g | 0.40% | Optional; use dried oregano. |
+| water | [Water](ref:ingredient/water) | 500 g | 299.99% | Light vegetable stock is an alternative: [vegetable stock](ref:ingredient/vegetable-stock). Add more as needed for a looser texture. |
+| salt | [Salt](ref:ingredient/salt) | 3.33 g | 2.00% | Initial seasoning; adjust at the end. |
+| pepper | [Black pepper](ref:ingredient/black-pepper) | 0.67 g | 0.40% | Season the broth. |
+
+### Technique Applications
+
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [Simmering](ref:technique/simmering) | Gentle, uncovered or partly covered simmer for 35–45 min | Tenderize lentils while retaining their shape and slightly thickening the broth. |
+
+### Principles
+
+- [Starch gelatinisation](ref:principle/starch-gelatinisation) — Lentil starch helps give the broth body during simmering.
+
+### Method
+
+1. Stir the crushed tomatoes, bay leaves, optional dried oregano, salt, and pepper into the soffritto.
+2. Add the prepared lentils and water or the stated light vegetable stock alternative.
+3. Bring to a boil, then reduce to a gentle simmer.
+4. Cook uncovered or partly covered for 35–45 min, stirring occasionally, until lentils are tender but hold their shape and broth thickens slightly.
+5. Adjust seasoning and add water as needed. For more body, blend 1–2 ladles and return them to the pot.
+
+### Phase Outputs Used
+
+| Phase Output | Use |
+| --- | --- |
+| Prepared lentils | Simmer all of `prepared-lentils` in the soup. |
+
+## PHASE D — FINISH OFF HEAT
+
+### Ingredient Uses
+
+| Key | Ingredient | Quantity | Scaling | Use |
+| --- | --- | --- | --- | --- |
+| lemon | [Lemon juice](ref:ingredient/lemon-juice) | 10 g | 6.00% | Fresh lemon is primary; [red wine vinegar](ref:ingredient/red-wine-vinegar) is the earthier alternative. |
+| finishing-oil | [Extra virgin olive oil](ref:ingredient/extra-virgin-olive-oil) | 13.33 g | 8.00% | Drizzle raw over the bowls. |
+
+### Technique Applications
+
+| Technique | Controls | Purpose |
+| --- | --- | --- |
+| [Acid finishing](ref:technique/acid-finishing) | Off heat, just before serving | Keep the acid bright and the raw oil aromatic. |
+
+### Principles
+
+- [Acid balance](ref:principle/acid-balance) — The late acid and oil lift the earthy lentil broth.
+
+### Method
+
+1. Remove the soup from heat and stir in lemon juice or red wine vinegar just before serving.
+2. Ladle into bowls and drizzle with raw extra virgin olive oil.
 
 ## FAILURE MODES
 
-- Symptom: Soup tastes flat and one-dimensional.
-- Likely cause: Acid and raw olive oil skipped or added too early (cooked out).
-- Corrective action: Always finish off heat. The acid and oil are not optional — they are the dish.
-
-- Symptom: Lentils are mushy and have lost all texture.
-- Likely cause: Overcooked or boiled too aggressively.
-- Corrective action: Maintain gentle simmer. Check at 35 minutes — lentils should be tender but hold shape.
-
-- Symptom: Bitter, harsh undertone.
-- Likely cause: Lentils not rinsed properly, or optional pre-boil skipped on older stock.
-- Corrective action: Rinse until water runs clear. Pre-boil and drain if lentils are old or dusty.
-
-- Symptom: Broth is too thin.
-- Likely cause: Too much liquid or insufficient cook time for starch release.
-- Corrective action: Simmer longer uncovered, or blend a portion and stir back in.
+| Symptom | Likely cause | Corrective action |
+| --- | --- | --- |
+| Flat, one-dimensional soup | Acid and raw oil were omitted or cooked out. | Finish off heat with the acid and oil. |
+| Lentils are mushy | They overcooked or boiled too hard. | Simmer gently and check texture at 35 min. |
+| Bitter undertone | Lentils were not rinsed or older stock needed a pre-boil. | Rinse until clear; pre-boil and drain older lentils. |
+| Broth is too thin | Too much liquid or too little starch release. | Simmer uncovered longer or blend and return a portion. |

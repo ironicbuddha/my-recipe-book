@@ -184,6 +184,32 @@ Fixture-only Curation record for retirement mechanics.
 }
 
 describe('loadLibrary', () => {
+  it('publishes the six approved Batch 4 versions with one-hop old routes', () => {
+    const library = loadLibrary();
+    const routes = publisherRedirects();
+    const batch = [
+      ['cowboy-beans', 1, '2026-02-19-cowboy-beans'],
+      ['gratin-dauphinois', 1, '2026-02-19-gratin-dauphinois'],
+      ['tomato-bredie', 2, '2026-02-19-tomato-bredie'],
+      ['traditional-greek-lentil-soup-fakes', 1, '2026-02-19-traditional-greek-lentil-soup-fakes'],
+      ['creamy-porcini-mushroom-ragout-polenta', 1, '2026-02-21-creamy-porcini-mushroom-ragout-with-polenta'],
+      ['spanish-chicken-chorizo-stew', 1, '2026-02-24-spanish-chicken-and-chorizo-stew'],
+    ] as const;
+
+    expect(batch).toHaveLength(6);
+    expect(library.recipes).toHaveLength(24);
+    for (const [key, version, oldSlug] of batch) {
+      const destination = `/recipes/${key}/`;
+      const source = `/recipes/${oldSlug}/`;
+      expect(library.recipes.find((recipe) => recipe.identity === `recipe/${key}`)).toMatchObject({
+        href: destination,
+        version,
+      });
+      expect(routes[source]).toEqual({ destination, status: 301 });
+      expect(routes).not.toHaveProperty(destination);
+    }
+  });
+
   it('publishes exactly the six converted Batch 3 recipes with one-hop old routes', () => {
     const library = loadLibrary();
     const routes = publisherRedirects();
