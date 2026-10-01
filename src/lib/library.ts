@@ -338,12 +338,32 @@ export function renderContent(body: string, library: CulinaryLibrary): string {
       ),
   );
   const renderer = new MarkdownIt({ linkify: true, typographer: true });
+  renderer.renderer.rules.heading_open = (
+    tokens,
+    index,
+    options,
+    _env,
+    self,
+  ) => {
+    const title = tokens[index + 1]?.content ?? '';
+    if (tokens[index]?.tag === 'h2' && /^PHASE [A-Z]+ — .+$/u.test(title)) {
+      tokens[index]?.attrSet('id', phaseHeadingId(title));
+    }
+    return self.renderToken(tokens, index, options);
+  };
   renderer.renderer.rules.table_open = (tokens, index, options, _env, self) => {
-    const header = tokens
-      .slice(index, index + 8)
-      .find((token) => token.type === 'inline')?.content;
-    if (header === 'Symptom') {
+    const headers: string[] = [];
+    for (let cursor = index + 1; cursor < tokens.length; cursor += 1) {
+      const token = tokens[cursor];
+      if (token?.type === 'thead_close') break;
+      if (token?.type === 'inline') headers.push(token.content);
+    }
+    if (headers[0] === 'Symptom') {
       tokens[index]?.attrJoin('class', 'table--failure-modes');
+    } else if (headers[0] === 'Key' && headers[1] === 'Ingredient') {
+      tokens[index]?.attrJoin('class', 'table--ingredient-uses');
+    } else if (headers[0] === 'Technique') {
+      tokens[index]?.attrJoin('class', 'table--technique-applications');
     }
     return self.renderToken(tokens, index, options);
   };
@@ -365,6 +385,15 @@ export function routeFor(identity: string): string {
   const [type, key] = identity.split('/');
   const plural = `${type}s`;
   return `/${plural}/${key}/`;
+}
+
+export function phaseHeadingId(value: string): string {
+  return value
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/gu, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/gu, '-')
+    .replace(/^-+|-+$/gu, '');
 }
 
 /** Returns publisher-owned permanent redirects for retired public identities. */
@@ -2186,8 +2215,30 @@ function extractObservedIngredients(body: string): string[] {
   const lines = body.split(/\r?\n/u);
   const stripQuotePrefix = (line: string): string =>
     line.replace(/^\s*(?:>\s*)*/u, '');
+  let optionalSection = false;
   for (let index = 0; index < lines.length; index += 1) {
     const header = stripQuotePrefix(lines[index] ?? '');
+    if (/^## /u.test(header)) {
+      optionalSection = /^## (?:VARIATIONS|OPTIONAL REFINEMENTS)$/u.test(
+        header,
+      );
+    }
+    if (optionalSection) {
+      const addition = /^- (?:[^:]+: )?add (.+)\.$/iu.exec(header)?.[1];
+      const pairing = /^- A (?:dry )?(.+?) alongside\b/iu.exec(header)?.[1];
+      if (addition) {
+        ingredients.push(
+          ...addition
+            .replace(/\[([^\]]+)\]\([^)]*\)/gu, '$1')
+            .replace(/^a tiny flake of /iu, '')
+            .replace(/^(?:sliced|shaved) /iu, '')
+            .replace(/ to .+$/iu, '')
+            .replace(/ sparingly$/iu, '')
+            .split(/ or /iu),
+        );
+      }
+      if (pairing) ingredients.push(pairing);
+    }
     const canonical = /^\|\s*Key\s*\|\s*Ingredient\s*\|\s*Quantity\s*\|/iu.test(
       header,
     );

@@ -1048,13 +1048,18 @@ code {
   text-transform: uppercase;
 }
 
-.recipe-body table:not(.table--failure-modes) td:nth-child(2),
-.recipe-body table:not(.table--failure-modes) td:nth-child(3),
-.recipe-body table:not(.table--failure-modes) th:nth-child(2),
-.recipe-body table:not(.table--failure-modes) th:nth-child(3) {
+.recipe-body .table--ingredient-uses td:nth-child(3),
+.recipe-body .table--ingredient-uses td:nth-child(4),
+.recipe-body .table--ingredient-uses th:nth-child(3),
+.recipe-body .table--ingredient-uses th:nth-child(4) {
   font-variant-numeric: tabular-nums;
   text-align: right;
   white-space: nowrap;
+}
+
+.recipe-body .table--technique-applications th:first-child,
+.recipe-body .table--technique-applications td:first-child {
+  width: 25%;
 }
 
 .recipe-body ul,

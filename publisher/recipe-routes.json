@@ -119,6 +119,36 @@
       "source": "/recipes/2026-02-24-spanish-chicken-and-chorizo-stew/",
       "type": "redirect",
       "destination": "recipe/spanish-chicken-chorizo-stew"
+    },
+    {
+      "source": "/recipes/2026-02-19-manchego-with-thyme-infused-honey-and-coffee-dust/",
+      "type": "redirect",
+      "destination": "recipe/manchego-thyme-infused-honey-coffee-dust"
+    },
+    {
+      "source": "/recipes/2026-02-25-aeropress-competition-cup/",
+      "type": "redirect",
+      "destination": "recipe/aeropress-competition-cup"
+    },
+    {
+      "source": "/recipes/2026-02-25-aeropress-everyday-cup/",
+      "type": "redirect",
+      "destination": "recipe/aeropress-everyday-cup"
+    },
+    {
+      "source": "/recipes/2026-02-27-monkey-gland-chicken/",
+      "type": "redirect",
+      "destination": "recipe/monkey-gland-chicken"
+    },
+    {
+      "source": "/recipes/2026-03-08-reverse-seared-fillet-with-hibachi-cabbage-steakhouse-fries-and-gochujang-sauce/",
+      "type": "redirect",
+      "destination": "recipe/reverse-seared-fillet-hibachi-cabbage-steakhouse-fries-gochujang-sauce"
+    },
+    {
+      "source": "/recipes/2026-05-29-celery-green-apple-fennel-pollen-slaw/",
+      "type": "redirect",
+      "destination": "recipe/celery-green-apple-fennel-pollen-slaw"
     }
   ]
 }
