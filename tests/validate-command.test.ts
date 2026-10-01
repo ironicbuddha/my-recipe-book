@@ -4,6 +4,7 @@ import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 
 import { afterEach, describe, expect, it } from 'vitest';
+import { restoreGrandfatheredFixture } from './helpers/grandfathered-fixture';
 
 const roots: string[] = [];
 
@@ -28,6 +29,7 @@ function copyPilotLibrary(): string {
       recursive: true,
     });
   }
+  restoreGrandfatheredFixture(root);
   return root;
 }
 
@@ -920,6 +922,95 @@ The Curator reviewed the evidence and retired this Candidate.
       'records/promotions: prior revision is required to validate Promotion history',
     );
   });
+
+  it('automatically proves a repository Promotion and rejects changed evidence and missing Git ancestry', () => {
+    const root = copyPilotLibrary();
+    const runGit = (args: string[]) => {
+      const result = spawnSync('git', ['-C', root, ...args], {
+        encoding: 'utf8',
+      });
+      expect(result.status, result.stderr).toBe(0);
+    };
+    runGit(['init', '-q']);
+    runGit(['config', 'core.fsmonitor', 'false']);
+    runGit(['config', 'gc.auto', '0']);
+    const canonical = path.join(
+      root,
+      'recipes/2026-02-19 - Singapore Chicken Rice.md',
+    );
+    const draft = path.join(root, 'recipes/drafts/singapore-chicken-rice@2.md');
+    fs.mkdirSync(path.dirname(draft), { recursive: true });
+    fs.writeFileSync(
+      draft,
+      fs.readFileSync(canonical, 'utf8').replace('version: 1', 'version: 2'),
+    );
+    const commit = (message: string) => {
+      runGit(['add', '.']);
+      runGit([
+        '-c',
+        'user.name=Fixture Curator',
+        '-c',
+        'user.email=fixture@example.invalid',
+        '-c',
+        'core.hooksPath=/dev/null',
+        'commit',
+        '-qm',
+        message,
+      ]);
+    };
+    commit('Preserve exact draft');
+    preparePromotionTransition(root);
+    fs.rmSync(draft);
+    const validateRepository = (repository: string) =>
+      spawnSync(
+        path.join(process.cwd(), 'node_modules/.bin/tsx'),
+        [path.join(process.cwd(), 'scripts/validate-content.ts')],
+        {
+          cwd: repository,
+          encoding: 'utf8',
+          env: {
+            ...process.env,
+            CULINARY_LIBRARY_ROOT: repository,
+            CULINARY_LIBRARY_PREVIOUS_ROOT: '',
+          },
+        },
+      );
+    const workingPromotion = validateRepository(root);
+    expect(workingPromotion.status, workingPromotion.stderr).toBe(0);
+    commit('Promote exact version');
+    expect(validateRepository(root).status).toBe(0);
+    const experiment = path.join(
+      root,
+      'experiments/2026-09-11 - Promotion trial.md',
+    );
+    fs.writeFileSync(
+      experiment,
+      fs
+        .readFileSync(experiment, 'utf8')
+        .replace(
+          'The control can be reproduced.',
+          'Changed frozen hypothesis.',
+        ),
+    );
+    const changedEvidence = validateRepository(root);
+    expect(changedEvidence.status).not.toBe(0);
+    expect(changedEvidence.stderr).toContain(
+      'prior completed evidence for experiment/promotion-trial is immutable',
+    );
+    const shallow = fs.mkdtempSync(path.join(os.tmpdir(), 'culinary-shallow-'));
+    roots.push(shallow);
+    const clone = spawnSync(
+      'git',
+      ['clone', '-q', '--depth', '1', `file://${root}`, shallow],
+      { encoding: 'utf8' },
+    );
+    expect(clone.status, clone.stderr).toBe(0);
+    const missingHistory = validateRepository(shallow);
+    expect(missingHistory.status).not.toBe(0);
+    expect(missingHistory.stderr).toContain(
+      'prior revision is required to validate Promotion history',
+    );
+  }, 15_000);
 
   it('rejects incomplete or wrongly scoped Promotion evidence and a mutated predecessor through the public command', () => {
     const previousRoot = copyPilotLibrary();

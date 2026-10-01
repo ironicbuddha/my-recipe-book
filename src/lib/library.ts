@@ -1,5 +1,7 @@
 import fs from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
+import { spawnSync } from 'node:child_process';
 
 import matter from 'gray-matter';
 import MarkdownIt from 'markdown-it';
@@ -133,6 +135,68 @@ const DISH_TAGS = new Set([
 export function loadLibrary(
   root = process.env.CULINARY_LIBRARY_ROOT ?? process.cwd(),
 ): CulinaryLibrary {
+  if (
+    !fs.existsSync(root) ||
+    fs.realpathSync(root) !== fs.realpathSync(process.cwd()) ||
+    process.env.CULINARY_LIBRARY_PREVIOUS_ROOT
+  ) {
+    return loadLibrarySources(root);
+  }
+
+  const git = (args: string[]) => spawnSync('git', args, { cwd: root });
+  if (git(['rev-parse', '--verify', 'HEAD']).status !== 0) {
+    return loadLibrarySources(root);
+  }
+  let revision = 'HEAD';
+  if (
+    git(['diff', '--quiet']).status === 0 &&
+    git(['diff', '--cached', '--quiet']).status === 0
+  ) {
+    // Compare a merge with the reviewed branch containing its draft history.
+    if (git(['rev-parse', '--verify', 'HEAD^2']).status === 0) {
+      revision = 'HEAD^2';
+    } else if (git(['rev-parse', '--verify', 'HEAD^']).status === 0) {
+      revision = 'HEAD^';
+    } else {
+      return loadLibrarySources(root);
+    }
+  }
+  const previousRoot = fs.mkdtempSync(
+    path.join(os.tmpdir(), 'culinary-prior-'),
+  );
+  try {
+    const archive = spawnSync(
+      'git',
+      [
+        'archive',
+        revision,
+        '*.md',
+        'records/migrations/legacy-sources',
+        'publisher',
+      ],
+      {
+        cwd: root,
+        maxBuffer: 256 * 1024 * 1024,
+      },
+    );
+    if (archive.status !== 0) {
+      throw new Error(`Cannot read culinary prior revision ${revision}`);
+    }
+    const extract = spawnSync('tar', ['-x', '-C', previousRoot], {
+      input: archive.stdout,
+    });
+    if (extract.status !== 0) {
+      throw new Error(`Cannot extract culinary prior revision ${revision}`);
+    }
+    process.env.CULINARY_LIBRARY_PREVIOUS_ROOT = previousRoot;
+    return loadLibrarySources(root);
+  } finally {
+    delete process.env.CULINARY_LIBRARY_PREVIOUS_ROOT;
+    fs.rmSync(previousRoot, { recursive: true, force: true });
+  }
+}
+
+function loadLibrarySources(root: string): CulinaryLibrary {
   const diagnostics: string[] = [];
   const sourceRecords = readSourceRecords(root, diagnostics);
   const inventories = readInventories(root, diagnostics);

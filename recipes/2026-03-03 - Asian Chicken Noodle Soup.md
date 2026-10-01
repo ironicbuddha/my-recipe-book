@@ -1,8 +1,8 @@
 ---
 title: "Asian Ginger Chicken Noodle Soup"
-date: 2026-03-03
+date: 2026-10-01
 identity: recipe/asian-ginger-chicken-noodle-soup
-version: 2
+version: 3
 yield: "2.5 L broth plus 4 portions"
 scale_basis:
   ingredient: ingredient/whole-chicken
@@ -10,7 +10,7 @@ scale_basis:
 tags: [dish-soup, asian, chicken, noodles]
 ---
 
-Clear fortified chicken broth with noodles, vegetables, and fresh herbs.
+Clear fortified chicken broth with noodles, vegetables, and fresh herbs. Four additional whole chicken wings enrich the stock's body and are discarded after extraction.
 
 ## PHASE A — EXTRACT STOCK
 
@@ -19,6 +19,7 @@ Clear fortified chicken broth with noodles, vegetables, and fresh herbs.
 | Key | Ingredient | Quantity | Scaling | Use |
 | --- | --- | --- | --- | --- |
 | chicken | [Whole chicken](ref:ingredient/whole-chicken) | 1000 g | 100.00% | Use chicken leg quarters for the stock and shredded meat. |
+| stock-wings | [Chicken wings](ref:ingredient/chicken-wings) | As needed | — | Use 4 additional whole wings per 1000 g chicken; add at the start for stock extraction, then discard. |
 | water | [Water](ref:ingredient/water) | 2500 g | 250.00% | Form the broth. |
 | ginger | [Fresh ginger](ref:ingredient/fresh-ginger) | 40 g | 4.00% | Smash for the stock. |
 | spring-onion | [Spring onion](ref:ingredient/spring-onion) | 60 g | 6.00% | Bruise for the stock. |
@@ -26,13 +27,18 @@ Clear fortified chicken broth with noodles, vegetables, and fresh herbs.
 | peppercorns | [Black pepper](ref:ingredient/black-pepper) | 3 g | 0.30% | Season the stock. |
 | salt | [Salt](ref:ingredient/salt) | 12 g | 1.20% | Season the stock. |
 
+The wing quantity is specified by count. The reported trial used 4 unweighed wings, estimated retrospectively at 200–300 g total; this is not a measured mass or a numeric scaling basis.
+
 ### Principles
 
 - [Aromatic infusion](ref:principle/aromatic-infusion) — Slow extraction carries aromatic flavour into the broth.
 
 ### Method
 
-1. Combine the chicken and water, bring slowly to 85–90 C, skim for 20 min, add the aromatics and salt, simmer gently for 90 min, then remove and shred the chicken and strain the broth.
+1. Combine the chicken, the 4 additional wings, and water.
+2. Bring slowly to 85–90 C and skim for 20 min.
+3. Add the aromatics and salt, then simmer gently for 90 min. Keep a low simmer with only a few bubbles breaking the surface to preserve stock clarity; avoid a rolling boil.
+4. Remove the chicken used for shredded meat, shred it, discard the stock wings, and strain the broth.
 
 ## PHASE B — FORTIFY BROTH
 
@@ -79,5 +85,5 @@ Clear fortified chicken broth with noodles, vegetables, and fresh herbs.
 
 | Symptom | Likely cause | Corrective action |
 | --- | --- | --- |
-| Cloudy, heavy broth | The broth boiled hard. | Keep the stock at 85–90 C and avoid a rolling boil. |
+| Cloudy, heavy broth | The broth boiled hard. | Keep the stock at 85–90 C with only a few bubbles breaking the surface; avoid a rolling boil. |
 | Limp bok choy | It was blanched too long. | Blanch for only 1–2 min. |

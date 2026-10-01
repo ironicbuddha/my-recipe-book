@@ -20,6 +20,21 @@ Completed Experiments, and curated Knowledge Notes. It follows their required
 references even when those targets are unpublished. Unrelated Recipe Drafts and
 Knowledge Candidates remain outside that authoritative publication boundary.
 
+## Prior revision for Promotion and evidence
+
+Every repository library load, including Astro configuration, checks lifecycle
+history against a temporary Git snapshot. Working changes compare with `HEAD`;
+a clean commit compares with its parent. A merge compares with its second
+parent, the reviewed branch. Only Markdown, preserved migration source evidence,
+and publisher metadata are included; presentation assets are not needed.
+
+An isolated library does not inherit the repository's automatic history. Supply
+`CULINARY_LIBRARY_PREVIOUS_ROOT` explicitly when checking its Promotion or
+Completed Experiment immutability. This variable also overrides automatic
+history for repository loads. A missing required prior revision remains a hard
+failure. Preserve a draft revision before promoting so the comparison can prove
+the exact version was a Recipe Draft and its predecessor was preserved.
+
 ## Safe rehearsal
 
 Run a deliberately invalid revision through a preview deployment. Confirm that
