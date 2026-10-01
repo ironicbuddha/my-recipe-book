@@ -199,8 +199,25 @@ def extract_table_ingredients(text: str) -> list[str]:
     lines = text.splitlines()
     out: list[str] = []
     i = 0
+    optional_section = False
     while i < len(lines):
         clean = strip_quote_prefix(lines[i])
+        if clean.startswith("## "):
+            optional_section = clean in {"## VARIATIONS", "## OPTIONAL REFINEMENTS"}
+        if optional_section:
+            addition = re.match(r"^- (?:[^:]+: )?add (.+)\.$", clean, re.I)
+            pairing = re.match(r"^- A (?:dry )?(.+?) alongside\b", clean, re.I)
+            if addition:
+                materials = re.sub(r"\[([^\]]+)\]\([^)]*\)", r"\1", addition[1])
+                materials = re.sub(r"^a tiny flake of ", "", materials, flags=re.I)
+                materials = re.sub(r"^(?:sliced|shaved) ", "", materials, flags=re.I)
+                materials = re.sub(r" to .+$", "", materials, flags=re.I)
+                materials = re.sub(r" sparingly$", "", materials, flags=re.I)
+                for material in re.split(r" or ", materials, flags=re.I):
+                    if ingredient := normalize_ingredient(material):
+                        out.append(ingredient)
+            if pairing and (ingredient := normalize_ingredient(pairing[1])):
+                out.append(ingredient)
         legacy_table = re.match(
             r"^\|\s*Ingredient\s*\|\s*Quantity\s*\|\s*Scaling\s*\|",
             clean,

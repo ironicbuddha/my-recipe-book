@@ -54,6 +54,40 @@ function extractCandidates(root: string) {
   );
 }
 
+describe('optional ingredient observation extraction', () => {
+  it('extracts explicit optional additions and pairings without treating other prose as evidence', () => {
+    const result = spawnSync(
+      'python3',
+      [
+        '-c',
+        `
+import importlib.util
+spec = importlib.util.spec_from_file_location('extract', 'scripts/generate_crosslinks.py')
+extract = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(extract)
+source = '''## VARIATIONS
+
+- More richness: add shaved [pecorino](ref:ingredient/pecorino) or parmesan.
+- More herbaceous: add mint or dill sparingly.
+
+## OPTIONAL REFINEMENTS
+
+- A dry fino sherry alongside this is good.
+- Add a tiny flake of sea salt to sharpen contrast.
+
+## OTHER
+
+- More flavour: add imaginary material.
+'''
+assert extract.extract_table_ingredients(source) == ['Pecorino', 'Parmesan', 'Mint', 'Dill', 'Fino Sherry', 'Sea Salt']
+`,
+      ],
+      { cwd: process.cwd(), encoding: 'utf8' },
+    );
+    expect(result.status, result.stderr).toBe(0);
+  });
+});
+
 function completedExperiment(
   identity: string,
   primarySubject: string,

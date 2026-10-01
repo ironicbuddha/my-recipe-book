@@ -1,4 +1,9 @@
-import { loadLibrary, renderContent, type CulinaryLibrary } from './library';
+import {
+  loadLibrary,
+  phaseHeadingId,
+  renderContent,
+  type CulinaryLibrary,
+} from './library';
 
 export type RecipeEntry = {
   body: string;
@@ -17,13 +22,18 @@ export type RecipeEntry = {
   yieldText?: string;
 };
 
-export type LibraryCounts = Record<'recipes' | 'techniques' | 'principles' | 'ingredients' | 'experiments', number>;
+export type LibraryCounts = Record<
+  'recipes' | 'techniques' | 'principles' | 'ingredients' | 'experiments',
+  number
+>;
 export type RecipePhaseLink = { id: string; title: string };
 
 export function getAllRecipes(): RecipeEntry[] {
   const currentLibrary = library();
   return currentLibrary.recipes.map((recipe) => {
-    const primaryIngredient = currentLibrary.entries.find((entry) => entry.identity === recipe.basisIngredient);
+    const primaryIngredient = currentLibrary.entries.find(
+      (entry) => entry.identity === recipe.basisIngredient,
+    );
     return {
       body: recipe.body,
       date: recipe.date,
@@ -63,7 +73,7 @@ export function renderRecipeBody(markdown: string): string {
 
 export function getRecipePhases(markdown: string): RecipePhaseLink[] {
   return [...markdown.matchAll(/^## (PHASE [A-Z]+ — .+)$/gmu)].map((match) => ({
-    id: slugify(match[1] ?? ''),
+    id: phaseHeadingId(match[1] ?? ''),
     title: match[1] ?? '',
   }));
 }
@@ -73,25 +83,26 @@ function library(): CulinaryLibrary {
 }
 
 function excerpt(markdown: string): string {
-  return markdown.split(/\r?\n/u).find((line) => line.trim() && !line.startsWith('#'))?.trim() ?? '';
+  return (
+    markdown
+      .split(/\r?\n/u)
+      .find((line) => line.trim() && !line.startsWith('#'))
+      ?.trim() ?? ''
+  );
 }
 
 function formatDate(date: string): string {
-  return new Intl.DateTimeFormat('en-US', { day: 'numeric', month: 'long', year: 'numeric' }).format(
-    new Date(`${date}T00:00:00`),
-  );
+  return new Intl.DateTimeFormat('en-US', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  }).format(new Date(`${date}T00:00:00`));
 }
 
 function formatDishType(tags: string[]): string | undefined {
   const tag = tags.find((candidate) => candidate.startsWith('dish-'));
-  return tag?.replace(/^dish-/u, '').replace(/-/gu, ' ').replace(/\b\w/gu, (character) => character.toUpperCase());
-}
-
-function slugify(value: string): string {
-  return value
-    .normalize('NFKD')
-    .replace(/[\u0300-\u036f]/gu, '')
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/gu, '-')
-    .replace(/^-+|-+$/gu, '');
+  return tag
+    ?.replace(/^dish-/u, '')
+    .replace(/-/gu, ' ')
+    .replace(/\b\w/gu, (character) => character.toUpperCase());
 }

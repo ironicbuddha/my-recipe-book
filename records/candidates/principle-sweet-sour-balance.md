@@ -1,0 +1,15 @@
+---
+candidate: candidate/principle-sweet-sour-balance
+observed_type: principle
+observed_label: "sweet-sour balance"
+classification: curation-candidate
+classification_source: docs/migrations/2026-10-01-batch-5-curation-proposal.md
+---
+
+## Evidence
+
+- [Exact monkey-gland-chicken v1 source](../migrations/legacy-sources/batch-5/monkey-gland-chicken.txt) — "sweet-sour balance".
+
+## Disposition
+
+Evidence-only observation; the separate Batch 5 Curation record holds the human decision.

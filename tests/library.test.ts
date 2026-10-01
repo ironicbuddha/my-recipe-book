@@ -184,6 +184,74 @@ Fixture-only Curation record for retirement mechanics.
 }
 
 describe('loadLibrary', () => {
+  it('publishes only the six approved Batch 5 versions with direct old routes', () => {
+    const library = loadLibrary();
+    const routes = publisherRedirects();
+    const batch = [
+      [
+        'manchego-thyme-infused-honey-coffee-dust',
+        '2026-02-19-manchego-with-thyme-infused-honey-and-coffee-dust',
+      ],
+      ['aeropress-competition-cup', '2026-02-25-aeropress-competition-cup'],
+      ['aeropress-everyday-cup', '2026-02-25-aeropress-everyday-cup'],
+      ['monkey-gland-chicken', '2026-02-27-monkey-gland-chicken'],
+      [
+        'reverse-seared-fillet-hibachi-cabbage-steakhouse-fries-gochujang-sauce',
+        '2026-03-08-reverse-seared-fillet-with-hibachi-cabbage-steakhouse-fries-and-gochujang-sauce',
+      ],
+      [
+        'celery-green-apple-fennel-pollen-slaw',
+        '2026-05-29-celery-green-apple-fennel-pollen-slaw',
+      ],
+    ] as const;
+
+    expect(library.recipes).toHaveLength(30);
+    for (const [key, oldSlug] of batch) {
+      const destination = `/recipes/${key}/`;
+      expect(
+        library.recipes.find((entry) => entry.identity === `recipe/${key}`),
+      ).toMatchObject({
+        version: 1,
+        href: destination,
+      });
+      expect(routes[`/recipes/${oldSlug}/`]).toEqual({
+        destination,
+        status: 301,
+      });
+      expect(routes).not.toHaveProperty(destination);
+    }
+    expect(
+      library.recipes.some(
+        (entry) => entry.identity === 'recipe/hash-brownies',
+      ),
+    ).toBe(false);
+  });
+
+  it.each([
+    ['celery-green-apple-fennel-pollen-slaw', 'radicchio'],
+    ['celery-green-apple-fennel-pollen-slaw', 'dill'],
+    ['manchego-thyme-infused-honey-coffee-dust', 'fino sherry'],
+  ])(
+    'requires the actual optional %s source observation for %s Curation',
+    (key, label) => {
+      const root = copyPilotLibrary();
+      const snapshot = path.join(
+        root,
+        `records/migrations/legacy-sources/batch-5/${key}.txt`,
+      );
+      const original = fs.readFileSync(snapshot, 'utf8');
+      expect(() => loadLibrary(root)).not.toThrow();
+      fs.writeFileSync(
+        snapshot,
+        original.replace(label, 'unrelated material') +
+          `\n## OTHER\n\n- More flavour: add ${label}.\n`,
+      );
+      expect(() => loadLibrary(root)).toThrow(
+        'Curation evidence_sources must observe the candidate',
+      );
+    },
+  );
+
   it('publishes the six approved Batch 4 versions with one-hop old routes', () => {
     const library = loadLibrary();
     const routes = publisherRedirects();
@@ -191,17 +259,30 @@ describe('loadLibrary', () => {
       ['cowboy-beans', 1, '2026-02-19-cowboy-beans'],
       ['gratin-dauphinois', 1, '2026-02-19-gratin-dauphinois'],
       ['tomato-bredie', 2, '2026-02-19-tomato-bredie'],
-      ['traditional-greek-lentil-soup-fakes', 1, '2026-02-19-traditional-greek-lentil-soup-fakes'],
-      ['creamy-porcini-mushroom-ragout-polenta', 1, '2026-02-21-creamy-porcini-mushroom-ragout-with-polenta'],
-      ['spanish-chicken-chorizo-stew', 1, '2026-02-24-spanish-chicken-and-chorizo-stew'],
+      [
+        'traditional-greek-lentil-soup-fakes',
+        1,
+        '2026-02-19-traditional-greek-lentil-soup-fakes',
+      ],
+      [
+        'creamy-porcini-mushroom-ragout-polenta',
+        1,
+        '2026-02-21-creamy-porcini-mushroom-ragout-with-polenta',
+      ],
+      [
+        'spanish-chicken-chorizo-stew',
+        1,
+        '2026-02-24-spanish-chicken-and-chorizo-stew',
+      ],
     ] as const;
 
     expect(batch).toHaveLength(6);
-    expect(library.recipes).toHaveLength(24);
     for (const [key, version, oldSlug] of batch) {
       const destination = `/recipes/${key}/`;
       const source = `/recipes/${oldSlug}/`;
-      expect(library.recipes.find((recipe) => recipe.identity === `recipe/${key}`)).toMatchObject({
+      expect(
+        library.recipes.find((recipe) => recipe.identity === `recipe/${key}`),
+      ).toMatchObject({
         href: destination,
         version,
       });
@@ -219,9 +300,18 @@ describe('loadLibrary', () => {
         'hibachi-pork-charred-greens-spanish-green-sauce',
         '2026-02-19-hibachi-pork-with-charred-greens-and-spanish-green-sauce',
       ],
-      ['italian-sausages-puy-lentils', '2026-02-19-italian-sausages-with-puy-lentils'],
-      ['guanciale-olive-chili-pasta-sauce', '2026-02-19-guanciale-olive-and-chili-pasta-sauce'],
-      ['porchetta-fennel-pollen-salsa-verde', '2026-05-29-porchetta-with-fennel-pollen-and-salsa-verde'],
+      [
+        'italian-sausages-puy-lentils',
+        '2026-02-19-italian-sausages-with-puy-lentils',
+      ],
+      [
+        'guanciale-olive-chili-pasta-sauce',
+        '2026-02-19-guanciale-olive-and-chili-pasta-sauce',
+      ],
+      [
+        'porchetta-fennel-pollen-salsa-verde',
+        '2026-05-29-porchetta-with-fennel-pollen-and-salsa-verde',
+      ],
       [
         'soy-garlic-sesame-gochujang-hibachi-chicken-tacos',
         '2026-05-29-soy-garlic-sesame-gochujang-hibachi-chicken-tacos',
@@ -232,7 +322,9 @@ describe('loadLibrary', () => {
     for (const [key, oldSlug] of batch) {
       const destination = `/recipes/${key}/`;
       const source = `/recipes/${oldSlug}/`;
-      expect(library.recipes.find((recipe) => recipe.identity === `recipe/${key}`)).toMatchObject({
+      expect(
+        library.recipes.find((recipe) => recipe.identity === `recipe/${key}`),
+      ).toMatchObject({
         href: destination,
         version: 1,
       });
@@ -779,7 +871,10 @@ The duplicate candidate is not needed.
       'recipes/2026-09-12 - Batch Three Legacy.md',
     );
     const legacySource = fs.readFileSync(legacyPath, 'utf8');
-    fs.writeFileSync(legacyPath, legacySource.replace('>> | Chicken |', '>> | Pork |'));
+    fs.writeFileSync(
+      legacyPath,
+      legacySource.replace('>> | Chicken |', '>> | Pork |'),
+    );
     expect(() => loadLibrary(root)).toThrow(
       'Curation evidence_sources must observe the candidate',
     );
@@ -951,10 +1046,12 @@ approved_on: 2026-09-12
     const recipePath = path.join(root, 'recipes/2026-09-12 - Chicken.md');
     fs.writeFileSync(
       recipePath,
-      fs.readFileSync(recipePath, 'utf8').replace(
-        '| marinated-chicken | Marinated chicken |',
-        '| marinated-chicken | Seasoned chicken |',
-      ),
+      fs
+        .readFileSync(recipePath, 'utf8')
+        .replace(
+          '| marinated-chicken | Marinated chicken |',
+          '| marinated-chicken | Seasoned chicken |',
+        ),
     );
     expect(() => loadLibrary(root)).toThrow(
       'retire-candidate Curation evidence_sources must observe the candidate',
@@ -973,7 +1070,10 @@ approved_on: 2026-09-12
     fs.writeFileSync(
       guancialeSnapshot,
       original
-        .replace('primary_ingredient: guanciale', 'primary_ingredient: pancetta')
+        .replace(
+          'primary_ingredient: guanciale',
+          'primary_ingredient: pancetta',
+        )
         .replace('Guanciale (lardons)', 'Pancetta (lardons)'),
     );
     expect(() => loadLibrary(root)).toThrow(
@@ -995,7 +1095,10 @@ approved_on: 2026-09-12
     );
     fs.copyFileSync(
       snapshotPath,
-      path.join(root, 'recipes/2026-05-29 - Soy-garlic-sesame-gochujang-hibachi-chicken-tacos.md'),
+      path.join(
+        root,
+        'recipes/2026-05-29 - Soy-garlic-sesame-gochujang-hibachi-chicken-tacos.md',
+      ),
     );
     fs.appendFileSync(snapshotPath, '\n');
 
@@ -1195,9 +1298,9 @@ The Curator reviewed the evidence and retired this Candidate.
       ingredients: loadLibrary(process.cwd()).knowledge.filter(
         (entry) => entry.type === 'ingredient',
       ).length,
-      principles: 42,
+      principles: 47,
       recipes: recipes.length,
-      techniques: 52,
+      techniques: 62,
     });
     const singapore = recipes.find(
       (recipe) => recipe.slug === 'singapore-chicken-rice',
@@ -1209,6 +1312,23 @@ The Curator reviewed the evidence and retired this Candidate.
     expect(renderRecipeBody(singapore?.body ?? '')).toContain(
       'table--failure-modes',
     );
+    expect(renderRecipeBody(singapore?.body ?? '')).toContain(
+      'table--ingredient-uses',
+    );
+    expect(renderRecipeBody(singapore?.body ?? '')).toContain(
+      'table--technique-applications',
+    );
+  });
+
+  it('renders a heading target for every published Recipe phase link', () => {
+    for (const recipe of getAllRecipes()) {
+      const html = renderRecipeBody(recipe.body);
+      const phases = getRecipePhases(recipe.body);
+      expect(phases.length).toBeGreaterThan(0);
+      for (const phase of phases) {
+        expect(html).toContain(`<h2 id="${phase.id}">`);
+      }
+    }
   });
 
   it('keeps classified observations out of authoritative knowledge collections', () => {
