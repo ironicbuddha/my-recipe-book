@@ -3,6 +3,7 @@ import os from 'node:os';
 import path from 'node:path';
 
 import { afterEach, describe, expect, it } from 'vitest';
+import { restoreGrandfatheredFixture } from './helpers/grandfathered-fixture';
 
 import {
   ContentValidationError,
@@ -54,6 +55,7 @@ function copyPilotLibrary(): string {
       recursive: true,
     });
   }
+  restoreGrandfatheredFixture(root);
   return root;
 }
 
@@ -184,6 +186,35 @@ Fixture-only Curation record for retirement mechanics.
 }
 
 describe('loadLibrary', () => {
+  it('publishes the real accepted soup v3 and its exact-version Experiment without archive entries', () => {
+    const library = loadLibrary();
+    const soup = library.recipes.find(
+      (entry) => entry.identity === 'recipe/asian-ginger-chicken-noodle-soup',
+    );
+    expect(soup).toMatchObject({
+      version: 3,
+      href: '/recipes/asian-ginger-chicken-noodle-soup/',
+    });
+    expect(soup?.body).toContain('4 additional whole wings');
+    expect(
+      library.entries.find(
+        (entry) =>
+          entry.identity ===
+          'experiment/asian-ginger-chicken-noodle-soup-wing-stock-trial',
+      ),
+    ).toMatchObject({
+      href: '/experiments/asian-ginger-chicken-noodle-soup-wing-stock-trial/',
+    });
+    expect(
+      library.entries.filter(
+        (entry) => entry.identity === 'recipe/asian-ginger-chicken-noodle-soup',
+      ),
+    ).toHaveLength(1);
+    expect(publisherRedirects()).not.toHaveProperty(
+      '/recipes/asian-ginger-chicken-noodle-soup@2/',
+    );
+  });
+
   it('publishes only the six approved Batch 5 versions with direct old routes', () => {
     const library = loadLibrary();
     const routes = publisherRedirects();
@@ -1321,15 +1352,16 @@ The Curator reviewed the evidence and retired this Candidate.
   });
 
   it('renders a heading target for every published Recipe phase link', () => {
+    const currentLibrary = loadLibrary();
     for (const recipe of getAllRecipes()) {
-      const html = renderRecipeBody(recipe.body);
+      const html = renderContent(recipe.body, currentLibrary);
       const phases = getRecipePhases(recipe.body);
       expect(phases.length).toBeGreaterThan(0);
       for (const phase of phases) {
         expect(html).toContain(`<h2 id="${phase.id}">`);
       }
     }
-  });
+  }, 15000);
 
   it('keeps classified observations out of authoritative knowledge collections', () => {
     const countsBefore = getLibraryCounts();

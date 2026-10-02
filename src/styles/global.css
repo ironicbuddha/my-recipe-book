@@ -1227,6 +1227,10 @@ code {
 }
 
 @media (max-width: 640px) {
+  .site-nav {
+    overflow-x: auto;
+  }
+
   .site-shell {
     padding: var(--space-sm);
   }
@@ -1285,7 +1289,18 @@ code {
 
   .recipe-body table {
     display: block;
+    overflow-wrap: normal;
     overflow-x: auto;
+  }
+
+  .recipe-body th,
+  .recipe-body td {
+    min-width: 6rem;
+  }
+
+  .recipe-body th:last-child,
+  .recipe-body td:last-child {
+    min-width: 16rem;
   }
 
   .library-controls {

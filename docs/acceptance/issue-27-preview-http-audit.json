@@ -1,0 +1,3264 @@
+{
+  "checked_at": "2026-10-02T08:49:28.272465+00:00",
+  "commit": "ba356786f4278593967c1a3f1ba85f8425c82bcf",
+  "deployment_id": "dpl_2N5U2H5dJdgpuoZJD8nGVosrv6tg",
+  "base": "https://my-recipe-book-3ua9b948x-carlo-krugers-projects.vercel.app",
+  "entries": [
+    {
+      "identity": "experiment/asian-ginger-chicken-noodle-soup-wing-stock-trial",
+      "path": "/experiments/asian-ginger-chicken-noodle-soup-wing-stock-trial/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/achiote-paste",
+      "path": "/ingredients/achiote-paste/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/all-purpose-flour",
+      "path": "/ingredients/all-purpose-flour/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/almond-extract",
+      "path": "/ingredients/almond-extract/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/amber-beer",
+      "path": "/ingredients/amber-beer/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/anchovy-fillets",
+      "path": "/ingredients/anchovy-fillets/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/apple-cider-vinegar",
+      "path": "/ingredients/apple-cider-vinegar/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/apricot-chutney",
+      "path": "/ingredients/apricot-chutney/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/bacon",
+      "path": "/ingredients/bacon/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/baking-powder",
+      "path": "/ingredients/baking-powder/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/baking-soda",
+      "path": "/ingredients/baking-soda/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/basmati-rice",
+      "path": "/ingredients/basmati-rice/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/bay-leaf",
+      "path": "/ingredients/bay-leaf/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/bean-sprouts",
+      "path": "/ingredients/bean-sprouts/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/beef-chuck",
+      "path": "/ingredients/beef-chuck/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/beef-fillet",
+      "path": "/ingredients/beef-fillet/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/beef-sirloin",
+      "path": "/ingredients/beef-sirloin/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/birds-eye-chili",
+      "path": "/ingredients/birds-eye-chili/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/black-beans",
+      "path": "/ingredients/black-beans/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/black-olives",
+      "path": "/ingredients/black-olives/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/black-pepper",
+      "path": "/ingredients/black-pepper/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/bok-choy",
+      "path": "/ingredients/bok-choy/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/bread-flour",
+      "path": "/ingredients/bread-flour/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/broccoli",
+      "path": "/ingredients/broccoli/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/brown-lentils",
+      "path": "/ingredients/brown-lentils/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/brown-sugar",
+      "path": "/ingredients/brown-sugar/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/butter",
+      "path": "/ingredients/butter/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/buttermilk",
+      "path": "/ingredients/buttermilk/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/cabbage",
+      "path": "/ingredients/cabbage/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/cake-flour",
+      "path": "/ingredients/cake-flour/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/calabrian-chili",
+      "path": "/ingredients/calabrian-chili/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/canned-whole-tomatoes",
+      "path": "/ingredients/canned-whole-tomatoes/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/cannellini-beans",
+      "path": "/ingredients/cannellini-beans/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/capers",
+      "path": "/ingredients/capers/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/carrot",
+      "path": "/ingredients/carrot/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/cassia-cinnamon",
+      "path": "/ingredients/cassia-cinnamon/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/caster-sugar",
+      "path": "/ingredients/caster-sugar/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/celery-leaves",
+      "path": "/ingredients/celery-leaves/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/celery",
+      "path": "/ingredients/celery/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/chicken-drumettes",
+      "path": "/ingredients/chicken-drumettes/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/chicken-fat",
+      "path": "/ingredients/chicken-fat/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/chicken-thigh",
+      "path": "/ingredients/chicken-thigh/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/chicken-wing-tips",
+      "path": "/ingredients/chicken-wing-tips/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/chicken-wings",
+      "path": "/ingredients/chicken-wings/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/chili-flakes",
+      "path": "/ingredients/chili-flakes/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/chili-powder",
+      "path": "/ingredients/chili-powder/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/cinnamon",
+      "path": "/ingredients/cinnamon/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/cloves",
+      "path": "/ingredients/cloves/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/cocoa-powder",
+      "path": "/ingredients/cocoa-powder/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/coffee-beans",
+      "path": "/ingredients/coffee-beans/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/coriander-seed",
+      "path": "/ingredients/coriander-seed/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/corn-tortillas",
+      "path": "/ingredients/corn-tortillas/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/cornstarch",
+      "path": "/ingredients/cornstarch/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/courgette",
+      "path": "/ingredients/courgette/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/cucumber",
+      "path": "/ingredients/cucumber/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/cumin",
+      "path": "/ingredients/cumin/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/dark-brown-sugar",
+      "path": "/ingredients/dark-brown-sugar/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/dark-chocolate",
+      "path": "/ingredients/dark-chocolate/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/dark-soy-sauce",
+      "path": "/ingredients/dark-soy-sauce/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/dijon-mustard",
+      "path": "/ingredients/dijon-mustard/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/dill",
+      "path": "/ingredients/dill/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/dried-chili",
+      "path": "/ingredients/dried-chili/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/dried-mandarin-peel",
+      "path": "/ingredients/dried-mandarin-peel/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/dried-pasta",
+      "path": "/ingredients/dried-pasta/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/dried-porcini",
+      "path": "/ingredients/dried-porcini/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/dried-red-chili",
+      "path": "/ingredients/dried-red-chili/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/egg-yolk",
+      "path": "/ingredients/egg-yolk/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/egg",
+      "path": "/ingredients/egg/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/extra-virgin-olive-oil",
+      "path": "/ingredients/extra-virgin-olive-oil/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/fennel-bulb",
+      "path": "/ingredients/fennel-bulb/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/fennel-pollen",
+      "path": "/ingredients/fennel-pollen/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/fennel-seeds",
+      "path": "/ingredients/fennel-seeds/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/fino-sherry",
+      "path": "/ingredients/fino-sherry/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/fish-sauce",
+      "path": "/ingredients/fish-sauce/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/flat-rice-noodles",
+      "path": "/ingredients/flat-rice-noodles/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/flat-leaf-parsley",
+      "path": "/ingredients/flat-leaf-parsley/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/flour-tortillas",
+      "path": "/ingredients/flour-tortillas/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/focaccia",
+      "path": "/ingredients/focaccia/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/fresh-coriander",
+      "path": "/ingredients/fresh-coriander/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/fresh-ginger",
+      "path": "/ingredients/fresh-ginger/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/fresh-mushrooms",
+      "path": "/ingredients/fresh-mushrooms/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/fresh-red-chili",
+      "path": "/ingredients/fresh-red-chili/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/garlic-powder",
+      "path": "/ingredients/garlic-powder/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/garlic",
+      "path": "/ingredients/garlic/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/gluten-free-flour-mix",
+      "path": "/ingredients/gluten-free-flour-mix/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/gochugaru",
+      "path": "/ingredients/gochugaru/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/gochujang",
+      "path": "/ingredients/gochujang/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/green-apple",
+      "path": "/ingredients/green-apple/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/green-beans",
+      "path": "/ingredients/green-beans/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/grilled-pineapple-puree",
+      "path": "/ingredients/grilled-pineapple-puree/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/ground-beef",
+      "path": "/ingredients/ground-beef/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/guajillo-chile",
+      "path": "/ingredients/guajillo-chile/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/guanciale",
+      "path": "/ingredients/guanciale/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/heavy-cream",
+      "path": "/ingredients/heavy-cream/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/honey",
+      "path": "/ingredients/honey/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/italian-pork-sausages",
+      "path": "/ingredients/italian-pork-sausages/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/jalapeno",
+      "path": "/ingredients/jalapeno/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/jasmine-rice",
+      "path": "/ingredients/jasmine-rice/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/ketchup",
+      "path": "/ingredients/ketchup/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/kidney-beans",
+      "path": "/ingredients/kidney-beans/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/lager-beer",
+      "path": "/ingredients/lager-beer/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/lamb-neck",
+      "path": "/ingredients/lamb-neck/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/lemon-juice",
+      "path": "/ingredients/lemon-juice/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/lemon-zest",
+      "path": "/ingredients/lemon-zest/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/lemongrass",
+      "path": "/ingredients/lemongrass/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/lettuce",
+      "path": "/ingredients/lettuce/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/light-soy-sauce",
+      "path": "/ingredients/light-soy-sauce/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/lime-juice",
+      "path": "/ingredients/lime-juice/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/makrut-lime-leaves",
+      "path": "/ingredients/makrut-lime-leaves/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/manchego",
+      "path": "/ingredients/manchego/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/maple-syrup",
+      "path": "/ingredients/maple-syrup/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/mature-sourdough-starter",
+      "path": "/ingredients/mature-sourdough-starter/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/mexican-oregano",
+      "path": "/ingredients/mexican-oregano/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/mild-cape-malay-curry-powder",
+      "path": "/ingredients/mild-cape-malay-curry-powder/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/mint",
+      "path": "/ingredients/mint/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/molasses",
+      "path": "/ingredients/molasses/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/monosodium-glutamate",
+      "path": "/ingredients/monosodium-glutamate/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/muscovado-sugar",
+      "path": "/ingredients/muscovado-sugar/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/navy-beans",
+      "path": "/ingredients/navy-beans/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/neutral-oil",
+      "path": "/ingredients/neutral-oil/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/olive-oil",
+      "path": "/ingredients/olive-oil/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/onion",
+      "path": "/ingredients/onion/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/oregano",
+      "path": "/ingredients/oregano/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/padek",
+      "path": "/ingredients/padek/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/parmesan",
+      "path": "/ingredients/parmesan/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/pecans",
+      "path": "/ingredients/pecans/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/pecorino",
+      "path": "/ingredients/pecorino/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/pineapple",
+      "path": "/ingredients/pineapple/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/pinto-beans",
+      "path": "/ingredients/pinto-beans/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/polenta",
+      "path": "/ingredients/polenta/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/pork-belly",
+      "path": "/ingredients/pork-belly/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/pork-collar",
+      "path": "/ingredients/pork-collar/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/pork-fillet",
+      "path": "/ingredients/pork-fillet/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/pork-loin",
+      "path": "/ingredients/pork-loin/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/pork-mince",
+      "path": "/ingredients/pork-mince/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/pork-shoulder",
+      "path": "/ingredients/pork-shoulder/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/potato",
+      "path": "/ingredients/potato/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/puy-lentils",
+      "path": "/ingredients/puy-lentils/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/radicchio",
+      "path": "/ingredients/radicchio/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/red-onion",
+      "path": "/ingredients/red-onion/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/red-wine-vinegar",
+      "path": "/ingredients/red-wine-vinegar/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/red-wine",
+      "path": "/ingredients/red-wine/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/rice-flour",
+      "path": "/ingredients/rice-flour/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/rice-vermicelli",
+      "path": "/ingredients/rice-vermicelli/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/rice-vinegar",
+      "path": "/ingredients/rice-vinegar/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/rice-wine",
+      "path": "/ingredients/rice-wine/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/roasted-peanuts",
+      "path": "/ingredients/roasted-peanuts/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/rock-sugar",
+      "path": "/ingredients/rock-sugar/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/rosemary-leaves",
+      "path": "/ingredients/rosemary-leaves/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/sage-leaves",
+      "path": "/ingredients/sage-leaves/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/salt",
+      "path": "/ingredients/salt/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/sesame-oil",
+      "path": "/ingredients/sesame-oil/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/sesame-seeds",
+      "path": "/ingredients/sesame-seeds/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/shallot",
+      "path": "/ingredients/shallot/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/shaoxing-wine",
+      "path": "/ingredients/shaoxing-wine/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/sherry-vinegar",
+      "path": "/ingredients/sherry-vinegar/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/shiitake-mushrooms",
+      "path": "/ingredients/shiitake-mushrooms/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/smoked-paprika",
+      "path": "/ingredients/smoked-paprika/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/sour-cherries",
+      "path": "/ingredients/sour-cherries/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/sour-cream",
+      "path": "/ingredients/sour-cream/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/soy-sauce",
+      "path": "/ingredients/soy-sauce/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/spanish-chorizo",
+      "path": "/ingredients/spanish-chorizo/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/spring-onion",
+      "path": "/ingredients/spring-onion/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/star-anise",
+      "path": "/ingredients/star-anise/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/sugar",
+      "path": "/ingredients/sugar/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/tennessee-whiskey",
+      "path": "/ingredients/tennessee-whiskey/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/thai-basil",
+      "path": "/ingredients/thai-basil/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/thyme",
+      "path": "/ingredients/thyme/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/toasted-sticky-rice-powder",
+      "path": "/ingredients/toasted-sticky-rice-powder/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/tomato-paste",
+      "path": "/ingredients/tomato-paste/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/tomato-sauce",
+      "path": "/ingredients/tomato-sauce/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/tomato",
+      "path": "/ingredients/tomato/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/vanilla-extract",
+      "path": "/ingredients/vanilla-extract/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/vegetable-shortening",
+      "path": "/ingredients/vegetable-shortening/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/vegetable-stock",
+      "path": "/ingredients/vegetable-stock/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/verjuice",
+      "path": "/ingredients/verjuice/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/walnuts",
+      "path": "/ingredients/walnuts/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/water",
+      "path": "/ingredients/water/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/waxy-potatoes",
+      "path": "/ingredients/waxy-potatoes/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/white-pepper",
+      "path": "/ingredients/white-pepper/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/white-peppercorns",
+      "path": "/ingredients/white-peppercorns/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/white-rice",
+      "path": "/ingredients/white-rice/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/white-wine",
+      "path": "/ingredients/white-wine/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/whole-chicken",
+      "path": "/ingredients/whole-chicken/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/whole-milk",
+      "path": "/ingredients/whole-milk/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/worcestershire-sauce",
+      "path": "/ingredients/worcestershire-sauce/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "ingredient/yellow-mustard",
+      "path": "/ingredients/yellow-mustard/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "principle/acid-balance",
+      "path": "/principles/acid-balance/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "principle/acid-reduction",
+      "path": "/principles/acid-reduction/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "principle/agitation-and-fines",
+      "path": "/principles/agitation-and-fines/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "principle/aromatic-extraction",
+      "path": "/principles/aromatic-extraction/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "principle/aromatic-fat-infusion",
+      "path": "/principles/aromatic-fat-infusion/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "principle/aromatic-infusion",
+      "path": "/principles/aromatic-infusion/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "principle/carryover-cooking",
+      "path": "/principles/carryover-cooking/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "principle/coffee-extraction",
+      "path": "/principles/coffee-extraction/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "principle/collagen-conversion",
+      "path": "/principles/collagen-conversion/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "principle/collagen-extraction",
+      "path": "/principles/collagen-extraction/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "principle/condiment-layering",
+      "path": "/principles/condiment-layering/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "principle/crackling-dehydration",
+      "path": "/principles/crackling-dehydration/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "principle/cream-emulsion-stability",
+      "path": "/principles/cream-emulsion-stability/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "principle/dilution-and-strength",
+      "path": "/principles/dilution-and-strength/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "principle/emulsion-clarity",
+      "path": "/principles/emulsion-clarity/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "principle/enzymatic-tenderization",
+      "path": "/principles/enzymatic-tenderization/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "principle/fat-as-flavour-carrier",
+      "path": "/principles/fat-as-flavour-carrier/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "principle/fat-rendering",
+      "path": "/principles/fat-rendering/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "principle/flavour-threshold-management",
+      "path": "/principles/flavour-threshold-management/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "principle/fond-dissolution",
+      "path": "/principles/fond-dissolution/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "principle/fresh-herb-contrast",
+      "path": "/principles/fresh-herb-contrast/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "principle/glaze-viscosity",
+      "path": "/principles/glaze-viscosity/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "principle/gluten-development",
+      "path": "/principles/gluten-development/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "principle/gluten-limitation",
+      "path": "/principles/gluten-limitation/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "principle/hydration-ratio",
+      "path": "/principles/hydration-ratio/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "principle/leavening-activation",
+      "path": "/principles/leavening-activation/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "principle/maillard-reaction",
+      "path": "/principles/maillard-reaction/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "principle/molasses-bitterness-balance",
+      "path": "/principles/molasses-bitterness-balance/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "principle/protein-coagulation",
+      "path": "/principles/protein-coagulation/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "principle/protein-denaturation",
+      "path": "/principles/protein-denaturation/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "principle/salt-balance",
+      "path": "/principles/salt-balance/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "principle/salt-control-of-fermentation",
+      "path": "/principles/salt-control-of-fermentation/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "principle/salt-diffusion",
+      "path": "/principles/salt-diffusion/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "principle/salt-taste-modulation",
+      "path": "/principles/salt-taste-modulation/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "principle/sauce-adhesion",
+      "path": "/principles/sauce-adhesion/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "principle/skin-dehydration",
+      "path": "/principles/skin-dehydration/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "principle/starch-absorption",
+      "path": "/principles/starch-absorption/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "principle/starch-dehydration",
+      "path": "/principles/starch-dehydration/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "principle/starch-gelatinisation",
+      "path": "/principles/starch-gelatinisation/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "principle/starch-water-emulsification",
+      "path": "/principles/starch-water-emulsification/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "principle/steam-assisted-oven-spring",
+      "path": "/principles/steam-assisted-oven-spring/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "principle/sugar-caramelization",
+      "path": "/principles/sugar-caramelization/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "principle/sugar-film-formation",
+      "path": "/principles/sugar-film-formation/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "principle/sweet-bitter-contrast",
+      "path": "/principles/sweet-bitter-contrast/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "principle/textural-contrast",
+      "path": "/principles/textural-contrast/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "principle/thermal-shock-for-skin-texture",
+      "path": "/principles/thermal-shock-for-skin-texture/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "principle/yeast-and-lactic-acid-bacteria-fermentation",
+      "path": "/principles/yeast-and-lactic-acid-bacteria-fermentation/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "recipe/bun-bo-nuong",
+      "path": "/recipes/bun-bo-nuong/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "recipe/bun-cha",
+      "path": "/recipes/bun-cha/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "recipe/cowboy-beans",
+      "path": "/recipes/cowboy-beans/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "recipe/flapjacks-american-pancakes",
+      "path": "/recipes/flapjacks-american-pancakes/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "recipe/fried-master-stock-chicken",
+      "path": "/recipes/fried-master-stock-chicken/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "recipe/gratin-dauphinois",
+      "path": "/recipes/gratin-dauphinois/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "recipe/grilled-pork-al-pastor",
+      "path": "/recipes/grilled-pork-al-pastor/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "recipe/guanciale-olive-chili-pasta-sauce",
+      "path": "/recipes/guanciale-olive-chili-pasta-sauce/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "recipe/hibachi-pork-charred-greens-spanish-green-sauce",
+      "path": "/recipes/hibachi-pork-charred-greens-spanish-green-sauce/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "recipe/italian-sausages-puy-lentils",
+      "path": "/recipes/italian-sausages-puy-lentils/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "recipe/lao-herbaceous-chicken-noodle-soup",
+      "path": "/recipes/lao-herbaceous-chicken-noodle-soup/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "recipe/manchego-thyme-infused-honey-coffee-dust",
+      "path": "/recipes/manchego-thyme-infused-honey-coffee-dust/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "recipe/maple-pecan-pie",
+      "path": "/recipes/maple-pecan-pie/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "recipe/masterclass-chocolate-brownie",
+      "path": "/recipes/masterclass-chocolate-brownie/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "recipe/singapore-chicken-rice",
+      "path": "/recipes/singapore-chicken-rice/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "recipe/sour-cherry-pie",
+      "path": "/recipes/sour-cherry-pie/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "recipe/spicy-korean-fried-chicken",
+      "path": "/recipes/spicy-korean-fried-chicken/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "recipe/tomato-bredie",
+      "path": "/recipes/tomato-bredie/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "recipe/traditional-greek-lentil-soup-fakes",
+      "path": "/recipes/traditional-greek-lentil-soup-fakes/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "recipe/creamy-porcini-mushroom-ragout-polenta",
+      "path": "/recipes/creamy-porcini-mushroom-ragout-polenta/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "recipe/sourdough-bread",
+      "path": "/recipes/sourdough-bread/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "recipe/spanish-chicken-chorizo-stew",
+      "path": "/recipes/spanish-chicken-chorizo-stew/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "recipe/aeropress-competition-cup",
+      "path": "/recipes/aeropress-competition-cup/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "recipe/aeropress-everyday-cup",
+      "path": "/recipes/aeropress-everyday-cup/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "recipe/monkey-gland-chicken",
+      "path": "/recipes/monkey-gland-chicken/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "recipe/asian-ginger-chicken-noodle-soup",
+      "path": "/recipes/asian-ginger-chicken-noodle-soup/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "recipe/reverse-seared-fillet-hibachi-cabbage-steakhouse-fries-gochujang-sauce",
+      "path": "/recipes/reverse-seared-fillet-hibachi-cabbage-steakhouse-fries-gochujang-sauce/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "recipe/celery-green-apple-fennel-pollen-slaw",
+      "path": "/recipes/celery-green-apple-fennel-pollen-slaw/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "recipe/porchetta-fennel-pollen-salsa-verde",
+      "path": "/recipes/porchetta-fennel-pollen-salsa-verde/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "recipe/soy-garlic-sesame-gochujang-hibachi-chicken-tacos",
+      "path": "/recipes/soy-garlic-sesame-gochujang-hibachi-chicken-tacos/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/acid-finishing",
+      "path": "/techniques/acid-finishing/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/air-drying",
+      "path": "/techniques/air-drying/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/autolyse",
+      "path": "/techniques/autolyse/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/bean-hydration",
+      "path": "/techniques/bean-hydration/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/blanching",
+      "path": "/techniques/blanching/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/blending",
+      "path": "/techniques/blending/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/braising",
+      "path": "/techniques/braising/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/browning",
+      "path": "/techniques/browning/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/bulk-fermentation",
+      "path": "/techniques/bulk-fermentation/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/bypass-dilution",
+      "path": "/techniques/bypass-dilution/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/charring",
+      "path": "/techniques/charring/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/controlled-agitation",
+      "path": "/techniques/controlled-agitation/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/custard-setting",
+      "path": "/techniques/custard-setting/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/deep-frying",
+      "path": "/techniques/deep-frying/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/double-frying",
+      "path": "/techniques/double-frying/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/dry-brining",
+      "path": "/techniques/dry-brining/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/dry-toasting-spices",
+      "path": "/techniques/dry-toasting-spices/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/emulsification",
+      "path": "/techniques/emulsification/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/fat-rendering",
+      "path": "/techniques/fat-rendering/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/fat-toasted-rice",
+      "path": "/techniques/fat-toasted-rice/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/fine-grinding",
+      "path": "/techniques/fine-grinding/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/folding",
+      "path": "/techniques/folding/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/fond-development",
+      "path": "/techniques/fond-development/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/gentle-pressing",
+      "path": "/techniques/gentle-pressing/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/glazing",
+      "path": "/techniques/glazing/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/griddling",
+      "path": "/techniques/griddling/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/grilling",
+      "path": "/techniques/grilling/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/high-temperature-crisping",
+      "path": "/techniques/high-temperature-crisping/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/ice-bath-shocking",
+      "path": "/techniques/ice-bath-shocking/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/immersion-brewing",
+      "path": "/techniques/immersion-brewing/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/infusion",
+      "path": "/techniques/infusion/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/knife-slicing",
+      "path": "/techniques/knife-slicing/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/lacquering",
+      "path": "/techniques/lacquering/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/lamination",
+      "path": "/techniques/lamination/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/layered-assembly",
+      "path": "/techniques/layered-assembly/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/levain-build",
+      "path": "/techniques/levain-build/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/low-roasting",
+      "path": "/techniques/low-roasting/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/mandoline-slicing",
+      "path": "/techniques/mandoline-slicing/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/marination",
+      "path": "/techniques/marination/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/master-stock-poaching",
+      "path": "/techniques/master-stock-poaching/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/mortar-pounding",
+      "path": "/techniques/mortar-pounding/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/oven-roasting",
+      "path": "/techniques/oven-roasting/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/paste-frying",
+      "path": "/techniques/paste-frying/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/poaching",
+      "path": "/techniques/poaching/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/quick-pickling",
+      "path": "/techniques/quick-pickling/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/reduction",
+      "path": "/techniques/reduction/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/rehydration",
+      "path": "/techniques/rehydration/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/rolling-and-tying",
+      "path": "/techniques/rolling-and-tying/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/salting",
+      "path": "/techniques/salting/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/sauce-emulsion",
+      "path": "/techniques/sauce-emulsion/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/searing",
+      "path": "/techniques/searing/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/sifting",
+      "path": "/techniques/sifting/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/simmering",
+      "path": "/techniques/simmering/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/soffritto",
+      "path": "/techniques/soffritto/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/sous-vide",
+      "path": "/techniques/sous-vide/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/spice-blooming",
+      "path": "/techniques/spice-blooming/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/staged-baking",
+      "path": "/techniques/staged-baking/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/starch-coating",
+      "path": "/techniques/starch-coating/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/starch-thickening",
+      "path": "/techniques/starch-thickening/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/stewing",
+      "path": "/techniques/stewing/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/sweating",
+      "path": "/techniques/sweating/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    },
+    {
+      "identity": "technique/whisking",
+      "path": "/techniques/whisking/",
+      "status": 200,
+      "location": null,
+      "expected_title_present": true,
+      "missing_phase_targets": [],
+      "pass": true
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/recipes/2026-02-19-singapore-chicken-rice/",
+      "status": 301,
+      "location": "/recipes/singapore-chicken-rice/",
+      "expected_location": "/recipes/singapore-chicken-rice/",
+      "destination_status": 200,
+      "destination_location": null,
+      "pass": true
+    },
+    {
+      "source": "/recipes/2026-02-19-cherry-pie/",
+      "status": 301,
+      "location": "/recipes/sour-cherry-pie/",
+      "expected_location": "/recipes/sour-cherry-pie/",
+      "destination_status": 200,
+      "destination_location": null,
+      "pass": true
+    },
+    {
+      "source": "/recipes/2026-02-19-flapjacks-american-pancakes/",
+      "status": 301,
+      "location": "/recipes/flapjacks-american-pancakes/",
+      "expected_location": "/recipes/flapjacks-american-pancakes/",
+      "destination_status": 200,
+      "destination_location": null,
+      "pass": true
+    },
+    {
+      "source": "/recipes/2026-02-19-maple-pecan-pie/",
+      "status": 301,
+      "location": "/recipes/maple-pecan-pie/",
+      "expected_location": "/recipes/maple-pecan-pie/",
+      "destination_status": 200,
+      "destination_location": null,
+      "pass": true
+    },
+    {
+      "source": "/recipes/2026-02-19-masterclass-chocolate-brownie/",
+      "status": 301,
+      "location": "/recipes/masterclass-chocolate-brownie/",
+      "expected_location": "/recipes/masterclass-chocolate-brownie/",
+      "destination_status": 200,
+      "destination_location": null,
+      "pass": true
+    },
+    {
+      "source": "/recipes/2026-02-23-sourdough-bread/",
+      "status": 301,
+      "location": "/recipes/sourdough-bread/",
+      "expected_location": "/recipes/sourdough-bread/",
+      "destination_status": 200,
+      "destination_location": null,
+      "pass": true
+    },
+    {
+      "source": "/recipes/2026-02-19-bun-bo-nuong-grilled-beef-with-rice-noodles/",
+      "status": 301,
+      "location": "/recipes/bun-bo-nuong/",
+      "expected_location": "/recipes/bun-bo-nuong/",
+      "destination_status": 200,
+      "destination_location": null,
+      "pass": true
+    },
+    {
+      "source": "/recipes/2026-02-19-bun-cha-hanoi-grilled-pork-with-noodles/",
+      "status": 301,
+      "location": "/recipes/bun-cha/",
+      "expected_location": "/recipes/bun-cha/",
+      "destination_status": 200,
+      "destination_location": null,
+      "pass": true
+    },
+    {
+      "source": "/recipes/2026-02-19-fried-master-stock-chicken/",
+      "status": 301,
+      "location": "/recipes/fried-master-stock-chicken/",
+      "expected_location": "/recipes/fried-master-stock-chicken/",
+      "destination_status": 200,
+      "destination_location": null,
+      "pass": true
+    },
+    {
+      "source": "/recipes/2026-02-19-lao-herbaceous-chicken-noodle-soup/",
+      "status": 301,
+      "location": "/recipes/lao-herbaceous-chicken-noodle-soup/",
+      "expected_location": "/recipes/lao-herbaceous-chicken-noodle-soup/",
+      "destination_status": 200,
+      "destination_location": null,
+      "pass": true
+    },
+    {
+      "source": "/recipes/2026-03-03-asian-chicken-noodle-soup/",
+      "status": 301,
+      "location": "/recipes/asian-ginger-chicken-noodle-soup/",
+      "expected_location": "/recipes/asian-ginger-chicken-noodle-soup/",
+      "destination_status": 200,
+      "destination_location": null,
+      "pass": true
+    },
+    {
+      "source": "/recipes/2026-02-19-spicy-korean-fried-chicken/",
+      "status": 301,
+      "location": "/recipes/spicy-korean-fried-chicken/",
+      "expected_location": "/recipes/spicy-korean-fried-chicken/",
+      "destination_status": 200,
+      "destination_location": null,
+      "pass": true
+    },
+    {
+      "source": "/recipes/2026-02-19-guanciale-olive-and-chili-pasta-sauce/",
+      "status": 301,
+      "location": "/recipes/guanciale-olive-chili-pasta-sauce/",
+      "expected_location": "/recipes/guanciale-olive-chili-pasta-sauce/",
+      "destination_status": 200,
+      "destination_location": null,
+      "pass": true
+    },
+    {
+      "source": "/recipes/2026-02-19-italian-sausages-with-puy-lentils/",
+      "status": 301,
+      "location": "/recipes/italian-sausages-puy-lentils/",
+      "expected_location": "/recipes/italian-sausages-puy-lentils/",
+      "destination_status": 200,
+      "destination_location": null,
+      "pass": true
+    },
+    {
+      "source": "/recipes/2026-02-19-hibachi-pork-with-charred-greens-and-spanish-green-sauce/",
+      "status": 301,
+      "location": "/recipes/hibachi-pork-charred-greens-spanish-green-sauce/",
+      "expected_location": "/recipes/hibachi-pork-charred-greens-spanish-green-sauce/",
+      "destination_status": 200,
+      "destination_location": null,
+      "pass": true
+    },
+    {
+      "source": "/recipes/2026-02-19-grilled-pork-al-pastor/",
+      "status": 301,
+      "location": "/recipes/grilled-pork-al-pastor/",
+      "expected_location": "/recipes/grilled-pork-al-pastor/",
+      "destination_status": 200,
+      "destination_location": null,
+      "pass": true
+    },
+    {
+      "source": "/recipes/2026-05-29-porchetta-with-fennel-pollen-and-salsa-verde/",
+      "status": 301,
+      "location": "/recipes/porchetta-fennel-pollen-salsa-verde/",
+      "expected_location": "/recipes/porchetta-fennel-pollen-salsa-verde/",
+      "destination_status": 200,
+      "destination_location": null,
+      "pass": true
+    },
+    {
+      "source": "/recipes/2026-05-29-soy-garlic-sesame-gochujang-hibachi-chicken-tacos/",
+      "status": 301,
+      "location": "/recipes/soy-garlic-sesame-gochujang-hibachi-chicken-tacos/",
+      "expected_location": "/recipes/soy-garlic-sesame-gochujang-hibachi-chicken-tacos/",
+      "destination_status": 200,
+      "destination_location": null,
+      "pass": true
+    },
+    {
+      "source": "/recipes/2026-02-19-cowboy-beans/",
+      "status": 301,
+      "location": "/recipes/cowboy-beans/",
+      "expected_location": "/recipes/cowboy-beans/",
+      "destination_status": 200,
+      "destination_location": null,
+      "pass": true
+    },
+    {
+      "source": "/recipes/2026-02-19-gratin-dauphinois/",
+      "status": 301,
+      "location": "/recipes/gratin-dauphinois/",
+      "expected_location": "/recipes/gratin-dauphinois/",
+      "destination_status": 200,
+      "destination_location": null,
+      "pass": true
+    },
+    {
+      "source": "/recipes/2026-02-19-tomato-bredie/",
+      "status": 301,
+      "location": "/recipes/tomato-bredie/",
+      "expected_location": "/recipes/tomato-bredie/",
+      "destination_status": 200,
+      "destination_location": null,
+      "pass": true
+    },
+    {
+      "source": "/recipes/2026-02-19-traditional-greek-lentil-soup-fakes/",
+      "status": 301,
+      "location": "/recipes/traditional-greek-lentil-soup-fakes/",
+      "expected_location": "/recipes/traditional-greek-lentil-soup-fakes/",
+      "destination_status": 200,
+      "destination_location": null,
+      "pass": true
+    },
+    {
+      "source": "/recipes/2026-02-21-creamy-porcini-mushroom-ragout-with-polenta/",
+      "status": 301,
+      "location": "/recipes/creamy-porcini-mushroom-ragout-polenta/",
+      "expected_location": "/recipes/creamy-porcini-mushroom-ragout-polenta/",
+      "destination_status": 200,
+      "destination_location": null,
+      "pass": true
+    },
+    {
+      "source": "/recipes/2026-02-24-spanish-chicken-and-chorizo-stew/",
+      "status": 301,
+      "location": "/recipes/spanish-chicken-chorizo-stew/",
+      "expected_location": "/recipes/spanish-chicken-chorizo-stew/",
+      "destination_status": 200,
+      "destination_location": null,
+      "pass": true
+    },
+    {
+      "source": "/recipes/2026-02-19-manchego-with-thyme-infused-honey-and-coffee-dust/",
+      "status": 301,
+      "location": "/recipes/manchego-thyme-infused-honey-coffee-dust/",
+      "expected_location": "/recipes/manchego-thyme-infused-honey-coffee-dust/",
+      "destination_status": 200,
+      "destination_location": null,
+      "pass": true
+    },
+    {
+      "source": "/recipes/2026-02-25-aeropress-competition-cup/",
+      "status": 301,
+      "location": "/recipes/aeropress-competition-cup/",
+      "expected_location": "/recipes/aeropress-competition-cup/",
+      "destination_status": 200,
+      "destination_location": null,
+      "pass": true
+    },
+    {
+      "source": "/recipes/2026-02-25-aeropress-everyday-cup/",
+      "status": 301,
+      "location": "/recipes/aeropress-everyday-cup/",
+      "expected_location": "/recipes/aeropress-everyday-cup/",
+      "destination_status": 200,
+      "destination_location": null,
+      "pass": true
+    },
+    {
+      "source": "/recipes/2026-02-27-monkey-gland-chicken/",
+      "status": 301,
+      "location": "/recipes/monkey-gland-chicken/",
+      "expected_location": "/recipes/monkey-gland-chicken/",
+      "destination_status": 200,
+      "destination_location": null,
+      "pass": true
+    },
+    {
+      "source": "/recipes/2026-03-08-reverse-seared-fillet-with-hibachi-cabbage-steakhouse-fries-and-gochujang-sauce/",
+      "status": 301,
+      "location": "/recipes/reverse-seared-fillet-hibachi-cabbage-steakhouse-fries-gochujang-sauce/",
+      "expected_location": "/recipes/reverse-seared-fillet-hibachi-cabbage-steakhouse-fries-gochujang-sauce/",
+      "destination_status": 200,
+      "destination_location": null,
+      "pass": true
+    },
+    {
+      "source": "/recipes/2026-05-29-celery-green-apple-fennel-pollen-slaw/",
+      "status": 301,
+      "location": "/recipes/celery-green-apple-fennel-pollen-slaw/",
+      "expected_location": "/recipes/celery-green-apple-fennel-pollen-slaw/",
+      "destination_status": 200,
+      "destination_location": null,
+      "pass": true
+    }
+  ],
+  "unpublished_probes": [
+    {
+      "path": "/recipes/hash-brownies/",
+      "status": 404,
+      "location": null,
+      "pass": true
+    },
+    {
+      "path": "/recipes/asian-ginger-chicken-noodle-soup@2/",
+      "status": 404,
+      "location": null,
+      "pass": true
+    },
+    {
+      "path": "/recipes/asian-ginger-chicken-noodle-soup@3/",
+      "status": 404,
+      "location": null,
+      "pass": true
+    },
+    {
+      "path": "/recipes/drafts/hash-brownies@1/",
+      "status": 404,
+      "location": null,
+      "pass": true
+    },
+    {
+      "path": "/recipes/superseded/asian-ginger-chicken-noodle-soup@2/",
+      "status": 404,
+      "location": null,
+      "pass": true
+    },
+    {
+      "path": "/records/candidates/",
+      "status": 404,
+      "location": null,
+      "pass": true
+    }
+  ],
+  "withdrawal": {
+    "path": "/recipes/2026-02-27-hash-brownies/",
+    "status": 404,
+    "location": null,
+    "proposed_status": 410,
+    "pass": false
+  },
+  "recipe_index": {
+    "status": 200,
+    "hash_brownies_exposed": false,
+    "soup_present": true
+  }
+}
