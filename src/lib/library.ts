@@ -1957,7 +1957,7 @@ function validatePromotionHistory(
     );
     if (
       inventory.disposition === 'retain-canonical' &&
-      canonicalRecipes.has(inventory.identity) &&
+      canonicalRecipes.get(inventory.identity)?.version === inventory.version &&
       !previousCanonical.has(exactVersion) &&
       !legacySourceExists
     ) {

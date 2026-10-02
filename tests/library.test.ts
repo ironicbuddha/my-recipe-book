@@ -1351,20 +1351,17 @@ The Curator reviewed the evidence and retired this Candidate.
     );
   });
 
-  it(
-    'renders a heading target for every published Recipe phase link',
-    () => {
-      for (const recipe of getAllRecipes()) {
-        const html = renderRecipeBody(recipe.body);
-        const phases = getRecipePhases(recipe.body);
-        expect(phases.length).toBeGreaterThan(0);
-        for (const phase of phases) {
-          expect(html).toContain(`<h2 id="${phase.id}">`);
-        }
+  it('renders a heading target for every published Recipe phase link', () => {
+    const currentLibrary = loadLibrary();
+    for (const recipe of getAllRecipes()) {
+      const html = renderContent(recipe.body, currentLibrary);
+      const phases = getRecipePhases(recipe.body);
+      expect(phases.length).toBeGreaterThan(0);
+      for (const phase of phases) {
+        expect(html).toContain(`<h2 id="${phase.id}">`);
       }
-    },
-    15000,
-  );
+    }
+  }, 15000);
 
   it('keeps classified observations out of authoritative knowledge collections', () => {
     const countsBefore = getLibraryCounts();

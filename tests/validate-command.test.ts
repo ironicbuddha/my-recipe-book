@@ -954,6 +954,7 @@ The Curator reviewed the evidence and retired this Candidate.
         '-c',
         'core.hooksPath=/dev/null',
         'commit',
+        '--allow-empty',
         '-qm',
         message,
       ]);
@@ -979,6 +980,26 @@ The Curator reviewed the evidence and retired this Candidate.
     expect(workingPromotion.status, workingPromotion.stderr).toBe(0);
     commit('Promote exact version');
     expect(validateRepository(root).status).toBe(0);
+    runGit(['branch', 'promoted-history']);
+    commit('Retain promotion in a later revision');
+    const laterRevision = validateRepository(root);
+    expect(laterRevision.status, laterRevision.stderr).toBe(0);
+    runGit(['checkout', '-qb', 'merge-rehearsal', 'HEAD~2']);
+    runGit([
+      '-c',
+      'user.name=Fixture Curator',
+      '-c',
+      'user.email=fixture@example.invalid',
+      '-c',
+      'core.hooksPath=/dev/null',
+      'merge',
+      '--no-ff',
+      '-qm',
+      'Merge reviewed promotion',
+      'promoted-history',
+    ]);
+    const mergedPromotion = validateRepository(root);
+    expect(mergedPromotion.status, mergedPromotion.stderr).toBe(0);
     const experiment = path.join(
       root,
       'experiments/2026-09-11 - Promotion trial.md',
