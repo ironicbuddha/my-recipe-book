@@ -1,8 +1,7 @@
 #!/usr/bin/env tsx
-import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import matter from 'gray-matter';
+import { loadLibrary } from '../src/lib/library.js';
 
 export const RECIPES_DIR = path.join(process.cwd(), 'recipes');
 
@@ -16,13 +15,6 @@ const STYLE_RULES = [
   'muted colour palette with restrained contrast; red tones only if the dish carries them',
   '3:2 aspect ratio, sized for a web hero image',
 ].join('; ');
-
-type RecipeFrontmatter = {
-  title?: string;
-  primary_ingredient?: string;
-  techniques?: string[];
-  tags?: string[];
-};
 
 function usage(code = 0): never {
   const message = [
@@ -38,63 +30,34 @@ function usage(code = 0): never {
 }
 
 function normalize(s: string): string {
-  return s.toLowerCase().replace(/\.md$/, '').replace(/[\s\-_]+/g, '-');
+  return s
+    .toLowerCase()
+    .replace(/\.md$/, '')
+    .replace(/[\s\-_]+/g, '-');
 }
 
 export function findRecipeFile(query: string): string {
-  const files = fs
-    .readdirSync(RECIPES_DIR)
-    .filter((f) => /^\d{4}-\d{2}-\d{2}/.test(f) && f.endsWith('.md'));
   const needle = normalize(query);
-  const matches = files.filter((f) => normalize(f).includes(needle));
+  const matches = loadLibrary()
+    .recipes.filter((recipe) =>
+      [
+        recipe.identity.split('/')[1],
+        recipe.title,
+        path.basename(recipe.sourcePath),
+      ].some((value) => normalize(value).includes(needle)),
+    )
+    .map((recipe) => path.basename(recipe.sourcePath));
 
   if (matches.length === 0) {
-    throw new Error(`No recipe matches "${query}". Run with no args to see usage.`);
+    throw new Error(
+      `No recipe matches "${query}". Run with no args to see usage.`,
+    );
   }
   if (matches.length > 1) {
     const list = matches.map((m) => `  - ${m}`).join('\n');
     throw new Error(`Ambiguous match for "${query}". Candidates:\n${list}`);
   }
   return matches[0];
-}
-
-function extractSensoryLead(body: string): { sensory: string; serviceStyle: string } {
-  const lines = body.split(/\r?\n/);
-  let sensory = '';
-  let serviceStyle = '';
-  let seenBasisLine = false;
-
-  for (const raw of lines) {
-    const line = raw.trim();
-
-    const serviceMatch = line.match(/^Service\s+(Style|Target):\s*(.+)$/i);
-    if (serviceMatch) {
-      serviceStyle = serviceMatch[2].trim();
-      continue;
-    }
-    if (/^Primary Ingredient Basis:/i.test(line)) {
-      seenBasisLine = true;
-      continue;
-    }
-
-    if (!seenBasisLine) continue;
-
-    // After seeing the basis line, the first free-text paragraph is the sensory lead.
-    // Stop scanning at any section boundary: heading, horizontal rule, or callout block.
-    if (line === '' && sensory) break;
-    if (!line) continue;
-    if (line.startsWith('---')) break;
-    if (line.startsWith('##')) break;
-    if (line.startsWith('>')) break;
-    if (/^(Yield|Portions|Target Internal Temperature):/i.test(line)) continue;
-
-    if (!sensory) {
-      const cleaned = line.replace(/[*`]/g, '').trim();
-      if (cleaned) sensory = cleaned.slice(0, 240);
-    }
-  }
-
-  return { sensory, serviceStyle };
 }
 
 function dishTypeFromTags(tags: string[]): string {
@@ -105,6 +68,9 @@ function dishTypeFromTags(tags: string[]): string {
 function framingFor(dishType: string, primaryIngredient: string): string {
   const lower = `${dishType} ${primaryIngredient}`.toLowerCase();
 
+  if (/ice[ -]?cream|gelato|sorbet/.test(lower)) {
+    return 'slightly elevated three-quarter photograph of frozen scoops in a plain bowl, showing scoop surface texture';
+  }
   if (/soup|broth|stock/.test(lower)) {
     return 'overhead photograph of a specimen bowl, showing broth surface with scattered solid components visible through the liquid';
   }
@@ -113,6 +79,9 @@ function framingFor(dishType: string, primaryIngredient: string): string {
   }
   if (/coffee|espresso|tea|aeropress/.test(lower)) {
     return 'overhead photograph of a cup, showing crema or surface detail with visible depth and micro-bubble structure';
+  }
+  if (/lasagna/.test(lower)) {
+    return 'low three-quarter photograph of a cut portion revealing internal layers of pasta, ragù and béchamel with its browned surface visible';
   }
   // Layered desserts (pies, stacked cakes) want explicit layer language.
   if (/pie|layer cake|tiramisu/.test(lower)) {
@@ -127,34 +96,65 @@ function framingFor(dishType: string, primaryIngredient: string): string {
 }
 
 export function buildPrompt(filePath: string): string {
-  const raw = fs.readFileSync(filePath, 'utf8');
-  const parsed = matter(raw);
-  const data = parsed.data as RecipeFrontmatter;
-  const tags = Array.isArray(data.tags) ? data.tags : [];
+  const library = loadLibrary();
+  const recipe = library.recipes.find(
+    (entry) =>
+      path.resolve(library.root, entry.sourcePath) === path.resolve(filePath),
+  );
+  if (!recipe)
+    throw new Error(`Not a publication-eligible Recipe: ${filePath}`);
 
-  const title = data.title ?? 'untitled dish';
-  const primary = data.primary_ingredient ?? '';
+  const { title, tags, body } = recipe;
+  const primary =
+    library.knowledge.find((entry) => entry.identity === recipe.basisIngredient)
+      ?.title ?? '';
   const dishType = dishTypeFromTags(tags);
-  const techniques = Array.isArray(data.techniques) ? data.techniques.slice(0, 3) : [];
-  const descriptors = tags.filter((t) => !t.startsWith('dish-')).slice(0, 5);
-  const { sensory, serviceStyle } = extractSensoryLead(parsed.content);
-  const framing = framingFor(dishType, primary);
+  const applicationSections = [
+    ...body.matchAll(
+      /^### Technique Applications\s*\n([\s\S]*?)(?=^#{2,3} |(?![\s\S]))/gmu,
+    ),
+  ];
+  const techniqueIdentities = [
+    ...new Set(
+      applicationSections.flatMap((section) =>
+        [...section[1].matchAll(/\(ref:(technique\/[a-z0-9-]+)\)/gu)].map(
+          (match) => match[1],
+        ),
+      ),
+    ),
+  ];
+  const techniques = techniqueIdentities
+    .slice(0, 3)
+    .map(
+      (identity) =>
+        library.knowledge.find((entry) => entry.identity === identity)!.title,
+    );
+  const descriptors = tags
+    .filter((tag) => !tag.startsWith('dish-'))
+    .slice(0, 5);
+  const sensory = body
+    .split(/^## /mu)[0]
+    .trim()
+    .split(/\n\s*\n/u)[0]
+    .replace(/\[([^\]]+)\]\(ref:[^)]+\)/gu, '$1')
+    .replace(/[*`]/gu, '')
+    .replace(/\s+/gu, ' ')
+    .slice(0, 240);
+  const framing = framingFor(dishType, `${title} ${primary}`);
 
   const subjectLine = primary
     ? `Specimen: ${title}, built on ${primary}.`
     : `Specimen: ${title}.`;
 
-  const characterLine = sensory
-    ? `Character: ${sensory}`
-    : serviceStyle
-      ? `Character: ${serviceStyle}.`
-      : '';
+  const characterLine = sensory ? `Character: ${sensory}` : '';
 
   const contextParts = [
     techniques.length ? `Preparation uses ${techniques.join(', ')}` : '',
     descriptors.length ? `visual qualities: ${descriptors.join(', ')}` : '',
   ].filter(Boolean);
-  const contextLine = contextParts.length ? `Context: ${contextParts.join('; ')}.` : '';
+  const contextLine = contextParts.length
+    ? `Context: ${contextParts.join('; ')}.`
+    : '';
 
   return [
     subjectLine,

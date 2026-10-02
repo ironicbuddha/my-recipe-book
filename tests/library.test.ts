@@ -237,7 +237,7 @@ describe('loadLibrary', () => {
       ],
     ] as const;
 
-    expect(library.recipes).toHaveLength(30);
+    expect(library.recipes).toHaveLength(55);
     for (const [key, oldSlug] of batch) {
       const destination = `/recipes/${key}/`;
       expect(
@@ -1334,7 +1334,7 @@ The Curator reviewed the evidence and retired this Candidate.
       ).length,
       principles: 47,
       recipes: recipes.length,
-      techniques: 62,
+      techniques: 65,
     });
     const singapore = recipes.find(
       (recipe) => recipe.slug === 'singapore-chicken-rice',
