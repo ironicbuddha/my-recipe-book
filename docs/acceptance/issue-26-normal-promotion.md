@@ -80,6 +80,47 @@ adversarial lifecycle scenarios, reliability, and performance. No actionable
 findings remain. Review was sequential in the main thread as required by the
 repository instructions; no independent agent or cross-model review is claimed.
 
-This acceptance artifact records local validation and browser preview, not a
-deployed Vercel preview or production verification. Work is retained on
-`issue-26-soup-promotion`; production deployment remains outside issue 26.
+## Deployed preview and agent technical acceptance — 2026-10-02
+
+PR [#47](https://github.com/ironicbuddha/my-recipe-book/pull/47) publishes the
+work on `issue-26-soup-promotion`. GitHub validation and the Vercel release gate
+passed for `ba356786f4278593967c1a3f1ba85f8425c82bcf`; deployment
+`dpl_2N5U2H5dJdgpuoZJD8nGVosrv6tg` is Ready:
+[immutable preview](https://my-recipe-book-3ua9b948x-carlo-krugers-projects.vercel.app/).
+
+The first remote attempt exposed a grandfathering check that applied the old
+v2 row to the promoted identity on later/merge revisions, plus repeated corpus
+loads that exceeded a phase-link test's timeout. The exact-version check now
+applies to the current version matching that inventory row. Regression coverage
+proves later commits and merge checkouts, while retaining immutable-evidence,
+missing-ancestry, and new-exemption rejection. The phase test still checks all
+Recipes but renders them from one validated library snapshot. The full local
+release gate then passed: 69 tests, coverage thresholds, validation, lint,
+typecheck, and a fresh 334-page build. The deployed phase test took 706 ms.
+
+Authenticated no-follow HTTP readback confirmed the soup and Completed
+Experiment routes return 200. The soup contains four additional wings and the
+low-simmer clarity instruction. The Experiment displays its exact v3 subject,
+all four evidence sections, and the retrospective limitations. All 326 eligible
+pages returned 200 with their expected titles, all 30 old Recipe paths returned
+direct 301 redirects to destinations returning 200, and no Recipe phase target
+was missing. The tested draft, superseded-source, version-archive, and Candidate
+paths returned 404. The Recipe index includes soup and excludes Hash Brownies.
+The full [HTTP matrix](issue-27-preview-http-audit.json) retains the separate
+Hash Brownies withdrawal gap for #27; that gap does not invalidate this normal
+Promotion demonstration.
+
+Browser inspection at 1440 × 1000 and 390 × 844 confirmed readable soup and
+Experiment pages. The mobile document width equals the 390 px viewport on both
+pages; the soup phase link reaches `#phase-a-extract-stock`. Tables and navigation
+remain contained. Deployed screenshots:
+[soup desktop](../../output/playwright/issue-26/deployed-soup-desktop.png),
+[stock phase mobile](../../output/playwright/issue-26/deployed-soup-mobile-stock.png),
+[Experiment desktop](../../output/playwright/issue-26/deployed-experiment-desktop.png),
+[Experiment mobile](../../output/playwright/issue-26/deployed-experiment-mobile.png).
+
+Codex accepts #26's technical delivery against its five acceptance criteria.
+This records agent verification, separately from Carlo's already-recorded
+culinary Curator acceptance. The PR remains open; no production merge or
+deployment is authorized by this acceptance. Production still resolves to
+`dpl_9hJeR42NKeTZFb3WsM8t36EMU7hz` at `817c792d49b2d4a835232f1dfe678d85f7a3fbea`.
