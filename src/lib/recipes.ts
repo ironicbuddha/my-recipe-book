@@ -13,6 +13,7 @@ export type RecipeEntry = {
   excerpt: string;
   fileName: string;
   href: string;
+  heroImageKey: string;
   phaseCount: number;
   primaryIngredient?: string;
   serviceTarget?: string;
@@ -30,6 +31,14 @@ export type RecipePhaseLink = { id: string; title: string };
 
 export function getAllRecipes(): RecipeEntry[] {
   const currentLibrary = library();
+  // Existing hero filenames follow legacy routes, not canonical identities.
+  const legacyHeroKeys = new Map(
+    currentLibrary.publisherRoutes.flatMap((route) =>
+      route.type === 'redirect'
+        ? [[route.destination, route.source.split('/')[2]] as const]
+        : [],
+    ),
+  );
   return currentLibrary.recipes.map((recipe) => {
     const primaryIngredient = currentLibrary.entries.find(
       (entry) => entry.identity === recipe.basisIngredient,
@@ -42,6 +51,10 @@ export function getAllRecipes(): RecipeEntry[] {
       excerpt: excerpt(recipe.body),
       fileName: recipe.sourcePath.split('/').at(-1) ?? recipe.identity,
       href: recipe.href,
+      heroImageKey:
+        legacyHeroKeys.get(recipe.identity) ??
+        recipe.identity.split('/')[1] ??
+        '',
       phaseCount: getRecipePhases(recipe.body).length,
       primaryIngredient: primaryIngredient?.title,
       slug: recipe.identity.split('/')[1] ?? '',

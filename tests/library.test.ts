@@ -187,6 +187,32 @@ Fixture-only Curation record for retirement mechanics.
 }
 
 describe('loadLibrary', () => {
+  it('preserves legacy hero image keys after recipes gain canonical identity slugs', () => {
+    const recipes = getAllRecipes();
+    for (const [source, { destination }] of Object.entries(
+      publisherRedirects(),
+    )) {
+      const recipe = recipes.find((entry) => entry.href === destination);
+      expect(recipe, destination).toBeDefined();
+      expect(recipe, destination).toMatchObject({
+        slug: destination.split('/')[2],
+        heroImageKey: source.split('/')[2],
+      });
+      expect(
+        fs.existsSync(`src/assets/recipes/${source.split('/')[2]}.png`),
+        source,
+      ).toBe(true);
+    }
+    const newRecipe = recipes.find(
+      (entry) => entry.slug === 'lasagna-bolognese-with-bechamel',
+    );
+    expect(newRecipe).toBeDefined();
+    expect(newRecipe).toMatchObject({
+      heroImageKey: 'lasagna-bolognese-with-bechamel',
+    });
+    expect(recipes.some((entry) => entry.slug === 'hash-brownies')).toBe(false);
+  });
+
   it('publishes the real accepted soup v3 and its exact-version Experiment without archive entries', () => {
     const library = loadLibrary();
     const soup = library.recipes.find(

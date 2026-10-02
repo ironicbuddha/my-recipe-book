@@ -5,6 +5,7 @@ import { spawnSync } from 'node:child_process';
 
 import { afterEach, describe, expect, it } from 'vitest';
 import { restoreGrandfatheredFixture } from './helpers/grandfathered-fixture';
+import { publisherRedirects } from '../src/lib/library';
 
 const roots: string[] = [];
 
@@ -641,19 +642,51 @@ The Curator reviewed the evidence and retired this Candidate.
     expect(result.stderr).toContain('scaling 80.00% must be 100.00%');
   });
 
-  it('builds a recipe without a matching hero asset as a readable page without a hero figure', () => {
+  it('renders migrated hero images on recipe pages and cards while preserving the no-image fallback', () => {
     const root = copyPilotLibrary();
     writeCanonicalRecipeWithoutHero(root);
 
     const result = build(root);
+    expect(result.status, result.stderr).toBe(0);
+    const listing = fs.readFileSync(
+      path.join(process.cwd(), 'dist/recipes/index.html'),
+      'utf8',
+    );
+    const cards =
+      listing.match(
+        /<article\b[^>]*data-recipe-card[^>]*>[\s\S]*?<\/article>/g,
+      ) ?? [];
+    for (const [source, { destination }] of Object.entries(
+      publisherRedirects(root),
+    )) {
+      const imageKey = source.split('/')[2];
+      const recipePage = fs.readFileSync(
+        path.join(process.cwd(), 'dist', destination, 'index.html'),
+        'utf8',
+      );
+      const hero = recipePage.match(
+        /<figure class="recipe-hero">[\s\S]*?<\/figure>/,
+      )?.[0];
+      expect(hero, destination).toBeDefined();
+      expect(hero, destination).toContain(`${imageKey}.`);
+      expect(hero, destination).toContain('<img');
+      const card = cards.find((html) => html.includes(`href="${destination}"`));
+      expect(card, destination).toBeDefined();
+      expect(card, destination).toContain('recipe-card__thumb');
+      expect(card, destination).toContain(`${imageKey}.`);
+    }
     const page = fs.readFileSync(
       path.join(process.cwd(), 'dist/recipes/hero-fallback-pilot/index.html'),
       'utf8',
     );
 
-    expect(result.status).toBe(0);
     expect(page).toContain('<h1>Hero fallback pilot</h1>');
     expect(page).not.toContain('recipe-hero');
+    const fallbackCard = cards.find((html) =>
+      html.includes('href="/recipes/hero-fallback-pilot/"'),
+    );
+    expect(fallbackCard).toBeDefined();
+    expect(fallbackCard).not.toContain('recipe-card__thumb');
   }, 30_000);
 
   it('accepts a canonical Recipe reference to an exact Superseded Recipe Version', () => {
