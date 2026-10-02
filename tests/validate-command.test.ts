@@ -1429,6 +1429,55 @@ supporting_experiments: []
     ).toContain('This recipe has been withdrawn.');
   }, 15_000);
 
+  it('allows a legacy withdrawal only while its exact approved move-to-draft version is preserved', () => {
+    const root = copyPilotLibrary();
+    writePublisherRoutes(
+      root,
+      JSON.stringify({
+        routes: [
+          {
+            source: '/recipes/2026-02-27-hash-brownies/',
+            type: 'withdrawal',
+            recipe: 'recipe/hash-brownies',
+          },
+        ],
+      }),
+    );
+
+    expect(validate(root).status).toBe(0);
+
+    const draftPath = path.join(root, 'recipes/drafts/hash-brownies@1.md');
+    const original = fs.readFileSync(draftPath, 'utf8');
+    fs.writeFileSync(draftPath, original.replace('version: 1', 'version: 2'));
+    const mismatched = validate(root);
+    expect(mismatched.status).toBe(2);
+    expect(mismatched.stderr).toContain(
+      'publisher withdrawal recipe recipe/hash-brownies has no preserved Superseded Recipe Version or exact approved move-to-draft version',
+    );
+    fs.rmSync(draftPath);
+    const missing = validate(root);
+    expect(missing.status).toBe(2);
+    expect(missing.stderr).toContain(
+      'publisher withdrawal recipe recipe/hash-brownies has no preserved Superseded Recipe Version or exact approved move-to-draft version',
+    );
+    fs.writeFileSync(draftPath, original);
+
+    const inventoryPath = path.join(root, 'records/migrations/batch-1.md');
+    fs.writeFileSync(
+      inventoryPath,
+      fs
+        .readFileSync(inventoryPath, 'utf8')
+        .split('\n')
+        .filter((line) => !line.includes('recipe/hash-brownies'))
+        .join('\n'),
+    );
+    const unapproved = validate(root);
+    expect(unapproved.status).toBe(2);
+    expect(unapproved.stderr).toContain(
+      'publisher withdrawal recipe recipe/hash-brownies has no preserved Superseded Recipe Version or exact approved move-to-draft version',
+    );
+  });
+
   it('rejects colliding, indirect, unresolved, and draft recipe publisher routes through the public validation command', () => {
     const root = copyPilotLibrary();
     writePublisherRoutes(

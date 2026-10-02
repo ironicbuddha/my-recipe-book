@@ -9,6 +9,7 @@ import {
   ContentValidationError,
   loadLibrary,
   publisherRedirects,
+  withdrawalRoutes,
   renderContent,
   retirementRedirects,
 } from '../src/lib/library';
@@ -449,6 +450,7 @@ describe('loadLibrary', () => {
     expect(publisherRedirects()).not.toHaveProperty(
       '/recipes/2026-02-27-hash-brownies/',
     );
+    expect(withdrawalRoutes()).toEqual(['/recipes/2026-02-27-hash-brownies/']);
   });
 
   it('publishes identity-derived routes and relationship backlinks', () => {

@@ -5,6 +5,23 @@ Issue: [#27](https://github.com/ironicbuddha/my-recipe-book/issues/27)
 Prepared on 2026-10-02. This is preparation for a production decision;
 it does not record final Curator acceptance or authorize deployment.
 
+## Status after the soup release
+
+PR #47 merged at `8ad9d41c05860d3a59b241c3ef99a31f3954396f` and deployed as
+`dpl_2tDnwBEXqF5RGLaRbBaUkSuMoh8n` on 2026-10-02. Production readback passed
+all 326 eligible pages and 30 redirects; the old Hash Brownies URL returned 404.
+The main merge step below has occurred and must not be replayed. The baseline
+table and preparation results below are historical evidence.
+
+Carlo subsequently approved the exact Hash Brownies HTTP 410 withdrawal and
+implementation/preview verification. See
+[the withdrawal decision](../acceptance/issue-27-hash-brownies-withdrawal.md).
+Its approved draft remains preserved; no former canonical state is invented.
+The original withdrawal-authority blocker below is resolved by this decision;
+deployed verification, final Curator foundation acceptance, and production
+release approval remain pending for the remediation. Retain the soup release
+artifact above as the immediate recovery baseline for that release.
+
 ## Goal and operating boundary
 
 Publish the complete validated culinary foundation on the existing Astro/Vercel
