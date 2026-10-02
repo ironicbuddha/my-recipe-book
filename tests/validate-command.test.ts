@@ -654,7 +654,7 @@ The Curator reviewed the evidence and retired this Candidate.
     expect(result.status).toBe(0);
     expect(page).toContain('<h1>Hero fallback pilot</h1>');
     expect(page).not.toContain('recipe-hero');
-  }, 15_000);
+  }, 30_000);
 
   it('accepts a canonical Recipe reference to an exact Superseded Recipe Version', () => {
     const root = copyPilotLibrary();
@@ -1476,7 +1476,7 @@ supporting_experiments: []
     expect(unapproved.stderr).toContain(
       'publisher withdrawal recipe recipe/hash-brownies has no preserved Superseded Recipe Version or exact approved move-to-draft version',
     );
-  });
+  }, 15_000);
 
   it('rejects colliding, indirect, unresolved, and draft recipe publisher routes through the public validation command', () => {
     const root = copyPilotLibrary();

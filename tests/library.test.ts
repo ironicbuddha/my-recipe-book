@@ -1315,9 +1315,10 @@ The Curator reviewed the evidence and retired this Candidate.
   });
 
   it('projects the approved pilot through the recipe-facing public helpers', () => {
+    const currentLibrary = loadLibrary(process.cwd());
     const recipes = getAllRecipes();
 
-    expect(recipes).toHaveLength(loadLibrary(process.cwd()).recipes.length);
+    expect(recipes).toHaveLength(currentLibrary.recipes.length);
     expect(recipes).toEqual(
       expect.arrayContaining([
         expect.objectContaining({
@@ -1328,7 +1329,7 @@ The Curator reviewed the evidence and retired this Candidate.
       ]),
     );
     expect(getLibraryCounts()).toMatchObject({
-      ingredients: loadLibrary(process.cwd()).knowledge.filter(
+      ingredients: currentLibrary.knowledge.filter(
         (entry) => entry.type === 'ingredient',
       ).length,
       principles: 47,
@@ -1339,18 +1340,11 @@ The Curator reviewed the evidence and retired this Candidate.
       (recipe) => recipe.slug === 'singapore-chicken-rice',
     );
     expect(getRecipePhases(singapore?.body ?? '')).toHaveLength(5);
-    expect(renderRecipeBody(singapore?.body ?? '')).toContain(
-      '/ingredients/whole-chicken/',
-    );
-    expect(renderRecipeBody(singapore?.body ?? '')).toContain(
-      'table--failure-modes',
-    );
-    expect(renderRecipeBody(singapore?.body ?? '')).toContain(
-      'table--ingredient-uses',
-    );
-    expect(renderRecipeBody(singapore?.body ?? '')).toContain(
-      'table--technique-applications',
-    );
+    const rendered = renderRecipeBody(singapore?.body ?? '');
+    expect(rendered).toContain('/ingredients/whole-chicken/');
+    expect(rendered).toContain('table--failure-modes');
+    expect(rendered).toContain('table--ingredient-uses');
+    expect(rendered).toContain('table--technique-applications');
   });
 
   it('renders a heading target for every published Recipe phase link', () => {

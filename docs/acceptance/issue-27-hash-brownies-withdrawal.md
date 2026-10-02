@@ -54,3 +54,16 @@ culinary and source-evidence file is byte-identical to that baseline.
 
 Deployed-preview results will be recorded on #27 after verification. This record does not claim final foundation acceptance or a
 production 410 outcome.
+
+## Remote gate reliability repair
+
+The first preview gate passed the withdrawal tests but exceeded five seconds
+in the existing public-helper projection test. That test loaded the corpus
+eight times; it now uses one expected-library snapshot and one rendered body,
+reducing the load count to four without dropping assertions.
+
+The first GitHub gate repeated the soup release's 15-second timeout in the
+first successful integration build (missing hero asset). That cold build now
+has a 30-second limit; its exit-status, readable-heading, and absent-hero checks
+are unchanged. The four-command withdrawal regression has a 15-second limit.
+These repairs do not bypass or skip any release checks.
