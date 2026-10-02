@@ -319,6 +319,7 @@ function loadLibrarySources(root: string): CulinaryLibrary {
     publisherRoutes,
     canonicalRecipes,
     recipeVersions,
+    inventories,
     eligible,
     diagnostics,
   );
@@ -1652,6 +1653,7 @@ function validatePublisherRoutes(
   routes: PublisherRoute[],
   canonicalRecipes: Map<string, LibraryEntry>,
   recipeVersions: Map<string, LibraryEntry>,
+  inventories: InventoryRow[],
   eligible: LibraryEntry[],
   diagnostics: string[],
 ): void {
@@ -1695,9 +1697,18 @@ function validatePublisherRoutes(
           `recipes${path.sep}superseded${path.sep}`,
         ),
     );
-    if (!preserved) {
+    const preservedMigrationDraft = inventories.some((inventory) => {
+      const draft = recipeVersions.get(`${route.recipe}@${inventory.version}`);
+      return (
+        inventory.approved &&
+        inventory.identity === route.recipe &&
+        inventory.disposition === 'move-to-draft' &&
+        draft?.sourcePath.startsWith(`recipes${path.sep}drafts${path.sep}`)
+      );
+    });
+    if (!preserved && !preservedMigrationDraft) {
       diagnostics.push(
-        `publisher withdrawal recipe ${route.recipe} has no preserved Superseded Recipe Version`,
+        `publisher withdrawal recipe ${route.recipe} has no preserved Superseded Recipe Version or exact approved move-to-draft version`,
       );
     }
   }
