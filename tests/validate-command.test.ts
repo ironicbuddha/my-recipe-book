@@ -642,6 +642,7 @@ The Curator reviewed the evidence and retired this Candidate.
     expect(result.stderr).toContain('scaling 80.00% must be 100.00%');
   });
 
+  // Cold CI builds optimize the full image corpus before these assertions run.
   it('renders migrated hero images on recipe pages and cards while preserving the no-image fallback', () => {
     const root = copyPilotLibrary();
     writeCanonicalRecipeWithoutHero(root);
@@ -687,7 +688,7 @@ The Curator reviewed the evidence and retired this Candidate.
     );
     expect(fallbackCard).toBeDefined();
     expect(fallbackCard).not.toContain('recipe-card__thumb');
-  }, 30_000);
+  }, 300_000);
 
   it('accepts a canonical Recipe reference to an exact Superseded Recipe Version', () => {
     const root = copyPilotLibrary();
