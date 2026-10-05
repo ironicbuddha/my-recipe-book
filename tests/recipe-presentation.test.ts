@@ -98,3 +98,20 @@ it('continues across separate ordered lists and does not count ancillary bullet 
   expect(view.phases[0].methodHtml).toContain('<ol start="2">');
   expect(view.phases[1].methodStart).toBe(3);
 });
+
+it('omits Use notes that only repeat the ingredient name while retaining useful instructions and links', () => {
+  const view = projectRecipe(
+    `## PHASE A — MIX\n\n### Ingredient Uses\n\n| Key | Ingredient | Quantity | Scaling | Use |\n| --- | --- | --- | --- | --- |\n| oil | [Neutral oil](ref:ingredient/neutral-oil) | 15 g | 2.31% | Neutral oil. |\n| garlic | [Garlic, grated](ref:ingredient/garlic) | 5 g | 0.77% | garlic, grated. |\n| water | [Water](ref:ingredient/water) | 40 g | 6.15% | Reserve 40 g to dissolve salt. |\n| salt | Salt | As needed | — | Salt. |\n| flour | [Bread flour](ref:ingredient/bread-flour) | 100 g | 15.38% | [Bread flour](ref:ingredient/bread-flour) |\n\n### Method\n\n1. Mix.\n\n## FAILURE MODES\n\nNone.`,
+    library,
+  );
+  expect(view.phases[0].ingredients[0].labelHtml).toContain(
+    'href="/ingredients/neutral-oil/"',
+  );
+  expect(view.phases[0].ingredients.map((use) => use.noteHtml)).toEqual([
+    '',
+    '',
+    'Reserve 40 g to dissolve salt.',
+    '',
+    '<a href="/ingredients/bread-flour/">Bread flour</a>',
+  ]);
+});

@@ -108,7 +108,9 @@ export function projectRecipe(
           labelHtml: inline(cells[1] ?? ''),
           quantity: cells[2] ?? '',
           scaling: cells[3] ?? '',
-          noteHtml: inline(cells[4] ?? ''),
+          noteHtml: inline(
+            ingredientNote(cells[1] ?? '', cells[4] ?? '', parser),
+          ),
         }));
         const start = sectionTokens[tableStart]?.map?.[0] ?? 0;
         const finish = sectionTokens[tableStart]?.map?.[1] ?? 0;
@@ -149,6 +151,22 @@ export function projectRecipe(
     phases,
     endingHtml: render(source(endingFrom, lines.length)),
   };
+}
+
+/** Omit plain-name echoes; retain preparation instructions and rich-text references. */
+function ingredientNote(
+  label: string,
+  note: string,
+  parser: MarkdownIt,
+): string {
+  const labelText =
+    parser
+      .parseInline(label, {})[0]
+      ?.children?.map((token) => token.content)
+      .join('') ?? '';
+  const normalize = (value: string) =>
+    value.trim().replace(/\.$/u, '').replace(/\s+/gu, ' ').toLowerCase();
+  return normalize(note) === normalize(labelText) ? '' : note;
 }
 
 function tableRows(tokens: Token[]): string[][] {

@@ -14,7 +14,7 @@ const { phase } = Astro.props;
           <li class="ingredient-entry" data-use-key={use.key}>
             <div class="ingredient-name">
               <span set:html={use.labelHtml} />
-              <p class="ingredient-note" set:html={use.noteHtml} />
+              {use.noteHtml && <p class="ingredient-note" set:html={use.noteHtml} />}
             </div>
             <dl class="ingredient-measures">
               <div><dt>Quantity</dt><dd>{use.quantity}</dd></div>

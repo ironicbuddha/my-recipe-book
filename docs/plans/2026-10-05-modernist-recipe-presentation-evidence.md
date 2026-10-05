@@ -118,3 +118,22 @@ Browser evidence is Chromium/Chrome only. Accessibility verification covers nati
 semantics, the browser accessibility snapshot and keyboard behavior, not a live
 screen-reader session. Local implementation and validation do not imply push,
 PR, merge or deployment. Yield adjustment remains deferred to issue #51.
+
+## Follow-up — duplicate ingredient labels
+
+Owner feedback identified plain Use notes repeating the linked Ingredient name.
+The full Recipe projection now omits these name-only notes, comparing visible
+label text while ignoring case, whitespace and a final period. Useful instructions
+and authored note links remain intact, and canonical Markdown is unchanged.
+The component emits no empty note paragraph.
+
+The regression was reproduced in a failing projection test, then repaired.
+All 7 projection tests and all 85 repository tests pass; `pnpm check` and
+`git diff --check` pass. Desktop (1440 px) and phone (390 px) browser checks confirm
+Neutral oil renders once with its link and original 15 g quantity, while
+Sourdough's water-reservation instruction remains visible. The dev server was
+restarted to refresh cached static-path props. Standards and specification review
+found no remaining issues within this follow-up's scope.
+
+[Desktop follow-up](../../output/playwright/ingredient-duplicate-fix-1440.png)
+· [Phone follow-up](../../output/playwright/ingredient-duplicate-fix-390.png)
