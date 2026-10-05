@@ -3,10 +3,12 @@ import '../styles/global.css';
 
 interface Props {
   description?: string;
+  recipePage?: boolean;
   title?: string;
 }
 
 const {
+  recipePage = false,
   description = 'Modernist recipe notes rendered as an Astro site.',
   title = 'Modernist Recipe Book',
 } = Astro.props;
@@ -36,6 +38,7 @@ const ogImage = new URL('/og-image.jpg', Astro.site).toString();
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Work+Sans:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    {recipePage && <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />}
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
@@ -54,7 +57,7 @@ const ogImage = new URL('/og-image.jpg', Astro.site).toString();
     <meta name="twitter:image" content={ogImage} />
     <title>{title}</title>
   </head>
-  <body>
+  <body class:list={{ 'recipe-page': recipePage }}>
     <div class="site-shell">
       <header class="site-header">
         <a class="site-brand" href="/">

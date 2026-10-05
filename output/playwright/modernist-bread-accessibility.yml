@@ -1,0 +1,245 @@
+- article:
+  - figure:
+    - img "Specimen photograph for Sourdough Bread"
+  - heading "Sourdough Bread" [level=1]
+  - term: "Yield:"
+  - definition: 2 loaves (~900 g each)
+  - paragraph: February 23, 2026 · Version 1 · Side Dish
+  - paragraph: Lean naturally leavened bread with staged fermentation, folds, and covered baking.
+  - navigation "Recipe phases":
+    - link "A — BUILD LEVAIN":
+      - /url: "#phase-a-build-levain"
+    - link "B — MIX AND DEVELOP DOUGH":
+      - /url: "#phase-b-mix-and-develop-dough"
+    - link "C — SHAPE, PROOF, AND BAKE":
+      - /url: "#phase-c-shape-proof-and-bake"
+  - region "Preparation":
+    - heading "Preparation" [level=2]
+    - paragraph: "Scaling basis: Bread flour · 1100 g"
+    - region "PHASE A — BUILD LEVAIN":
+      - heading "PHASE A — BUILD LEVAIN" [level=2]
+      - heading "Ingredient Uses" [level=3]
+      - list:
+        - listitem:
+          - link "Mature sourdough starter":
+            - /url: /ingredients/mature-sourdough-starter/
+          - paragraph: Inoculate the levain.
+          - term: Quantity
+          - definition: 20 g
+          - term: Scaling
+          - definition: 1.82%
+        - listitem:
+          - link "Bread flour":
+            - /url: /ingredients/bread-flour/
+          - paragraph: Feed the levain.
+          - term: Quantity
+          - definition: 100 g
+          - term: Scaling
+          - definition: 9.09%
+        - listitem:
+          - link "Water":
+            - /url: /ingredients/water/
+          - paragraph: Hydrate the levain.
+          - term: Quantity
+          - definition: 100 g
+          - term: Scaling
+          - definition: 9.09%
+      - heading "Method" [level=3]
+      - list:
+        - listitem: Mix starter, flour, and water until homogeneous.
+        - listitem: Cover and ferment until expanded and active.
+      - heading "Technique Applications" [level=3]
+      - table:
+        - rowgroup:
+          - row "Technique Controls Purpose":
+            - columnheader "Technique"
+            - columnheader "Controls"
+            - columnheader "Purpose"
+        - rowgroup:
+          - row "Levain build Ferment about 8 h at room temperature until expanded and active. Produce ripe leaven.":
+            - cell "Levain build":
+              - link "Levain build":
+                - /url: /techniques/levain-build/
+            - cell "Ferment about 8 h at room temperature until expanded and active."
+            - cell "Produce ripe leaven."
+      - heading "Principles" [level=3]
+      - list:
+        - listitem:
+          - link "Yeast and lactic acid bacteria fermentation":
+            - /url: /principles/yeast-and-lactic-acid-bacteria-fermentation/
+          - text: — The culture produces gas and acidity.
+      - heading "Phase Outputs" [level=3]
+      - table:
+        - rowgroup:
+          - row "Key Phase Output Description":
+            - columnheader "Key"
+            - columnheader "Phase Output"
+            - columnheader "Description"
+        - rowgroup:
+          - row "ripe-levain Ripe levain Active leaven for the dough.":
+            - cell "ripe-levain"
+            - cell "Ripe levain"
+            - cell "Active leaven for the dough."
+    - region "PHASE B — MIX AND DEVELOP DOUGH":
+      - heading "PHASE B — MIX AND DEVELOP DOUGH" [level=2]
+      - heading "Ingredient Uses" [level=3]
+      - list:
+        - listitem:
+          - link "Bread flour":
+            - /url: /ingredients/bread-flour/
+          - paragraph: Mix into the dough.
+          - term: Quantity
+          - definition: 1000 g
+          - term: Scaling
+          - definition: 90.91%
+        - listitem:
+          - link "Water":
+            - /url: /ingredients/water/
+          - paragraph: Use 600 g to hydrate the flour and reserve 40 g to dissolve salt.
+          - term: Quantity
+          - definition: 640 g
+          - term: Scaling
+          - definition: 58.18%
+        - listitem:
+          - link "Salt":
+            - /url: /ingredients/salt/
+          - paragraph: Dissolve in the additional water.
+          - term: Quantity
+          - definition: 20 g
+          - term: Scaling
+          - definition: 1.82%
+      - heading "Method" [level=3]
+      - list:
+        - listitem: Combine water, ripe levain, and flour; cover and rest.
+        - listitem: Dissolve salt in the additional water, mix it into the dough, and perform three stretch-and-fold sets.
+        - listitem: Let the dough bulk ferment until visibly aerated.
+      - heading "Technique Applications" [level=3]
+      - table:
+        - rowgroup:
+          - row "Technique Controls Purpose":
+            - columnheader "Technique"
+            - columnheader "Controls"
+            - columnheader "Purpose"
+        - rowgroup:
+          - row "Autolyse Rest flour and water 30 min to 4 h. Hydrate flour before salt incorporation.":
+            - cell "Autolyse":
+              - link "Autolyse":
+                - /url: /techniques/autolyse/
+            - cell "Rest flour and water 30 min to 4 h."
+            - cell "Hydrate flour before salt incorporation."
+          - row "Folding Perform 3 stretch-and-fold sets over 90 min. Strengthen dough without intensive kneading.":
+            - cell "Folding":
+              - link "Folding":
+                - /url: /techniques/folding/
+            - cell "Perform 3 stretch-and-fold sets over 90 min."
+            - cell "Strengthen dough without intensive kneading."
+          - row "Bulk fermentation Ferment 2–3 h until visibly aerated. Develop gas and dough structure.":
+            - cell "Bulk fermentation":
+              - link "Bulk fermentation":
+                - /url: /techniques/bulk-fermentation/
+            - cell "Ferment 2–3 h until visibly aerated."
+            - cell "Develop gas and dough structure."
+      - heading "Principles" [level=3]
+      - list:
+        - listitem:
+          - link "Hydration ratio":
+            - /url: /principles/hydration-ratio/
+          - text: — Water proportion controls dough handling and crumb.
+        - listitem:
+          - link "Gluten development":
+            - /url: /principles/gluten-development/
+          - text: — Resting and folding develop structure.
+        - listitem:
+          - link "Salt control of fermentation":
+            - /url: /principles/salt-control-of-fermentation/
+          - text: — Salt affects fermentation timing.
+      - heading "Phase Outputs Used" [level=3]
+      - table:
+        - rowgroup:
+          - row "Phase Output Use":
+            - columnheader "Phase Output"
+            - columnheader "Use"
+        - rowgroup:
+          - row "Ripe levain Dissolve ripe-levain in the dough water.":
+            - cell "Ripe levain"
+            - cell "Dissolve ripe-levain in the dough water.":
+              - text: Dissolve
+              - code: ripe-levain
+              - text: in the dough water.
+      - heading "Phase Outputs" [level=3]
+      - table:
+        - rowgroup:
+          - row "Key Phase Output Description":
+            - columnheader "Key"
+            - columnheader "Phase Output"
+            - columnheader "Description"
+        - rowgroup:
+          - row "bulk-dough Bulk-fermented dough Aerated dough ready to divide.":
+            - cell "bulk-dough"
+            - cell "Bulk-fermented dough"
+            - cell "Aerated dough ready to divide."
+    - region "PHASE C — SHAPE, PROOF, AND BAKE":
+      - heading "PHASE C — SHAPE, PROOF, AND BAKE" [level=2]
+      - list
+      - heading "Method" [level=3]
+      - list:
+        - listitem: Divide the dough into two, pre-shape, rest 30 min, shape, and proof 2–3 h at room temperature or overnight in the refrigerator.
+        - listitem: Preheat a lidded casserole at 240 C for at least 20 min.
+        - listitem: Bake each scored loaf covered, uncover for the final 10 min, and cool completely before slicing.
+      - heading "Technique Applications" [level=3]
+      - table:
+        - rowgroup:
+          - row "Technique Controls Purpose":
+            - columnheader "Technique"
+            - columnheader "Controls"
+            - columnheader "Purpose"
+        - rowgroup:
+          - row "Staged baking Bake covered then uncover for the last 10 min; total about 40 min at 240 C. Allow spring before browning the crust.":
+            - cell "Staged baking":
+              - link "Staged baking":
+                - /url: /techniques/staged-baking/
+            - cell "Bake covered then uncover for the last 10 min; total about 40 min at 240 C."
+            - cell "Allow spring before browning the crust."
+      - heading "Principles" [level=3]
+      - list:
+        - listitem:
+          - link "Steam-assisted oven spring":
+            - /url: /principles/steam-assisted-oven-spring/
+          - text: — Covered baking delays crust setting during expansion.
+        - listitem:
+          - link "Maillard reaction":
+            - /url: /principles/maillard-reaction/
+          - text: — The uncovered finish browns the crust.
+      - heading "Phase Outputs Used" [level=3]
+      - table:
+        - rowgroup:
+          - row "Phase Output Use":
+            - columnheader "Phase Output"
+            - columnheader "Use"
+        - rowgroup:
+          - row "Bulk-fermented dough Divide bulk-dough, pre-shape, rest, shape, proof, and score.":
+            - cell "Bulk-fermented dough"
+            - cell "Divide bulk-dough, pre-shape, rest, shape, proof, and score.":
+              - text: Divide
+              - code: bulk-dough
+              - text: ", pre-shape, rest, shape, proof, and score."
+  - heading "FAILURE MODES" [level=2]
+  - table:
+    - rowgroup:
+      - row "Symptom Likely cause Corrective action":
+        - columnheader "Symptom"
+        - columnheader "Likely cause"
+        - columnheader "Corrective action"
+    - rowgroup:
+      - row "Dense loaf Levain or bulk fermentation was insufficient. Extend fermentation and confirm levain activity.":
+        - cell "Dense loaf"
+        - cell "Levain or bulk fermentation was insufficient."
+        - cell "Extend fermentation and confirm levain activity."
+      - row "Flat dough Gluten was weak or dough overproofed. Add a fold set and shorten final proof.":
+        - cell "Flat dough"
+        - cell "Gluten was weak or dough overproofed."
+        - cell "Add a fold set and shorten final proof."
+      - row "Gummy crumb Centre was underbaked or sliced hot. Bake to about 98 C and cool fully.":
+        - cell "Gummy crumb"
+        - cell "Centre was underbaked or sliced hot."
+        - cell "Bake to about 98 C and cool fully."

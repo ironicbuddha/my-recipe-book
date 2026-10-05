@@ -3,7 +3,11 @@ import { Picture } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 import ShareSheet from '../../components/ShareSheet.astro';
 import SiteLayout from '../../layouts/SiteLayout.astro';
-import { getAllRecipes, getRecipePhases, renderRecipeBody } from '../../lib/recipes';
+import { getAllRecipes } from '../../lib/recipes';
+import { loadLibrary } from '../../lib/library';
+import { projectRecipe } from '../../lib/recipe-presentation';
+import RecipePreparationGroup from '../../components/RecipePreparationGroup.astro';
+import '../../styles/recipe.css';
 
 const heroModules = import.meta.glob<{ default: ImageMetadata }>(
   '../../assets/recipes/*.png',
@@ -21,69 +25,53 @@ export function getStaticPaths() {
   return getAllRecipes().map((recipe) => ({
     params: { slug: recipe.slug },
     props: {
-      html: renderRecipeBody(recipe.body),
-      phaseLinks: getRecipePhases(recipe.body),
+      presentation: projectRecipe(recipe.body, loadLibrary()),
       recipe,
     },
   }));
 }
 
-const { html, phaseLinks, recipe } = Astro.props;
+const { presentation, recipe } = Astro.props;
 const heroImage = heroBySlug[recipe.heroImageKey];
 const recipeUrl = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 
-<SiteLayout title={`${recipe.title} | Modernist Recipe Book`} description={recipe.excerpt}>
-  <section class="page-header page-header--tight">
-    <div class="page-header__toolbar">
-      <a class="back-link" href="/recipes/">All recipes</a>
+<SiteLayout title={`${recipe.title} | Modernist Recipe Book`} description={recipe.excerpt} recipePage>
+  <div class="recipe-utilities" aria-label="Recipe utilities">
+    <a href="/recipes/">All recipes</a>
+    <div>
       <ShareSheet title={recipe.title} description={recipe.excerpt} url={recipeUrl} />
+      <button type="button" data-print-recipe>Print</button>
     </div>
-    <p class="eyebrow">{recipe.dateLabel}</p>
-    <h1>{recipe.title}</h1>
-    <div class="fact-strip" aria-label="Recipe facts">
-      {recipe.dishType && <span>{recipe.dishType}</span>}
-      <span>{recipe.phaseCount} phases</span>
-      {recipe.yieldText && <span>{recipe.yieldText}</span>}
-      {recipe.serviceTarget && <span>Service {recipe.serviceTarget}</span>}
-      {recipe.primaryIngredient && <span>{recipe.primaryIngredient}</span>}
-    </div>
-  </section>
-
-  {
-    heroImage && (
-      <figure class="recipe-hero">
-        <Picture
-          class="recipe-hero__image"
-          src={heroImage}
-          alt={`Specimen photograph for ${recipe.title}`}
-          widths={[800, 1200, 1600]}
-          sizes="(min-width: 900px) 900px, 100vw"
-          formats={['avif', 'webp']}
-          loading="eager"
-          decoding="async"
-        />
+  </div>
+  <article class="modernist-recipe">
+    {heroImage && (
+      <figure class="cooking-hero">
+        <Picture src={heroImage} alt={`Specimen photograph for ${recipe.title}`}
+          widths={[800, 1200, 1600]} sizes="(min-width: 1200px) 1100px, 100vw"
+          formats={['avif', 'webp']} loading="eager" decoding="async" />
       </figure>
-    )
-  }
-
-  <article class="recipe-sheet">
-    <div class="recipe-workbench">
-      {
-        phaseLinks.length > 0 && (
-          <aside class="phase-nav" aria-label="Recipe phases">
-            <p class="phase-nav__label">Run sheet</p>
-            <ol>
-              {phaseLinks.map((phase) => (
-                <li>
-                  <a href={`#${phase.id}`}>{phase.title.replace(/^PHASE\s+/u, '')}</a>
-                </li>
-              ))}
-            </ol>
-          </aside>
-        )
-      }
-      <div class="recipe-body" set:html={html} />
-    </div>
+    )}
+    <header class="recipe-opening">
+      <h1>{recipe.title}</h1>
+      <dl class="cooking-facts">
+        {recipe.yieldText && <div><dt>Yield</dt><dd>{recipe.yieldText}</dd></div>}
+      </dl>
+      <p class="recipe-provenance">{recipe.dateLabel} · Version {recipe.version}{recipe.dishType && ` · ${recipe.dishType}`}</p>
+    </header>
+    <div class="recipe-introduction culinary-prose" set:html={presentation.overviewHtml} />
+    <nav class="phase-jumps" aria-label="Recipe phases">
+      {presentation.phases.map((phase) => <a href={`#${phase.id}`}>{phase.title.replace(/^PHASE\s+/u, '')}</a>)}
+    </nav>
+    <section class="recipe-preparation" aria-labelledby="preparation-heading">
+      <h2 id="preparation-heading" class="preparation-label">Preparation</h2>
+      <p class="scale-basis">Scaling basis: {recipe.primaryIngredient ?? recipe.identity} · {recipe.basisQuantityG} g</p>
+      <div class="matrix-header" aria-hidden="true"><span>Ingredient</span><span>Quantity</span><span>Scaling</span><span>Procedure</span></div>
+      {presentation.phases.map((phase) => <RecipePreparationGroup phase={phase} />)}
+    </section>
+    <div class="recipe-ending culinary-prose" set:html={presentation.endingHtml} />
   </article>
 </SiteLayout>
+<script>
+  document.querySelector('[data-print-recipe]')?.addEventListener('click', () => window.print());
+</script>

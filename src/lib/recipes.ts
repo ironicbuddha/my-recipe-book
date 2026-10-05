@@ -6,6 +6,9 @@ import {
 } from './library';
 
 export type RecipeEntry = {
+  identity: string;
+  version: number;
+  basisQuantityG?: number;
   body: string;
   date: string;
   dateLabel: string;
@@ -44,6 +47,9 @@ export function getAllRecipes(): RecipeEntry[] {
       (entry) => entry.identity === recipe.basisIngredient,
     );
     return {
+      identity: recipe.identity,
+      version: recipe.version,
+      basisQuantityG: recipe.basisQuantityG,
       body: recipe.body,
       date: recipe.date,
       dateLabel: formatDate(recipe.date),
