@@ -100,9 +100,22 @@ code {
 }
 
 .site-brand {
+  align-items: center;
+  display: flex;
+  gap: var(--space-sm);
+  padding: var(--space-sm) 0;
+}
+
+.site-brand__logo {
+  display: block;
+  flex-shrink: 0;
+  height: auto;
+  width: 3rem;
+}
+
+.site-brand__text {
   display: grid;
   gap: 0.1rem;
-  padding: var(--space-sm) 0;
 }
 
 .site-brand__eyebrow,

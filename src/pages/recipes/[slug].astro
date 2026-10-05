@@ -29,7 +29,7 @@ export function getStaticPaths() {
 }
 
 const { html, phaseLinks, recipe } = Astro.props;
-const heroImage = heroBySlug[recipe.slug];
+const heroImage = heroBySlug[recipe.heroImageKey];
 const recipeUrl = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 

@@ -22,7 +22,7 @@ for (const [filePath, module] of Object.entries(heroModules)) {
 const { recipe } = Astro.props;
 const taxonomyTags = recipe.tags.filter((tag) => !tag.startsWith('dish-'));
 const visibleTags = taxonomyTags.slice(0, 3);
-const heroImage = heroBySlug[recipe.slug];
+const heroImage = heroBySlug[recipe.heroImageKey];
 const searchIndex = [
   recipe.title,
   recipe.excerpt,
