@@ -1,0 +1,311 @@
+{
+  "recipes": 55,
+  "overflow": [],
+  "screenshots": [
+    {
+      "slug": "asian-ginger-chicken-noodle-soup",
+      "width": 320
+    },
+    {
+      "slug": "asian-ginger-chicken-noodle-soup",
+      "width": 390
+    },
+    {
+      "slug": "asian-ginger-chicken-noodle-soup",
+      "width": 768
+    },
+    {
+      "slug": "asian-ginger-chicken-noodle-soup",
+      "width": 1024
+    },
+    {
+      "slug": "asian-ginger-chicken-noodle-soup",
+      "width": 1440
+    },
+    {
+      "slug": "sourdough-bread",
+      "width": 320
+    },
+    {
+      "slug": "sourdough-bread",
+      "width": 390
+    },
+    {
+      "slug": "sourdough-bread",
+      "width": 768
+    },
+    {
+      "slug": "sourdough-bread",
+      "width": 1024
+    },
+    {
+      "slug": "sourdough-bread",
+      "width": 1440
+    },
+    {
+      "slug": "reverse-seared-fillet-hibachi-cabbage-steakhouse-fries-gochujang-sauce",
+      "width": 320
+    },
+    {
+      "slug": "reverse-seared-fillet-hibachi-cabbage-steakhouse-fries-gochujang-sauce",
+      "width": 390
+    },
+    {
+      "slug": "reverse-seared-fillet-hibachi-cabbage-steakhouse-fries-gochujang-sauce",
+      "width": 768
+    },
+    {
+      "slug": "reverse-seared-fillet-hibachi-cabbage-steakhouse-fries-gochujang-sauce",
+      "width": 1024
+    },
+    {
+      "slug": "reverse-seared-fillet-hibachi-cabbage-steakhouse-fries-gochujang-sauce",
+      "width": 1440
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/recipes/2026-02-19-singapore-chicken-rice/",
+      "destination": "/recipes/singapore-chicken-rice/",
+      "currentUrl": "http://127.0.0.1:4322/recipes/singapore-chicken-rice/"
+    },
+    {
+      "source": "/recipes/2026-02-19-cherry-pie/",
+      "destination": "/recipes/sour-cherry-pie/",
+      "currentUrl": "http://127.0.0.1:4322/recipes/sour-cherry-pie/"
+    },
+    {
+      "source": "/recipes/2026-02-19-flapjacks-american-pancakes/",
+      "destination": "/recipes/flapjacks-american-pancakes/",
+      "currentUrl": "http://127.0.0.1:4322/recipes/flapjacks-american-pancakes/"
+    },
+    {
+      "source": "/recipes/2026-02-19-maple-pecan-pie/",
+      "destination": "/recipes/maple-pecan-pie/",
+      "currentUrl": "http://127.0.0.1:4322/recipes/maple-pecan-pie/"
+    },
+    {
+      "source": "/recipes/2026-02-19-masterclass-chocolate-brownie/",
+      "destination": "/recipes/masterclass-chocolate-brownie/",
+      "currentUrl": "http://127.0.0.1:4322/recipes/masterclass-chocolate-brownie/"
+    },
+    {
+      "source": "/recipes/2026-02-23-sourdough-bread/",
+      "destination": "/recipes/sourdough-bread/",
+      "currentUrl": "http://127.0.0.1:4322/recipes/sourdough-bread/"
+    },
+    {
+      "source": "/recipes/2026-02-19-bun-bo-nuong-grilled-beef-with-rice-noodles/",
+      "destination": "/recipes/bun-bo-nuong/",
+      "currentUrl": "http://127.0.0.1:4322/recipes/bun-bo-nuong/"
+    },
+    {
+      "source": "/recipes/2026-02-19-bun-cha-hanoi-grilled-pork-with-noodles/",
+      "destination": "/recipes/bun-cha/",
+      "currentUrl": "http://127.0.0.1:4322/recipes/bun-cha/"
+    },
+    {
+      "source": "/recipes/2026-02-19-fried-master-stock-chicken/",
+      "destination": "/recipes/fried-master-stock-chicken/",
+      "currentUrl": "http://127.0.0.1:4322/recipes/fried-master-stock-chicken/"
+    },
+    {
+      "source": "/recipes/2026-02-19-lao-herbaceous-chicken-noodle-soup/",
+      "destination": "/recipes/lao-herbaceous-chicken-noodle-soup/",
+      "currentUrl": "http://127.0.0.1:4322/recipes/lao-herbaceous-chicken-noodle-soup/"
+    },
+    {
+      "source": "/recipes/2026-03-03-asian-chicken-noodle-soup/",
+      "destination": "/recipes/asian-ginger-chicken-noodle-soup/",
+      "currentUrl": "http://127.0.0.1:4322/recipes/asian-ginger-chicken-noodle-soup/"
+    },
+    {
+      "source": "/recipes/2026-02-19-spicy-korean-fried-chicken/",
+      "destination": "/recipes/spicy-korean-fried-chicken/",
+      "currentUrl": "http://127.0.0.1:4322/recipes/spicy-korean-fried-chicken/"
+    },
+    {
+      "source": "/recipes/2026-02-19-guanciale-olive-and-chili-pasta-sauce/",
+      "destination": "/recipes/guanciale-olive-chili-pasta-sauce/",
+      "currentUrl": "http://127.0.0.1:4322/recipes/guanciale-olive-chili-pasta-sauce/"
+    },
+    {
+      "source": "/recipes/2026-02-19-italian-sausages-with-puy-lentils/",
+      "destination": "/recipes/italian-sausages-puy-lentils/",
+      "currentUrl": "http://127.0.0.1:4322/recipes/italian-sausages-puy-lentils/"
+    },
+    {
+      "source": "/recipes/2026-02-19-hibachi-pork-with-charred-greens-and-spanish-green-sauce/",
+      "destination": "/recipes/hibachi-pork-charred-greens-spanish-green-sauce/",
+      "currentUrl": "http://127.0.0.1:4322/recipes/hibachi-pork-charred-greens-spanish-green-sauce/"
+    },
+    {
+      "source": "/recipes/2026-02-19-grilled-pork-al-pastor/",
+      "destination": "/recipes/grilled-pork-al-pastor/",
+      "currentUrl": "http://127.0.0.1:4322/recipes/grilled-pork-al-pastor/"
+    },
+    {
+      "source": "/recipes/2026-05-29-porchetta-with-fennel-pollen-and-salsa-verde/",
+      "destination": "/recipes/porchetta-fennel-pollen-salsa-verde/",
+      "currentUrl": "http://127.0.0.1:4322/recipes/porchetta-fennel-pollen-salsa-verde/"
+    },
+    {
+      "source": "/recipes/2026-05-29-soy-garlic-sesame-gochujang-hibachi-chicken-tacos/",
+      "destination": "/recipes/soy-garlic-sesame-gochujang-hibachi-chicken-tacos/",
+      "currentUrl": "http://127.0.0.1:4322/recipes/soy-garlic-sesame-gochujang-hibachi-chicken-tacos/"
+    },
+    {
+      "source": "/recipes/2026-02-19-cowboy-beans/",
+      "destination": "/recipes/cowboy-beans/",
+      "currentUrl": "http://127.0.0.1:4322/recipes/cowboy-beans/"
+    },
+    {
+      "source": "/recipes/2026-02-19-gratin-dauphinois/",
+      "destination": "/recipes/gratin-dauphinois/",
+      "currentUrl": "http://127.0.0.1:4322/recipes/gratin-dauphinois/"
+    },
+    {
+      "source": "/recipes/2026-02-19-tomato-bredie/",
+      "destination": "/recipes/tomato-bredie/",
+      "currentUrl": "http://127.0.0.1:4322/recipes/tomato-bredie/"
+    },
+    {
+      "source": "/recipes/2026-02-19-traditional-greek-lentil-soup-fakes/",
+      "destination": "/recipes/traditional-greek-lentil-soup-fakes/",
+      "currentUrl": "http://127.0.0.1:4322/recipes/traditional-greek-lentil-soup-fakes/"
+    },
+    {
+      "source": "/recipes/2026-02-21-creamy-porcini-mushroom-ragout-with-polenta/",
+      "destination": "/recipes/creamy-porcini-mushroom-ragout-polenta/",
+      "currentUrl": "http://127.0.0.1:4322/recipes/creamy-porcini-mushroom-ragout-polenta/"
+    },
+    {
+      "source": "/recipes/2026-02-24-spanish-chicken-and-chorizo-stew/",
+      "destination": "/recipes/spanish-chicken-chorizo-stew/",
+      "currentUrl": "http://127.0.0.1:4322/recipes/spanish-chicken-chorizo-stew/"
+    },
+    {
+      "source": "/recipes/2026-02-19-manchego-with-thyme-infused-honey-and-coffee-dust/",
+      "destination": "/recipes/manchego-thyme-infused-honey-coffee-dust/",
+      "currentUrl": "http://127.0.0.1:4322/recipes/manchego-thyme-infused-honey-coffee-dust/"
+    },
+    {
+      "source": "/recipes/2026-02-25-aeropress-competition-cup/",
+      "destination": "/recipes/aeropress-competition-cup/",
+      "currentUrl": "http://127.0.0.1:4322/recipes/aeropress-competition-cup/"
+    },
+    {
+      "source": "/recipes/2026-02-25-aeropress-everyday-cup/",
+      "destination": "/recipes/aeropress-everyday-cup/",
+      "currentUrl": "http://127.0.0.1:4322/recipes/aeropress-everyday-cup/"
+    },
+    {
+      "source": "/recipes/2026-02-27-monkey-gland-chicken/",
+      "destination": "/recipes/monkey-gland-chicken/",
+      "currentUrl": "http://127.0.0.1:4322/recipes/monkey-gland-chicken/"
+    },
+    {
+      "source": "/recipes/2026-03-08-reverse-seared-fillet-with-hibachi-cabbage-steakhouse-fries-and-gochujang-sauce/",
+      "destination": "/recipes/reverse-seared-fillet-hibachi-cabbage-steakhouse-fries-gochujang-sauce/",
+      "currentUrl": "http://127.0.0.1:4322/recipes/reverse-seared-fillet-hibachi-cabbage-steakhouse-fries-gochujang-sauce/"
+    },
+    {
+      "source": "/recipes/2026-05-29-celery-green-apple-fennel-pollen-slaw/",
+      "destination": "/recipes/celery-green-apple-fennel-pollen-slaw/",
+      "currentUrl": "http://127.0.0.1:4322/recipes/celery-green-apple-fennel-pollen-slaw/"
+    }
+  ],
+  "textEnlargement": [
+    {
+      "slug": "asian-ginger-chicken-noodle-soup",
+      "width": 320,
+      "scroll": 320
+    },
+    {
+      "slug": "asian-ginger-chicken-noodle-soup",
+      "width": 390,
+      "scroll": 390
+    },
+    {
+      "slug": "asian-ginger-chicken-noodle-soup",
+      "width": 768,
+      "scroll": 768
+    },
+    {
+      "slug": "asian-ginger-chicken-noodle-soup",
+      "width": 1024,
+      "scroll": 1024
+    },
+    {
+      "slug": "asian-ginger-chicken-noodle-soup",
+      "width": 1440,
+      "scroll": 1440
+    },
+    {
+      "slug": "sourdough-bread",
+      "width": 320,
+      "scroll": 320
+    },
+    {
+      "slug": "sourdough-bread",
+      "width": 390,
+      "scroll": 390
+    },
+    {
+      "slug": "sourdough-bread",
+      "width": 768,
+      "scroll": 768
+    },
+    {
+      "slug": "sourdough-bread",
+      "width": 1024,
+      "scroll": 1024
+    },
+    {
+      "slug": "sourdough-bread",
+      "width": 1440,
+      "scroll": 1440
+    },
+    {
+      "slug": "reverse-seared-fillet-hibachi-cabbage-steakhouse-fries-gochujang-sauce",
+      "width": 320,
+      "scroll": 320
+    },
+    {
+      "slug": "reverse-seared-fillet-hibachi-cabbage-steakhouse-fries-gochujang-sauce",
+      "width": 390,
+      "scroll": 390
+    },
+    {
+      "slug": "reverse-seared-fillet-hibachi-cabbage-steakhouse-fries-gochujang-sauce",
+      "width": 768,
+      "scroll": 768
+    },
+    {
+      "slug": "reverse-seared-fillet-hibachi-cabbage-steakhouse-fries-gochujang-sauce",
+      "width": 1024,
+      "scroll": 1024
+    },
+    {
+      "slug": "reverse-seared-fillet-hibachi-cabbage-steakhouse-fries-gochujang-sauce",
+      "width": 1440,
+      "scroll": 1440
+    }
+  ],
+  "utilities": "Jump focuses its heading; Tab continues into Phase links; Share dialog opens/Escape closes; Print invokes window.print.",
+  "contrast": [
+    {
+      "selector": ".modernist-recipe",
+      "ratio": 16.283631270708312
+    },
+    {
+      "selector": ".ingredient-note",
+      "ratio": 8.088888458551077
+    },
+    {
+      "selector": ".scale-basis",
+      "ratio": 8.088888458551077
+    }
+  ],
+  "fixtures": "DOM-only absent hero, three-digit numbering and long Phase. No canonical content authored."
+}

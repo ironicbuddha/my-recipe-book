@@ -34,6 +34,7 @@ export type ContentReference = {
 
 export type LibraryEntry = {
   basisIngredient?: string;
+  basisQuantityG?: number;
   backlinks: string[];
   body: string;
   corrections: string[];
@@ -391,7 +392,15 @@ function loadLibrarySources(root: string): CulinaryLibrary {
   };
 }
 
-export function renderContent(body: string, library: CulinaryLibrary): string {
+export function renderContent(
+  body: string,
+  library: CulinaryLibrary,
+  presentation: {
+    inline?: boolean;
+    methodStart?: number;
+    tableLabels?: boolean;
+  } = {},
+): string {
   const published = new Set(library.entries.map((entry) => entry.identity));
   const publishedRecipeVersions = new Set(
     library.entries
@@ -403,6 +412,52 @@ export function renderContent(body: string, library: CulinaryLibrary): string {
       ),
   );
   const renderer = new MarkdownIt({ linkify: true, typographer: true });
+  let nextMethodStep = presentation.methodStart;
+  renderer.renderer.rules.ordered_list_open = (
+    tokens,
+    index,
+    options,
+    _env,
+    self,
+  ) => {
+    if (nextMethodStep !== undefined && tokens[index]?.level === 0) {
+      tokens[index]?.attrSet('start', String(nextMethodStep));
+      for (let cursor = index + 1; cursor < tokens.length; cursor += 1) {
+        const token = tokens[cursor];
+        if (token?.type === 'ordered_list_close' && token.level === 0) break;
+        if (token?.type === 'list_item_open' && token.level === 1)
+          nextMethodStep += 1;
+      }
+    }
+    return self.renderToken(tokens, index, options);
+  };
+  if (presentation.tableLabels) {
+    let headers: string[] = [];
+    let column = 0;
+    renderer.renderer.rules.thead_open = (
+      tokens,
+      index,
+      options,
+      _env,
+      self,
+    ) => {
+      headers = [];
+      for (let cursor = index + 1; cursor < tokens.length; cursor += 1) {
+        if (tokens[cursor]?.type === 'thead_close') break;
+        if (tokens[cursor]?.type === 'inline')
+          headers.push(tokens[cursor]?.content ?? '');
+      }
+      return self.renderToken(tokens, index, options);
+    };
+    renderer.renderer.rules.tr_open = (tokens, index, options, _env, self) => {
+      column = 0;
+      return self.renderToken(tokens, index, options);
+    };
+    renderer.renderer.rules.td_open = (tokens, index, options, _env, self) => {
+      tokens[index]?.attrSet('data-label', headers[column++] ?? '');
+      return self.renderToken(tokens, index, options);
+    };
+  }
   renderer.renderer.rules.heading_open = (
     tokens,
     index,
@@ -443,7 +498,9 @@ export function renderContent(body: string, library: CulinaryLibrary): string {
       return isPublished ? `[${label}](${routeFor(identity)})` : label;
     },
   );
-  return renderer.render(resolved);
+  return presentation.inline
+    ? renderer.renderInline(resolved)
+    : renderer.render(resolved);
 }
 
 export function routeFor(identity: string): string {
@@ -657,6 +714,11 @@ function makeEntry(
     basisIngredient: isRecord(source.data.scale_basis)
       ? stringValue(source.data.scale_basis.ingredient)
       : undefined,
+    basisQuantityG:
+      isRecord(source.data.scale_basis) &&
+      positiveNumber(source.data.scale_basis.quantity_g)
+        ? source.data.scale_basis.quantity_g
+        : undefined,
     backlinks: [],
     body: source.body,
     corrections: [],

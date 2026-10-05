@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Modernist Cuisine Recipe Web Design Specification</title>
+<style>
+:root{color-scheme:light;--ink:#202020;--muted:#666;--rule:#c87972;--paper:#fff;--soft:#f7f5f2}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 Georgia,'Times New Roman',serif}main{max-width:1060px;margin:auto;padding:48px 32px 72px}h1,h2,h3,th,nav,.eyebrow{font-family:Arial,Helvetica,sans-serif}h1{font-size:32px;line-height:1.2;max-width:850px;margin:0 0 20px}h2{font-size:22px;line-height:1.3;margin:40px 0 14px;padding-top:16px;border-top:1px solid var(--rule)}h3{font-size:17px;margin:24px 0 8px}p{margin:0 0 14px}li{margin:6px 0}a{color:#844840;text-underline-offset:3px}nav{font-size:14px;display:flex;flex-wrap:wrap;gap:8px 20px;padding:16px 0}.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}.note{padding:16px 20px;background:var(--soft);border-left:3px solid var(--rule)}table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.45;margin:16px 0 24px}th{text-align:left;font-size:12px;text-transform:uppercase;letter-spacing:.04em}th,td{vertical-align:top;padding:10px 12px 10px 0;border-bottom:1px solid #ddd}thead th{border-bottom:1px solid var(--rule)}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--soft);padding:20px;font-size:13px;line-height:1.55}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.85em}.scroll{overflow-x:auto}.scroll table{min-width:650px}footer{font-size:14px;color:var(--muted);margin-top:48px} @media(max-width:640px){main{padding:28px 20px 48px}h1{font-size:27px}body{font-size:16px}}@media print{main{padding:0;max-width:none}body{font-size:11pt}h1{font-size:22pt}h2{font-size:15pt;break-after:avoid}h3{break-after:avoid}nav{display:none}table{font-size:10pt}tr,pre,.note{break-inside:avoid}a{color:inherit}pre{font-size:9pt}.scroll{overflow:visible}.scroll table{min-width:0}}
+</style>
+</head>
+<body><main>
+<div class="eyebrow">Reference analysis and implementation requirements</div>
+<h1>Modernist Cuisine Recipe Web Design Specification</h1>
+<p>Recreate the information architecture and editorial character of the supplied <em>Caramelized Carrot Soup</em> recipe card as a responsive recipe page. The defining feature is a five-column preparation matrix: ingredient quantities sit beside the procedure that consumes them. Build around that relationship rather than treating ingredients and instructions as unrelated sections.</p>
+<p class="note"><strong>Evidence boundary.</strong> Observations below concern this single supplied image. Dimensions and colors are approximate visual estimates, not measurements from the original book file. Font families, CSS values, responsive behavior, accessibility, and interactions are proposed web specifications. The original typefaces and print dimensions cannot be established from this screenshot.</p>
+<nav aria-label="Specification contents"><a href="#reference">Reference analysis</a><a href="#architecture">Information architecture</a><a href="#layout">Layout</a><a href="#visual">Visual system</a><a href="#matrix">Preparation matrix</a><a href="#responsive">Responsive behavior</a><a href="#data">Data model</a><a href="#acceptance">Acceptance criteria</a></nav>
+
+<h2 id="reference">1. What the reference shows</h2>
+<div class="scroll"><table><thead><tr><th>Element</th><th>Observed treatment</th><th>Purpose</th></tr></thead><tbody>
+<tr><td>Recipe title</td><td>Uppercase, dark sans serif, left aligned; no subtitle or hero photograph.</td><td>Immediate identification without visual competition.</td></tr>
+<tr><td>Recipe facts</td><td>Five label/value rows: yield, time estimate, storage notes, level of difficulty, special requirements. Labels are small uppercase sans serif; values are italic serif, all sharing a common start position.</td><td>Quick feasibility check before cooking.</td></tr>
+<tr><td>Editorial introduction</td><td>A single passage flows through two columns above the matrix.</td><td>Ingredient quality, preparation rationale, optional choices, and serving suggestions.</td></tr>
+<tr><td>Preparation matrix</td><td>Ingredient, Weight, Volume, Scaling, Procedure. The quantity columns occupy approximately half the content width; procedure occupies the other half.</td><td>Connect each preparation stage to the ingredients it uses.</td></tr>
+<tr><td>Group boundaries</td><td>Thin muted salmon horizontal rules span all columns. No vertical grid lines, alternating shading, or boxes around cells.</td><td>Mark changes in ingredient/procedure groups without clutter.</td></tr>
+<tr><td>Procedure</td><td>Small circled numbers precede compact serif text. Wrapped lines align with the text, not the number.</td><td>Stable sequential references and efficient scanning.</td></tr>
+<tr><td>Cross references</td><td>Small supporting references beneath an ingredient and an italic note beneath the procedure side.</td><td>Connect component recipes and contextual guidance.</td></tr>
+</tbody></table></div>
+<p>The visible card has six groups: carrots with step 1; butter with step 2; water, salt, and baking soda with steps 3–7; carrot juice with steps 8–9; finishing butter with step 10; final seasoning with step 11. This demonstrates a many-to-many layout: one ingredient can accompany several steps, and several ingredients can accompany several steps.</p>
+<p>“Scaling” is a formulation percentage relative to a nominated reference ingredient. In this example the 500 g carrot quantity is 100%, while 635 g carrot juice is 127%. These percentages do not represent portions of the total recipe and are not intended to add to 100%.</p>
+
+<h2 id="architecture">2. Page information architecture</h2>
+<p>Use this reading order in both the page and its underlying content:</p>
+<ol>
+<li><strong>Recipe identity:</strong> one title and optional source attribution.</li>
+<li><strong>Recipe facts:</strong> yield, time estimate, storage, difficulty, equipment and component requirements, in that order.</li>
+<li><strong>Editorial introduction:</strong> ingredient selection, technique rationale, alternatives, and serving context. A short dish story may be included here when authored for the recipe; it is not a separate module visible in the reference.</li>
+<li><strong>Preparation matrix:</strong> ordered ingredient/procedure groups, with steps numbered continuously across groups.</li>
+<li><strong>Supporting notes:</strong> linked technique guidance, component references, and attribution where applicable.</li>
+</ol>
+<p>Keep the matrix visible immediately after the introduction. Do not insert a large photograph, expanded narrative, newsletter panel, ratings panel, or unrelated content between these sections. Optional print and yield controls belong in a quiet utility row outside the reference composition.</p>
+<p>Recipe requirements can contain several equipment items and component recipes. Represent each separately in the data even when the page displays them as a single sentence. Omit absent optional metadata rows cleanly. Do not invent storage durations, timing, difficulty, or equipment.</p>
+
+<h2 id="layout">3. Desktop geometry and spacing</h2>
+<p>The supplied image is approximately 1062 × 712 pixels. Visible content runs from roughly x=24 to x=998, a width of about 974 pixels. The procedure begins around x=523. Treat these as ratio guides; the screenshot crop is not evidence of the book’s outer page margins.</p>
+<div class="scroll"><table><thead><tr><th>Region</th><th>Reference geometry</th><th>Proposed web behavior</th></tr></thead><tbody>
+<tr><td>Page container</td><td>Almost full screenshot width, with white space around content.</td><td>Centered, max-width 1100 px; 32 px viewport padding on wide screens.</td></tr>
+<tr><td>Title</td><td>Starts near x=24, y=21.</td><td>Natural-height block. Leave 24 px before recipe facts.</td></tr>
+<tr><td>Facts</td><td>Labels start x≈24; values x≈289. Five rows at approximately 25 px intervals.</td><td>Definition list grid, label column 27% and value column 73%; 4–6 px row gaps.</td></tr>
+<tr><td>Introduction</td><td>Begins y≈209; two columns of about 475 px, with a roughly 25 px gutter.</td><td>Two CSS columns with 28 px gutter; 22–28 px gap after facts.</td></tr>
+<tr><td>Matrix header</td><td>Starts y≈314; first rule near y≈331.</td><td>20–24 px gap after introduction; uppercase labels, rule immediately beneath.</td></tr>
+<tr><td>Matrix body</td><td>Compact, variable-height groups; last rule near y≈668.</td><td>Group height follows the taller of its ingredients or steps. No fixed heights.</td></tr>
+<tr><td>Footer note</td><td>Below final rule, aligned with the procedure text region.</td><td>6–8 px top gap; occupy procedure column on desktop, full width on mobile.</td></tr>
+</tbody></table></div>
+<p>Use these column proportions:</p>
+<table><thead><tr><th>Ingredient</th><th>Weight</th><th>Volume</th><th>Scaling</th><th>Procedure</th></tr></thead><tbody><tr><td>18%</td><td>9%</td><td>14%</td><td>10%</td><td>49%</td></tr></tbody></table>
+<p>All columns are left aligned in the reference, including numbers. Preserve that choice and use tabular numerals for quantities. Give each cell 8–12 px of right-side breathing room. Procedure steps reserve approximately 22–24 px for the circled number, then use a hanging text alignment. Do not center content vertically in tall groups.</p>
+
+<h2 id="visual">4. Typography, color, and visual rules</h2>
+<p>The visual identity comes from restrained mixed typography, dense useful content, and warm horizontal rules. Its base is white paper rather than a colored card surface.</p>
+<div class="scroll"><table><thead><tr><th>Token or element</th><th>Proposed value</th><th>Use</th></tr></thead><tbody>
+<tr><td>Paper</td><td><code>#FFFFFF</code></td><td>Page background.</td></tr>
+<tr><td>Primary ink</td><td><code>#202020</code></td><td>Title, labels, ingredient and instruction text.</td></tr>
+<tr><td>Secondary ink</td><td><code>#606060</code></td><td>Optional utility controls and supporting text; essential text stays dark.</td></tr>
+<tr><td>Warm rule</td><td><code>#C87972</code>, 1 px</td><td>Matrix header and group boundaries. Approximate match, not sampled original.</td></tr>
+<tr><td>Sans family</td><td><code>Arial, Helvetica, sans-serif</code></td><td>Title, facts labels, column headers.</td></tr>
+<tr><td>Serif family</td><td><code>Georgia, "Times New Roman", serif</code></td><td>Introduction, quantities, ingredient names, procedure, notes.</td></tr>
+<tr><td>Title</td><td>26 px / 1.2, weight 600–700, tracking 0.02 em</td><td>Uppercase display; retain normal title casing in stored data.</td></tr>
+<tr><td>Facts labels</td><td>13 px / 1.4, weight 500–600, tracking 0.06 em</td><td>Uppercase, with trailing colon.</td></tr>
+<tr><td>Facts values</td><td>18 px / 1.4, italic serif</td><td>Natural-language values; allow wrapping.</td></tr>
+<tr><td>Introduction</td><td>17 px / 1.4, normal serif</td><td>Two columns on wide screens.</td></tr>
+<tr><td>Column headers</td><td>14 px / 1.3, weight 600, tracking 0.025 em</td><td>Uppercase; ordinary sentence-case wording in the DOM is acceptable.</td></tr>
+<tr><td>Matrix body</td><td>16 px / 1.3, normal serif</td><td>Ingredient rows and instructions. Do not reproduce small print by shrinking mobile text.</td></tr>
+<tr><td>Supporting references</td><td>13–14 px / 1.35</td><td>Ingredient reference normal serif; end note italic serif.</td></tr>
+<tr><td>Step marker</td><td>14–16 px circle, 11 px numeral, 1 px outline</td><td>Muted outline, dark number; decorative circle is not a control.</td></tr>
+</tbody></table></div>
+<p>Use no shadows, rounded card containers, gradients, vertical dividers, colored header fills, zebra stripes, or enlarged numbered badges in the reference mode. Links need a clear underline or other non-color cue. Optional interface controls may have their own affordances, but should not visually overpower the recipe.</p>
+<p>The source has narrow-column line breaks and occasional word hyphenation. Reproduce flowing typography, not its literal line endings. Use <code>lang="en"</code>, optional automatic hyphenation in the introduction, and normal word wrapping in ingredient names and steps.</p>
+
+<h2 id="matrix">5. Preparation matrix behavior</h2>
+<h3>Group is the primary layout unit</h3>
+<p>Each group contains an ingredient list and a contiguous range of steps. Ingredients share the first four columns; the procedure occupies the fifth. A rule separates groups, not every ingredient or every step. Start the ingredients and the first step at the same top edge. Let the longer side determine group height; blank space on the shorter side is intentional.</p>
+<p>An ingredient line must never be horizontally aligned with a later step in a way that implies an ingredient-to-step mapping the recipe does not actually specify. Keep exact associations at group level unless the authored recipe includes explicit per-step ingredient references.</p>
+<h3>Quantity presentation</h3>
+<ul>
+<li>Keep ingredient preparation in the name or a secondary line: for example, peeled, drained, finely chopped. Component references use a smaller separate line.</li>
+<li>Store measured quantities as numbers plus units. Format with nonbreaking spaces, for example <code>250&nbsp;g</code>; keep short fractions and units together.</li>
+<li>Weight is the principal formulation measure. Volume is an alternative approximation or practical measure, not an additional quantity to add.</li>
+<li>Allow mass, count, and volume representations to coexist without inferring conversions. Ingredient density is needed for mass-to-volume conversion.</li>
+<li>“To taste,” “as needed,” and unspecified quantities are qualitative values. Leave their scaling percentage blank. Do not display zero or manufacture a number.</li>
+<li>When a quantity is unavailable, show a typographic dash or an empty cell with an accessible “not specified” label, consistently. Do not collapse a column because one ingredient lacks that measure.</li>
+</ul>
+<h3>Scaling semantics</h3>
+<p>Store an explicit reference ingredient ID or a defined reference mass. For mass-based formulations, <code>percentage = ingredient mass / reference mass × 100</code>. Mark the base ingredient as 100%; show values above 100% normally. Add a quiet explanatory note or accessible help text identifying the actual base. Do not relabel the column “% of total.”</p>
+<p>If a recipe has separately formulated components, each component may require its own base. In that case, identify each base in that component’s heading or note. A recipe without a meaningful formulation base should omit the Scaling column for the entire recipe, using a declared four-column variant rather than invented percentages.</p>
+<h3>Procedure and notes</h3>
+<p>Number steps globally from 1 to N, without restarting at group boundaries. Give every step a stable anchor ID. Conditions, temperatures, durations, completion cues, and exceptions belong in the relevant step. Optional steps should be stated as optional in their text. Linked component recipes should resolve to web destinations; original book page references can remain in source attribution when needed.</p>
+<p>Use HTML lists and styled numbers rather than Unicode circled-number characters: the latter change appearance by font and become inconsistent with longer sequences. Reserve room for two- and three-digit step numbers.</p>
+
+<h2 id="responsive">6. Responsive adaptation</h2>
+<p>These breakpoints are proposed starting points. Confirm them with long recipe titles, ingredient names, and real instructions; do not preserve the desktop matrix by making everything tiny.</p>
+<div class="scroll"><table><thead><tr><th>Viewport</th><th>Required layout</th><th>Behavior</th></tr></thead><tbody>
+<tr><td>1024 px and wider</td><td>Five-column matrix; two-column introduction; two-column label/value facts.</td><td>Use the reference proportions. Comfortable desktop reading and print-like overview.</td></tr>
+<tr><td>768–1023 px</td><td>Group ingredients above group procedure; four compact ingredient columns; single-column introduction.</td><td>Retain quantities and group boundaries. Facts can retain label/value columns if content fits.</td></tr>
+<tr><td>Below 768 px</td><td>Ingredient entries stacked inside each group, followed immediately by that group’s steps.</td><td>Show ingredient name first, then labeled Weight, Volume, and Scaling values. Facts labels appear above their values.</td></tr>
+</tbody></table></div>
+<p>On a phone, group structure becomes: thin rule → ingredient name and labeled measures, repeated for all ingredients in the group → ordered procedure steps → next group rule. Do not gather every ingredient at the top and every instruction at the bottom. Preserve the group relationships through the transformation.</p>
+<p>Use 20 px side padding on small screens, 24 px on medium screens, and 32 px on wide screens. Recipe text remains at least 16 px. No default page-wide horizontal scrolling. Support 320 px width and 200% text zoom without overlapping content or hidden quantities. At intermediate sizes, the quantities area may use a compact internal table if it fits without horizontal scrolling.</p>
+
+<h2>7. Semantic and accessible implementation</h2>
+<p>Use a recipe <code>&lt;article&gt;</code> containing one <code>&lt;h1&gt;</code>, a <code>&lt;dl&gt;</code> for recipe facts, a prose introduction, and a labeled preparation section. The simplest fully responsive architecture uses one semantic <code>&lt;section&gt;</code> per preparation group. Each group contains ingredient entries with nested measure definition lists and an ordered list of steps. A shared CSS grid supplies the desktop columns. The mobile layout uses the same content nodes.</p>
+<p>Give each group an accessible name such as “Preparation group 3, steps 3 to 7.” Use an ordered list with the appropriate <code>start</code> value in each group. Desktop column labels are visible; individual measures retain programmatic labels through <code>&lt;dt&gt;</code> elements, visually hidden where the shared column header is sufficient. Hide decorative duplicate numbering from assistive technology while keeping native ordered-list semantics.</p>
+<p>A native five-column table is an acceptable desktop alternative: use <code>&lt;colgroup&gt;</code>, <code>&lt;th scope="col"&gt;</code>, one <code>&lt;tbody&gt;</code> per group, and a procedure cell spanning that group’s ingredient rows. Do not fabricate empty ingredients to align individual steps. If the mobile implementation uses a separate representation, derive both from the same data and ensure only the active view is in the accessibility tree. The one-DOM group-based approach is preferable for responsive reading order.</p>
+<p>All links and controls need visible keyboard focus. Essential text must meet normal-text contrast of at least 4.5:1 against its background. The warm rules are secondary grouping cues; semantic group labels provide the relationship independently of color. Temperature and measurement symbols need readable text; do not encode quantities as images.</p>
+
+<h2>8. Minimal CSS layout contract</h2>
+<p>This is a layout skeleton, not a complete stylesheet. Apply the typography and tokens specified above.</p>
+<pre><code>.recipe {
+  --columns: 18fr 9fr 14fr 10fr 49fr;
+  max-width: 1100px;
+  margin-inline: auto;
+}
+.recipe-facts {
+  display: grid;
+  grid-template-columns: 27% minmax(0, 1fr);
+  gap: 4px 0;
+}
+.recipe-introduction { columns: 2; column-gap: 28px; }
+.matrix-header, .preparation-group {
+  display: grid;
+  grid-template-columns: var(--columns);
+}
+.matrix-header { border-bottom: 1px solid var(--rule); }
+.preparation-group {
+  border-bottom: 1px solid var(--rule);
+  padding-block: 5px;
+  align-items: start;
+}
+.group-ingredients {
+  grid-column: 1 / 5;
+  display: grid;
+  grid-template-columns: 18fr 9fr 14fr 10fr;
+}
+.ingredient-entry { grid-column: 1 / -1;
+  display: grid; grid-template-columns: subgrid; }
+/* The name occupies column 1; measure dd values occupy columns 2–4.
+   Measure dt labels remain available to assistive technology.
+   Provide a nested-grid fallback if subgrid is unavailable. */
+.group-procedure { grid-column: 5; margin: 0; }
+.recipe-facts dd { margin: 0; }
+
+@media (max-width: 1023px) {
+  .recipe-introduction { columns: 1; }
+  .matrix-header { display: none; }
+  .preparation-group { display: block; padding-block: 12px; }
+  .group-ingredients { grid-template-columns: 2fr 1fr 1.5fr 1fr; }
+  .group-procedure { margin-top: 12px; }
+  /* Reveal measure labels or provide a per-group ingredient header. */
+}
+@media (max-width: 767px) {
+  .recipe-facts, .group-ingredients, .ingredient-entry { display: block; }
+  /* Restore visible measure labels; name then labeled quantities.
+     Apply spacing between facts, ingredients, and procedure. */
+}
+</code></pre>
+<p>Do not rely on fixed pixel row heights or absolute-positioned step text. A long ingredient name, note, translation, or zoom setting must expand its group naturally. Add <code>min-width: 0</code> to grid children and avoid nonwrapping full instruction strings.</p>
+
+<h2 id="data">9. Content and data contract</h2>
+<p>Keep content separate from presentation. The following fictional ingredient fragment illustrates the contract; it is not a transcription of the attached recipe or a complete cooking recipe.</p>
+<pre><code>{
+  "id": "sample-recipe",
+  "title": "Example Vegetable Soup",
+  "yield": { "servings": 4, "massG": 1000, "description": null },
+  "timing": {
+    "overallMinutes": 45,
+    "preparationMinutes": 15,
+    "unattendedMinutes": 30,
+    "displayNote": null
+  },
+  "storageNote": null,
+  "difficulty": "moderate",
+  "requirements": [{ "type": "equipment", "name": "Saucepan" }],
+  "introduction": ["Authored ingredient and technique context."],
+  "scalingBase": { "ingredientId": "vegetable", "massG": 400 },
+  "groups": [{
+    "id": "simmer",
+    "ingredients": [{
+      "id": "vegetable", "name": "Vegetables", "preparation": "diced",
+      "weight": { "value": 400, "unit": "g" },
+      "volume": { "value": 3, "unit": "cup", "approximate": true },
+      "quantityText": null,
+      "scalingPercent": 100,
+      "scaleMode": "linear",
+      "reference": null
+    }],
+    "steps": [{
+      "id": "step-simmer", "number": 1,
+      "text": "Simmer until the vegetables are tender.",
+      "ingredientIds": ["vegetable"],
+      "optional": false,
+      "note": null
+    }]
+  }],
+  "notes": [],
+  "source": { "title": null, "url": null, "page": null }
+}
+</code></pre>
+<p>Quantities may be nullable. A qualitative ingredient uses <code>quantityText</code> and <code>scaleMode: "qualitative"</code>. Distinguish linear, fixed, and qualitative quantities. Step numbers can be derived from list order; stable step IDs must survive reordering. Enforce agreement between the base mass and the corresponding ingredient quantity when both are stored. Calculate percentages at render time or validate any stored value against that base.</p>
+<p>Render recipe content as text or sanitized structured rich text. Avoid injecting arbitrary HTML from recipe data. Authored step references should point to stable ingredient IDs rather than matching ingredient names, since the same ingredient may appear in several groups.</p>
+
+<h2>10. Optional web interactions</h2>
+<p>These are additions to the photographed layout and should remain visually secondary.</p>
+<ul>
+<li><strong>Yield adjustment:</strong> multiply explicitly scalable ingredient quantities by requested yield divided by original yield. Keep formulation percentages unchanged. Keep qualitative measures unchanged. Do not automatically multiply cooking temperatures, durations, or storage notes.</li>
+<li><strong>Linked measures:</strong> where weight and volume are alternative representations of one ingredient quantity, scale both representations consistently. Do not double-count them. Use authored precision: retain 0.1 g resolution for small additives when necessary rather than rounding all weights to whole grams.</li>
+<li><strong>Embedded quantities:</strong> structured references in instruction text can update with the ingredient quantities. Literal quantities in plain text require author review; do not silently leave conflicting amounts in the procedure.</li>
+<li><strong>Capacity notes:</strong> scaling changes yield but may require different equipment or batches. Preserve any authored equipment-capacity constraints and explain them next to the scaling control.</li>
+<li><strong>Completion:</strong> optional checkboxes beside steps are separate controls with descriptive accessible names. Marking a step complete does not hide it or gray essential text below readable contrast.</li>
+<li><strong>Print:</strong> remove interactive controls; print the recipe title, metadata, introduction, full matrix, and notes.</li>
+</ul>
+
+<h2>11. Print behavior</h2>
+<p>Target both A4 and US Letter with approximately 12–15 mm margins. Use the five-column composition in print, even if the browser viewport currently shows the mobile layout. Provide a print override that restores the matrix header, column grid, and introduction columns. Aim for 10–11 pt recipe body text, 16–18 pt title, and 8–9 pt labels.</p>
+<p>Avoid a break inside a preparation group when it fits on a page. Allow unusually long groups to split rather than overflow the page. Keep the title with its metadata and the matrix header with at least the first group. If using native tables, repeat the column header on later pages where supported. Do not force every recipe onto one page by reducing its text to unreadable sizes. Verify pagination separately; screen layout is not proof of print layout.</p>
+
+<h2 id="acceptance">12. Acceptance criteria</h2>
+<ol>
+<li>The page reads title → facts → introduction → grouped matrix → notes, with no unrelated interruption.</li>
+<li>At 1280 px viewport width, the matrix shows five columns in approximately 18:9:14:10:49 proportions.</li>
+<li>Fact labels share one left edge; fact values share a second left edge.</li>
+<li>Introduction copy flows through two columns on desktop and one on smaller screens, without hand-inserted line breaks.</li>
+<li>Each matrix group has a full-width thin warm rule, with no vertical rules, zebra striping, shadows, or enclosing cards.</li>
+<li>One ingredient with several steps and several ingredients with one step both render without fake rows.</li>
+<li>The next group begins below the taller side of the previous group. Procedure numbers remain continuous and wrapped text hangs beneath the text start.</li>
+<li>Long ingredient names and component references wrap naturally without touching neighboring columns.</li>
+<li>At 375 px and 320 px widths, ingredients precede their associated steps in every group; all quantities retain visible labels; the page does not scroll horizontally.</li>
+<li>At 200% text zoom, title, facts, quantities, and procedure remain available without clipping or overlap.</li>
+<li>A nominated base ingredient displays 100%; a larger ingredient can display more than 100%; “to taste” has no invented percentage.</li>
+<li>If yield scaling exists, halving yield halves linear weights and volumes while leaving temperatures, times, percentages, and qualitative measures unchanged.</li>
+<li>A screen reader encounters the metadata labels, group identities, quantity labels, and ordered steps in a useful cooking sequence.</li>
+<li>Print output includes all recipe content with sensible group breaks and readable type on A4 and Letter.</li>
+</ol>
+
+<h2>13. Implementation handoff</h2>
+<p>Build an editorial recipe page with white background, uppercase sans-serif title and labels, italic serif facts, two-column introductory prose, and a grouped five-column matrix. Use group-level ingredient/procedure relationships as the primary data structure. Preserve weight, volume, and reference-ingredient scaling as distinct fields. Use thin muted salmon group dividers and globally numbered steps. On narrow screens, stack each group’s ingredients above that group’s steps. Implement from structured recipe data; validate long content, qualitative quantities, scaling values above 100%, mobile reading order, keyboard access, text zoom, and print pagination.</p>
+<footer>Reference: user-supplied screenshot of the Caramelized Carrot Soup recipe card from <em>Modernist Cuisine</em>. This specification analyzes the supplied layout and proposes a web implementation. No full recipe transcription or original font identification is claimed.</footer>
+</main></body></html>

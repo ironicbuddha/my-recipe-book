@@ -666,7 +666,7 @@ The Curator reviewed the evidence and retired this Candidate.
         'utf8',
       );
       const hero = recipePage.match(
-        /<figure class="recipe-hero">[\s\S]*?<\/figure>/,
+        /<figure class="cooking-hero">[\s\S]*?<\/figure>/,
       )?.[0];
       expect(hero, destination).toBeDefined();
       expect(hero, destination).toContain(`${imageKey}.`);
@@ -682,7 +682,8 @@ The Curator reviewed the evidence and retired this Candidate.
     );
 
     expect(page).toContain('<h1>Hero fallback pilot</h1>');
-    expect(page).not.toContain('recipe-hero');
+    expect(page).not.toContain('cooking-hero');
+    expect(page).toContain('class="preparation-group"');
     const fallbackCard = cards.find((html) =>
       html.includes('href="/recipes/hero-fallback-pilot/"'),
     );
