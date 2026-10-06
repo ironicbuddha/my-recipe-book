@@ -987,11 +987,21 @@ code {
   color: var(--color-primary-dark);
 }
 
-.recipe-body {
+.recipe-body,
+.knowledge-references {
   background: var(--color-surface);
   min-width: 0;
   overflow-wrap: anywhere;
   padding: clamp(1rem, 2.6vw, 2rem);
+}
+
+.knowledge-references h2 {
+  margin: 0 0 var(--space-md);
+}
+
+.knowledge-references ul {
+  margin: 0;
+  padding-left: var(--space-lg);
 }
 
 .recipe-body > p,
@@ -1296,7 +1306,8 @@ code {
     padding: var(--space-md);
   }
 
-  .recipe-body {
+  .recipe-body,
+  .knowledge-references {
     padding: var(--space-md);
   }
 
