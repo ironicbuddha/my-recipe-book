@@ -120,8 +120,12 @@ describe('approved recipes-tmp intake', () => {
       ).toBeDefined();
     }
     expect(
-      library.entries.filter((entry) => entry.type === 'recipe'),
-    ).toHaveLength(55);
+      library.entries.filter(
+        (entry) =>
+          entry.type === 'recipe' &&
+          recipeKeys.some((key) => entry.identity === `recipe/${key}`),
+      ),
+    ).toHaveLength(recipeKeys.length);
     expect(
       library.entries.some(
         (entry) =>

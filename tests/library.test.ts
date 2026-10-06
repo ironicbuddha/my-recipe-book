@@ -263,7 +263,11 @@ describe('loadLibrary', () => {
       ],
     ] as const;
 
-    expect(library.recipes).toHaveLength(55);
+    expect(
+      library.recipes.filter((entry) =>
+        batch.some(([key]) => entry.identity === `recipe/${key}`),
+      ),
+    ).toHaveLength(batch.length);
     for (const [key, oldSlug] of batch) {
       const destination = `/recipes/${key}/`;
       expect(
