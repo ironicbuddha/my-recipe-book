@@ -45,7 +45,7 @@ const { entry, html, backlinkEntries } = Astro.props;
       )
     }
     {entry.backlinks.length > 0 && (
-      <section aria-label="Referenced by">
+      <section class="knowledge-references" aria-label="Referenced by">
         <h2>Referenced by</h2>
         <ul>
           {backlinkEntries.map((backlink) => (
