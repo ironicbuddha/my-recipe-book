@@ -47,11 +47,11 @@ The completed evidence was not rewritten during Promotion.
   phase link reached stock extraction. Both mobile pages had a 390 px document
   width; navigation and wide tables scroll within their containers.
 
-Screenshots: [soup desktop](../../output/playwright/issue-26/soup-desktop.png),
-[soup mobile](../../output/playwright/issue-26/soup-mobile.png),
-[stock phase mobile](../../output/playwright/issue-26/soup-mobile-stock.png),
-[Experiment desktop](../../output/playwright/issue-26/experiment-desktop.png),
-and [Experiment mobile](../../output/playwright/issue-26/experiment-mobile.png).
+Screenshots: [soup desktop](evidence/playwright/issue-26/soup-desktop.png),
+[soup mobile](evidence/playwright/issue-26/soup-mobile.png),
+[stock phase mobile](evidence/playwright/issue-26/soup-mobile-stock.png),
+[Experiment desktop](evidence/playwright/issue-26/experiment-desktop.png),
+and [Experiment mobile](evidence/playwright/issue-26/experiment-mobile.png).
 
 ## Gaps exposed and fixed
 
@@ -114,10 +114,10 @@ Browser inspection at 1440 × 1000 and 390 × 844 confirmed readable soup and
 Experiment pages. The mobile document width equals the 390 px viewport on both
 pages; the soup phase link reaches `#phase-a-extract-stock`. Tables and navigation
 remain contained. Deployed screenshots:
-[soup desktop](../../output/playwright/issue-26/deployed-soup-desktop.png),
-[stock phase mobile](../../output/playwright/issue-26/deployed-soup-mobile-stock.png),
-[Experiment desktop](../../output/playwright/issue-26/deployed-experiment-desktop.png),
-[Experiment mobile](../../output/playwright/issue-26/deployed-experiment-mobile.png).
+[soup desktop](evidence/playwright/issue-26/deployed-soup-desktop.png),
+[stock phase mobile](evidence/playwright/issue-26/deployed-soup-mobile-stock.png),
+[Experiment desktop](evidence/playwright/issue-26/deployed-experiment-desktop.png),
+[Experiment mobile](evidence/playwright/issue-26/deployed-experiment-mobile.png).
 
 Codex accepts #26's technical delivery against its five acceptance criteria.
 This records agent verification, separately from Carlo's already-recorded

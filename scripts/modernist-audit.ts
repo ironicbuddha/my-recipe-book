@@ -1,10 +1,11 @@
 import fs from 'node:fs';
 import assert from 'node:assert/strict';
 import { chromium } from 'playwright';
-import { loadLibrary, publisherRedirects } from '../../src/lib/library';
+import { loadLibrary, publisherRedirects } from '../src/lib/library';
 
 const root = 'http://127.0.0.1:4322';
 const out = 'output/playwright';
+fs.mkdirSync(out, { recursive: true });
 const library = loadLibrary();
 const browser = await chromium.launch({ channel: 'chrome' });
 const page = await browser.newPage();

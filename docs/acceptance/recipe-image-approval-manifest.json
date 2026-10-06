@@ -1,0 +1,1569 @@
+{
+  "schema_version": 1,
+  "provider": "built-in image_gen",
+  "reference": "src/assets/recipes/_reference.png",
+  "reference_sha256": "5b4bbe05792016ec1c4a411919bf4571cec57740effaed5e4c5067eacbbf7b9c",
+  "installation": "installed locally with user approval",
+  "entries": [
+    {
+      "key": "aeropress-competition-cup",
+      "identity": "recipe/aeropress-competition-cup",
+      "version": 1,
+      "recipe": "recipes/2026-02-25 - AeroPress Competition Cup.md",
+      "prompt_file": "publisher/recipe-image-prompts/aeropress-competition-cup.md",
+      "prompt": "Subject: One cup of freshly pressed and bypass-diluted AeroPress filter coffee. The coffee is clear dark brown with a clean still surface, subtle reflections and no suspended grounds or sludge. Any fruit-forward flavour comes from the coffee, not added fruit or syrup. Do not depict espresso crema, milk foam, latte art, citrus slices, whole coffee beans or brewing equipment.\n\nFraming: Close overhead view into one plain white cup, centred on a pale seamless surface; show the brewed coffee's clarity and depth without labels or measurement marks.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/2026-02-25-aeropress-competition-cup.png",
+      "recipe_sha256": "1758d98bbaf41723c521251d4b62cbc39d391d47f8e38f7eb4485e734d0f6638",
+      "prompt_sha256": "c5f2c0876d4f3ec452a6a248dd0077535a063c9da4b768f5e07046d49570a9d0",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-f9bfcb36-1849-45c7-a928-c5f494b73835.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/aeropress-competition-cup.png",
+      "candidate_sha256": "65116081567a606765371a81f5b090bba5029a4e7ac85eba36a3a59a14a2a6c8",
+      "review": "Clear still black filter coffee, plain white cup, overhead view; no crema, grounds, additives or props. Pale background and 3:2 framing match.",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "65116081567a606765371a81f5b090bba5029a4e7ac85eba36a3a59a14a2a6c8"
+    },
+    {
+      "key": "aeropress-everyday-cup",
+      "identity": "recipe/aeropress-everyday-cup",
+      "version": 1,
+      "recipe": "recipes/2026-02-25 - AeroPress Everyday Cup.md",
+      "prompt_file": "publisher/recipe-image-prompts/aeropress-everyday-cup.md",
+      "prompt": "Subject: One cup of black coffee brewed in a standard-position AeroPress and gently pressed through its filter. The finished drink has a clean dark-brown surface with restrained reflections and no floating coffee grounds. The balanced sweet profile does not imply added sugar, milk or syrup. No espresso crema, milk foam, latte art, coffee-bean props or brewing apparatus; do not invent a dramatic visual difference from another plain black AeroPress coffee.\n\nFraming: Close overhead view into one plain white cup, using the same scale, neutral background and framing as the competition cup for consistency.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/2026-02-25-aeropress-everyday-cup.png",
+      "recipe_sha256": "c152b34fbcbc5ce3a431ee96331183c5a4edae8f03a7af2d6df484da840ab275",
+      "prompt_sha256": "56ae30ab5baa02dbd44f8c941c986b7652157bf9929702fd548c8544637f2018",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-b76cc4ce-7291-4965-a6b4-d7c5a292ee6b.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/aeropress-everyday-cup.png",
+      "candidate_sha256": "36f5891755866e9a36e10910955344785187ed05d6768097edef9113ed02910d",
+      "generated_at": "2026-10-02T15:08:09.350937+00:00",
+      "review": "Clean black filter coffee; still surface, plain white cup and overhead framing consistent with competition cup. No additives or crema.",
+      "reviewed_at": "2026-10-02T15:12:31.329871+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "36f5891755866e9a36e10910955344785187ed05d6768097edef9113ed02910d"
+    },
+    {
+      "key": "air-fryer-roast-potatoes",
+      "identity": "recipe/air-fryer-roast-potatoes",
+      "version": 1,
+      "recipe": "recipes/2026-10-02 - Air-Fryer Roast Potatoes.md",
+      "prompt_file": "publisher/recipe-image-prompts/air-fryer-roast-potatoes.md",
+      "prompt": "Subject: A compact serving of deeply golden roast potato chunks, with irregular craggy crusts from parboiling and roughing. Break one chunk open to reveal its dry, fluffy white centre against the crisp exterior. A light fat sheen and tiny black-pepper flecks are visible; the pieces remain separate rather than forming a mash. Show the base recipe without rosemary or garlic garnish.\n\nFraming: Shallow three-quarter view on a plain white plate; keep the broken potato near the front so its fluffy interior and rough crust are both clear.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/air-fryer-roast-potatoes.png",
+      "recipe_sha256": "db777598f9f3996d03ae7e34b167a6f3b93a5404a7bdca2189319afbb0c0536d",
+      "prompt_sha256": "2c64dc5e5f53bc8c303d6ed654e684c2152d27278186a2d3682494d3a9e63278",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-5914a6ed-d9aa-4258-98df-1ec914ea5ec0.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/air-fryer-roast-potatoes.png",
+      "candidate_sha256": "1c0782d0dc388e58b7cd93c193e05fabfdd6ca9361a1269680b1a7ba69b52930",
+      "generated_at": "2026-10-02T15:08:31.264676+00:00",
+      "review": "Separate deeply golden craggy chunks, broken front piece with dry fluffy white interior, pepper flecks. No herbs or garlic garnish.",
+      "reviewed_at": "2026-10-02T15:12:31.330050+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "1c0782d0dc388e58b7cd93c193e05fabfdd6ca9361a1269680b1a7ba69b52930"
+    },
+    {
+      "key": "asian-ginger-chicken-noodle-soup",
+      "identity": "recipe/asian-ginger-chicken-noodle-soup",
+      "version": 3,
+      "recipe": "recipes/2026-03-03 - Asian Chicken Noodle Soup.md",
+      "prompt_file": "publisher/recipe-image-prompts/asian-ginger-chicken-noodle-soup.md",
+      "prompt": "Subject: Clear, strained wing-fortified chicken broth with fine rice vermicelli and shredded poached chicken. Include sliced shiitake mushrooms, briefly blanched bok choy with green leaves and pale stems, and crisp raw bean sprouts, finished with coriander, Thai basil and mint. A few small sesame-oil droplets may catch the light; lime juice is mixed in rather than presented as a wedge. The four additional stock wings are discarded, as are the infused aromatics: no whole wings, lemongrass stalks or makrut leaves in the serving. No cloudy coconut broth or egg noodles.\n\nFraming: Elevated three-quarter view into one plain white bowl, showing fine noodles and the defined vegetables through clear broth.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/2026-03-03-asian-chicken-noodle-soup.png",
+      "recipe_sha256": "4c36b5d57084161d32cbfc846afdabb043ff902c6d48daf49b5dd9a6882b5944",
+      "prompt_sha256": "21c7751d1b02756ba8a5a0ba296c837d4bb59e4fa543b277d0c7ddcef3d52e83",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-6a88cca0-dd85-4616-b0b6-4cd91f38bf85.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/asian-ginger-chicken-noodle-soup.png",
+      "candidate_sha256": "07ce97aed571312c959a8de33198338e74ff7533d838b5e5b0c853b8a605218c",
+      "generated_at": "2026-10-02T15:08:51.678771+00:00",
+      "review": "Clear golden broth, pale shredded chicken, rice noodles, shiitake, bok choy, bean sprouts and specified coriander/basil/mint. No wings or stock aromatics.",
+      "reviewed_at": "2026-10-02T15:12:31.330053+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "07ce97aed571312c959a8de33198338e74ff7533d838b5e5b0c853b8a605218c"
+    },
+    {
+      "key": "banana-desiccated-coconut-curry-accompaniment",
+      "identity": "recipe/banana-desiccated-coconut-curry-accompaniment",
+      "version": 1,
+      "recipe": "recipes/2026-10-02 - Banana & Desiccated Coconut Curry Accompaniment.md",
+      "prompt_file": "publisher/recipe-image-prompts/banana-desiccated-coconut-curry-accompaniment.md",
+      "prompt": "Subject: Ripe but firm banana slices, still intact, lightly coated in an off-white yoghurt-lime dressing. Fine toasted desiccated coconut is folded through the mixture, with a little more pale-gold coconut scattered over the surface as specified. Thin mint ribbons and tiny red-chilli pieces are distributed through the dressing. Show a fresh, gently folded mixture rather than mashed banana or a liquid smoothie; no pineapple or curry alongside.\n\nFraming: Elevated three-quarter view of one small plain white bowl; show the banana shapes, fine coconut texture and modest amount of dressing.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/banana-desiccated-coconut-curry-accompaniment.png",
+      "recipe_sha256": "9b209709005c7e3bfd6914da2308023739072b68b12ab0917c3bea2a7d92851a",
+      "prompt_sha256": "7eb69a0a9ff0d27cd94093ce23a2af1bc93e913f8826fbefca43519e787101fb",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-4c18a805-5f27-4c34-8349-a98e285a3a0f.png",
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-6887f8fc-6580-41a2-9bf0-dc4e5490380b.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/banana-desiccated-coconut-curry-accompaniment.png",
+      "candidate_sha256": "c03352a79a7741fe28ada09c9c9ea3cbebd8b813d2a6ec7c25c15a540b7a3873",
+      "generated_at": "2026-10-02T15:36:28.042159+00:00",
+      "correction_instruction": "Change only the coconut texture: replace ALL coarse coconut shreds and flakes with fine desiccated coconut, tiny grain-like short particles less than 1 mm, lightly toasted pale gold. Preserve intact banana slices, yoghurt dressing, mint ribbons and fine red chilli, bowl, lighting and 3:2 framing.",
+      "review": "Fine toasted desiccated coconut corrected; intact banana, yoghurt, mint ribbons and chilli preserved.",
+      "reviewed_at": "2026-10-02T15:53:12.571832+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "c03352a79a7741fe28ada09c9c9ea3cbebd8b813d2a6ec7c25c15a540b7a3873"
+    },
+    {
+      "key": "beef-rendang",
+      "identity": "recipe/beef-rendang",
+      "version": 1,
+      "recipe": "recipes/2026-10-02 - Beef Rendang.md",
+      "prompt_file": "publisher/recipe-image-prompts/beef-rendang.md",
+      "prompt": "Subject: Tender irregular pieces of beef chuck coated in a dark brown, dry, clinging coconut-spice paste. The paste has a fine toasted-coconut texture and a restrained sheen from separated coconut oil; browned beef edges remain visible. The final reduction has left no pool of curry gravy. Remove whole lemongrass stalks and lime leaves, as the recipe directs; no rice, fresh herb garnish or decorative chilli.\n\nFraming: Shallow three-quarter view of a small mound on a plain white plate, showing the dry coating and individual beef pieces.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/beef-rendang.png",
+      "recipe_sha256": "368515193240dc4369fde70843a6fc37a5ac16095d8817f598dd1243ef067c9a",
+      "prompt_sha256": "1fc97178f3a588bab76363127c094420a286e948df803f63c2a757c39a60ba0a",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-340891d5-4316-477a-873a-53d8efb207ec.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/beef-rendang.png",
+      "candidate_sha256": "688257ba3e49742fd1ce8285742c2edabbc5dd9e35ff8d4f0fe1a7181ea83fef",
+      "generated_at": "2026-10-02T15:09:45.857220+00:00",
+      "review": "Dark dry coconut-spice coating clings to irregular beef pieces; no gravy pool, leaves, stalks or garnish.",
+      "reviewed_at": "2026-10-02T15:12:31.330055+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "688257ba3e49742fd1ce8285742c2edabbc5dd9e35ff8d4f0fe1a7181ea83fef"
+    },
+    {
+      "key": "black-bean-corn-mint-peppadew-salsa",
+      "identity": "recipe/black-bean-corn-mint-peppadew-salsa",
+      "version": 1,
+      "recipe": "recipes/2026-10-02 - Black Bean, Corn, Mint & Peppadew Salsa.md",
+      "prompt_file": "publisher/recipe-image-prompts/black-bean-corn-mint-peppadew-salsa.md",
+      "prompt": "Subject: A loosely mixed salsa of intact black beans, yellow corn kernels with scattered dark char marks, diced red Peppadew peppers and finely diced red onion. Thin mint ribbons and chopped coriander are mixed throughout. A light lime-and-olive-oil dressing gives the ingredients a subtle sheen without pooling. Show distinct ingredients and fresh herbs, with no avocado or extra jalape\u00f1o from the optional variations.\n\nFraming: Overhead view of one shallow white bowl; spread the salsa loosely enough to distinguish the beans, corn, peppers and herbs.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/black-bean-corn-mint-peppadew-salsa.png",
+      "recipe_sha256": "e50cff5e143a3ed6689030dbe68e4c0ffcd50ded9072551990703c653a592fb7",
+      "prompt_sha256": "3d2dbd920e27ea034c33e82f1544f2f934f49aa8aaad593521cd0b9943978383",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-a8faf55a-30de-483f-a1b4-41850f77cea6.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/black-bean-corn-mint-peppadew-salsa.png",
+      "candidate_sha256": "a2df7f45be744869423bfc4d080575cbb5b6bb11f8be228169d676dc339a1d53",
+      "generated_at": "2026-10-02T15:10:10.310706+00:00",
+      "review": "Distinct intact beans, charred corn, red pepper and onion with chopped herbs; light sheen without pooling, no avocado.",
+      "reviewed_at": "2026-10-02T15:12:31.330056+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "a2df7f45be744869423bfc4d080575cbb5b6bb11f8be228169d676dc339a1d53"
+    },
+    {
+      "key": "butter-braised-leeks",
+      "identity": "recipe/butter-braised-leeks",
+      "version": 1,
+      "recipe": "recipes/2026-10-02 - Butter-Braised Leeks.md",
+      "prompt_file": "publisher/recipe-image-prompts/butter-braised-leeks.md",
+      "prompt": "Subject: Several long leek halves, white at the base and pale green toward the tips, braised until silky and tender while their lengthwise layers remain intact. The leeks carry a thin glossy coating of reduced stock, butter and lemon; small traces of the cooking thyme may remain, but there is no added herb garnish. Their natural layered structure is visible at the cut ends. No dark grill stripes, mustard glaze or browned-butter variation.\n\nFraming: Low three-quarter view of the leek halves arranged in one loose layer on a plain white plate; show their length and the delicate glaze.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/butter-braised-leeks.png",
+      "recipe_sha256": "1031b5db904c693d7850519fbce9ab723a72dbd8f5543624738ba251884b371c",
+      "prompt_sha256": "a094fe44161371f01510c9f39e3ad9b0f0c038a98770ee32b115c83377dd78ba",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-71e28e66-cdd2-4c96-b953-71e5cd353ef6.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/butter-braised-leeks.png",
+      "candidate_sha256": "0f54326394c712e82d94cab52012c53959fdd94b894596781247fd52bca15611",
+      "generated_at": "2026-10-02T15:10:49.438427+00:00",
+      "review": "Tender lengthwise leek sections, intact visible layers, butter-stock glaze and only sparse cooking thyme; no grill marks.",
+      "reviewed_at": "2026-10-02T15:12:31.330058+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "0f54326394c712e82d94cab52012c53959fdd94b894596781247fd52bca15611"
+    },
+    {
+      "key": "bun-bo-nuong",
+      "identity": "recipe/bun-bo-nuong",
+      "version": 1,
+      "recipe": "recipes/2026-02-19 - B\u00fan b\u00f2 n\u01b0\u1edbng (Grilled Beef with Rice Noodles).md",
+      "prompt_file": "publisher/recipe-image-prompts/bun-bo-nuong.md",
+      "prompt": "Subject: Thin slices of marinated grilled beef sirloin with caramelised edges, laid over drained white rice vermicelli and lettuce. Fresh coriander, mint and Thai basil sit among the noodles, with a restrained scattering of crushed roasted peanuts. Include a small portion of light, translucent n\u01b0\u1edbc ch\u1ea5m with carrot slices, garlic and red chilli in a plain dipping dish beside the bowl. The noodle bowl is not submerged in broth. No spring rolls, cucumber, pork or fried onions.\n\nFraming: Elevated three-quarter view of one white noodle bowl and its small functional dipping dish, grouped as a single serving; keep the beef slices, fine noodles and herbs visible.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/2026-02-19-bun-bo-nuong-grilled-beef-with-rice-noodles.png",
+      "recipe_sha256": "5327bc01db648f5656c3b46b2eba8d29476d8544e63db17921bc4da514bc01c0",
+      "prompt_sha256": "1ffdcfb4d5e96d5294b4cd4c9737c4296bc3d731d1186ea85dd009028f5a4bba",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-876312c5-3b75-4c7f-8d51-add1af283809.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/bun-bo-nuong.png",
+      "candidate_sha256": "7650ae9cd35892653d385a0076c0f394eb360d6157c0d676417bd7f8d6ffc855",
+      "generated_at": "2026-10-02T15:11:14.002335+00:00",
+      "review": "Thin browned beef over drained noodles and lettuce with specified herbs and peanuts; separate translucent carrot-garlic-chilli dipping sauce.",
+      "reviewed_at": "2026-10-02T15:12:31.330059+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "7650ae9cd35892653d385a0076c0f394eb360d6157c0d676417bd7f8d6ffc855"
+    },
+    {
+      "key": "bun-cha",
+      "identity": "recipe/bun-cha",
+      "version": 1,
+      "recipe": "recipes/2026-02-19 - B\u00fan ch\u1ea3 (Hanoi Grilled Pork with Noodles).md",
+      "prompt_file": "publisher/recipe-image-prompts/bun-cha.md",
+      "prompt": "Subject: Hanoi-style grilled pork served in two forms: caramelised thin pork-shoulder slices and small browned pork-mince patties. Both have lightly charred edges and remain juicy. Serve with a compact portion of white rice vermicelli, lettuce and fresh coriander, with translucent n\u01b0\u1edbc ch\u1ea5m containing carrot, garlic and red chilli. Keep noodles and dipping sauce distinct rather than presenting a soup. No beef, peanuts, spring rolls or invented herbs.\n\nFraming: Elevated three-quarter view of one complete serving on plain white dishes: grilled pork and patties, a small noodle-and-lettuce portion, and a shallow sauce dish. Group closely without decorative props.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/2026-02-19-bun-cha-hanoi-grilled-pork-with-noodles.png",
+      "recipe_sha256": "436cf37cff9bf07c9e1bef2bd1100d891b89b2b2624274ee10fa81a5290d32fa",
+      "prompt_sha256": "8ba1ef09298c4fe03904e2537a6c3761150cbe5b4fceb49205ca0fd0120f574c",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-aedb1d59-bc1b-4b0b-9604-5a5a83f79bb0.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/bun-cha.png",
+      "candidate_sha256": "c4df36b050953bdf3b3b4b1151fc9751f0d832f385343af8da5b7d01c83825b0",
+      "generated_at": "2026-10-02T15:12:04.536102+00:00",
+      "review": "Browned shoulder slices and small mince patties, separate drained rice noodles with lettuce/coriander and translucent dipping sauce; no peanuts or invented sides.",
+      "reviewed_at": "2026-10-02T15:12:31.330060+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "c4df36b050953bdf3b3b4b1151fc9751f0d832f385343af8da5b7d01c83825b0"
+    },
+    {
+      "key": "carbonara",
+      "identity": "recipe/carbonara",
+      "version": 1,
+      "recipe": "recipes/2026-10-02 - Carbonara.md",
+      "prompt_file": "publisher/recipe-image-prompts/carbonara.md",
+      "prompt": "Subject: A single serving of spaghetti coated evenly in a glossy pale-gold egg-and-Pecorino emulsion. Rendered guanciale batons have browned crisp edges and translucent fatty sections, distributed through the pasta. Coarsely ground black pepper provides the specified finish. The sauce clings smoothly to the strands with no scrambled-egg curds or watery puddle. No cream pour, parsley, peas or extra garnish.\n\nFraming: Elevated three-quarter view of a natural compact serving in a shallow white bowl; show separate coated spaghetti strands and the guanciale.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/carbonara.png",
+      "recipe_sha256": "66262b2b2f0d0077a97cfd4642ed9f4160c199ab89593915814fabc72180fb09",
+      "prompt_sha256": "13b8233ef72a09a9e04108a11c64c3e5098679b31675c93ec95cc5218d73a3db",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-4a62ae1d-2673-4e0b-bdb6-b94fcbe62dbc.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/carbonara.png",
+      "candidate_sha256": "dfb8b1f1246f1193ea0fdd80c9e337df393e848e8ce80ba8e140d7b25d792eab",
+      "generated_at": "2026-10-02T15:13:00.217881+00:00",
+      "review": "Glossy pale-gold coating, distinct spaghetti, browned guanciale batons and pepper. No curds, cream, herbs or watery sauce.",
+      "reviewed_at": "2026-10-02T15:17:31.806416+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "dfb8b1f1246f1193ea0fdd80c9e337df393e848e8ce80ba8e140d7b25d792eab"
+    },
+    {
+      "key": "carne-asada-tacos",
+      "identity": "recipe/carne-asada-tacos",
+      "version": 1,
+      "recipe": "recipes/2026-10-02 - Carne Asada Tacos.md",
+      "prompt_file": "publisher/recipe-image-prompts/carne-asada-tacos.md",
+      "prompt": "Subject: One serving of warm corn tortillas folded loosely around bite-size pieces of skirt or flank steak. The beef has dark grilled edges and moist cut surfaces, having been rested and sliced across the grain. Finish with finely diced white onion, chopped coriander, a modest amount of salsa of the cook's choice and a small lime wedge beside the tacos. The recipe does not specify the salsa formula, so keep it a minor element rather than a dominant colour or topping. No avocado, cheese or sour cream.\n\nFraming: Shallow three-quarter view of two open tacos on one plain white plate, with fillings clearly visible; no separate salsa bowl or scattered ingredients.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/carne-asada-tacos.png",
+      "recipe_sha256": "46c0f09a195be74a4081eda0902bb8aae4d6e415be4d0647898dd4c6b3c094c5",
+      "prompt_sha256": "18c062a6ae05adb7a4cbb3f0ae70281f8a4b926d5ad6ce19e342040117591026",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-028c8616-e292-4541-a317-c4964bfd88f0.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/carne-asada-tacos.png",
+      "candidate_sha256": "496ace1b5c289d8e47d62f42b57db8eb61fcefb1687b98e8d0953bf2b773de0e",
+      "generated_at": "2026-10-02T15:13:19.753610+00:00",
+      "review": "Two corn tacos with bite-size charred beef and moist pink cut faces, white onion, coriander, restrained salsa and lime wedge. No dairy or avocado.",
+      "reviewed_at": "2026-10-02T15:17:31.806520+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "496ace1b5c289d8e47d62f42b57db8eb61fcefb1687b98e8d0953bf2b773de0e"
+    },
+    {
+      "key": "celery-green-apple-fennel-pollen-slaw",
+      "identity": "recipe/celery-green-apple-fennel-pollen-slaw",
+      "version": 1,
+      "recipe": "recipes/2026-05-29 - Celery-green-apple-fennel-pollen-slaw.md",
+      "prompt_file": "publisher/recipe-image-prompts/celery-green-apple-fennel-pollen-slaw.md",
+      "prompt": "Subject: A lightly dressed slaw of thin bias-cut celery and green-apple matchsticks, with torn flat-leaf parsley. Keep the celery slices and apple strips crisp, distinct and pale green, with a restrained lemon, cider-vinegar and olive-oil sheen. Coarsely crushed toasted fennel seed and a trace of fennel pollen are mixed through the dressing; they are subtle seasoning rather than a thick dust. Omit optional celery leaves. No mayonnaise, cabbage, shaved fennel bulb, pork or sandwich.\n\nFraming: Elevated three-quarter view of one shallow white bowl, showing the airy tangle of apple matchsticks and oblique celery slices without a puddle of dressing.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/2026-05-29-celery-green-apple-fennel-pollen-slaw.png",
+      "recipe_sha256": "f12a9e7adde7d383a637d4436c1537dd0067fdacee22d6315ff0b4f2ceea06d5",
+      "prompt_sha256": "7a518e9ad4f643ef6d5f3bf86c00130a6c0d00e2dbe3a374b03ed1e788bf9658",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-b785bbe6-ce0c-49e8-a93d-9b786af1d052.png",
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-44b3ec61-1104-4d45-80d3-3e8791e2636a.png",
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-9427626d-5e01-4de3-a692-422b026b1d25.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/celery-green-apple-fennel-pollen-slaw.png",
+      "candidate_sha256": "e20a1343955f62111d22a6193d45f415454ee630385b4001de77974a969835e5",
+      "generated_at": "2026-10-02T15:47:41.882706+00:00",
+      "correction_instruction": "Change only fennel seasoning: replace ALL intact long fennel seeds with small irregular coarsely crushed seed fragments lightly mixed through the dressing. No whole seeds and no dense dust. Preserve bias-cut celery, apple matchsticks, parsley, bowl and studio treatment.",
+      "review": "Whole fennel seeds removed on second edit; tiny crushed fragments, celery bias slices, apple matchsticks and parsley preserved.",
+      "reviewed_at": "2026-10-02T15:53:12.571832+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "e20a1343955f62111d22a6193d45f415454ee630385b4001de77974a969835e5"
+    },
+    {
+      "key": "chicken-nachos",
+      "identity": "recipe/chicken-nachos",
+      "version": 1,
+      "recipe": "recipes/2026-10-02 - Chicken Nachos.md",
+      "prompt_file": "publisher/recipe-image-prompts/chicken-nachos.md",
+      "prompt": "Subject: A shallow serving of crisp tortilla chips assembled in two thin layers, with small pieces of seared spiced chicken thigh, intact black beans, smooth cheddar sauce and melted grated cheese distributed between and across the chips. Finish with small concentrated spoonfuls of black-bean, charred-corn, mint and red-Peppadew salsa, off-white lime crema, sliced pickled jalape\u00f1o and coriander. Keep some crisp chip edges exposed; the wet toppings do not swamp the serving. No avocado, guacamole or pickled-red-onion variation.\n\nFraming: Elevated three-quarter view of one plain shallow white serving dish; show the modest layering and recognisable toppings without a towering pile or cheese-pull action.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/chicken-nachos.png",
+      "recipe_sha256": "3680fca3c4d768fe60df32f878bca2ea9acd1f3ceba8ad6b15f33bc10102bc7d",
+      "prompt_sha256": "9d3a8bb8b414afb2d8a71cc20c710ebb2285a9995be6d72dfbe5b71dd7652178",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-47cbc8d2-1bf9-4761-be21-0df5535ff0da.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/chicken-nachos.png",
+      "candidate_sha256": "5dbbbcef6737ee70ef1b193a51d7cd54796e1c8e594ebb9dc2db9efddea6fd5b",
+      "generated_at": "2026-10-02T15:14:18.890904+00:00",
+      "review": "Two modest chip layers, chopped seared chicken, black beans, melted cheese, charred-corn/Peppadew salsa, crema, jalapeno and coriander; exposed crisp edges. Fine green crema flecks interpreted as lime zest.",
+      "reviewed_at": "2026-10-02T15:17:31.806522+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "5dbbbcef6737ee70ef1b193a51d7cd54796e1c8e594ebb9dc2db9efddea6fd5b"
+    },
+    {
+      "key": "chunky-tomato-burger-sauce",
+      "identity": "recipe/chunky-tomato-burger-sauce",
+      "version": 1,
+      "recipe": "recipes/2026-10-02 - Chunky Tomato Burger Sauce.md",
+      "prompt_file": "publisher/recipe-image-prompts/chunky-tomato-burger-sauce.md",
+      "prompt": "Subject: A small mound of thick reddish tomato-and-onion relish, with visible softened tomato pieces, finely diced onion and green dill-pickle fragments. Folded mayonnaise and Dijon give the reduced tomato base a slightly creamy, muted finish without turning it into a smooth orange pur\u00e9e. The sauce holds its shape with a soft glossy surface and no watery separation. No burger, chips or extra pickled-jalape\u00f1o garnish.\n\nFraming: Close elevated three-quarter view of one shallow white condiment dish, showing the chunky texture and cohesive consistency.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/chunky-tomato-burger-sauce.png",
+      "recipe_sha256": "879b95ae86a46d8f2298cec72338d91415a313dcad078abb83e543b6df7078da",
+      "prompt_sha256": "8fdc4c62d3fd40df79216fcc94b5a6ed5091ffaea12b613410f818649d0d4bba",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-368504fa-4b88-4672-b49c-b6e8d60f0a60.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/chunky-tomato-burger-sauce.png",
+      "candidate_sha256": "9054f9ed731d6187e9b1f3be8368b2afe83cc9cb30311270a07ee895ea3f19a9",
+      "generated_at": "2026-10-02T15:15:04.472374+00:00",
+      "review": "Thick cohesive reddish relish with tomato, softened onion and pickle pieces; creamy sheen, no watery separation or burger props.",
+      "reviewed_at": "2026-10-02T15:17:31.806524+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "9054f9ed731d6187e9b1f3be8368b2afe83cc9cb30311270a07ee895ea3f19a9"
+    },
+    {
+      "key": "cowboy-beans",
+      "identity": "recipe/cowboy-beans",
+      "version": 1,
+      "recipe": "recipes/2026-02-19 - Cowboy Beans.md",
+      "prompt_file": "publisher/recipe-image-prompts/cowboy-beans.md",
+      "prompt": "Subject: Tender intact pinto beans with browned beef-chuck pieces and rendered bacon, coated in a thick dark reddish-brown tomato, molasses and beer sauce. Softened onion is integrated into the reduction. The finished mixture is glossy and spoon-coating rather than a watery soup, with the individual beans still recognisable. Use the pinto-bean base version; no cheese, herb garnish, cornbread or rice.\n\nFraming: Elevated three-quarter view of one shallow white bowl, showing the beans, beef and bacon within the tight sauce.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/2026-02-19-cowboy-beans.png",
+      "recipe_sha256": "dff26e15b7d531341fe3747bf822c64e0d28b9510b920acad8904b3ca9e5e154",
+      "prompt_sha256": "423ace09a56ee0c902b5ec07478b583163d1621eac5f663d3a03b3d8ffc38c4e",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-fb186df0-983b-4b46-b6c6-583a32af2168.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/cowboy-beans.png",
+      "candidate_sha256": "aa46c37235a5eb4fbeca5f7e971a56f2cb46e6acdf1ea516bd545d396f23f4f9",
+      "generated_at": "2026-10-02T15:15:24.411844+00:00",
+      "review": "Recognisable tender beans, beef-chuck chunks and rendered bacon in tight glossy molasses-tomato sauce, no garnish.",
+      "reviewed_at": "2026-10-02T15:17:31.806525+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "aa46c37235a5eb4fbeca5f7e971a56f2cb46e6acdf1ea516bd545d396f23f4f9"
+    },
+    {
+      "key": "creamy-porcini-mushroom-ragout-polenta",
+      "identity": "recipe/creamy-porcini-mushroom-ragout-polenta",
+      "version": 1,
+      "recipe": "recipes/2026-02-21 - Creamy Porcini Mushroom Ragout with Polenta.md",
+      "prompt_file": "publisher/recipe-image-prompts/creamy-porcini-mushroom-ragout-polenta.md",
+      "prompt": "Subject: Creamy mushroom ragout made with browned fresh mushrooms and chopped rehydrated porcini, spooned over and beside firm polenta rectangles about two centimetres thick. The polenta has been cooked, chilled, cut and pan-fried: its surfaces are deeply golden and crisp, while the cut interior is set and pale yellow. The mushroom sauce is glossy and spoonable, with small thyme leaves integrated. No soft polenta puddle, mashed-potato base, raw porcini slices or extra garnish.\n\nFraming: Low three-quarter view on one plain white plate; leave part of the fried polenta exposed so its crisp crust and set cut edge remain visible beside the ragout.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/2026-02-21-creamy-porcini-mushroom-ragout-with-polenta.png",
+      "recipe_sha256": "7e354075b6e1343402bde9546df50d7d0af82b106a55add35f8dc3dba714e028",
+      "prompt_sha256": "a73922468db2a34e481d34803ac3a1f05cd9a8ed1e398f51473ec26959f3eda4",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-ca03d21b-117c-4869-8387-7750b107c84f.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/creamy-porcini-mushroom-ragout-polenta.png",
+      "candidate_sha256": "e9552ca0ac8219b667cc6d82a0017f073115bd01a1e8e3aeb7e2f8cbf99194db",
+      "generated_at": "2026-10-02T15:16:00.336255+00:00",
+      "review": "Golden pan-fried set polenta rectangles with exposed pale-yellow edges, browned mushrooms in creamy spoonable ragout and integrated thyme.",
+      "reviewed_at": "2026-10-02T15:17:31.806528+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "e9552ca0ac8219b667cc6d82a0017f073115bd01a1e8e3aeb7e2f8cbf99194db"
+    },
+    {
+      "key": "creme-fraiche-lime-crema",
+      "identity": "recipe/creme-fraiche-lime-crema",
+      "version": 1,
+      "recipe": "recipes/2026-10-02 - Cr\u00e8me Fra\u00eeche Lime Crema.md",
+      "prompt_file": "publisher/recipe-image-prompts/creme-fraiche-lime-crema.md",
+      "prompt": "Subject: A small pool of smooth off-white cr\u00e8me fra\u00eeche lime crema, with tiny lime-zest flecks and a gently glossy surface. Its consistency is spoonable yet loose enough to drizzle, with a shallow curved surface ridge rather than stiff peaks. Garlic and cumin are integrated, not presented as visible garnish. Show the base version without coriander, chipotle, lime wedges or an accompanying taco.\n\nFraming: Close overhead view of one shallow white condiment dish; emphasise the smooth surface, fine zest and soft consistency.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/creme-fraiche-lime-crema.png",
+      "recipe_sha256": "046024080a009df4e5892f776ccf08ecd07c9456bfac3f9a4eb4c9aea66ea77c",
+      "prompt_sha256": "324b7ccd18c06d55d468a3a63119d9237a72014b181048738bd5345c6e7ea29a",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-eefdf1d7-2d76-45b0-8571-50a44c4067e0.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/creme-fraiche-lime-crema.png",
+      "candidate_sha256": "3c8b316b455a435979db57a6a468f2bb2411cdfef151b25fe6a23f477d6669bf",
+      "generated_at": "2026-10-02T15:16:17.064264+00:00",
+      "review": "Smooth off-white spoonable crema with fine lime zest and soft surface ridge; no herb garnish or lime wedge.",
+      "reviewed_at": "2026-10-02T15:17:31.806529+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "3c8b316b455a435979db57a6a468f2bb2411cdfef151b25fe6a23f477d6669bf"
+    },
+    {
+      "key": "fennel-sausage-caramelised-red-onion-roman-style-pizza",
+      "identity": "recipe/fennel-sausage-caramelised-red-onion-roman-style-pizza",
+      "version": 1,
+      "recipe": "recipes/2026-10-02 - Fennel Sausage & Caramelised Red Onion Roman-Style Pizza.md",
+      "prompt_file": "publisher/recipe-image-prompts/fennel-sausage-caramelised-red-onion-roman-style-pizza.md",
+      "prompt": "Subject: One rectangular slice of Roman-style tray pizza with a crisp browned underside and an airy, irregularly open crumb. The topping contains browned fennel-pork-sausage pieces, soft deeply coloured red-onion strands, melted low-moisture mozzarella and Pecorino. Lightly crushed fennel seeds and a restrained parsley finish are present, with a little olive-oil sheen. The pizza is bianca, with no tomato sauce; do not add rocket from the optional variation.\n\nFraming: Low three-quarter view of the cut slice on a plain white plate; reveal its open crumb and crisp underside while keeping the sausage and onion topping visible.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/fennel-sausage-caramelised-red-onion-roman-style-pizza.png",
+      "recipe_sha256": "0bde72254313890c465e87ea0c2f53277315b0ff082c414796234929960a826a",
+      "prompt_sha256": "2162fa6120b3951c8546d8fa1234a512e07e1052edd6bf95829ecb721a25c0ae",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-577a3c21-8721-42c0-a42b-83ea5ef5bebf.png",
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-9ea02e40-b318-410c-9ff8-f795c0485084.png",
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-dde0bf65-830d-4485-810d-f44a99813075.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/fennel-sausage-caramelised-red-onion-roman-style-pizza.png",
+      "candidate_sha256": "b13e62e2aa61c0c42766d63cc2fc37a9f831d5825737780df17cd4ce97431860",
+      "generated_at": "2026-10-02T15:48:40.059808+00:00",
+      "correction_instruction": "Change only fennel seed seasoning: replace ALL intact seeds on the pizza with sparse small broken lightly crushed fennel fragments. Preserve rectangular airy pizza, sausage, caramelised red onion, melted mozzarella and Pecorino, parsley, browned underside and 3:2 house style.",
+      "review": "Whole fennel seeds removed on second edit; airy rectangular crumb, sausage, caramelised onion, cheeses and parsley preserved.",
+      "reviewed_at": "2026-10-02T15:53:12.571832+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "b13e62e2aa61c0c42766d63cc2fc37a9f831d5825737780df17cd4ce97431860"
+    },
+    {
+      "key": "flapjacks-american-pancakes",
+      "identity": "recipe/flapjacks-american-pancakes",
+      "version": 1,
+      "recipe": "recipes/2026-02-19 - Flapjacks (American Pancakes).md",
+      "prompt_file": "publisher/recipe-image-prompts/flapjacks-american-pancakes.md",
+      "prompt": "Subject: A small stack of tender American pancakes, each thick and softly rounded with an evenly golden griddle surface. Break or cut one pancake at the front to reveal its fine aerated crumb, without a filling or interior layers. These are flour-and-buttermilk pancakes, not oat flapjack bars or thin cr\u00eapes. Serve plain: no maple syrup, butter pat, berries, cream or icing, since no topping is specified.\n\nFraming: Low three-quarter view on a plain white plate, showing the golden tops and the exposed fluffy interior of the front pancake.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/2026-02-19-flapjacks-american-pancakes.png",
+      "recipe_sha256": "c6fbcfab10bb485d557d70ba76b11bb581b6663fa2426080233104578a288104",
+      "prompt_sha256": "039be1f2423f060158d6864a2e93cd9251b52171fb0c541332b7aea4b2d75025",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-f1960b7a-10b3-41d4-b8da-6c5e49d56537.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/flapjacks-american-pancakes.png",
+      "candidate_sha256": "e51f964fcfddd2967d16314a44ff708e9e97fc2d07e3bcd6de75793126fd006c",
+      "generated_at": "2026-10-02T15:17:10.230895+00:00",
+      "review": "Plain thick golden pancakes with exposed aerated homogeneous crumb, no syrup, butter pat, berries or filling.",
+      "reviewed_at": "2026-10-02T15:17:31.806530+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "e51f964fcfddd2967d16314a44ff708e9e97fc2d07e3bcd6de75793126fd006c"
+    },
+    {
+      "key": "fried-master-stock-chicken",
+      "identity": "recipe/fried-master-stock-chicken",
+      "version": 1,
+      "recipe": "recipes/2026-02-19 - Fried Master Stock Chicken.md",
+      "prompt_file": "publisher/recipe-image-prompts/fried-master-stock-chicken.md",
+      "prompt": "Subject: A carved serving of soy-aromatic poached chicken that has been air-dried and fried. The skin is deeply golden-brown, lightly blistered and crisp over moist pale cooked meat; the optional syrupy master-stock glaze is omitted so the skin remains clearly visible. Use skin-on carved pieces, not nuggets or a heavy breadcrumb coating. No whole stock spices, spring-onion garnish, rice or side vegetables.\n\nFraming: Low three-quarter view of a few carved chicken pieces on a plain white plate, with one cut face showing moist meat beneath the thin crisp skin.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/2026-02-19-fried-master-stock-chicken.png",
+      "recipe_sha256": "516016d9e5ffa515f51b47d27942d9e85ed1b7b1fb8c1f4da0bcd366d8e67cc0",
+      "prompt_sha256": "5f665a5580b2e1d4e2d28140dd56e8a5f9930d96e99baa0ca27ec1826d07ee19",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-be0c7b29-7780-48f9-aa1d-baabead5f2bb.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/fried-master-stock-chicken.png",
+      "candidate_sha256": "7314e4651a9b099308775a96136296442584777f3efcaebe78083a418fb97873",
+      "generated_at": "2026-10-02T15:18:02.239024+00:00",
+      "review": "Carved skin-on chicken with thin golden blistered skin and moist pale cooked cut faces; no heavy batter, glaze or garnish.",
+      "reviewed_at": "2026-10-02T15:22:26.926138+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "7314e4651a9b099308775a96136296442584777f3efcaebe78083a418fb97873"
+    },
+    {
+      "key": "gratin-dauphinois",
+      "identity": "recipe/gratin-dauphinois",
+      "version": 1,
+      "recipe": "recipes/2026-02-19 - Gratin Dauphinois.md",
+      "prompt_file": "publisher/recipe-image-prompts/gratin-dauphinois.md",
+      "prompt": "Subject: One rested, cleanly cut portion of traditional potato gratin, with closely packed thin waxy-potato layers held together by set cream. The upper surface is lightly golden and the interior pale, moist and cohesive, with a small soft sheen of cream. There is no cheese anywhere in this recipe: no browned cheese blanket, cheese strands or grated garnish. No parsley, bacon or side dish.\n\nFraming: Low three-quarter view of a compact rectangular portion on a plain white plate, with the layered cut face and gently browned top both visible.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/2026-02-19-gratin-dauphinois.png",
+      "recipe_sha256": "8b495c1efbc99817b5f9757b154ba39173ca16aed37cdb7d4b4618ddcf2183b8",
+      "prompt_sha256": "6c92b9a577e523eada7014f4821ea1236067a8d6a4d795ab1f3b2c92aa779ae4",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-c1ef009c-006e-461e-a34f-24a48f266163.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/gratin-dauphinois.png",
+      "candidate_sha256": "3a3c792b32c87b716517b4e50dd1b4d4ecdbcb2a21732fd5386783fcec2c48e1",
+      "generated_at": "2026-10-02T15:18:21.589835+00:00",
+      "review": "Rested coherent thin potato layers in set cream with browned cream/potato surface; no cheese strands, grated topping or garnish.",
+      "reviewed_at": "2026-10-02T15:22:26.926264+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "3a3c792b32c87b716517b4e50dd1b4d4ecdbcb2a21732fd5386783fcec2c48e1"
+    },
+    {
+      "key": "grilled-pork-al-pastor",
+      "identity": "recipe/grilled-pork-al-pastor",
+      "version": 1,
+      "recipe": "recipes/2026-02-19 - Grilled Pork Al Pastor.md",
+      "prompt_file": "publisher/recipe-image-prompts/grilled-pork-al-pastor.md",
+      "prompt": "Subject: Warm corn tortillas holding thin slices of hibachi-grilled pork fillet in a red-orange achiote, guajillo and grilled-pineapple marinade. The meat has caramelised edges from a brief second sear and moist cut surfaces. Top with diced charred pineapple, red onion, fresh red chilli and coriander in a light lime dressing; omit the optional mint. This is sliced pork fillet, not a vertical spit, shaved pork stack or shredded meat. No cheese, avocado or crema.\n\nFraming: Shallow three-quarter view of two open corn tacos on one plain white plate, showing the sliced pork and charred pineapple salsa.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/2026-02-19-grilled-pork-al-pastor.png",
+      "recipe_sha256": "afc9b6df648b0664899e345603f83069ad41b150e098b60e536b25123d0c5b12",
+      "prompt_sha256": "c0a1813318152502c58e1bbd39e0a45efde185924d98d2c58fe4f4971d602825",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-ec7c4d53-a182-4ed3-ba8f-de08bc3e7376.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/grilled-pork-al-pastor.png",
+      "candidate_sha256": "715407cf2fbd7484958e1e4bd6e5a543b0585fd71fb3823ddc5aaea5b50e6dd1",
+      "generated_at": "2026-10-02T15:19:02.398392+00:00",
+      "review": "Two corn tacos, sliced browned red-orange pork fillet and diced charred pineapple/red onion/chilli/coriander salsa; no spit structure or dairy.",
+      "reviewed_at": "2026-10-02T15:22:26.926266+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "715407cf2fbd7484958e1e4bd6e5a543b0585fd71fb3823ddc5aaea5b50e6dd1"
+    },
+    {
+      "key": "guanciale-olive-chili-pasta-sauce",
+      "identity": "recipe/guanciale-olive-chili-pasta-sauce",
+      "version": 1,
+      "recipe": "recipes/2026-02-19 - Guanciale, Olive & Chili Pasta Sauce.md",
+      "prompt_file": "publisher/recipe-image-prompts/guanciale-olive-chili-pasta-sauce.md",
+      "prompt": "Subject: One serving of al dente dried pasta dressed in a reduced glossy tomato sauce, with lightly crisp guanciale pieces, black olives, capers and small red-chilli fragments distributed through it. Parsley and black pepper provide the specified finish. The tomato and rendered fat form a cohesive glaze clinging to the pasta, not a watery red pool. The source does not specify a pasta shape; use a plain dried shape without making it the defining feature. No cream, cheese garnish or extra meat.\n\nFraming: Elevated three-quarter view of a compact serving in one shallow white bowl, keeping the guanciale, black olives and sauce-coated pasta visible.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/2026-02-19-guanciale-olive-and-chili-pasta-sauce.png",
+      "recipe_sha256": "53f295b7744b01f6ca9e642c74ef3598f44316e72a0fe052ba3cfa668a68c2cb",
+      "prompt_sha256": "9acf20b47f0f3e907e3d1a45867b85358ae5caff89d835ecdc332146bcd497c2",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-4fb2b844-ddca-4808-9a93-9096e10559dc.png",
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-83a11461-4b0f-40cc-b708-d7a451dc8c24.png",
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-f10c16e5-7956-427e-98a0-a3e329979b67.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/guanciale-olive-chili-pasta-sauce.png",
+      "candidate_sha256": "83485f589133e53c3dd6403117d047846e37aac5a76f7432cde883ab4835e2d0",
+      "generated_at": "2026-10-02T15:49:05.420664+00:00",
+      "correction_instruction": "Change only olives: replace every whole black olive with irregular CHOPPED black olive fragments as required by the recipe. Preserve rigatoni, guanciale lardons, capers, chilli, glossy tomato glaze, parsley, bowl, lighting and framing.",
+      "review": "Whole olives replaced with chopped black olive pieces; rigatoni, guanciale, capers, chilli and glossy sauce preserved.",
+      "reviewed_at": "2026-10-02T15:53:12.571832+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "83485f589133e53c3dd6403117d047846e37aac5a76f7432cde883ab4835e2d0"
+    },
+    {
+      "key": "hibachi-pork-charred-greens-spanish-green-sauce",
+      "identity": "recipe/hibachi-pork-charred-greens-spanish-green-sauce",
+      "version": 1,
+      "recipe": "recipes/2026-02-19 - Hibachi Pork with Charred Greens & Spanish Green Sauce.md",
+      "prompt_file": "publisher/recipe-image-prompts/hibachi-pork-charred-greens-spanish-green-sauce.md",
+      "prompt": "Subject: Slices of pork shoulder that have been cooked sous vide, dried and seared rapidly over hot charcoal. Show a deeply browned exterior and moist, lightly pink cooked interior, without a fried batter crust. Include blistered broccoli florets with green interiors and dark charred edges, plus a small spoonful of coarse hand-chopped parsley, garlic, olive-oil and sherry-vinegar sauce. The approved green vegetable is broccoli, not cabbage or leafy greens. No fries or extra garnish.\n\nFraming: Low three-quarter view of one complete serving on a plain white plate, with pork cut faces forward, broccoli beside them and the textured green sauce alongside.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/2026-02-19-hibachi-pork-with-charred-greens-and-spanish-green-sauce.png",
+      "recipe_sha256": "fc483ea046d662eb460ca04a54eb26f4f66163f0b5690867719d866d05a27a34",
+      "prompt_sha256": "1ee8961ff614186f58c0d06ede8d5088f0ab316462f550c9dbb334b86a24ab8b",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-9d37605e-7159-4ab4-8de8-cd8b226a40bb.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/hibachi-pork-charred-greens-spanish-green-sauce.png",
+      "candidate_sha256": "4fd3d6d986a3c605d3bf5f8e5ed1392fae2f0ff2eb368e8f5384fd202e65e749",
+      "generated_at": "2026-10-02T15:19:57.153909+00:00",
+      "review": "Browned pork shoulder slices with lightly pink cooked interiors, charred broccoli and textured parsley-garlic sauce; no invented sides.",
+      "reviewed_at": "2026-10-02T15:22:26.926268+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "4fd3d6d986a3c605d3bf5f8e5ed1392fae2f0ff2eb368e8f5384fd202e65e749"
+    },
+    {
+      "key": "home-style-chicken-curry-with-coconut-milk-potatoes-peas",
+      "identity": "recipe/home-style-chicken-curry-with-coconut-milk-potatoes-peas",
+      "version": 1,
+      "recipe": "recipes/2026-10-02 - Home-Style Chicken Curry with Coconut Milk, Potatoes & Peas.md",
+      "prompt_file": "publisher/recipe-image-prompts/home-style-chicken-curry-with-coconut-milk-potatoes-peas.md",
+      "prompt": "Subject: Bone-in chicken thigh and drumstick pieces in a warm golden, lightly tomato-tinted coconut gravy, with soft potato chunks and bright green peas visible around the chicken. The gravy is gently simmered, cohesive and softly glossy, with no split oil slick or cream swirl. Finish with the recipe's chopped coriander. Show the base bone-in version without extra green chilli, rice, chutneys or bread.\n\nFraming: Elevated three-quarter view of one shallow white bowl; show a chicken piece, potato chunks, peas and enough gravy to communicate the dish's soft texture.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/home-style-chicken-curry-with-coconut-milk-potatoes-peas.png",
+      "recipe_sha256": "e86beca4cb44c719b79fee6ea2a579e91f62e867f4bf0547ae6e5fa39f4a3b7d",
+      "prompt_sha256": "d8dd0aa46725c848e0abf0d4c5ea331402c49db3decef7a004a48fe3854e1887",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-c427cc7c-5924-45e0-9584-3722110aa0d5.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/home-style-chicken-curry-with-coconut-milk-potatoes-peas.png",
+      "candidate_sha256": "29704e4a4bb7703f7fe6b9c1903ee28b5c463a8256355436251af299642edc8b",
+      "generated_at": "2026-10-02T15:20:17.124776+00:00",
+      "review": "Bone-in thigh/drumstick, softened potatoes, green peas and coriander in cohesive golden coconut-tomato gravy; no rice or bread.",
+      "reviewed_at": "2026-10-02T15:22:26.926270+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "29704e4a4bb7703f7fe6b9c1903ee28b5c463a8256355436251af299642edc8b"
+    },
+    {
+      "key": "italian-sausages-puy-lentils",
+      "identity": "recipe/italian-sausages-puy-lentils",
+      "version": 1,
+      "recipe": "recipes/2026-02-19 - Italian Sausages with Puy Lentils.md",
+      "prompt_file": "publisher/recipe-image-prompts/italian-sausages-puy-lentils.md",
+      "prompt": "Subject: Whole deeply browned Italian pork sausages resting over tender Puy lentils that retain their small distinct shape. Soft onion, carrot and celery are integrated into the lentils, with warm spiced tomato sauce spooned over the sausages and lentil base. Finish with a restrained olive-oil sheen; omit optional parsley. No sliced sausage coins, mash, melted cheese, whole cinnamon sticks or star anise on the plate. Omit the suggested bread or polenta accompaniment to keep the core dish clear.\n\nFraming: Shallow three-quarter view of one plain white serving dish, showing a whole browned sausage over a compact lentil bed with tomato sauce.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/2026-02-19-italian-sausages-with-puy-lentils.png",
+      "recipe_sha256": "ae55366ea44442d2faa9e9d5d5d91a0717d23d12b1bdb385748f96253546ce80",
+      "prompt_sha256": "e34d39b2aaf70688e1f56f977dca49c1764ea458e4223796de58011d3dec4e0e",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-8af6dffe-ed55-4185-a724-c4011221bb86.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/italian-sausages-puy-lentils.png",
+      "candidate_sha256": "af1ad9a6be19f65bc68b31704c220899707b685fd86940b8037c227b87a4f866",
+      "generated_at": "2026-10-02T15:20:49.575447+00:00",
+      "review": "Whole deeply browned sausages over distinct small lentils, cooked mirepoix and reduced tomato sauce; no parsley garnish or whole spices.",
+      "reviewed_at": "2026-10-02T15:22:26.926272+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "af1ad9a6be19f65bc68b31704c220899707b685fd86940b8037c227b87a4f866"
+    },
+    {
+      "key": "lao-herbaceous-chicken-noodle-soup",
+      "identity": "recipe/lao-herbaceous-chicken-noodle-soup",
+      "version": 1,
+      "recipe": "recipes/2026-02-19 - Lao Herbaceous Chicken Noodle Soup.md",
+      "prompt_file": "publisher/recipe-image-prompts/lao-herbaceous-chicken-noodle-soup.md",
+      "prompt": "Subject: Clear strained chicken broth containing flat rice noodles and shredded poached chicken, finished with fresh coriander, mint and Thai basil. Present the jeow condiments separately: a coarse dark-red roasted-chilli, garlic and shallot paste, and a coarse shallot-based condiment seasoned with fish sauce and lime. Keep both condiments out of the main broth so the soup stays clear. The source calls the second condiment green jeow but does not specify an added green ingredient; do not invent green chilli or a blended herb pur\u00e9e to colour it. No coconut milk, stock wing tips or whole broth aromatics in the bowl.\n\nFraming: Elevated three-quarter view into one white soup bowl, with two very small plain condiment dishes grouped beside it as part of the single serving; show the flat noodles beneath clear broth and the separate jeow textures.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/2026-02-19-lao-herbaceous-chicken-noodle-soup.png",
+      "recipe_sha256": "f4044b39a8deedbfe32f3afc7c1888fd34aea55bbfd3b975e26f9723b83f3992",
+      "prompt_sha256": "3287c224376e1f62ad83e9136042568c37c1247f7fccf724e7276a9988a252e0",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-b4343954-0e9d-458f-9e55-7e9322618d53.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/lao-herbaceous-chicken-noodle-soup.png",
+      "candidate_sha256": "75778067583862558331cab15b01a60636fceafece98090f6b59107c9a06ab6a",
+      "generated_at": "2026-10-02T15:21:11.330616+00:00",
+      "review": "Clear broth with flat rice noodles, pale shredded chicken and specified herbs; separate coarse red chilli jeow and pale shallot condiment without invented green ingredients.",
+      "reviewed_at": "2026-10-02T15:22:26.926273+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "75778067583862558331cab15b01a60636fceafece98090f6b59107c9a06ab6a"
+    },
+    {
+      "key": "lasagna-bolognese-with-bechamel",
+      "identity": "recipe/lasagna-bolognese-with-bechamel",
+      "version": 1,
+      "recipe": "recipes/2026-10-02 - Lasagna Bolognese with B\u00e9chamel.md",
+      "prompt_file": "publisher/recipe-image-prompts/lasagna-bolognese-with-bechamel.md",
+      "prompt": "Subject: One rested rectangular portion of lasagna, cut cleanly to expose five or six thin fresh egg-pasta layers alternating with finely textured beef-and-pork rag\u00f9, pale b\u00e9chamel and Parmigiano. The top has browned cheese and golden edges, while the interior remains moist and cohesive rather than collapsing or leaking liquid. The meat filling is spoonable and finely crumbled, not large chunks. No mozzarella stretch, ricotta layer, parsley, salad or other side dish.\n\nFraming: Low three-quarter view on a plain white plate, with the cut face toward the camera and the browned upper surface still visible.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/lasagna-bolognese-with-bechamel.png",
+      "recipe_sha256": "34fd29adfeae44002363ac47957e74d55ba9913c79867fa5815836dc4c82d1ab",
+      "prompt_sha256": "4494edab7562317dc8d77f201d8b11d0cdb0d3cc386864c5d7e652983321f9b9",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-a941416d-1dea-491e-8f78-03f978bf8312.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/lasagna-bolognese-with-bechamel.png",
+      "candidate_sha256": "e60f33f32bb988eea236a254df72d9de9d73f5aa85a33db213cc02f878491777",
+      "generated_at": "2026-10-02T15:21:48.052950+00:00",
+      "review": "Cohesive layered cut portion, thin pasta sheets, finely crumbled ragu and pale bechamel, browned top; no ricotta or mozzarella stretch.",
+      "reviewed_at": "2026-10-02T15:22:26.926275+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "e60f33f32bb988eea236a254df72d9de9d73f5aa85a33db213cc02f878491777"
+    },
+    {
+      "key": "malted-milk-chocolate-ice-cream-with-lindt-milk-chocolate-milo",
+      "identity": "recipe/malted-milk-chocolate-ice-cream-with-lindt-milk-chocolate-milo",
+      "version": 1,
+      "recipe": "recipes/2026-10-02 - Malted Milk Chocolate Ice Cream with Lindt Milk Chocolate & Milo.md",
+      "prompt_file": "publisher/recipe-image-prompts/malted-milk-chocolate-ice-cream-with-lindt-milk-chocolate-milo.md",
+      "prompt": "Subject: Two dense, smooth scoops of light milk-chocolate-brown malt ice cream. The melted milk chocolate, Milo and malted milk powder are fully blended into a homogeneous base, so the scoop faces show fine churn ridges and an even colour. Show no separate chocolate chunks, cereal crunch, Milo dusting, sauce or ripple from the optional variations. The surface is frozen and smooth, not cake crumb or a mousse cutaway.\n\nFraming: Slightly elevated three-quarter view of the scoops in one small plain white bowl; show their curved scoop texture without a cross-section.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/malted-milk-chocolate-ice-cream-with-lindt-milk-chocolate-milo.png",
+      "recipe_sha256": "c7fd353aa8a32a4d4175cea045d1cfcdea6fce8349c80b4c00ce66d8ddc11e95",
+      "prompt_sha256": "44c95cca09078dd0a06d5cce9e53e05af34cdd4b4390b3fc97d013377f2c2289",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-2219f9fc-9193-4d2e-b8a1-f8ba0a0d949e.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/malted-milk-chocolate-ice-cream-with-lindt-milk-chocolate-milo.png",
+      "candidate_sha256": "57c0e0e80485de8ba40fe40b7ecd40ad3a9e30c4399aac98197fbac97238005b",
+      "generated_at": "2026-10-02T15:22:07.614885+00:00",
+      "review": "Two homogeneous milk-chocolate scoops with frozen churn ridges; no chunks, cereal, powder or ripple.",
+      "reviewed_at": "2026-10-02T15:22:26.926277+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "57c0e0e80485de8ba40fe40b7ecd40ad3a9e30c4399aac98197fbac97238005b"
+    },
+    {
+      "key": "manchego-thyme-infused-honey-coffee-dust",
+      "identity": "recipe/manchego-thyme-infused-honey-coffee-dust",
+      "version": 1,
+      "recipe": "recipes/2026-02-19 - Manchego with Thyme-Infused Honey and Coffee Dust.md",
+      "prompt_file": "publisher/recipe-image-prompts/manchego-thyme-infused-honey-coffee-dust.md",
+      "prompt": "Subject: A few thick wedges or shards of aged Manchego, pale ivory with a firm finely granular cheese texture. A light drizzle of thyme-infused honey runs over or beside the cheese, with only a restrained pinch of finely sifted coffee powder as seasoning. Choose the allowed strained-honey finish, with no whole thyme sprig. The coffee is a sparse dark dust, not a dense crust. No bread, fruit, nuts, melted cheese or whipped cream.\n\nFraming: Low three-quarter close view on a plain white plate, showing the cheese edges, thin honey sheen and fine coffee dust.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/2026-02-19-manchego-with-thyme-infused-honey-and-coffee-dust.png",
+      "recipe_sha256": "bb0ba7a7fa22d728fcd8d826055dcb7c8e80faccc1f090622b3b935301f6497f",
+      "prompt_sha256": "3b15a2b1d9d220624b9cc819ca12f1023b5a705dda4306ce1f4862e75d489d03",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-ef4a9e5b-8f2b-4508-9e2a-d969e665639c.png",
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-d34d9c6f-b850-47b8-98b6-d8d77eeb4bef.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/manchego-thyme-infused-honey-coffee-dust.png",
+      "candidate_sha256": "642f37deab067c498392a5b7ada0a093701edb8453523d2f52446e2727b8bdf9",
+      "generated_at": "2026-10-02T15:43:34.261033+00:00",
+      "correction_instruction": "Change only coffee seasoning: remove every coarse coffee granule and replace with a very restrained pinch of finely sifted coffee powder, tiny dust particles. No coarse grounds, no dense crust or large scatter. Preserve aged cheese shards, thin honey drizzle, plain plate and house-style lighting/framing.",
+      "review": "Coarse grounds replaced with fine coffee dust; aged cheese shards and honey drizzle preserved.",
+      "reviewed_at": "2026-10-02T15:53:12.571832+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "642f37deab067c498392a5b7ada0a093701edb8453523d2f52446e2727b8bdf9"
+    },
+    {
+      "key": "maple-pecan-pie",
+      "identity": "recipe/maple-pecan-pie",
+      "version": 3,
+      "recipe": "recipes/2026-02-19 - Maple Pecan Pie.md",
+      "prompt_file": "publisher/recipe-image-prompts/maple-pecan-pie.md",
+      "prompt": "Subject: One fully cooled wedge of maple pecan pie, with a golden laminated bottom crust and crimped pastry edge. Toasted pecans sit within and across the top of a set amber-brown maple-and-muscovado egg custard. The cut filling holds its shape without a runny syrup pool. This is an open-topped pecan pie, not a double-crust fruit pie; there is no upper pastry lid, cream layer or chocolate. No ice cream, whipped cream or syrup poured over the slice.\n\nFraming: Low three-quarter view of a single wedge on a plain white plate, with the custard-and-pecan cut face and flaky bottom crust exposed.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/2026-02-19-maple-pecan-pie.png",
+      "recipe_sha256": "1da20d83c8afd79534ed3325fd408e900e81aefde40553de7a0898d7f2caf00c",
+      "prompt_sha256": "378d6d35d797a252e94d62b261f2423a7109c45868ab5367b2ee101f0509f7ca",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-2699c8d3-50b7-49f5-ba4e-0c1483ba7b8b.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/maple-pecan-pie.png",
+      "candidate_sha256": "531dd7cbb8754aa68be37aa730bac19a9087b5123c08af5da026f75938979192",
+      "generated_at": "2026-10-02T15:23:22.691413+00:00",
+      "review": "Open-topped cooled wedge with laminated golden shell, set amber filling and pecans throughout; no syrup puddle, upper lid or dairy accompaniment.",
+      "reviewed_at": "2026-10-02T15:27:23.231185+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "531dd7cbb8754aa68be37aa730bac19a9087b5123c08af5da026f75938979192"
+    },
+    {
+      "key": "maple-bourbon-butter-pecan-ice-cream",
+      "identity": "recipe/maple-bourbon-butter-pecan-ice-cream",
+      "version": 1,
+      "recipe": "recipes/2026-10-02 - Maple-Bourbon Butter Pecan Ice Cream.md",
+      "prompt_file": "publisher/recipe-image-prompts/maple-bourbon-butter-pecan-ice-cream.md",
+      "prompt": "Subject: A dense scoop of pale maple custard ice cream with chopped toasted pecans embedded throughout. Brown pecan pieces of irregular size appear naturally in the scoop face; the butter-maple-bourbon coating is carried by the nuts, not poured over the serving as a sauce. The frozen base has fine scoop ridges and a soft cream-to-light-tan colour. No whole decorative pecan pile, bourbon glass, maple-syrup drizzle or caramel topping.\n\nFraming: Slightly elevated three-quarter view of one scoop in a small plain white bowl, showing the embedded pecans and custard texture.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/maple-bourbon-butter-pecan-ice-cream.png",
+      "recipe_sha256": "b8a6dfcda48685a814fc1180d455967082cf31c0bcc6bd2b5936c4a0a87fa3ca",
+      "prompt_sha256": "42d242a29b42a966cd7dfc6852a8af4b183bf6ae592a47a19a256b7057722766",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-693d5f67-2b25-4504-b75e-1e488734842b.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/maple-bourbon-butter-pecan-ice-cream.png",
+      "candidate_sha256": "148d3e3a0fdc824b789b62d759a27105267b2865e344fe05b266d37143af3c2e",
+      "generated_at": "2026-10-02T15:23:52.099706+00:00",
+      "review": "Pale custard scoop with irregular chopped pecans embedded in frozen ridges; no separate nut pile, ripple or poured syrup.",
+      "reviewed_at": "2026-10-02T15:27:23.231307+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "148d3e3a0fdc824b789b62d759a27105267b2865e344fe05b266d37143af3c2e"
+    },
+    {
+      "key": "masterclass-chocolate-brownie",
+      "identity": "recipe/masterclass-chocolate-brownie",
+      "version": 1,
+      "recipe": "recipes/2026-02-19 - Masterclass Chocolate Brownie.md",
+      "prompt_file": "publisher/recipe-image-prompts/masterclass-chocolate-brownie.md",
+      "prompt": "Subject: One thick square of dense dark-chocolate brownie with a thin crackled upper crust and a cohesive moist chocolate interior. The homogeneous chocolate matrix has fine irregular pores and a controlled fudgy set, rather than fluffy cake crumb or liquid batter. Choose the version without the optional walnuts. No cream-cheese centre, filling, interior layers, icing, chocolate chunks, ice cream or decorative cocoa dust.\n\nFraming: Low frontal three-quarter close view of the cut square on a plain pale surface, showing its uniform interior and thin crackled top, in the same specimen treatment as the house reference.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/2026-02-19-masterclass-chocolate-brownie.png",
+      "recipe_sha256": "7e11e6c32118fe8cbe8cd9b11346fd9638f2d80cdc4ae8ba52ac364a95c36184",
+      "prompt_sha256": "36b9d18847275b726b27650a98fe324e5870961e47f828dd368f8d845fd78a4a",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-4ddfe20e-4a53-4471-86ce-18531cc77f89.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/masterclass-chocolate-brownie.png",
+      "candidate_sha256": "71665cb28590107c0c36b8ec09c805fc6c006e2305f5d398ec0388084883c2a3",
+      "generated_at": "2026-10-02T15:24:11.426303+00:00",
+      "review": "Dense dark homogeneous chocolate square, moist set interior and thin crackled crust; no filling, icing, walnuts or chunks.",
+      "reviewed_at": "2026-10-02T15:27:23.231310+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "71665cb28590107c0c36b8ec09c805fc6c006e2305f5d398ec0388084883c2a3"
+    },
+    {
+      "key": "mint-chutney",
+      "identity": "recipe/mint-chutney",
+      "version": 1,
+      "recipe": "recipes/2026-10-02 - Mint Chutney.md",
+      "prompt_file": "publisher/recipe-image-prompts/mint-chutney.md",
+      "prompt": "Subject: Fresh bright-green mint-and-coriander chutney, finely blended with yoghurt, lime, green chilli and ginger. The sauce is smooth with very fine herb particles and a soft, cohesive surface, rather than chopped oily leaves or a foam. Its green colour remains natural and restrained. Show the base yoghurt version in a small shallow white dish, without whole herb sprigs, samosas or other accompaniments.\n\nFraming: Close overhead view, showing the fine green texture and shallow surface of the chutney.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/mint-chutney.png",
+      "recipe_sha256": "2db76d3910eb060e10bcbc73e86d73eadcee74ea5ff3b852b1f9dc7b34805e09",
+      "prompt_sha256": "c06ad9ba741f0c6698fdb7db08ad4fe201f5d87c545bce4f4f50906b92d4e8af",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-0af2a3d4-01a9-4ecb-aada-857952feb96b.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/mint-chutney.png",
+      "candidate_sha256": "6710e5cf00dddaae12800f071147cdb97193b2436dd6540e2206a8d4209ec403",
+      "generated_at": "2026-10-02T15:24:41.839422+00:00",
+      "review": "Fine blended natural-green yoghurt-herb sauce, cohesive shallow surface without oily chopped leaves or whole herb garnish.",
+      "reviewed_at": "2026-10-02T15:27:23.231312+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "6710e5cf00dddaae12800f071147cdb97193b2436dd6540e2206a8d4209ec403"
+    },
+    {
+      "key": "miso-butter-for-roasted-brussels-sprouts",
+      "identity": "recipe/miso-butter-for-roasted-brussels-sprouts",
+      "version": 1,
+      "recipe": "recipes/2026-10-02 - Miso Butter for Roasted Brussels Sprouts.md",
+      "prompt_file": "publisher/recipe-image-prompts/miso-butter-for-roasted-brussels-sprouts.md",
+      "prompt": "Subject: Halved Brussels sprouts with deeply browned cut faces, tender green outer leaves and a glossy coating of savoury-sweet white-miso butter. Some roast-darkened leaf edges contrast with the softer green interiors. Finish with the recipe's toasted sesame seeds, sparingly distributed over the sprouts. Show the complete roasted vegetable dish, not a block of compound butter; no orange zest or chilli crisp from the variations.\n\nFraming: Shallow three-quarter view of one compact serving on a plain white plate; turn several halves cut-face upward to show browning and glaze.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/miso-butter-for-roasted-brussels-sprouts.png",
+      "recipe_sha256": "acccb7c63dce871ec580fd5a62c39e4b550e3dad1ef516af3dac9c6563099528",
+      "prompt_sha256": "06f27bf8121fbea7ac110de76c70f0326081ec1d1a682005a96096fc9327b7de",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-a957a3cd-ebf1-48a6-a527-8d1510994696.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/miso-butter-for-roasted-brussels-sprouts.png",
+      "candidate_sha256": "3cabb02785890918dad9fcb6048a6d988863455f2b9b8c070e284e91d112afe5",
+      "generated_at": "2026-10-02T15:25:05.060422+00:00",
+      "review": "Halved sprouts with deeply browned cut faces, tender green leaves, glossy miso coating and sparse sesame; no compound-butter block or chilli crisp.",
+      "reviewed_at": "2026-10-02T15:27:23.231314+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "3cabb02785890918dad9fcb6048a6d988863455f2b9b8c070e284e91d112afe5"
+    },
+    {
+      "key": "monkey-gland-chicken",
+      "identity": "recipe/monkey-gland-chicken",
+      "version": 1,
+      "recipe": "recipes/2026-02-27 - Monkey Gland Chicken.md",
+      "prompt_file": "publisher/recipe-image-prompts/monkey-gland-chicken.md",
+      "prompt": "Subject: A bone-in, skin-on chicken thigh with deeply golden seared skin and moist roasted meat. A thin glossy reddish-brown monkey-gland sauce, made with ketchup, apricot chutney, garlic, ginger and savoury seasonings, clings to the upper surface while crisp skin texture remains visible. A small extra spoonful of the same sauce may sit beside it. No breaded coating, grill-only breast, apricot halves, herb garnish, rice or fries.\n\nFraming: Low three-quarter view of one chicken-thigh serving on a plain white plate, emphasising the glazed crisp skin rather than a pool of sauce.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/2026-02-27-monkey-gland-chicken.png",
+      "recipe_sha256": "a06203597577a4459442028dddb165ebc698241686b6453af87c7c01d32ab9c3",
+      "prompt_sha256": "0f5f3a4b54dd7b3b8fdf1703a3d35919a1f2e64e5fca4918828fe653fde2ed23",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-aff41d8a-4ebd-4a4c-bf8f-0cc8c4bb2995.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/monkey-gland-chicken.png",
+      "candidate_sha256": "0b20d7548c1b97a2c43b1d2c0defa223c63f29c6a7cb62d313928572b3b10117",
+      "generated_at": "2026-10-02T15:25:44.261297+00:00",
+      "review": "One skin-on bone-in thigh with golden crisp skin under a thin reddish glaze and small sauce spoonful; no breading or sides.",
+      "reviewed_at": "2026-10-02T15:27:23.231316+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "0b20d7548c1b97a2c43b1d2c0defa223c63f29c6a7cb62d313928572b3b10117"
+    },
+    {
+      "key": "nacho-cheese-sauce",
+      "identity": "recipe/nacho-cheese-sauce",
+      "version": 1,
+      "recipe": "recipes/2026-10-02 - Nacho Cheese Sauce.md",
+      "prompt_file": "publisher/recipe-image-prompts/nacho-cheese-sauce.md",
+      "prompt": "Subject: A small pool of warm cheddar sauce, smooth and uniformly emulsified, in a natural yellow-to-soft-orange colour. Its surface is glossy and fluid, with a gentle curved ridge and no cheese strings, graininess or separated oil. Smoked paprika and cayenne are integrated as subtle colour and very fine flecks; the jalape\u00f1o brine adds no visible pepper pieces. No chips, grated-cheese garnish or extra jalape\u00f1o from the hot variation.\n\nFraming: Close overhead view of a shallow plain white condiment dish, showing the sauce's even gloss and pourable consistency.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/nacho-cheese-sauce.png",
+      "recipe_sha256": "e99533f7f026ddcf65bf3113994d09d73ccc0f53c47e6f068fbb4be9474a3f0c",
+      "prompt_sha256": "f8cc7503e0930fdc34f4fa0d4dbf53d80d17ca2a6b9832a3d6d97bad9c99bbdf",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-f550fe41-9e70-4bf1-811c-00599d12ae92.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/nacho-cheese-sauce.png",
+      "candidate_sha256": "410c1cb425e0e22c911dacd95d4b8e7f12800058ba30ae98de50d83ed3c7613d",
+      "generated_at": "2026-10-02T15:26:04.622435+00:00",
+      "review": "Uniform glossy yellow-orange emulsion, fine paprika flecks and soft fluid surface ridge; no strings, graininess, oil separation or pepper pieces.",
+      "reviewed_at": "2026-10-02T15:27:23.231318+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "410c1cb425e0e22c911dacd95d4b8e7f12800058ba30ae98de50d83ed3c7613d"
+    },
+    {
+      "key": "porchetta-fennel-pollen-salsa-verde",
+      "identity": "recipe/porchetta-fennel-pollen-salsa-verde",
+      "version": 1,
+      "recipe": "recipes/2026-05-29 - Porchetta-with-fennel-pollen-and-salsa-verde.md",
+      "prompt_file": "publisher/recipe-image-prompts/porchetta-fennel-pollen-salsa-verde.md",
+      "prompt": "Subject: A thick slab cut from tightly rolled skin-on pork belly, with blistered golden crackling around its outer edge and a visible spiral of tender belly meat and fat. The internal herb paste contains fennel, garlic, rosemary, sage and parsley, appearing as fine green and dark flecks between the folds. Serve the slice on a small focaccia portion with hand-chopped parsley-caper-anchovy salsa verde and a modest side of thin shaved fennel slaw. Use the parsley slaw finish. There is no pork-loin core or lean roast inserted in the roll; no celery-and-apple slaw or invented garnish.\n\nFraming: Low three-quarter view of one open focaccia serving on a plain white plate, with the porchetta cut face forward so the belly spiral and crackling are clear, and the specified salsa and fennel slaw beside it.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/2026-05-29-porchetta-with-fennel-pollen-and-salsa-verde.png",
+      "recipe_sha256": "d4e79e7ce4027ed4dddd7af319034ea17d9f054317ddbcee62181c1d2717aecb",
+      "prompt_sha256": "0fdb3d56ccf1d26415768f94c056a52e28b7d5db933e2068c4f586462670edb6",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-52ce7b9c-754a-4899-9961-6f33f4609786.png",
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-b2faeeb5-f08a-4c6a-97d8-a4011d1da748.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/porchetta-fennel-pollen-salsa-verde.png",
+      "candidate_sha256": "34020b893b9d340c5f00ef39e2b9bd84c9d605dec5d9aaa884ab9bc32dd34dd7",
+      "generated_at": "2026-10-02T15:44:02.362614+00:00",
+      "correction_instruction": "Correct only finish preparation: replace every whole caper in the salsa with small finely chopped caper fragments, finely chop anchovy/garlic pieces too. Remove all thin dill-like fennel fronds from the slaw, retaining shaved fennel bulb and flat-leaf parsley ONLY. Preserve belly-only spiral with no loin core, blistered crackling, focaccia and composition.",
+      "review": "Chopped salsa ingredients corrected; fennel fronds removed. Belly-only spiral, crackling and focaccia preserved.",
+      "reviewed_at": "2026-10-02T15:53:12.571832+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "34020b893b9d340c5f00ef39e2b9bd84c9d605dec5d9aaa884ab9bc32dd34dd7"
+    },
+    {
+      "key": "pressure-cooker-black-beans-for-tacos",
+      "identity": "recipe/pressure-cooker-black-beans-for-tacos",
+      "version": 1,
+      "recipe": "recipes/2026-10-02 - Pressure-Cooker Black Beans for Tacos.md",
+      "prompt_file": "publisher/recipe-image-prompts/pressure-cooker-black-beans-for-tacos.md",
+      "prompt": "Subject: Tender black beans lightly coated in concentrated dark cooking liquor. Most beans are intact, while roughly one fifth are gently crushed into the liquor to create a cohesive taco filling. Small chopped coriander pieces are mixed through the surface; there are no discarded onion halves or bay leaves. The mixture is moist but not brothy, and it is not a completely smooth refried pur\u00e9e. No tortillas, rice, avocado or chipotle variation.\n\nFraming: Elevated three-quarter view of one small shallow white bowl, showing intact beans against the thickened liquor.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/pressure-cooker-black-beans-for-tacos.png",
+      "recipe_sha256": "bed085dbf4677fa912dcd12af4e57748985b9920fa43ba71c61b5a43589e53e0",
+      "prompt_sha256": "d4732c193b5c0e542c4b26f2656a71ef55ef40140b696cde625e903fb55a7649",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-36f9a88f-17a7-4576-a0f0-ae3ec4024734.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/pressure-cooker-black-beans-for-tacos.png",
+      "candidate_sha256": "1d424c3a6f472b1bbcbdbe00200eace41024849581d3af08de995de20677ae06",
+      "generated_at": "2026-10-02T15:26:59.506898+00:00",
+      "review": "Mostly intact black beans with some crushed into thick dark liquor and coriander pieces; cohesive without broth pool, onion halves or bay leaves.",
+      "reviewed_at": "2026-10-02T15:27:23.231319+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "1d424c3a6f472b1bbcbdbe00200eace41024849581d3af08de995de20677ae06"
+    },
+    {
+      "key": "pressure-cooker-charro-beans",
+      "identity": "recipe/pressure-cooker-charro-beans",
+      "version": 1,
+      "recipe": "recipes/2026-10-02 - Pressure-Cooker Charro Beans.md",
+      "prompt_file": "publisher/recipe-image-prompts/pressure-cooker-charro-beans.md",
+      "prompt": "Subject: Tender pinto beans in a visible quantity of savoury brownish-red broth, enriched with diced rendered bacon, softened tomato and onion, and small jalape\u00f1o pieces. Chopped coriander is stirred through the finished dish. The beans sit in liquid rather than a thick mashed coating, clearly distinguishing these brothy charro beans from the taco beans. No bay leaf, chorizo, beer bottle or extra garnish.\n\nFraming: Elevated three-quarter view into one small plain white bowl, showing whole pinto beans, bacon and the liquid between them.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/pressure-cooker-charro-beans.png",
+      "recipe_sha256": "13aa80b802bef34f683060e4e4a289e189990f4e56986060c64f32f0458c1f7e",
+      "prompt_sha256": "b2509287fc5ebb63948a7e528336a83381d27d42a82c3c96db96ff626631355e",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-ac996bc3-330f-4056-9e3b-1d7acd0bb8a3.png",
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-c82836ba-334d-4497-88df-f0e2b9649aa5.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/pressure-cooker-charro-beans.png",
+      "candidate_sha256": "19a94b1fad9339891fd36b971e99f2d67b295ac478e9291f908909c8bf91d55c",
+      "generated_at": "2026-10-02T15:44:42.840576+00:00",
+      "correction_instruction": "Change only jalapeno preparation: replace all jalapeno rings with very small finely diced softened green jalapeno fragments. Preserve whole pinto beans, diced bacon, softened tomato/onion, chopped coriander and visible brothy consistency. Keep bowl, lighting and framing.",
+      "review": "Jalapeno rings replaced with diced softened fragments; intact pinto beans, bacon and broth preserved.",
+      "reviewed_at": "2026-10-02T15:53:12.571832+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "19a94b1fad9339891fd36b971e99f2d67b295ac478e9291f908909c8bf91d55c"
+    },
+    {
+      "key": "reverse-seared-fillet-hibachi-cabbage-steakhouse-fries-gochujang-sauce",
+      "identity": "recipe/reverse-seared-fillet-hibachi-cabbage-steakhouse-fries-gochujang-sauce",
+      "version": 1,
+      "recipe": "recipes/2026-03-08 - Reverse-Seared Fillet with Hibachi Cabbage, Steakhouse Fries & Gochujang Sauce.md",
+      "prompt_file": "publisher/recipe-image-prompts/reverse-seared-fillet-hibachi-cabbage-steakhouse-fries-gochujang-sauce.md",
+      "prompt": "Subject: Sliced beef fillet with a deep charcoal-seared outer crust and an evenly warm pink centre, served with a half baby red cabbage showing a dark charred cut face and purple inner leaves. Thick steakhouse fries are deeply golden, crisp and lightly dusted with the paprika seasoning. A small glossy red-brown gochujang sauce portion sits alongside, finished with butter and sesame oil. Omit optional sesame seeds. No white cabbage, thin shoestring fries, peppercorn sauce, salad or decorative herbs.\n\nFraming: Low three-quarter view of one complete serving on a plain white plate, with steak cut faces toward the camera and the red cabbage, thick fries and sauce each clearly visible.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/2026-03-08-reverse-seared-fillet-with-hibachi-cabbage-steakhouse-fries-and-gochujang-sauce.png",
+      "recipe_sha256": "f399a2474c875d294a9bc39ca8bedc60b13a0cb4be848f17b7049164c6ad2b9c",
+      "prompt_sha256": "e3af73a33addf8ce6b5a2f0811afdb6aed7a713ab3ad9762134efb982cdf84c9",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-72f21842-d451-4d6c-847d-c6369f732b40.png",
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-497b8f2e-4a70-49bf-8a83-8b856a362f3d.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/reverse-seared-fillet-hibachi-cabbage-steakhouse-fries-gochujang-sauce.png",
+      "candidate_sha256": "43881ef714045fbae94f5a6fb9caed21a5c847cef55368c39d3b26bd9190ac42",
+      "generated_at": "2026-10-02T15:45:06.138125+00:00",
+      "correction_instruction": "Change only potato shape: replace ALL wedges with thick rectangular steakhouse fry batons, square cross-sections and parallel straight sides, golden crisp lightly paprika-dusted surfaces. No wedge-shaped or thin shoestring potatoes. Preserve pink fillet slices, deep seared crust, half charred baby red cabbage and glossy gochujang sauce.",
+      "review": "Wedges replaced with thick rectangular fries; pink fillet, seared crust, charred cabbage and gochujang sauce preserved.",
+      "reviewed_at": "2026-10-02T15:53:12.571832+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "43881ef714045fbae94f5a6fb9caed21a5c847cef55368c39d3b26bd9190ac42"
+    },
+    {
+      "key": "salsa-verde",
+      "identity": "recipe/salsa-verde",
+      "version": 1,
+      "recipe": "recipes/2026-10-02 - Salsa Verde.md",
+      "prompt_file": "publisher/recipe-image-prompts/salsa-verde.md",
+      "prompt": "Subject: Italian-style hand-chopped parsley salsa verde, with clearly visible fine parsley pieces, chopped capers and tiny anchovy and garlic fragments suspended in olive oil. A small amount of lemon and Dijon is integrated into the dressing. The green sauce has a loose, textured, glistening surface rather than a smooth blended pur\u00e9e. No tomatillos, avocado, mint variation or decorative parsley sprig.\n\nFraming: Close overhead view of one shallow plain white condiment dish, emphasising the hand-chopped texture and restrained olive-oil sheen.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/salsa-verde.png",
+      "recipe_sha256": "b52fdc92307b2349bbebf1032b7a6c3e23c56cf602ea041054c9c012d1b1cf1d",
+      "prompt_sha256": "371fe3664f5b59a0d701cc3acde058b41d65c3cfed900b1dd2935b8922a842d1",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-05ed19cc-1dcc-4f24-9778-314729e30847.png",
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-5101c2d0-fa2b-4332-addb-0bbc794e5892.png",
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-2b8ff269-6924-4769-b6c9-caaf44a08f6e.png",
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-078a3903-c0ca-4f48-ac0b-4c1b9f18fb0e.png",
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-8e11db66-dc07-4f21-8a53-6fa554f26761.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/salsa-verde.png",
+      "candidate_sha256": "45144076220e5a5ab3a0c83b02877379c1fd18c04cee82f2623869afd06af18c",
+      "generated_at": "2026-10-02T15:51:41.096440+00:00",
+      "correction_instruction": "Change only caper preparation: replace every whole caper with fine irregular chopped caper fragments. All parsley, garlic and anchovy should be finely chopped by hand with visible texture in olive oil; no whole caper berries or large anchovy strips. Preserve natural colour, shallow white dish, overhead framing and lighting.",
+      "review": "After regeneration and further editing, salsa is finely chopped parsley, caper, anchovy and garlic in oil; no conspicuous whole capers remain.",
+      "reviewed_at": "2026-10-02T15:53:12.571832+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "45144076220e5a5ab3a0c83b02877379c1fd18c04cee82f2623869afd06af18c"
+    },
+    {
+      "key": "salted-caramel-ice-cream-with-salted-caramel-ripple",
+      "identity": "recipe/salted-caramel-ice-cream-with-salted-caramel-ripple",
+      "version": 1,
+      "recipe": "recipes/2026-10-02 - Salted Caramel Ice Cream with Salted Caramel Ripple.md",
+      "prompt_file": "publisher/recipe-image-prompts/salted-caramel-ice-cream-with-salted-caramel-ripple.md",
+      "prompt": "Subject: A dense scoop of caramel-coloured custard ice cream with distinct darker amber caramel ribbons winding through its scoop face. The ripple is marbled into the frozen base and remains visibly separate, rather than being blended to an even colour or poured over the serving. Fine scoop ridges remain visible around the ribbons. No nuts, chocolate, coarse salt crystals or additional topping.\n\nFraming: Slightly elevated three-quarter view of one scoop in a small plain white bowl, with a naturally exposed ripple visible on its surface; no cake-like cutaway.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/salted-caramel-ice-cream-with-salted-caramel-ripple.png",
+      "recipe_sha256": "cd8da536475b467d44a4acd845c42586e6f310ecdd3c23066e2b854c6a2647b9",
+      "prompt_sha256": "e51ea68a3e4c1509485e3cf94e79e7df0febe02efed59ab4a8662ae2e045b53d",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-c16ab002-3d89-4c34-8210-24a9c9aaced3.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/salted-caramel-ice-cream-with-salted-caramel-ripple.png",
+      "candidate_sha256": "52b2ccd6ebc43093360dd51ee83d9168c316bb0e55991bfd2ab3c951dcc2cfb4",
+      "generated_at": "2026-10-02T15:29:16.973096+00:00",
+      "review": "Caramel custard scoop with distinct embedded darker amber ribbons and frozen ridges, no poured topping or nuts.",
+      "reviewed_at": "2026-10-02T15:35:35.864001+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "52b2ccd6ebc43093360dd51ee83d9168c316bb0e55991bfd2ab3c951dcc2cfb4"
+    },
+    {
+      "key": "singapore-chicken-rice",
+      "identity": "recipe/singapore-chicken-rice",
+      "version": 1,
+      "recipe": "recipes/2026-02-19 - Singapore Chicken Rice.md",
+      "prompt_file": "publisher/recipe-image-prompts/singapore-chicken-rice.md",
+      "prompt": "Subject: Sliced poached chicken with pale gently glossy skin and moist cooked meat, served beside a compact mound of distinct jasmine rice grains cooked in chicken fat and stock. Include cucumber slices, a small cup of clear broth, a spoonful of ginger-oil sauce and a small portion of smooth red chilli sauce in plain functional dishes. Omit optional coriander and soy-sauce drizzle. The chicken skin is poached and unbrowned, not roasted, grilled or fried. No sesame garnish or unrelated vegetables.\n\nFraming: Elevated three-quarter view of one complete serving: chicken, rice and cucumber on a plain white plate, with very small white sauce dishes and a broth cup grouped closely beside it.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/2026-02-19-singapore-chicken-rice.png",
+      "recipe_sha256": "c13d0bf84b8d336169a42fae3464f92bcbc8b127aa96ccd91002e8144e6773db",
+      "prompt_sha256": "0a67df88b499970f2fa6bcbfb5f222548c5247a67014cb2943e43fbe8c2f3f11",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-358cbc5c-e3d7-424e-9828-8ea17850cc37.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/singapore-chicken-rice.png",
+      "candidate_sha256": "ac41347de226819f30235a2e1725889676d80cc2c51efa65a372a93c47c6245f",
+      "generated_at": "2026-10-02T15:29:55.453774+00:00",
+      "review": "Pale poached skin-on chicken slices, distinct rice, cucumber, ginger-oil sauce, red chilli sauce and clear broth with spring onion; no browned skin or soy drizzle.",
+      "reviewed_at": "2026-10-02T15:35:35.864125+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "ac41347de226819f30235a2e1725889676d80cc2c51efa65a372a93c47c6245f"
+    },
+    {
+      "key": "sour-cherry-pie",
+      "identity": "recipe/sour-cherry-pie",
+      "version": 2,
+      "recipe": "recipes/2026-02-19 - Sour Cherry Pie.md",
+      "prompt_file": "publisher/recipe-image-prompts/sour-cherry-pie.md",
+      "prompt": "Subject: One fully cooled wedge of double-crust sour cherry pie. Golden flaky laminated pastry encloses visible dark-red sour cherries in a set, glossy red fruit gel. Show a continuous upper pastry lid with a modest vent and a crimped edge, plus a baked bottom crust. The cut filling holds together without a large runny puddle. No lattice substitution, custard, cream layer, almond garnish, ice cream or powdered sugar.\n\nFraming: Low three-quarter view of a single wedge on a plain white plate, with cherries and fruit gel visible between the flaky top and bottom crusts.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/2026-02-19-cherry-pie.png",
+      "recipe_sha256": "b6fc6acbc33a1ce9f6cb551905495a5295179a112f5f8ef62694d8eb9ccd2297",
+      "prompt_sha256": "db4467a1311579842d51a7d3054d9ef28c53ce669ddcbf8903f2536677a72f9d",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-cc680df7-78fe-4340-8e36-3c027562771d.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/sour-cherry-pie.png",
+      "candidate_sha256": "e45b59df994807342f0363673ea1019aedef66d0fdcd7751b42c0f92220638ad",
+      "generated_at": "2026-10-02T15:30:17.999158+00:00",
+      "review": "Fully enclosed double-crust wedge with continuous vented upper lid, crimped edge and set glossy sour-cherry gel; no lattice or dairy layer.",
+      "reviewed_at": "2026-10-02T15:35:35.864128+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "e45b59df994807342f0363673ea1019aedef66d0fdcd7751b42c0f92220638ad"
+    },
+    {
+      "key": "sourdough-bread",
+      "identity": "recipe/sourdough-bread",
+      "version": 1,
+      "recipe": "recipes/2026-02-23 - Sourdough Bread.md",
+      "prompt_file": "publisher/recipe-image-prompts/sourdough-bread.md",
+      "prompt": "Subject: A cooled lean sourdough loaf with a browned scored crust, accompanied by one thick cut slice resting against it. The cut face shows a naturally aerated, irregular bread crumb, without filling or interior layers. The loaf is made only from flour, water, starter and salt: no seeds, oats, fruit, cheese or enriched swirl. No butter, flour scattered on the surface, knife or bread board.\n\nFraming: Low three-quarter view of one loaf-and-slice specimen on a plain pale surface, with the scored crust and exposed crumb both clear.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/2026-02-23-sourdough-bread.png",
+      "recipe_sha256": "5a2a7cf6d3002713b46267607c0eeb5e92d688364d33a2abc9e5ea5d185adb2e",
+      "prompt_sha256": "ad97cace257e27ceda7a1853e28893dc19ba46d78fa3fd275b195bcc54798030",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-a00f7023-5d83-433c-8dde-8594f1af335c.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/sourdough-bread.png",
+      "candidate_sha256": "138d05cd9dfe710cbcd5544e8c949d616ac365e2303653100816008971479598",
+      "generated_at": "2026-10-02T15:30:59.156742+00:00",
+      "review": "Scored brown lean loaf and one thick slice with irregular aerated crumb, no filling, seeds, enrichment or props. Residual proofing flour on crust, no flour scattered around specimen.",
+      "reviewed_at": "2026-10-02T15:35:35.864130+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "138d05cd9dfe710cbcd5544e8c949d616ac365e2303653100816008971479598"
+    },
+    {
+      "key": "soy-garlic-sesame-gochujang-hibachi-chicken-tacos",
+      "identity": "recipe/soy-garlic-sesame-gochujang-hibachi-chicken-tacos",
+      "version": 1,
+      "recipe": "recipes/2026-05-29 - Soy-garlic-sesame-gochujang-hibachi-chicken-tacos.md",
+      "prompt_file": "publisher/recipe-image-prompts/soy-garlic-sesame-gochujang-hibachi-chicken-tacos.md",
+      "prompt": "Subject: Warm flour tortillas filled with bite-size slices of charcoal-grilled chicken thigh, lightly dusted before grilling and lacquered with glossy soy, garlic, sesame and gochujang glaze. The chicken has light char and a thin coating, not a thick deep-fried shell. Add shredded cabbage, thin cucumber pickle and off-white sour-cream lime crema, finished with sliced spring onion, coriander leaves and toasted sesame seeds. No corn-tortilla substitution, cheese, avocado or extra salsa.\n\nFraming: Shallow three-quarter view of two open flour tacos on a plain white plate, showing the lacquered chicken and crisp cabbage beneath the pickle and modest crema.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/2026-05-29-soy-garlic-sesame-gochujang-hibachi-chicken-tacos.png",
+      "recipe_sha256": "7ea1cffc231f9cc29f674a21e008dca20aee6502814d53b8325f1a8e39315fbe",
+      "prompt_sha256": "03be7149df33c74504393bba02e71d206b86079a5f7649fe02a67b88b200958e",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-84977d9e-e20f-47e5-b871-90372725e824.png",
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-be723208-2620-4cbd-abd8-754c7fa7879f.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/soy-garlic-sesame-gochujang-hibachi-chicken-tacos.png",
+      "candidate_sha256": "6b7e5853f2b78a7dade8cbc9a0488bfe0939ed8410c6315f2c13fde358f7862a",
+      "generated_at": "2026-10-02T15:46:19.714661+00:00",
+      "correction_instruction": "Change only crema: make it plain smooth off-white sour cream with lime juice, soy and sugar. Remove all tiny green herb/zest flecks FROM THE CREMA; keep coriander leaves, spring onions and sesame as the separate specified finish. Preserve flour tortillas, glazed grilled chicken, cabbage and cucumber pickle.",
+      "review": "Crema herb flecks removed; plain sour cream finish with separate coriander, sesame and spring onion preserved.",
+      "reviewed_at": "2026-10-02T15:53:12.571832+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "6b7e5853f2b78a7dade8cbc9a0488bfe0939ed8410c6315f2c13fde358f7862a"
+    },
+    {
+      "key": "spanish-chicken-chorizo-stew",
+      "identity": "recipe/spanish-chicken-chorizo-stew",
+      "version": 1,
+      "recipe": "recipes/2026-02-24 - Spanish Chicken and Chorizo Stew.md",
+      "prompt_file": "publisher/recipe-image-prompts/spanish-chicken-chorizo-stew.md",
+      "prompt": "Subject: Tender chicken-thigh pieces and rendered cured Spanish chorizo slices in a tight glossy red tomato-and-wine stew, with intact creamy cannellini beans and softened onion. Spoon the stew over plain basmati rice, keeping some distinct white rice grains visible at one edge. The chicken has browned surfaces and the chorizo is sliced sausage, not loose mince. No saffron-yellow paella rice, seafood, herb garnish or whole chillies.\n\nFraming: Elevated three-quarter view of one shallow white bowl, showing chicken, chorizo and white beans over the rice without flooding the serving.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/2026-02-24-spanish-chicken-and-chorizo-stew.png",
+      "recipe_sha256": "7f8a31b669fc51bde8c4a5f68646b963c4353fcdb7b6f003819ada0e31edb03c",
+      "prompt_sha256": "91851f4b21c31a8e094667ac71a33e2fe0ebff5fd7c180d0f750d4e630856179",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-5da110ba-8a61-4f0d-b27c-5022a413fa63.png",
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-0a7382f6-a946-4dfb-97a8-b4a45071f4d6.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/spanish-chicken-chorizo-stew.png",
+      "candidate_sha256": "de2af65b3a457775e964765e90d8223b179126ce3f43b90ca0df92f4fac113cb",
+      "generated_at": "2026-10-02T15:47:08.506806+00:00",
+      "correction_instruction": "Correct chicken and rice only: replace skin-on chicken with boneless SKINLESS thigh pieces, browned meat surfaces without any yellow skin sheet. Replace rice with slender long-grain white BASMATI grains. Preserve rendered cured chorizo coins, intact cannellini beans, softened onion, tight tomato-wine stew, bowl and house treatment.",
+      "review": "Chicken corrected to skinless thigh pieces and rice to long-grain basmati; chorizo, cannellini and tight tomato stew preserved.",
+      "reviewed_at": "2026-10-02T15:53:12.571832+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "de2af65b3a457775e964765e90d8223b179126ce3f43b90ca0df92f4fac113cb"
+    },
+    {
+      "key": "spicy-korean-fried-chicken",
+      "identity": "recipe/spicy-korean-fried-chicken",
+      "version": 1,
+      "recipe": "recipes/2026-02-19 - Spicy Korean Fried Chicken.md",
+      "prompt_file": "publisher/recipe-image-prompts/spicy-korean-fried-chicken.md",
+      "prompt": "Subject: A compact serving of chicken drumettes with a thin, craggy starch-based coating from double frying. Glossy reddish yangnyeom sauce made with gochujang, ketchup, garlic and ginger clings closely to the crisp ridges; the coating remains visible rather than drowning in sauce. Show bone-in drumettes, choosing one of the recipe's permitted chicken forms. No sesame-seed or spring-onion garnish, breadcrumb crust, rice, pickled radish or side dish.\n\nFraming: Shallow three-quarter view of several glazed drumettes on a plain white plate, showing the crisp irregular coating beneath the lacquer.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/2026-02-19-spicy-korean-fried-chicken.png",
+      "recipe_sha256": "ba0beacd7b5b596825fce750456013848215049ac6538d05f5fd7bd56d69590a",
+      "prompt_sha256": "1cc16651b21bdbe037ba74f01b1bf8c23e083be104b2705c999518924792f35b",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-adde943c-5181-4511-8fe8-e61b2a89909b.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/spicy-korean-fried-chicken.png",
+      "candidate_sha256": "a3adeb80abe4403ccdae2fa3fc079ea7eaf5166f21655c353ac3f46c23e6737d",
+      "generated_at": "2026-10-02T15:32:23.281498+00:00",
+      "review": "Bone-in drumettes with craggy starch coating visible beneath close glossy red glaze, no sesame, spring onion or sides.",
+      "reviewed_at": "2026-10-02T15:35:35.864132+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "a3adeb80abe4403ccdae2fa3fc079ea7eaf5166f21655c353ac3f46c23e6737d"
+    },
+    {
+      "key": "tamarind-chutney",
+      "identity": "recipe/tamarind-chutney",
+      "version": 1,
+      "recipe": "recipes/2026-10-02 - Tamarind Chutney.md",
+      "prompt_file": "publisher/recipe-image-prompts/tamarind-chutney.md",
+      "prompt": "Subject: Smooth, glossy dark-brown tamarind-and-date chutney, blended and passed through a fine sieve. Its thick but pourable consistency forms a shallow cohesive pool with a soft surface curve. Dates, jaggery and warm spices are fully incorporated, so there are no whole dates, fibres or coarse spice pieces. No raw ingredients or decorative garnish around the dish.\n\nFraming: Close overhead view of one shallow plain white condiment dish, showing the dark colour, clean gloss and fine strained texture.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/tamarind-chutney.png",
+      "recipe_sha256": "829f5061a5db8a6bb4636a8bea9b6af95846eb0f1ffdbe87e9de35fcbdcd5b99",
+      "prompt_sha256": "bead2cc72ccde8a18915786f00470f8cc66572e5cbaadf1d1972ee90900be0a8",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-2b6c7f15-98d8-43dc-b96c-380b5a145ecc.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/tamarind-chutney.png",
+      "candidate_sha256": "45915ac9c869c4b0bb407043a372e580e7bbe2af5f133fff1b5f894f2d70798f",
+      "generated_at": "2026-10-02T15:32:58.949870+00:00",
+      "review": "Smooth strained glossy dark-brown sauce, cohesive pourable surface with no whole dates, fibres or garnish.",
+      "reviewed_at": "2026-10-02T15:35:35.864135+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "45915ac9c869c4b0bb407043a372e580e7bbe2af5f133fff1b5f894f2d70798f"
+    },
+    {
+      "key": "tomato-onion-curry-chutney",
+      "identity": "recipe/tomato-onion-curry-chutney",
+      "version": 1,
+      "recipe": "recipes/2026-10-02 - Tomato & Onion Curry Chutney.md",
+      "prompt_file": "publisher/recipe-image-prompts/tomato-onion-curry-chutney.md",
+      "prompt": "Subject: A thick, spoonable red-brown tomato-and-onion chutney with softened onion strands, small tomato pieces and visible mustard seeds. The reduced mixture has a gentle glossy sheen and retains its chunky texture rather than becoming smooth ketchup or a clear jelly. The warm curry spices are integrated. Show the base version without raisins, raw chilli slices or extra herb garnish.\n\nFraming: Elevated three-quarter view of one shallow plain white condiment dish, showing the onion texture and reduction without pooling liquid.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/tomato-onion-curry-chutney.png",
+      "recipe_sha256": "a9f25949b3bd769187e59b7c7fbf295bcd2db8ea6df4038a38e1fd718f549285",
+      "prompt_sha256": "de249698d3abe2aff5bc3de271a46220755d4c4d3279fcb4822ac9b8266e7870",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-04d56551-d235-46ce-a8ab-45a5467a320d.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/tomato-onion-curry-chutney.png",
+      "candidate_sha256": "1591a5f319a04f30d1bb7d59f3ff9940a0836a0c2e16b683fedfb0aa4de4f2ba",
+      "generated_at": "2026-10-02T15:33:21.025498+00:00",
+      "review": "Thick red-brown chunky reduction with softened onion strands, tomato pieces and mustard seeds, no liquid separation or garnish.",
+      "reviewed_at": "2026-10-02T15:35:35.864137+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "1591a5f319a04f30d1bb7d59f3ff9940a0836a0c2e16b683fedfb0aa4de4f2ba"
+    },
+    {
+      "key": "tomato-bredie",
+      "identity": "recipe/tomato-bredie",
+      "version": 2,
+      "recipe": "recipes/2026-02-19 - Tomato Bredie.md",
+      "prompt_file": "publisher/recipe-image-prompts/tomato-bredie.md",
+      "prompt": "Subject: Tender bone-in lamb-neck pieces beginning to fall apart in a thick, tomato-forward red-brown gravy, with softened onion and tender potato chunks. The reduction clings to the meat and potatoes rather than forming a soup. Folded parsley and coarsely ground toasted coriander give the specified finish, with a little olive-oil sheen. Ginger and vinegar are integrated into the gravy, not a raw garnish. No beef, chicken, rice or whole decorative spices.\n\nFraming: Elevated three-quarter view of one shallow white bowl, showing lamb neck, potato and the tight tomato gravy.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/2026-02-19-tomato-bredie.png",
+      "recipe_sha256": "a95f0ac966f952fa8b04581f8a38bf7c9769ea976e8f145c93868a02ba0b8898",
+      "prompt_sha256": "7a8439a38c125fb9ac8eb9be00752095c263ae183a0d84f26d8aee0b0d6bbaa6",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-72c0750a-8e38-45ea-849f-d9f90c6d5630.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/tomato-bredie.png",
+      "candidate_sha256": "1d252732e50ea99fe61fc704319d82c5a60492fb4cace55c4b238f77764b73cd",
+      "generated_at": "2026-10-02T15:33:59.073605+00:00",
+      "review": "Tender bone-in neck pieces, potatoes and softened onion in clingy tomato gravy; chopped parsley and coarse coriander fragments, no raw ginger or sides.",
+      "reviewed_at": "2026-10-02T15:35:35.864139+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "1d252732e50ea99fe61fc704319d82c5a60492fb4cace55c4b238f77764b73cd"
+    },
+    {
+      "key": "traditional-greek-lentil-soup-fakes",
+      "identity": "recipe/traditional-greek-lentil-soup-fakes",
+      "version": 1,
+      "recipe": "recipes/2026-02-19 - Traditional Greek Lentil Soup (Fakes).md",
+      "prompt_file": "publisher/recipe-image-prompts/traditional-greek-lentil-soup-fakes.md",
+      "prompt": "Subject: A bowl of brown-lentil soup with tender lentils still visibly intact, small softened carrot and onion pieces, and a lightly thickened tomato-tinted broth. A restrained drizzle of raw extra-virgin olive oil marks the surface after the lemon finish. Show a rustic soup texture, not a completely smooth pur\u00e9e or a dry lentil salad. No feta, parsley garnish, lemon wedge, bread or decorative bay leaf.\n\nFraming: Elevated three-quarter view into one plain white bowl, keeping the lentils, vegetable pieces and modest broth depth visible.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/2026-02-19-traditional-greek-lentil-soup-fakes.png",
+      "recipe_sha256": "e171bec40e26b45ff14eacef8f41ce31435890bfba12bf112d00dd4a27cb3938",
+      "prompt_sha256": "e775095d407727320d6b5a35894583893332253eb785500f7e5b60f4c5ad6b31",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-16de0e66-579c-4c4c-87af-475bcf817e80.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/traditional-greek-lentil-soup-fakes.png",
+      "candidate_sha256": "94ffb546cc5668554a5c417fb0ce1b2610d8a67501260952b9cf300d600c6b95",
+      "generated_at": "2026-10-02T15:34:22.093659+00:00",
+      "review": "Intact brown lentils, softened diced carrot and onion in lightly thickened tomato broth with restrained olive-oil finish; no feta, herbs or wedge.",
+      "reviewed_at": "2026-10-02T15:35:35.864141+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "94ffb546cc5668554a5c417fb0ce1b2610d8a67501260952b9cf300d600c6b95"
+    },
+    {
+      "key": "vanilla-bean-ice-cream",
+      "identity": "recipe/vanilla-bean-ice-cream",
+      "version": 1,
+      "recipe": "recipes/2026-10-02 - Vanilla Bean Ice Cream.md",
+      "prompt_file": "publisher/recipe-image-prompts/vanilla-bean-ice-cream.md",
+      "prompt": "Subject: Two dense, smooth pale-ivory scoops of vanilla custard ice cream, with tiny dark vanilla-seed specks distributed evenly through the frozen base. Fine curved scoop ridges show the dense churned texture, without large ice crystals, whipped-cream peaks or an exaggerated melted puddle. The vanilla pod has been removed during preparation; do not place a pod, mint leaf, syrup or biscuit beside the serving.\n\nFraming: Slightly elevated three-quarter view of the scoops in one small plain white bowl, showing the fine seed specks and smooth surface; no cross-section or crumb.\n\nStyle: Photorealistic Modernist Cuisine reference-plate photograph. Match the clean food-specimen aesthetic of the house reference: a stark white or pale-grey seamless surface, flat even studio lighting, crisp edge-to-edge focus and restrained natural colours. One finished serving centred in a horizontal 3:2 composition, fully in frame with modest negative space. Use only a plain white serving vessel when the dish needs one. No hands, utensils, action, text, labels, logos, packaging, patterned surfaces, decorative props or raw ingredients scattered around the food. No garnish or side dishes beyond those explicitly described. Use the house reference only for lighting and visual treatment; preserve the recipe-specific shape, texture and internal structure described above.",
+      "target": "src/assets/recipes/vanilla-bean-ice-cream.png",
+      "recipe_sha256": "51eab235034821085269015c6b98c1c0cd719f102be537ae3a65d78c2aa75ca2",
+      "prompt_sha256": "588b9cf2f932b51c80d8c105ab572f461ced9596e3424fdb4d19592fafbd5341",
+      "status": "reviewed",
+      "attempts": [
+        "/Users/carlo/.codex/generated_images/01a0fd26-5f3c-7e31-bd36-60d8402474db/exec-d36e968e-a5de-43ac-bde4-444e1263e0ba.png"
+      ],
+      "concerns": [],
+      "candidate": "output/recipe-image-review/vanilla-bean-ice-cream.png",
+      "candidate_sha256": "e24d8d9f7fd4f3709997251abe6038ac2140a49f2dc18deccb07a40b475f36b3",
+      "generated_at": "2026-10-02T15:34:54.046772+00:00",
+      "review": "Two ivory frozen scoops with fine vanilla-seed specks and churn ridges, no pod, garnish, syrup or melted pool.",
+      "reviewed_at": "2026-10-02T15:35:35.864144+00:00",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "installed_at": "2026-10-05T08:30:52.556811+00:00",
+      "installed_sha256": "e24d8d9f7fd4f3709997251abe6038ac2140a49f2dc18deccb07a40b475f36b3"
+    }
+  ],
+  "initial_site_assets": {
+    "src/assets/recipes/_reference.png": "5b4bbe05792016ec1c4a411919bf4571cec57740effaed5e4c5067eacbbf7b9c",
+    "src/assets/recipes/2026-02-27-monkey-gland-chicken.png": "be525598cf587d6ef2f1ac8cc7611081faf44cd28b629d30796f2bf99628bc2e",
+    "src/assets/recipes/2026-02-19-cherry-pie.png": "1988ef89466518b567903cb03c0b0ecd9e38ced681ca28ecb7c0ca20fe9c6d13",
+    "src/assets/recipes/2026-02-21-creamy-porcini-mushroom-ragout-with-polenta.png": "f59b667b9d0caf144e2138a9b5727f738f2990a6cb35159bcf6c90894be73f38",
+    "src/assets/recipes/2026-02-19-maple-pecan-pie.png": "e569da54da27c49f4e0ec83c310e7da0e8376987b492ac1989cbd094f192c075",
+    "src/assets/recipes/2026-05-29-celery-green-apple-fennel-pollen-slaw.png": "cd86db9f28d7182089c15d28931e146ecb601ab72dc554380ad9809a78253ea2",
+    "src/assets/recipes/2026-02-19-tomato-bredie.png": "82f963de0155fe73633b73ae1610d3ed1cd7b6e2a65f4724514c2de3ca5e714e",
+    "src/assets/recipes/2026-02-19-traditional-greek-lentil-soup-fakes.png": "b6e25e8e9901f51f8a87d1230a32abb732b6d5752b2573cd6bef7911a663b3e4",
+    "src/assets/recipes/2026-02-19-spicy-korean-fried-chicken.png": "635f8e32726079b688667cf8b641bf6104be7e4e2dd478ae844cf67386d6f884",
+    "src/assets/recipes/2026-02-19-hibachi-pork-with-charred-greens-and-spanish-green-sauce.png": "a6b0b37886c5d8a3ea7b432b13b6dce52faae5900498274ad79b888a753de96b",
+    "src/assets/recipes/2026-05-29-porchetta-with-fennel-pollen-and-salsa-verde.png": "7c5cb24f248ac13bf7ccd0ee1274d1cc0b0320539f4641c8a9d6c4f85e2c984e",
+    "src/assets/recipes/2026-02-19-gratin-dauphinois.png": "1292ae54810d2deebe89f20bf64f752247c96bf83874efdb0d1ea1f77774406f",
+    "src/assets/recipes/2026-02-19-singapore-chicken-rice.png": "d87ab5de72fb092f3a289d5e112b8d1935fe8efe30b660e1770c4c3093124ddc",
+    "src/assets/recipes/2026-02-23-sourdough-bread.png": "03dd5b85c4f73788b842691856332b887ffc567621caf85ad6ef380b2ddc43d9",
+    "src/assets/recipes/2026-02-27-hash-brownies.png": "cd86bf151e7f92ebd8b3051df7c572086f09a4a6a89f9eb1a5901128a5fe4e29",
+    "src/assets/recipes/2026-02-19-flapjacks-american-pancakes.png": "d4f74ded23188bd299ff851496442a0515c073963381dce63e0621b8ccecbfe5",
+    "src/assets/recipes/2026-02-19-bun-cha-hanoi-grilled-pork-with-noodles.png": "6ab313c7882ca61e645c829451d2e45904e37d212b00a19e46043000c2c2ef8d",
+    "src/assets/recipes/2026-02-19-guanciale-olive-and-chili-pasta-sauce.png": "b8803da4c2c376b3ccbfe2ede54460cc9f79b85808af0bc75a98cad47d140c95",
+    "src/assets/recipes/2026-02-19-grilled-pork-al-pastor.png": "d69239ac84488d7c388efc7e50aa3d0e2103e73014eaf62f9b2df5053b80215d",
+    "src/assets/recipes/2026-02-19-masterclass-chocolate-brownie.png": "db7868642de1cc8e678358726fddf57f6df524a1c5113c764deb45c07843d2f3",
+    "src/assets/recipes/2026-02-25-aeropress-competition-cup.png": "ec1846b3a8d0cc8588f56ed95aaad7e6499066e5d8b5d6ad2c18189eb837d6cd",
+    "src/assets/recipes/2026-02-19-italian-sausages-with-puy-lentils.png": "c341d9c04131fd03d44d4d8649fa9a002d2f8294019fc61304054de954310079",
+    "src/assets/recipes/2026-02-25-aeropress-everyday-cup.png": "762ad1d7c6d04658528eb02e486749f489bdc3bc5d833ecaf5c095312e40e5ec",
+    "src/assets/recipes/2026-05-29-soy-garlic-sesame-gochujang-hibachi-chicken-tacos.png": "e77a0c4b99c5ada63672504cbbe41ec180a639616492fb716c47d4252eea16e0",
+    "src/assets/recipes/2026-02-19-fried-master-stock-chicken.png": "b8087e16d17535e607cb8109d979a6d5c7e702b77651351e9d3d9814988db5fc",
+    "src/assets/recipes/2026-02-19-bun-bo-nuong-grilled-beef-with-rice-noodles.png": "aa6e0f664baf541bd28aaf2baa9b5f2597ba06736404b0774b87ae95f9b29485",
+    "src/assets/recipes/2026-03-08-reverse-seared-fillet-with-hibachi-cabbage-steakhouse-fries-and-gochujang-sauce.png": "d19858069667fe7c92dae0479388380ec8b50f93d646de18f2f167698d95b072",
+    "src/assets/recipes/2026-02-19-lao-herbaceous-chicken-noodle-soup.png": "5c622d5b7216476bd6b8263c73a957677313ea3c422bf1b7272e9079c4f88465",
+    "src/assets/recipes/2026-03-03-asian-chicken-noodle-soup.png": "8d7299ccc31ddace39b58e7cfaba3487deb0e277b8cb0c85d31493eaa3f57510",
+    "src/assets/recipes/2026-02-19-manchego-with-thyme-infused-honey-and-coffee-dust.png": "308ebe75b9e3407ae09d73e31daabcaa15facc63b1ba536bda1f730038d6739a",
+    "src/assets/recipes/2026-02-24-spanish-chicken-and-chorizo-stew.png": "3379def53c6b3474b24b8030a532e72e1ebf427fd5db18f6191eb0c2531c4348",
+    "src/assets/recipes/2026-02-19-cowboy-beans.png": "d74bf191401b1f6e95eb5555041644f2e807a5b6326db9b4fb045f1d0daf5add"
+  },
+  "prompt_reconciliation": {
+    "guanciale-olive-chili-pasta-sauce": "Source permits rigatoni or spaghetti despite prompt saying shape unspecified; selected rigatoni and requires chopped olives.",
+    "singapore-chicken-rice": "Source specifies spring onion in the clear broth cup; add to generation prompt."
+  },
+  "generation_review": "complete",
+  "completed_at": "2026-10-02T15:53:12.571832+00:00",
+  "unresolved_concerns": 0,
+  "verification": {
+    "candidate_count": 55,
+    "dimensions": "1536x1024 PNG, horizontal 3:2",
+    "recipe_and_prompt_hashes_unchanged": true,
+    "existing_site_asset_hashes_unchanged": true
+  },
+  "reference_usage": "Reference image visually inspected; house lighting, neutral background and texture described in generation prompts. New image calls did not attach it as an edit target.",
+  "installed_at": "2026-10-05T08:30:52.556811+00:00"
+}

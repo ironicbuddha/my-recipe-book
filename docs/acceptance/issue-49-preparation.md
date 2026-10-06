@@ -72,13 +72,13 @@ The inspected pages render without hero images and reported no browser errors.
 
 Screenshots:
 
-- [Nachos desktop](../../output/playwright/issue-49/nachos-desktop.png)
-- [Nachos mobile](../../output/playwright/issue-49/nachos-mobile.png)
-- [Nachos assembly](../../output/playwright/issue-49/nachos-mobile-assembly.png)
-- [Ice cream mobile](../../output/playwright/issue-49/ice-cream-mobile.png)
-- [Experiment mobile](../../output/playwright/issue-49/experiment-mobile.png)
-- [Lasagna desktop](../../output/playwright/issue-49/lasagna-desktop.png)
-- [Aggregate HTTP readback](../../output/playwright/issue-49/http-readback.json)
+- [Nachos desktop](evidence/playwright/issue-49/nachos-desktop.png)
+- [Nachos mobile](evidence/playwright/issue-49/nachos-mobile.png)
+- [Nachos assembly](evidence/playwright/issue-49/nachos-mobile-assembly.png)
+- [Ice cream mobile](evidence/playwright/issue-49/ice-cream-mobile.png)
+- [Experiment mobile](evidence/playwright/issue-49/experiment-mobile.png)
+- [Lasagna desktop](evidence/playwright/issue-49/lasagna-desktop.png)
+- [Aggregate HTTP readback](evidence/playwright/issue-49/http-readback.json)
 
 Production deployment `my-recipe-book-hrz6mi8h8-carlo-krugers-projects.vercel.app`
 was inspected as Ready/Production. Live readback of `recipes.carlokruger.com`

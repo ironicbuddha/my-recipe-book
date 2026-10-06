@@ -52,7 +52,7 @@ and migrated hero/card lookup using the new page markup.
 ## Browser and print evidence
 
 Run the committed local audit with `pnpm preview --host 127.0.0.1 --port 4322`,
-then `pnpm exec tsx output/playwright/modernist-audit.ts` (installed Chrome).
+then `pnpm exec tsx scripts/modernist-audit.ts` (installed Chrome).
 The audit uses the built site and writes artifacts under `output/playwright/`.
 Its DOM-only long-Phase fixture and removed-hero fixture are layout evidence,
 not culinary content.
@@ -84,19 +84,19 @@ not culinary content.
 
 Selected review artifacts:
 
-- [Desktop cooking sheet](../../output/playwright/modernist-sourdough-bread-1440.png)
-- [320 px cooking sheet](../../output/playwright/modernist-sourdough-bread-320.png)
-- [Phone at 200% text](../../output/playwright/modernist-sourdough-bread-390-text200.png)
-- [Soup A4](../../output/playwright/modernist-asian-ginger-chicken-noodle-soup-A4.pdf)
-- [Bread Letter](../../output/playwright/modernist-sourdough-bread-Letter.pdf)
-- [Fillet A4](../../output/playwright/modernist-reverse-seared-fillet-hibachi-cabbage-steakhouse-fries-gochujang-sauce-A4.pdf)
-- [Long Phase A4](../../output/playwright/modernist-long-phase-A4.pdf)
-- [Audit results](../../output/playwright/modernist-audit.json)
-- [Text enlargement results](../../output/playwright/modernist-text-enlargement.json)
-- [Accessibility sequence](../../output/playwright/modernist-bread-accessibility.yml)
-- [Homepage comparison](../../output/playwright/modernist-scope-home.png)
-- [Index comparison](../../output/playwright/modernist-scope-index.png)
-- [Knowledge comparison](../../output/playwright/modernist-scope-knowledge.png)
+- [Desktop cooking sheet](../acceptance/evidence/playwright/modernist-sourdough-bread-1440.png)
+- [320 px cooking sheet](../acceptance/evidence/playwright/modernist-sourdough-bread-320.png)
+- [Phone at 200% text](../acceptance/evidence/playwright/modernist-sourdough-bread-390-text200.png)
+- [Soup A4](../acceptance/evidence/playwright/modernist-asian-ginger-chicken-noodle-soup-A4.pdf)
+- [Bread Letter](../acceptance/evidence/playwright/modernist-sourdough-bread-Letter.pdf)
+- [Fillet A4](../acceptance/evidence/playwright/modernist-reverse-seared-fillet-hibachi-cabbage-steakhouse-fries-gochujang-sauce-A4.pdf)
+- [Long Phase A4](../acceptance/evidence/playwright/modernist-long-phase-A4.pdf)
+- [Audit results](../acceptance/evidence/playwright/modernist-audit.json)
+- [Text enlargement results](../acceptance/evidence/playwright/modernist-text-enlargement.json)
+- [Accessibility sequence](../acceptance/evidence/playwright/modernist-bread-accessibility.yml)
+- [Homepage comparison](../acceptance/evidence/playwright/modernist-scope-home.png)
+- [Index comparison](../acceptance/evidence/playwright/modernist-scope-index.png)
+- [Knowledge comparison](../acceptance/evidence/playwright/modernist-scope-knowledge.png)
 
 ## Code review
 
@@ -135,5 +135,5 @@ Sourdough's water-reservation instruction remains visible. The dev server was
 restarted to refresh cached static-path props. Standards and specification review
 found no remaining issues within this follow-up's scope.
 
-[Desktop follow-up](../../output/playwright/ingredient-duplicate-fix-1440.png)
-· [Phone follow-up](../../output/playwright/ingredient-duplicate-fix-390.png)
+[Desktop follow-up](../acceptance/evidence/playwright/ingredient-duplicate-fix-1440.png)
+· [Phone follow-up](../acceptance/evidence/playwright/ingredient-duplicate-fix-390.png)

@@ -61,9 +61,9 @@ Grilling and Domain Modeling.
 ### Artifacts and verification
 
 The durable local artifacts are the [canonical glossary](../../CONTEXT.md),
-[Promotion ADR](../../docs/adr/0001-human-controlled-evidence-backed-promotion.md),
-and [identity ADR](../../docs/adr/0002-decouple-culinary-identity-from-presentation.md).
-The [portable Recipe prototype](../../docs/prototypes/portable-recipe-contract/recipe.md)
+[Promotion ADR](../adr/0001-human-controlled-evidence-backed-promotion.md),
+and [identity ADR](../adr/0002-decouple-culinary-identity-from-presentation.md).
+The [portable Recipe prototype](../prototypes/portable-recipe-contract/recipe.md)
 now demonstrates two-decimal scaling. These remain uncommitted local changes.
 
 At the user's explicit request, the failing `pnpm check` command was repaired:
